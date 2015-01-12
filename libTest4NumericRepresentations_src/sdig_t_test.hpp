@@ -5,7 +5,7 @@
 #include <iostream>
 #include <numeric>
 #include <limits>
-#include "C:\Dropbox\NumericRepresentations\NumericRepresentations\src\libNumericRepresentations_src\sdig_t.hpp"
+#include "src/libNumericRepresentations_src/sdig_t.hpp"
 #include "operator_test.hpp"
 
 void PRUEBA_OPERADORES_UNARIOS_SDIG_T()
