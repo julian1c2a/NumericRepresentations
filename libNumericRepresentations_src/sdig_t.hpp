@@ -1,8 +1,8 @@
 #ifndef SDIG_T_HPP
 #define SDIG_T_HPP
 
-#include "basic_types.hpp"
-#include "dig_t.hpp" // Base class: dig_t<B>
+#include "src/libNumericRepresentations_src/basic_types.hpp"
+#include "src/libNumericRepresentations_src/dig_t.hpp" // Base class: dig_t<B>
 
 template<const uchint B>
 class sdig_t : public dig_t<B>
@@ -12,11 +12,6 @@ private:
 	typedef dig_t<B>                    dig;
 	typedef sdig_t<B>                   sdig;
 	sign_e signo;
-
-public:
-
-    static const uchint NDigs = 1;
-    static const bool   with_sign = true;
 
 public:
 

@@ -1,7 +1,7 @@
 #ifndef BINARY_OPERATORS_TEST_UNIT__HPP
 #define BINARY_OPERATORS_TEST_UNIT__HPP
 
-#include "basic_constants_and_lists_4_test_unit.hpp"
+#include "src/libTest4NumericRepresentations_src/basic_constants_and_lists_4_test_unit.hpp"
 
 template<class U,template<const U R> class T,const U R,class S >
 result_test test_operator_binario_const(unsigned int i)
@@ -12,8 +12,8 @@ result_test test_operator_binario_const(unsigned int i)
 	ARITH_BIN_EQ_const<U,T,R,S>          Resolucion_Clase;
     ARITH_BIN_EQ_T_const<U,T,R,S>   Resolucion_con_enteros;
 
-	for(S Indice_1 = Limit<U,T,R,S>::BeginIndex ; Indice_1 <= Limit<U,T,R,S>::EndIndex ; ++Indice_1)	{
-        for(S Indice_2 = Limit<U,T,R,S>::BeginIndex ;Indice_2 <= Limit<U,T,R,S>::EndIndex;++Indice_2)	{
+	for(S Indice_1 = CTTI<U,T,R,S>::BeginIndex ; Indice_1 <= CTTI<U,T,R,S>::EndIndex ; ++Indice_1)	{
+        for(S Indice_2 = CTTI<U,T,R,S>::BeginIndex ;Indice_2 <= CTTI<U,T,R,S>::EndIndex;++Indice_2)	{
             const S a = Indice_1;
             const S b = Indice_2;
             const T<R> A(Indice_1);
@@ -42,8 +42,8 @@ result_test test_operator_binario(unsigned int i)
     ARITH_BIN_EQ_const<U,T,R,S>        Resolucion_Clase;
     ARITH_BIN_EQ_T_const<U,T,R,S>      Resolucion_con_enteros;
 
-	for(S Indice_1 = Limit<U,T,R,S>::BeginIndex ; Indice_1 <= Limit<U,T,R,S>::EndIndex ; ++Indice_1)	{
-        for(S Indice_2 = Limit<U,T,R,S>::BeginIndex ; Indice_2 <= Limit<U,T,R,S>::EndIndex ; ++Indice_2)	{
+	for(S Indice_1 = CTTI<U,T,R,S>::BeginIndex ; Indice_1 <= CTTI<U,T,R,S>::EndIndex ; ++Indice_1)	{
+        for(S Indice_2 = CTTI<U,T,R,S>::BeginIndex ; Indice_2 <= CTTI<U,T,R,S>::EndIndex ; ++Indice_2)	{
             S a=Indice_1;
             const S b=Indice_2;
             T<R> A(Indice_1);

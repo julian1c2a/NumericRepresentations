@@ -2,7 +2,7 @@
 #define HETERO_BINARY_OPERATORS_TEST_UNIT__HPP
 
 
-#include "basic_constants_and_lists_4_test_unit.hpp"
+#include "src/libTest4NumericRepresentations_src/basic_constants_and_lists_4_test_unit.hpp"
 
 template< class U, template<const U R> class T , const U R , class S >
 class BINARIA_hetero_const
@@ -31,7 +31,7 @@ class BINARIA_hetero_T_const
 {
 public:
     S  operator()(int i,S arg_1,S arg_2){
-        switch(T<R>::NDigs) {
+        switch(CTTI<U,T,R,S>::NDigs) {
             case 1 :
                 switch(i){
                     case 0 :       return (arg_1 + arg_2)%R;
@@ -87,7 +87,7 @@ class BINARIA_hetero_T
 {
 public:
        void operator()(int i,S & arg_1,const S & arg_2){
-           switch(T<R>::NDigs) {
+           switch(CTTI<U,T,R,S>::NDigs) {
                case 1 :
                     switch(i){
                         case 0 : arg_1+=arg_2; arg_1=arg_1%R;  break;
@@ -121,8 +121,8 @@ result_test test_operator_binario_hetero_const(unsigned int i)
 	BINARIA_hetero_const<U,T,R,S>          Resolucion_Clase;
     BINARIA_hetero_T_const<U,T,R,S>        Resolucion_con_enteros;
 
-	for(S Indice_1 = 0;Indice_1< ((T<R>::NDigs == 1)?(R):(R*R));++Indice_1)	{
-            for(S Indice_2 = 0;Indice_2< ((T<R>::NDigs == 1)?(R):(R*R));++Indice_2)	{
+	for(S Indice_1 = 0;Indice_1< ((CTTI<U,T,R,S>::NDigs == 1)?(R):(R*R));++Indice_1)	{
+            for(S Indice_2 = 0;Indice_2< ((CTTI<U,T,R,S>::NDigs == 1)?(R):(R*R));++Indice_2)	{
                 const S a = Indice_1;
                 const S b = Indice_2;
                 const T<R> A(Indice_1);
@@ -150,8 +150,8 @@ result_test test_operator_binario_hetero(unsigned int i)
     BINARIA_hetero<U,T,R,S>           Resolucion_Clase;
     BINARIA_hetero_T<U,T,R,S>         Resolucion_con_enteros;
 
-	for(S Indice_1 = 0 ; Indice_1 < ((T<R>::NDigs == 1)?(R):(R*R)) ; ++Indice_1)	{
-            for(S Indice_2 = 0 ; Indice_2 < ((T<R>::NDigs == 1)?(R):(R*R)) ; ++Indice_2)	{
+	for(S Indice_1 = 0 ; Indice_1 < ((CTTI<U,T,R,S>::NDigs == 1)?(R):(R*R)) ; ++Indice_1)	{
+            for(S Indice_2 = 0 ; Indice_2 < ((CTTI<U,T,R,S>::NDigs == 1)?(R):(R*R)) ; ++Indice_2)	{
                 S a=Indice_1;
                 const S b=Indice_2;
                 T<R> A(Indice_1);

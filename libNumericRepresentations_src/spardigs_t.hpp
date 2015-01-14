@@ -1,7 +1,7 @@
 #ifndef spardigs_t__hpp
 #define spardigs_t__hpp
 
-#include "pardigs_t.hpp"
+#include "src/libNumericRepresentations_src/pardigs_t.hpp"
 
 using namespace std;
 
@@ -34,9 +34,6 @@ public:
 	static const sllint  	spd_submin		= -(iB*iB)+spd_1;
 
 public:
-
-		 static const uchint NDigs = 2;
-        static const bool   with_sign = true;
 
 			/********************************/
 			/*									*/

@@ -1,17 +1,17 @@
 #ifndef CONSTRUCTORS_TEST_UNIT__HPP
 #define CONSTRUCTORS_TEST_UNIT__HPP
 
-#include "basic_constants_and_lists_4_test_unit.hpp"
+#include "src/libTest4NumericRepresentations_src/basic_constants_and_lists_4_test_unit.hpp"
 
 template<class U , template<const U R> class T, const U R, class S>
 result_test test_constructores_desde_built_in()
 {
     result_test result = {0,0};
 	 
-    for(S Index = (Limit<U,T,R,S>::BeginIndex) ; Index <= (Limit<U,T,R,S>::EndIndex) ; ++Index) {
+    for(S Index = (CTTI<U,T,R,S>::BeginIndex) ; Index <= (CTTI<U,T,R,S>::EndIndex) ; ++Index) {
        T<R> VLR(Index);
-		if (Index == (Limit<U,T,R,S>::BeginIndex)) {
-			if (T<R>::with_sign) {
+		if (Index == (CTTI<U,T,R,S>::BeginIndex)) {
+			if (CTTI<U,T,R,S>::with_sign) {
 				if ((VLR.is_negative())&&(VLR.abs().is_0()))
 					++result.correctos;
 				else 
@@ -24,12 +24,12 @@ result_test test_constructores_desde_built_in()
 					++result.erroneos;
 			}
 		}
-		else if ((Index > (Limit<U,T,R,S>::BeginIndex))&&(Index <= (Limit<U,T,R,S>::EndIndex))) {
+		else if ((Index > (CTTI<U,T,R,S>::BeginIndex))&&(Index <= (CTTI<U,T,R,S>::EndIndex))) {
 			if (S(VLR)==Index) ++result.correctos;
 			else ++result.erroneos;
 		}
 		else {
-			const S temp = Index%(Limit<U,T,R,S>::MaxPowRadix);
+			const S temp = Index%(CTTI<U,T,R,S>::MaxPowRadix);
 			if (S(VLR)==temp) ++result.correctos;
 			else ++result.erroneos;
        }
@@ -43,7 +43,7 @@ result_test test_constructor_copia()
 {
     result_test result = {0,0};
 
-    for(S Index = Limit<U,T,R,S>::BeginIndex ; Index <= Limit<U,T,R,S>::EndIndex ; ++Index) {        
+    for(S Index = CTTI<U,T,R,S>::BeginIndex ; Index <= CTTI<U,T,R,S>::EndIndex ; ++Index) {        
 		T<R> A(Index);
 		T<R> VAR(A);
 		if (VAR==A) ++result.correctos;
@@ -69,10 +69,10 @@ result_test test_asignaciones_desde_built_in()
 {
 		result_test result = {0,0};
 		T<R> VAR;
-		for(S Index = Limit<U,T,R,S>::BeginIndex ; Index <= Limit<U,T,R,S>::EndIndex ; ++Index) {
+		for(S Index = CTTI<U,T,R,S>::BeginIndex ; Index <= CTTI<U,T,R,S>::EndIndex ; ++Index) {
 			VAR = Index;
-			if (Index == Limit<U,T,R,S>::BeginIndex) {
-				if (T<R>::with_sign) {
+			if (Index == CTTI<U,T,R,S>::BeginIndex) {
+				if (CTTI<U,T,R,S>::with_sign) {
 					if ((VAR.abs().is_0())&&(VAR.is_negative()))
 						++result.correctos;
 					else 
@@ -85,7 +85,7 @@ result_test test_asignaciones_desde_built_in()
 						++result.erroneos;					
 				}
 			}
-			else if ((Index > Limit<U,T,R,S>::BeginIndex)&&(Index <= Limit<U,T,R,S>::EndIndex)) {
+			else if ((Index > CTTI<U,T,R,S>::BeginIndex)&&(Index <= CTTI<U,T,R,S>::EndIndex)) {
 				//const S temp = (((Index<0)?(-(UnidadAlta+Index)):(Index))%UnidadAlta);
 				if (S(VAR)==Index) 
 					++result.correctos;
@@ -102,7 +102,7 @@ result_test test_asignaciones_copia()
 {
 	result_test result = {0,0};
     T<R> VAR;
-    for(S Index = Limit<U,T,R,S>::BeginIndex ; Index <= Limit<U,T,R,S>::EndIndex ; ++Index) {
+    for(S Index = CTTI<U,T,R,S>::BeginIndex ; Index <= CTTI<U,T,R,S>::EndIndex ; ++Index) {
         T<R> A(Index);
         VAR = A;
         if (VAR==A) ++result.correctos;

@@ -1,7 +1,7 @@
 #ifndef N2DIGS_T__HPP
 #define N2DIGS_T__HPP
 
-#include "dig_t.hpp"
+#include "src/libNumericRepresentations_src/dig_t.hpp"
 
 using namespace std;
 

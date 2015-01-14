@@ -1,7 +1,7 @@
 #ifndef UNARY_OPERATORS_TEST_UNIT__HPP
 #define UNARY_OPERATORS_TEST_UNIT__HPP
 
-#include "basic_constants_and_lists_4_test_unit.hpp"
+#include "src/libTest4NumericRepresentations_src/basic_constants_and_lists_4_test_unit.hpp"
 
 template<class U,template<const U R> class T,const U R, class S>
 class UNARIA_const
@@ -39,7 +39,7 @@ public:
        S operator()(int i,const S & arg){
            switch(i){
               case 0 :	{	
-								if (T<R>::with_sign) {
+								if (CTTI<U,T,R,S>::with_sign) {
 									const bool negative = (arg<0);
 									S carg((negative)?(-arg):(arg));
 									(negative)?(--carg):(++carg);
@@ -47,16 +47,16 @@ public:
 									return carg;
 								}
 								else {
-									const S ret = (Limit<U,T,R,S>::MaxPowRadix)-1-arg;
+									const S ret = (CTTI<U,T,R,S>::MaxPowRadix)-1-arg;
 									return ret;
 								}
 							}
 							break;
               case 1 :	{
-								if(T<R>::with_sign) {
+								if(CTTI<U,T,R,S>::with_sign) {
 									S carg(arg);
-									if(arg==Limit<U,T,R,S>::BeginIndex){
-										carg=Limit<U,T,R,S>::BeginIndex;
+									if(arg==CTTI<U,T,R,S>::BeginIndex){
+										carg=CTTI<U,T,R,S>::BeginIndex;
 									}
 									else{
 										carg*=-1;
@@ -65,7 +65,7 @@ public:
 								}
 								else {
 									if (arg != 0)
-										return (Limit<U,T,R,S>::MaxPowRadix)-arg;
+										return (CTTI<U,T,R,S>::MaxPowRadix)-arg;
 									else
 										return arg; 
 								}
@@ -95,13 +95,13 @@ public:
 							break;
 				case 6 :
 							{ 
-								if (arg==Limit<U,T,R,S>::EndIndex)	return 1;
+								if (arg==CTTI<U,T,R,S>::EndIndex)	return 1;
 								else										return 0;
 							}
 							break;
 				case 7 :
 							{ 
-								if (arg==Limit<U,T,R,S>::EndIndex-1)	return 1;
+								if (arg==CTTI<U,T,R,S>::EndIndex-1)	return 1;
 								else										return 0;
 							}
 							break;
@@ -113,14 +113,14 @@ public:
 							break;
 				case 9 :
 							{ 
-								if (arg==Limit<U,T,R,S>::BeginIndex)	return 1;
+								if (arg==CTTI<U,T,R,S>::BeginIndex)	return 1;
 								else										return 0;
 							}
 							break;
 				case 10 :
 				default :
 							{ 
-								if (arg==Limit<U,T,R,S>::BeginIndex+1)	return 1;
+								if (arg==CTTI<U,T,R,S>::BeginIndex+1)	return 1;
 								else										return 0;
 							}
 							break;
@@ -149,23 +149,23 @@ class UNARIA_T
 public:
        void operator()(int i,S & arg){
            switch(i){
-              case 0 :     {if (arg >= Limit<U,T,R,S>::EndIndex) {
-									arg = Limit<U,T,R,S>::BeginIndex;
+              case 0 :     {if (arg >= CTTI<U,T,R,S>::EndIndex) {
+									arg = CTTI<U,T,R,S>::BeginIndex;
 							  }
 							  else {
 								  arg += 1 ;
-								  arg %=Limit<U,T,R,S>::MaxPowRadix;
+								  arg %=CTTI<U,T,R,S>::MaxPowRadix;
 								}}
                           break;
-              case 1 :    {if (arg > Limit<U,T,R,S>::BeginIndex) {
+              case 1 :    {if (arg > CTTI<U,T,R,S>::BeginIndex) {
                              arg -= 1;
                           }
                           else {
-                             arg = Limit<U,T,R,S>::EndIndex;
+                             arg = CTTI<U,T,R,S>::EndIndex;
 								}}
                           break;
               case 2 :    {	
-								if(T<R>::with_sign) {
+								if(CTTI<U,T,R,S>::with_sign) {
 									const bool negative = (arg<0); 
 									arg = ((negative)?(-arg):(arg));
 									if(negative){--arg;}
@@ -173,20 +173,20 @@ public:
 									if (!negative) arg*=(-1);
 								}
 								else {
-									arg = (Limit<U,T,R,S>::MaxPowRadix)-1-arg;
+									arg = (CTTI<U,T,R,S>::MaxPowRadix)-1-arg;
 								}
 							 }
 								break;
 				case 3 :    
 							{
-								if(T<R>::with_sign) {
-									if(arg==Limit<U,T,R,S>::BeginIndex)
-											{arg=Limit<U,T,R,S>::BeginIndex;}
+								if(CTTI<U,T,R,S>::with_sign) {
+									if(arg==CTTI<U,T,R,S>::BeginIndex)
+											{arg=CTTI<U,T,R,S>::BeginIndex;}
 									else	{arg*=-1;}
 								}
 								else {
 									if (arg != 0) {
-										arg = (Limit<U,T,R,S>::MaxPowRadix)-arg;
+										arg = (CTTI<U,T,R,S>::MaxPowRadix)-arg;
 									}
 								}
 							 }
@@ -204,7 +204,7 @@ result_test test_operator_unario_const(unsigned int i)
 	UNARIA_const<U,T,R,S> Resolucion_Clase;
 	UNARIA_T_const<U,T,R,S> Resolucion_con_enteros;
 
-	for(S Indice = Limit<U,T,R,S>::BeginIndex ; Indice <= Limit<U,T,R,S>::EndIndex ; ++Indice)	{
+	for(S Indice = CTTI<U,T,R,S>::BeginIndex ; Indice <= CTTI<U,T,R,S>::EndIndex ; ++Indice)	{
        S a = Indice;
        T<R> A(Indice);
 		const T<R> C(Resolucion_Clase(i,A));
@@ -229,7 +229,7 @@ result_test test_operator_unario(unsigned int i)
     UNARIA<U,T,R,S> Resolucion_Clase;
     UNARIA_T<U,T,R,S> Resolucion_con_enteros;
 
-	for(S Indice = Limit<U,T,R,S>::BeginIndex ; Indice <= Limit<U,T,R,S>::EndIndex ; ++Indice)	{
+	for(S Indice = CTTI<U,T,R,S>::BeginIndex ; Indice <= CTTI<U,T,R,S>::EndIndex ; ++Indice)	{
        S a=Indice;
        T<R> A(Indice);
 		Resolucion_Clase(i,A);

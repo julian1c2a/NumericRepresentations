@@ -7,7 +7,7 @@
 #include <numeric>
 #include <limits>
 #include "src/libNumericRepresentations_src/spardigs_t.hpp"
-#include "operator_test.hpp"
+#include "src/libTest4NumericRepresentations_src/operator_test.hpp"
 
 void PRUEBA_OPERADORES_UNARIOS_SPARDIGS_T()
 {

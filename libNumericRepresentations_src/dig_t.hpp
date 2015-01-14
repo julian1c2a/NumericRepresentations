@@ -1,7 +1,7 @@
 #ifndef dig_t__hpp
 #define dig_t__hpp
 
-#include "basic_types.hpp"
+#include "src/libNumericRepresentations_src/basic_types.hpp"
 
 template< const uchint B > class dig_t
 {
@@ -9,12 +9,6 @@ private:
 
 	typedef dig_t<B>                    dig;
 	uchint m_d;
-
-public:
-
-    static const uchint NDigs = 1;
-    static const bool   with_sign = false;
-
 
 public:
 

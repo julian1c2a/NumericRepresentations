@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "n2digs_t.hpp"
+#include "src/libNumericRepresentations_src/n2digs_t.hpp"
 using namespace std;
 
 //template<const uchint B> using n2digs_t = std::pair<dig_t<B>,dig_t<B>>;
@@ -79,9 +79,6 @@ public:
         return;
     }
 
-
-        static const uchint NDigs = 2;
-        static const bool   with_sign = false;
 
 		inline pardigs_t() : n2digs() {}
 		inline pardigs_t(dig decenas,dig unidades) : n2digs(decenas,unidades) {}

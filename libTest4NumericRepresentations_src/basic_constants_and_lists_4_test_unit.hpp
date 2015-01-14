@@ -30,37 +30,6 @@ public:
 	in_detail_errors_list_t<U,T,R,S> list_of_erroneus_tests;
 };
 
-template<typename U,template<const U> class T,U R,class S>
-using MAAUXPTR_tt = T<R>&(T<R>::*)(int);
-
-template<typename U,template<const U> class T,U R,class S>
-using	operation_order_aa1x_tt	=	std::tuple<unsigned int,std::string,MAAUXPTR_tt<U,T,R,S>>;
-
-template<typename U,template<const U> class T,U R,class S>
-operation_order_aa1x_tt<U,T,R,S> arithmetic_with_assignation_unary_post_operators(unsigned int i)	{
-	switch(i) {
-		case 0 : return {0,"++(int)",&(T<R>::operator++)};
-		default : return {1,"--(int)",&(T<R>::operator--)};
-	}
-}
-
-template<typename U,template<const U> class T,U R,class S>
-using MAAUPTR_tt = T<R>& (T<R>::*) ();
-
-template<typename U,template<const U> class T,U R,class S>
-using	operation_order_aa1_tt	=	std::tuple<unsigned int,std::string,MAAUPTR_tt<U,T,R,S>>;
-
-template<typename U,template<const U> class T,U R,class S>
-operation_order_aa1_tt<U,T,R,S> arithmetic_with_assignation_unary_operators(unsigned int i)	{
-	switch(i) {
-		case 0 : return {0,"++",&(T<R>::operator++)};
-		case 1 : return {1,"--",&(T<R>::operator--)};
-		case 2 : return {2,"mC_Bm1",&(T<R>::mC_Bm1)};
-		case 3 : return {3,"mC_B",&(T<R>::mC_B)};
-		default : return {4,"m_abs",&(T<R>::m_abs)};
-	}
-}
-
 template<typename U,template<const U> class T,U R,typename S>
 using MAUPTR_tt = T<R>(T<R>::*)();
 
@@ -144,45 +113,6 @@ operation_order_a2dif_tt<U,T,R,S> arithmetic_binary_dif_operators(unsigned int i
 	}
 }
 
-template<typename U,template<const U> class T,U R,typename S>
-using ASIGNACION_DIF_tt = T<R>&(T<R>::*)(S);
-
-template<typename U,template<const U> class T,U R,typename S>
-using	operation_order_assignation2dif_tt	=	std::tuple<unsigned int,std::string,ASIGNACION_DIF_tt<U,T,R,S>>;
-
-template<typename U,template<const U> class T,U R,typename S>
-operation_order_assignation2dif_tt<U,T,R,S> assignation_dif_operators(unsigned int i)	{
-	switch(i) {
-		default : return {0,"T<R> object = S object",&(T<R>::operator=)};
-	}
-}
-
-template<typename U,template<const U> class T,U R,typename S>
-using ASIGNACION_EQ_tt = T<R>&(T<R>::*)(T<R>&);
-
-template<typename U,template<const U> class T,U R,typename S>
-using	operation_order_assignation2eq_tt	=	std::tuple<unsigned int,std::string,ASIGNACION_EQ_tt<U,T,R,S>>;
-
-template<typename U,template<const U> class T,U R,typename S>
-operation_order_assignation2eq_tt<U,T,R,S> assignation_eq_operators(unsigned int i)	{
-	switch(i) {
-		default : return {0,"T<R> object = T<R> object",&(T<R>::operator=)};
-	}
-}
-
-template<typename U,template<const U> class T,U R,typename S>
-using CAST_tt = S (T<R>::*)();
-
-template<typename U,template<const U> class T,U R,typename S>
-using	operation_order_cast_tt	=	std::tuple<unsigned int,std::string,CAST_tt<U,T,R,S>>;
-
-template<typename U,template<const U> class T,U R,typename S>
-operation_order_cast_tt<U,T,R,S> cast(unsigned int i)	{
-	switch(i) {
-		default : return {0,"S(const T<R>&)",&(T<R>::operator S)};
-	}
-}
-
 struct result_test {
     unsigned long long int erroneos;
     unsigned long long int correctos;
@@ -202,44 +132,67 @@ struct result_test {
 //	assignation_eq_operators
 //	cast
 
-template<class U,template<const U> class T, const U R, class S>
-S MaxPowRadix_Consts_Choosing(){
-	S MaxPowRadix=S(1);
-	for(ulint I = 0 ; I < (T<R>::NDigs); ++I){
-		MaxPowRadix *= S(R);
-	}
-	return MaxPowRadix;
-}
-
-template<class U,template<const U> class T, const U R, class S>
-S BeginIndex_Consts_Choosing(){
-	S BeginIndex;
-	if(T<R>::with_sign) {
-		BeginIndex = -(MaxPowRadix_Consts_Choosing<U,T,R,S>());
-	}
-	else BeginIndex=0;
-	return BeginIndex;
-}
-
-template<class U,template<const U> class T, const U R, class S>
-S EndIndex_Consts_Choosing(){
-	S EndIndex = MaxPowRadix_Consts_Choosing<U,T,R,S>()-1;
-	return EndIndex;
-}
-
-template<class U,template<const U> class T, const U R, class S>
-struct Limit {
-	static const S EndIndex;
-	static const S BeginIndex;
-	static const S MaxPowRadix;
+template<class Ug,template<const Ug> class Tg, const Ug Rg, class Sg>
+struct CTTI {
+public:
+	constexpr Sg MaxPowRadix_Consts_Choosing(){return Sg(1);}
+	constexpr Sg BeginIndex_Consts_Choosing(){return Sg(0);}
+	constexpr Sg EndIndex_Consts_Choosing(){return Sg(1);}
+	constexpr Sg NDigs_Consts_Choosing(){return Sg(0);}
+	constexpr bool with_sign_Consts_Choosing(){return false;}
+public:
+	constexpr static Sg EndIndex{1};
+	constexpr static Sg BeginIndex{0};
+	constexpr static Sg MaxPowRadix{1};
+	constexpr static bool with_sign = false;
+	constexpr static unsigned NDigs = 1;
 };
 
-template<class U,template<const U> class T, const U R, class S>
-const S Limit<U,T,R,S>::EndIndex = EndIndex_Consts_Choosing<U,T,R,S>();
-template<class U,template<const U> class T, const U R, class S>
-const S Limit<U,T,R,S>::BeginIndex = BeginIndex_Consts_Choosing<U,T,R,S>();
-template<class U,template<const U> class T, const U R, class S>
-const S Limit<U,T,R,S>::MaxPowRadix = MaxPowRadix_Consts_Choosing<U,T,R,S>();
+template<unsigned char Rg>
+struct CTTI<unsigned char,dig_t,Rg,long long int> {
+public:
+	constexpr static long long int EndIndex = Rg;
+	constexpr static long long int BeginIndex = 0;
+	constexpr static long long int MaxPowRadix = Rg;
+	constexpr static bool with_sign = false;
+	constexpr static unsigned NDigs =  1;
+};
+
+template<unsigned char Rg>
+struct CTTI<unsigned char,sdig_t,Rg,long long int> {
+public:
+	constexpr long long int MaxPowRadix_Consts_Choosing(){return (Rg);}
+	constexpr long long int BeginIndex_Consts_Choosing(){return (-Rg);}
+	constexpr long long int EndIndex_Consts_Choosing(){return (Rg-1);}
+	constexpr long long int NDigs_Consts_Choosing(){return (1);}
+	constexpr bool with_sign_Consts_Choosing(){return true;}
+public:
+	constexpr static long long int EndIndex = Rg-1;
+	constexpr static long long int BeginIndex = -Rg;
+	constexpr static long long int MaxPowRadix = Rg;
+	constexpr static bool with_sign = true;
+	constexpr static unsigned NDigs =  1;
+};
+
+template<unsigned char Rg>
+class CTTI<unsigned char,pardigs_t,Rg,long long int> {
+public:
+	constexpr static long long int EndIndex = Rg*Rg-1;
+	constexpr static long long int BeginIndex = 0;
+	constexpr static long long int MaxPowRadix = Rg*Rg;
+	constexpr static bool with_sign = false;
+	constexpr static unsigned NDigs =  2;
+};
+
+template<unsigned char Rg>
+class CTTI<unsigned char,spardigs_t,Rg,long long int> {
+public:
+	constexpr static long long int EndIndex = Rg*Rg-1;
+	constexpr static long long int BeginIndex = -Rg*Rg;
+	constexpr static long long int MaxPowRadix = Rg*Rg;
+	constexpr static bool with_sign = true;
+	constexpr static unsigned NDigs = 2;
+};
 
 /**
 ***   COMIENZO DE LA CLASE PARA TESTS DE FUNCIONES BULEANAS BINARIAS
@@ -325,7 +278,7 @@ class boolean_binary_eq_operators_class {
     }
 
 	void operator()(int i,T<R> arg_1,S arg_1_t){
-		for(S arg_2_t = Limit<U,T,R,S>::BeginIndex; arg_2_t < Limit<U,T,R,S>::BeginIndex; ++arg_2_t) {
+		for(S arg_2_t = CTTI<U,T,R,S>::BeginIndex; arg_2_t < CTTI<U,T,R,S>::BeginIndex; ++arg_2_t) {
 			const T<R> arg_2(arg_2_t);
 			if (this->operator()(i,arg_1,arg_2,arg_1_t,arg_2_t)) {
 				++test_results.number_of_corrects;
@@ -341,7 +294,7 @@ class boolean_binary_eq_operators_class {
 public:
 
 	void operator()(int i){
-		for(S arg_1_t = Limit<U,T,R,S>::BeginIndex; arg_1_t < Limit<U,T,R,S>::BeginIndex; ++arg_1_t) {
+		for(S arg_1_t = CTTI<U,T,R,S>::BeginIndex; arg_1_t < CTTI<U,T,R,S>::BeginIndex; ++arg_1_t) {
 			const T<R> arg_1(arg_1_t);
 			this->operator()(i,arg_1,arg_1_t);
 		}
@@ -457,13 +410,13 @@ class boolean_unary_eq_operators_class {
 		bool operator>=(eS a) const {return ((this->dm) >= (a.dm));}
 		bool is_0() const {return (dm==S(0));}
 		bool is_1() const {return (dm==S(1));}
-		bool is_m1() const {return ((T<R>::with_sign)?(dm==S(-1)):(false));}
-		bool is_max() const {return (dm==S(Limit<U,T,R,S>::EndIndex));}
-		bool is_submax() const {return (dm==S(Limit<U,T,R,S>::EndIndex-1));}
-		bool is_min() const {return (dm==S(Limit<U,T,R,S>::BeginIndex));}
-		bool is_submin() const {return (dm==S(Limit<U,T,R,S>::BeginIndex+1));}
-		bool is_negative() const {return ((T<R>::with_sign)?(dm<S(0)):(false));}
-		bool is_positive() const {return ((T<R>::with_sign)?(dm>=S(0)):(true));}
+		bool is_m1() const {return ((CTTI<U,T,R,S>::with_sign)?(dm==S(-1)):(false));}
+		bool is_max() const {return (dm==S(CTTI<U,T,R,S>::EndIndex));}
+		bool is_submax() const {return (dm==S(CTTI<U,T,R,S>::EndIndex-1));}
+		bool is_min() const {return (dm==S(CTTI<U,T,R,S>::BeginIndex));}
+		bool is_submin() const {return (dm==S(CTTI<U,T,R,S>::BeginIndex+1));}
+		bool is_negative() const {return ((CTTI<U,T,R,S>::with_sign)?(dm<S(0)):(false));}
+		bool is_positive() const {return ((CTTI<U,T,R,S>::with_sign)?(dm>=S(0)):(true));}
 	};
 
 	const static std::string T_template_name;
@@ -534,7 +487,7 @@ class boolean_unary_eq_operators_class {
 public:
 
 	void operator()(int i){
-		for(S arg_1_t = Limit<U,T,R,S>::BeginIndex; arg_1_t < Limit<U,T,R,S>::BeginIndex; ++arg_1_t) {
+		for(S arg_1_t = CTTI<U,T,R,S>::BeginIndex; arg_1_t < CTTI<U,T,R,S>::BeginIndex; ++arg_1_t) {
 			const T<R> arg_1(arg_1_t);
 			this->operator()(i,arg_1,arg_1_t);
 		}
@@ -650,13 +603,13 @@ class boolean_binary_dif_operators_class {
 		bool operator>=(eS a) const {return ((this->dm) >= (a.dm));}
 		bool is_0() const {return (dm==S(0));}
 		bool is_1() const {return (dm==S(1));}
-		bool is_m1() const {return ((T<R>::with_sign)?(dm==S(-1)):(false));}
-		bool is_max() const {return (dm==S(Limit<U,T,R,S>::EndIndex));}
-		bool is_submax() const {return (dm==S(Limit<U,T,R,S>::EndIndex-1));}
-		bool is_min() const {return (dm==S(Limit<U,T,R,S>::BeginIndex));}
-		bool is_submin() const {return (dm==S(Limit<U,T,R,S>::BeginIndex+1));}
-		bool is_negative() const {return ((T<R>::with_sign)?(dm<S(0)):(false));}
-		bool is_positive() const {return ((T<R>::with_sign)?(dm>=S(0)):(true));}
+		bool is_m1() const {return ((CTTI<U,T,R,S>::with_sign)?(dm==S(-1)):(false));}
+		bool is_max() const {return (dm==S(CTTI<U,T,R,S>::EndIndex));}
+		bool is_submax() const {return (dm==S(CTTI<U,T,R,S>::EndIndex-1));}
+		bool is_min() const {return (dm==S(CTTI<U,T,R,S>::BeginIndex));}
+		bool is_submin() const {return (dm==S(CTTI<U,T,R,S>::BeginIndex+1));}
+		bool is_negative() const {return ((CTTI<U,T,R,S>::with_sign)?(dm<S(0)):(false));}
+		bool is_positive() const {return ((CTTI<U,T,R,S>::with_sign)?(dm>=S(0)):(true));}
 		operator S() const {return this->dm;}
 	};
 
@@ -715,7 +668,7 @@ class boolean_binary_dif_operators_class {
     }
 
 	void operator()(int i,T<R> arg_1,S arg_1_t){
-		for(S arg_2_t = Limit<U,T,R,S>::BeginIndex; arg_2_t < Limit<U,T,R,S>::BeginIndex; ++arg_2_t) {
+		for(S arg_2_t = CTTI<U,T,R,S>::BeginIndex; arg_2_t < CTTI<U,T,R,S>::BeginIndex; ++arg_2_t) {
 			const T<R> arg_2(arg_2_t);
 			if (this->operator()(i,arg_1,arg_2,arg_1_t,arg_2_t)) {
 				++test_results.number_of_corrects;
@@ -731,7 +684,7 @@ class boolean_binary_dif_operators_class {
 public:
 
 	void operator()(int i){
-		for(S arg_1_t = Limit<U,T,R,S>::BeginIndex; arg_1_t < Limit<U,T,R,S>::BeginIndex; ++arg_1_t) {
+		for(S arg_1_t = CTTI<U,T,R,S>::BeginIndex; arg_1_t < CTTI<U,T,R,S>::BeginIndex; ++arg_1_t) {
 			const T<R> arg_1(arg_1_t);
 			this->operator()(i,arg_1,arg_1_t);
 		}
@@ -818,6 +771,131 @@ boolean_binary_dif_operators_class<unsigned char,spardigs_t,R,long int>::T_templ
 ***   FIN DE LA CLASE PARA TESTS DE FUNCIONES BULEANAS BINARIAS DE TIPOS DIFERENTES
 **/
 
+/**
+***   COMIENZO DE LA CLASE PARA TESTS DE FUNCIONES ARITMETICAS UNARIAS POST
+**/
+
+
+template<typename U,template<const U> class T,U R,class S>
+using MAAUXPTR_tt = T<R>&(T<R>::*)(int);
+
+template<typename U,template<const U> class T,U R,class S>
+using	operation_order_aa1x_tt	=	std::tuple<unsigned int,std::string,MAAUXPTR_tt<U,T,R,S>>;
+
+template<typename U,template<const U> class T,U R,class S>
+operation_order_aa1x_tt<U,T,R,S> arithmetic_with_assignation_unary_post_operators(unsigned int i)	{
+	switch(i) {
+		case 0 : return {0,"++(int)",&(T<R>::operator++)};
+		default : return {1,"--(int)",&(T<R>::operator--)};
+	}
+}
+
+
+/**
+***   FIN DE LA CLASE PARA TESTS DE FUNCIONES ARITMETICAS UNARIAS POST
+**/
+
+
+/**
+***   COMIENZO DE LA CLASE PARA TESTS DE FUNCIONES ARITMETICAS UNARIAS PRE
+**/
+
+template<typename U,template<const U> class T,U R,class S>
+using MAAUPTR_tt = T<R>& (T<R>::*) ();
+
+template<typename U,template<const U> class T,U R,class S>
+using	operation_order_aa1_tt	=	std::tuple<unsigned int,std::string,MAAUPTR_tt<U,T,R,S>>;
+
+template<typename U,template<const U> class T,U R,class S>
+operation_order_aa1_tt<U,T,R,S> arithmetic_with_assignation_unary_operators(unsigned int i)	{
+	switch(i) {
+		case 0 : return {0,"++",&(T<R>::operator++)};
+		case 1 : return {1,"--",&(T<R>::operator--)};
+		case 2 : return {2,"mC_Bm1",&(T<R>::mC_Bm1)};
+		case 3 : return {3,"mC_B",&(T<R>::mC_B)};
+		default : return {4,"m_abs",&(T<R>::m_abs)};
+	}
+}
+
+
+/**
+***   FIN DE LA CLASE PARA TESTS DE FUNCIONES ARITMETICAS UNARIAS PRE
+**/
+
+
+/**
+***   COMIENZO DE LA CLASE PARA TESTS DE ASIGNACIONES HETEROGENEAS
+**/
+
+template<typename U,template<const U> class T,U R,typename S>
+using ASIGNACION_DIF_tt = T<R>&(T<R>::*)(S);
+
+template<typename U,template<const U> class T,U R,typename S>
+using	operation_order_assignation2dif_tt	=	std::tuple<unsigned int,std::string,ASIGNACION_DIF_tt<U,T,R,S>>;
+
+template<typename U,template<const U> class T,U R,typename S>
+operation_order_assignation2dif_tt<U,T,R,S> assignation_dif_operators(unsigned int i)	{
+	switch(i) {
+		default : return {0,"T<R> object = S object",&(T<R>::operator=)};
+	}
+}
+
+
+/**
+***   FIN DE LA CLASE PARA TESTS DE ASIGNACIONES HETEROGENEAS
+**/
+
+
+/**
+***   COMIENZO DE LA CLASE PARA TESTS DE ASIGNACIONES HOMOGENEAS
+**/
+
+
+
+template<typename U,template<const U> class T,U R,typename S>
+using ASIGNACION_EQ_tt = T<R>&(T<R>::*)(T<R>&);
+
+template<typename U,template<const U> class T,U R,typename S>
+using	operation_order_assignation2eq_tt	=	std::tuple<unsigned int,std::string,ASIGNACION_EQ_tt<U,T,R,S>>;
+
+template<typename U,template<const U> class T,U R,typename S>
+operation_order_assignation2eq_tt<U,T,R,S> assignation_eq_operators(unsigned int i)	{
+	switch(i) {
+		default : return {0,"T<R> object = T<R> object",&(T<R>::operator=)};
+	}
+}
+
+
+/**
+***   FIN DE LA CLASE PARA TESTS DE ASIGNACIONES HOMOGENEAS
+**/
+
+
+/**
+***   COMIENZO DE LA CLASE PARA TESTS DE DISTINTOS CASTS
+**/
+
+
+
+template<typename U,template<const U> class T,U R,typename S>
+using CAST_tt = S (T<R>::*)();
+
+template<typename U,template<const U> class T,U R,typename S>
+using	operation_order_cast_tt	=	std::tuple<unsigned int,std::string,CAST_tt<U,T,R,S>>;
+
+template<typename U,template<const U> class T,U R,typename S>
+operation_order_cast_tt<U,T,R,S> cast(unsigned int i)	{
+	switch(i) {
+		default : return {0,"S(const T<R>&)",&(T<R>::operator S)};
+	}
+}
+
+
+/**
+***   FIN DE LA CLASE PARA TESTS DE DISTINTOS CASTS
+**/
+
+
 //	arithmetic_binary_eq_operators
 //	boolean_binary_eq_operators
 template<class U, template<const U R> class T,const U R, class S>
@@ -847,53 +925,53 @@ public:
     S  operator()(int i,S arg_1,S arg_2){
                 switch(i){
                     case 0 :
-						{	//return (arg_1 + arg_2)%(Limit<U,T,R,S>::MaxPowRadix);
+						{	//return (arg_1 + arg_2)%(CTTI<U,T,R,S>::MaxPowRadix);
 							S ret;
 							ret = arg_1 + arg_2;
-							if(T<R>::with_sign) {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret +=(2*S(Limit<U,T,R,S>::MaxPowRadix));
+							if(CTTI<U,T,R,S>::with_sign) {
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret +=(2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= (2*S(Limit<U,T,R,S>::MaxPowRadix));
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= (2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 							}
 							else {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret += S(Limit<U,T,R,S>::MaxPowRadix);
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret += S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= S(Limit<U,T,R,S>::MaxPowRadix);
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 							return ret;
 						}
                     case 1 :
-						{	//return (arg_1 + arg_2)%(Limit<U,T,R,S>::MaxPowRadix);
+						{	//return (arg_1 + arg_2)%(CTTI<U,T,R,S>::MaxPowRadix);
 							S ret;
 							ret = arg_1 - arg_2;
-							if(T<R>::with_sign) {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret +=(2*S(Limit<U,T,R,S>::MaxPowRadix));
+							if(CTTI<U,T,R,S>::with_sign) {
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret +=(2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= (2*S(Limit<U,T,R,S>::MaxPowRadix));
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= (2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 							}
 							else {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret += S(Limit<U,T,R,S>::MaxPowRadix);
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret += S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= S(Limit<U,T,R,S>::MaxPowRadix);
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 							return ret;
 						}
                     case 2 :
-						return (arg_1 * arg_2)%(Limit<U,T,R,S>::MaxPowRadix);
+						return (arg_1 * arg_2)%(CTTI<U,T,R,S>::MaxPowRadix);
                     case 3 :
-						return ((arg_2==0)||((arg_1==Limit<U,T,R,S>::BeginIndex)&&(arg_2==-1)))?(0):(arg_1 / arg_2);
+						return ((arg_2==0)||((arg_1==CTTI<U,T,R,S>::BeginIndex)&&(arg_2==-1)))?(0):(arg_1 / arg_2);
                     case 4 :
 						return (arg_2==0)?(0):(arg_1 % arg_2);
                     case 5 :
@@ -924,7 +1002,7 @@ public:
             case 1 : arg_1-=arg_2;  break;
             case 2 : arg_1*=arg_2;  break;
             case 3 :{
-						if((arg_2==Zero)||((arg_1==T<R>(Limit<U,T,R,S>::BeginIndex))&&(arg_2.is_m1())))
+						if((arg_2==Zero)||((arg_1==T<R>(CTTI<U,T,R,S>::BeginIndex))&&(arg_2.is_m1())))
 							arg_1=Zero;
 						else
 							arg_1/=arg_2;
@@ -948,48 +1026,48 @@ public:
 			switch(i){
 				case 0 :{
 							arg_1 += arg_2;
-							if (arg_1 < (Limit<U,T,R,S>::BeginIndex)) {
-								if(T<R>::with_sign) {
-									arg_1 +=(2*(Limit<U,T,R,S>::MaxPowRadix));
+							if (arg_1 < (CTTI<U,T,R,S>::BeginIndex)) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 +=(2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 							}
-							else if (arg_1 > (Limit<U,T,R,S>::EndIndex)) {
-								if(T<R>::with_sign) {
-									arg_1 -= (2*(Limit<U,T,R,S>::MaxPowRadix));
+							else if (arg_1 > (CTTI<U,T,R,S>::EndIndex)) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 -= (2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 								else {
-									arg_1 %= (Limit<U,T,R,S>::MaxPowRadix);
+									arg_1 %= (CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 						}
 						break;
 				case 1 :{
 							arg_1 -= arg_2;
-							if (arg_1 < Limit<U,T,R,S>::BeginIndex) {
-								if(T<R>::with_sign) {
-									arg_1 +=(2*(Limit<U,T,R,S>::MaxPowRadix));
+							if (arg_1 < CTTI<U,T,R,S>::BeginIndex) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 +=(2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 								else {
-									arg_1 += (Limit<U,T,R,S>::MaxPowRadix);
+									arg_1 += (CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
-							else if (arg_1 > Limit<U,T,R,S>::EndIndex) {
-								if(T<R>::with_sign) {
-									arg_1 -=(2*(Limit<U,T,R,S>::MaxPowRadix));
+							else if (arg_1 > CTTI<U,T,R,S>::EndIndex) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 -=(2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 								else {
-									arg_1 -= (Limit<U,T,R,S>::MaxPowRadix);
+									arg_1 -= (CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 						}
 						break;
 				case 2 :{
 							arg_1*=arg_2;
-							arg_1%=(Limit<U,T,R,S>::MaxPowRadix);
+							arg_1%=(CTTI<U,T,R,S>::MaxPowRadix);
 						}
 						break;
 				case 3 :{
-							if((arg_2==0)||((arg_1==Limit<U,T,R,S>::BeginIndex)&&(arg_2==-1)))
+							if((arg_2==0)||((arg_1==CTTI<U,T,R,S>::BeginIndex)&&(arg_2==-1)))
 								arg_1=0;
 							else
 								arg_1/=arg_2;
@@ -1036,53 +1114,53 @@ public:
     S  operator()(int i,S arg_1,S arg_2){
                 switch(i){
                     case 0 :
-						{	//return (arg_1 + arg_2)%(Limit<U,T,R,S>::MaxPowRadix);
+						{	//return (arg_1 + arg_2)%(CTTI<U,T,R,S>::MaxPowRadix);
 							S ret;
 							ret = arg_1 + arg_2;
-							if(T<R>::with_sign) {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret +=(2*S(Limit<U,T,R,S>::MaxPowRadix));
+							if(CTTI<U,T,R,S>::with_sign) {
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret +=(2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= (2*S(Limit<U,T,R,S>::MaxPowRadix));
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= (2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 							}
 							else {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret += S(Limit<U,T,R,S>::MaxPowRadix);
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret += S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= S(Limit<U,T,R,S>::MaxPowRadix);
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 							return ret;
 						}
                     case 1 :
-						{	//return (arg_1 + arg_2)%(Limit<U,T,R,S>::MaxPowRadix);
+						{	//return (arg_1 + arg_2)%(CTTI<U,T,R,S>::MaxPowRadix);
 							S ret;
 							ret = arg_1 - arg_2;
-							if(T<R>::with_sign) {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret +=(2*S(Limit<U,T,R,S>::MaxPowRadix));
+							if(CTTI<U,T,R,S>::with_sign) {
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret +=(2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= (2*S(Limit<U,T,R,S>::MaxPowRadix));
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= (2*S(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 							}
 							else {
-								if (ret < S(Limit<U,T,R,S>::BeginIndex)) {
-									ret += S(Limit<U,T,R,S>::MaxPowRadix);
+								if (ret < S(CTTI<U,T,R,S>::BeginIndex)) {
+									ret += S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
-								else if (ret > S(Limit<U,T,R,S>::EndIndex)) {
-									ret -= S(Limit<U,T,R,S>::MaxPowRadix);
+								else if (ret > S(CTTI<U,T,R,S>::EndIndex)) {
+									ret -= S(CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 							return ret;
 						}
                     case 2 :
-						return (arg_1 * arg_2)%(Limit<U,T,R,S>::MaxPowRadix);
+						return (arg_1 * arg_2)%(CTTI<U,T,R,S>::MaxPowRadix);
                     case 3 :
-						return ((arg_2==0)||((arg_1==Limit<U,T,R,S>::BeginIndex)&&(arg_2==-1)))?(0):(arg_1 / arg_2);
+						return ((arg_2==0)||((arg_1==CTTI<U,T,R,S>::BeginIndex)&&(arg_2==-1)))?(0):(arg_1 / arg_2);
                     case 4 :
 						return (arg_2==0)?(0):(arg_1 % arg_2);
                     case 5 :
@@ -1113,7 +1191,7 @@ public:
             case 1 : arg_1-=arg_2;  break;
             case 2 : arg_1*=arg_2;  break;
             case 3 :{
-						if((arg_2==0)||((arg_1==T<R>(Limit<U,T,R,S>::BeginIndex))&&(arg_2==-1)))
+						if((arg_2==0)||((arg_1==T<R>(CTTI<U,T,R,S>::BeginIndex))&&(arg_2==-1)))
 							arg_1=Zero;
 						else
 							arg_1/=arg_2;
@@ -1137,48 +1215,48 @@ public:
 			switch(i){
 				case 0 :{
 							arg_1 += arg_2;
-							if (arg_1 < (Limit<U,T,R,S>::BeginIndex)) {
-								if(T<R>::with_sign) {
-									arg_1 +=(2*(Limit<U,T,R,S>::MaxPowRadix));
+							if (arg_1 < (CTTI<U,T,R,S>::BeginIndex)) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 +=(2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 							}
-							else if (arg_1 > (Limit<U,T,R,S>::EndIndex)) {
-								if(T<R>::with_sign) {
-									arg_1 -= (2*(Limit<U,T,R,S>::MaxPowRadix));
+							else if (arg_1 > (CTTI<U,T,R,S>::EndIndex)) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 -= (2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 								else {
-									arg_1 %= (Limit<U,T,R,S>::MaxPowRadix);
+									arg_1 %= (CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 						}
 						break;
 				case 1 :{
 							arg_1 -= arg_2;
-							if (arg_1 < Limit<U,T,R,S>::BeginIndex) {
-								if(T<R>::with_sign) {
-									arg_1 +=(2*(Limit<U,T,R,S>::MaxPowRadix));
+							if (arg_1 < CTTI<U,T,R,S>::BeginIndex) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 +=(2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 								else {
-									arg_1 += (Limit<U,T,R,S>::MaxPowRadix);
+									arg_1 += (CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
-							else if (arg_1 > Limit<U,T,R,S>::EndIndex) {
-								if(T<R>::with_sign) {
-									arg_1 -=(2*(Limit<U,T,R,S>::MaxPowRadix));
+							else if (arg_1 > CTTI<U,T,R,S>::EndIndex) {
+								if(CTTI<U,T,R,S>::with_sign) {
+									arg_1 -=(2*(CTTI<U,T,R,S>::MaxPowRadix));
 								}
 								else {
-									arg_1 -= (Limit<U,T,R,S>::MaxPowRadix);
+									arg_1 -= (CTTI<U,T,R,S>::MaxPowRadix);
 								}
 							}
 						}
 						break;
 				case 2 :{
 							arg_1*=arg_2;
-							arg_1%=(Limit<U,T,R,S>::MaxPowRadix);
+							arg_1%=(CTTI<U,T,R,S>::MaxPowRadix);
 						}
 						break;
 				case 3 :{
-							if((arg_2==0)||((arg_1==Limit<U,T,R,S>::BeginIndex)&&(arg_2==-1)))
+							if((arg_2==0)||((arg_1==CTTI<U,T,R,S>::BeginIndex)&&(arg_2==-1)))
 								arg_1=0;
 							else
 								arg_1/=arg_2;
