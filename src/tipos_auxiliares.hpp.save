@@ -1,0 +1,108 @@
+#ifndef TIPOS_AUXILIARES_HPP_INCLUDED
+#define TIPOS_AUXILIARES_HPP_INCLUDED
+
+#ifndef TIPOS_BASICOS__HPP__INCLUDED
+	#include "tipos_basicos.hpp"
+	#define TIPOS_BASICOS__HPP__INCLUDED
+
+
+namespace NumRepr {
+
+enum class binop_e {add,sub,mult,div,rem,fediv,other};
+
+namespace auxiliary_types {
+/// auxiliary types for digit type and its operations
+template<typename T,binop_e oper>
+struct resbinop_t;
+
+template<typename T>
+struct resbinop_t<T,binop_e::add> {
+	T						content;
+	T						carry;
+};
+
+template<typename T>
+struct resbinop_t<T,binop_e::sub> {
+	T						content;
+	T						borrow;
+};
+
+template<typename T>
+struct resbinop_t<T,binop_e::mult> {
+	T			low_content;
+	T			high_content;
+};
+
+template<typename T>
+struct resbinop_t<T,binop_e::fediv> {
+	T			quotient;
+	T			remainder;
+	bool	no_div_by_0;
+};
+
+template<typename T>
+struct resbinop_t<T,binop_e::div> {
+	T			quotient;
+	bool	no_div_by_0;
+};
+
+template<typename T>
+struct resbinop_t<T,binop_e::rem> {
+	T			remainder;
+	bool	no_div_by_0;
+};
+
+template<typename T,binop_e oper,size_t N>
+	requires (N>0)
+struct result_operation_t;
+
+template<typename T,size_t N>
+	requires (N > 0)
+struct result_operation_t<T,binop_e::add,N> {
+	std::array<T,N>			result_content_low;
+	T										carry;
+	bool								good_result;
+};
+
+template<typename T,size_t N>
+	requires (N > 0)
+struct result_operation_t<T,binop_e::sub,N> {
+	std::array<T,N>			result_content_low;
+	T										borrow;
+	bool								good_result;
+};
+
+template<typename T,size_t N>
+	requires (N > 0)
+struct result_operation_t<T,binop_e::mult,N> {
+	std::array<T,N>			result_content_low;
+	std::array<T,N>			result_content_high;
+	bool								good_result;
+};
+
+template<typename T,size_t N>
+	requires (N > 0)
+struct result_operation_t<T,binop_e::fediv,N> {
+	std::array<T,N>			result_content_quotient;
+	std::array<T,N>			result_content_remainder;
+	bool								good_result;
+};
+
+template<typename T,size_t N>
+	requires (N > 0)
+struct result_operation_t<T,binop_e::div,N> {
+	std::array<T,N>			result_content_quotient;
+	bool								good_result;
+};
+
+template<typename T,size_t N>
+	requires (N > 0)
+struct result_operation_t<T,binop_e::rem,N> {
+	std::array<T,N>			result_content_remainder;
+	bool								good_result;
+};
+}
+}
+
+
+#endif // TIPOS_AUXILIARES_HPP_INCLUDED

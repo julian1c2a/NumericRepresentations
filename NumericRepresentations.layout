@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="src\nat_num_t.hpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="51076" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\int_reg_digs_t.hpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3601" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\pruebas_dig_t.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="161" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\tipos_auxiliares.hpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3119" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="0" />
+			<Collapse line="5" />
+			<Collapse line="16" />
+			<Collapse line="18" />
+			<Collapse line="21" />
+			<Collapse line="24" />
+			<Collapse line="27" />
+			<Collapse line="33" />
+			<Collapse line="39" />
+			<Collapse line="45" />
+			<Collapse line="51" />
+			<Collapse line="57" />
+			<Collapse line="64" />
+			<Collapse line="70" />
+			<Collapse line="81" />
+			<Collapse line="89" />
+			<Collapse line="97" />
+			<Collapse line="105" />
+			<Collapse line="113" />
+			<Collapse line="120" />
+		</Folding>
+	</File>
+	<File name="src\reg_digs_t.hpp" open="1" top="1" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="346" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\interfaz_dig_t.doc" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="333" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\tipos_basicos.hpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="27610" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\natrat_fixed_reg_t.hpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="67602" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\base_num_t.hpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="19" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\funciones_auxiliares.hpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2333" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="0" />
+			<Collapse line="5" />
+			<Collapse line="9" />
+			<Collapse line="19" />
+			<Collapse line="29" />
+			<Collapse line="41" />
+			<Collapse line="48" />
+			<Collapse line="52" />
+			<Collapse line="56" />
+			<Collapse line="70" />
+			<Collapse line="73" />
+			<Collapse line="76" />
+			<Collapse line="88" />
+			<Collapse line="91" />
+			<Collapse line="94" />
+			<Collapse line="102" />
+			<Collapse line="105" />
+			<Collapse line="115" />
+		</Folding>
+	</File>
+	<File name="src\memory_handler.hpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\documentacion.doc" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\utilities.hpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5398" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="0" />
+			<Collapse line="5" />
+			<Collapse line="37" />
+			<Collapse line="40" />
+			<Collapse line="44" />
+			<Collapse line="51" />
+			<Collapse line="77" />
+			<Collapse line="80" />
+			<Collapse line="86" />
+			<Collapse line="90" />
+			<Collapse line="94" />
+			<Collapse line="101" />
+			<Collapse line="106" />
+			<Collapse line="110" />
+			<Collapse line="118" />
+			<Collapse line="129" />
+			<Collapse line="134" />
+			<Collapse line="140" />
+			<Collapse line="142" />
+			<Collapse line="152" />
+			<Collapse line="156" />
+			<Collapse line="160" />
+		</Folding>
+	</File>
+	<File name="src\nat_reg_digs_t.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\dig_t.hpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="32364" topLine="1082" />
+		</Cursor>
+		<Folding>
+			<Collapse line="156" />
+			<Collapse line="159" />
+			<Collapse line="162" />
+			<Collapse line="165" />
+			<Collapse line="168" />
+			<Collapse line="172" />
+			<Collapse line="175" />
+			<Collapse line="178" />
+			<Collapse line="211" />
+			<Collapse line="219" />
+			<Collapse line="228" />
+			<Collapse line="237" />
+			<Collapse line="326" />
+			<Collapse line="349" />
+			<Collapse line="517" />
+			<Collapse line="521" />
+			<Collapse line="524" />
+			<Collapse line="622" />
+			<Collapse line="706" />
+			<Collapse line="728" />
+			<Collapse line="793" />
+			<Collapse line="800" />
+			<Collapse line="806" />
+			<Collapse line="1116" />
+			<Collapse line="1127" />
+			<Collapse line="1239" />
+			<Collapse line="1246" />
+			<Collapse line="1257" />
+			<Collapse line="1270" />
+			<Collapse line="1281" />
+		</Folding>
+	</File>
+	<File name="src\int_num_t.hpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="175" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\test_dig_t.hpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="321" topLine="0" />
+		</Cursor>
+	</File>
+	<EditorTabsLayout layout="095dfbf06378e13500002ee800000002=0;NumericRepresentations:src\dig_t.hpp,1;NumericRepresentations:src\utilities.hpp,2;NumericRepresentations:src\test_dig_t.hpp,3;NumericRepresentations:src\nat_reg_digs_t.hpp,4;NumericRepresentations:src\memory_handler.hpp,5;NumericRepresentations:src\tipos_basicos.hpp,6;NumericRepresentations:src\int_reg_digs_t.hpp,7;NumericRepresentations:src\pruebas_dig_t.cpp,8;NumericRepresentations:src\documentacion.doc,9;NumericRepresentations:src\tipos_auxiliares.hpp,10;NumericRepresentations:src\funciones_auxiliares.hpp,11;NumericRepresentations:src\interfaz_dig_t.doc,12;NumericRepresentations:src\natrat_fixed_reg_t.hpp,13;NumericRepresentations:src\nat_num_t.hpp,14;NumericRepresentations:src\base_num_t.hpp,15;NumericRepresentations:src\int_num_t.hpp,*16;NumericRepresentations:src\reg_digs_t.hpp@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=913;besth=464;minw=913;minh=464;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=095dfbf06378e13500002ee800000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+	<Target name="Debug" top="src\reg_digs_t.hpp">
+		<File name="src\dig_t.hpp" />
+		<File name="src\utilities.hpp" />
+		<File name="src\test_dig_t.hpp" />
+		<File name="src\nat_reg_digs_t.hpp" />
+		<File name="src\memory_handler.hpp" />
+		<File name="src\tipos_basicos.hpp" />
+		<File name="src\int_reg_digs_t.hpp" />
+		<File name="src\pruebas_dig_t.cpp" />
+		<File name="src\documentacion.doc" />
+		<File name="src\tipos_auxiliares.hpp" />
+		<File name="src\funciones_auxiliares.hpp" />
+		<File name="src\interfaz_dig_t.doc" />
+		<File name="src\natrat_fixed_reg_t.hpp" />
+		<File name="src\nat_num_t.hpp" />
+		<File name="src\base_num_t.hpp" />
+		<File name="src\int_num_t.hpp" />
+		<File name="src\reg_digs_t.hpp" />
+	</Target>
+</CodeBlocks_layout_file>

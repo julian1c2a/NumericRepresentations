@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<BrowseTracker_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="src\nat_num_t.hpp" open="1" top="0" tabpos="14">
+		<Cursor position="51076" topLine="0" />
+	</File>
+	<File name="src\int_reg_digs_t.hpp" open="1" top="0" tabpos="7">
+		<Cursor position="3601" topLine="0" />
+	</File>
+	<File name="src\pruebas_dig_t.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="161" topLine="0" />
+	</File>
+	<File name="src\tipos_auxiliares.hpp" open="1" top="0" tabpos="10">
+		<Cursor position="3119" topLine="0" />
+		<BrowseMarks positions="1073" />
+	</File>
+	<File name="src\reg_digs_t.hpp" open="1" top="1" tabpos="17">
+		<Cursor position="346" topLine="0" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="src\interfaz_dig_t.doc" open="1" top="0" tabpos="12">
+		<Cursor position="333" topLine="0" />
+	</File>
+	<File name="src\tipos_basicos.hpp" open="1" top="0" tabpos="6">
+		<Cursor position="27610" topLine="0" />
+	</File>
+	<File name="src\natrat_fixed_reg_t.hpp" open="1" top="0" tabpos="13">
+		<Cursor position="67602" topLine="0" />
+	</File>
+	<File name="src\base_num_t.hpp" open="1" top="0" tabpos="15">
+		<Cursor position="19" topLine="0" />
+	</File>
+	<File name="src\funciones_auxiliares.hpp" open="1" top="0" tabpos="11">
+		<Cursor position="2333" topLine="0" />
+	</File>
+	<File name="src\memory_handler.hpp" open="1" top="0" tabpos="5">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src\documentacion.doc" open="1" top="0" tabpos="9">
+		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="2227" />
+	</File>
+	<File name="src\utilities.hpp" open="1" top="0" tabpos="2">
+		<Cursor position="5398" topLine="0" />
+	</File>
+	<File name="src\nat_reg_digs_t.hpp" open="1" top="0" tabpos="4">
+		<Cursor position="151" topLine="0" />
+		<BrowseMarks positions="3501,15018,15044" />
+	</File>
+	<File name="src\dig_t.hpp" open="1" top="0" tabpos="1">
+		<Cursor position="32364" topLine="1082" />
+		<BrowseMarks positions="14893,32477" />
+	</File>
+	<File name="src\int_num_t.hpp" open="1" top="0" tabpos="16">
+		<Cursor position="175" topLine="0" />
+	</File>
+	<File name="src\test_dig_t.hpp" open="1" top="0" tabpos="3">
+		<Cursor position="321" topLine="0" />
+	</File>
+</BrowseTracker_layout_file>
