@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="NumericRepresentations" Version="11000">
+  <VirtualDirectory Name="src">
+    <File Name="src/pruebas_dig_t.cpp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="resource">
+    <File Name="src/interfaz_dig_t.pdf" ExcludeProjConfig="Debug;"/>
+    <File Name="src/interfaz_dig_t.doc" ExcludeProjConfig="Debug;"/>
+    <File Name="src/documentacion.doc" ExcludeProjConfig="Debug;"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="include">
+    <File Name="src/rat_fixed_reg_t.hpp" ExcludeProjConfig="Debug;"/>
+    <File Name="src/auxiliary_types.hpp"/>
+    <File Name="src/auxiliary_functions.hpp"/>
+    <File Name="src/basic_types.hpp"/>
+    <File Name="src/utilities.hpp"/>
+    <File Name="src/test_dig_t.hpp" ExcludeProjConfig="Debug;"/>
+    <File Name="src/reg_digs_t.hpp"/>
+    <File Name="src/natrat_fixed_reg_t.hpp" ExcludeProjConfig="Debug;"/>
+    <File Name="src/nat_reg_digs_t.hpp"/>
+    <File Name="src/nat_num_t.hpp" ExcludeProjConfig="Debug;"/>
+    <File Name="src/memory_handler.hpp" ExcludeProjConfig="Debug;"/>
+    <File Name="src/int_reg_digs_t.hpp"/>
+    <File Name="src/int_num_t.hpp" ExcludeProjConfig="Debug;"/>
+    <File Name="src/dig_t.hpp"/>
+    <File Name="src/base_num_t.hpp" ExcludeProjConfig="Debug;"/>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="MinGW 64bit ( MSYS2 64bit )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -Wall " C_Options="-m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -Wall " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-static-libstdc++ -static-libgcc -static -m64 " Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="bin/Debug/NumericRepresentations" IntermediateDirectory="./Debug" Command="./NumericRepresentations" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/Debug" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Workspace Settings&gt;" DbgSetName="&lt;Use Global Settings&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="MinGW 64bit ( MSYS2 64bit )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-O2 -m64 -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -Wall " C_Options="-O2 -m64 -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -Wall " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2 -s -static-libstdc++ -static-libgcc -static -m64 " Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="bin/Release/NumericRepresentations" IntermediateDirectory="./Debug" Command="./NumericRepresentations" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/Release" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Workspace Settings&gt;" DbgSetName="&lt;Use Global Settings&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
