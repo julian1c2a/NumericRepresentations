@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tabgroup Name="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\.codelite\tabgroups\NumericRepresentations">
+  <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\.codelite\tabgroups\NumericRepresentations" Name="m_TabgroupName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\basic_types.hpp" Name="FileName"/>
+      <int Value="420" Name="FirstVisibleLine"/>
+      <int Value="432" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="17" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\auxiliary_functions.hpp" Name="FileName"/>
+      <int Value="117" Name="FirstVisibleLine"/>
+      <int Value="123" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\auxiliary_types.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="1" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\utilities.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\natrat_fixed_reg_t.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="3" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp" Name="FileName"/>
+      <int Value="3724" Name="FirstVisibleLine"/>
+      <int Value="3737" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\nat_num_t.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\memory_handler.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="11" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\rat_fixed_reg_t.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="4" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+</Tabgroup>

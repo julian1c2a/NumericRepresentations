@@ -1,8 +1,8 @@
 #ifndef REG_DIGS_T_HPP_INCLUDED
 #define REG_DIGS_T_HPP_INCLUDED
 
-#include "dig_t.hpp"
-#include "utilities.hpp"
+#include "src/dig_t.hpp"
+#include "src/utilities.hpp"
 
 namespace NumRepr {
   using type_traits::allowable_base_type_c;

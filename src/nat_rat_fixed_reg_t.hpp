@@ -1,19 +1,14 @@
-#ifndef NATRAT_FIXED_REG_T_HPP_INCLUDED
-#define NATRAT_FIXED_REG_T_HPP_INCLUDED
+#ifndef NAT_RAT_FIXED_REG_T_HPP_INCLUDED
+#define NAT_RAT_FIXED_REG_T_HPP_INCLUDED
 
-
-		/// RENOMBRAR EL TIPO A natrat_fixed_reg_t
-		/// RENOMBRAR EL ARCHIVO A natrat_fixed_reg_t.hpp
-
-
-#include "intrat_fixed_reg_t.hpp"
+#include "int_reg_digs_t.hpp"
 #include "utilities.hpp"
 
 namespace NumRepr {
 
 template<type_traits::allowable_base_type_c UINT_T,UINT_T B,std::size_t LE,std::size_t LF>
 	requires (type_traits::suitable_base<UINT_T,B>() && (LE>0))
-struct pfx_rat_reg_digs_t {
+struct nat_rat_fixed_reg_t {
 	using dig_t = dig_t<UINT_T,B>;
 	template<std::size_t NE,std::size_t NF>
 	using base_NEXNF_t = std::array<dig_t<UINT_T,B>,NE+NF>;
@@ -2445,4 +2440,4 @@ public:
 	}
 
 }
-#endif // NATRAT_FIXED_REG_T_HPP_INCLUDED
+#endif // NAT_RAT_FIXED_REG_T_HPP_INCLUDED

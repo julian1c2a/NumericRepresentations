@@ -1,5 +1,5 @@
-#ifndef INT_NUM_T__HPP__INCLUDED
-#define INT_NUM_T__HPP__INCLUDED
+#ifndef INT_NUM_T_HPP_INCLUDED
+#define INT_NUM_T_HPP_INCLUDED
 
 #include "dig_t.hpp"
 #include "int_reg_digs_t.hpp"

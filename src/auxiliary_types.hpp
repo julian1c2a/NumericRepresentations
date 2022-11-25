@@ -1,7 +1,7 @@
-#ifndef TIPOS_AUXILIARES_HPP_INCLUDED
-#define TIPOS_AUXILIARES_HPP_INCLUDED
+#ifndef AUXILIARY_TYPES_HPP_INCLUDED
+#define AUXILIARY_TYPES_HPP_INCLUDED
 
-#include "tipos_basicos.hpp"
+#include "basic_types.hpp"
 
 namespace NumRepr {
 
@@ -126,4 +126,4 @@ struct result_operation_t<T,binop_e::rem,N> {
 }
 
 
-#endif // TIPOS_AUXILIARES_HPP_INCLUDED
+#endif // AUXILIARY_TYPES_HPP_INCLUDED

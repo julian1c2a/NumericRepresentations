@@ -3,7 +3,9 @@
 
 #include <tuple>
 #include <array>
-namespace utility {
+#include "src/basic_types.hpp"
+
+namespace utilities {
 template<NumRepr::type_traits::unsigned_integral_c UINT_T>
 using uintspair 	= typename std::array<UINT_T,2>;
 template<NumRepr::type_traits::unsigned_integral_c UINT_T,UINT_T B>
@@ -38,13 +40,9 @@ template<typename...Ts>
 struct pack2tuple {
 	using tuple_type = std::tuple<Ts...>;
 	static constexpr unsigned pack_size() noexcept {return (sizeof...(Ts));}
-	constexpr tuple_type&& operator()(Ts&& ...args) noexcept {
+	constexpr tuple_type operator()(Ts&& ...args) noexcept {
 		tuple_type  content = std::make_tuple(std::forward(args...));
 		return  std::move(content);
-	}
-	constexpr tuple_type&& operator()(const Ts& ...args) const noexcept {
-		tuple_type  content = std::make_tuple(std::forward(args...));
-		return  content;
 	}
 	template<unsigned K>
 	using elem_type =  typename std::tuple_element<K,tuple_type>::type;
@@ -67,7 +65,6 @@ struct pack2tuple {
 /// get<0>(2,"xyz",3.14159) == 2;
 /// get<1>(2,"xyz",3.14159) == "xyz";
 /// get<2>(2,"xyz",3.14159) == 3.14159;
-
 
 /// tuple_obj == mi_tupla(2,"xyz",3.14159) == {2,"xyz",3.14159}
 /// head of tuple_obj is {2}
@@ -116,7 +113,7 @@ struct pack2array {
 	using elem_type =  typename pack2tuple<Ts...>::elem_type<0>;
 
 	template<std::size_t J>
-	static constexpr elem_type&& get(Ts&& ...args) noexcept {
+	static constexpr elem_type get(Ts&& ...args) noexcept {
 		constexpr array_type  content = {std::forward(args...)};
 		constexpr elem_type ret{std::get<J>(std::forward(content))};
 		return std::move(ret);
@@ -133,7 +130,7 @@ struct pack2array {
 		std::index_sequence<I...>
 	) noexcept
 	{
-		( (iarray[I] = std::get<I>( std::make_tuple(args...) )) , ...);
+		( ( iarray[I] = std::get<I>( std::make_tuple(args...) ) ) , ...);
 		return;
 	}
 

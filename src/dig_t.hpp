@@ -1,8 +1,8 @@
 #ifndef DIG_T_HPP_INCLUDED
 #define DIG_T_HPP_INCLUDED
 
-#include "tipos_auxiliares.hpp"
-#include "funciones_auxiliares.hpp"
+#include "auxiliary_functions.hpp"
+#include "auxiliary_types.hpp"
 
 namespace NumRepr {
 using type_traits::allowable_base_type_c;
@@ -141,7 +141,7 @@ public:
 	}
 	////////////////////////////////////////////////////////////////////////////
 	inline static consteval dig_t dig_max()  		noexcept {return dig_t(B-1u);};
-	inline static consteval dig_t dig_submax()	    noexcept {return dig_t(B-2u);}
+	inline static consteval dig_t dig_submax()	noexcept {return dig_t(B-2u);}
 	inline static consteval dig_t dig_Bm1()  		noexcept {return dig_t(B-1u);}
 	inline static consteval dig_t dig_Bm2()			noexcept {return dig_t(B-2u);}
 	inline static consteval dig_t dig_0()  			noexcept {return dig_t();}

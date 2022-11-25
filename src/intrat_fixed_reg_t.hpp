@@ -1,7 +1,0 @@
-#ifndef INTRAT_FIXED_REG_T_HPP_INCLUDED
-#define INTRAT_FIXED_REG_T_HPP_INCLUDED
-
-		/// RENOMBRAR EL TIPO A intrat_fixed_reg_t
-		/// RENOMBRAR EL ARCHIVO A intrat_fixed_reg_t.hpp
-
-#endif // INTRAT_FIXED_REG_T_HPP_INCLUDED

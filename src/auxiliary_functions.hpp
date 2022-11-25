@@ -1,7 +1,7 @@
-#ifndef FUNCIONES_AUXILIARES_HPP_INCLUDED
-#define FUNCIONES_AUXILIARES_HPP_INCLUDED
+#ifndef AUXILIARY_FUNCTIONS_HPP_INCLUDED
+#define AUXILIARY_FUNCTIONS_HPP_INCLUDED
 
-#include "tipos_auxiliares.hpp"
+#include "auxiliary_types.hpp"
 
 namespace NumRepr {
 
@@ -121,4 +121,4 @@ namespace auxiliary_functions {
 	}
 }
 }
-#endif // FUNCIONES_AUXILIARES__HPP__INCLUDED
+#endif // AUXILIARY_FUNCTIONS_HPP_INCLUDED

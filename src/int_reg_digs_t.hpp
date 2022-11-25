@@ -1,10 +1,14 @@
-#ifndef int_reg_digs_t__hpp
-#define int_reg_digs_t__hpp
+#ifndef INT_REG_DIGS_T_HPP
+#define INT_REG_DIGS_T_HPP
 
 #include "nat_reg_digs_t.hpp"
+
 namespace NumRepr {
 
-template<type_traits::allowable_base_type_c UINT_T,UINT_T B,std::size_t L>
+using type_traits::allowable_base_type_c;
+using type_traits::suitable_base;
+
+template<allowable_base_type_c UINT_T,UINT_T B,size_t L>
 	requires (type_traits::suitable_base<UINT_T,B>() && (L>0))
 struct int_reg_digs_t {
 /// NECESITAMOS:

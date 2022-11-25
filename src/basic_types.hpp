@@ -18,8 +18,8 @@
   <memory>, unique_ptr       		        <memory>, auto_ptr
 */
 
-#ifndef TIPOS_BASICOS_HPP_INDLUDED
-#define TIPOS_BASICOS_HPP_INDLUDED
+#ifndef BASIC_TYPES_HPP_INDLUDED
+#define BASIC_TYPES_HPP_INDLUDED
 
 #include <cstdint>
 
@@ -28,8 +28,8 @@
 #include <compare>
 #include <concepts>
 
-#include <istream>
-#include <ostream>
+//#include <istream>
+//#include <ostream>
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -156,7 +156,7 @@ namespace type_traits {
 			std::is_same_v<UINT_T,ulint>	||
 			std::is_same_v<UINT_T,ullint>	;
 
-	template<typename UINT_T>
+  template<typename UINT_T>
 	concept allowable_unsigned_type_c =         // concept on UINT_T
 			std::is_same_v<UINT_T,uint8_t>	||
 			std::is_same_v<UINT_T,uint16_t>	||
@@ -429,7 +429,7 @@ namespace type_traits {
 		return static_cast<UINT_T>(2u);
 	}
 
-	template<typename UINT_T,UINT_T B>
+  template<typename UINT_T,UINT_T B>
 	consteval bool base_geqt_2() {
 		return (B >= base_2<UINT_T>());
 	}
@@ -760,4 +760,4 @@ noexcept {
 }
 
 }
-#endif //TIPOS_BASICOS__HPP__INCLUDED
+#endif // BASIC_TYPES_HPP_INCLUDED

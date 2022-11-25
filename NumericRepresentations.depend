@@ -37,13 +37,13 @@
 1668675582 c:\users\julian\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1654800429 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1669382474 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"dig_t.hpp"
 	<typeinfo>
 
-1668784993 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
-	"tipos_auxiliares.hpp"
-	"funciones_auxiliares.hpp"
+1669380902 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
+	"auxiliary_functions.hpp"
+	"auxiliary_types.hpp"
 
 1668745298 c:\users\julia\dropbox\github\numericrepresentations\src\tipos_auxiliares.hpp
 	"tipos_basicos.hpp"
@@ -74,4 +74,32 @@
 
 1668745867 c:\users\julia\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
+
+1669382485 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
+	"auxiliary_types.hpp"
+
+1669382496 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
+	"basic_types.hpp"
+
+1669380955 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
+	<cstdint>
+	<type_traits>
+	<optional>
+	<compare>
+	<concepts>
+	<iostream>
+	<cstring>
+	<string>
+	<sstream>
+	<fstream>
+	<array>
+	<vector>
+	<list>
+	<map>
+	<climits>
+	<numeric>
+	<limits>
+	<cmath>
+	<iterator>
+	<functional>
 
