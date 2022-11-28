@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1654800429 source:c:\users\julian\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1669382474 source:c:\users\julian\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"dig_t.hpp"
 	<typeinfo>
 
-1668674901 c:\users\julian\dropbox\github\numericrepresentations\src\dig_t.hpp
-	"tipos_auxiliares.hpp"
-	"funciones_auxiliares.hpp"
+1669380902 c:\users\julian\dropbox\github\numericrepresentations\src\dig_t.hpp
+	"auxiliary_functions.hpp"
+	"auxiliary_types.hpp"
 
 1668675412 c:\users\julian\dropbox\github\numericrepresentations\src\tipos_auxiliares.hpp
 	"tipos_basicos.hpp"
@@ -82,6 +82,34 @@
 	"basic_types.hpp"
 
 1669380955 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
+	<cstdint>
+	<type_traits>
+	<optional>
+	<compare>
+	<concepts>
+	<iostream>
+	<cstring>
+	<string>
+	<sstream>
+	<fstream>
+	<array>
+	<vector>
+	<list>
+	<map>
+	<climits>
+	<numeric>
+	<limits>
+	<cmath>
+	<iterator>
+	<functional>
+
+1669382485 c:\users\julian\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
+	"auxiliary_types.hpp"
+
+1669382496 c:\users\julian\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
+	"basic_types.hpp"
+
+1669380955 c:\users\julian\dropbox\github\numericrepresentations\src\basic_types.hpp
 	<cstdint>
 	<type_traits>
 	<optional>

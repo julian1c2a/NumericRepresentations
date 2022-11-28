@@ -1,0 +1,14 @@
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:449: warning: explicit link request to 'B23' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:432: warning: explicit link request to 'B23' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:385: warning: explicit link request to 'B13' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:397: warning: explicit link request to 'B16' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:149: warning: explicit link request to 'B10' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:155: warning: explicit link request to 'B10' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:161: warning: explicit link request to 'B10' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/nat_rat_fixed_reg_t.hpp:312: warning: explicit link request to 'B10' could not be resolved
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp:289: warning: Unsupported xml/html tag <function> found
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp:289: warning: Unsupported xml/html tag </function> found
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp:289: warning: argument 'const' of command @param is not found in the argument list of NumRepr::reg_digs_t< UINT_T, B, L >::make_base_t(const std::initializer_list< dig_t > &larg)
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp:289: warning: argument 'std' of command @param is not found in the argument list of NumRepr::reg_digs_t< UINT_T, B, L >::make_base_t(const std::initializer_list< dig_t > &larg)
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp:289: warning: argument 'initializer_list' of command @param is not found in the argument list of NumRepr::reg_digs_t< UINT_T, B, L >::make_base_t(const std::initializer_list< dig_t > &larg)
+C:/Users/Julian/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp:289: warning: argument 'dig_t' of command @param is not found in the argument list of NumRepr::reg_digs_t< UINT_T, B, L >::make_base_t(const std::initializer_list< dig_t > &larg)

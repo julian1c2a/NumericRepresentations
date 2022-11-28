@@ -43,7 +43,7 @@ struct nat_reg_digs_t {
 
 	template<size_t N>
 		requires (N>0)
-	using reg_ints_t			= typename std::array<UINT_T,N>;
+	using reg_ints_t		= typename std::array<UINT_T,N>;
 	template<size_t N>
 		requires (N>0)
 	using reg_suints_t		= typename std::array<SIG_UINT_T,N>;
@@ -1615,10 +1615,10 @@ public:
 								/****************************/
 ///<! TODO : ME HE QUEDADO REPASANDO POR AQUI	31/23/18/11/2022
 private:
-	///< PREINCREMENT(OBJ) == ++OBJ SOLO QUE DEVUELVE CARRY TAMBIEN
+	///< PREINCREMENT(OBJ) == ++OBJ SOLO QUE DEVUELVE CARRY TAMBIÉN
 	///< PREINCREMENT(OBJ) -> CONDICIONALMENTE
 	///< 			BIEN RES_BASE_OP_T 	(con CARRY),
-	///<			BIEN BASE_T 				(sin CARRY)
+	///<			BIEN BASE_T 		(sin CARRY)
 
 	///<			result_content_low
 	///<			result_content_high
@@ -1635,7 +1635,7 @@ private:
 					with_result_type,
 							res_base_op_t<binop_e::add>,
 							const base_t &
-			>																		noexcept
+			>		noexcept
 	{
 		if constexpr (with_result_type) { /// true == tipo resultado
 			/// CREAMOS EL RETORNO RET DE TIPO RESULTADO
