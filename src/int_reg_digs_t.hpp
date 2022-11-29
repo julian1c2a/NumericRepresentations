@@ -10,7 +10,7 @@ using type_traits::suitable_base;
 
 template<allowable_base_type_c UINT_T,UINT_T B,size_t L>
 	requires (type_traits::suitable_base<UINT_T,B>() && (L>0))
-struct int_reg_digs_t {
+struct int_reg_digs_t : protected nat_reg_digs_t<UINT_T,B,L> {
 /// NECESITAMOS:
 ///			B = BASE EN LA QUE TRABAJAMOS
 ///					=> TIPO BASE 	UINT_T
@@ -18,17 +18,17 @@ struct int_reg_digs_t {
 ///					=> TIPO				SIG_SINT_T  TIPO CON SIGNO DONDE CABE UN UINT_T
 ///			L = LONGITUD DEL MODULO DEL NUMERO EN DIGITOS
 ///			DIGITO EXTRA PARA EL SIGNO
-    using SIG_UINT_T 		= typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
+	using SIG_UINT_T 		= typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
 	using SIG_SINT_T 		= typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
-	using dig_t 				    = dig_t<UINT_T,B>;
+	using dig_t 				= dig_t<UINT_T,B>;
 	template<std::size_t N>
 		requires (N>0)
-	using base_2_N_t      	= std::array<dig_t,N>;
+	using base_2_N_t      = std::array<dig_t,N>;
 	using base_2_t				= base_2_N_t<L>;
 	template<std::size_t N>
 		requires (N>0)
 	using base_N_t			= nat_reg_digs_t<UINT_T,B,N>;
-	using base_t      			= base_N_t<L>;
+	using base_t      	= base_N_t<L>;
 	template<std::size_t N>
 		requires (N>0)
 	using int_reg_N_digs_t	= int_reg_digs_t<UINT_T,B,N>;
@@ -2100,9 +2100,262 @@ public:
 					/*													*/
 					/****************************/
 
+	/// std::istream operator >> int_reg_digs_t /// pasamos error a std::cerr
+	/// get_reg_digs_t(std::istream,std::ostream,int_reg_digs_t)
+	///
+	/// estados regulares st_00 st_01 st_02 st_03 st_04 st_05 st_06 st_07 st_08
+	///										st_09 st_10 st_11 st_12
+	/// estados error sintáctico
+	///										st_err_00 st_err_01 st_err_02 st_err_03 st_err_04
+	///										st_err_05 st_err_06 st_err_07 st_err_08 st_err_09
+	///										st_err_10 st_err_11
+	/// estados error semántico
+	///										st_sem_00 st_sem_01 st_sem_02 st_sem_03 st_sem_04
+	///										st_sem_05 st_sem_06 st_sem_07 st_sem_08 st_sem_09
+	///										st_sem_10 st_sem_11 st_sem_12
+	namespace lex{
+	enum class reglexst_e : uint16_t {
+		st_00 = 0,st_01 = 1,st_02 = 2,st_03 = 3 ,st_04 = 4 ,st_05 = 5 ,
+		st_06 = 6,st_07 = 7,st_08 = 8,st_09 = 9 ,st_10 = 10,st_11 = 11,
+		st_12 = 12
+	};
+	enum class sintaxerrlexst_e : uint16_t {
+		st_err_00 = 256,st_err_01 = 257,st_err_02 = 258,
+		st_err_03 = 259,st_err_04 = 260,st_err_05 = 261,
+		st_err_06 = 262,st_err_07 = 263,st_err_08 = 264,
+		st_err_09 = 265,st_err_10 = 266,st_err_11 = 267
+	};
+	enum class semerrlexst_e : uint16_t {
+		st_sem_00 = 4096,st_sem_01 = 4097,st_sem_02 = 4098,st_sem_03 = 4099,
+		st_sem_04 = 4100,st_sem_05 = 4101,st_sem_06 = 4102,st_sem_07 = 4103,
+		st_sem_08 = 4104,st_sem_09 = 4105,st_sem_10 = 4106,st_sem_11 = 4107,
+		st_sem_12 = 4108
+	};
+	enum class lexst_e : reglexst_e,sintaxerrlexst_e,semerrlexst_e {
+		reg_00 = reglexst_e::st_00,
+		reg_01 = reglexst_e::st_01,
+		reg_02 = reglexst_e::st_02,
+		reg_03 = reglexst_e::st_03,
+		reg_04 = reglexst_e::st_04,
+		reg_05 = reglexst_e::st_05,
+		reg_06 = reglexst_e::st_06,
+		reg_07 = reglexst_e::st_07,
+		reg_08 = reglexst_e::st_08,
+		reg_09 = reglexst_e::st_09,
+		reg_10 = reglexst_e::st_10,
+		reg_11 = reglexst_e::st_11,
+		reg_12 = reglexst_e::st_12,
+		err_00 = sintaxerrlexst_e::st_err_00,
+		err_01 = sintaxerrlexst_e::st_err_01,
+		err_02 = sintaxerrlexst_e::st_err_02,
+		err_03 = sintaxerrlexst_e::st_err_03,
+		err_04 = sintaxerrlexst_e::st_err_04,
+		err_05 = sintaxerrlexst_e::st_err_05,
+		err_06 = sintaxerrlexst_e::st_err_06,
+		err_07 = sintaxerrlexst_e::st_err_07,
+		err_08 = sintaxerrlexst_e::st_err_08,
+		err_09 = sintaxerrlexst_e::st_err_09,
+		err_10 = sintaxerrlexst_e::st_err_10,
+		err_11 = sintaxerrlexst_e::st_err_11,
+		sem_00 = semerrlexst_e::st_sem_00,
+		sem_01 = semerrlexst_e::st_sem_01,
+		sem_02 = semerrlexst_e::st_sem_02,
+		sem_03 = semerrlexst_e::st_sem_03,
+		sem_04 = semerrlexst_e::st_sem_04,
+		sem_05 = semerrlexst_e::st_sem_05,
+		sem_06 = semerrlexst_e::st_sem_06,
+		sem_07 = semerrlexst_e::st_sem_07,
+		sem_08 = semerrlexst_e::st_sem_08,
+		sem_09 = semerrlexst_e::st_sem_09,
+		sem_10 = semerrlexst_e::st_sem_10,
+		sem_11 = semerrlexst_e::st_sem_11,
+		sem_12 = semerrlexst_e::st_sem_12
+	};
+	enum class type_token_e {
+		nothing,type,separator,whitespace,digit,desc_radix,desc_end,sign
+	};
+	enum class action_e {
+		nothing,report_error,go_to_another_st,get_number_digit,get_radix,get_sign
+	};
+	bool is_digit(char in) {
+		return ((in >= '0')||(in <= '8'));
+	}
+	bool is_valid_char(char in) {
+		return (in>='a' && in <='z')||(in>='A' && in<='Z');
+	}
+	bool is_separator(char in) {
+		return (in == '#');
+	}
+	bool is_space(char in) {
+		return ((in == ' ')||(in == '\t'));
+	}
+	bool is_desc_end(char in) {
+		return (in == '\n');/// PODRIA SER TAMBIEN EOL
+	}
+	bool is_desc_radix(char in) {
+		return ((in == 'b')||(in == 'B'));
+	}
+	bool is_sign(char in) {
+		return ((in == '+')||(in == '-'));
+	}
+	bool is_type_id(string in) {
+		return
+			(
+				(in == "int_reg_digs")||
+				(in == "int_reg_dig")||
+				(in == "int_reg_di")||
+				(in == "int_reg_d")||
+				(in == "int_reg_")||
+				(in == "int_reg")||
+				(in == "int_re")||
+				(in == "int_r")||
+				(in == "int_")||
+				(in == "int")||
+				(in == "in")||
+				(in == "i")
+			);
+	}
+	}//END NAMESPACE LEX
 	template<type_traits::allowable_base_type_c Int_Type,
 					Int_Type Base,
-					std::size_t Length>
+					size_t Length>
+		requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))
+	get_int_reg_digs_t(	std::istream& is,
+											std::ostream& errs,
+											int_reg_digs_t<Int_Type,Base,Length>& value
+	) {
+
+		using lexst 	= typename lex::lexst_e;
+		using lextk 	= typename lex::type_token_e;
+		using lexact 	= typename lex::action_e;
+
+		lexst actual_st 	= lexst::reg_00;
+		lextk actual_tk 	= lextk::nothing;
+		lexact actual_act = lexact::nothing;
+
+		bool get_new_char_in = true;
+		std::string buffer_in;
+		char input_char = nullchar();
+		size_t index = 0;
+
+		while (input_char != std::ios::eof()) {
+			switch(actual_st) {
+				case lexst::reg_00 : {
+					if (is_space(input_char)) {
+							actual_st  = lexst::reg_00;
+							actual_tk  = lextk::nothing;
+							actual_act = lexact::nothing;
+							get_new_char_in = true;
+					}
+					else if (is_valid_char(input_char)) {
+						local_buffer_in += input_char;
+						if (is_type_id(local_buffer_in)) {
+							actual_st  = lexst::reg_01;
+							actual_tk  = lextk::type;
+							actual_act = lexact::nothing;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::reg_00;
+							actual_tk  = lextk::nothing;
+							actual_act = lexact::report_error;
+							get_new_char_in = false;
+						}
+					}
+					else {
+						actual_st  = lexst::reg_00;
+						actual_tk  = lextk::nothing;
+						actual_act = lexact::report_error;
+						get_new_char_in = false;
+					}
+				}
+				break;
+				case lexst::reg_01 :
+					break;
+				case lexst::reg_02 :
+					break;
+				case lexst::reg_03 :
+					break;
+				case lexst::reg_04 :
+					break;
+				case lexst::reg_05 :
+					break;
+				case lexst::reg_06 :
+					break;
+				case lexst::reg_07 :
+					break;
+				case lexst::reg_08 :
+					break;
+				case lexst::reg_09 :
+					break;
+				case lexst::reg_10 :
+					break;
+				case lexst::reg_11 :
+					break;
+				case lexst::reg_12 :
+					break;
+				case lexst::err_00 :
+					break;
+				case lexst::err_01 :
+					break;
+				case lexst::err_02 :
+					break;
+				case lexst::err_03 :
+					break;
+				case lexst::err_04 :
+					break;
+				case lexst::err_05 :
+					break;
+				case lexst::err_06 :
+					break;
+				case lexst::err_07 :
+					break;
+				case lexst::err_08 :
+					break;
+				case lexst::err_09 :
+					break;
+				case lexst::err_10 :
+					break;
+				case lexst::err_11 :
+					break;
+				case lexst::sem_00 :
+					break;
+				case lexst::sem_01 :
+					break;
+				case lexst::sem_02 :
+					break;
+				case lexst::sem_03 :
+					break;
+				case lexst::sem_04 :
+					break;
+				case lexst::sem_05 :
+					break;
+				case lexst::sem_06 :
+					break;
+				case lexst::sem_07 :
+					break;
+				case lexst::sem_08 :
+					break;
+				case lexst::sem_09 :
+					break;
+				case lexst::sem_10 :
+					break;
+				case lexst::sem_11 :
+					break;
+				case lexst::sem_12 :
+					break;
+				default :
+			}
+			if (get_new_char_in) {
+				input_char = buffer_iner_in[index];
+				++index;
+			}
+		}
+	}
+
+	template<type_traits::allowable_base_type_c Int_Type,
+					Int_Type Base,
+					size_t Length>
 		requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))
 	std::istream &
 	operator >> (std::istream & is,int_reg_digs_t<Int_Type,Base,Length> & arg) {
