@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structutilities_1_1pack2tuple" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura utilities::pack2tuple&lt; Ts &gt;</title>
+<indexterm><primary>utilities::pack2tuple&lt; Ts &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;utilities.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para utilities::pack2tuple&lt; Ts &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structutilities_1_1pack2tuple__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Tipos públicos    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9">tuple_type</link> = std::tuple&lt; Ts... &gt;</para>
+</listitem>
+            <listitem><para>template&lt;unsigned K&gt; </para><para>using <link linkend="_structutilities_1_1pack2tuple_1a2e0d115ff8a9f1cededeed910472aa38">elem_type</link> = typename std::tuple_element&lt; K, <link linkend="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9">tuple_type</link> &gt;::type</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Métodos públicos    </title>
+        <itemizedlist>
+            <listitem><para>constexpr <link linkend="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9">tuple_type</link> <link linkend="_structutilities_1_1pack2tuple_1a98950abc107a937f1f2aa37871955957">operator()</link> (Ts &amp;&amp;...args) noexcept</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Métodos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static constexpr unsigned <link linkend="_structutilities_1_1pack2tuple_1a76afbd16c998332eb4de2986d8ec9cf5">pack_size</link> () noexcept</para>
+</listitem>
+            <listitem><para>template&lt;unsigned J&gt; </para><para>static constexpr <link linkend="_structutilities_1_1pack2tuple_1a2e0d115ff8a9f1cededeed910472aa38">elem_type</link>&lt; J &gt;::type <link linkend="_structutilities_1_1pack2tuple_1a21099506ee203993b708bd6f4894c82b">get</link> (Ts &amp;&amp;...args) noexcept</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename... Ts&gt;<?linebreak?>struct utilities::pack2tuple&lt; Ts &gt;</title></simplesect>
+
+<para>template&lt;class type_0, class type_1, ... , class type_Nm1&gt; struct apilamiento_de_tipos_t { type_0 obj_0; type_1 obj_1; ...... ..... type_Nm1 obj_Nm1; }; example: apilamiento_de_tipos&lt;int,std::string,double&gt; objeto{1,&quot;abc&quot;,2.98105}; objeto.obj_0 == 1; objeto.obj_1 == &quot;abc&quot;; objeto.obj_Nm1 == 2.98105; A partir del estandar de C++11 template&lt;class ...type_i&gt; struct apilamiento_de_tipos_t { type_0 obj_0; // sabemos type_i pero no type_0 type_1 obj_1; // sabemos type_i pero no type_1 ...... ..... type_Nm1 obj_Nm1;// sabemos type_i pero no type_Nm1 }; type_i es un PACK tipo std::tupla&lt;class ... Ts&gt;; </para>
+</section>
+<section>
+<title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
+<anchor xml:id="_structutilities_1_1pack2tuple_1a2e0d115ff8a9f1cededeed910472aa38"/><section>
+    <title>elem_type</title>
+<indexterm><primary>elem_type</primary><secondary>utilities::pack2tuple&lt; Ts &gt;</secondary></indexterm>
+<indexterm><primary>utilities::pack2tuple&lt; Ts &gt;</primary><secondary>elem_type</secondary></indexterm>
+<computeroutput>template&lt;typename... Ts&gt; </computeroutput><computeroutput>template&lt;unsigned K&gt; </computeroutput><para><computeroutput>using <link linkend="_structutilities_1_1pack2tuple">utilities::pack2tuple</link>&lt; Ts &gt;::elem_type =  typename std::tuple_element&lt;K,<link linkend="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9">tuple_type</link>&gt;::type</computeroutput></para></section>
+<anchor xml:id="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9"/><section>
+    <title>tuple_type</title>
+<indexterm><primary>tuple_type</primary><secondary>utilities::pack2tuple&lt; Ts &gt;</secondary></indexterm>
+<indexterm><primary>utilities::pack2tuple&lt; Ts &gt;</primary><secondary>tuple_type</secondary></indexterm>
+<computeroutput>template&lt;typename... Ts&gt; </computeroutput><para><computeroutput>using <link linkend="_structutilities_1_1pack2tuple">utilities::pack2tuple</link>&lt; Ts &gt;::tuple_type =  std::tuple&lt;Ts...&gt;</computeroutput></para></section>
+</section>
+<section>
+<title>Documentación de las funciones miembro</title>
+<anchor xml:id="_structutilities_1_1pack2tuple_1a21099506ee203993b708bd6f4894c82b"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>utilities::pack2tuple&lt; Ts &gt;</secondary></indexterm>
+<indexterm><primary>utilities::pack2tuple&lt; Ts &gt;</primary><secondary>get</secondary></indexterm>
+<computeroutput>template&lt;typename... Ts&gt; </computeroutput><computeroutput>template&lt;unsigned J&gt; </computeroutput><para><computeroutput>static constexpr <link linkend="_structutilities_1_1pack2tuple_1a2e0d115ff8a9f1cededeed910472aa38">elem_type</link>&lt; J &gt;::type <link linkend="_structutilities_1_1pack2tuple">utilities::pack2tuple</link>&lt; Ts &gt;::get (Ts &amp;&amp;... args)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9">tuple_type</link>&#32;&#32;content&#32;=&#32;std::make_tuple(std::forward(args...));
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elem_type&lt;J&gt;&#32;ret{std::get&lt;J&gt;(std::forward(content))};
+00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_structutilities_1_1pack2tuple_1a98950abc107a937f1f2aa37871955957"/><section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>utilities::pack2tuple&lt; Ts &gt;</secondary></indexterm>
+<indexterm><primary>utilities::pack2tuple&lt; Ts &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename... Ts&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9">tuple_type</link> <link linkend="_structutilities_1_1pack2tuple">utilities::pack2tuple</link>&lt; Ts &gt;::operator() (Ts &amp;&amp;... args)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9">tuple_type</link>&#32;&#32;content&#32;=&#32;std::make_tuple(std::forward(args...));
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;&#32;std::move(content);
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_structutilities_1_1pack2tuple_1a76afbd16c998332eb4de2986d8ec9cf5"/><section>
+    <title>pack_size()</title>
+<indexterm><primary>pack_size</primary><secondary>utilities::pack2tuple&lt; Ts &gt;</secondary></indexterm>
+<indexterm><primary>utilities::pack2tuple&lt; Ts &gt;</primary><secondary>pack_size</secondary></indexterm>
+<computeroutput>template&lt;typename... Ts&gt; </computeroutput><para><computeroutput>static constexpr unsigned <link linkend="_structutilities_1_1pack2tuple">utilities::pack2tuple</link>&lt; Ts &gt;::pack_size ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00042 {<emphasis role="keywordflow">return</emphasis>&#32;(<emphasis role="keyword">sizeof</emphasis>...(Ts));}
+</programlisting></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_utilities_8hpp">utilities.hpp</link></section>
+</section>

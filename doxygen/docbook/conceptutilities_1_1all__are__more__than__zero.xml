@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_conceptutilities_1_1all__are__more__than__zero" xml:lang="es">
+<title>utilities::all_are_more_than_zero Concept Reference</title>
+<indexterm><primary>utilities::all_are_more_than_zero</primary></indexterm>
+<para>
+<computeroutput>#include &lt;utilities.hpp&gt;</computeroutput>
+</para>
+<section>
+<title>Concept definition</title>
+<programlisting linenumbering="unnumbered"><emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>...&#32;Ts&gt;
+<emphasis role="keyword">concept&#32;</emphasis><link linkend="_conceptutilities_1_1all__are__more__than__zero">utilities::all_are_more_than_zero</link>&#32;=&#32;&#32;<emphasis role="keyword">requires</emphasis>(Ts...)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((<emphasis role="keyword">sizeof</emphasis>...(Ts))&gt;0);
+}
+</programlisting></section>
+<section>
+<title>Descripción detallada</title>
+</section>
+</section>

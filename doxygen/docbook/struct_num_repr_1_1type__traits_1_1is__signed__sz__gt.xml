@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::type_traits::is_signed_sz_gt&lt; T, S &gt;</title>
+<indexterm><primary>NumRepr::type_traits::is_signed_sz_gt&lt; T, S &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;basic_types.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para NumRepr::type_traits::is_signed_sz_gt&lt; T, S &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1type__traits_1_1is__signed__sz__gt__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Atributos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static constexpr bool <link linkend="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt_1a17253fdc802fc68857a9075f2b995319">value</link> = ((sizeof(T)&gt;sizeof(S)+1)?true:false)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;signed_integral_c T, unsigned_integral_c S&gt;<?linebreak?>struct NumRepr::type_traits::is_signed_sz_gt&lt; T, S &gt;</title></simplesect>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt_1a17253fdc802fc68857a9075f2b995319"/><section>
+    <title>value</title>
+<indexterm><primary>value</primary><secondary>NumRepr::type_traits::is_signed_sz_gt&lt; T, S &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::is_signed_sz_gt&lt; T, S &gt;</primary><secondary>value</secondary></indexterm>
+<computeroutput>template&lt;signed_integral_c T, unsigned_integral_c S&gt; </computeroutput><para><computeroutput>constexpr bool <link linkend="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt">NumRepr::type_traits::is_signed_sz_gt</link>&lt; T, S &gt;::value = ((sizeof(T)&gt;sizeof(S)+1)?true:false)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_basic__types_8hpp">basic_types.hpp</link></section>
+</section>

@@ -1,0 +1,9 @@
+digraph "NumRepr::base_num_t&lt; UINT_T, B &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="{NumRepr::base_num_t\l\< UINT_T, B \>\n|+ basic_string\< dig_t\l\< UINT_T, B \> \> m_dstr\l|+ constexpr size_t size\l() const noexcept\l+ constexpr void resize\l(size_t arg) noexcept\l+ constexpr dig_t operator\l[](ullint arg) const noexcept\l+ constexpr dig_t & operator\l[](ullint arg) noexcept\l+ constexpr void clear\l() noexcept\l+ constexpr void push\l_back(dig_t arg) noexcept\l+ constexpr void insert\l(size_t pos, size_t tam,\l dig_t parg) noexcept\l+ constexpr num_basic\l_t substr(size_t pos,\l size_t n) const noexcept\l+ constexpr void push\l_front(dig_t parg) noexcept\l+ constexpr striterator\l begin() noexcept\l+ constexpr cstriterator\l end() const noexcept\l+ constexpr rstriterator\l rbegin() noexcept\l+ constexpr crstriterator\l rend() const noexcept\l+ constexpr void erase\l(size_t pos, size_t tam)\l noexcept\l+ constexpr const num\l_basic_t & operator&\l=(const num_basic_t &arg)\l noexcept\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+}

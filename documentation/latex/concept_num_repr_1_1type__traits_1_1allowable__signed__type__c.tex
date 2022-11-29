@@ -1,0 +1,27 @@
+\hypertarget{concept_num_repr_1_1type__traits_1_1allowable__signed__type__c}{}\doxysection{Num\+Repr\+::type\+\_\+traits\+::allowable\+\_\+signed\+\_\+type\+\_\+c Concept Reference}
+\label{concept_num_repr_1_1type__traits_1_1allowable__signed__type__c}\index{NumRepr::type\_traits::allowable\_signed\_type\_c@{NumRepr::type\_traits::allowable\_signed\_type\_c}}
+
+
+{\ttfamily \#include $<$basic\+\_\+types.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} SINT\_T>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{concept_num_repr_1_1type__traits_1_1allowable__signed__type__c}{NumRepr::type\_traits::allowable\_signed\_type\_c}} =        }
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,sint8\_t>       ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,sint16\_t>     ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,sint32\_t>     ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,sint64\_t>     ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,schint>           ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,chint>            ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,ssint>            ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,sint>                     ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,slint>            ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,sllint>           ||}
+\DoxyCodeLine{                        std::is\_same\_v<SINT\_T,sint128\_t>        }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}

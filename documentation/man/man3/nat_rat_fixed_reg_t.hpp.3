@@ -1,0 +1,44 @@
+.TH "nat_rat_fixed_reg_t.hpp" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nat_rat_fixed_reg_t.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'int_reg_digs_t\&.hpp'\fP
+.br
+\fC#include 'utilities\&.hpp'\fP
+.br
+
+.SS "Clases"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBNumRepr\fP"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, \fBstd::size_t\fP Length> 
+.br
+requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))std::istream & \fBNumRepr::operator>>\fP (std::istream &is, pfx_rat_reg_digs_t< Int_Type, Base, Length > &arg)"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, \fBstd::size_t\fP Long> 
+.br
+requires (type_traits::suitable_base<Int_Type,Base>())std::ostream & \fBNumRepr::operator<<\fP (std::ostream &os, const pfx_rat_reg_digs_t< Int_Type, Base, Long > &arg)"
+.br
+.in -1c
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

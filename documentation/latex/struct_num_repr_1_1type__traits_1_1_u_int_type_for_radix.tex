@@ -1,0 +1,98 @@
+\hypertarget{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{}\doxysection{Referencia de la plantilla de la Estructura Num\+Repr\+::type\+\_\+traits\+::UInt\+Type\+For\+Radix\texorpdfstring{$<$}{<} Type, Radix \texorpdfstring{$>$}{>}}
+\label{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}\index{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}}
+
+
+FUNCION TYPE\+\_\+\+TRAITS DE AYUDA PARA TYPE\+\_\+\+TRAITS\+::\+UINTTYPEFORRADIX.  
+
+
+
+
+{\ttfamily \#include $<$basic\+\_\+types.\+hpp$>$}
+
+
+
+Diagrama de colaboración para Num\+Repr\+::type\+\_\+traits\+::UInt\+Type\+For\+Radix\texorpdfstring{$<$}{<} Type, Radix \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a0133ef04751a731ab4670e75dd89c439}{act\+UInt\+Type}} = std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}{bool\+\_\+value}}, \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}, \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1empty__type}{empty\+\_\+type}} $>$
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a4df3de7682e8c3978af4c9eb4c3c8af3}{UInt\+Type}} = std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}{bool\+\_\+value}}, typename \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{UInt\+Type\+For\+Radix}}$<$ \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}, \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a37e1c7967966d864c29e49b7aa902cf6}{uint\+\_\+value}} $>$\+::\+UInt\+Type, \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1empty__type}{empty\+\_\+type}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a2900a303e782d0e1fdb0312710dc9519}{uint\+\_\+value\+\_\+max}} = \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a4f0f4b9cd9964b406c8299bcbd74f506}{maxbase}}$<$\mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}$>$()
+\item 
+static constexpr \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a37e1c7967966d864c29e49b7aa902cf6}{uint\+\_\+value}} = static\+\_\+cast$<$\mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}$>$(Radix)
+\item 
+static constexpr bool \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}{bool\+\_\+value}}
+\item 
+static constexpr \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a0133ef04751a731ab4670e75dd89c439}{act\+UInt\+Type}} \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_afa308db4427307f9dee31f208b37de01}{act\+\_\+uint\+\_\+value}} = ( \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}{bool\+\_\+value}} ? \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a37e1c7967966d864c29e49b7aa902cf6}{uint\+\_\+value}} \+: 0 )
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename Type, Type Radix$>$\newline
+struct Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ Type, Radix $>$}
+FUNCION TYPE\+\_\+\+TRAITS DE AYUDA PARA TYPE\+\_\+\+TRAITS\+::\+UINTTYPEFORRADIX. 
+
+\doxysubsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\mbox{\Hypertarget{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a0133ef04751a731ab4670e75dd89c439}\label{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a0133ef04751a731ab4670e75dd89c439}} 
+\index{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}!actUIntType@{actUIntType}}
+\index{actUIntType@{actUIntType}!NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}}
+\doxysubsubsection{\texorpdfstring{actUIntType}{actUIntType}}
+{\footnotesize\ttfamily template$<$typename Type , Type Radix$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix}}$<$ Type, Radix $>$\+::act\+UInt\+Type =  std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}{bool\+\_\+value}}, \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}, \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1empty__type}{empty\+\_\+type}} $>$}
+
+\mbox{\Hypertarget{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a4df3de7682e8c3978af4c9eb4c3c8af3}\label{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a4df3de7682e8c3978af4c9eb4c3c8af3}} 
+\index{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}!UIntType@{UIntType}}
+\index{UIntType@{UIntType}!NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}}
+\doxysubsubsection{\texorpdfstring{UIntType}{UIntType}}
+{\footnotesize\ttfamily template$<$typename Type , Type Radix$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix}}$<$ Type, Radix $>$\+::\+UInt\+Type =  std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}{bool\+\_\+value}}, typename \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{UInt\+Type\+For\+Radix}}$<$ \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}, \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a37e1c7967966d864c29e49b7aa902cf6}{uint\+\_\+value}} $>$\+::\+UInt\+Type, \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1empty__type}{empty\+\_\+type}} $>$}
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_afa308db4427307f9dee31f208b37de01}\label{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_afa308db4427307f9dee31f208b37de01}} 
+\index{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}!act\_uint\_value@{act\_uint\_value}}
+\index{act\_uint\_value@{act\_uint\_value}!NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}}
+\doxysubsubsection{\texorpdfstring{act\_uint\_value}{act\_uint\_value}}
+{\footnotesize\ttfamily template$<$typename Type , Type Radix$>$ \\
+constexpr \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a0133ef04751a731ab4670e75dd89c439}{act\+UInt\+Type}} \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix}}$<$ Type, Radix $>$\+::act\+\_\+uint\+\_\+value = ( \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}{bool\+\_\+value}} ? \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a37e1c7967966d864c29e49b7aa902cf6}{uint\+\_\+value}} \+: 0 )\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}\label{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_ae0c3d0a4fefd19d6c1245f0e45a9c685}} 
+\index{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}!bool\_value@{bool\_value}}
+\index{bool\_value@{bool\_value}!NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}}
+\doxysubsubsection{\texorpdfstring{bool\_value}{bool\_value}}
+{\footnotesize\ttfamily template$<$typename Type , Type Radix$>$ \\
+constexpr bool \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix}}$<$ Type, Radix $>$\+::bool\+\_\+value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=   (Radix <= \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a2900a303e782d0e1fdb0312710dc9519}{uint\_value\_max}}) \&\&}
+\DoxyCodeLine{                                                                                                                                            (Radix > 1)                           \&\&}
+\DoxyCodeLine{                                                                                                                                                std::is\_integral\_v<Type>}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a37e1c7967966d864c29e49b7aa902cf6}\label{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a37e1c7967966d864c29e49b7aa902cf6}} 
+\index{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}!uint\_value@{uint\_value}}
+\index{uint\_value@{uint\_value}!NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}}
+\doxysubsubsection{\texorpdfstring{uint\_value}{uint\_value}}
+{\footnotesize\ttfamily template$<$typename Type , Type Radix$>$ \\
+constexpr \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix}}$<$ Type, Radix $>$\+::uint\+\_\+value = static\+\_\+cast$<$\mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}$>$(Radix)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a2900a303e782d0e1fdb0312710dc9519}\label{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_a2900a303e782d0e1fdb0312710dc9519}} 
+\index{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}!uint\_value\_max@{uint\_value\_max}}
+\index{uint\_value\_max@{uint\_value\_max}!NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$@{NumRepr::type\_traits::UIntTypeForRadix$<$ Type, Radix $>$}}
+\doxysubsubsection{\texorpdfstring{uint\_value\_max}{uint\_value\_max}}
+{\footnotesize\ttfamily template$<$typename Type , Type Radix$>$ \\
+constexpr \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix}}$<$ Type, Radix $>$\+::uint\+\_\+value\+\_\+max = \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a4f0f4b9cd9964b406c8299bcbd74f506}{maxbase}}$<$\mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{basic__types_8hpp}{basic\+\_\+types.\+hpp}}\end{DoxyCompactItemize}

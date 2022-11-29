@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_68267d1309a1af8e8297ef4c3efbcdba" xml:lang="es">
+<title>Referencia del directorio src</title>
+<indexterm><primary>Referencia del directorio src</primary></indexterm>
+<simplesect>
+    <title>Archivos    </title>
+        <itemizedlist>
+            <listitem><para>archivo <link linkend="_auxiliary__functions_8hpp">auxiliary_functions.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_auxiliary__types_8hpp">auxiliary_types.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_base__num__t_8hpp">base_num_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_basic__types_8hpp">basic_types.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_dig__t_8hpp">dig_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_int__num__t_8hpp">int_num_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_int__reg__digs__t_8hpp">int_reg_digs_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_memory__handler_8hpp">memory_handler.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_nat__num__t_8hpp">nat_num_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_nat__rat__fixed__reg__t_8hpp">nat_rat_fixed_reg_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp">nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_nat__reg__digs__t_8hpp">nat_reg_digs_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_pruebas__dig__t_8cpp">pruebas_dig_t.cpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_rat__fixed__reg__t_8hpp">rat_fixed_reg_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_reg__digs__t_8hpp">reg_digs_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_test__dig__t_8hpp">test_dig_t.hpp</link></para>
+</listitem>
+            <listitem><para>archivo <link linkend="_utilities_8hpp">utilities.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

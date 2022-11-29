@@ -27,6 +27,9 @@ var hierarchy =
     [ "NumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned long int >", "struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01long_01int_01_4.html", null ],
     [ "NumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned long long int >", "struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01long_01long_01int_01_4.html", null ],
     [ "NumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned short int >", "struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01short_01int_01_4.html", null ],
+    [ "std::array", null, [
+      [ "NumRepr::reg_digs_t< UINT_T, B, L >", "struct_num_repr_1_1reg__digs__t.html", null ]
+    ] ],
     [ "base_num_t", null, [
       [ "int_num_t< UINT_T, B >", "structint__num__t.html", null ],
       [ "nat_num_t< UINT_T, B >", "classnat__num__t.html", null ]
@@ -56,7 +59,6 @@ var hierarchy =
     [ "NumRepr::nat_reg_digs_t< UINT_T, B, L >", "struct_num_repr_1_1nat__reg__digs__t.html", null ],
     [ "utilities::pack2array< Ts >", "structutilities_1_1pack2array.html", null ],
     [ "utilities::pack2tuple< Ts >", "structutilities_1_1pack2tuple.html", null ],
-    [ "NumRepr::reg_digs_t< UINT_T, B, L >", "struct_num_repr_1_1reg__digs__t.html", null ],
     [ "NumRepr::auxiliary_types::resbinop_t< T, oper >", "struct_num_repr_1_1auxiliary__types_1_1resbinop__t.html", null ],
     [ "NumRepr::auxiliary_types::resbinop_t< T, binop_e::add >", "struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1add_01_4.html", null ],
     [ "NumRepr::auxiliary_types::resbinop_t< T, binop_e::div >", "struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1div_01_4.html", null ],

@@ -1,0 +1,83 @@
+.TH "pruebas_dig_t.cpp" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pruebas_dig_t.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'dig_t\&.hpp'\fP
+.br
+\fC#include <typeinfo>\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int main ()"
+
+.PP
+.nf
+4            {
+5         //template<uchint B,std::size_t L>
+6         //using reg_digs_t = typename NumRepr::reg_digs_t<uchint,B,L>;
+7 /*
+8         uchint a='a';
+9         std::cout << "sizeof(a=" << a << ")=" << sizeof(a) << "\n";
+10         usint b='b';
+11         std::cout << "sizeof(b=" << b << ")=" << sizeof(b) << "\n";
+12         ulint c='c';
+13         std::cout << "sizeof(c=" << c << ")=" << sizeof(c) << "\n";
+14         ullint d='d';
+15         std::cout << "sizeof(d=" << d << ")=" << sizeof(d) << "\n";
+16 */
+17 /*
+18         constexpr char fdl{'\n'};
+19         dig_t v0{dig_t::dig_0()};
+20         dig_t v1{dig_t::dig_1()};
+21         dig_t vBm1{dig_t::dig_max()};
+22         dig_t vBm2{dig_t::dig_submax()};
+23         std::cout << "v0    =  " << v0\&.to_string()               << fdl
+24                                                 << "v1    =  " << v1\&.to_string()                 << fdl
+25                                                 << "vBm1  =  " << vBm1\&.to_string()       << fdl
+26                                                 << "vBm2  =  " << vBm2\&.to_string()       << fdl;
+27         std::cout << "Size of type dig_t = " << sizeof(dig_t) << fdl;
+28         for(std::size_t ix{0} ; ix < 23 ; ++ix) {
+29                 std::cout << "TABLAS DE MULTIPLICAR PARA BASE " << dig_t::radix_str() << fdl;
+30                 std::cout << "TABLAS DEL : " << ix << fdl;
+31                 for(std::size_t iy{ix} ; iy < 23 ; ++iy) {
+32                         dig_t dx{ix};
+33                         dig_t dy{iy};
+34                         std::cout << dx << " * " << dy << " = " << dx\&.multcarry(dy)
+35                                                                 << ' ' << dx\&.multresult(dy) << fdl;
+36                 }
+37         }
+38         dig_t a{22};
+39         dig_t b{22};
+40         dig_t c = a*b;
+41         dig_t d = a\&.multresult(b);
+42         std::cout << c << fdl;
+43         std::cout << d << fdl;
+44 */
+45         constexpr uint128_t B{111114444444444444};
+46         constexpr uint128_t Bm1{B-1};
+47         using digit_t = typename NumRepr::digit_t<B>;
+48         constexpr digit_t A{Bm1};
+49         const std::type_info& type_of_A = typeid(decltype(A()));
+50         std::cout << type_of_A\&.name() << " " << digit_t{A()} << " < ";
+51         using tipo_de_A = decltype(A());
+52         using limites_de_A = std::numeric_limits<tipo_de_A>;
+53         std::cout << limites_de_A::max() << std::endl;
+54 
+55         return 0;
+56 }
+.fi
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

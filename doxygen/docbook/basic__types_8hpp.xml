@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_basic__types_8hpp" xml:lang="es">
+<title>Referencia del Archivo basic_types.hpp</title>
+<indexterm><primary>basic_types.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;cstdint&gt;<?linebreak?>#include &lt;type_traits&gt;<?linebreak?>#include &lt;optional&gt;<?linebreak?>#include &lt;compare&gt;<?linebreak?>#include &lt;concepts&gt;<?linebreak?>#include &lt;iostream&gt;<?linebreak?>#include &lt;cstring&gt;<?linebreak?>#include &lt;string&gt;<?linebreak?>#include &lt;sstream&gt;<?linebreak?>#include &lt;fstream&gt;<?linebreak?>#include &lt;array&gt;<?linebreak?>#include &lt;vector&gt;<?linebreak?>#include &lt;list&gt;<?linebreak?>#include &lt;map&gt;<?linebreak?>#include &lt;climits&gt;<?linebreak?>#include &lt;numeric&gt;<?linebreak?>#include &lt;limits&gt;<?linebreak?>#include &lt;cmath&gt;<?linebreak?>#include &lt;iterator&gt;<?linebreak?>#include &lt;functional&gt;<?linebreak?></programlisting>Dependencia gráfica adjunta para basic_types.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="basic__types_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="basic__types_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt">NumRepr::type_traits::is_unsigned_sz_gt&lt; T, S &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt">NumRepr::type_traits::is_signed_sz_gt&lt; T, S &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t">NumRepr::type_traits::detail::__sig_UInt_for_UInt_t&lt; UInt_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01char_01_4">NumRepr::type_traits::detail::__sig_UInt_for_UInt_t&lt; unsigned char &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01short_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_UInt_t&lt; unsigned short int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_UInt_t&lt; unsigned int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01long_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_UInt_t&lt; unsigned long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01long_01long_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_UInt_t&lt; unsigned long long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t">NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; UInt &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01char_01_4">NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned char &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01short_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned short int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01long_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned long long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; SInt &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01char_01_4">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; signed char &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01char_01_4">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; char &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01short_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; signed short int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; signed int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01long_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; signed long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01long_01long_01int_01_4">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; signed long long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01sint128__t_01_4">NumRepr::type_traits::detail::__sig_UInt_for_SInt_t&lt; sint128_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; SInt &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01char_01_4">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; signed char &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01char_01_4">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; char &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01short_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; signed short int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; signed int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01long_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; signed long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01long_01long_01int_01_4">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; signed long long int &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1empty__type">NumRepr::type_traits::empty_type</link></para>
+
+<para>DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES SIN DEFINCION. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</link></para>
+
+<para>FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINTTYPEFORRADIX. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint128__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; uint128_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint64__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; uint64_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01int64__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; int64_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint32__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; uint32_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint32__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; sint32_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint16__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; uint16_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint16__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; sint16_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint8__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; uint8_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint8__t_00_01_radix_01_4">NumRepr::type_traits::UIntTypeForRadix&lt; sint8_t, Radix &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_num_repr">NumRepr</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_num_repr_1_1type__traits">NumRepr::type_traits</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_num_repr_1_1type__traits_1_1detail">NumRepr::type_traits::detail</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Concepts    </title>
+        <itemizedlist>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1arith__integral__c">NumRepr::arith_integral_c</link></para>
+
+<para>TYPE_TRAITS AND CONCEPTS. </para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1arith__natural__c">NumRepr::arith_natural_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1char__type">NumRepr::char_type</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1allowable__base__type__c">NumRepr::type_traits::allowable_base_type_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1allowable__unsigned__type__c">NumRepr::type_traits::allowable_unsigned_type_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1allowable__signed__type__c">NumRepr::type_traits::allowable_signed_type_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1signed__integral__c">NumRepr::type_traits::signed_integral_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1integral__c">NumRepr::type_traits::integral_c</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>typedefs    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1aea0efe89afd5207a49f66e2efb8e5b23">chint</link> = char</para>
+
+<para>NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS. </para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a85b0e776326d79546b9c1be5aaf8fbe5">schint</link> = signed char</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1abc2bfec16692f211ffdd458503d271a9">ssint</link> = signed short int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a20b5825a1c2afececc61b86b97dab369">sint</link> = signed int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a4dd12bd8c212fa515a1c3ee359386acc">slint</link> = signed long int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a628f9317d59014c3fe187673c97faec5">sllint</link> = signed long long int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> = unsigned char</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> = unsigned short int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d">uint</link> = unsigned int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1accbad71b3b2a0c00b93b3b065d660140">ulint</link> = unsigned long int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> = unsigned long long int</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> = __uint128_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1ac20ff49f0b5abe18cd5058327ff94431">sint128_t</link> = __int128_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> = std::size_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1ab5048cce40e123439815e0c2f44c970e">sint8_t</link> = std::int8_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a4d8d8bd21d0006c49d8254134ae1b791">sint16_t</link> = std::int16_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a5f80278b6cf4373ed964e11490b4e7d0">sint32_t</link> = std::int32_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a0b99b5cbd530123932ed0c3d547726c6">sint64_t</link> = std::int64_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1ab83d5f0c064cbee3702ccc57cea87f14">uint8_t</link> = std::uint8_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a8555fdd0d9fc8b577eaccc6ceb884e37">uint16_t</link> = std::uint16_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1ad2500cd316889e2ea5c919df9288f2a6">uint32_t</link> = std::uint32_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_basic__types_8hpp_1a339c01c5b79a3378ee67ee5a6f293cc7">uint64_t</link> = std::uint64_t</para>
+</listitem>
+            <listitem><para>template&lt;unsigned_integral_c UInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9">NumRepr::type_traits::sig_UInt_for_UInt_t</link> = typename detail::__sig_UInt_for_UInt_t&lt; UInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;unsigned_integral_c UInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1a9b443da6cd532ae6d0d5482d8f610737">NumRepr::type_traits::sig_SInt_for_UInt_t</link> = typename detail::__sig_SInt_for_UInt_t&lt; UInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c SInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1a78161f55798c2f15126db200161b7cda">NumRepr::type_traits::sig_UInt_for_SInt_t</link> = typename detail::__sig_UInt_for_SInt_t&lt; SInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c SInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1ad43c24c639cf0910d71316896a9f39c2">NumRepr::type_traits::sig_SInt_for_SInt_t</link> = typename detail::__sig_SInt_for_SInt_t&lt; SInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;integral_c Type, Type Radix&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6">NumRepr::type_traits::UIntTypeForRadix_t</link> = typename UIntTypeForRadix&lt; Type, Radix &gt;::UIntType</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> Radix&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1af319111801e531a4ba8fee6e00e5b0f3">NumRepr::type_traits::TypeFromIntNumber_t</link> = UIntTypeForRadix_t&lt; decltype(Radix), Radix &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Funciones    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="_namespace_num_repr_1a05a3dcfc9d03be48f1fb5f03ab8936f1">NumRepr::clear_ccad</link> (char *, <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link>)</para>
+</listitem>
+            <listitem><para>template&lt;template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B &gt; class T, <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt; </para><para>constexpr const char * <link linkend="_namespace_num_repr_1a36edd93a4de5c8ef300823ce73625440">NumRepr::devCadenaC</link> (T&lt; B &gt; arg, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">std::size_t</link> long_ccad=64) noexcept</para>
+</listitem>
+            <listitem><para>constexpr char * <link linkend="_namespace_num_repr_1a233042cc13bd5079b36824a1bf521264">NumRepr::clear_ccad</link> (char *cad_c, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">std::size_t</link> long_de_cad_c) noexcept</para>
+</listitem>
+            <listitem><para>constexpr unsigned long long <link linkend="_namespace_num_repr_1a98a67aedc0e9a8fc2ec450eea84c153a">NumRepr::atoull</link> (char *text) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a4f0f4b9cd9964b406c8299bcbd74f506">NumRepr::type_traits::maxbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ae6c52c70d58ecbc58b9ce8ddeff3c42e">NumRepr::type_traits::submaxbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a1a5c6f8a01fa8a777470dd479b3ae87a">NumRepr::type_traits::minbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ae6d7996db2b7cdee98b72342bc0f976b">NumRepr::type_traits::subminbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a3265677e1277882355b102f90ce5fc69">NumRepr::type_traits::monobase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a1d046b3da7103b9ca5a7dacb674f49f0">NumRepr::type_traits::nobase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1addc313fbab4434c736167b0510d95a97">NumRepr::type_traits::maxdigit</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a7197bd8a89fcc647c18b49f63a1b49f5">NumRepr::type_traits::submaxdigit</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a8c8928703a18d48613b88d4eee0e967a">NumRepr::type_traits::digit_0</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ad0267c5c18b47ea7d823e17e735d1e42">NumRepr::type_traits::digit_1</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ad3c536f8264351b7aa3d9bd8e648d2e2">NumRepr::type_traits::base_2</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>consteval bool <link linkend="_namespace_num_repr_1_1type__traits_1a7fe2595394f638eb83fc857ba0076f09">NumRepr::type_traits::base_geqt_2</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>consteval bool <link linkend="_namespace_num_repr_1_1type__traits_1a10f4b5abfc1e0a202341bf4481596e66">NumRepr::type_traits::base_leqt_max</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>consteval bool <link linkend="_namespace_num_repr_1_1type__traits_1ae7b0da6237614a2d93ed8d40ee5596a5">NumRepr::type_traits::suitable_base</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ab7aafe6bcb405d5c200145181755984f">NumRepr::type_traits::middle_max</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a9c68ad4f3469998252d88633edf8e908">NumRepr::type_traits::sqrt_max</link> ()</para>
+
+<para>DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename CharT &gt; </para><para>constexpr CharT <link linkend="_namespace_num_repr_1a9e06f6d5fa7a7c2262986bba0c4d7f35">NumRepr::nullchar</link> {CharT(&apos;\0&apos;)}</para>
+</listitem>
+            <listitem><para>template&lt;typename T , typename S &gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1abdd3c894685f7a3c5a75a1e11030be9f">NumRepr::type_traits::has_the_same_size</link> = (sizeof(T)==sizeof(S))</para>
+</listitem>
+            <listitem><para>template&lt;unsigned_integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750">NumRepr::type_traits::is_unsigned_sz_gt_v</link> = is_unsigned_sz_gt&lt;T,S&gt;::value</para>
+</listitem>
+            <listitem><para>template&lt;unsigned_integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a789b3b413126236b864ee49857240dc9">NumRepr::type_traits::is_unsigned_sz_geqt_v</link> = (is_unsigned_sz_gt_v&lt;T,S&gt; || std::is_same_v&lt;T,S&gt;)</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c T, signed_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a7c29ce492dab6daf5c494a845385d0b2">NumRepr::type_traits::is_signed_sz_gt_v</link> = is_signed_sz_gt&lt;T,S&gt;::value</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a20b53f5a6dfecf867091ecfc36246c2a">NumRepr::type_traits::is_signed_sz_geqt_v</link></para>
+</listitem>
+            <listitem><para>template&lt;integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1abc08a96a36443cef681ab6550813015e">NumRepr::type_traits::is_sz_gt_v</link></para>
+</listitem>
+            <listitem><para>template&lt;integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1af1b7c5a6fa97bd83aab53761c28f2ece">NumRepr::type_traits::is_sz_geqt_v</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentación de los &apos;typedefs&apos;</title>
+<anchor xml:id="_basic__types_8hpp_1aea0efe89afd5207a49f66e2efb8e5b23"/><section>
+    <title>chint</title>
+<indexterm><primary>chint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>chint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1aea0efe89afd5207a49f66e2efb8e5b23">chint</link> =  char</computeroutput></para><para>
+
+<para>NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS. </para>
+</para>
+</section>
+<anchor xml:id="_basic__types_8hpp_1a85b0e776326d79546b9c1be5aaf8fbe5"/><section>
+    <title>schint</title>
+<indexterm><primary>schint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>schint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a85b0e776326d79546b9c1be5aaf8fbe5">schint</link> =  signed char</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a20b5825a1c2afececc61b86b97dab369"/><section>
+    <title>sint</title>
+<indexterm><primary>sint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>sint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a20b5825a1c2afececc61b86b97dab369">sint</link> =  signed int</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1ac20ff49f0b5abe18cd5058327ff94431"/><section>
+    <title>sint128_t</title>
+<indexterm><primary>sint128_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>sint128_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1ac20ff49f0b5abe18cd5058327ff94431">sint128_t</link> =  __int128_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a4d8d8bd21d0006c49d8254134ae1b791"/><section>
+    <title>sint16_t</title>
+<indexterm><primary>sint16_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>sint16_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a4d8d8bd21d0006c49d8254134ae1b791">sint16_t</link> =  std::int16_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a5f80278b6cf4373ed964e11490b4e7d0"/><section>
+    <title>sint32_t</title>
+<indexterm><primary>sint32_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>sint32_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a5f80278b6cf4373ed964e11490b4e7d0">sint32_t</link> =  std::int32_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a0b99b5cbd530123932ed0c3d547726c6"/><section>
+    <title>sint64_t</title>
+<indexterm><primary>sint64_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>sint64_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a0b99b5cbd530123932ed0c3d547726c6">sint64_t</link> =  std::int64_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1ab5048cce40e123439815e0c2f44c970e"/><section>
+    <title>sint8_t</title>
+<indexterm><primary>sint8_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>sint8_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1ab5048cce40e123439815e0c2f44c970e">sint8_t</link> =  std::int8_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638"/><section>
+    <title>size_t</title>
+<indexterm><primary>size_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>size_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> =  std::size_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a4dd12bd8c212fa515a1c3ee359386acc"/><section>
+    <title>slint</title>
+<indexterm><primary>slint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>slint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a4dd12bd8c212fa515a1c3ee359386acc">slint</link> =  signed long int</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a628f9317d59014c3fe187673c97faec5"/><section>
+    <title>sllint</title>
+<indexterm><primary>sllint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>sllint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a628f9317d59014c3fe187673c97faec5">sllint</link> =  signed long long int</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1abc2bfec16692f211ffdd458503d271a9"/><section>
+    <title>ssint</title>
+<indexterm><primary>ssint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>ssint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1abc2bfec16692f211ffdd458503d271a9">ssint</link> =  signed short int</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2"/><section>
+    <title>uchint</title>
+<indexterm><primary>uchint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>uchint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> =  unsigned char</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d"/><section>
+    <title>uint</title>
+<indexterm><primary>uint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>uint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d">uint</link> =  unsigned int</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f"/><section>
+    <title>uint128_t</title>
+<indexterm><primary>uint128_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>uint128_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> =  __uint128_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a8555fdd0d9fc8b577eaccc6ceb884e37"/><section>
+    <title>uint16_t</title>
+<indexterm><primary>uint16_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>uint16_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a8555fdd0d9fc8b577eaccc6ceb884e37">uint16_t</link> =  std::uint16_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1ad2500cd316889e2ea5c919df9288f2a6"/><section>
+    <title>uint32_t</title>
+<indexterm><primary>uint32_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>uint32_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1ad2500cd316889e2ea5c919df9288f2a6">uint32_t</link> =  std::uint32_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a339c01c5b79a3378ee67ee5a6f293cc7"/><section>
+    <title>uint64_t</title>
+<indexterm><primary>uint64_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>uint64_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a339c01c5b79a3378ee67ee5a6f293cc7">uint64_t</link> =  std::uint64_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1ab83d5f0c064cbee3702ccc57cea87f14"/><section>
+    <title>uint8_t</title>
+<indexterm><primary>uint8_t</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>uint8_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1ab83d5f0c064cbee3702ccc57cea87f14">uint8_t</link> =  std::uint8_t</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1accbad71b3b2a0c00b93b3b065d660140"/><section>
+    <title>ulint</title>
+<indexterm><primary>ulint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>ulint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1accbad71b3b2a0c00b93b3b065d660140">ulint</link> =  unsigned long int</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542"/><section>
+    <title>ullint</title>
+<indexterm><primary>ullint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>ullint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> =  unsigned long long int</computeroutput></para></section>
+<anchor xml:id="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df"/><section>
+    <title>usint</title>
+<indexterm><primary>usint</primary><secondary>basic_types.hpp</secondary></indexterm>
+<indexterm><primary>basic_types.hpp</primary><secondary>usint</secondary></indexterm>
+<para><computeroutput>using <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> =  unsigned short int</computeroutput></para></section>
+</section>
+</section>

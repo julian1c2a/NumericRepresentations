@@ -1,0 +1,2791 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green128\blue0;\red96\green64\blue32;\rede0\green128\blue0;\red128\green0\blue0;\red128\green96\blue32;\red0\green32\blue128;\red0\green128\blue128;\red255\green0\blue255;\red0\green0\blue0;\red112\green0\blue112;\red255\green0\blue0;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext50 Code Example 9;}
+{\s50\li3600\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext51 Code Example 10;}
+{\s51\li3960\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext52 Code Example 11;}
+{\s52\li4320\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 12;}
+{\s53\li4680\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 13;}
+{\s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext61 List Continue 0;}
+{\s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext62 List Continue 1;}
+{\s62\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext63 List Continue 2;}
+{\s63\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext64 List Continue 3;}
+{\s64\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext65 List Continue 4;}
+{\s65\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext66 List Continue 5;}
+{\s66\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext67 List Continue 6;}
+{\s67\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext68 List Continue 7;}
+{\s68\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext69 List Continue 8;}
+{\s69\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext70 List Continue 9;}
+{\s70\li3600\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext71 List Continue 10;}
+{\s71\li3960\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext72 List Continue 11;}
+{\s72\li4320\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 12;}
+{\s73\li4680\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 13;}
+{\s80\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext81 DescContinue 0;}
+{\s81\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext82 DescContinue 1;}
+{\s82\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext83 DescContinue 2;}
+{\s83\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext84 DescContinue 3;}
+{\s84\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext85 DescContinue 4;}
+{\s85\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext86 DescContinue 5;}
+{\s86\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext87 DescContinue 6;}
+{\s87\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext88 DescContinue 7;}
+{\s88\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext89 DescContinue 8;}
+{\s89\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext90 DescContinue 9;}
+{\s90\li3600\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext91 DescContinue 10;}
+{\s91\li3960\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext92 DescContinue 11;}
+{\s92\li4320\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 12;}
+{\s93\li4680\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 13;}
+{\s100\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext101 LatexTOC 0;}
+{\s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext102 LatexTOC 1;}
+{\s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext103 LatexTOC 2;}
+{\s103\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext104 LatexTOC 3;}
+{\s104\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext105 LatexTOC 4;}
+{\s105\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext106 LatexTOC 5;}
+{\s106\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext107 LatexTOC 6;}
+{\s107\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext108 LatexTOC 7;}
+{\s108\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext109 LatexTOC 8;}
+{\s109\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext110 LatexTOC 9;}
+{\s110\li3600\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext111 LatexTOC 10;}
+{\s111\li3960\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext112 LatexTOC 11;}
+{\s112\li4320\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 12;}
+{\s113\li4680\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 13;}
+{\s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext121 \sautoupd List Bullet 0;}
+{\s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext122 \sautoupd List Bullet 1;}
+{\s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext123 \sautoupd List Bullet 2;}
+{\s123\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext124 \sautoupd List Bullet 3;}
+{\s124\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext125 \sautoupd List Bullet 4;}
+{\s125\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext126 \sautoupd List Bullet 5;}
+{\s126\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext127 \sautoupd List Bullet 6;}
+{\s127\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext128 \sautoupd List Bullet 7;}
+{\s128\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext129 \sautoupd List Bullet 8;}
+{\s129\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext130 \sautoupd List Bullet 9;}
+{\s130\fi-360\li3960\widctlpar\jclisttab\tx3960{\*\pn \pnlvlbody\ilvl0\ls11\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext131 \sautoupd List Bullet 10;}
+{\s131\fi-360\li4320\widctlpar\jclisttab\tx4320{\*\pn \pnlvlbody\ilvl0\ls12\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext132 \sautoupd List Bullet 11;}
+{\s132\fi-360\li4680\widctlpar\jclisttab\tx4680{\*\pn \pnlvlbody\ilvl0\ls13\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 12;}
+{\s133\fi-360\li5040\widctlpar\jclisttab\tx5040{\*\pn \pnlvlbody\ilvl0\ls14\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 13;}
+{\s140\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext141 \sautoupd List Enum 0;}
+{\s141\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext142 \sautoupd List Enum 1;}
+{\s142\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext143 \sautoupd List Enum 2;}
+{\s143\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext144 \sautoupd List Enum 3;}
+{\s144\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext145 \sautoupd List Enum 4;}
+{\s145\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext146 \sautoupd List Enum 5;}
+{\s146\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext147 \sautoupd List Enum 6;}
+{\s147\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext148 \sautoupd List Enum 7;}
+{\s148\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext149 \sautoupd List Enum 8;}
+{\s149\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext150 \sautoupd List Enum 9;}
+{\s150\fi-360\li3960\widctlpar\fs20\cgrid \sbasedon0 \snext151 \sautoupd List Enum 10;}
+{\s151\fi-360\li4320\widctlpar\fs20\cgrid \sbasedon0 \snext152 \sautoupd List Enum 11;}
+{\s152\fi-360\li4680\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 12;}
+{\s153\fi-360\li5040\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 13;}
+}
+{\comment begin body}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Referencia del Archivo nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\par \pard\plain 
+{\tc\tcl2 \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\bkmkstart AAAAAAAAIZ}
+{\bkmkend AAAAAAAAIZ}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "dig_t.hpp"}\par
+{\f2 #include "utilities.hpp"}\par
+}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Dependencia gráfica adjunta para nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp__incl.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Clases\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+struct {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJA" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_reg_digs_t< UINT_T, B, L >}}}
+\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+namespace {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAB" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr}}}
+\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+typedefs\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJB" }{}}{\fldrslt {\cs37\ul\cf2 SIG_UINT_T}}}
+ = typename type_traits::sig_UInt_for_UInt_t< UINT_T >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJC" }{}}{\fldrslt {\cs37\ul\cf2 SIG_SINT_T}}}
+ = typename type_traits::sig_SInt_for_UInt_t< UINT_T >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+< UINT_T, B >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+ = std::array< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+, N >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< L >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<binop_e op, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJF" }{}}{\fldrslt {\cs37\ul\cf2 res_base_N_op_t}}}
+ = typename auxiliary_types::result_operation_t< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N >, op, N >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<binop_e op> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJG" }{}}{\fldrslt {\cs37\ul\cf2 res_base_op_t}}}
+ = typename auxiliary_types::result_operation_t< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+, op, L >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+< UINT_T, B, N >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<binop_e op, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJJ" }{}}{\fldrslt {\cs37\ul\cf2 res_N_op_t}}}
+ = typename auxiliary_types::result_operation_t< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N >, op, N >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<binop_e op> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJK" }{}}{\fldrslt {\cs37\ul\cf2 res_op_t}}}
+ = typename auxiliary_types::result_operation_t< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+, op, L >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJL" }{}}{\fldrslt {\cs37\ul\cf2 reg_ints_t}}}
+ = typename std::array< UINT_T, N >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJM" }{}}{\fldrslt {\cs37\ul\cf2 reg_suints_t}}}
+ = typename std::array< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJB" }{}}{\fldrslt {\cs37\ul\cf2 SIG_UINT_T}}}
+, N >\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJN" }{}}{\fldrslt {\cs37\ul\cf2 reg_ssints_t}}}
+ = typename std::array< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJC" }{}}{\fldrslt {\cs37\ul\cf2 SIG_SINT_T}}}
+, N >\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Funciones\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<allowable_base_type_c UINT_T, UINT_T B, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ L> \par
+requires (suitable_base<UINT_T,B>() && (L>0))struct {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJA" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJO" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+consteval {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ () noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR DEFECTO. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJP" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ (const std::initializer_list< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ > &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR LISTA DE DIGITOS. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<typename ... Ts> \par
+requires (std::is_same_v<Ts,{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+>&&...)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJQ" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ (const Ts &... args) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR ARGUMENTOS DIGITOS SIN LIMITE: DEDUCE EL TIPO. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJR" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR COPIA DESDE UN ARRAY DE DIGITOS. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJS" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &&arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR MOVIMIENTO DESDE UN ARRAY DE DIGITOS. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<type_traits::integral_c ... Ints_type> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJT" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ (Ints_type ... dig_pow_i) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR COPIA DESDE ARGUMENTOS ENTEROS SIN LIMITE : DEDUCE EL TIPO. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJU" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR COPIA POR REFERENCIA CONSTANTE. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJV" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &&arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR MOVIMIENTO. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJW" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA REFERENCIA CONST {\i NO}  COPIABLE DESDE BASE_N_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJX" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA REFERENCIA DESDE BASE_N_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJY" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &&arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA MOVIMIENTO DESDE BASE_N_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJZ" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA REFERENCIA EN LA QUE SE PUEDE COPIAR. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKA" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &&arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR MOVIMIENTO. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKB" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA EN LA QUE {\i NO}  SE PUEDE COPIAR. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr void {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKC" }{}}{\fldrslt {\cs37\ul\cf2 set_0}}}
+ () noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE LIMPIEZA A CERO DEL NAT_REG_DIGS_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr void {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKD" }{}}{\fldrslt {\cs37\ul\cf2 set_Bm1}}}
+ () noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE LIMPIEZA A B-1 DEL NAT_REG_DIGS_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr void {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKE" }{}}{\fldrslt {\cs37\ul\cf2 set_dig}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE LIMPIEZA A VALOR DIG_T DEL NAT_REG_DIGS_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_i, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_pf> \par
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKF" }{}}{\fldrslt {\cs37\ul\cf2 set_interval_0}}}
+ () noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE PONER A VALOR DIG_0 EN [N_0 , N_1) DEL NAT_REG_DIGS_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_i, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_pf> \par
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKG" }{}}{\fldrslt {\cs37\ul\cf2 set_interval_Bm1}}}
+ () noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE PONER A VALOR DIG_Bm1 EN [N_0 , N_1) DEL NAT_REG_DIGS_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_i, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_pf> \par
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKH" }{}}{\fldrslt {\cs37\ul\cf2 set_interval_dig}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ dig) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE PONER A VALOR DIG EN [N_0 , N_1) DEL NAT_REG_DIGS_T. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKI" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION COPIA DESDE UN DIGITO (CONVERSION) }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<type_traits::integral_c Int_Type> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKJ" }{}}{\fldrslt {\cs37\ul\cf2 operator=}}}
+ (Int_Type arg) noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION COPIA DESDE UN ENTERO (CONVERSION A LA BASE B) }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N+L > {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKK" }{}}{\fldrslt {\cs37\ul\cf2 cat}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+SUBREPR => SUB REPRESENTACION. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< L+1 > {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKL" }{}}{\fldrslt {\cs37\ul\cf2 cat}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N+L > {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKM" }{}}{\fldrslt {\cs37\ul\cf2 cat_inv}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< L+1 > {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKN" }{}}{\fldrslt {\cs37\ul\cf2 cat_inv}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ ibegin, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ iend> \par
+requires ((iend <= L)&&(ibegin < iend))constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< iend-ibegin > {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKO" }{}}{\fldrslt {\cs37\ul\cf2 subrepr}}}
+ () const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<type_traits::integral_c Int_Type> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKP" }{}}{\fldrslt {\cs37\ul\cf2 operator Int_Type}}}
+ () const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKQ" }{}}{\fldrslt {\cs37\ul\cf2 is_0}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKR" }{}}{\fldrslt {\cs37\ul\cf2 is_1}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKS" }{}}{\fldrslt {\cs37\ul\cf2 is_Bm1}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKT" }{}}{\fldrslt {\cs37\ul\cf2 is_B}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKU" }{}}{\fldrslt {\cs37\ul\cf2 is_Bp1}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n> \par
+requires ((n>0) && (n<L))constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKV" }{}}{\fldrslt {\cs37\ul\cf2 is_B_pow_m1}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n> \par
+requires ((n>0) && (n<L))constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKW" }{}}{\fldrslt {\cs37\ul\cf2 is_B_pow}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKX" }{}}{\fldrslt {\cs37\ul\cf2 is_filled_of_1}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKY" }{}}{\fldrslt {\cs37\ul\cf2 is_filled_of_Bm1}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ d> \par
+requires ((n>0) && (n<L))constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKZ" }{}}{\fldrslt {\cs37\ul\cf2 is_filled_of}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALA" }{}}{\fldrslt {\cs37\ul\cf2 operator==}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALB" }{}}{\fldrslt {\cs37\ul\cf2 operator==}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALC" }{}}{\fldrslt {\cs37\ul\cf2 operator!=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALD" }{}}{\fldrslt {\cs37\ul\cf2 operator!=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALE" }{}}{\fldrslt {\cs37\ul\cf2 operator<=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALF" }{}}{\fldrslt {\cs37\ul\cf2 operator<=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALG" }{}}{\fldrslt {\cs37\ul\cf2 operator>=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 operator>=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALI" }{}}{\fldrslt {\cs37\ul\cf2 operator<}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALJ" }{}}{\fldrslt {\cs37\ul\cf2 operator<}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALK" }{}}{\fldrslt {\cs37\ul\cf2 operator>}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALL" }{}}{\fldrslt {\cs37\ul\cf2 operator>}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr std::strong_ordering {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALM" }{}}{\fldrslt {\cs37\ul\cf2 operator<=>}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERADOR COMPARACION SPACESHIP C++20. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr std::weak_ordering {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALN" }{}}{\fldrslt {\cs37\ul\cf2 operator<=>}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERADOR COMPARACION SPACESHIP C++20. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr std::weak_ordering {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALO" }{}}{\fldrslt {\cs37\ul\cf2 operator<=>}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &arg) const noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERADOR COMPARACION SPACESHIP C++20. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ I> \par
+requires ((I<L)&&(I>=0))constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALP" }{}}{\fldrslt {\cs37\ul\cf2 get}}}
+ () const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ I> \par
+requires ((I<L)&&(I>=0))constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALQ" }{}}{\fldrslt {\cs37\ul\cf2 put}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALR" }{}}{\fldrslt {\cs37\ul\cf2 operator[]}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ idx) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<type_traits::integral_c Int_Type = UINT_T> constexpr Int_Type {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALS" }{}}{\fldrslt {\cs37\ul\cf2 operator()}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ idx) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALT" }{}}{\fldrslt {\cs37\ul\cf2 const_ref_data}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALU" }{}}{\fldrslt {\cs37\ul\cf2 cpy_data}}}
+ () const\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALV" }{}}{\fldrslt {\cs37\ul\cf2 operator++}}}
+ () noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALW" }{}}{\fldrslt {\cs37\ul\cf2 operator++}}}
+ (int) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALX" }{}}{\fldrslt {\cs37\ul\cf2 operator--}}}
+ () noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALY" }{}}{\fldrslt {\cs37\ul\cf2 operator--}}}
+ (int) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALZ" }{}}{\fldrslt {\cs37\ul\cf2 mC_B}}}
+ () noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMA" }{}}{\fldrslt {\cs37\ul\cf2 mC_Bm1}}}
+ () noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMB" }{}}{\fldrslt {\cs37\ul\cf2 C_Bm1}}}
+ () const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMC" }{}}{\fldrslt {\cs37\ul\cf2 C_B}}}
+ () const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMD" }{}}{\fldrslt {\cs37\ul\cf2 operator!}}}
+ () const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAME" }{}}{\fldrslt {\cs37\ul\cf2 operator-}}}
+ () const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMF" }{}}{\fldrslt {\cs37\ul\cf2 operator<<}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMG" }{}}{\fldrslt {\cs37\ul\cf2 operator<<=}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMH" }{}}{\fldrslt {\cs37\ul\cf2 operator>>}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMI" }{}}{\fldrslt {\cs37\ul\cf2 operator>>=}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMJ" }{}}{\fldrslt {\cs37\ul\cf2 rem_B}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMK" }{}}{\fldrslt {\cs37\ul\cf2 m_rem_B}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAML" }{}}{\fldrslt {\cs37\ul\cf2 mer_B}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMM" }{}}{\fldrslt {\cs37\ul\cf2 m_mer_B}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMN" }{}}{\fldrslt {\cs37\ul\cf2 operator|=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMO" }{}}{\fldrslt {\cs37\ul\cf2 operator|}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMP" }{}}{\fldrslt {\cs37\ul\cf2 operator&=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMQ" }{}}{\fldrslt {\cs37\ul\cf2 operator&}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMR" }{}}{\fldrslt {\cs37\ul\cf2 operator+=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &rarg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMS" }{}}{\fldrslt {\cs37\ul\cf2 operator-=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &rarg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMT" }{}}{\fldrslt {\cs37\ul\cf2 operator+}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &rarg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMU" }{}}{\fldrslt {\cs37\ul\cf2 operator-}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &rarg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr auto {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMV" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator-}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr auto {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMW" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator*}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMX" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator/}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) const noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+DIVISION BY A DIGIT. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMY" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator%}}}
+ ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ arg) const noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+REMAINDER BY A DIGIT. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMZ" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator+=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANA" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator+=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANB" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator-=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANC" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator-=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAND" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator*=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANE" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator*=}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANF" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator+}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+TO DO. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANG" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator-}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANH" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator*}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANI" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator+}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANJ" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator-}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANK" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator*}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANL" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator/}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANM" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::operator%}}}
+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &arg) const noexcept\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ Length> \par
+requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))std::istream & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANN" }{}}{\fldrslt {\cs37\ul\cf2 operator>>}}}
+ (std::istream &is, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+< Int_Type, Base, Length > &arg)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ Long> \par
+requires (type_traits::suitable_base<Int_Type,Base>())std::ostream & {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANO" }{}}{\fldrslt {\cs37\ul\cf2 operator<<}}}
+ (std::ostream &os, const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+< Int_Type, Base, Long > &arg)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Documentación de los 'typedefs'\par
+\pard\plain 
+{\xe \v base_N_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:base_N_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+ =  std::array<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+,N>}}
+\par
+{\bkmkstart AAAAAAAAJD}
+{\bkmkend AAAAAAAAJD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v base_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:base_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+ =  {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+<L>}}
+\par
+{\bkmkstart AAAAAAAAJE}
+{\bkmkend AAAAAAAAJE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v dig_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:dig_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ =  {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+<UINT_T,B>}}
+\par
+{\bkmkstart AAAAAAAAHA}
+{\bkmkend AAAAAAAAHA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v nat_reg_N_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_N_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+ =  {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+<UINT_T,B,N>}}
+\par
+{\bkmkstart AAAAAAAAJH}
+{\bkmkend AAAAAAAAJH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v reg_ints_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:reg_ints_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJL" }{}}{\fldrslt {\cs37\ul\cf2 reg_ints_t}}}
+ =  typename std::array<UINT_T,N>}}
+\par
+{\bkmkstart AAAAAAAAJL}
+{\bkmkend AAAAAAAAJL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v reg_ssints_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:reg_ssints_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJN" }{}}{\fldrslt {\cs37\ul\cf2 reg_ssints_t}}}
+ =  typename std::array<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJC" }{}}{\fldrslt {\cs37\ul\cf2 SIG_SINT_T}}}
+,N>}}
+\par
+{\bkmkstart AAAAAAAAJN}
+{\bkmkend AAAAAAAAJN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v reg_suints_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:reg_suints_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJM" }{}}{\fldrslt {\cs37\ul\cf2 reg_suints_t}}}
+ =  typename std::array<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJB" }{}}{\fldrslt {\cs37\ul\cf2 SIG_UINT_T}}}
+,N>}}
+\par
+{\bkmkstart AAAAAAAAJM}
+{\bkmkend AAAAAAAAJM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v res_base_N_op_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:res_base_N_op_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<binop_e op, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJF" }{}}{\fldrslt {\cs37\ul\cf2 res_base_N_op_t}}}
+ =  typename auxiliary_types::result_operation_t<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+<N>,op,N>}}
+\par
+{\bkmkstart AAAAAAAAJF}
+{\bkmkend AAAAAAAAJF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v res_base_op_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:res_base_op_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<binop_e op> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJG" }{}}{\fldrslt {\cs37\ul\cf2 res_base_op_t}}}
+ =  typename auxiliary_types::result_operation_t<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+,op,L>}}
+\par
+{\bkmkstart AAAAAAAAJG}
+{\bkmkend AAAAAAAAJG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v res_N_op_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:res_N_op_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<binop_e op, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJJ" }{}}{\fldrslt {\cs37\ul\cf2 res_N_op_t}}}
+ =  typename auxiliary_types::result_operation_t<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+<N>,op,N>}}
+\par
+{\bkmkstart AAAAAAAAJJ}
+{\bkmkend AAAAAAAAJJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v res_op_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:res_op_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<binop_e op> using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJK" }{}}{\fldrslt {\cs37\ul\cf2 res_op_t}}}
+ =  typename auxiliary_types::result_operation_t<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+,op,L>}}
+\par
+{\bkmkstart AAAAAAAAJK}
+{\bkmkend AAAAAAAAJK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v SIG_SINT_T\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:SIG_SINT_T}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJC" }{}}{\fldrslt {\cs37\ul\cf2 SIG_SINT_T}}}
+ =  typename type_traits::sig_SInt_for_UInt_t<UINT_T>}}
+\par
+{\bkmkstart AAAAAAAAJC}
+{\bkmkend AAAAAAAAJC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v SIG_UINT_T\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:SIG_UINT_T}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+using {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJB" }{}}{\fldrslt {\cs37\ul\cf2 SIG_UINT_T}}}
+ =  typename type_traits::sig_UInt_for_UInt_t<UINT_T>}}
+\par
+{\bkmkstart AAAAAAAAJB}
+{\bkmkend AAAAAAAAJB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Documentación de las funciones\par
+\pard\plain 
+{\xe \v C_B\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:C_B}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::C_B () const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMC}
+{\bkmkend AAAAAAAAMC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v C_Bm1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:C_Bm1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::C_Bm1 () const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMB}
+{\bkmkend AAAAAAAAMB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v cat\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:cat}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N+L > operator::cat (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKK}
+{\bkmkend AAAAAAAAKK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+SUBREPR => SUB REPRESENTACION. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+FORMACION DE UN REG_M_DIGS_T<M> DESDE EL THIS REG_DIGS_T (L) Y REG_N_DIGS_T<N> EN SUS DOS FORMAS: (*THIS)SEGUIDO(ARG) Y (ARG)SEGUIDO(*THIS) : OPERACIONES DE CONCATENACION FORMACION DE UN REG_M_DIGS_T<M> DESDE EL THIS REG_DIGS_T (L) Y REG_N_DIGS_T<N> EN SUS DOS FORMAS: (*THIS)SEGUIDO(ARG) Y (ARG)SEGUIDO(*THIS) : OPERACIONES DE CONCATENACION NAT_REG_N_T<L+M> NAT_REG_T::CAT(NAT_REG_N_T<M>) NAT_REG_N_T<L+M> NAT_REG_T::CAT_INV(NAT_REG_N_T<M>) NAT_REG_N_T<L+1> NAT_REG_T::CAT(DIG_T) NAT_REG_N_T<L+1> NAT_REG_T::CAT_INV(DIG_T) \par
+}}
+{\xe \v cat\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:cat}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< L+1 > operator::cat ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKL}
+{\bkmkend AAAAAAAAKL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v cat_inv\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:cat_inv}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N+L > operator::cat_inv (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKM}
+{\bkmkend AAAAAAAAKM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v cat_inv\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:cat_inv}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< L+1 > operator::cat_inv ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKN}
+{\bkmkend AAAAAAAAKN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v const_ref_data\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:const_ref_data}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+ & operator::const_ref_data () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAALT}
+{\bkmkend AAAAAAAALT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\ql
+Referenciado por {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANP" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::reg_digs_t< UINT_T, B, L >::back()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANQ" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::reg_digs_t< UINT_T, B, L >::empty()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANR" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::reg_digs_t< UINT_T, B, L >::front()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANS" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::reg_digs_t< UINT_T, B, L >::max_size()}}}
+ y {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANT" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::reg_digs_t< UINT_T, B, L >::size()}}}
+.}\par
+Gráfico de llamadas a esta función:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_aceee9eed725c6c4085378d119a9fa96f_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v cpy_data\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:cpy_data}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJE" }{}}{\fldrslt {\cs37\ul\cf2 base_t}}}
+ operator::cpy_data () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAALU}
+{\bkmkend AAAAAAAALU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v get\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:get}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ I> \par
+requires ((I<L)&&(I>=0))constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ operator::get () const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALP}
+{\bkmkend AAAAAAAALP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v is_0\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_0}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr bool operator::is_0 () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKQ}
+{\bkmkend AAAAAAAAKQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03693                                                                     \{(c>={\cf23 '0'}) && (c<={\cf23 '9'})\};\par
+03694                                                 {\cf17 const} {\cf18 bool} num_base_lt_Base \{numero_base_recogido < Base\};\par
+03695                                                 {\cf17 const} {\cf18 bool} num_base_eq_Base \{numero_base_recogido == Base\};\par
+}
+{
+\ql
+Referenciado por {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANU" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_0_divisor()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANV" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_maxormin()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANW" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_near_maxormin()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANX" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_unit()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANY" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator!=()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANZ" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator-=()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOA" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator<()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOB" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator<=()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOC" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator==()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOD" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator>()}}}
+ y {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOE" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator>=()}}}
+.}\par
+Gráfico de llamadas a esta función:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a540a0e700a266a624a295898de9ff8fc_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v is_1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr bool operator::is_1 () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKR}
+{\bkmkend AAAAAAAAKR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03701                                                                                         \{\par
+}
+{
+\ql
+Referenciado por {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANW" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_near_maxormin()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANX" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_unit()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOF" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::mult_inv()}}}
+ y {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANZ" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator-=()}}}
+.}\par
+Gráfico de llamadas a esta función:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a3fdf457344d84bef1762417b5f5228d2_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v is_B\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_B}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr bool operator::is_B () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKT}
+{\bkmkend AAAAAAAAKT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03713                                            :\par
+03714                                         \{\par
+}
+}
+{\xe \v is_B_pow\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_B_pow}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n> \par
+requires ((n>0) && (n<L))constexpr bool operator::is_B_pow () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKW}
+{\bkmkend AAAAAAAAKW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03727                                                                                      \{\par
+03728                 {\cf17 using }inttype = {\cf17 typename} type_traits::sig_UInt_for_UInt_t<Int_Type>;\par
+03729                 os << {\cf22 "reg_dig#"};\par
+}
+}
+{\xe \v is_B_pow_m1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_B_pow_m1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n> \par
+requires ((n>0) && (n<L))constexpr bool operator::is_B_pow_m1 () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKV}
+{\bkmkend AAAAAAAAKV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v is_Bm1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_Bm1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr bool operator::is_Bm1 () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKS}
+{\bkmkend AAAAAAAAKS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03707                                                       \{\par
+}
+{
+\ql
+Referenciado por {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOG" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_Bm1orBm2()}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANV" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_maxormin()}}}
+ y {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANW" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::dig_t< UINT_T, B >::is_near_maxormin()}}}
+.}\par
+Gráfico de llamadas a esta función:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a6433e8337d5ddd54c9d362e29780d52b_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v is_Bp1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_Bp1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr bool operator::is_Bp1 () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKU}
+{\bkmkend AAAAAAAAKU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03713                                            :\par
+03714                                         \{\par
+03715                                                 est_act = e0fin;\par
+}
+}
+{\xe \v is_filled_of\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_filled_of}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ n, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ d> \par
+requires ((n>0) && (n<L))constexpr bool operator::is_filled_of () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKZ}
+{\bkmkend AAAAAAAAKZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v is_filled_of_1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_filled_of_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr bool operator::is_filled_of_1 () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKX}
+{\bkmkend AAAAAAAAKX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03732                                        :{\cf22 ';}\par
+03733 {\cf22                 \}}\par
+03734 {\cf22                 os << static_cast<inttype>(arg(0));}\par
+}
+}
+{\xe \v is_filled_of_Bm1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:is_filled_of_Bm1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr bool operator::is_filled_of_Bm1 () const{\f2 [inline]}, {\f2 [constexpr]}}}
+\par
+{\bkmkstart AAAAAAAAKY}
+{\bkmkend AAAAAAAAKY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v m_mer_B\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:m_mer_B}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::m_mer_B ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMM}
+{\bkmkend AAAAAAAAMM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v m_rem_B\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:m_rem_B}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::m_rem_B ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMK}
+{\bkmkend AAAAAAAAMK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v mC_B\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:mC_B}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::mC_B (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALZ}
+{\bkmkend AAAAAAAALZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v mC_Bm1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:mC_Bm1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::mC_Bm1 (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMA}
+{\bkmkend AAAAAAAAMA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v mer_B\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:mer_B}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::mer_B ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAML}
+{\bkmkend AAAAAAAAML}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+consteval operator::nat_reg_digs_t (){\f2 [inline]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJI}
+{\bkmkend AAAAAAAAJI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR DEFECTO. }}\par
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr operator::nat_reg_digs_t (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &&  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJS}
+{\bkmkend AAAAAAAAJS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR MOVIMIENTO DESDE UN ARRAY DE DIGITOS. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 02937                                                      \{\par
+}
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr operator::nat_reg_digs_t (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJR}
+{\bkmkend AAAAAAAAJR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR COPIA DESDE UN ARRAY DE DIGITOS. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 02919                                                                               \{result[1]\};\par
+02920                                                         \}\par
+}
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr operator::nat_reg_digs_t (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJU}
+{\bkmkend AAAAAAAAJU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR COPIA POR REFERENCIA CONSTANTE. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03006                                              \{\par
+}
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr operator::nat_reg_digs_t (const std::initializer_list< {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ > &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJP}
+{\bkmkend AAAAAAAAJP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR LISTA DE DIGITOS. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 02836                 \{\par
+}
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename ... Ts> \par
+requires (std::is_same_v<Ts,{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+>&&...)constexpr operator::nat_reg_digs_t (const Ts &...  {\i args}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJQ}
+{\bkmkend AAAAAAAAJQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR ARGUMENTOS DIGITOS SIN LIMITE: DEDUCE EL TIPO. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 02843                                                             \{regd_base_N_0<3>()\};\par
+}
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<type_traits::integral_c ... Ints_type> constexpr operator::nat_reg_digs_t (Ints_type ...  {\i dig_pow_i}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJT}
+{\bkmkend AAAAAAAAJT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR COPIA DESDE ARGUMENTOS ENTEROS SIN LIMITE : DEDUCE EL TIPO. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 02992                                                                                       \{\par
+}
+}
+{\xe \v nat_reg_digs_t\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:nat_reg_digs_t}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr operator::nat_reg_digs_t ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &&  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJV}
+{\bkmkend AAAAAAAAJV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+CONSTRUCTOR POR MOVIMIENTO. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03006                                              \{\par
+}
+}
+{\xe \v operator Int_Type\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator Int_Type}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<type_traits::integral_c Int_Type> constexpr operator::operator Int_Type () const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKP}
+{\bkmkend AAAAAAAAKP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03489                                               \{0\};\par
+03490                 {\cf18 size_t} longitud\{0\};\par
+03491                 inttype                 numero_base_recogido\{0\};\par
+03493                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+& numero_ret\{arg\};\par
+03495                 estado_e est_act = e0ini;\par
+03497                 {\cf18 char} c\{{\cf23 '\\0'}\};\par
+03499                 is >> sds;\par
+03501                 {\cf19 do} \{\par
+03502                         c = sds[indice];\par
+}
+}
+{\xe \v operator!\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator!}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator! () const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMD}
+{\bkmkend AAAAAAAAMD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator!=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator!=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMD" }{}}{\fldrslt {\cs37\ul\cf2 operator::operator!}}}
+= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALC}
+{\bkmkend AAAAAAAALC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator!=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator!=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMD" }{}}{\fldrslt {\cs37\ul\cf2 operator::operator!}}}
+= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALD}
+{\bkmkend AAAAAAAALD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator&\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator&}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator& (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMQ}
+{\bkmkend AAAAAAAAMQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator&=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator&=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator&= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMP}
+{\bkmkend AAAAAAAAMP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator()\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator()}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<type_traits::integral_c Int_Type = UINT_T> constexpr Int_Type operator::operator() ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i idx}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALS}
+{\bkmkend AAAAAAAALS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator+\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator+}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator+ (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &  {\i rarg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMT}
+{\bkmkend AAAAAAAAMT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator++\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator++}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator++ (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALV}
+{\bkmkend AAAAAAAALV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator++\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator++}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator++ (int ){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALW}
+{\bkmkend AAAAAAAALW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator+=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator+=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator+= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &  {\i rarg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMR}
+{\bkmkend AAAAAAAAMR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator-\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator-}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator- () const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAME}
+{\bkmkend AAAAAAAAME}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator-\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator-}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator- (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &  {\i rarg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMU}
+{\bkmkend AAAAAAAAMU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator--\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator--}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator-- (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALX}
+{\bkmkend AAAAAAAALX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator--\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator--}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator-- (int ){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALY}
+{\bkmkend AAAAAAAALY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator-=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator-=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator-= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &  {\i rarg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMS}
+{\bkmkend AAAAAAAAMS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator<\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator< (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALI}
+{\bkmkend AAAAAAAALI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator<\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator< (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALJ}
+{\bkmkend AAAAAAAALJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator<<\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<<}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator<< ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMF}
+{\bkmkend AAAAAAAAMF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator<<\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<<}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ Long> \par
+requires (type_traits::suitable_base<Int_Type,Base>())std::ostream & operator<< (std::ostream &  {\i os}, const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+< Int_Type, Base, Long > &  {\i arg})}}
+\par
+{\bkmkstart AAAAAAAANO}
+{\bkmkend AAAAAAAANO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03727                                                                                      \{\par
+03728                 {\cf17 using }inttype = {\cf17 typename} type_traits::sig_UInt_for_UInt_t<Int_Type>;\par
+03729                 os << {\cf22 "reg_dig#"};\par
+03730                 {\cf19 for}(int32_t ix\{Long-1\} ; ix > 0 ; --ix) \{\par
+03731                                 os << static_cast<inttype>(arg(ix));\par
+03732                                 os << {\cf23 ':'};\par
+03733                 \}\par
+03734                 os << static_cast<inttype>(arg(0));\par
+03735                 os << {\cf22 "#B"};\par
+03736                 os << static_cast<inttype>(Base);\par
+03737                 {\cf19 return} (os);\par
+03738         \}\par
+}
+}
+{\xe \v operator<<=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<<=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator<<= ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMG}
+{\bkmkend AAAAAAAAMG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator<=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator<= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALE}
+{\bkmkend AAAAAAAALE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator<=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator<= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALF}
+{\bkmkend AAAAAAAALF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator<=>\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<=>}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr std::weak_ordering operator::operator<=> (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALN}
+{\bkmkend AAAAAAAALN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERADOR COMPARACION SPACESHIP C++20. }}\par
+}
+{\xe \v operator<=>\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<=>}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr std::weak_ordering operator::operator<=> (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALO}
+{\bkmkend AAAAAAAALO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERADOR COMPARACION SPACESHIP C++20. }}\par
+}
+{\xe \v operator<=>\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator<=>}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr std::strong_ordering operator::operator<=> (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALM}
+{\bkmkend AAAAAAAALM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERADOR COMPARACION SPACESHIP C++20. }}\par
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &&  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJY}
+{\bkmkend AAAAAAAAJY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA MOVIMIENTO DESDE BASE_N_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03112                 \{\par
+}
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJX}
+{\bkmkend AAAAAAAAJX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA REFERENCIA DESDE BASE_N_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03112                 \{\par
+}
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJW}
+{\bkmkend AAAAAAAAJW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA REFERENCIA CONST {\i NO}  COPIABLE DESDE BASE_N_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03012                                                       \{coc_uint\};\par
+03013                                         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACN" }{}}{\fldrslt {\cs37\ul\cf2 rem}}}
+[1] = dig_0();\par
+03014                                         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACN" }{}}{\fldrslt {\cs37\ul\cf2 rem}}}
+[0] = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+\{rem_uint\};\par
+03015                                 \}\par
+}
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKI}
+{\bkmkend AAAAAAAAKI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION COPIA DESDE UN DIGITO (CONVERSION) }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03255                 \{\par
+03256                         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ ret(*{\cf17 this});\par
+03257                         ret += arg;\par
+03258                         {\cf19 return} std::move(ret);\par
+03259                 \}\par
+03260 \par
+}
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAJZ}
+{\bkmkend AAAAAAAAJZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA REFERENCIA EN LA QUE SE PUEDE COPIAR. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03112                 \{\par
+}
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKB}
+{\bkmkend AAAAAAAAKB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR COPIA EN LA QUE {\i NO}  SE PUEDE COPIAR. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03112                 \{\par
+}
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<type_traits::integral_c Int_Type> constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= (Int_Type  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKJ}
+{\bkmkend AAAAAAAAKJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION COPIA DESDE UN ENTERO (CONVERSION A LA BASE B) }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03300                 \{\par
+}
+}
+{\xe \v operator=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator= ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &&  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKA}
+{\bkmkend AAAAAAAAKA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION ASIGNACION POR MOVIMIENTO. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03112                 \{\par
+}
+}
+{\xe \v operator==\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator==}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator== (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALA}
+{\bkmkend AAAAAAAALA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator==\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator==}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator== (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALB}
+{\bkmkend AAAAAAAALB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator>\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator>}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator> (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALK}
+{\bkmkend AAAAAAAALK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator>\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator>}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator> (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALL}
+{\bkmkend AAAAAAAALL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator>=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator>=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator>= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJD" }{}}{\fldrslt {\cs37\ul\cf2 base_N_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALG}
+{\bkmkend AAAAAAAALG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator>=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator>=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N> \par
+requires (N>0)constexpr bool operator::operator>= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< N > &  {\i arg}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALH}
+{\bkmkend AAAAAAAALH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator>>\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator>>}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator>> ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMH}
+{\bkmkend AAAAAAAAMH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator>>\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator>>}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ Length> \par
+requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))std::istream & operator>> (std::istream &  {\i is}, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+< Int_Type, Base, Length > &  {\i arg})}}
+\par
+{\bkmkstart AAAAAAAANN}
+{\bkmkend AAAAAAAANN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+TODO ESTA VERSION + VERSION CON TRATAMIENTO DE ERRORES EN RUNTIME \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN\par
+TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS\par
+INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA\par
+VARIABLES PARA ACCIONES EN LOS ESTADOS\par
+VARIABLE DE RETORNO (BINDED TO THE ARG BY REFERENCE)\par
+ESTADO ACTUAL\par
+CARACTER QUE GUARDARA EL INDICADO POR EL INDICE DEL STRING RECOGIDO DESDE CIN\par
+RECOGEMOS DESDE LA ENTRADA EL STRING CON LA INFORMACION CODIFICADA\par
+MAQUINA DE ESTADOS FINITOS QUE HACE EL PARSE() DE LA ENTRADA\par
+}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03474                                                                                  \{\par
+03475                 {\cf17 enum} estado_e \{\par
+03476                         e0ini   , e1r           , e1e           , e1g                   , e1sep         ,\par
+03477                         e1d             , e1i           , e2g           , e2start       , e2dig         ,\par
+03478                         e2dp    , e2end , e2B           , e3dig         , e0fin\par
+03479                 \};\par
+03481                 std::string sds;\par
+03483                 {\cf17 using }inttype = {\cf17 typename} type_traits::sig_UInt_for_UInt_t<Int_Type>;\par
+03484                 {\cf17 using }{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t<Int_Type,Base>}}}
+;\par
+03485                 {\cf17 using }{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ = nat_reg_digs_t<Int_Type,Base,Length>;\par
+03487                 {\cf18 size_t}  indice\{0\};\par
+03489                 Int_Type                digito\{0\};\par
+03490                 {\cf18 size_t} longitud\{0\};\par
+03491                 inttype                 numero_base_recogido\{0\};\par
+03493                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+& numero_ret\{arg\};\par
+03495                 estado_e est_act = e0ini;\par
+03497                 {\cf18 char} c\{{\cf23 '\\0'}\};\par
+03499                 is >> sds;\par
+03501                 {\cf19 do} \{\par
+03502                         c = sds[indice];\par
+03503                         {\cf19 switch}(est_act) \{\par
+03504                                 {\cf19 case} e0ini :\par
+03505                                         \{\par
+03506                                                 {\cf19 if} (c=={\cf23 'r'}) \{\par
+03507                                                         est_act = e1r;\par
+03508                                                 \} {\cf19 else} \{\par
+03509                                                         est_act = e0ini;\par
+03510                                                 \}\par
+03511                                         \}\par
+03512                                         {\cf19 break};\par
+03513                                 {\cf19 case} e1r :\par
+03514                                         \{\par
+03515                                                 \{\par
+03516                                                         {\cf19 if} (c=={\cf23 'e'}) \{\par
+03517                                                                 est_act = e1e;\par
+03518                                                         \}\par
+03519                                                         {\cf19 else} \{\par
+03520                                                                 est_act = e0ini;\par
+03521                                                         \}\par
+03522                                                 \}\par
+03523                                         \}\par
+03524                                         {\cf19 break};\par
+03525                                 {\cf19 case} e1e :\par
+03526                                         \{\par
+03527                                                 {\cf19 if} (c=={\cf23 'g'}) \{\par
+03528                                                         est_act = e1g;\par
+03529                                                 \}\par
+03530                                                 {\cf19 else}  \{\par
+03531                                                         est_act = e0ini;\par
+03532                                                 \}\par
+03533                                         \}\par
+03534                                         {\cf19 break};\par
+03535                                 {\cf19 case} e1g :\par
+03536                                         \{\par
+03537                                                 {\cf19 if} (c=={\cf23 '_'}) \{\par
+03538                                                         est_act = e1sep;\par
+03539                                                 \}\par
+03540                                                 {\cf19 else}  \{\par
+03541                                                         est_act = e0ini;\par
+03542                                                 \}\par
+03543                                         \}\par
+03544                                         {\cf19 break};\par
+03545                                 {\cf19 case} e1sep :\par
+03546                                         \{\par
+03547                                                 {\cf19 if} (c=={\cf23 'd'}) \{\par
+03548                                                         est_act = e1d;\par
+03549                                                 \}\par
+03550                                                 {\cf19 else}  \{\par
+03551                                                         est_act = e0ini;\par
+03552                                                 \}\par
+03553                                         \}\par
+03554                                         {\cf19 break};\par
+03555                                 {\cf19 case} e1d :\par
+03556                                         \{\par
+03557                                                 {\cf19 if} (c=={\cf23 'i'}) \{\par
+03558                                                         est_act = e1i;\par
+03559                                                 \}\par
+03560                                                 {\cf19 else}  \{\par
+03561                                                         est_act = e0ini;\par
+03562                                                 \}\par
+03563                                         \}\par
+03564                                         {\cf19 break};\par
+03565                                 {\cf19 case} e1i :\par
+03566                                         \{\par
+03567                                                 {\cf19 if} (c=={\cf23 'g'}) \{\par
+03568                                                         est_act = e2g;\par
+03569                                                 \}\par
+03570                                                 {\cf19 else}  \{\par
+03571                                                         est_act = e0ini;\par
+03572                                                 \}\par
+03573                                         \}\par
+03574                                         {\cf19 break};\par
+03575                                 {\cf19 case} e2g :\par
+03576                                         \{\par
+03577                                                 {\cf19 if} (c=={\cf23 '#'}) \{\par
+03578                                                         est_act = e2start;\par
+03579                                                 \}\par
+03580                                                 {\cf19 else}  \{\par
+03581                                                         est_act = e0ini;\par
+03582                                                 \}\par
+03583                                         \}\par
+03584                                         {\cf19 break};\par
+03585                                 {\cf19 case} e2start :\par
+03586                                         \{\par
+03587                                                 {\cf19 if} (((c>={\cf23 '0'})&&(c<={\cf23 '9'}))&&(std::abs(c-{\cf23 '0'})<Base)) \{\par
+03588                                                         est_act = e2dig;\par
+03589                                                         digito = (c-{\cf23 '0'});\par
+03590                                                         longitud = 0;\par
+03591                                                         numero_base_recogido = 0;\par
+03592                                                         numero_ret = nat_reg_digs_t::regd_0();\par
+03593                                                 \}\par
+03594                                                 {\cf19 else}  \{\par
+03595                                                         est_act = e0ini;\par
+03596                                                         digito = 0;\par
+03597                                                         longitud = 0;\par
+03598                                                         numero_base_recogido = 0;\par
+03599                                                         numero_ret = nat_reg_digs_t::regd_0();\par
+03600                                                 \}\par
+03601                                         \}\par
+03602                                         {\cf19 break};\par
+03603                                 {\cf19 case} e2dig :\par
+03604                                         \{\par
+03605                                                 {\cf17 const} {\cf18 bool} dig_c \{(c >= {\cf23 '0'}) && (c <= {\cf23 '9'})\};\par
+03606                                                 {\cf17 const} {\cf18 bool} dig_lt_Base\{digito<Base\};\par
+03607                                                 {\cf17 const} {\cf18 bool} c_es_dig_B \{dig_c && dig_lt_Base\};\par
+03608                                                 {\cf17 const} {\cf18 bool} dig_B_cdl \{c_es_dig_B && (longitud < Length-1)\};\par
+03609                                                 {\cf17 const} {\cf18 bool} tt_dig_B_cdl \{(c=={\cf23 ':'})&&dig_lt_Base&&(longitud < Length-1)\};\par
+03610                                                 {\cf17 const} {\cf18 bool} tf_dig_B_cdl \{(c=={\cf23 '#'})&&dig_lt_Base&&(longitud == Length-1)\};\par
+03611                                                 {\cf19 if} (dig_B_cdl) \{\par
+03612                                                         digito *= 10;\par
+03613                                                         digito += (c-{\cf23 '0'});\par
+03614                                                         est_act = e2dig;\par
+03615                                                 \}\par
+03616                                                 {\cf19 else} {\cf19 if} (tt_dig_B_cdl) \{\par
+03617                                                         est_act = e2dp;\par
+03618                                                 \}\par
+03619                                                 {\cf19 else} {\cf19 if} (tf_dig_B_cdl) \{\par
+03620                                                         est_act = e2end;\par
+03621                                                 \}\par
+03622                                                 {\cf19 else}  \{\par
+03623                                                         est_act = e0ini;\par
+03624                                                         digito = 0;\par
+03625                                                         longitud = 0;\par
+03626                                                         numero_base_recogido = 0;\par
+03627                                                         numero_ret = nat_reg_digs_t::regd_0();\par
+03628                                                 \}\par
+03629                                         \}\par
+03630                                         {\cf19 break};\par
+03631                                 {\cf19 case} e2dp :\par
+03632                                         \{\par
+03633                                                 {\cf17 const} {\cf18 bool} dig_c \{(c >= {\cf23 '0'}) && (c <= {\cf23 '9'})\};\par
+03634                                                 {\cf17 const} {\cf18 bool} c_es_dig_B \{(std::abs(c-{\cf23 '0'})<Base) && (digito<Base)\};\par
+03635                                                 {\cf17 const} {\cf18 bool} dig_B_cdl \{dig_c && c_es_dig_B && (longitud < Length-1)\};\par
+03636                                                 {\cf17 const} {\cf18 bool} rdig_B_cdl \{dig_c && c_es_dig_B && dig_B_cdl\};\par
+03637                                                 {\cf19 if} (rdig_B_cdl) \{\par
+03638                                                         est_act = e2dig;\par
+03639                                                         numero_ret[Length-1-longitud] = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+(digito);\par
+03640                                                         ++longitud;\par
+03641                                                         digito = c-{\cf23 '0'};\par
+03642                                                 \}\par
+03643                                                 {\cf19 else}  \{\par
+03644                                                         est_act = e0ini;\par
+03645                                                         digito = 0;\par
+03646                                                         longitud = 0;\par
+03647                                                         numero_base_recogido = 0;\par
+03648                                                         indice = 0;\par
+03649                                                         numero_ret = nat_reg_digs_t::regd_0();\par
+03650                                                 \}\par
+03651                                         \}\par
+03652                                         {\cf19 break};\par
+03653                                 {\cf19 case} e2end :\par
+03654                                         \{\par
+03655                                                 {\cf17 const} {\cf18 bool} c_es_sepfin \{c == {\cf23 'B'}\};\par
+03656                                                 {\cf17 const} {\cf18 bool} d_es_digB \{digito < Base\};\par
+03657                                                 {\cf17 const} {\cf18 bool} l_coincide \{longitud == Length-1\};{\cf20 // llega al cero ?}\par
+03658                                                 {\cf17 const} {\cf18 bool} rdigB_cdl \{c_es_sepfin && d_es_digB && l_coincide\};\par
+03659                                                 {\cf19 if} (rdigB_cdl) \{\par
+03660                                                         est_act = e2B;\par
+03661                                                         numero_ret[Length-1-longitud] = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+(digito);\par
+03662                                                         digito = 0;\par
+03663                                                         longitud = 0;\par
+03664                                                 \}\par
+03665                                                 {\cf19 else}  \{\par
+03666                                                         est_act = e0ini;\par
+03667                                                         indice = 0;\par
+03668                                                         digito = 0;\par
+03669                                                         longitud = 0;\par
+03670                                                         numero_ret = nat_reg_digs_t::regd_0();\par
+03671                                                 \}\par
+03672                                         \}\par
+03673                                         {\cf19 break};\par
+03674                                 {\cf19 case} e2B :\par
+03675                                         \{\par
+03676                                                 {\cf19 if} ((c >= {\cf23 '0'})&&(c <= {\cf23 '9'})) \{\par
+03677                                                         est_act = e3dig;\par
+03678                                                         numero_base_recogido = c-{\cf23 '0'};\par
+03679                                                         digito = 0;\par
+03680                                                 \}\par
+03681                                                 {\cf19 else}  \{\par
+03682                                                         est_act = e0ini;\par
+03683                                                         digito = 0;\par
+03684                                                         longitud = 0;\par
+03685                                                         numero_base_recogido = 0;\par
+03686                                                         numero_ret = nat_reg_digs_t::regd_0();\par
+03687                                                 \}\par
+03688                                         \}\par
+03689                                         {\cf19 break};\par
+03690                                 {\cf19 case} e3dig :\par
+03691                                         \{\par
+03692                                                 {\cf17 const} {\cf18 bool} espacio_c \{c < 16\};\par
+03693                                                 {\cf17 const} {\cf18 bool} digito_c \{(c>={\cf23 '0'}) && (c<={\cf23 '9'})\};\par
+03694                                                 {\cf17 const} {\cf18 bool} num_base_lt_Base \{numero_base_recogido < Base\};\par
+03695                                                 {\cf17 const} {\cf18 bool} num_base_eq_Base \{numero_base_recogido == Base\};\par
+03696                                                 {\cf19 if} (digito_c && num_base_lt_Base) \{\par
+03697                                                         est_act = e3dig;\par
+03698                                                         numero_base_recogido *= 10;\par
+03699                                                         numero_base_recogido += (c-{\cf23 '0'});\par
+03700                                                 \}\par
+03701                                                 {\cf19 else} {\cf19 if} (espacio_c && num_base_eq_Base) \{\par
+03702                                                         numero_base_recogido *= 10;\par
+03703                                                         numero_base_recogido += (c-{\cf23 '0'});\par
+03704                                                                 est_act = e0fin;\par
+03705                                                                 numero_base_recogido = 0;\par
+03706                                                 \}\par
+03707                                                 {\cf19 else}  \{\par
+03708                                                         est_act = e0ini;\par
+03709                                                         numero_base_recogido = 0;\par
+03710                                                 \}\par
+03711                                         \}\par
+03712                                         {\cf19 break};\par
+03713                                 {\cf19 case} e0fin :\par
+03714                                         \{\par
+03715                                                 est_act = e0fin;\par
+03716                                         \}\par
+03717                         \}\par
+03718                         ++indice;\par
+03719                 \} {\cf19 while} (est_act!=e0fin);\par
+03720 \par
+03721                 {\cf19 return} (is);\par
+03722         \}\par
+}
+}
+{\xe \v operator>>=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator>>=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator>>= ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMI}
+{\bkmkend AAAAAAAAMI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator[]\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator[]}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ & operator[] ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i idx}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALR}
+{\bkmkend AAAAAAAALR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator|\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator|}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::operator| (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMO}
+{\bkmkend AAAAAAAAMO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v operator|=\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:operator|=}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ & operator::operator|= (const {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ &  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMN}
+{\bkmkend AAAAAAAAMN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v put\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:put}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ I> \par
+requires ((I<L)&&(I>=0))constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+ operator::put ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAALQ}
+{\bkmkend AAAAAAAALQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v rem_B\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:rem_B}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ operator::rem_B ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+  {\i n}) const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAMJ}
+{\bkmkend AAAAAAAAMJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v set_0\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:set_0}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr void operator::set_0 (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKC}
+{\bkmkend AAAAAAAAKC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE LIMPIEZA A CERO DEL NAT_REG_DIGS_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03216         \{\par
+}
+{
+\ql
+Referenciado por {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOH" }{}}{\fldrslt {\cs37\ul\cf2 NumRepr::reg_digs_t< UINT_T, B, L >::operator=()}}}
+.}\par
+Gráfico de llamadas a esta función:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a3cded391678ea04df0fb832f1b9a7259_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v set_Bm1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:set_Bm1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr void operator::set_Bm1 (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKD}
+{\bkmkend AAAAAAAAKD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE LIMPIEZA A B-1 DEL NAT_REG_DIGS_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03216         \{\par
+03217                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+ cpthis\{*{\cf17 this}\};\par
+03218                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJI" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_digs_t}}}
+& cthis\{0\};\par
+}
+}
+{\xe \v set_dig\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:set_dig}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+constexpr void operator::set_dig ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+  {\i arg}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKE}
+{\bkmkend AAAAAAAAKE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE LIMPIEZA A VALOR DIG_T DEL NAT_REG_DIGS_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03230         \{\par
+}
+}
+{\xe \v set_interval_0\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:set_interval_0}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_i, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_pf> \par
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void operator::set_interval_0 (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKF}
+{\bkmkend AAAAAAAAKF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE PONER A VALOR DIG_0 EN [N_0 , N_1) DEL NAT_REG_DIGS_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03255                 \{\par
+}
+}
+{\xe \v set_interval_Bm1\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:set_interval_Bm1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_i, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_pf> \par
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void operator::set_interval_Bm1 (){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKG}
+{\bkmkend AAAAAAAAKG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE PONER A VALOR DIG_Bm1 EN [N_0 , N_1) DEL NAT_REG_DIGS_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03255                 \{\par
+}
+}
+{\xe \v set_interval_dig\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:set_interval_dig}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_i, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ N_pf> \par
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void operator::set_interval_dig ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHA" }{}}{\fldrslt {\cs37\ul\cf2 dig_t}}}
+  {\i dig}){\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKH}
+{\bkmkend AAAAAAAAKH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+OPERACION DE PONER A VALOR DIG EN [N_0 , N_1) DEL NAT_REG_DIGS_T. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 03255                 \{\par
+}
+}
+{\xe \v subrepr\:nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp}
+{\xe \v nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp\:subrepr}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ ibegin, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 size_t}}}
+ iend> \par
+requires ((iend <= L)&&(ibegin < iend))constexpr {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAJH" }{}}{\fldrslt {\cs37\ul\cf2 nat_reg_N_digs_t}}}
+< iend-ibegin > operator::subrepr () const{\f2 [inline]}, {\f2 [constexpr]}, {\f2 [noexcept]}}}
+\par
+{\bkmkstart AAAAAAAAKO}
+{\bkmkend AAAAAAAAKO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+}

@@ -1,0 +1,91 @@
+.TH "NumRepr::detail" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::detail
+.SH SYNOPSIS
+.br
+.PP
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "constexpr \fBsize_t\fP \fBceilsqrt\fP (\fBsize_t\fP n, \fBsize_t\fP low, \fBsize_t\fP high) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBsize_t\fP \fBceilsqrt\fP (\fBsize_t\fP n) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBfind_factor\fP (\fBsize_t\fP n, \fBsize_t\fP low, \fBsize_t\fP high) noexcept"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "constexpr \fBsize_t\fP NumRepr::detail::ceilsqrt (\fBsize_t\fP n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+71 {
+72   const auto num_max_dig{std::numeric_limits<std::size_t>::digits};
+73   return
+74         (
+75                 (n < 3) ?
+76                         n       :
+77                         ceilsqrt(
+78                                 n,
+79                                 1,
+80                                 std::size_t(1) << (num_max_dig / 2)
+81                         )
+82         );
+83 }
+.fi
+.PP
+Hace referencia a \fBceilsqrt()\fP\&.
+.SS "constexpr \fBsize_t\fP NumRepr::detail::ceilsqrt (\fBsize_t\fP n, \fBsize_t\fP low, \fBsize_t\fP high)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+53 {
+54   const auto mid{std::midpoint(low, high)};
+55   const auto sqmid{mid*mid};
+56   return
+57         (
+58                 (low + 1 >= high)       ?
+59                         high                    :
+60                         (sqmid == n)            ?
+61                                 mid                     :
+62                                 (sqmid <  n)            ?
+63                                         ceilsqrt(n, mid, high)  :
+64                                         ceilsqrt(n, low, mid)
+65         );
+66 }
+.fi
+.PP
+Hace referencia a \fBceilsqrt()\fP\&.
+.PP
+Referenciado por \fBceilsqrt()\fP y \fBNumRepr::auxiliary_functions::is_prime()\fP\&.
+.SS "constexpr bool NumRepr::detail::find_factor (\fBsize_t\fP n, \fBsize_t\fP low, \fBsize_t\fP high)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+89 {
+90   const auto mid{std::midpoint(low, high)};
+91   return
+92         (
+93                 (low + 1 >= high)                               ?
+94                         (n % (2 * low + 1)) == 0        :
+95                         (
+96                                 find_factor(n, low, mid)
+97                                 ||
+98                                 find_factor(n, mid, high)
+99                         )
+100         );
+101 }
+.fi
+.PP
+Hace referencia a \fBfind_factor()\fP\&.
+.PP
+Referenciado por \fBfind_factor()\fP y \fBNumRepr::auxiliary_functions::is_prime()\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

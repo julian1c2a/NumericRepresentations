@@ -1,0 +1,54 @@
+.TH "NumRepr::type_traits::UIntTypeForRadix< sint8_t, Radix >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::type_traits::UIntTypeForRadix< sint8_t, Radix >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <basic_types\&.hpp>\fP
+.SS "Tipos públicos"
+
+.in +1c
+.ti -1c
+.RI "using \fBUIntType\fP = \fBuint8_t\fP"
+.br
+.in -1c
+.SS "Atributos públicos estáticos"
+
+.in +1c
+.ti -1c
+.RI "static constexpr \fBuint8_t\fP \fBuint_value_max\fP = \fBmaxbase\fP<\fBuint8_t\fP>()"
+.br
+.ti -1c
+.RI "static constexpr \fBuint8_t\fP \fBuint_value\fP = static_cast<\fBuint8_t\fP>(Radix)"
+.br
+.ti -1c
+.RI "static constexpr bool \fBbool_value\fP = true"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<\fBsint8_t\fP Radix>
+.br
+requires (Radix > 1)
+.br
+struct NumRepr::type_traits::UIntTypeForRadix< sint8_t, Radix >"DEFINICION PARA LLAMAR A TYPE_TRAITS::UINTTYPEFORRADIX CON SOLO RADIX DEVUELVE EL TIPO MAS PEQUENO PARA EL NUMERO SIN SIGNO ENTERO QUE LE PASAMOS EN TIEMPO DE COMPILACION 
+.SH "Documentación de los 'Typedef' miembros de la clase"
+.PP 
+.SS "template<\fBsint8_t\fP Radix> using \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBsint8_t\fP, Radix >::UIntType =  \fBuint8_t\fP"
+
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "template<\fBsint8_t\fP Radix> constexpr bool \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBsint8_t\fP, Radix >::bool_value = true\fC [static]\fP, \fC [constexpr]\fP"
+
+.SS "template<\fBsint8_t\fP Radix> constexpr \fBuint8_t\fP \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBsint8_t\fP, Radix >::uint_value = static_cast<\fBuint8_t\fP>(Radix)\fC [static]\fP, \fC [constexpr]\fP"
+
+.SS "template<\fBsint8_t\fP Radix> constexpr \fBuint8_t\fP \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBsint8_t\fP, Radix >::uint_value_max = \fBmaxbase\fP<\fBuint8_t\fP>()\fC [static]\fP, \fC [constexpr]\fP"
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

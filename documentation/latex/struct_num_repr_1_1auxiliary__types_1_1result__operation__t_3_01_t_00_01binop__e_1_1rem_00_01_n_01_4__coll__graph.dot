@@ -1,0 +1,9 @@
+digraph "NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="{NumRepr::auxiliary\l_types::result_operation\l_t\< T, binop_e::rem, N \>\n|+ std::array\< T, N \>\l result_content_remainder\l+ bool good_result\l|}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+}

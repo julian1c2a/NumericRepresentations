@@ -1,0 +1,12 @@
+digraph "NumRepr::nat_reg_digs_t::operator Int_Type"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="NumRepr::nat_reg_digs\l_t::operator Int_Type",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="NumRepr::type_traits\l::maxbase",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_num_repr_1_1type__traits.html#a4f0f4b9cd9964b406c8299bcbd74f506",tooltip=" "];
+}

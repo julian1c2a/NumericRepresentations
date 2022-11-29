@@ -1,0 +1,366 @@
+.TH "NumRepr::type_traits" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::type_traits
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBdetail\fP"
+.br
+.in -1c
+.SS "Clases"
+
+.in +1c
+.ti -1c
+.RI "struct \fBempty_type\fP"
+.br
+.RI "DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES SIN DEFINCION\&. "
+.ti -1c
+.RI "struct \fBis_signed_sz_gt\fP"
+.br
+.ti -1c
+.RI "struct \fBis_unsigned_sz_gt\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix\fP"
+.br
+.RI "FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINTTYPEFORRADIX\&. "
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< int64_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< sint16_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< sint32_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< sint8_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< uint128_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< uint16_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< uint32_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< uint64_t, Radix >\fP"
+.br
+.ti -1c
+.RI "struct \fBUIntTypeForRadix< uint8_t, Radix >\fP"
+.br
+.in -1c
+.SS "Concepts"
+
+.in +1c
+.ti -1c
+.RI "concept \fBallowable_base_type_c\fP"
+.br
+.ti -1c
+.RI "concept \fBallowable_unsigned_type_c\fP"
+.br
+.ti -1c
+.RI "concept \fBunsigned_integral_c\fP"
+.br
+.ti -1c
+.RI "concept \fBallowable_signed_type_c\fP"
+.br
+.ti -1c
+.RI "concept \fBsigned_integral_c\fP"
+.br
+.ti -1c
+.RI "concept \fBintegral_c\fP"
+.br
+.in -1c
+.SS "typedefs"
+
+.in +1c
+.ti -1c
+.RI "template<unsigned_integral_c UInt_t> using \fBsig_UInt_for_UInt_t\fP = typename \fBdetail::__sig_UInt_for_UInt_t\fP< UInt_t >::type"
+.br
+.ti -1c
+.RI "template<unsigned_integral_c UInt_t> using \fBsig_SInt_for_UInt_t\fP = typename \fBdetail::__sig_SInt_for_UInt_t\fP< UInt_t >::type"
+.br
+.ti -1c
+.RI "template<signed_integral_c SInt_t> using \fBsig_UInt_for_SInt_t\fP = typename \fBdetail::__sig_UInt_for_SInt_t\fP< SInt_t >::type"
+.br
+.ti -1c
+.RI "template<signed_integral_c SInt_t> using \fBsig_SInt_for_SInt_t\fP = typename \fBdetail::__sig_SInt_for_SInt_t\fP< SInt_t >::type"
+.br
+.ti -1c
+.RI "template<integral_c Type, Type Radix> using \fBUIntTypeForRadix_t\fP = typename \fBUIntTypeForRadix\fP< Type, Radix >::UIntType"
+.br
+.ti -1c
+.RI "template<\fBuint128_t\fP Radix> using \fBTypeFromIntNumber_t\fP = \fBUIntTypeForRadix_t\fP< decltype(Radix), Radix >"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBmaxbase\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBsubmaxbase\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBminbase\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBsubminbase\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBmonobase\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBnobase\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBmaxdigit\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBsubmaxdigit\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBdigit_0\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBdigit_1\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBbase_2\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T , UINT_T B> consteval bool \fBbase_geqt_2\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T , UINT_T B> consteval bool \fBbase_leqt_max\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T , UINT_T B> consteval bool \fBsuitable_base\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBmiddle_max\fP ()"
+.br
+.ti -1c
+.RI "template<typename UINT_T > consteval UINT_T \fBsqrt_max\fP ()"
+.br
+.RI "DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , typename S > constexpr bool \fBhas_the_same_size\fP = (sizeof(T)==sizeof(S))"
+.br
+.ti -1c
+.RI "template<unsigned_integral_c T, unsigned_integral_c S> constexpr bool \fBis_unsigned_sz_gt_v\fP = \fBis_unsigned_sz_gt\fP<T,S>::value"
+.br
+.ti -1c
+.RI "template<unsigned_integral_c T, unsigned_integral_c S> constexpr bool \fBis_unsigned_sz_geqt_v\fP = (\fBis_unsigned_sz_gt_v\fP<T,S> || std::is_same_v<T,S>)"
+.br
+.ti -1c
+.RI "template<signed_integral_c T, signed_integral_c S> constexpr bool \fBis_signed_sz_gt_v\fP = \fBis_signed_sz_gt\fP<T,S>::value"
+.br
+.ti -1c
+.RI "template<signed_integral_c T, unsigned_integral_c S> constexpr bool \fBis_signed_sz_geqt_v\fP"
+.br
+.ti -1c
+.RI "template<integral_c T, unsigned_integral_c S> constexpr bool \fBis_sz_gt_v\fP"
+.br
+.ti -1c
+.RI "template<integral_c T, unsigned_integral_c S> constexpr bool \fBis_sz_geqt_v\fP"
+.br
+.in -1c
+.SH "Documentación de los 'typedefs'"
+.PP 
+.SS "template<signed_integral_c SInt_t> using \fBNumRepr::type_traits::sig_SInt_for_SInt_t\fP = typedef typename \fBdetail::__sig_SInt_for_SInt_t\fP<SInt_t>::type"
+METAFUNCIONES PARA DAR CON LOS MAXIMOS NUMEROS QUE CABEN EN UN TIPO Y SIMILARES 
+.SS "template<unsigned_integral_c UInt_t> using \fBNumRepr::type_traits::sig_SInt_for_UInt_t\fP = typedef typename \fBdetail::__sig_SInt_for_UInt_t\fP<UInt_t>::type"
+
+.SS "template<signed_integral_c SInt_t> using \fBNumRepr::type_traits::sig_UInt_for_SInt_t\fP = typedef typename \fBdetail::__sig_UInt_for_SInt_t\fP<SInt_t>::type"
+METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO ENTERO POR ESPCECIALIZACION EXPLICITA 
+.SS "template<unsigned_integral_c UInt_t> using \fBNumRepr::type_traits::sig_UInt_for_UInt_t\fP = typedef typename \fBdetail::__sig_UInt_for_UInt_t\fP<UInt_t>::type"
+
+.SS "template<\fBuint128_t\fP Radix> using \fBNumRepr::type_traits::TypeFromIntNumber_t\fP = typedef \fBUIntTypeForRadix_t\fP<decltype(Radix),Radix>"
+
+.SS "template<integral_c Type, Type Radix> using \fBNumRepr::type_traits::UIntTypeForRadix_t\fP = typedef typename \fBUIntTypeForRadix\fP<Type,Radix>::UIntType"
+DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINTTYPEFORRADIX UNSIGNED POSIBLY RADIX NON VALID 
+.SH "Documentación de las funciones"
+.PP 
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::base_2 ()"
+
+.PP
+.nf
+428                                   {
+429                 return static_cast<UINT_T>(2u);
+430         }
+.fi
+.SS "template<typename UINT_T , UINT_T B> consteval bool NumRepr::type_traits::base_geqt_2 ()"
+
+.PP
+.nf
+433                                      {
+434                 return (B >= base_2<UINT_T>());
+435         }
+.fi
+.SS "template<typename UINT_T , UINT_T B> consteval bool NumRepr::type_traits::base_leqt_max ()"
+
+.PP
+.nf
+438                                        {
+439                 return (B <= maxbase<UINT_T>());
+440         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::digit_0 ()"
+
+.PP
+.nf
+418                                    {
+419                 return static_cast<UINT_T>(0u);
+420         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::digit_1 ()"
+
+.PP
+.nf
+423                                    {
+424                 return static_cast<UINT_T>(1u);
+425         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::maxbase ()"
+
+.PP
+.nf
+378                                    {
+379                 return (static_cast<UINT_T>(std::numeric_limits<UINT_T>::max()));
+380         }
+.fi
+.PP
+Referenciado por \fBNumRepr::nat_reg_digs_t< UINT_T, B, L >::assign()\fP y \fBNumRepr::nat_reg_digs_t< UINT_T, B, L >::operator Int_Type()\fP\&.
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::maxdigit ()"
+
+.PP
+.nf
+408                                     {
+409                 return static_cast<UINT_T>(submaxbase<UINT_T>());
+410         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::middle_max ()"
+
+.PP
+.nf
+448                                       {
+449                 using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+450                 constexpr SIG_UINT_T maximo = maxbase<UINT_T>();
+451                 constexpr SIG_UINT_T uno{1};
+452                 constexpr SIG_UINT_T dos{2};
+453                 return  static_cast<UINT_T>((maximo+uno)/dos);
+454         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::minbase ()"
+
+.PP
+.nf
+388                                    {
+389                 return static_cast<UINT_T>(2);
+390         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::monobase ()"
+
+.PP
+.nf
+398                                     {
+399                 return static_cast<UINT_T>(1);
+400         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::nobase ()"
+
+.PP
+.nf
+403                                   {
+404                 return static_cast<UINT_T>(0);
+405         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::sqrt_max ()"
+
+.PP
+DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS\&. QUEREMOS FABRICAR LA METAFUNCION TypeFromIntNumber_t<numero_sin_signo> QUE DEVUELVA EL TIPO ENTERO SIN SIGNO MAS PEQUENO PARA EL NUMERO numero_sin_signo 
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::submaxbase ()"
+
+.PP
+.nf
+383                                       {
+384                 return static_cast<UINT_T>(maxbase<UINT_T>()-1);
+385         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::submaxdigit ()"
+
+.PP
+.nf
+413                                        {
+414                 return static_cast<UINT_T>(submaxbase<UINT_T>()-1);
+415         }
+.fi
+.SS "template<typename UINT_T > consteval UINT_T NumRepr::type_traits::subminbase ()"
+
+.PP
+.nf
+393                                       {
+394                 return static_cast<UINT_T>(3);
+395         }
+.fi
+.SS "template<typename UINT_T , UINT_T B> consteval bool NumRepr::type_traits::suitable_base ()"
+
+.PP
+.nf
+443                                        { // requires on B
+444                 return (base_geqt_2<UINT_T,B>() && base_leqt_max<UINT_T,B>());
+445         }
+.fi
+.SH "Documentación de las variables"
+.PP 
+.SS "template<typename T , typename S > constexpr bool NumRepr::type_traits::has_the_same_size = (sizeof(T)==sizeof(S))\fC [constexpr]\fP"
+
+.SS "template<signed_integral_c T, unsigned_integral_c S> constexpr bool NumRepr::type_traits::is_signed_sz_geqt_v\fC [constexpr]\fP"
+\fBValor inicial:\fP
+.PP
+.nf
+=        is_signed_sz_gt_v<T,S>
+                                                                                        ||
+                                                                                        std::is_same_v<T,S>
+.fi
+.SS "template<signed_integral_c T, signed_integral_c S> constexpr bool NumRepr::type_traits::is_signed_sz_gt_v = \fBis_signed_sz_gt\fP<T,S>::value\fC [constexpr]\fP"
+
+.SS "template<integral_c T, unsigned_integral_c S> constexpr bool NumRepr::type_traits::is_sz_geqt_v\fC [constexpr]\fP"
+\fBValor inicial:\fP
+.PP
+.nf
+= is_signed_sz_geqt_v<T,S>
+                                                                                ||
+                                                                                is_unsigned_sz_geqt_v<T,S>
+.fi
+METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO NATURAL POR ESPECIALIZACION EXPLICITA 
+.SS "template<integral_c T, unsigned_integral_c S> constexpr bool NumRepr::type_traits::is_sz_gt_v\fC [constexpr]\fP"
+\fBValor inicial:\fP
+.PP
+.nf
+=   is_signed_sz_gt_v<T,S>
+                                                                                ||
+                                                                                is_unsigned_sz_gt_v<T,S>
+.fi
+.SS "template<unsigned_integral_c T, unsigned_integral_c S> constexpr bool NumRepr::type_traits::is_unsigned_sz_geqt_v = (\fBis_unsigned_sz_gt_v\fP<T,S> || std::is_same_v<T,S>)\fC [constexpr]\fP"
+
+.SS "template<unsigned_integral_c T, unsigned_integral_c S> constexpr bool NumRepr::type_traits::is_unsigned_sz_gt_v = \fBis_unsigned_sz_gt\fP<T,S>::value\fC [constexpr]\fP"
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

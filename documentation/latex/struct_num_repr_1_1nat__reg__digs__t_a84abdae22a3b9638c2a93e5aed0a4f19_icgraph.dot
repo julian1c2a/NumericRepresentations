@@ -1,0 +1,28 @@
+digraph "NumRepr::nat_reg_digs_t::const_ref_data"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="NumRepr::nat_reg_digs\l_t::const_ref_data",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="NumRepr::nat_reg_digs\l_t::nat_reg_digs_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#ac754667e568ecdda0033e4672fdeefd3",tooltip="CONSTRUCTOR COPIA POR REFERENCIA CONSTANTE."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="NumRepr::nat_reg_digs\l_t::operator!=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#aa1b50464c47ec2306e132409e5c0d39b",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="NumRepr::nat_reg_digs\l_t::operator\<",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a75a06e97717d145137e875999180048e",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="NumRepr::nat_reg_digs\l_t::operator\<=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a8eced305bac59431a2c2c0bb10feb7be",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="NumRepr::nat_reg_digs\l_t::operator\<=\>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a760667e522ab381ea922f79a0fe37032",tooltip="OPERADOR COMPARACION SPACESHIP C++20."];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="NumRepr::nat_reg_digs\l_t::operator=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a0222f0fe5e680461731101767d0d658b",tooltip="OPERACION ASIGNACION POR COPIA REFERENCIA EN LA QUE SE PUEDE COPIAR."];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="NumRepr::nat_reg_digs\l_t::operator==",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#aea0d7502c64527b4b97ef9fe0e99e404",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="NumRepr::nat_reg_digs\l_t::operator\>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a0c0115fb7a0bc33e71bc0b6848d97c5d",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="NumRepr::nat_reg_digs\l_t::operator\>=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a11543159dbaddde4dcb666056e758070",tooltip=" "];
+}

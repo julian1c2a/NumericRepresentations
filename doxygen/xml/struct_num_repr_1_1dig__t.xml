@@ -1,0 +1,2220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1dig__t" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::dig_t</compoundname>
+    <includes refid="dig__t_8hpp" local="no">dig_t.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>allowable_base_type_c</type>
+        <declname>UINT_T</declname>
+        <defname>UINT_T</defname>
+      </param>
+      <param>
+        <type>UINT_T</type>
+        <declname>B</declname>
+        <defname>B</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" prot="public" static="no">
+        <type>sig_UInt_for_UInt_t&lt; UINT_T &gt;</type>
+        <definition>using NumRepr::dig_t&lt; UINT_T, B &gt;::SIG_UINT_T =  sig_UInt_for_UInt_t&lt;UINT_T&gt;</definition>
+        <argsstring></argsstring>
+        <name>SIG_UINT_T</name>
+        <qualifiedname>NumRepr::dig_t::SIG_UINT_T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="23" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1dig__t_1a6593e326ad416014be397174d2be8f38" prot="public" static="no">
+        <type>sig_SInt_for_UInt_t&lt; UINT_T &gt;</type>
+        <definition>using NumRepr::dig_t&lt; UINT_T, B &gt;::SIG_SINT_T =  sig_SInt_for_UInt_t&lt;UINT_T&gt;</definition>
+        <argsstring></argsstring>
+        <name>SIG_SINT_T</name>
+        <qualifiedname>NumRepr::dig_t::SIG_SINT_T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="25" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1dig__t_1ae38e5e04d4c6c8993e3abc8d0e777efb" prot="public" static="no">
+        <type>std::array&lt; UINT_T, 2 &gt;</type>
+        <definition>using NumRepr::dig_t&lt; UINT_T, B &gt;::uintspair =  std::array&lt;UINT_T,2&gt;</definition>
+        <argsstring></argsstring>
+        <name>uintspair</name>
+        <qualifiedname>NumRepr::dig_t::uintspair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="27" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1dig__t_1a1051e56dae889dea37c0fc56c629ef47" prot="public" static="no">
+        <type>std::array&lt; <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref>, 2 &gt;</type>
+        <definition>using NumRepr::dig_t&lt; UINT_T, B &gt;::digspair =  std::array&lt;dig_t,2&gt;</definition>
+        <argsstring></argsstring>
+        <name>digspair</name>
+        <qualifiedname>NumRepr::dig_t::digspair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="28" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1dig__t_1a018d699b224ca5c7f35dfc5ed5882df9" prot="public" static="no">
+        <type>std::array&lt; <ref refid="struct_num_repr_1_1dig__t_1ae38e5e04d4c6c8993e3abc8d0e777efb" kindref="member">uintspair</ref>, B &gt;</type>
+        <definition>using NumRepr::dig_t&lt; UINT_T, B &gt;::uintspairlist =  std::array&lt;uintspair,B&gt;</definition>
+        <argsstring></argsstring>
+        <name>uintspairlist</name>
+        <qualifiedname>NumRepr::dig_t::uintspairlist</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="29" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1dig__t_1a66b00dc8a233028c0b8af1d6c8c968df" prot="public" static="no">
+        <type>std::array&lt; <ref refid="struct_num_repr_1_1dig__t_1a018d699b224ca5c7f35dfc5ed5882df9" kindref="member">uintspairlist</ref>, B &gt;</type>
+        <definition>using NumRepr::dig_t&lt; UINT_T, B &gt;::uintspairtbl =  std::array&lt;uintspairlist,B&gt;</definition>
+        <argsstring></argsstring>
+        <name>uintspairtbl</name>
+        <qualifiedname>NumRepr::dig_t::uintspairtbl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="30" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1dig__t_1ad0179be562c80f204f00fa63ee87f595" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8" kindref="member">binop_e</ref></type>
+            <declname>op</declname>
+            <defname>op</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="struct_num_repr_1_1auxiliary__types_1_1resbinop__t" kindref="compound">auxiliary_types::resbinop_t</ref>&lt; <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref>, op &gt;</type>
+        <definition>using NumRepr::dig_t&lt; UINT_T, B &gt;::resbinop_t =  auxiliary_types::resbinop_t&lt;dig_t,op&gt;</definition>
+        <argsstring></argsstring>
+        <name>resbinop_t</name>
+        <qualifiedname>NumRepr::dig_t::resbinop_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>BEGIN : CONSTRUCCION DE LAS TABLAS DE MULTIPLICAR ESTATICAS PARA TODA LA CLASE </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="33" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="struct_num_repr_1_1dig__t_1ac0c7935b799a4e21bfafdd8f4b6a0bbc" prot="private" static="no" mutable="no">
+        <type>UINT_T</type>
+        <definition>UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::m_d</definition>
+        <argsstring></argsstring>
+        <name>m_d</name>
+        <qualifiedname>NumRepr::dig_t::m_d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="20" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a61783752fb9fa2c63d85aeb2a386abd5" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>UINT_T</type>
+            <declname>n</declname>
+            <defname>n</defname>
+          </param>
+          <param>
+            <type>UINT_T</type>
+            <declname>m</declname>
+            <defname>m</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1ae38e5e04d4c6c8993e3abc8d0e777efb" kindref="member">uintspair</ref></type>
+        <definition>static consteval uintspair NumRepr::dig_t&lt; UINT_T, B &gt;::mult</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>mult</name>
+        <qualifiedname>NumRepr::dig_t::mult</qualifiedname>
+    <requiresclause>((n&lt;B)&amp;&amp;(m&lt;B))    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="40" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="40" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a2e4a2d001d8b4a6e97639da50e33d3cb" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval bool</type>
+        <definition>static consteval bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_prime</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>is_prime</name>
+        <qualifiedname>NumRepr::dig_t::is_prime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>dig_t&lt;uchint,10&gt; digito{4}; digito() devuelve un 4 de tipo uchint </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="139" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="139" bodyend="141"/>
+        <references refid="namespace_num_repr_1_1auxiliary__functions_1a6a368b190a18264af00c59b164dc1096" compoundref="auxiliary__functions_8hpp" startline="105" endline="113">NumRepr::auxiliary_functions::is_prime</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a4295924ee3603c94ef1f1c7d83976be8" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::dig_max</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_max</name>
+        <qualifiedname>NumRepr::dig_t::dig_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="143" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="143" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a2f8231e5cfedba8aaef0a404ca8df5d5" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::dig_submax</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_submax</name>
+        <qualifiedname>NumRepr::dig_t::dig_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="144" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="144" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a85fa7ae1435069ddd1b87658c97a5856" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::dig_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_Bm1</name>
+        <qualifiedname>NumRepr::dig_t::dig_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="145" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a326196de3bd9537e5c23df66440b8a56" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::dig_Bm2</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_Bm2</name>
+        <qualifiedname>NumRepr::dig_t::dig_Bm2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="146" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="146" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ac6a8ff5406dd59f782f096ea7f2d2da3" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::dig_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_0</name>
+        <qualifiedname>NumRepr::dig_t::dig_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="147" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a1dc126ef160231a2c2a87a30fdda731c" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::dig_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_1</name>
+        <qualifiedname>NumRepr::dig_t::dig_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="148" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a91e737faa7255b8706deb3220ceaa336" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ui_max</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_max</name>
+        <qualifiedname>NumRepr::dig_t::ui_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="150" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="150" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a73c90f6b9bab2442e884cc30b0af258f" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ui_submax</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_submax</name>
+        <qualifiedname>NumRepr::dig_t::ui_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="151" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="151" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a7cdf0d9df3dedb75f66d4d7eda2e2da5" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ui_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_Bm1</name>
+        <qualifiedname>NumRepr::dig_t::ui_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="152" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="152" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aaac3a2d93ea02d4860644ede5dc38506" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ui_Bm2</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_Bm2</name>
+        <qualifiedname>NumRepr::dig_t::ui_Bm2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="153" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="153" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a76b5c675bb32de9c1803da4dd804d8e4" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ui_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_0</name>
+        <qualifiedname>NumRepr::dig_t::ui_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="154" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="154" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a7abd8bcb3f0bd6b749488dfad8e56da5" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ui_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_1</name>
+        <qualifiedname>NumRepr::dig_t::ui_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="155" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="155" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a815d56d548d1572c87630f311d8b49e9" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::sui_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_B</name>
+        <qualifiedname>NumRepr::dig_t::sui_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="157" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="157" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a9684eea2c5657f412de910eea97817c7" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::sui_max</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_max</name>
+        <qualifiedname>NumRepr::dig_t::sui_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="160" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="160" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a9df237777f14cf1ebc8d550a885260ff" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::sui_submax</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_submax</name>
+        <qualifiedname>NumRepr::dig_t::sui_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="163" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="163" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aeb3cb9d0b23b1c211dff853083a6fe83" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::sui_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_0</name>
+        <qualifiedname>NumRepr::dig_t::sui_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="166" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="166" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a43a4e505e240a8f1ad75f5ad5f8d1353" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::sui_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_1</name>
+        <qualifiedname>NumRepr::dig_t::sui_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="169" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="169" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae5704d076a53f9416a1b943df75b9179" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1a6593e326ad416014be397174d2be8f38" kindref="member">SIG_SINT_T</ref></type>
+        <definition>static consteval SIG_SINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ssi_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_B</name>
+        <qualifiedname>NumRepr::dig_t::ssi_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="173" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="173" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae42291bd38bbbaffa802f75d6a1baeab" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1a6593e326ad416014be397174d2be8f38" kindref="member">SIG_SINT_T</ref></type>
+        <definition>static consteval SIG_SINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ssi_max</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_max</name>
+        <qualifiedname>NumRepr::dig_t::ssi_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="176" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a73855570e049a9b032a7a49587fb6d90" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ssi_submax</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_submax</name>
+        <qualifiedname>NumRepr::dig_t::ssi_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="179" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="179" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a287219a289b34f6f682e318b3ca1f92c" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ssi_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_0</name>
+        <qualifiedname>NumRepr::dig_t::ssi_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="182" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="182" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1af8eebfebac403516d028ecce97b98d63" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::ssi_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_1</name>
+        <qualifiedname>NumRepr::dig_t::ssi_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="185" column="36" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="185" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a879e2a4684c282b6449f23a262c91ce3" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr UINT_T</type>
+        <definition>static constexpr UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::normaliza</definition>
+        <argsstring>(Int_t arg) noexcept</argsstring>
+        <name>normaliza</name>
+        <qualifiedname>NumRepr::dig_t::normaliza</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="206" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="206" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a081c0bf1162ff858903c226cb48b08e8" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>static constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::sum_carry</definition>
+        <argsstring>(dig_t arg_1, dig_t arg_2) noexcept</argsstring>
+        <name>sum_carry</name>
+        <qualifiedname>NumRepr::dig_t::sum_carry</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg_1</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg_2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="395" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="395" bodyend="456"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aafdbf9ec2e1c2c693053bddc9c3da18b" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::dig_t&lt; UINT_T, B &gt;::operator UINT_T</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator UINT_T</name>
+        <qualifiedname>NumRepr::dig_t::operator UINT_T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PARA B=3 2*2 1 COMIENZAN POR 2 B-2 PARA B=4 2*2 2*3 3*4 3 COMIENZAN POR 2 B-2, 3 B-3 PARA B=5 2*2 2*3 2*4 3*3 3*4 4*4 6 COMIENZAN POR 2 B-2, 3 B-3, 4 B-4 PARA B=6 2*2 2*3 2*4 2*5 3*3 3*4 3*5 4*4 4*5 5*5 10 COMIENZAN POR 2 B-2, 3 B-3, 4 B-4, 5 B-5 PARA B=r 2*2 2*(2+1) ... 2*(r-1) r-1 r COMIENZAN POR 2 B-2, 3 B-3, 4 B-4, 5 B-1, ... , r-1 B-r+1 3*3 ... 3*(r-1) r-2 ... (r-1)*(r-1) r-(r-1) <hruler/>
+ (r-2)r-(r-1)*r/2 + 1 = [2(r-2)-((r-2)+1)]r/2 + 1 = ((r-3)r + 2)/2 = (r^2 - 3r + 2) / 2 </para>
+<sect2 id="struct_num_repr_1_1dig__t_1autotoc_md0">
+<title>a r^2 + b r + c</title>
+<para>1 = a 9 + b 3 + c 3 = a 16 + b 4 + c </para>
+</sect2>
+<sect2 id="struct_num_repr_1_1dig__t_1autotoc_md1">
+<title>6 = a 25 + b 5 + c</title>
+<para>1 = a 9 + b 3 + c 2 = a 7 + b 1 </para>
+</sect2>
+<sect2 id="struct_num_repr_1_1dig__t_1autotoc_md2">
+<title>5 = a 16 + b 2</title>
+<para>1 = a 9 + b 3 + c 2 = a 7 + b </para>
+</sect2>
+<sect2 id="struct_num_repr_1_1dig__t_1autotoc_md3">
+<title>1 = a  2</title>
+<para>c = 2/2 b = -3/2 </para>
+</sect2>
+<sect2 id="struct_num_repr_1_1dig__t_1autotoc_md4">
+<title>a =  1/2</title>
+<para>SIZE = (B^2 - 3B + 2)/2 2+3+4+...+B-1 = 1+2+3+4+...+B-1 - 1 = (B-1)B/2 - 2(B-1)/2 = (B^2 - B - 2B +2)/2 = =(B^2-3B+2)/2</para>
+<para>FALTARIA HACER SOLO PARA BASES MAYORES QUE 2 CODE NEW USING TYPES : using pair_map = std::pair&lt;uintspair,uintspair&gt;; CODE MULTTABLE: static consteval std::array&lt;pair_map,(B^2 - 3B + 2)/2&gt; multtable{make_multtables()}; CODE FOR MAKE_MULTTABLES(): static consteval std::array&lt;pair_map,(B^2 - 3B + 2)/2&gt; make_multtables() noexcept { std::array&lt;pair_map,(B^2 - 3B + 2)/2&gt; ret; /// ESTO QUE SIGUE HABRIA QUE HACERLO POR UNROOLING LOOP EN COMPILE TIME /// YA QUE IDX E IDY NO SON CONSTANTES EN TIEMPO DE COMPILACION /// LO MEJOR ES HACERLO EN UNA CLASE TEMPLATE POR RECURSION for(size_t idx{2} ; idx &lt; B ; ++idx) { for(size_t idy{idx} ; idy &lt; B ; ++idy) { make_pair(make_array(idx,idy),<ref refid="struct_num_repr_1_1dig__t_1a61783752fb9fa2c63d85aeb2a386abd5" kindref="member">mult&lt;idx,idy&gt;()</ref>); } } } </para>
+</sect2>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="116" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="116" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a41f650033f842a57e20462acf2d56bd3" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const UINT_T &amp;</type>
+        <definition>constexpr const UINT_T &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::get</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>get</name>
+        <qualifiedname>NumRepr::dig_t::get</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="120" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="120" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a98f3c67f12b327b29cb7dd956979aa6b" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::dig_t&lt; UINT_T, B &gt;::operator SIG_UINT_T</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator SIG_UINT_T</name>
+        <qualifiedname>NumRepr::dig_t::operator SIG_UINT_T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="124" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="124" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a11aa8890a01df04bb8c78e36b1671bcb" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::dig_t&lt; UINT_T, B &gt;::operator SIG_SINT_T</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator SIG_SINT_T</name>
+        <qualifiedname>NumRepr::dig_t::operator SIG_SINT_T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="128" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="128" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aad3081cc834a2404026c745da3a19624" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr UINT_T</type>
+        <definition>constexpr UINT_T NumRepr::dig_t&lt; UINT_T, B &gt;::operator()</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>NumRepr::dig_t::operator()</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="132" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="132" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aada07ff4de9c24f4824b65107df7ad68" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval</type>
+        <definition>consteval NumRepr::dig_t&lt; UINT_T, B &gt;::dig_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_t</name>
+        <qualifiedname>NumRepr::dig_t::dig_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; CONSTRUCTORES CONSTRUCTOR POR DEFECTO NORMALIZA ES UNA FUNCION QUE BASICAMENTE SI ENTRA 1524 DEVUELVE 1524B TENIENDO EN CUENTA TIPOS Y SIGNOS </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="200" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a6a88c25f113c10a3e960dff6bc83209d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::dig_t&lt; UINT_T, B &gt;::dig_t</definition>
+        <argsstring>(Int_t arg) noexcept</argsstring>
+        <name>dig_t</name>
+        <qualifiedname>NumRepr::dig_t::dig_t</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CONSTRUCTOR A PARTIR DE UN ENTERO ARG ARG EQUIV ARG+Z*B DONDE Z ES UN ENTERO EN m_d SOLO QUEREMOS QUE HAYA UN NUMERO ENTRE 0 Y B-1 INCLUSIVES </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="277" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="277" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1af0449bb155f32b9f4d0a77616be964f5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::dig_t&lt; UINT_T, B &gt;::dig_t</definition>
+        <argsstring>(const dig_t &amp;) noexcept=default</argsstring>
+        <name>dig_t</name>
+        <qualifiedname>NumRepr::dig_t::dig_t</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>CONSTRUCTOR COPIA POR REFERENCIA. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="282" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a0271247936d99587c10e4e7f793eca59" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::dig_t&lt; UINT_T, B &gt;::dig_t</definition>
+        <argsstring>(dig_t &amp;&amp;) noexcept=default</argsstring>
+        <name>dig_t</name>
+        <qualifiedname>NumRepr::dig_t::dig_t</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>CONSTRUCTOR POR MOVIMIENTO. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="284" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae1e378970227631d984b568c6e87aea9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator=</definition>
+        <argsstring>(const Int_t &amp;a) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>NumRepr::dig_t::operator=</qualifiedname>
+        <param>
+          <type>const Int_t &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>SOBRECARGA DEL OPERATOR=() MEDIANTE REFERENCIA CTE DESDE UN INT_T. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>PODEMOS PASAR ARGUMENTOS POR COPIA, REFERENCIA (PUNTEROS) Y MOVIMIENTO COPIA : COPIA EL ARGUMENTO LITERALMENTE PARA PASARLO: EL ORIGINAL INTACTO REFERENCIA: COPIA LA DIRECCION DEL ARGUMENTO (SI ES CONST EL COMPILADOR NO TE DEJA COMPILAR SI LO CAMBIAS) MOVIMIENTO: SI EL ARGUMETO NO SE VA A UTILIZAR MAS SE LE PASA LA PROPIEDAD A LA FUNCION </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="301" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="301" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a2c7df43b2672d12d58b0170564b65067" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator=</definition>
+        <argsstring>(const dig_t &amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>NumRepr::dig_t::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>SOBRECARGA DEL OPERATOR=() MEDIANTE REFERENCIA CTE DESDE UN DIG_T. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="309" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1acd2c86722aea84ff8caa599f46143096" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator=</definition>
+        <argsstring>(dig_t &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>NumRepr::dig_t::operator=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>SOBRECARGA DEL OPERATOR=() MEDIANTE MOVIMIENTO DESDE UN DIG_T. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="311" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aecc930e8cb3dbc3ede5beeff11ef77ee" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_unit</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_unit</name>
+        <qualifiedname>NumRepr::dig_t::is_unit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>a y b son digitos; a = std::move(b); a es identico a b; en b puede no queda nada; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="320" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="320" bodyend="342"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a540a0e700a266a624a295898de9ff8fc" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3693" endline="3695">is_0</references>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a3fdf457344d84bef1762417b5f5228d2" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3698" endline="3700">is_1</references>
+        <references refid="namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623" compoundref="dig__t_8hpp" startline="1179" endline="1179">NumRepr::ui_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a48f6d7f54f227eaf337438fccd8b9ff4" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_0_divisor</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_0_divisor</name>
+        <qualifiedname>NumRepr::dig_t::is_0_divisor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="344" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="344" bodyend="365"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a540a0e700a266a624a295898de9ff8fc" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3693" endline="3695">is_0</references>
+        <references refid="namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623" compoundref="dig__t_8hpp" startline="1179" endline="1179">NumRepr::ui_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aa62606aacfd127f2670db23a727e1689" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::mult_inv</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>mult_inv</name>
+        <qualifiedname>NumRepr::dig_t::mult_inv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="367" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="367" bodyend="386"/>
+        <references refid="namespace_num_repr_1a46e6abf96f0de3f606c367f6217adfc5" compoundref="dig__t_8hpp" startline="1183">NumRepr::dig_max</references>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a3fdf457344d84bef1762417b5f5228d2" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3698" endline="3700">is_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aaad1f6b6c362bb8b79e308d8dbd3623e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator&amp;</definition>
+        <argsstring>(const dig_t &amp;arg) const noexcept</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>NumRepr::dig_t::operator&amp;</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DEVOLVER EL MENOR: ANDBITWISE NO TIENE POSIBILIDAD DE ERROR </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="467" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="467" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aadb521540be446f8f6affbe08593f521" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator&amp;=</definition>
+        <argsstring>(dig_t arg) noexcept</argsstring>
+        <name>operator&amp;=</name>
+        <qualifiedname>NumRepr::dig_t::operator&amp;=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DEVOLVER EL MENOR HABIENDOLO ASIGNADO ANDBITWISE AND ASSIGN NO TIENE POSIBILIDAD DE ERROR </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="476" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="476" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a3794e0222d9b563c1692006bba0af83e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator|</definition>
+        <argsstring>(const dig_t &amp;arg) const noexcept</argsstring>
+        <name>operator|</name>
+        <qualifiedname>NumRepr::dig_t::operator|</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DEVOLVER EL MAYOR ORBITWISE NO TIENE POSIBILIDAD DE ERROR </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="487" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="487" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ab917ba177adf7c56596f814db3bc3e26" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator|=</definition>
+        <argsstring>(dig_t arg) noexcept</argsstring>
+        <name>operator|=</name>
+        <qualifiedname>NumRepr::dig_t::operator|=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DEVOLVER EL MAYOR HABIENDOLO ASIGNADO ORBITWISE AND ASSIGN NO TIENE POSIBILIDAD DE ERROR </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="496" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="496" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1abcc6416630883d3061eb2cc4a2b19b6d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::unsigned_integral_c</type>
+            <declname>UIntType</declname>
+            <defname>UIntType</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator^=</definition>
+        <argsstring>(UIntType exp) noexcept</argsstring>
+        <name>operator^=</name>
+        <qualifiedname>NumRepr::dig_t::operator^=</qualifiedname>
+        <param>
+          <type>UIntType</type>
+          <declname>exp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="514" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="514" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a38d52e65a990092a76e803e16e918fb7" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::unsigned_integral_c</type>
+            <declname>UIntType</declname>
+            <defname>UIntType</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator^</definition>
+        <argsstring>(UIntType exp) const noexcept</argsstring>
+        <name>operator^</name>
+        <qualifiedname>NumRepr::dig_t::operator^</qualifiedname>
+        <param>
+          <type>UIntType</type>
+          <declname>exp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="541" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="541" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a16d0da2599654bff077fbeca82c74935" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::operator==</definition>
+        <argsstring>(dig_t a) const noexcept</argsstring>
+        <name>operator==</name>
+        <qualifiedname>NumRepr::dig_t::operator==</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="555" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="555" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a47635d2d0ec4782ae299ee8d120e3382" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::operator!=</definition>
+        <argsstring>(dig_t a) const noexcept</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>NumRepr::dig_t::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="557" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="557" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a2e48d921d1562d835c6fe6804ab2ec29" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::operator&gt;=</definition>
+        <argsstring>(dig_t a) const noexcept</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>NumRepr::dig_t::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="559" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="559" bodyend="560"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1afefef1d7905f1b427805fed3bac47b6f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::operator&gt;</definition>
+        <argsstring>(dig_t a) const noexcept</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>NumRepr::dig_t::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="561" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="561" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1acdc26317d35ccf448bf50bc5aa8a88e2" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::operator&lt;=</definition>
+        <argsstring>(dig_t a) const noexcept</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>NumRepr::dig_t::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="563" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="563" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a541d4e253f487b533befc4b36db15b37" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::operator&lt;</definition>
+        <argsstring>(dig_t a) const noexcept</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>NumRepr::dig_t::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="565" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="565" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a6c213b8f2f95f130cd8557f4d910e645" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::strong_ordering</type>
+        <definition>constexpr std::strong_ordering NumRepr::dig_t&lt; UINT_T, B &gt;::operator&lt;=&gt;</definition>
+        <argsstring>(dig_t rhs) const noexcept</argsstring>
+        <name>operator&lt;=&gt;</name>
+        <qualifiedname>NumRepr::dig_t::operator&lt;=&gt;</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SI COMPARAMOS O HACEMOS UNA OPERACION CON UN INT_T SIEMPRE SERA DIG_T @ INT_T -&gt; DIG_T Y NUNCA INT_T @ DIG_T -&gt; ANY_TYPE METODO PROPIO DE C++20 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="571" column="2" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="571" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a98120e7f67bdd81793d79f21df596840" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::operator==</definition>
+        <argsstring>(Int_t rhs) noexcept</argsstring>
+        <name>operator==</name>
+        <qualifiedname>NumRepr::dig_t::operator==</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="586" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="586" bodyend="595"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ab70884cd01554850ffe4d26a86dc72e0" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::weak_ordering</type>
+        <definition>constexpr std::weak_ordering NumRepr::dig_t&lt; UINT_T, B &gt;::operator&lt;=&gt;</definition>
+        <argsstring>(Int_t rhs) const noexcept</argsstring>
+        <name>operator&lt;=&gt;</name>
+        <qualifiedname>NumRepr::dig_t::operator&lt;=&gt;</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>METODO PROPIO DE C++20 ESTABLECEMOS UN ORDEN PARCIAL SOBRE LOS ENTEROS SI a b EN Z ESTANDO EN ESTE AMBITO DE BASE B SI a mod B = b mod B </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="601" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="601" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aba27e3396b7ed8788f2cfe819f4d4bb3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator+=</definition>
+        <argsstring>(dig_t arg) noexcept</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>NumRepr::dig_t::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="619" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="619" bodyend="638"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae24ff79c3041e20d742037441037d2b3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator+=</definition>
+        <argsstring>(Int_t arg) noexcept</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>NumRepr::dig_t::operator+=</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="641" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="641" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aaea951b73ed6db7bbddace9d937e65e1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator-=</definition>
+        <argsstring>(dig_t arg) noexcept</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>NumRepr::dig_t::operator-=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="663" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="663" bodyend="671"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a8ccb0b59a15564ffb2b293664267d5ec" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator-=</definition>
+        <argsstring>(Int_t arg) noexcept</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>NumRepr::dig_t::operator-=</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="674" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="674" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a4a8206b542cb7f4b6346f8958757b977" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator*=</definition>
+        <argsstring>(dig_t arg) noexcept</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>NumRepr::dig_t::operator*=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="685" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="685" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a168a6f67f18e796f8873a0e6c2333d54" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator*=</definition>
+        <argsstring>(Int_t arg) noexcept</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>NumRepr::dig_t::operator*=</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="701" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="701" bodyend="748"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae6090e4504d28bdd974c7366150a5eaa" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator/=</definition>
+        <argsstring>(dig_t arg) noexcept</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>NumRepr::dig_t::operator/=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="750" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="750" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a2ae86f82c15b23402ab0893d841e9f9f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator/=</definition>
+        <argsstring>(Int_t arg) noexcept</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>NumRepr::dig_t::operator/=</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="758" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="758" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a6c7356a5ae3558ef870ec13760e4cb8a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator%=</definition>
+        <argsstring>(dig_t arg) noexcept</argsstring>
+        <name>operator%=</name>
+        <qualifiedname>NumRepr::dig_t::operator%=</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="767" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="767" bodyend="772"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a2c84aafb21be9d9cdbe35758bc44d98b" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_t</declname>
+            <defname>Int_t</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator%=</definition>
+        <argsstring>(Int_t arg) noexcept</argsstring>
+        <name>operator%=</name>
+        <qualifiedname>NumRepr::dig_t::operator%=</qualifiedname>
+        <param>
+          <type>Int_t</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="775" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="775" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aaa1f4b500974e6fd56e680e03f29b2c2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator++</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>operator++</name>
+        <qualifiedname>NumRepr::dig_t::operator++</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tengo serias dudas que la division y el resto euclideo tengan cabida entre los operadores aritmeticos de un tipo <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> DUDA SATISFECHA: TIENEN CABIDA PORQUE EL INVERSO MULTIPLICATIVO ETC. SOLO NOS SIRVE SI ESTUVIERAMOS CONSTRUYENDO NUMEROS DE UN ANILLO FINITO </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="794" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="794" bodyend="799"/>
+        <references refid="namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623" compoundref="dig__t_8hpp" startline="1179" endline="1179">NumRepr::ui_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a8870447b3f8ce7bd2a9119b6f7d4530c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator++</definition>
+        <argsstring>(int) noexcept</argsstring>
+        <name>operator++</name>
+        <qualifiedname>NumRepr::dig_t::operator++</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="801" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="801" bodyend="805"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a760f7426a2aa1c3633499eb30faa47bc" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::operator--</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>operator--</name>
+        <qualifiedname>NumRepr::dig_t::operator--</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="807" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="807" bodyend="812"/>
+        <references refid="namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623" compoundref="dig__t_8hpp" startline="1179" endline="1179">NumRepr::ui_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a8c9932459b63c42c16f18da0e6b72b86" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator--</definition>
+        <argsstring>(int) noexcept</argsstring>
+        <name>operator--</name>
+        <qualifiedname>NumRepr::dig_t::operator--</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="814" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="814" bodyend="818"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a0b75235bdbf8643db99997e9ecbb41fe" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator+</definition>
+        <argsstring>(dig_t arg) const noexcept</argsstring>
+        <name>operator+</name>
+        <qualifiedname>NumRepr::dig_t::operator+</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="827" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="827" bodyend="832"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ac0fdb16b6029708a28c6db50eb5cf71d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator-</definition>
+        <argsstring>(dig_t arg) const noexcept</argsstring>
+        <name>operator-</name>
+        <qualifiedname>NumRepr::dig_t::operator-</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="835" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="835" bodyend="840"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a13f9599ed8b248ba17c973f9044123da" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator*</definition>
+        <argsstring>(dig_t arg) const noexcept</argsstring>
+        <name>operator*</name>
+        <qualifiedname>NumRepr::dig_t::operator*</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="843" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="843" bodyend="848"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1af8bbcb61605057ec7caee066cec098d3" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator/</definition>
+        <argsstring>(dig_t arg) const noexcept</argsstring>
+        <name>operator/</name>
+        <qualifiedname>NumRepr::dig_t::operator/</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="851" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="851" bodyend="856"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a81c124dfd1f9bec0d42a33229279d4c6" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator%</definition>
+        <argsstring>(dig_t arg) const noexcept</argsstring>
+        <name>operator%</name>
+        <qualifiedname>NumRepr::dig_t::operator%</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="859" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="859" bodyend="864"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a00c1f1363179d60534b4c673ca1e1ca1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_type</declname>
+            <defname>Int_type</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator+</definition>
+        <argsstring>(Int_type arg) const noexcept</argsstring>
+        <name>operator+</name>
+        <qualifiedname>NumRepr::dig_t::operator+</qualifiedname>
+        <param>
+          <type>Int_type</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="868" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="868" bodyend="873"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a4acce2a25030ead690d375a1953d8882" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_type</declname>
+            <defname>Int_type</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator-</definition>
+        <argsstring>(Int_type arg) const noexcept</argsstring>
+        <name>operator-</name>
+        <qualifiedname>NumRepr::dig_t::operator-</qualifiedname>
+        <param>
+          <type>Int_type</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="877" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="877" bodyend="883"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a1914890e81afe75f7d090ff87ce82f22" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_type</declname>
+            <defname>Int_type</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator*</definition>
+        <argsstring>(Int_type arg) const noexcept</argsstring>
+        <name>operator*</name>
+        <qualifiedname>NumRepr::dig_t::operator*</qualifiedname>
+        <param>
+          <type>Int_type</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="887" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="887" bodyend="893"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ac0d386b51a9b2d64547d64b98f903ef2" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_type</declname>
+            <defname>Int_type</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator/</definition>
+        <argsstring>(Int_type arg) const noexcept</argsstring>
+        <name>operator/</name>
+        <qualifiedname>NumRepr::dig_t::operator/</qualifiedname>
+        <param>
+          <type>Int_type</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="897" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="897" bodyend="904"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aef688b2a7dffda3d612f59446753074a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c</type>
+            <declname>Int_type</declname>
+            <defname>Int_type</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator%</definition>
+        <argsstring>(Int_type arg) const noexcept</argsstring>
+        <name>operator%</name>
+        <qualifiedname>NumRepr::dig_t::operator%</qualifiedname>
+        <param>
+          <type>Int_type</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="908" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="908" bodyend="915"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1abfd426bf39f6c5e0421a0fa532e1d886" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator!</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator!</name>
+        <qualifiedname>NumRepr::dig_t::operator!</qualifiedname>
+        <briefdescription>
+<para>EN BASE B, B-1-m_d ES EL COMPL_Bm1(m_d) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="926" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="926" bodyend="929"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a4d310043a6574e445b13cea0f7096690" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::operator-</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator-</name>
+        <qualifiedname>NumRepr::dig_t::operator-</qualifiedname>
+        <briefdescription>
+<para>EN BASE B, B-m_d ES EL COMPL_B(m_d) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="932" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="932" bodyend="935"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a3d6a5c0e1d8a4719d58a476cfb68c960" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::C_Bm1</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>C_Bm1</name>
+        <qualifiedname>NumRepr::dig_t::C_Bm1</qualifiedname>
+        <briefdescription>
+<para>&quot;C_Bm1&quot; es identico a &quot;operator!()&quot; </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="938" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="938" bodyend="941"/>
+        <referencedby refid="namespace_num_repr_1a2525ee5f113018fcb89a1c8a6a28aa31" compoundref="test__dig__t_8hpp" startline="1178" endline="1219">NumRepr::display_operator_C_Bm1</referencedby>
+        <referencedby refid="namespace_num_repr_1ae0fc1d1a1935c51de9fa9490f212c168" compoundref="test__dig__t_8hpp" startline="1291" endline="1322">NumRepr::display_prop_C_B_minus_1_eq_C_Bm1</referencedby>
+        <referencedby refid="namespace_num_repr_1adb8c5e5fc5db353e6db6327ac4c62742" compoundref="test__dig__t_8hpp" startline="1257" endline="1287">NumRepr::display_prop_C_Bm1_eq_inv_C_Bm1</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a946d999d39a25dda024a06800ac57f70" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::dig_t&lt; UINT_T, B &gt;::C_B</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>C_B</name>
+        <qualifiedname>NumRepr::dig_t::C_B</qualifiedname>
+        <briefdescription>
+<para>&quot;C_B&quot; es identico a &quot;operator-()&quot; </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="944" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="944" bodyend="947"/>
+        <referencedby refid="namespace_num_repr_1a0aa113da9c3c91f1af1c073958cc12a3" compoundref="test__dig__t_8hpp" startline="1133" endline="1174">NumRepr::display_operator_C_B</referencedby>
+        <referencedby refid="namespace_num_repr_1aec8203e0be75e913ece973211c4b1386" compoundref="test__dig__t_8hpp" startline="1223" endline="1253">NumRepr::display_prop_C_B_eq_inv_C_B</referencedby>
+        <referencedby refid="namespace_num_repr_1ae0fc1d1a1935c51de9fa9490f212c168" compoundref="test__dig__t_8hpp" startline="1291" endline="1322">NumRepr::display_prop_C_B_minus_1_eq_C_Bm1</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aeaabd19b772acd490a224d21840165cf" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::mC_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>mC_Bm1</name>
+        <qualifiedname>NumRepr::dig_t::mC_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="956" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="956" bodyend="960"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a08ec2a242e2d81958e5b23970c16aab1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr const <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> &amp;</type>
+        <definition>constexpr const dig_t &amp; NumRepr::dig_t&lt; UINT_T, B &gt;::mC_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>mC_B</name>
+        <qualifiedname>NumRepr::dig_t::mC_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="963" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="963" bodyend="969"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1adbf9db5f202d5b71069c34b1ea57cf4d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_0</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_0</name>
+        <qualifiedname>NumRepr::dig_t::is_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>dig_t&lt;uchint,7&gt; a,b,c; a = 5; b = 2; c = 0; !a == 1 is TRUE a.C_Bm1() == 1 is TRUE !b == 4 is TRUE b.C_Bm1() == 4 is TRUE !c == 6 is TRUE c.C_Bm1() == 6 is TRUE -a == 2 is TRUE a.C_B() == 2 is TRUE -b == 5 is TRUE b.C_B() == 5 is TRUE -c == 0 is TRUE c.C_B() == 0 is TRUE a.mC_Bm1() == 1 is TRUE a == 1 is TRUE b.mC_Bm1() == 4 is TRUE b == 4 is TRUE c.mC_Bm1() == 6 is TRUE c == 6 is TRUE a.mC_B() == 2 is TRUE a == 2 is TRUE b.mC_B() == 5 is TRUE b == 5 is TRUE c.mC_B() == 0 is TRUE c == 0 is TRUE </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="995" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="995" bodyend="998"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ac906122dd220e44ed6762896888b8e4c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_1</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_1</name>
+        <qualifiedname>NumRepr::dig_t::is_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1001" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1001" bodyend="1004"/>
+        <references refid="namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623" compoundref="dig__t_8hpp" startline="1179" endline="1179">NumRepr::ui_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a3097efc035d69810593924081fe87698" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_0or1</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_0or1</name>
+        <qualifiedname>NumRepr::dig_t::is_0or1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1007" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1007" bodyend="1010"/>
+        <references refid="namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623" compoundref="dig__t_8hpp" startline="1179" endline="1179">NumRepr::ui_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a3f3fbeaf6b33d1715bbd18a32c9d786b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_1</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_1</name>
+        <qualifiedname>NumRepr::dig_t::is_not_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1013" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1013" bodyend="1016"/>
+        <references refid="namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623" compoundref="dig__t_8hpp" startline="1179" endline="1179">NumRepr::ui_1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a8186108a31cd8a25848f0269a7d19a7c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_0</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_0</name>
+        <qualifiedname>NumRepr::dig_t::is_not_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1019" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1019" bodyend="1022"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aacae804f80074c18f9ab9a84bd53b39b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_0or1</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_0or1</name>
+        <qualifiedname>NumRepr::dig_t::is_not_0or1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1025" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1025" bodyend="1028"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a19ae3d827774be2550c60549edc3ae3d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_max</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_max</name>
+        <qualifiedname>NumRepr::dig_t::is_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1031" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1031" bodyend="1034"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a2d4a4f29c85ef23b35177e09805a1267" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_max</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_max</name>
+        <qualifiedname>NumRepr::dig_t::is_not_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1037" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1037" bodyend="1040"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a56fcdfa556284892cd7de47c3787d32b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_Bm1</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_Bm1</name>
+        <qualifiedname>NumRepr::dig_t::is_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1043" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1043" bodyend="1046"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a87c025873db95eaf29108ce9c9245dfd" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_Bm1</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_Bm1</name>
+        <qualifiedname>NumRepr::dig_t::is_not_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1049" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1049" bodyend="1052"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a0d1b5c435478eeb51b1d36c08219c977" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_submax</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_submax</name>
+        <qualifiedname>NumRepr::dig_t::is_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1055" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1055" bodyend="1058"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae28b04497aa71b7888dc079539210d3c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_maxorsubmax</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_maxorsubmax</name>
+        <qualifiedname>NumRepr::dig_t::is_maxorsubmax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1061" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1061" bodyend="1064"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a6c4fba7ed06b49210ef5ff28df23a668" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_Bm1orBm2</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_Bm1orBm2</name>
+        <qualifiedname>NumRepr::dig_t::is_Bm1orBm2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1067" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1067" bodyend="1070"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a6433e8337d5ddd54c9d362e29780d52b" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3703" endline="3705">is_Bm1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae5720040b223b5af4cebe8e0978b23fa" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_maxorsubmax</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_maxorsubmax</name>
+        <qualifiedname>NumRepr::dig_t::is_not_maxorsubmax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1073" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1073" bodyend="1076"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a6ef1aa06ecb5f66b634124209f18cb2e" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_Bm1orBm2</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_Bm1orBm2</name>
+        <qualifiedname>NumRepr::dig_t::is_not_Bm1orBm2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1079" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1079" bodyend="1082"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a266fc7e7e6b7c792fa3781163a83742b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_submax</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_submax</name>
+        <qualifiedname>NumRepr::dig_t::is_not_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1085" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1085" bodyend="1088"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a8f6e6f45df7dc5326ff1006bf5bebd10" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_Bm2</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_Bm2</name>
+        <qualifiedname>NumRepr::dig_t::is_Bm2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1091" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1091" bodyend="1094"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a7b1616ba435215cc41468ae13696a369" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_Bm2</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_Bm2</name>
+        <qualifiedname>NumRepr::dig_t::is_not_Bm2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1097" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1097" bodyend="1100"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1af27980a6204664a1333284ba9c60d316" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_not_maxormin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_not_maxormin</name>
+        <qualifiedname>NumRepr::dig_t::is_not_maxormin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1103" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1103" bodyend="1106"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ad54d97fbbe203e3aecaf937df2600ba2" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_maxormin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_maxormin</name>
+        <qualifiedname>NumRepr::dig_t::is_maxormin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1109" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1109" bodyend="1112"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a540a0e700a266a624a295898de9ff8fc" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3693" endline="3695">is_0</references>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a6433e8337d5ddd54c9d362e29780d52b" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3703" endline="3705">is_Bm1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ad5a111737f792b6ae0bf54153e4a8b17" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_far_maxormin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_far_maxormin</name>
+        <qualifiedname>NumRepr::dig_t::is_far_maxormin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1115" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1115" bodyend="1123"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1af91d529a5c32bcc62d02b4700713b512" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::dig_t&lt; UINT_T, B &gt;::is_near_maxormin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>is_near_maxormin</name>
+        <qualifiedname>NumRepr::dig_t::is_near_maxormin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1126" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1126" bodyend="1134"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a540a0e700a266a624a295898de9ff8fc" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3693" endline="3695">is_0</references>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a3fdf457344d84bef1762417b5f5228d2" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3698" endline="3700">is_1</references>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a6433e8337d5ddd54c9d362e29780d52b" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3703" endline="3705">is_Bm1</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1a485ebeb8d32500ce824d6e88e02f4eba" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::string</type>
+        <definition>constexpr std::string NumRepr::dig_t&lt; UINT_T, B &gt;::to_string</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>to_string</name>
+        <qualifiedname>NumRepr::dig_t::to_string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1167" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1167" bodyend="1173"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1ae3669f0d5e1a3533692e714ed8381a19" prot="private" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::string</type>
+        <definition>constexpr std::string NumRepr::dig_t&lt; UINT_T, B &gt;::num_to_string</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>num_to_string</name>
+        <qualifiedname>NumRepr::dig_t::num_to_string</qualifiedname>
+        <briefdescription>
+<para>TIENE QUE DEVOLVER STD::STRING. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1145" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1145" bodyend="1153"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="struct_num_repr_1_1dig__t_1aafbbe9b31b632c19b6b161d7da7052c8" prot="private" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::string</type>
+        <definition>static constexpr std::string NumRepr::dig_t&lt; UINT_T, B &gt;::radix_str</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>radix_str</name>
+        <qualifiedname>NumRepr::dig_t::radix_str</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="1156" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="1156" bodyend="1164"/>
+      </memberdef>
+      </sectiondef>
+    <requiresclause>(suitable_base&lt;UINT_T,B&gt;())    </requiresclause>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>&lt; WRAPPER PARA UN TIPO UINT_T QUE UNSIGNED_INTEGRAL_T&lt;UINT_T&gt; SE SOBRECARGAN LOS OPERADORES ARITMETICOS PARA ARITMETICA MODULAR DIG_T = SUMA Y MULTIPLICACION CIRCULAR (MODULAR CON MOD B) </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::dig_t&lt; UINT_T, B &gt;</label>
+        <link refid="struct_num_repr_1_1dig__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" line="18" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/dig_t.hpp" bodystart="18" bodyend="1175"/>
+    <listofallmembers>
+      <member refid="struct_num_repr_1_1dig__t_1a946d999d39a25dda024a06800ac57f70" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>C_B</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a3d6a5c0e1d8a4719d58a476cfb68c960" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>C_Bm1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ac6a8ff5406dd59f782f096ea7f2d2da3" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_0</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a1dc126ef160231a2c2a87a30fdda731c" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a85fa7ae1435069ddd1b87658c97a5856" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_Bm1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a326196de3bd9537e5c23df66440b8a56" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_Bm2</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a4295924ee3603c94ef1f1c7d83976be8" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_max</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a2f8231e5cfedba8aaef0a404ca8df5d5" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_submax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aada07ff4de9c24f4824b65107df7ad68" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_t</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a6a88c25f113c10a3e960dff6bc83209d" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_t</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1af0449bb155f32b9f4d0a77616be964f5" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_t</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a0271247936d99587c10e4e7f793eca59" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>dig_t</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a1051e56dae889dea37c0fc56c629ef47" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>digspair</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a41f650033f842a57e20462acf2d56bd3" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>get</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1adbf9db5f202d5b71069c34b1ea57cf4d" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_0</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a48f6d7f54f227eaf337438fccd8b9ff4" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_0_divisor</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a3097efc035d69810593924081fe87698" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_0or1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ac906122dd220e44ed6762896888b8e4c" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a56fcdfa556284892cd7de47c3787d32b" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_Bm1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a6c4fba7ed06b49210ef5ff28df23a668" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_Bm1orBm2</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a8f6e6f45df7dc5326ff1006bf5bebd10" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_Bm2</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ad5a111737f792b6ae0bf54153e4a8b17" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_far_maxormin</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a19ae3d827774be2550c60549edc3ae3d" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_max</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ad54d97fbbe203e3aecaf937df2600ba2" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_maxormin</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae28b04497aa71b7888dc079539210d3c" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_maxorsubmax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1af91d529a5c32bcc62d02b4700713b512" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_near_maxormin</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a8186108a31cd8a25848f0269a7d19a7c" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_0</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aacae804f80074c18f9ab9a84bd53b39b" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_0or1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a3f3fbeaf6b33d1715bbd18a32c9d786b" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a87c025873db95eaf29108ce9c9245dfd" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_Bm1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a6ef1aa06ecb5f66b634124209f18cb2e" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_Bm1orBm2</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a7b1616ba435215cc41468ae13696a369" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_Bm2</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a2d4a4f29c85ef23b35177e09805a1267" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_max</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1af27980a6204664a1333284ba9c60d316" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_maxormin</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae5720040b223b5af4cebe8e0978b23fa" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_maxorsubmax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a266fc7e7e6b7c792fa3781163a83742b" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_not_submax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a2e4a2d001d8b4a6e97639da50e33d3cb" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_prime</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a0d1b5c435478eeb51b1d36c08219c977" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_submax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aecc930e8cb3dbc3ede5beeff11ef77ee" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>is_unit</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ac0c7935b799a4e21bfafdd8f4b6a0bbc" prot="private" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>m_d</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a08ec2a242e2d81958e5b23970c16aab1" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>mC_B</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aeaabd19b772acd490a224d21840165cf" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>mC_Bm1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a61783752fb9fa2c63d85aeb2a386abd5" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>mult</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aa62606aacfd127f2670db23a727e1689" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>mult_inv</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a879e2a4684c282b6449f23a262c91ce3" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>normaliza</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae3669f0d5e1a3533692e714ed8381a19" prot="private" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>num_to_string</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a11aa8890a01df04bb8c78e36b1671bcb" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator SIG_SINT_T</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a98f3c67f12b327b29cb7dd956979aa6b" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator SIG_UINT_T</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aafdbf9ec2e1c2c693053bddc9c3da18b" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator UINT_T</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1abfd426bf39f6c5e0421a0fa532e1d886" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator!</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a47635d2d0ec4782ae299ee8d120e3382" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator!=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a81c124dfd1f9bec0d42a33229279d4c6" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator%</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aef688b2a7dffda3d612f59446753074a" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator%</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a6c7356a5ae3558ef870ec13760e4cb8a" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator%=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a2c84aafb21be9d9cdbe35758bc44d98b" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator%=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aaad1f6b6c362bb8b79e308d8dbd3623e" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&amp;</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aadb521540be446f8f6affbe08593f521" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&amp;=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aad3081cc834a2404026c745da3a19624" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator()</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a13f9599ed8b248ba17c973f9044123da" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator*</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a1914890e81afe75f7d090ff87ce82f22" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator*</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a4a8206b542cb7f4b6346f8958757b977" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator*=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a168a6f67f18e796f8873a0e6c2333d54" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator*=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a0b75235bdbf8643db99997e9ecbb41fe" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator+</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a00c1f1363179d60534b4c673ca1e1ca1" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator+</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aaa1f4b500974e6fd56e680e03f29b2c2" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator++</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a8870447b3f8ce7bd2a9119b6f7d4530c" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator++</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aba27e3396b7ed8788f2cfe819f4d4bb3" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator+=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae24ff79c3041e20d742037441037d2b3" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator+=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ac0fdb16b6029708a28c6db50eb5cf71d" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator-</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a4acce2a25030ead690d375a1953d8882" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator-</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a4d310043a6574e445b13cea0f7096690" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator-</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a760f7426a2aa1c3633499eb30faa47bc" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator--</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a8c9932459b63c42c16f18da0e6b72b86" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator--</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aaea951b73ed6db7bbddace9d937e65e1" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator-=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a8ccb0b59a15564ffb2b293664267d5ec" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator-=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1af8bbcb61605057ec7caee066cec098d3" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator/</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ac0d386b51a9b2d64547d64b98f903ef2" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator/</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae6090e4504d28bdd974c7366150a5eaa" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator/=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a2ae86f82c15b23402ab0893d841e9f9f" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator/=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a541d4e253f487b533befc4b36db15b37" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&lt;</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1acdc26317d35ccf448bf50bc5aa8a88e2" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&lt;=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a6c213b8f2f95f130cd8557f4d910e645" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&lt;=&gt;</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ab70884cd01554850ffe4d26a86dc72e0" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&lt;=&gt;</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae1e378970227631d984b568c6e87aea9" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a2c7df43b2672d12d58b0170564b65067" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1acd2c86722aea84ff8caa599f46143096" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a16d0da2599654bff077fbeca82c74935" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator==</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a98120e7f67bdd81793d79f21df596840" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator==</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1afefef1d7905f1b427805fed3bac47b6f" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&gt;</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a2e48d921d1562d835c6fe6804ab2ec29" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator&gt;=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a38d52e65a990092a76e803e16e918fb7" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator^</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1abcc6416630883d3061eb2cc4a2b19b6d" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator^=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a3794e0222d9b563c1692006bba0af83e" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator|</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ab917ba177adf7c56596f814db3bc3e26" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>operator|=</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aafbbe9b31b632c19b6b161d7da7052c8" prot="private" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>radix_str</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ad0179be562c80f204f00fa63ee87f595" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>resbinop_t</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a6593e326ad416014be397174d2be8f38" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>SIG_SINT_T</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1adc093164c56eece2aa8adb2ca2d2968a" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>SIG_UINT_T</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a287219a289b34f6f682e318b3ca1f92c" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ssi_0</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1af8eebfebac403516d028ecce97b98d63" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ssi_1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae5704d076a53f9416a1b943df75b9179" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ssi_B</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae42291bd38bbbaffa802f75d6a1baeab" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ssi_max</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a73855570e049a9b032a7a49587fb6d90" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ssi_submax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aeb3cb9d0b23b1c211dff853083a6fe83" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>sui_0</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a43a4e505e240a8f1ad75f5ad5f8d1353" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>sui_1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a815d56d548d1572c87630f311d8b49e9" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>sui_B</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a9684eea2c5657f412de910eea97817c7" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>sui_max</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a9df237777f14cf1ebc8d550a885260ff" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>sui_submax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a081c0bf1162ff858903c226cb48b08e8" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>sum_carry</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a485ebeb8d32500ce824d6e88e02f4eba" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>to_string</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a76b5c675bb32de9c1803da4dd804d8e4" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ui_0</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a7abd8bcb3f0bd6b749488dfad8e56da5" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ui_1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a7cdf0d9df3dedb75f66d4d7eda2e2da5" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ui_Bm1</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1aaac3a2d93ea02d4860644ede5dc38506" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ui_Bm2</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a91e737faa7255b8706deb3220ceaa336" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ui_max</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a73c90f6b9bab2442e884cc30b0af258f" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>ui_submax</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1ae38e5e04d4c6c8993e3abc8d0e777efb" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>uintspair</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a018d699b224ca5c7f35dfc5ed5882df9" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>uintspairlist</name></member>
+      <member refid="struct_num_repr_1_1dig__t_1a66b00dc8a233028c0b8af1d6c8c968df" prot="public" virt="non-virtual"><scope>NumRepr::dig_t</scope><name>uintspairtbl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

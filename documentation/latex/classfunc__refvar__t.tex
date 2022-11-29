@@ -1,0 +1,190 @@
+\hypertarget{classfunc__refvar__t}{}\doxysection{Referencia de la plantilla de la Clase func\+\_\+refvar\+\_\+t\texorpdfstring{$<$}{<} aT, T \texorpdfstring{$>$}{>}}
+\label{classfunc__refvar__t}\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+
+
+{\ttfamily \#include $<$memory\+\_\+handler.\+hpp$>$}
+
+
+
+Diagrama de colaboración para func\+\_\+refvar\+\_\+t\texorpdfstring{$<$}{<} aT, T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfunc__refvar__t_a8e9cb3b8e01b8aa709a2a31e4ab5d554}{func\+\_\+refvar\+\_\+t}} ()
+\item 
+\mbox{\hyperlink{classfunc__refvar__t_a0363255e4e3b31424f23054c421829b0}{$\sim$func\+\_\+refvar\+\_\+t}} ()
+\item 
+void \mbox{\hyperlink{classfunc__refvar__t_a2fa19582eaae01cb4af37e335dc17b8b}{borra\+\_\+var}} (string nombre)
+\item 
+bool \mbox{\hyperlink{classfunc__refvar__t_a3f4a4e617944b695448b8927f68245d4}{existe\+\_\+lugar\+\_\+de\+\_\+base}} (\mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} Base)
+\item 
+bool \mbox{\hyperlink{classfunc__refvar__t_aef030a35222c267cfa2f81ed9e5b12d7}{este\+\_\+nombre\+\_\+ya\+\_\+ha\+\_\+sido\+\_\+declarado}} (string nombre)
+\item 
+{\footnotesize template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} B$>$ }\\T$<$ B $>$ \mbox{\hyperlink{classfunc__refvar__t_abb0355ab86a34517b7db6c90dd2b9e26}{get}} (string nombre)
+\item 
+{\footnotesize template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} B$>$ }\\bool \mbox{\hyperlink{classfunc__refvar__t_a9127c1c5b54819300d13a4f46fbb3610}{operator()}} (string nombre, string lhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename aT, template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$\newline
+class func\+\_\+refvar\+\_\+t$<$ a\+T, T $>$}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classfunc__refvar__t_a8e9cb3b8e01b8aa709a2a31e4ab5d554}\label{classfunc__refvar__t_a8e9cb3b8e01b8aa709a2a31e4ab5d554}} 
+\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}!func\_refvar\_t@{func\_refvar\_t}}
+\index{func\_refvar\_t@{func\_refvar\_t}!func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+\doxysubsubsection{\texorpdfstring{func\_refvar\_t()}{func\_refvar\_t()}}
+{\footnotesize\ttfamily template$<$typename aT , template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$ \\
+\mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ aT, T $>$\mbox{\hyperlink{classfunc__refvar__t}{\+::func\+\_\+refvar\+\_\+t}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00218         \{}
+\DoxyCodeLine{00219                 \textcolor{comment}{//inicia\_matriz\_digs\_y\_pp(matd,256u,256u);}}
+\DoxyCodeLine{00220                 matd = construye\_matriz\_de\_variables<ppT,pT,T>(matd);}
+\DoxyCodeLine{00221                 mapmem.resize(256);}
+\DoxyCodeLine{00222                 cuentavars.resize(256);}
+\DoxyCodeLine{00223                 \textcolor{keywordflow}{for}(\mbox{\hyperlink{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}{uint}} I=0 ; I < 256 ; ++I)\{}
+\DoxyCodeLine{00224                         mapmem[I].resize(256);}
+\DoxyCodeLine{00225                         cuentavars[I]=0;}
+\DoxyCodeLine{00226                         \textcolor{keywordflow}{for}(\mbox{\hyperlink{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}{uint}} J=0 ; J < 256 ; ++J)\{}
+\DoxyCodeLine{00227                                 mapmem[I][J]=\textcolor{keyword}{false};}
+\DoxyCodeLine{00228                         \}}
+\DoxyCodeLine{00229                 \}}
+\DoxyCodeLine{00230         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfunc__refvar__t_a0363255e4e3b31424f23054c421829b0}\label{classfunc__refvar__t_a0363255e4e3b31424f23054c421829b0}} 
+\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}!````~func\_refvar\_t@{$\sim$func\_refvar\_t}}
+\index{````~func\_refvar\_t@{$\sim$func\_refvar\_t}!func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$func\_refvar\_t()}{~func\_refvar\_t()}}
+{\footnotesize\ttfamily template$<$typename aT , template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$ \\
+\mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ aT, T $>$\+::$\sim$\mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00233         \{}
+\DoxyCodeLine{00234                 destruye\_matriz\_de\_variables<T,T>(matd);}
+\DoxyCodeLine{00235         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classfunc__refvar__t_a2fa19582eaae01cb4af37e335dc17b8b}\label{classfunc__refvar__t_a2fa19582eaae01cb4af37e335dc17b8b}} 
+\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}!borra\_var@{borra\_var}}
+\index{borra\_var@{borra\_var}!func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+\doxysubsubsection{\texorpdfstring{borra\_var()}{borra\_var()}}
+{\footnotesize\ttfamily template$<$typename aT , template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$ \\
+void \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ aT, T $>$\+::borra\+\_\+var (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00254                                         \{}
+\DoxyCodeLine{00255                 map< string , par\_dir\_t >::iterator it = mapvd.begin();}
+\DoxyCodeLine{00256                 map< string , par\_dir\_t >::const\_iterator itend = mapvd.end();}
+\DoxyCodeLine{00257                 \textcolor{keywordflow}{for}( ; it != itend ; ++it) \{}
+\DoxyCodeLine{00258                         \textcolor{keywordflow}{if} ((*it).first==nombre) \{}
+\DoxyCodeLine{00259                                 mapmem[(*it).second.first][(*it).second.second]=\textcolor{keyword}{false};}
+\DoxyCodeLine{00260                                 -\/-\/cuentavars[(*it).second.first];}
+\DoxyCodeLine{00261                                 mapvd.erase(it);\textcolor{comment}{// ponerlo a 0}}
+\DoxyCodeLine{00262                                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00263                         \}}
+\DoxyCodeLine{00264                 \}}
+\DoxyCodeLine{00265                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00266         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfunc__refvar__t_aef030a35222c267cfa2f81ed9e5b12d7}\label{classfunc__refvar__t_aef030a35222c267cfa2f81ed9e5b12d7}} 
+\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}!este\_nombre\_ya\_ha\_sido\_declarado@{este\_nombre\_ya\_ha\_sido\_declarado}}
+\index{este\_nombre\_ya\_ha\_sido\_declarado@{este\_nombre\_ya\_ha\_sido\_declarado}!func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+\doxysubsubsection{\texorpdfstring{este\_nombre\_ya\_ha\_sido\_declarado()}{este\_nombre\_ya\_ha\_sido\_declarado()}}
+{\footnotesize\ttfamily template$<$typename aT , template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$ \\
+bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ aT, T $>$\+::este\+\_\+nombre\+\_\+ya\+\_\+ha\+\_\+sido\+\_\+declarado (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00277                                                             \{}
+\DoxyCodeLine{00278                 map< string , par\_dir\_t >::iterator it = mapvd.begin();}
+\DoxyCodeLine{00279                 map< string , par\_dir\_t >::const\_iterator itend = mapvd.end();}
+\DoxyCodeLine{00280                 \textcolor{keywordflow}{for}( ; it != itend ; ++it) \{}
+\DoxyCodeLine{00281                         \textcolor{keywordflow}{if} ((*it).first==nombre) \{}
+\DoxyCodeLine{00282                                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00283                         \}}
+\DoxyCodeLine{00284                 \}}
+\DoxyCodeLine{00285                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00286         \}}
+
+\end{DoxyCode}
+
+
+Referenciado por \mbox{\hyperlink{l00295}{func\+\_\+refvar\+\_\+t$<$ a\+T, T $>$\+::operator()()}}, \mbox{\hyperlink{l00416}{func\+\_\+refvar\+\_\+t$<$ INT $\ast$$\ast$, INT $\ast$, INT $>$\+::operator()()}} y \mbox{\hyperlink{l00539}{func\+\_\+refvar\+\_\+t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$\+::operator()()}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\mbox{\Hypertarget{classfunc__refvar__t_a3f4a4e617944b695448b8927f68245d4}\label{classfunc__refvar__t_a3f4a4e617944b695448b8927f68245d4}} 
+\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}!existe\_lugar\_de\_base@{existe\_lugar\_de\_base}}
+\index{existe\_lugar\_de\_base@{existe\_lugar\_de\_base}!func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+\doxysubsubsection{\texorpdfstring{existe\_lugar\_de\_base()}{existe\_lugar\_de\_base()}}
+{\footnotesize\ttfamily template$<$typename aT , template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$ \\
+bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ aT, T $>$\+::existe\+\_\+lugar\+\_\+de\+\_\+base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}}}]{Base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00268                                                  \{}
+\DoxyCodeLine{00269                 \textcolor{keywordtype}{bool} ret = \textcolor{keyword}{true};}
+\DoxyCodeLine{00270                 \textcolor{keywordflow}{for}(\mbox{\hyperlink{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}{uint}} I=0; I < 256 ; ++I)\{}
+\DoxyCodeLine{00271                         ret = ret and mapmem[Base][I];}
+\DoxyCodeLine{00272                         \textcolor{keywordflow}{if} (!ret) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00273                 \}}
+\DoxyCodeLine{00274                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00275         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfunc__refvar__t_abb0355ab86a34517b7db6c90dd2b9e26}\label{classfunc__refvar__t_abb0355ab86a34517b7db6c90dd2b9e26}} 
+\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}!get@{get}}
+\index{get@{get}!func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename aT , template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$ \\
+template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} B$>$ \\
+T$<$ B $>$ \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ aT, T $>$\+::get (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00290         \{}
+\DoxyCodeLine{00291                 \textcolor{keywordflow}{return} (\textcolor{keyword}{reinterpret\_cast<} T<B>* \textcolor{keyword}{>}(matd[B]))[mapvd[nombre].second];}
+\DoxyCodeLine{00292         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfunc__refvar__t_a9127c1c5b54819300d13a4f46fbb3610}\label{classfunc__refvar__t_a9127c1c5b54819300d13a4f46fbb3610}} 
+\index{func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!func\_refvar\_t$<$ aT, T $>$@{func\_refvar\_t$<$ aT, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename aT , template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} $>$ class T$>$ \\
+template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} B$>$ \\
+bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ aT, T $>$\+::operator() (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{string}]{lhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00296         \{}
+\DoxyCodeLine{00297                 T<B> temp(lhs);}
+\DoxyCodeLine{00298                 \textcolor{keywordtype}{bool} se\_puede\_hacer = \mbox{\hyperlink{classfunc__refvar__t_aef030a35222c267cfa2f81ed9e5b12d7}{este\_nombre\_ya\_ha\_sido\_declarado}}(nombre);}
+\DoxyCodeLine{00299                 \textcolor{keywordflow}{if} (se\_puede\_hacer) (\textcolor{keyword}{reinterpret\_cast<} T<B>* \textcolor{keyword}{>}(matd[B]))[mapvd[nombre].second]=temp;}
+\DoxyCodeLine{00300                 \textcolor{keywordflow}{return} se\_puede\_hacer;}
+\DoxyCodeLine{00301         \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a \mbox{\hyperlink{l00277}{func\+\_\+refvar\+\_\+t$<$ a\+T, T $>$\+::este\+\_\+nombre\+\_\+ya\+\_\+ha\+\_\+sido\+\_\+declarado()}}.
+
+Gráfico de llamadas para esta función\+:
+% FIG 2
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{memory__handler_8hpp}{memory\+\_\+handler.\+hpp}}\end{DoxyCompactItemize}

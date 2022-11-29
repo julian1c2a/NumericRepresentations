@@ -1,0 +1,1577 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1reg__digs__t" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::reg_digs_t</compoundname>
+    <basecompoundref prot="protected" virt="non-virtual">std::array&lt; dig_t&lt; UINT_T, B &gt;, L &gt;</basecompoundref>
+    <includes refid="reg__digs__t_8hpp" local="no">reg_digs_t.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>allowable_base_type_c</type>
+        <declname>UINT_T</declname>
+        <defname>UINT_T</defname>
+      </param>
+      <param>
+        <type>UINT_T</type>
+        <declname>B</declname>
+        <defname>B</defname>
+      </param>
+      <param>
+        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <declname>L</declname>
+        <defname>L</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" prot="public" static="no">
+        <type><ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref>&lt; UINT_T, B &gt;</type>
+        <definition>using NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::dig_t =  dig_t&lt;UINT_T,B&gt;</definition>
+        <argsstring></argsstring>
+        <name>dig_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::dig_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="16" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>std::array&lt; <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref>, N &gt;</type>
+        <definition>using NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::base_N_t =  std::array&lt;dig_t,N&gt;</definition>
+        <argsstring></argsstring>
+        <name>base_N_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::base_N_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="20" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" prot="public" static="no">
+        <type><ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; L &gt;</type>
+        <definition>using NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::base_t =  base_N_t&lt;L&gt;</definition>
+        <argsstring></argsstring>
+        <name>base_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::base_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="22" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7" prot="public" static="no">
+        <type>sig_UInt_for_UInt_t&lt; UINT_T &gt;</type>
+        <definition>using NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::SIG_UINT_T =  sig_UInt_for_UInt_t&lt;UINT_T&gt;</definition>
+        <argsstring></argsstring>
+        <name>SIG_UINT_T</name>
+        <qualifiedname>NumRepr::reg_digs_t::SIG_UINT_T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="36" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc" prot="public" static="no">
+        <type>sig_SInt_for_UInt_t&lt; UINT_T &gt;</type>
+        <definition>using NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::SIG_SINT_T =  sig_SInt_for_UInt_t&lt;UINT_T&gt;</definition>
+        <argsstring></argsstring>
+        <name>SIG_SINT_T</name>
+        <qualifiedname>NumRepr::reg_digs_t::SIG_SINT_T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="37" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1reg__digs__t_1a7792d7a3af98a9af9decb59f02f519e6" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8" kindref="member">binop_e</ref></type>
+            <declname>op</declname>
+            <defname>op</defname>
+          </param>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>result_operation_t&lt; <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;, op, N &gt;</type>
+        <definition>using NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::res_base_N_op_t =  result_operation_t&lt;base_N_t&lt;N&gt;,op,N&gt;</definition>
+        <argsstring></argsstring>
+        <name>res_base_N_op_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::res_base_N_op_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="40" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1reg__digs__t_1afd655eb1254897496c9e8d584524ee86" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8" kindref="member">binop_e</ref></type>
+            <declname>op</declname>
+            <defname>op</defname>
+          </param>
+        </templateparamlist>
+        <type>result_operation_t&lt; <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref>, op, L &gt;</type>
+        <definition>using NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::res_base_op_t =  result_operation_t&lt;base_t,op,L&gt;</definition>
+        <argsstring></argsstring>
+        <name>res_base_op_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::res_base_op_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="43" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="struct_num_repr_1_1reg__digs__t_1a0538e56a062c8bfabbf65c345990a015" prot="protected" static="no" mutable="no">
+        <type><ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::m_dc</definition>
+        <argsstring></argsstring>
+        <name>m_dc</name>
+        <qualifiedname>NumRepr::reg_digs_t::m_dc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="26" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a9d37af8b2ce4db142cb55a932d8fd805" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::dig_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_0</name>
+        <qualifiedname>NumRepr::reg_digs_t::dig_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="45" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="45" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a3c8f7cb71f70468db3ba5ccef33bdd37" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::dig_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_1</name>
+        <qualifiedname>NumRepr::reg_digs_t::dig_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="47" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="47" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a48a6ce4848e83ccea11c42c2deea38d9" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::dig_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_Bm1</name>
+        <qualifiedname>NumRepr::reg_digs_t::dig_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="49" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="49" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ad9843a6a4dfe3805eb802fdd5694b9aa" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::dig_max</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_max</name>
+        <qualifiedname>NumRepr::reg_digs_t::dig_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="51" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="51" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aae46074f8eb1e11d4856e2efc720e3b4" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::dig_Bm2</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_Bm2</name>
+        <qualifiedname>NumRepr::reg_digs_t::dig_Bm2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="53" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="53" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af999e32e51bcc5cb023447638cc63de9" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>static consteval dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::dig_submax</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>dig_submax</name>
+        <qualifiedname>NumRepr::reg_digs_t::dig_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="55" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="55" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aa6b20e53fc72fb5353a27a5db5205ea2" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ui_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_0</name>
+        <qualifiedname>NumRepr::reg_digs_t::ui_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="57" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="57" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a1ba13ed518c031c71ccd2aa99292c4f5" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ui_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_1</name>
+        <qualifiedname>NumRepr::reg_digs_t::ui_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="59" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="59" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aafcea2323aac8fcedfc0f0780e46df5f" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ui_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_Bm1</name>
+        <qualifiedname>NumRepr::reg_digs_t::ui_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="61" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="61" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a3d59521dadb20ede37c648c6ec863bda" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ui_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::ui_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="63" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="63" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aedf3f393788feaff612bd5c078fc4796" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ui_submax</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_submax</name>
+        <qualifiedname>NumRepr::reg_digs_t::ui_submax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="65" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="65" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af6038687dce74b65eb797d535190f52d" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval UINT_T</type>
+        <definition>static consteval UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ui_max</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ui_max</name>
+        <qualifiedname>NumRepr::reg_digs_t::ui_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="67" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="67" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a869fb55d18546d9f677b47fd1dd1d8bd" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::sui_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_0</name>
+        <qualifiedname>NumRepr::reg_digs_t::sui_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="69" column="28" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="69" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a80e523569503af77fdf36cada4de6700" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::sui_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_1</name>
+        <qualifiedname>NumRepr::reg_digs_t::sui_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="71" column="28" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="71" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a51dd71f63e7ccf1c92adbe3876a5eb19" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::sui_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_Bm1</name>
+        <qualifiedname>NumRepr::reg_digs_t::sui_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="73" column="29" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="73" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1adaa8d7c0417ae7a7e76237ba2d368ede" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::sui_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::sui_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="75" column="28" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="75" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af47bb7bcb365e6060f836ec7d53c8565" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7" kindref="member">SIG_UINT_T</ref></type>
+        <definition>static consteval SIG_UINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::sui_Bp1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sui_Bp1</name>
+        <qualifiedname>NumRepr::reg_digs_t::sui_Bp1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="77" column="29" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="77" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ac1cf8584292927fea378bde2e3172fce" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc" kindref="member">SIG_SINT_T</ref></type>
+        <definition>static consteval SIG_SINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ssi_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_0</name>
+        <qualifiedname>NumRepr::reg_digs_t::ssi_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="79" column="28" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="79" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af598442408cf2ed05923092e2ccb7cd2" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc" kindref="member">SIG_SINT_T</ref></type>
+        <definition>static consteval SIG_SINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ssi_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_1</name>
+        <qualifiedname>NumRepr::reg_digs_t::ssi_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="81" column="28" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="81" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a5e0248eb0b0cef64dcbf5fb87823714e" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc" kindref="member">SIG_SINT_T</ref></type>
+        <definition>static consteval SIG_SINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ssi_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_Bm1</name>
+        <qualifiedname>NumRepr::reg_digs_t::ssi_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="83" column="29" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="83" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a80fbaa972abc3ee57f5e8561eb4e944d" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc" kindref="member">SIG_SINT_T</ref></type>
+        <definition>static consteval SIG_SINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ssi_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::ssi_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="85" column="28" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="85" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ae6d6e6d6877d2fe389cdbacbaf7a6f63" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc" kindref="member">SIG_SINT_T</ref></type>
+        <definition>static consteval SIG_SINT_T NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::ssi_Bp1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ssi_Bp1</name>
+        <qualifiedname>NumRepr::reg_digs_t::ssi_Bp1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="87" column="29" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="87" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ac49dc9af3af62aea5a7dfde9114e6c18" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;</type>
+        <definition>static consteval base_N_t&lt; N &gt; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_N_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_N_0</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_N_0</qualifiedname>
+        <briefdescription>
+<para>PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="97" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="97" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1adb436e23c7144ee0da3db08cac34c7ed" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;</type>
+        <definition>static consteval base_N_t&lt; N &gt; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_N_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_N_1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_N_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="107" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="107" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aa001d41637e1a10c1284b5239b37159c" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;</type>
+        <definition>static consteval base_N_t&lt; N &gt; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_N_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_N_Bm1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_N_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="115" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="115" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ad9a96eb8b49ed44884da34180b85fe4f" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;</type>
+        <definition>static consteval base_N_t&lt; N &gt; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_N_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_N_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_N_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="123" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="123" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a2ef368bdca679fa51aee6d18644b6a12" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>n</declname>
+            <defname>n</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;</type>
+        <definition>static consteval base_N_t&lt; N &gt; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_N_pow_n_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_N_pow_n_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_N_pow_n_B</qualifiedname>
+    <requiresclause>((n&gt;=0)&amp;&amp;(n &lt; N))    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="132" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="132" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af10d7f31743e81babe1c9d542f30f013" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>n</declname>
+            <defname>n</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;</type>
+        <definition>static consteval base_N_t&lt; N &gt; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_N_pow_n_B_m1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_N_pow_n_B_m1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_N_pow_n_B_m1</qualifiedname>
+    <requiresclause>((n&gt;=0)&amp;&amp;(n &lt; N))    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="141" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="141" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1affe99648c3d9c6e3e4decac8d4e46ee1" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>static consteval base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_0</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_0</qualifiedname>
+        <briefdescription>
+<para>IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T&lt;L&gt; DONDE BASE_T == BASE_N_T&lt;L&gt; TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="159" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="159" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a5b1efb8235b79459b15c6f2f84659452" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>static consteval base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="164" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="164" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a475a4bf204efd8f87c400575dc49114d" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>static consteval base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_Bm1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="169" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="169" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a69d2abd48bd92a58df7f51fc9e7578dd" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>static consteval base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="174" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="174" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a55521e5b02fa0a1d56745066e20eab91" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>static consteval base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_pow_n_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_pow_n_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_pow_n_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="179" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="179" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a16e44b01fdd4e66c3390c34578f32e2c" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>static consteval base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_base_pow_n_B_m1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_base_pow_n_B_m1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_base_pow_n_B_m1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="184" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="184" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ad04bdf9bcccd5c68c414b2cca9e9bc75" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref></type>
+        <definition>static consteval reg_digs_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_0</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_0</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_0</qualifiedname>
+        <briefdescription>
+<para>IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="194" column="12" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="194" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a9d2524d7b34e2e1b7d98ec3a16ccac67" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref></type>
+        <definition>static consteval reg_digs_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="199" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="199" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af02f9cc5afcc26fb14077a939c26ce85" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref></type>
+        <definition>static consteval reg_digs_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_Bm1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_Bm1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_Bm1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="204" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="204" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a8f86da208d0c9e947caea1a283711414" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref></type>
+        <definition>static consteval reg_digs_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="209" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="209" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af4fa7fec5b40b63434a86ee594adaed1" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref></type>
+        <definition>static consteval reg_digs_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_pow_n_B</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_pow_n_B</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_pow_n_B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="214" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="214" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a1e76f417daec0f07cb28088baec9fb29" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref></type>
+        <definition>static consteval reg_digs_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::regd_pow_n_B_m1</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>regd_pow_n_B_m1</name>
+        <qualifiedname>NumRepr::reg_digs_t::regd_pow_n_B_m1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="219" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="219" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aad87f0f5f3bf9825b962e7288d527b96" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref></type>
+        <definition>static constexpr base_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::make_base_t</definition>
+        <argsstring>(const std::initializer_list&lt; dig_t &gt; &amp;larg)</argsstring>
+        <name>make_base_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::make_base_t</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref> &gt; &amp;</type>
+          <declname>larg</declname>
+        </param>
+        <briefdescription>
+<para>Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list&lt;dig_t&gt;  </para>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt;function name=&quot;make_base_t&quot;&gt;&lt;/function&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const std::initializer_list&lt;dig_t&gt;&amp; larg</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+&lt;returns=&quot;rarg : base_t&quot;&gt;</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="293" column="25" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="293" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1afa8cbe8ef5dd2cc62aaff8beebb94124" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c ...</type>
+            <declname>Ints_type</declname>
+            <defname>Ints_type</defname>
+          </param>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt;</type>
+        <definition>static constexpr base_N_t&lt; N &gt; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::normalize</definition>
+        <argsstring>(Ints_type ... digits_pow_i) noexcept</argsstring>
+        <name>normalize</name>
+        <qualifiedname>NumRepr::reg_digs_t::normalize</qualifiedname>
+        <param>
+          <type>Ints_type ...</type>
+          <declname>digits_pow_i</declname>
+        </param>
+    <requiresclause>(((sizeof...(Ints_type)) &lt;= L)&amp;&amp;(N&gt;0))    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt;summary=&quot;Función de normalización a dig_t (dígitos base B) que construye un objeto de tipo &quot;&gt;  &lt;summary=&quot;base_t desde una sucesión variádica de enteros cualquiera&quot;&gt;  &lt;function name=&quot;normalize&quot;&gt;&lt;/function&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Ints_type ... digits_pow_i</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+&lt;returns=&quot;base_t&quot;&gt;</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; CREA UN STD_ARRAY DEL TIPO INT PASADO POR ARGUMENTOS DE TAMANO EL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)</para>
+<para>&lt; DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR [UN TIPO ENTERO]</para>
+<para>&lt; DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO &lt;= L)</para>
+<para>&lt; ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO Y SU TAMANO SEA MAYOR O MENOR QUE EL PROPIO DE LA BASE UINT_T TIPO PROPIO ES : UINT_T TIPO PASADO COMO ARGUMENTO ES : UNIQUE_TYPE LOS TIPOS PASADOS EN LOS ARGUMENTOS HAN DE SER IGUALES ENTRE SI PARA EL INTERROGANTE CONDICIONAL UTILIZAMOS UNSIGNED_INTEGRAL_C<s> PRIMERA PREGUNTA O MAS EXTERIOR IS_UNISGNED_SZ_GT_V&lt;T,S&gt; PREGUNTAS SEGUNDAS O MAS INTERIORES PARA ELEGIR EL TIPO APROPIADO EN CADA CASO USAMOS SIG_UINT_FOR_UINT_T&lt;UINT_T&gt; SIG_UINT_FOR_UINT_T&lt;UNIQUE_TYPE&gt; SIG_UINT_FOR_UINT_T&lt;UINT_T&gt; SIG_UINT_FOR_SINT_T&lt;UNIQUE_TYPE&gt;</s></para>
+<para><s></s></para>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="429" column="10" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="429" bodyend="485"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a2f8a4ff3bd499089c6440c7992ee13cd" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::begin</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>begin</name>
+        <qualifiedname>NumRepr::reg_digs_t::begin</qualifiedname>
+        <briefdescription>
+<para>En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="228" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="228" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aa912c8d96b92e95e0d751f2a4500c436" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::cbegin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>cbegin</name>
+        <qualifiedname>NumRepr::reg_digs_t::cbegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="230" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="230" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aae1bd8ec380671dcd31c9d7dcd03d445" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::end</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>end</name>
+        <qualifiedname>NumRepr::reg_digs_t::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="232" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="232" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a2cc438add79ca50b7ec3a0dcb3b4c6df" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::cend</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>cend</name>
+        <qualifiedname>NumRepr::reg_digs_t::cend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="234" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="234" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ae0932422c4f294cd994b0f457af37599" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::rbegin</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>rbegin</name>
+        <qualifiedname>NumRepr::reg_digs_t::rbegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="236" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="236" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1abfbe9a50e4c844fa73ee64e3de27d4c1" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::crbegin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>crbegin</name>
+        <qualifiedname>NumRepr::reg_digs_t::crbegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="238" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="238" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a6a98c20beaf0085e9b75ed6a73b6fac5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::rend</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>rend</name>
+        <qualifiedname>NumRepr::reg_digs_t::rend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="240" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="240" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ab2f586a22c208f2db8981f236be1f8a5" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr decltype(auto)</type>
+        <definition>constexpr decltype(auto) NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::crend</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>crend</name>
+        <qualifiedname>NumRepr::reg_digs_t::crend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="242" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="242" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ab30c4be543021566f2b0eca2f70c1570" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr size_type</type>
+        <definition>constexpr size_type NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::size</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>size</name>
+        <qualifiedname>NumRepr::reg_digs_t::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="245" column="20" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="245" bodyend="246"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="4129" endline="4131">const_ref_data</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a62ed51251249de5b2844ce2936975c39" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr size_type</type>
+        <definition>constexpr size_type NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::max_size</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>max_size</name>
+        <qualifiedname>NumRepr::reg_digs_t::max_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="247" column="20" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="247" bodyend="248"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="4129" endline="4131">const_ref_data</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a1344b97a93e4af1c28f04d2f8238ee09" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::empty</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>empty</name>
+        <qualifiedname>NumRepr::reg_digs_t::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="249" column="15" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="249" bodyend="250"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="4129" endline="4131">const_ref_data</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a3746b11d0b23dc5d2bbba1d9cea58a41" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::front</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>front</name>
+        <qualifiedname>NumRepr::reg_digs_t::front</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="252" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="252" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a022dc0ba35bb79d3a00d31f6603bcfbe" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref> const &amp;</type>
+        <definition>constexpr dig_t const  &amp; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::front</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>front</name>
+        <qualifiedname>NumRepr::reg_digs_t::front</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="254" column="22" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="254" bodyend="255"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="4129" endline="4131">const_ref_data</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a5fd5f903aae0b2017103d59e368c71f7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref></type>
+        <definition>constexpr dig_t NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::back</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>back</name>
+        <qualifiedname>NumRepr::reg_digs_t::back</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="256" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="256" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ab3d4db33623c17c1f36712663487df1b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref> const &amp;</type>
+        <definition>constexpr dig_t const  &amp; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::back</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>back</name>
+        <qualifiedname>NumRepr::reg_digs_t::back</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="258" column="22" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="258" bodyend="259"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="4129" endline="4131">const_ref_data</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a0456b2f0f8d879695698974f9f2b325d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr void</type>
+        <definition>constexpr void NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::fill</definition>
+        <argsstring>(const dig_t &amp;value) noexcept</argsstring>
+        <name>fill</name>
+        <qualifiedname>NumRepr::reg_digs_t::fill</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="261" column="15" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="261" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aa0d612930f23d7545926c12c6149759b" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr void</type>
+        <definition>constexpr void NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::swap</definition>
+        <argsstring>(base_t &amp;other) noexcept</argsstring>
+        <name>swap</name>
+        <qualifiedname>NumRepr::reg_digs_t::swap</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="263" column="15" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="263" bodyend="264"/>
+        <references refid="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a795f3202b17cb6bc3d4b771d8c6c9eaf">NumRepr::other</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval</type>
+        <definition>consteval NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::reg_digs_t</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>reg_digs_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::reg_digs_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructores de <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref></para>
+<para>Constructor por defecto (rellena de <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t(0)</ref> todo el array)  </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="282" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="282" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1af158dcd2b4c5d1cd725810f7b32a6377" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::reg_digs_t</definition>
+        <argsstring>(const std::initializer_list&lt; dig_t &gt; &amp;arg) noexcept</argsstring>
+        <name>reg_digs_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::reg_digs_t</qualifiedname>
+        <param>
+          <type>const std::initializer_list&lt; <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref> &gt; &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Constructor por lista de digitos utilizando la función make_base_t  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="316" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="316" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a6d5930c7c0f8583b4000a60bd32aa00c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::reg_digs_t</definition>
+        <argsstring>(const Ts &amp;... args) noexcept</argsstring>
+        <name>reg_digs_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::reg_digs_t</qualifiedname>
+        <param>
+          <type>const Ts &amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>(std::is_same_v&lt;Ts,<ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&gt;&amp;&amp;...)    </requiresclause>
+        <briefdescription>
+<para>Constructor por argumentos tipo <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref>: deduce el tipo  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="325" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="325" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a5f1afe08bc99f4458f4406fbf8bc4388" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::reg_digs_t</definition>
+        <argsstring>(const base_t &amp;rarg) noexcept</argsstring>
+        <name>reg_digs_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::reg_digs_t</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref> &amp;</type>
+          <declname>rarg</declname>
+        </param>
+        <briefdescription>
+<para>CONSTRUCTOR COPIA DESDE EL TIPO BASE. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="330" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="330" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a667cc7f5b4658b2195c48e794f5c84a6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::reg_digs_t</definition>
+        <argsstring>(base_t &amp;&amp;rarg) noexcept</argsstring>
+        <name>reg_digs_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::reg_digs_t</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref> &amp;&amp;</type>
+          <declname>rarg</declname>
+        </param>
+        <briefdescription>
+<para>CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="333" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="333" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aaba6b4d99022c55a9b8ca3ce2d62a50c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::reg_digs_t</definition>
+        <argsstring>(const base_N_t&lt; N &gt; &amp;arg) noexcept</argsstring>
+        <name>reg_digs_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::reg_digs_t</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt; &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Constructor copia desde un array cualquiera de dígitos <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> (usando copy_arg_N&lt;N&gt;)  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="406" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="406" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ad86b53a69638c4c1dddbcc396bd8c341" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::reg_digs_t</definition>
+        <argsstring>(const base_N_t&lt; N &gt; &amp;&amp;arg) noexcept</argsstring>
+        <name>reg_digs_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::reg_digs_t</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt; &amp;&amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Constructor por movimiento desde un array cualquiera de dígitos <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref> (usando move_arg_N&lt;N&gt;)  </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="414" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="414" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a31e86837bdfe9777ee5465fde746fbf6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>type_traits::integral_c ...</type>
+            <declname>Ints_type</declname>
+            <defname>Ints_type</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr</type>
+        <definition>constexpr NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::base_t</definition>
+        <argsstring>(Ints_type ... dig_pow_i) noexcept</argsstring>
+        <name>base_t</name>
+        <qualifiedname>NumRepr::reg_digs_t::base_t</qualifiedname>
+        <param>
+          <type>Ints_type ...</type>
+          <declname>dig_pow_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt;summary=&quot;Constructor copia desde una sucesión\
+de objetos enteros variádica, normalizándolos&quot;&gt;  </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="494" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="494" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a3556d4ba2e14f426e919f1cfcde675fe" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref> &amp;</type>
+        <definition>constexpr const reg_digs_t &amp; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator=</definition>
+        <argsstring>(const reg_N_digs_t&lt; N &gt; &amp;arg) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>NumRepr::reg_digs_t::operator=</qualifiedname>
+        <param>
+          <type>const reg_N_digs_t&lt; N &gt; &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Sobrecarga del operador copia  </para>
+        </briefdescription>
+        <detaileddescription>
+<para>OPERACION ASIGNACION POR COPIA REFERENCIA CONST <emphasis>NO</emphasis> COPIABLE DESDE REG_N_DIGS_T EN LA IZQUIERDA </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="505" column="19" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="505" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a4b2c7a5c03c46a8d5c3fa5d783fdd6ea" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr reg_dgis_t &amp;</type>
+        <definition>constexpr reg_dgis_t &amp; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator=</definition>
+        <argsstring>(reg_N_digs_t&lt; N &gt; &amp;arg) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>NumRepr::reg_digs_t::operator=</qualifiedname>
+        <param>
+          <type>reg_N_digs_t&lt; N &gt; &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>OPERACION ASIGNACION POR COPIA REFERENCIA DESDE REG_N_DIGS_T EN LA IZQUIERDA </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="516" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="516" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1add6d93e2ffcc34e57e4698a627d2fd48" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const <ref refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" kindref="member">base_t</ref> &amp;</type>
+        <definition>constexpr const base_t &amp; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator=</definition>
+        <argsstring>(reg_N_digs_t&lt; N &gt; &amp;&amp;arg) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>NumRepr::reg_digs_t::operator=</qualifiedname>
+        <param>
+          <type>reg_N_digs_t&lt; N &gt; &amp;&amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>OPERACION ASIGNACION POR MOVIMIENTO DESDE REGS_N_DIGS_T EN LA QUE NO SE PUEDE COPIAR </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="527" column="15" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="527" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1aa424868f7b7f2da2b989b2eb96ed1ed1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1reg__digs__t" kindref="compound">reg_digs_t</ref> &amp;</type>
+        <definition>constexpr reg_digs_t &amp; NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator=</definition>
+        <argsstring>(const dig_t &amp;arg) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>NumRepr::reg_digs_t::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" kindref="member">dig_t</ref> &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>OPERACION COPIA DESDE UN DIGITO (CONVERSION) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="536" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="536" bodyend="544"/>
+        <references refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a3cded391678ea04df0fb832f1b9a7259" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="3210" endline="3212">set_0</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1ad633ab0410a555ecb68b212149995310" prot="private" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr void</type>
+        <definition>constexpr void NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::copy_arg_N</definition>
+        <argsstring>(const base_N_t&lt; N &gt; &amp;arg) noexcept</argsstring>
+        <name>copy_arg_N</name>
+        <qualifiedname>NumRepr::reg_digs_t::copy_arg_N</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt; &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Constructor por Copia/Movimiento desde una sucesión variádica de dígitos <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref>  </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Función miembro (delegada) para copiar un objeto tipo base_t desde una referencia constante a un array cualquiera de <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref>  &lt;function name=&quot;copy_arg_N&quot;&gt;&lt;/function&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const base_N_t&lt;N&gt; &amp; arg</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+&lt;returns=&quot;void&quot;&gt;</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Z &lt; W or Z == W</para>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="350" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="350" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_num_repr_1_1reg__digs__t_1a2ea6cd439fd6f88b32a780703794106c" prot="private" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr void</type>
+        <definition>constexpr void NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::move_arg_N</definition>
+        <argsstring>(base_N_t&lt; N &gt; &amp;&amp;arg) noexcept</argsstring>
+        <name>move_arg_N</name>
+        <qualifiedname>NumRepr::reg_digs_t::move_arg_N</qualifiedname>
+        <param>
+          <type><ref refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" kindref="member">base_N_t</ref>&lt; N &gt; &amp;&amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Función miembro (delegada) para mover un objeto tipo base_t desde una referencia derecha a un array cualquiera de <ref refid="struct_num_repr_1_1dig__t" kindref="compound">dig_t</ref>  </para>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt;function name=&quot;copy_arg_N&quot;&gt;&lt;/function&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const base_N_t&lt;N&gt; &amp; arg</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+&lt;returns=&quot;void&quot;&gt;</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Z &lt; W or Z == W</para>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="379" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="379" bodyend="397"/>
+      </memberdef>
+      </sectiondef>
+    <requiresclause>((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(L &gt; 0))    </requiresclause>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</label>
+        <link refid="struct_num_repr_1_1reg__digs__t"/>
+        <childnode refid="2" relation="protected-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::array&lt; dig_t&lt; UINT_T, B &gt;, L &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</label>
+        <link refid="struct_num_repr_1_1reg__digs__t"/>
+        <childnode refid="2" relation="protected-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::array&lt; dig_t&lt; UINT_T, B &gt;, L &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" line="14" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/reg_digs_t.hpp" bodystart="14" bodyend="1475"/>
+    <listofallmembers>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a5fd5f903aae0b2017103d59e368c71f7" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>back</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ab3d4db33623c17c1f36712663487df1b" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>back</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>base_N_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>base_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a31e86837bdfe9777ee5465fde746fbf6" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>base_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a2f8a4ff3bd499089c6440c7992ee13cd" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>begin</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aa912c8d96b92e95e0d751f2a4500c436" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>cbegin</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a2cc438add79ca50b7ec3a0dcb3b4c6df" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>cend</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ad633ab0410a555ecb68b212149995310" prot="private" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>copy_arg_N</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1abfbe9a50e4c844fa73ee64e3de27d4c1" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>crbegin</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ab2f586a22c208f2db8981f236be1f8a5" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>crend</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a9d37af8b2ce4db142cb55a932d8fd805" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>dig_0</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a3c8f7cb71f70468db3ba5ccef33bdd37" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>dig_1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a48a6ce4848e83ccea11c42c2deea38d9" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>dig_Bm1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aae46074f8eb1e11d4856e2efc720e3b4" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>dig_Bm2</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ad9843a6a4dfe3805eb802fdd5694b9aa" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>dig_max</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af999e32e51bcc5cb023447638cc63de9" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>dig_submax</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>dig_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a1344b97a93e4af1c28f04d2f8238ee09" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>empty</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aae1bd8ec380671dcd31c9d7dcd03d445" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>end</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a0456b2f0f8d879695698974f9f2b325d" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>fill</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a3746b11d0b23dc5d2bbba1d9cea58a41" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>front</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a022dc0ba35bb79d3a00d31f6603bcfbe" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>front</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a0538e56a062c8bfabbf65c345990a015" prot="protected" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>m_dc</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aad87f0f5f3bf9825b962e7288d527b96" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>make_base_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a62ed51251249de5b2844ce2936975c39" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>max_size</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a2ea6cd439fd6f88b32a780703794106c" prot="private" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>move_arg_N</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1afa8cbe8ef5dd2cc62aaff8beebb94124" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>normalize</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a3556d4ba2e14f426e919f1cfcde675fe" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>operator=</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a4b2c7a5c03c46a8d5c3fa5d783fdd6ea" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>operator=</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1add6d93e2ffcc34e57e4698a627d2fd48" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>operator=</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aa424868f7b7f2da2b989b2eb96ed1ed1" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>operator=</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ae0932422c4f294cd994b0f457af37599" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>rbegin</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>reg_digs_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af158dcd2b4c5d1cd725810f7b32a6377" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>reg_digs_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a6d5930c7c0f8583b4000a60bd32aa00c" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>reg_digs_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a5f1afe08bc99f4458f4406fbf8bc4388" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>reg_digs_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a667cc7f5b4658b2195c48e794f5c84a6" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>reg_digs_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aaba6b4d99022c55a9b8ca3ce2d62a50c" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>reg_digs_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ad86b53a69638c4c1dddbcc396bd8c341" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>reg_digs_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ad04bdf9bcccd5c68c414b2cca9e9bc75" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_0</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a9d2524d7b34e2e1b7d98ec3a16ccac67" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a8f86da208d0c9e947caea1a283711414" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1affe99648c3d9c6e3e4decac8d4e46ee1" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_0</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a5b1efb8235b79459b15c6f2f84659452" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a69d2abd48bd92a58df7f51fc9e7578dd" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a475a4bf204efd8f87c400575dc49114d" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_Bm1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ac49dc9af3af62aea5a7dfde9114e6c18" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_N_0</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1adb436e23c7144ee0da3db08cac34c7ed" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_N_1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ad9a96eb8b49ed44884da34180b85fe4f" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_N_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aa001d41637e1a10c1284b5239b37159c" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_N_Bm1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a2ef368bdca679fa51aee6d18644b6a12" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_N_pow_n_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af10d7f31743e81babe1c9d542f30f013" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_N_pow_n_B_m1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a55521e5b02fa0a1d56745066e20eab91" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_pow_n_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a16e44b01fdd4e66c3390c34578f32e2c" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_base_pow_n_B_m1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af02f9cc5afcc26fb14077a939c26ce85" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_Bm1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af4fa7fec5b40b63434a86ee594adaed1" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_pow_n_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a1e76f417daec0f07cb28088baec9fb29" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>regd_pow_n_B_m1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a6a98c20beaf0085e9b75ed6a73b6fac5" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>rend</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a7792d7a3af98a9af9decb59f02f519e6" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>res_base_N_op_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1afd655eb1254897496c9e8d584524ee86" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>res_base_op_t</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>SIG_SINT_T</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>SIG_UINT_T</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ab30c4be543021566f2b0eca2f70c1570" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>size</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ac1cf8584292927fea378bde2e3172fce" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ssi_0</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af598442408cf2ed05923092e2ccb7cd2" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ssi_1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a80fbaa972abc3ee57f5e8561eb4e944d" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ssi_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a5e0248eb0b0cef64dcbf5fb87823714e" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ssi_Bm1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1ae6d6e6d6877d2fe389cdbacbaf7a6f63" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ssi_Bp1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a869fb55d18546d9f677b47fd1dd1d8bd" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>sui_0</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a80e523569503af77fdf36cada4de6700" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>sui_1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1adaa8d7c0417ae7a7e76237ba2d368ede" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>sui_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a51dd71f63e7ccf1c92adbe3876a5eb19" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>sui_Bm1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af47bb7bcb365e6060f836ec7d53c8565" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>sui_Bp1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aa0d612930f23d7545926c12c6149759b" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>swap</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aa6b20e53fc72fb5353a27a5db5205ea2" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ui_0</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a1ba13ed518c031c71ccd2aa99292c4f5" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ui_1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1a3d59521dadb20ede37c648c6ec863bda" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ui_B</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aafcea2323aac8fcedfc0f0780e46df5f" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ui_Bm1</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1af6038687dce74b65eb797d535190f52d" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ui_max</name></member>
+      <member refid="struct_num_repr_1_1reg__digs__t_1aedf3f393788feaff612bd5c078fc4796" prot="public" virt="non-virtual"><scope>NumRepr::reg_digs_t</scope><name>ui_submax</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

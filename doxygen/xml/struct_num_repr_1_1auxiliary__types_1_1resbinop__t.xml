@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1auxiliary__types_1_1resbinop__t" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::auxiliary_types::resbinop_t</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type><ref refid="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8" kindref="member">binop_e</ref></type>
+        <declname>oper</declname>
+        <defname>oper</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>auxiliary types for digit type and its operations </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::auxiliary_types::resbinop_t&lt; T, oper &gt;</label>
+        <link refid="struct_num_repr_1_1auxiliary__types_1_1resbinop__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="37" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="37" bodyend="-1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

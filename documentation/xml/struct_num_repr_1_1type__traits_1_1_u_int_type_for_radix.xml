@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::type_traits::UIntTypeForRadix</compoundname>
+    <includes refid="basic__types_8hpp" local="no">basic_types.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Type</type>
+      </param>
+      <param>
+        <type>Type</type>
+        <declname>Radix</declname>
+        <defname>Radix</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a0133ef04751a731ab4670e75dd89c439" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685" kindref="member">bool_value</ref>, <ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref>, <ref refid="struct_num_repr_1_1type__traits_1_1empty__type" kindref="compound">empty_type</ref> &gt;</type>
+        <definition>using NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;::actUIntType =  std::conditional_t&lt; bool_value, uint128_t, empty_type &gt;</definition>
+        <argsstring></argsstring>
+        <name>actUIntType</name>
+        <qualifiedname>NumRepr::type_traits::UIntTypeForRadix::actUIntType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="477" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="481" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a4df3de7682e8c3978af4c9eb4c3c8af3" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685" kindref="member">bool_value</ref>, typename <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix" kindref="compound">UIntTypeForRadix</ref>&lt; <ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref>, <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6" kindref="member">uint_value</ref> &gt;::UIntType, <ref refid="struct_num_repr_1_1type__traits_1_1empty__type" kindref="compound">empty_type</ref> &gt;</type>
+        <definition>using NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;::UIntType =  std::conditional_t&lt; bool_value, typename UIntTypeForRadix&lt; uint128_t, uint_value &gt;::UIntType, empty_type &gt;</definition>
+        <argsstring></argsstring>
+        <name>UIntType</name>
+        <qualifiedname>NumRepr::type_traits::UIntTypeForRadix::UIntType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="483" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="492" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a2900a303e782d0e1fdb0312710dc9519" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref></type>
+        <definition>constexpr uint128_t NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;::uint_value_max</definition>
+        <argsstring></argsstring>
+        <name>uint_value_max</name>
+        <qualifiedname>NumRepr::type_traits::UIntTypeForRadix::uint_value_max</qualifiedname>
+        <initializer>= <ref refid="namespace_num_repr_1_1type__traits_1a4f0f4b9cd9964b406c8299bcbd74f506" kindref="member">maxbase</ref>&lt;<ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="472" column="27" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref></type>
+        <definition>constexpr uint128_t NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;::uint_value</definition>
+        <argsstring></argsstring>
+        <name>uint_value</name>
+        <qualifiedname>NumRepr::type_traits::UIntTypeForRadix::uint_value</qualifiedname>
+        <initializer>= static_cast&lt;<ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref>&gt;(Radix)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="473" column="27" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="473" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;::bool_value</definition>
+        <argsstring></argsstring>
+        <name>bool_value</name>
+        <qualifiedname>NumRepr::type_traits::UIntTypeForRadix::bool_value</qualifiedname>
+        <initializer>=   (Radix &lt;= <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a2900a303e782d0e1fdb0312710dc9519" kindref="member">uint_value_max</ref>) &amp;&amp;
+																	    (Radix &gt; 1) 			  &amp;&amp;
+																		std::is_integral_v&lt;Type&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="474" column="22" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="474" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1afa308db4427307f9dee31f208b37de01" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a0133ef04751a731ab4670e75dd89c439" kindref="member">actUIntType</ref></type>
+        <definition>constexpr actUIntType NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;::act_uint_value</definition>
+        <argsstring></argsstring>
+        <name>act_uint_value</name>
+        <qualifiedname>NumRepr::type_traits::UIntTypeForRadix::act_uint_value</qualifiedname>
+        <initializer>= ( <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685" kindref="member">bool_value</ref> ? <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6" kindref="member">uint_value</ref> : 0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="482" column="34" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="482" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINTTYPEFORRADIX. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</label>
+        <link refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="471" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="471" bodyend="493"/>
+    <listofallmembers>
+      <member refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1afa308db4427307f9dee31f208b37de01" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::UIntTypeForRadix</scope><name>act_uint_value</name></member>
+      <member refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a0133ef04751a731ab4670e75dd89c439" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::UIntTypeForRadix</scope><name>actUIntType</name></member>
+      <member refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::UIntTypeForRadix</scope><name>bool_value</name></member>
+      <member refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::UIntTypeForRadix</scope><name>uint_value</name></member>
+      <member refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a2900a303e782d0e1fdb0312710dc9519" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::UIntTypeForRadix</scope><name>uint_value_max</name></member>
+      <member refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a4df3de7682e8c3978af4c9eb4c3c8af3" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::UIntTypeForRadix</scope><name>UIntType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

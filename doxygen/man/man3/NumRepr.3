@@ -1,0 +1,3397 @@
+.TH "NumRepr" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBauxiliary_functions\fP"
+.br
+.ti -1c
+.RI "namespace \fBauxiliary_types\fP"
+.br
+.ti -1c
+.RI "namespace \fBdetail\fP"
+.br
+.ti -1c
+.RI "namespace \fBtype_traits\fP"
+.br
+.in -1c
+.SS "Clases"
+
+.in +1c
+.ti -1c
+.RI "struct \fBbase_num_t\fP"
+.br
+.ti -1c
+.RI "struct \fBdig_t\fP"
+.br
+.ti -1c
+.RI "struct \fBnat_rat_fixed_reg_t\fP"
+.br
+.ti -1c
+.RI "struct \fBnat_reg_digs_t\fP"
+.br
+.ti -1c
+.RI "struct \fBreg_digs_t\fP"
+.br
+.in -1c
+.SS "Concepts"
+
+.in +1c
+.ti -1c
+.RI "concept \fBarith_integral_c\fP"
+.br
+.RI "TYPE_TRAITS AND CONCEPTS\&. "
+.ti -1c
+.RI "concept \fBarith_natural_c\fP"
+.br
+.ti -1c
+.RI "concept \fBchar_type\fP"
+.br
+.in -1c
+.SS "typedefs"
+
+.in +1c
+.ti -1c
+.RI "template<\fBuint128_t\fP B> using \fBdigit_t\fP = \fBdig_t\fP< \fBtype_traits::TypeFromIntNumber_t\fP< B >, static_cast< \fBtype_traits::TypeFromIntNumber_t\fP< B > >(B) >"
+.br
+.RI "SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o \&.\&.\&. "
+.in -1c
+.SS "Enumeraciones"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBsign_e\fP : bool { \fBvminus\fP = true, \fBvplus\fP = false }"
+.br
+.ti -1c
+.RI "enum class \fBsign_funct_e\fP : char { \fBvzero\fP = 0, \fBvminus\fP = -1, \fBvplus\fP = +1 }"
+.br
+.RI "INTRODUCIDO\&. "
+.ti -1c
+.RI "enum class \fBdig_format_e\fP : unsigned char { \fBBINnat\fP =0, \fBBCDnat\fP =1, \fBBCDexc3\fP =2, \fBBCDaitk\fP =3, \fBjohnson_n\fP =4, \fBbiquinario\fP =5 }"
+.br
+.ti -1c
+.RI "enum class \fBnum_type_e\fP : unsigned char { \fBnatural\fP =0, \fBentero\fP =1, \fBracional\fP =2, \fBreal\fP =3 }"
+.br
+.RI "A INTRODUCIR\&. "
+.ti -1c
+.RI "enum class \fBnat_num_format_e\fP : bool { \fBnatural\fP =false, \fBexc_n\fP =true }"
+.br
+.RI "YA INTRODUCIDO, PERO NO EXPLICITAMENTE NI COMPLETAMENTE\&. "
+.ti -1c
+.RI "enum class \fBint_num_format_e\fP : unsigned char { \fBint_CB\fP =0, \fBint_CBm1\fP =1, \fBint_MS\fP =2, \fBint_EXC_n\fP =3 }"
+.br
+.RI "SOLO NATURAL\&. "
+.ti -1c
+.RI "enum class \fBrat_num_format_e\fP : unsigned char { \fBpair_num_den\fP =0, \fBfxd_pt\fP =1, \fBflt_pt\fP =2 }"
+.br
+.RI "EN C_B YA QUEDA EN MS\&. "
+.ti -1c
+.RI "enum class \fBbinop_e\fP { \fBadd\fP, \fBsub\fP, \fBmult\fP, \fBdiv\fP, \fBrem\fP, \fBfediv\fP, \fBother\fP }"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "constexpr \fBsign_e\fP \fBChar2Sign\fP (char ch) noexcept"
+.br
+.ti -1c
+.RI "template<arith_integral_c IntT> constexpr \fBsign_e\fP \fBInt2Sign\fP (IntT nu) noexcept"
+.br
+.ti -1c
+.RI "template<arith_integral_c IntT> constexpr \fBsign_funct_e\fP \fBInt2SignFunct\fP (IntT nu) noexcept"
+.br
+.ti -1c
+.RI "template<arith_natural_c NatIntT> constexpr \fBsign_funct_e\fP \fBNat2SignFunct\fP (NatIntT nu) noexcept"
+.br
+.ti -1c
+.RI "template<typename Int_T , \fBusint\fP B> constexpr \fBullint\fP \fBpot_max_base_B_en_Int_T\fP () noexcept"
+.br
+.ti -1c
+.RI "template<typename Int_T , \fBullint\fP B> constexpr \fBullint\fP \fBnum_digs_max_base_B_en_Int_T\fP () noexcept"
+.br
+.ti -1c
+.RI "template<typename Int_T , \fBullint\fP B> constexpr \fBullint\fP \fBmax_base_B_en_Int_T\fP () noexcept"
+.br
+.ti -1c
+.RI "char * \fBclear_ccad\fP (char *, \fBusint\fP)"
+.br
+.ti -1c
+.RI "template<template< \fBuchint\fP B > class T, \fBuchint\fP B> constexpr const char * \fBdevCadenaC\fP (T< B > arg, std::size_t long_ccad=64) noexcept"
+.br
+.ti -1c
+.RI "constexpr char * \fBclear_ccad\fP (char *cad_c, std::size_t long_de_cad_c) noexcept"
+.br
+.ti -1c
+.RI "constexpr unsigned long long \fBatoull\fP (char *text) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T, B>())consteval UINT_T \fBui_1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T, B>())consteval \fBdig_t\fP< UINT_T, B > \fBdig_max\fP () noexcept"
+.br
+.RI "DEFINCION DE template<uint128_t Radix> digito_t{};\&. "
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T Base> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,Base>())std::istream & \fBoperator>>\fP (std::istream &is, \fBdig_t\fP< UINT_T, Base > &arg)"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T Base> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,Base>())std::ostream & \fBoperator<<\fP (std::ostream &os, \fBdig_t\fP< UINT_T, Base > arg)"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, std::size_t Length> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>()&&(Length > 0))std::istream & \fBoperator>>\fP (std::istream &is, pfx_rat_reg_digs_t< Int_Type, Base, Length > &arg)"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, std::size_t Long> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>())std::ostream & \fBoperator<<\fP (std::ostream &os, const pfx_rat_reg_digs_t< Int_Type, Base, Long > &arg)"
+.br
+.ti -1c
+.RI "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> 
+.br
+requires (suitable_base<UINT_T,B>() && (L>0))struct \fBNumRepr::nat_reg_digs_t\fP \fBoperator\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr auto \fBoperator\-\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr auto \fBoperator*\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBnat_reg_digs_t\fP \fBoperator/\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.RI "DIVISION BY A DIGIT\&. "
+.ti -1c
+.RI "constexpr \fBnat_reg_digs_t\fP \fBoperator%\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.RI "REMAINDER BY A DIGIT\&. "
+.ti -1c
+.RI "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBoperator+=\fP (const \fBbase_N_t\fP< N > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBoperator+=\fP (const \fBnat_reg_N_digs_t\fP< N > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBoperator\-=\fP (const \fBbase_N_t\fP< N > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBoperator\-=\fP (const \fBnat_reg_N_digs_t\fP< N > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBoperator*=\fP (const \fBbase_N_t\fP< N > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBoperator*=\fP (const \fBnat_reg_N_digs_t\fP< N > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBoperator+\fP (const \fBbase_N_t\fP< N > &arg) const noexcept"
+.br
+.RI "TO DO\&. "
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBoperator\-\fP (const \fBbase_N_t\fP< N > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBoperator*\fP (const \fBbase_N_t\fP< N > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBoperator+\fP (const \fBnat_reg_N_digs_t\fP< N > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBoperator\-\fP (const \fBnat_reg_N_digs_t\fP< N > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBoperator*\fP (const \fBnat_reg_N_digs_t\fP< N > &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBnat_reg_digs_t\fP \fBoperator/\fP (const \fBnat_reg_digs_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBnat_reg_digs_t\fP \fBoperator%\fP (const \fBnat_reg_digs_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, \fBsize_t\fP Length> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>()&&(Length > 0))std::istream & \fBoperator>>\fP (std::istream &is, \fBnat_reg_digs_t\fP< Int_Type, Base, Length > &arg)"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, \fBsize_t\fP Long> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>())std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBnat_reg_digs_t\fP< Int_Type, Base, Long > &arg)"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_constr_UINT_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_constr_SINT_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_constr_defecto_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_constr_copia_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_constr_movimiento_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_assign_UINT_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_assign_SINT_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_assign_copia_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_assign_movimiento_dig_t\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_preincrement\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_postincrement\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_predecrement\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_postdecrement\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_add_assign\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_add_assign_uint\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_substract_assign\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_substract_assign_uint\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_mult_assign\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_mult_assign_uint\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_ediv_assign\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_ediv_assign_uint\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_erem_assign\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_erem_assign_uint\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_add\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_add_int\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_substract\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_substract_int\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_multiply\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_multiply_int\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_edivision\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_edivision_int\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_C_B\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_operator_C_Bm1\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_prop_C_B_eq_inv_C_B\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_prop_C_Bm1_eq_inv_C_Bm1\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_prop_C_B_minus_1_eq_C_Bm1\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_unary_operator_minus\fP ()"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void \fBdisplay_unary_operator_neg\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "template<typename CharT > constexpr CharT \fBnullchar\fP {CharT('\\0')}"
+.br
+.in -1c
+.SH "Documentación de los 'typedefs'"
+.PP 
+.SS "template<\fBuint128_t\fP B> using \fBNumRepr::digit_t\fP = typedef \fBdig_t\fP< \fBtype_traits::TypeFromIntNumber_t\fP<B>, static_cast<\fBtype_traits::TypeFromIntNumber_t\fP<B> >(B) >"
+
+.PP
+SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o \&.\&.\&. 
+.SH "Documentación de las enumeraciones"
+.PP 
+.SS "enum class \fBNumRepr::binop_e\fP\fC [strong]\fP"
+
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIadd \fP\fP
+.TP
+\fB\fIsub \fP\fP
+.TP
+\fB\fImult \fP\fP
+.TP
+\fB\fIdiv \fP\fP
+.TP
+\fB\fIrem \fP\fP
+.TP
+\fB\fIfediv \fP\fP
+.TP
+\fB\fIother \fP\fP
+.PP
+.nf
+32 {add,sub,mult,div,rem,fediv,other};
+.fi
+.SS "enum class \fBNumRepr::dig_format_e\fP : unsigned char\fC [strong]\fP"
+
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIBINnat \fP\fP
+.TP
+\fB\fIBCDnat \fP\fP
+.TP
+\fB\fIBCDexc3 \fP\fP
+.TP
+\fB\fIBCDaitk \fP\fP
+.TP
+\fB\fIjohnson_n \fP\fP
+.TP
+\fB\fIbiquinario \fP\fP
+.PP
+.nf
+17                         : unsigned char {
+18         BINnat=0 , BCDnat=1 , BCDexc3=2 , BCDaitk=3 , johnson_n=4 , biquinario=5};
+.fi
+.SS "enum class \fBNumRepr::int_num_format_e\fP : unsigned char\fC [strong]\fP"
+
+.PP
+SOLO NATURAL\&. 
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIint_CB \fP\fP
+.TP
+\fB\fIint_CBm1 \fP\fP
+.TP
+\fB\fIint_MS \fP\fP
+.TP
+\fB\fIint_EXC_n \fP\fP
+.PP
+.nf
+25                             : unsigned char {
+26         int_CB=0 , int_CBm1=1 , int_MS=2  , int_EXC_n=3
+27 };  
+.fi
+.SS "enum class \fBNumRepr::nat_num_format_e\fP : bool\fC [strong]\fP"
+
+.PP
+YA INTRODUCIDO, PERO NO EXPLICITAMENTE NI COMPLETAMENTE\&. 
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fInatural \fP\fP
+.TP
+\fB\fIexc_n \fP\fP
+.PP
+.nf
+22                             : bool {
+23         natural=false  , exc_n=true
+24 }; 
+.fi
+.SS "enum class \fBNumRepr::num_type_e\fP : unsigned char\fC [strong]\fP"
+
+.PP
+A INTRODUCIR\&. 
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fInatural \fP\fP
+.TP
+\fB\fIentero \fP\fP
+.TP
+\fB\fIracional \fP\fP
+.TP
+\fB\fIreal \fP\fP
+.PP
+.nf
+19                       : unsigned char {
+20         natural=0  , entero=1   , racional=2 , real=3
+21 }; 
+.fi
+.SS "enum class \fBNumRepr::rat_num_format_e\fP : unsigned char\fC [strong]\fP"
+
+.PP
+EN C_B YA QUEDA EN MS\&. 
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIpair_num_den \fP\fP
+.TP
+\fB\fIfxd_pt \fP\fP
+.TP
+\fB\fIflt_pt \fP\fP
+.PP
+.nf
+28                             : unsigned char {
+29         pair_num_den=0 , fxd_pt=1 , flt_pt=2
+30 };
+.fi
+.SS "enum class \fBNumRepr::sign_e\fP : bool\fC [strong]\fP"
+
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIvminus \fP\fP
+.TP
+\fB\fIvplus \fP\fP
+.PP
+.nf
+15 : bool {vminus = true,vplus = false};
+.fi
+.SS "enum class \fBNumRepr::sign_funct_e\fP : char\fC [strong]\fP"
+
+.PP
+INTRODUCIDO\&. 
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIvzero \fP\fP
+.TP
+\fB\fIvminus \fP\fP
+.TP
+\fB\fIvplus \fP\fP
+.PP
+.nf
+16 : char {vzero = 0, vminus = -1, vplus = +1};
+.fi
+.SH "Documentación de las funciones"
+.PP 
+.SS "constexpr unsigned long long NumRepr::atoull (char * text)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+130                                                {
+131                 int i=0;
+132                 while(*text)
+133                 {
+134                         i=(i<<3) + (i<<1) + (*text - '0');
+135                         ++text;
+136                 }
+137                 return(i);
+138 }
+.fi
+.SS "constexpr \fBsign_e\fP NumRepr::Char2Sign (char ch)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+10 {
+11         if (ch <= ',')
+12                 return sign_e::vplus;
+13         else
+14                 return sign_e::vminus;
+15 }
+.fi
+.PP
+Hace referencia a \fBvminus\fP y \fBvplus\fP\&.
+.SS "char * NumRepr::clear_ccad (char *, \fBusint\fP)"
+
+.PP
+Referenciado por \fBdevCadenaC()\fP\&.
+.SS "constexpr char * NumRepr::clear_ccad (char * cad_c, std::size_t long_de_cad_c)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+123                                                                 {
+124         for( size_t I=0 ; I < long_de_cad_c ; ++I )
+125                 cad_c[I]=nullchar<char>;
+126         return cad_c;
+127 }
+.fi
+.SS "template<template< \fBuchint\fP B > class T, \fBuchint\fP B> constexpr const char * NumRepr::devCadenaC (T< B > arg, std::size_t long_ccad = \fC64\fP)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+106                                                                    {
+107         char* c_cad = new char[long_ccad];
+108         c_cad = clear_ccad(c_cad,long_ccad);
+109         std::stringstream pre_cad;
+110         pre_cad << arg;
+111         std::string cad(pre_cad\&.str());
+112         const size_t longitud = cad\&.length();
+113         for(size_t i=0;i<longitud;++i) {
+114                 c_cad[i] = cad[i];
+115         }
+116         for(size_t i=longitud;i<long_ccad;++i) {
+117                 c_cad[i] = nullchar<char>;
+118         }
+119         return c_cad;
+120 }
+.fi
+.PP
+Hace referencia a \fBclear_ccad()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T, B>())consteval \fBdig_t\fP< UINT_T, B > NumRepr::dig_max ()\fC [noexcept]\fP"
+
+.PP
+DEFINCION DE template<uint128_t Radix> digito_t{};\&. 
+.PP
+Referenciado por \fBNumRepr::dig_t< UINT_T, B >::mult_inv()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_constr_copia_dig_t ()"
+
+.PP
+.nf
+66                                  {
+67         using base_B_dig_t = dig_t<UINT_T,B>;
+68         {
+69                 base_B_dig_t unidades(static_cast<UINT_T>((B/2)+1));
+70                 base_B_dig_t unidades_copiadas(unidades);
+71                 std::cout << unidades << " =?= " << unidades_copiadas << std::endl;
+72         }
+73         {
+74                 base_B_dig_t unidades{static_cast<UINT_T>((B/2)+1)};
+75                 base_B_dig_t unidades_copiadas(unidades);
+76                 std::cout << unidades << " =?= " << unidades_copiadas << std::endl;
+77         }
+78         {
+79                 base_B_dig_t unidades=static_cast<UINT_T>((B/2)+1);
+80                 base_B_dig_t unidades_copiadas(unidades);
+81                 std::cout << unidades << " =?= " << unidades_copiadas << std::endl;
+82         }
+83 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_constr_defecto_dig_t ()"
+
+.PP
+.nf
+51                                    {
+52         using base_B_dig_t = dig_t<UINT_T,B>;
+53         base_B_dig_t unidades_parentesis=base_B_dig_t();
+54         std::cout << "unidades llamadas con parentesis vacios : "
+55                                                 << unidades_parentesis << std::endl;
+56         base_B_dig_t unidades_llaves{};
+57         std::cout << "unidades llamadas con llaves vacias : "
+58                                                 << unidades_llaves << std::endl;
+59         base_B_dig_t unidades;
+60         std::cout << "unidades llamadas sin inicializacion aparente : "
+61                                                 << unidades << std::endl;
+62 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_constr_movimiento_dig_t ()"
+
+.PP
+.nf
+87                                       {
+88         using base_B_dig_t = dig_t<UINT_T,B>;
+89         {
+90                 base_B_dig_t A((B/2)+1);
+91                 std::cout << A <<std::endl;
+92                 base_B_dig_t unidades(std::move(A));
+93                 std::cout << unidades << std::endl;
+94                 std::cout << A << std::endl;
+95         }
+96         {
+97                 base_B_dig_t A{(B/2)+1};
+98                 std::cout << A << std::endl;
+99                 base_B_dig_t unidades(std::move(A));
+100                 std::cout << unidades << std::endl;
+101                 std::cout << A << std::endl;
+102         }
+103         {
+104                 base_B_dig_t A=(B/2)+1;
+105                 base_B_dig_t unidades(std::move(A));
+106                 std::cout << unidades << std::endl;
+107                 std::cout << A << std::endl;
+108         }
+109 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_constr_SINT_dig_t ()"
+
+.PP
+.nf
+28                                 {
+29         using base_B_dig_t = dig_t<UINT_T,B>;
+30         sllint k{-1000}; sllint kold{0};
+31         for (sllint i{-1030} ; i<1030 ; ++i) {
+32                 base_B_dig_t unidades(i);
+33                 if ((k%static_cast<sllint>(B))!=static_cast<sllint>(B-1)) {
+34                         if ((k%static_cast<sllint>(B))==0) {
+35                                 std::cout << k << "->" << unidades << ";";
+36                         }
+37                         else {
+38                                 std::cout << k << "->" << unidades << ";";
+39                         }
+40                 }
+41                 else {
+42                         std::cout << kold << "->" << unidades << "|" << std::endl;
+43                 }
+44                 ++k;
+45         }
+46         std::cout << std::endl;
+47 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_constr_UINT_dig_t ()"
+
+.PP
+.nf
+10                                 {
+11         using base_B_dig_t = dig_t<UINT_T,B>;
+12         ullint k{0};
+13         for (ullint i{0} ; i<1030 ; ++i) {
+14                 base_B_dig_t unidades(i);
+15                 if ((k%static_cast<ullint>(B))!=static_cast<ullint>(B-1)) {
+16                         std::cout << k << "->" << unidades << ";";
+17                 }
+18                 else {
+19                         std::cout << k << "->" << unidades << "|" << std::endl;
+20                 }
+21                 ++k;
+22         }
+23         std::cout << std::endl;
+24 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_add ()"
+
+.PP
+.nf
+770                             {
+771         using base_B_dig_t = dig_t<UINT_T,B>;
+772         constexpr std::int64_t int64_B{B};
+773         std::uint64_t contador_buenos{};
+774         std::uint64_t contador_malos{};
+775         std::uint64_t contador{};
+776         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+777                         for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+778                                 std::int64_t suma_int{md+nd};
+779                                 base_B_dig_t nos{nd};
+780                                 base_B_dig_t uds{md};
+781                                 base_B_dig_t suma_dig{nos+uds};
+782 
+783                                 while (suma_int < 0)
+784                                         suma_int += int64_B;
+785                                 while (suma_int >= int64_B)
+786                                         suma_int -= int64_B;
+787 
+788                                 if (suma_dig\&.get() == suma_int)
+789                                         ++contador_buenos;
+790                                 else
+791                                         ++contador_malos;
+792 
+793                                 ++contador;
+794                         }
+795         }
+796         std::cout       << "___________________________________________"<< std::endl;
+797         std::cout       << "___BEGIN_______TESTS____SUMA_______BEGIN___"<< std::endl;
+798         std::cout       << " Numero de sumasignaciones correctas= "
+799                                 << contador_buenos                                                              << std::endl;
+800         std::cout       << " Numero de sumasignaciones fallidas = "
+801                                 << contador_malos                                                               << std::endl;
+802         std::cout   << " Numero total de pruebas                        = "
+803                                 << contador_buenos+contador_malos                               << std::endl;
+804         std::cout   << " Numero limite del ciclo \"for\"        = "
+805                                 << contador                                                                             << std::endl;
+806         std::cout       << "___END_________TESTS____SUMA_________END___"<< std::endl;
+807         std::cout       << "___________________________________________"<< std::endl;
+808 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_add_assign ()"
+
+.PP
+.nf
+309                                    {
+310         using base_B_dig_t = dig_t<UINT_T,B>;
+311         std::uint64_t contador_buenos{};
+312         std::uint64_t contador_malos{};
+313         std::int64_t md{0};
+314         std::int64_t nd{0};
+315         base_B_dig_t nos{0};
+316         base_B_dig_t uds{0};
+317         for(std::int64_t idx_nos{0} ; idx_nos < 2*B+1 ; ++idx_nos) {
+318                 for(std::int64_t idx_uds{0} ; idx_uds < 2*B+1 ; ++idx_uds) {
+319                         uds = md;
+320                         uds += nos;
+321                         if (uds\&.get() == (md+nd)%B)
+322                                 ++contador_buenos;
+323                         else
+324                                 ++contador_malos;
+325                         ++md;
+326                 }
+327                 ++nd;
+328                 nos = nd;
+329         }
+330         constexpr std::uint64_t ciclos{
+331                 static_cast<std::uint64_t>(2*B+1)*static_cast<std::uint64_t>(2*B+1)};
+332         std::cout       << "___________________________________________"<< std::endl;
+333         std::cout       << "___BEGIN__TESTS____ADD_&_ASSIGN____BEGIN___"<< std::endl;
+334         std::cout       << " Numero de sumasignaciones correctas= "
+335                                 << contador_buenos                                                              << std::endl;
+336         std::cout       << " Numero de sumasignaciones fallidas = "
+337                                 << contador_malos                                                               << std::endl;
+338         std::cout   << " Numero total de pruebas                        = "
+339                                 << contador_buenos+contador_malos                               << std::endl;
+340         std::cout   << " Numero limite del ciclo \"for\"        = "
+341                                 << ciclos                                                                               << std::endl;
+342         std::cout       << "___END_____TESTS____ADD_&_ASSIGN_____END___"<< std::endl;
+343         std::cout       << "___________________________________________"<< std::endl;
+344 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_add_assign_uint ()"
+
+.PP
+.nf
+348                                         {
+349         using base_B_dig_t = dig_t<UINT_T,B>;
+350         std::uint64_t contador_buenos{};
+351         std::uint64_t contador_malos{};
+352         for(std::int64_t nd{0} ; nd < 2*B+1 ; ++nd) {
+353                 for(std::int64_t md{0} ; md < 2*B+1 ; ++md) {
+354                         base_B_dig_t uds{md};
+355                         uds += nd;
+356                         if (uds\&.get() == ((md+nd)%B))
+357                                 ++contador_buenos;
+358                         else
+359                                 ++contador_malos;
+360                 }
+361         }
+362         constexpr std::uint64_t ciclos{
+363                 static_cast<std::uint64_t>(2*B+1)*static_cast<std::uint64_t>(2*B+1)};
+364         std::cout       << "___________________________________________"<< std::endl;
+365         std::cout       << "___BEGIN__TESTS_ADD_&_ASSIGN_UINT__BEGIN___"<< std::endl;
+366         std::cout       << " Numero de sumasignaciones correctas= "
+367                                 << contador_buenos                                                              << std::endl;
+368         std::cout       << " Numero de sumasignaciones fallidas = "
+369                                 << contador_malos                                                               << std::endl;
+370         std::cout   << " Numero total de pruebas                        = "
+371                                 << contador_buenos+contador_malos                               << std::endl;
+372         std::cout   << " Numero limite del ciclo \"for\"        = "
+373                                 << ciclos                                                                               << std::endl;
+374         std::cout       << "___END____TESTS_ADD_&_ASSIGN_UINT____END___"<< std::endl;
+375         std::cout       << "___________________________________________"<< std::endl;
+376 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_add_int ()"
+
+.PP
+.nf
+812                                 {
+813         using base_B_dig_t = dig_t<UINT_T,B>;
+814         constexpr std::int32_t int32_B{B};
+815         std::uint32_t contador_buenos{};
+816         std::uint32_t contador_malos{};
+817         std::uint32_t contador{};
+818         for(std::int32_t nd{1-int32_B} ; nd < int32_B ; ++nd) {
+819                         for(std::int32_t md{1-int32_B} ; md < int32_B ; ++md) {
+820                                 std::int32_t suma_int{md+nd};
+821                                 base_B_dig_t uds{md};
+822                                 base_B_dig_t suma_dig{uds+nd};
+823 
+824                                 while (suma_int < 0)
+825                                         suma_int += int32_B;
+826                                 while (suma_int >= int32_B)
+827                                         suma_int -= int32_B;
+828 
+829                                 if (suma_dig\&.get() == suma_int)
+830                                         ++contador_buenos;
+831                                 else
+832                                         ++contador_malos;
+833 
+834                                 ++contador;
+835                         }
+836         }
+837         std::cout       << "___________________________________________"<< std::endl;
+838         std::cout       << "___BEGIN______TESTS_SUMA_INT_______BEGIN___"<< std::endl;
+839         std::cout       << " Numero de sumasignaciones correctas= "
+840                                 << contador_buenos                                                              << std::endl;
+841         std::cout       << " Numero de sumasignaciones fallidas = "
+842                                 << contador_malos                                                               << std::endl;
+843         std::cout   << " Numero total de pruebas                        = "
+844                                 << contador_buenos+contador_malos                               << std::endl;
+845         std::cout   << " Numero limite del ciclo \"for\"        = "
+846                                 << contador                                                                             << std::endl;
+847         std::cout       << "___END________TESTS_SUMA_INT_________END___"<< std::endl;
+848         std::cout       << "___________________________________________"<< std::endl;
+849 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_assign_copia_dig_t ()"
+
+.PP
+.nf
+151                                           {
+152         using base_B_dig_t = dig_t<UINT_T,B>;
+153         sllint k{0};
+154         for (sllint i{-1000} ; i<1001 ; ++i) {
+155                 base_B_dig_t A{i};
+156                 base_B_dig_t unidades;
+157                 unidades = A;
+158                 if ((k%static_cast<sllint>(B))!=static_cast<sllint>(B-1)) {
+159                         if ((k%static_cast<sllint>(B))==0)
+160                                 std::cout << i << "->" << unidades << ";";
+161                         else {
+162                                 std::cout << i << "->" << unidades << ";";
+163                         }
+164                 }
+165                 else {
+166                         std::cout << i << "->" << unidades << "|" << std::endl;
+167                 }
+168                 ++k;
+169         }
+170         std::cout << std::endl;                                                                                 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_assign_movimiento_dig_t ()"
+
+.PP
+.nf
+174                                                                                                         {
+175         using base_B_dig_t = dig_t<UINT_T,B>;
+176         sllint k{0};
+177 
+178         for (sllint i{-1000} ; i<1001 ; ++i)                                                                    {
+179                 base_B_dig_t A{i};
+180                 base_B_dig_t C{A};
+181                 base_B_dig_t unidades{};
+182                 unidades = A;
+183                 if ((k%static_cast<sllint>(B))!=static_cast<sllint>(B-1))                        {
+184                         if ((k%static_cast<sllint>(B))==0)
+185                                 std::cout << i << "|1->" << unidades << ";" << C << "-;-";
+186                         else                                                            {
+187                                 std::cout << i << "|2->" << unidades << ";" << C << "-;-";  }}
+188                 else                                                                                                                    {
+189                         std::cout << i << "|3->" << unidades << C << "-|" << std::endl; }
+190                 ++k;
+191         }
+192         std::cout << std::endl;
+193 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_assign_SINT_dig_t ()"
+
+.PP
+.nf
+133                                          {
+134         using base_B_dig_t = dig_t<UINT_T,B>;
+135         sllint k{0};
+136         for (sllint i{-1000} ; i<1001 ; ++i) {
+137                 base_B_dig_t unidades;
+138                 unidades = i;
+139                 if ((k%static_cast<sllint>(B))!=static_cast<sllint>(B-1)) {
+140                         std::cout << i << "->" << unidades << ";";
+141                 }
+142                 else
+143                         std::cout << i << "->" << unidades << "|" << std::endl;
+144                 ++k;
+145         }
+146         std::cout << std::endl;
+147 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_assign_UINT_dig_t ()"
+
+.PP
+.nf
+113                                                                                                                 {
+114         using base_B_dig_t = dig_t<UINT_T,B>;
+115         ullint k{0}; ullint kold{0};
+116         for (ullint i{0} ; i<1024+6 ; ++i)                                                                              {
+117                 base_B_dig_t unidades;
+118                 unidades = i;
+119                 if ((k%static_cast<ullint>(B))!=static_cast<ullint>(B-1))               {
+120                         if ((k%static_cast<ullint>(B))==0)
+121                                 std::cout << kold << "->" << unidades << ";";
+122                         else
+123                                 std::cout << kold << "->" << unidades << ";";
+124                         ++k;                                                                                                            }
+125                 else                                                                                                                    {
+126                         std::cout << kold << "->" << unidades << "|" << std::endl;
+127                         ++k;
+128                         kold = k;                                                                                                       }       }
+129         std::cout << std::endl;                                                                                                 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_C_B ()"
+
+.PP
+.nf
+1133                             {
+1134         using base_B_dig_t = dig_t<UINT_T,B>;
+1135         constexpr std::int64_t int64_B{B};
+1136         std::uint64_t contador_buenos{};
+1137         std::uint64_t contador_malos{};
+1138         std::uint64_t contador{};
+1139         for(std::int64_t nd{-2*int64_B} ; nd < 2*int64_B ; ++nd) {
+1140                         std::int64_t nnd{nd};
+1141                         while (nnd < 0)
+1142                                 nnd += int64_B;
+1143                         while (nnd >= int64_B)
+1144                                 nnd -= int64_B;
+1145 
+1146                         std::int64_t result_int{int64_B-nnd};
+1147                         while (result_int < 0)
+1148                                 result_int += int64_B;
+1149                         while (result_int >= int64_B)
+1150                                 result_int -= int64_B;
+1151 
+1152                         base_B_dig_t uds{nnd};
+1153                         base_B_dig_t result_dig{uds\&.C_B()};
+1154 
+1155                         if (result_dig\&.get() == result_int)
+1156                                 ++contador_buenos;
+1157                         else
+1158                                 ++contador_malos;
+1159 
+1160                         ++contador;
+1161         }
+1162         std::cout       << "___________________________________________"<< std::endl;
+1163         std::cout       << "__BEGIN___TESTS_COMPLEMENTO_BASE___BEGIN___"<< std::endl;
+1164         std::cout       << " Numero de complementos a la base correctas = "
+1165                                 << contador_buenos                                                              << std::endl;
+1166         std::cout       << " Numero de complementos a la base fallidos  = "
+1167                                 << contador_malos                                                               << std::endl;
+1168         std::cout   << " Numero total de pruebas                                        = "
+1169                                 << contador_buenos+contador_malos                               << std::endl;
+1170         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1171                                 << contador                                                                             << std::endl;
+1172         std::cout       << "__END_____TESTS_COMPLEMENTO_BASE_____END___"<< std::endl;
+1173         std::cout       << "___________________________________________"<< std::endl;
+1174 }
+.fi
+.PP
+Hace referencia a \fBNumRepr::dig_t< UINT_T, B >::C_B()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_C_Bm1 ()"
+
+.PP
+.nf
+1178                               {
+1179         using base_B_dig_t = dig_t<UINT_T,B>;
+1180         constexpr std::int64_t int64_B{B};
+1181         std::uint64_t contador_buenos{};
+1182         std::uint64_t contador_malos{};
+1183         std::uint64_t contador{};
+1184         for(std::int64_t nd{-2*int64_B} ; nd < 2*int64_B ; ++nd) {
+1185                         std::int64_t nnd{nd};
+1186                         while (nnd < 0)
+1187                                 nnd += int64_B;
+1188                         while (nnd >= int64_B)
+1189                                 nnd -= int64_B;
+1190 
+1191                         std::int64_t result_int{int64_B-nnd-1};
+1192                         while (result_int < 0)
+1193                                 result_int += int64_B;
+1194                         while (result_int >= int64_B)
+1195                                 result_int -= int64_B;
+1196 
+1197                         base_B_dig_t uds{nnd};
+1198                         base_B_dig_t result_dig{uds\&.C_Bm1()};
+1199 
+1200                         if (result_dig\&.get() == result_int)
+1201                                 ++contador_buenos;
+1202                         else
+1203                                 ++contador_malos;
+1204 
+1205                         ++contador;
+1206         }
+1207         std::cout       << "___________________________________________"<< std::endl;
+1208         std::cout       << "__BEGIN__TESTS_COMPLEMENTO_BASEm1__BEGIN___"<< std::endl;
+1209         std::cout       << " Numero de complementos a la Bm1 correctas  = "
+1210                                 << contador_buenos                                                              << std::endl;
+1211         std::cout       << " Numero de complementos a la Bm1 fallidos   = "
+1212                                 << contador_malos                                                               << std::endl;
+1213         std::cout   << " Numero total de pruebas                                        = "
+1214                                 << contador_buenos+contador_malos                               << std::endl;
+1215         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1216                                 << contador                                                                             << std::endl;
+1217         std::cout       << "__END_____TESTS_COMPLEMENTO_BASEm1___END___"<< std::endl;
+1218         std::cout       << "___________________________________________"<< std::endl;
+1219 }
+.fi
+.PP
+Hace referencia a \fBNumRepr::dig_t< UINT_T, B >::C_Bm1()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_ediv_assign ()"
+
+.PP
+.nf
+552                                     {
+553         using base_B_dig_t = dig_t<UINT_T,B>;
+554         constexpr std::int64_t int64_B{B};
+555         std::uint64_t contador_buenos{};
+556         std::uint64_t contador_malos{};
+557         std::uint64_t contador{};
+558         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+559                 if ((nd%int64_B) != 0) {
+560                         for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+561                                 base_B_dig_t uds{md};
+562                                 std::int64_t mmd{md};
+563                                 while (mmd<0)
+564                                         mmd += int64_B;
+565                                 base_B_dig_t nos{nd};
+566                                 std::int64_t nnd{nd};
+567                                 while (nnd<0)
+568                                         nnd += int64_B;
+569 
+570                                 uds /= nos;
+571                                 mmd /= nnd;
+572 
+573                                 while (mmd<0)
+574                                         mmd += int64_B;
+575                                 while (mmd>=int64_B)
+576                                         mmd -= int64_B;
+577 
+578                                 if (uds\&.get() == mmd)
+579                                         ++contador_buenos;
+580                                 else
+581                                         ++contador_malos;
+582 
+583                                 ++contador;
+584                         }
+585                 }
+586         }
+587         std::cout       << "___________________________________________"<< std::endl;
+588         std::cout       << "__BEGIN__TESTS____EDIV_&_ASSIGN____BEGIN___"<< std::endl;
+589         std::cout       << " Numero de sumasignaciones correctas= "
+590                                 << contador_buenos                                                              << std::endl;
+591         std::cout       << " Numero de sumasignaciones fallidas = "
+592                                 << contador_malos                                                               << std::endl;
+593         std::cout   << " Numero total de pruebas                        = "
+594                                 << contador_buenos+contador_malos                               << std::endl;
+595         std::cout   << " Numero limite del ciclo \"for\"        = "
+596                                 << contador                                                                             << std::endl;
+597         std::cout       << "__END____TESTS____EDIV_&_ASSIGN______END___"<< std::endl;
+598         std::cout       << "___________________________________________"<< std::endl;
+599 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_ediv_assign_uint ()"
+
+.PP
+.nf
+603                                          {
+604         using base_B_dig_t = dig_t<UINT_T,B>;
+605         constexpr std::int32_t int32_B{B};
+606         std::uint32_t contador_buenos{};
+607         std::uint32_t contador_malos{};
+608         std::uint32_t contador{};
+609         for(std::int32_t nd{1-int32_B} ; nd < int32_B ; ++nd) {
+610                 if (nd != 0) {
+611                         for(std::int32_t md{1-int32_B} ; md < int32_B ; ++md) {
+612                                 std::int32_t mmd{md};
+613                                 std::int32_t nnd{nd};
+614                                 base_B_dig_t uds{mmd};
+615 
+616                                 while (mmd<0) {
+617                                         mmd += int32_B;
+618                                 }
+619                                 while (nnd<0) {
+620                                         nnd += int32_B;
+621                                 }
+622 
+623                                 uds /= nnd;
+624                                 mmd /= nnd;
+625 
+626                                 while (mmd<0) {
+627                                         mmd += B;
+628                                 }
+629                                 while (mmd>=int32_B) {
+630                                         mmd -= B;
+631                                 }
+632 
+633                                 if (uds\&.get() == mmd) {
+634                                         ++contador_buenos;
+635                                 }
+636                                 else {
+637                                         ++contador_malos;
+638                                 }
+639 
+640                                 ++contador;
+641                         }
+642                 }
+643         }
+644         std::cout       << "___________________________________________"<< std::endl;
+645         std::cout       << "_BEGIN_TESTS___EDIV_&_ASSIGN_INT____BEGIN__"<< std::endl;
+646         std::cout       << " Numero de sumasignaciones correctas= "
+647                                 << contador_buenos                                                              << std::endl;
+648         std::cout       << " Numero de sumasignaciones fallidas = "
+649                                 << contador_malos                                                               << std::endl;
+650         std::cout   << " Numero total de pruebas                        = "
+651                                 << contador_buenos+contador_malos                               << std::endl;
+652         std::cout   << " Numero limite del ciclo \"for\"        = "
+653                                 << contador                                                                             << std::endl;
+654         std::cout       << "_END___TESTS___EDIV_&_ASSIGN_INT_____END___"<< std::endl;
+655         std::cout       << "___________________________________________"<< std::endl;
+656 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_edivision ()"
+
+.PP
+.nf
+1019                                   {
+1020         using base_B_dig_t = dig_t<UINT_T,B>;
+1021         constexpr std::int64_t int64_B{B};
+1022         std::uint64_t contador_buenos{};
+1023         std::uint64_t contador_malos{};
+1024         std::uint64_t contador{};
+1025         for(std::int64_t nd{-1} ; nd < int64_B ; ++nd) {
+1026                 if (nd%B != 0) {
+1027                         for(std::int64_t md{-1} ; md < int64_B ; ++md) {
+1028 
+1029                                 base_B_dig_t nos{nd};
+1030                                 base_B_dig_t uds{md};
+1031                                 base_B_dig_t result_dig{uds/nos};
+1032                                 base_B_dig_t prueba_ediv_dig{uds-(result_dig*nos)};
+1033 
+1034                                 std::int64_t mmd{md};
+1035                                 while (mmd < 0)
+1036                                         mmd += int64_B;
+1037                                 while (mmd >= int64_B)
+1038                                         mmd -= int64_B;
+1039                                 std::int64_t nnd{nd};
+1040                                 while (nnd < 0)
+1041                                         nnd += int64_B;
+1042                                 while (nnd >= int64_B)
+1043                                         nnd -= int64_B;
+1044                                 std::int64_t result_int{mmd/nnd};
+1045                                 while (result_int < 0)
+1046                                         result_int += int64_B;
+1047                                 while (result_int >= int64_B)
+1048                                         result_int -= int64_B;
+1049                                 std::int64_t prueba_ediv_int{mmd-(result_int*nnd)};
+1050                                 while (prueba_ediv_int < 0)
+1051                                         prueba_ediv_int += int64_B;
+1052                                 while (prueba_ediv_int >= int64_B)
+1053                                         prueba_ediv_int -= int64_B;
+1054                                 if (prueba_ediv_dig\&.get() == prueba_ediv_int) {
+1055                                         ++contador_buenos;
+1056                                 }
+1057                                 else {
+1058                                         ++contador_malos;
+1059                                 }
+1060                                 ++contador;
+1061                         }
+1062                 }
+1063         }
+1064         std::cout       << "___________________________________________"<< std::endl;
+1065         std::cout       << "___BEGIN_____TESTS_EDIVISIONES_____BEGIN___"<< std::endl;
+1066         std::cout       << " Numero de divisiones euclideas correctas   = "
+1067                                 << contador_buenos                                                              << std::endl;
+1068         std::cout       << " Numero de divisiones euclideas fallidas    = "
+1069                                 << contador_malos                                                               << std::endl;
+1070         std::cout   << " Numero total de pruebas                                        = "
+1071                                 << contador_buenos+contador_malos                               << std::endl;
+1072         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1073                                 << contador                                                                             << std::endl;
+1074         std::cout       << "___END_______TESTS_EDIVISIONES_______END___"<< std::endl;
+1075         std::cout       << "___________________________________________"<< std::endl;
+1076 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_edivision_int ()"
+
+.PP
+.nf
+1080                                       {
+1081         using base_B_dig_t = dig_t<UINT_T,B>;
+1082         constexpr std::int64_t int64_B{B};
+1083         std::uint64_t contador_buenos{};
+1084         std::uint64_t contador_malos{};
+1085         std::uint64_t contador{};
+1086         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+1087                 if (nd%B != 0) {
+1088                         for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+1089                                 std::int64_t mmd{md};
+1090                                 while (mmd < 0)
+1091                                         mmd += int64_B;
+1092                                 while (mmd >= int64_B)
+1093                                         mmd -= int64_B;
+1094                                 std::int64_t nnd{nd};
+1095                                 while (nnd < 0)
+1096                                         nnd += int64_B;
+1097                                 while (nnd >= int64_B)
+1098                                         nnd -= int64_B;
+1099                                 std::int64_t result_int{mmd/nnd};
+1100                                 while (result_int < 0)
+1101                                         result_int += int64_B;
+1102                                 while (result_int >= int64_B)
+1103                                         result_int -= int64_B;
+1104 
+1105                                 base_B_dig_t uds{mmd};
+1106                                 base_B_dig_t result_dig{uds/nnd};
+1107 
+1108                                 if (result_dig\&.get() == result_int)
+1109                                         ++contador_buenos;
+1110                                 else
+1111                                         ++contador_malos;
+1112 
+1113                                 ++contador;
+1114                         }
+1115                 }
+1116         }
+1117         std::cout       << "___________________________________________"<< std::endl;
+1118         std::cout       << "__BEGIN___TESTS_EDIVISIONES_INT____BEGIN___"<< std::endl;
+1119         std::cout       << " Numero de divisiones euclideas correctas   = "
+1120                                 << contador_buenos                                                              << std::endl;
+1121         std::cout       << " Numero de divisiones euclideas fallidas    = "
+1122                                 << contador_malos                                                               << std::endl;
+1123         std::cout   << " Numero total de pruebas                                        = "
+1124                                 << contador_buenos+contador_malos                               << std::endl;
+1125         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1126                                 << contador                                                                             << std::endl;
+1127         std::cout       << "___END____TESTS_EDIVISIONES_INT______END___"<< std::endl;
+1128         std::cout       << "___________________________________________"<< std::endl;
+1129 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_erem_assign ()"
+
+.PP
+.nf
+661                                     {
+662         using base_B_dig_t = dig_t<UINT_T,B>;
+663         constexpr std::int64_t int64_B{B};
+664         std::uint64_t contador_buenos{};
+665         std::uint64_t contador_malos{};
+666         std::uint64_t contador{};
+667         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+668                 if (nd != 0) {
+669                         for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+670                                 std::int64_t mmd{md};
+671                                 std::int64_t nnd{nd};
+672                                 base_B_dig_t nos{nd};
+673                                 base_B_dig_t uds{mmd};
+674 
+675                                 while (mmd<0)
+676                                         mmd += int64_B;
+677                                 while (nnd<0)
+678                                         nnd += int64_B;
+679 
+680                                 uds %= nos;
+681                                 mmd %= nnd;
+682 
+683                                 while (mmd<0)
+684                                         mmd += int64_B;
+685                                 while (mmd>=int64_B)
+686                                         mmd -= int64_B;
+687 
+688                                 if (uds\&.get() == mmd)
+689                                         ++contador_buenos;
+690                                 else
+691                                         ++contador_malos;
+692 
+693                                 ++contador;
+694                         }
+695                 }
+696         }
+697         std::cout       << "___________________________________________"<< std::endl;
+698         std::cout       << "__BEGIN__TESTS____EREM_&_ASSIGN____BEGIN___"<< std::endl;
+699         std::cout       << " Numero de sumasignaciones correctas= "
+700                                 << contador_buenos                                                              << std::endl;
+701         std::cout       << " Numero de sumasignaciones fallidas = "
+702                                 << contador_malos                                                               << std::endl;
+703         std::cout   << " Numero total de pruebas                        = "
+704                                 << contador_buenos+contador_malos                               << std::endl;
+705         std::cout   << " Numero limite del ciclo \"for\"        = "
+706                                 << contador                                                                             << std::endl;
+707         std::cout       << "__END____TESTS____EREM_&_ASSIGN______END___"<< std::endl;
+708         std::cout       << "___________________________________________"<< std::endl;
+709 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_erem_assign_uint ()"
+
+.PP
+.nf
+713                                          {
+714         using base_B_dig_t = dig_t<UINT_T,B>;
+715         constexpr std::int32_t int32_B{B};
+716         std::uint32_t contador_buenos{};
+717         std::uint32_t contador_malos{};
+718         std::uint32_t contador{};
+719         for(std::int32_t nd{1-int32_B} ; nd < int32_B ; ++nd) {
+720                 if (nd != 0) {
+721                         for(std::int32_t md{1-int32_B} ; md < int32_B ; ++md) {
+722                                 std::int32_t mmd{md};
+723                                 std::int32_t nnd{nd};
+724                                 base_B_dig_t uds{mmd};
+725 
+726                                 while (mmd<0) {
+727                                         mmd += int32_B;
+728                                 }
+729                                 while (nnd<0) {
+730                                         nnd += int32_B;
+731                                 }
+732 
+733                                 uds %= nnd;
+734                                 mmd %= nnd;
+735 
+736                                 while (mmd<0) {
+737                                         mmd += B;
+738                                 }
+739                                 while (mmd>=int32_B) {
+740                                         mmd -= B;
+741                                 }
+742 
+743                                 if (uds\&.get() == mmd) {
+744                                         ++contador_buenos;
+745                                 }
+746                                 else {
+747                                         ++contador_malos;
+748                                 }
+749 
+750                                 ++contador;
+751                         }
+752                 }
+753         }
+754         std::cout       << "___________________________________________"<< std::endl;
+755         std::cout       << "_BEGIN_TESTS___EREM_&_ASSIGN_INT____BEGIN__"<< std::endl;
+756         std::cout       << " Numero de sumasignaciones correctas= "
+757                                 << contador_buenos                                                              << std::endl;
+758         std::cout       << " Numero de sumasignaciones fallidas = "
+759                                 << contador_malos                                                               << std::endl;
+760         std::cout   << " Numero total de pruebas                        = "
+761                                 << contador_buenos+contador_malos                               << std::endl;
+762         std::cout   << " Numero limite del ciclo \"for\"        = "
+763                                 << contador                                                                             << std::endl;
+764         std::cout       << "_END___TESTS___EREM_&_ASSIGN_INT_____END___"<< std::endl;
+765         std::cout       << "___________________________________________"<< std::endl;
+766 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_mult_assign ()"
+
+.PP
+.nf
+466                                     {
+467         using base_B_dig_t = dig_t<UINT_T,B>;
+468         constexpr std::int64_t int64_B{B};
+469         std::uint64_t contador_buenos{};
+470         std::uint64_t contador_malos{};
+471         std::uint64_t contador{};
+472         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+473                 for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+474                         std::int64_t mmd{md};
+475                         base_B_dig_t nos{nd};
+476                         base_B_dig_t uds{mmd};
+477                         uds *= nos;
+478                         mmd *= nd;
+479 
+480                         while (mmd<0)
+481                                 mmd += int64_B;
+482                         while (mmd>=int64_B)
+483                                 mmd -= int64_B;
+484 
+485                         if (uds\&.get() == mmd)
+486                                 ++contador_buenos;
+487                         else
+488                                 ++contador_malos;
+489 
+490                         ++contador;
+491                 }
+492         }
+493         std::cout       << "___________________________________________"<< std::endl;
+494         std::cout       << "__BEGIN__TESTS____MULT_&_ASSIGN____BEGIN___"<< std::endl;
+495         std::cout       << " Numero de sumasignaciones correctas= "
+496                                 << contador_buenos                                                              << std::endl;
+497         std::cout       << " Numero de sumasignaciones fallidas = "
+498                                 << contador_malos                                                               << std::endl;
+499         std::cout   << " Numero total de pruebas                        = "
+500                                 << contador_buenos+contador_malos                               << std::endl;
+501         std::cout   << " Numero limite del ciclo \"for\"        = "
+502                                 << contador                                                                             << std::endl;
+503         std::cout       << "__END____TESTS____MULT_&_ASSIGN______END___"<< std::endl;
+504         std::cout       << "___________________________________________"<< std::endl;
+505 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_mult_assign_uint ()"
+
+.PP
+.nf
+509                                          {
+510         using base_B_dig_t = dig_t<UINT_T,B>;
+511         constexpr std::int32_t int32_B{B};
+512         std::uint32_t contador_buenos{};
+513         std::uint32_t contador_malos{};
+514         std::uint32_t contador{};
+515         for(std::int32_t nd{1-int32_B} ; nd < int32_B ; ++nd) {
+516                 for(std::int32_t md{1-int32_B} ; md < int32_B ; ++md) {
+517                         std::int32_t mmd{md};
+518                         base_B_dig_t uds{mmd};
+519                         uds *= nd;
+520                         mmd *= nd;
+521                         while (mmd<0) {
+522                                 mmd += B;
+523                         }
+524                         while (mmd>=int32_B) {
+525                                 mmd -= B;
+526                         }
+527                         if (uds\&.get() == mmd) {
+528                                 ++contador_buenos;
+529                         }
+530                         else {
+531                                 ++contador_malos;
+532                         }
+533                         ++contador;
+534                 }
+535         }
+536         std::cout       << "___________________________________________"<< std::endl;
+537         std::cout       << "_BEGIN_TESTS___MULT_&_ASSIGN_INT____BEGIN__"<< std::endl;
+538         std::cout       << " Numero de sumasignaciones correctas= "
+539                                 << contador_buenos                                                              << std::endl;
+540         std::cout       << " Numero de sumasignaciones fallidas = "
+541                                 << contador_malos                                                               << std::endl;
+542         std::cout   << " Numero total de pruebas                        = "
+543                                 << contador_buenos+contador_malos                               << std::endl;
+544         std::cout   << " Numero limite del ciclo \"for\"        = "
+545                                 << contador                                                                             << std::endl;
+546         std::cout       << "_END___TESTS___MULT_&_ASSIGN_INT_____END___"<< std::endl;
+547         std::cout       << "___________________________________________"<< std::endl;
+548 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_multiply ()"
+
+.PP
+.nf
+936                                  {
+937         using base_B_dig_t = dig_t<UINT_T,B>;
+938         constexpr std::int64_t int64_B{B};
+939         std::uint64_t contador_buenos{};
+940         std::uint64_t contador_malos{};
+941         std::uint64_t contador{};
+942         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+943                         for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+944                                 std::int64_t result_int{md*nd};
+945                                 base_B_dig_t nos{nd};
+946                                 base_B_dig_t uds{md};
+947                                 base_B_dig_t result_dig{uds*nos};
+948 
+949                                 while (result_int < 0)
+950                                         result_int += int64_B;
+951                                 while (result_int >= int64_B)
+952                                         result_int -= int64_B;
+953 
+954                                 if (result_dig\&.get() == result_int)
+955                                         ++contador_buenos;
+956                                 else
+957                                         ++contador_malos;
+958 
+959                                 ++contador;
+960                         }
+961         }
+962         std::cout       << "___________________________________________"<< std::endl;
+963         std::cout       << "___BEGIN___TESTS_MULTIPLICACIONES__BEGIN___"<< std::endl;
+964         std::cout       << " Numero de multiplicaciones correctas       = "
+965                                 << contador_buenos                                                              << std::endl;
+966         std::cout       << " Numero de multiplicaciones fallidas        = "
+967                                 << contador_malos                                                               << std::endl;
+968         std::cout   << " Numero total de pruebas                                = "
+969                                 << contador_buenos+contador_malos                               << std::endl;
+970         std::cout   << " Numero limite del ciclo \"for\"                = "
+971                                 << contador                                                                             << std::endl;
+972         std::cout       << "___END_____TESTS_MULTIPLICACIONES____END___"<< std::endl;
+973         std::cout       << "___________________________________________"<< std::endl;
+974 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_multiply_int ()"
+
+.PP
+.nf
+978                                      {
+979         using base_B_dig_t = dig_t<UINT_T,B>;
+980         constexpr std::int32_t int32_B{B};
+981         std::uint32_t contador_buenos{};
+982         std::uint32_t contador_malos{};
+983         std::uint32_t contador{};
+984         for(std::int32_t nd{1-int32_B} ; nd < int32_B ; ++nd) {
+985                         for(std::int32_t md{1-int32_B} ; md < int32_B ; ++md) {
+986                                 std::int32_t result_int{md*nd};
+987                                 base_B_dig_t uds{md};
+988                                 base_B_dig_t result_dig{uds*nd};
+989 
+990                                 while (result_int < 0)
+991                                         result_int += int32_B;
+992                                 while (result_int >= int32_B)
+993                                         result_int -= int32_B;
+994 
+995                                 if (result_dig\&.get() == result_int)
+996                                         ++contador_buenos;
+997                                 else
+998                                         ++contador_malos;
+999 
+1000                                 ++contador;
+1001                         }
+1002         }
+1003         std::cout       << "___________________________________________"<< std::endl;
+1004         std::cout       << "__BEGIN_TESTS_MULTIPLICACIONES_INT_BEGIN___"<< std::endl;
+1005         std::cout       << " Numero de multiplicaciones correctas       = "
+1006                                 << contador_buenos                                                              << std::endl;
+1007         std::cout       << " Numero de multiplicaciones fallidas        = "
+1008                                 << contador_malos                                                               << std::endl;
+1009         std::cout   << " Numero total de pruebas                                = "
+1010                                 << contador_buenos+contador_malos                               << std::endl;
+1011         std::cout   << " Numero limite del ciclo \"for\"                = "
+1012                                 << contador                                                                             << std::endl;
+1013         std::cout       << "___END__TESTS_MULTIPLICACIONES_INT___END___"<< std::endl;
+1014         std::cout       << "___________________________________________"<< std::endl;
+1015 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_postdecrement ()"
+
+.PP
+.nf
+281                                       {
+282         using base_B_dig_t = dig_t<UINT_T,B>;
+283         std::uint64_t contador_buenos{};
+284         std::uint64_t contador_malos{};
+285         std::int64_t md{2*B+1};
+286         base_B_dig_t uds{B+1};
+287         for(std::int64_t idx{0} ; idx < 2*B+1 ; ++idx) {
+288                 if ((uds--)\&.get()==((md--)%B))
+289                         ++contador_buenos;
+290                 else
+291                         ++contador_malos;
+292         }
+293         std::cout       << "___________________________________________"<< std::endl;
+294         std::cout       << "___BEGIN__TESTS__POSTDECREMENTOS___BEGIN___"<< std::endl;
+295         std::cout       << " Numero de decrementos correctos    = "
+296                                 << contador_buenos                                      << std::endl;
+297         std::cout       << " Numero de decrementos fallidos             = "
+298                                 << contador_malos                                       << std::endl;
+299         std::cout   << " Numero total de pruebas                        = "
+300                                 << contador_buenos+contador_malos       << std::endl;
+301         std::cout   << " Numero limite del ciclo \"for\"        = "
+302                                 << static_cast<std::uint64_t>(2*B+1)<< std::endl;
+303         std::cout       << "___END____TESTS__POSTDECREMENTOS_____END___"<< std::endl;
+304         std::cout       << "___________________________________________"<< std::endl;
+305 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_postincrement ()"
+
+.PP
+.nf
+225                                       {
+226         using base_B_dig_t = dig_t<UINT_T,B>;
+227         std::uint64_t contador_buenos{};
+228         std::uint64_t contador_malos{};
+229         std::int64_t md{};
+230         base_B_dig_t uds{};
+231         for(std::int64_t idx{0} ; idx < 2*B+1 ; ++idx) {
+232                 if ((uds++)\&.get()==((md++)%B))
+233                         ++contador_buenos;
+234                 else
+235                         ++contador_malos;
+236         }
+237         std::cout       << "___________________________________________"<< std::endl;
+238         std::cout       << "___BEGIN__TESTS__POSTINCREMENTOS___BEGIN___"<< std::endl;
+239         std::cout       << " Numero de incrementos correctos    = "
+240                                 << contador_buenos                                      << std::endl;
+241         std::cout       << " Numero de incrementos fallidos             = "
+242                                 << contador_malos                                       << std::endl;
+243         std::cout   << " Numero total de pruebas                        = "
+244                                 << contador_buenos+contador_malos       << std::endl;
+245         std::cout   << " Numero limite del ciclo \"for\"        = "
+246                                 << static_cast<std::uint64_t>(2*B+1)<< std::endl;
+247         std::cout       << "___END____TESTS__POSTINCREMENTOS_____END___"<< std::endl;
+248         std::cout       << "___________________________________________"<< std::endl;
+249 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_predecrement ()"
+
+.PP
+.nf
+253                                      {
+254         using base_B_dig_t = dig_t<UINT_T,B>;
+255         std::uint64_t contador_buenos{};
+256         std::uint64_t contador_malos{};
+257         std::int64_t md{2*B+1};
+258         base_B_dig_t uds{B+1};
+259         for(std::int64_t idx{0} ; idx < 2*B+1 ; ++idx) {
+260                 if ((--uds)\&.get()==((--md)%B))
+261                         ++contador_buenos;
+262                 else
+263                         ++contador_malos;
+264         }
+265         std::cout       << "___________________________________________"<< std::endl;
+266         std::cout       << "___BEGIN__TESTS__PRE_DECREMENTOS___BEGIN___"<< std::endl;
+267         std::cout       << " Numero de decrementos correctos    = "
+268                                 << contador_buenos                                      << std::endl;
+269         std::cout       << " Numero de decrementos fallidos             = "
+270                                 << contador_malos                                       << std::endl;
+271         std::cout   << " Numero total de pruebas                        = "
+272                                 << contador_buenos+contador_malos       << std::endl;
+273         std::cout   << " Numero limite del ciclo \"for\"        = "
+274                                 << static_cast<std::uint64_t>(2*B+1)<< std::endl;
+275         std::cout       << "___END____TESTS__PRE_DECREMENTOS_____END___"<< std::endl;
+276         std::cout       << "___________________________________________"<< std::endl;
+277 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_preincrement ()"
+
+.PP
+.nf
+197                                      {
+198         using base_B_dig_t = dig_t<UINT_T,B>;
+199         std::uint64_t contador_buenos{};
+200         std::uint64_t contador_malos{};
+201         std::int64_t md{};
+202         base_B_dig_t uds{};
+203         for(std::int64_t idx{0} ; idx < 2*B+1 ; ++idx) {
+204                 if ((++uds)\&.get()==((++md)%B))
+205                         ++contador_buenos;
+206                 else
+207                         ++contador_malos;
+208         }
+209         std::cout       << "___________________________________________"<< std::endl;
+210         std::cout       << "___BEGIN__TESTS__PRE_INCREMENTOS___BEGIN___"<< std::endl;
+211         std::cout       << " Numero de incrementos correctos    = "
+212                                 << contador_buenos                                      << std::endl;
+213         std::cout       << " Numero de incrementos fallidos             = "
+214                                 << contador_malos                                       << std::endl;
+215         std::cout   << " Numero total de pruebas                        = "
+216                                 << contador_buenos+contador_malos       << std::endl;
+217         std::cout   << " Numero limite del ciclo \"for\"        = "
+218                                 << static_cast<std::uint64_t>(2*B+1)<< std::endl;
+219         std::cout       << "___END____TESTS__PRE_INCREMENTOS_____END___"<< std::endl;
+220         std::cout       << "___________________________________________"<< std::endl;
+221 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_substract ()"
+
+.PP
+.nf
+853                                   {
+854         using base_B_dig_t = dig_t<UINT_T,B>;
+855         constexpr std::int64_t int64_B{B};
+856         std::uint64_t contador_buenos{};
+857         std::uint64_t contador_malos{};
+858         std::uint64_t contador{};
+859         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+860                         for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+861                                 std::int64_t suma_int{md-nd};
+862                                 base_B_dig_t nos{nd};
+863                                 base_B_dig_t uds{md};
+864                                 base_B_dig_t suma_dig{uds-nos};
+865 
+866                                 while (suma_int < 0)
+867                                         suma_int += int64_B;
+868                                 while (suma_int >= int64_B)
+869                                         suma_int -= int64_B;
+870 
+871                                 if (suma_dig\&.get() == suma_int)
+872                                         ++contador_buenos;
+873                                 else
+874                                         ++contador_malos;
+875 
+876                                 ++contador;
+877                         }
+878         }
+879         std::cout       << "___________________________________________"<< std::endl;
+880         std::cout       << "___BEGIN_____TESTS__SUBSTRACT______BEGIN___"<< std::endl;
+881         std::cout       << " Numero de restas correctas                 = "
+882                                 << contador_buenos                                                              << std::endl;
+883         std::cout       << " Numero de restas fallidas                  = "
+884                                 << contador_malos                                                               << std::endl;
+885         std::cout   << " Numero total de pruebas                        = "
+886                                 << contador_buenos+contador_malos                               << std::endl;
+887         std::cout   << " Numero limite del ciclo \"for\"        = "
+888                                 << contador                                                                             << std::endl;
+889         std::cout       << "___END_______TESTS__SUBSTRACT________END___"<< std::endl;
+890         std::cout       << "___________________________________________"<< std::endl;
+891 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_substract_assign ()"
+
+.PP
+.nf
+380                                          {
+381         using base_B_dig_t = dig_t<UINT_T,B>;
+382         constexpr std::int64_t int64_B{B};
+383         std::uint64_t contador_buenos{};
+384         std::uint64_t contador_malos{};
+385         std::uint64_t contador{};
+386         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+387                 for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+388                         std::int64_t mmd{md};
+389                         base_B_dig_t nos{nd};
+390                         base_B_dig_t uds{mmd};
+391                         uds -= nos;
+392                         mmd -= nd;
+393 
+394                         while (mmd<0)
+395                                 mmd += int64_B;
+396                         while (mmd>=int64_B)
+397                                 mmd -= int64_B;
+398 
+399                         if (uds\&.get() == mmd)
+400                                 ++contador_buenos;
+401                         else
+402                                 ++contador_malos;
+403 
+404                         ++contador;
+405                 }
+406         }
+407         std::cout       << "___________________________________________"<< std::endl;
+408         std::cout       << "__BEGIN__TESTS_SUBSTRACT_&_ASSIGN__BEGIN___"<< std::endl;
+409         std::cout       << " Numero de sumasignaciones correctas= "
+410                                 << contador_buenos                                                              << std::endl;
+411         std::cout       << " Numero de sumasignaciones fallidas = "
+412                                 << contador_malos                                                               << std::endl;
+413         std::cout   << " Numero total de pruebas                        = "
+414                                 << contador_buenos+contador_malos                               << std::endl;
+415         std::cout   << " Numero limite del ciclo \"for\"        = "
+416                                 << contador                                                                             << std::endl;
+417         std::cout       << "__END____TESTS_SUBSTRACT_&_ASSIGN____END___"<< std::endl;
+418         std::cout       << "___________________________________________"<< std::endl;
+419 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_substract_assign_uint ()"
+
+.PP
+.nf
+423                                               {
+424         using base_B_dig_t = dig_t<UINT_T,B>;
+425         constexpr std::int64_t int64_B{B};
+426         std::uint64_t contador_buenos{};
+427         std::uint64_t contador_malos{};
+428         std::uint64_t contador{};
+429         for(std::int64_t nd{1-int64_B} ; nd < int64_B ; ++nd) {
+430                 for(std::int64_t md{1-int64_B} ; md < int64_B ; ++md) {
+431                         std::int64_t mmd{md};
+432                         base_B_dig_t uds{mmd};
+433                         uds -= nd;
+434                         mmd -= nd;
+435                         while (mmd<0) {
+436                                 mmd += B;
+437                         }
+438                         while (mmd>=B) {
+439                                 mmd -= B;
+440                         }
+441                         if (uds\&.get() == mmd) {
+442                                 ++contador_buenos;
+443                         }
+444                         else {
+445                                 ++contador_malos;
+446                         }
+447                         ++contador;
+448                 }
+449         }
+450         std::cout       << "___________________________________________"<< std::endl;
+451         std::cout       << "_BEGIN_TESTS_SUBSTRACT_&_ASSIGN_INT_BEGIN__"<< std::endl;
+452         std::cout       << " Numero de sumasignaciones correctas= "
+453                                 << contador_buenos                                                              << std::endl;
+454         std::cout       << " Numero de sumasignaciones fallidas = "
+455                                 << contador_malos                                                               << std::endl;
+456         std::cout   << " Numero total de pruebas                        = "
+457                                 << contador_buenos+contador_malos                               << std::endl;
+458         std::cout   << " Numero limite del ciclo \"for\"        = "
+459                                 << contador                                                                             << std::endl;
+460         std::cout       << "_END___TESTS_SUBSTRACT_&_ASSIGN_INT__END___"<< std::endl;
+461         std::cout       << "___________________________________________"<< std::endl;
+462 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_operator_substract_int ()"
+
+.PP
+.nf
+895                                       {
+896         using base_B_dig_t = dig_t<UINT_T,B>;
+897         constexpr std::int32_t int32_B{B};
+898         std::uint32_t contador_buenos{};
+899         std::uint32_t contador_malos{};
+900         std::uint32_t contador{};
+901         for(std::int32_t nd{1-int32_B} ; nd < int32_B ; ++nd) {
+902                         for(std::int32_t md{1-int32_B} ; md < int32_B ; ++md) {
+903                                 std::int32_t suma_int{md-nd};
+904                                 base_B_dig_t uds{md};
+905                                 base_B_dig_t suma_dig{uds-nd};
+906 
+907                                 while (suma_int < 0)
+908                                         suma_int += int32_B;
+909                                 while (suma_int >= int32_B)
+910                                         suma_int -= int32_B;
+911 
+912                                 if (suma_dig\&.get() == suma_int)
+913                                         ++contador_buenos;
+914                                 else
+915                                         ++contador_malos;
+916 
+917                                 ++contador;
+918                         }
+919         }
+920         std::cout       << "___________________________________________"<< std::endl;
+921         std::cout       << "___BEGIN______TESTS_RESTA_INT______BEGIN___"<< std::endl;
+922         std::cout       << " Numero de restas correctas                 = "
+923                                 << contador_buenos                                                              << std::endl;
+924         std::cout       << " Numero de restas fallidas                  = "
+925                                 << contador_malos                                                               << std::endl;
+926         std::cout   << " Numero total de pruebas                        = "
+927                                 << contador_buenos+contador_malos                               << std::endl;
+928         std::cout   << " Numero limite del ciclo \"for\"        = "
+929                                 << contador                                                                             << std::endl;
+930         std::cout       << "___END________TESTS_RESTA_INT________END___"<< std::endl;
+931         std::cout       << "___________________________________________"<< std::endl;
+932 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_prop_C_B_eq_inv_C_B ()"
+
+.PP
+.nf
+1223                                    {
+1224         using base_B_dig_t = dig_t<UINT_T,B>;
+1225         constexpr std::int64_t int64_B{B};
+1226         std::uint64_t contador_buenos{};
+1227         std::uint64_t contador_malos{};
+1228         std::uint64_t contador{};
+1229         for(std::int64_t nd{-2*int64_B} ; nd < 2*int64_B ; ++nd) {
+1230                         base_B_dig_t uds{nd};
+1231                         base_B_dig_t result_interm_dig{uds\&.C_B()};
+1232                         base_B_dig_t result_dig{result_interm_dig\&.C_B()};
+1233 
+1234                         if (result_dig == uds)
+1235                                 ++contador_buenos;
+1236                         else
+1237                                 ++contador_malos;
+1238 
+1239                         ++contador;
+1240         }
+1241         std::cout       << "___________________________________________"<< std::endl;
+1242         std::cout       << "__BEGIN__TESTS_dig\&.C_B()\&.C_B()=dig__BEGIN__"<< std::endl;
+1243         std::cout       << " Numero de C_B(C_B())=Id() correctas        = "
+1244                                 << contador_buenos                                                              << std::endl;
+1245         std::cout       << " Numero de C_B(C_B())=Id() fallidos = "
+1246                                 << contador_malos                                                               << std::endl;
+1247         std::cout   << " Numero total de pruebas                                        = "
+1248                                 << contador_buenos+contador_malos                               << std::endl;
+1249         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1250                                 << contador                                                                             << std::endl;
+1251         std::cout       << "__END____TESTS_dig\&.C_B()\&.C_B()=dig____END__"<< std::endl;
+1252         std::cout       << "___________________________________________"<< std::endl;
+1253 }
+.fi
+.PP
+Hace referencia a \fBNumRepr::dig_t< UINT_T, B >::C_B()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_prop_C_B_minus_1_eq_C_Bm1 ()"
+
+.PP
+.nf
+1291                                          {
+1292         using base_B_dig_t = dig_t<UINT_T,B>;
+1293         constexpr std::int64_t int64_B{B};
+1294         std::uint64_t contador_buenos{};
+1295         std::uint64_t contador_malos{};
+1296         std::uint64_t contador{};
+1297         for(std::int64_t nd{-2*int64_B} ; nd < 2*int64_B ; ++nd) {
+1298                         base_B_dig_t uds{nd};
+1299                         base_B_dig_t uds_C_Bm1_p1{uds\&.C_Bm1()};
+1300                         ++uds_C_Bm1_p1;
+1301                         base_B_dig_t uds_C_B{uds\&.C_B()};
+1302 
+1303                         if (uds_C_Bm1_p1 == uds_C_B)
+1304                                 ++contador_buenos;
+1305                         else
+1306                                 ++contador_malos;
+1307 
+1308                         ++contador;
+1309         }
+1310         std::cout       << "_______________________________________________"<< std::endl;
+1311         std::cout       << "__BEGIN__TESTS_dig\&.C_Bm1()+1=dig\&.C_B()__BEGIN__"<< std::endl;
+1312         std::cout       << " Numero de C_Bm1(C_Bm1())=Id() correctas    = "
+1313                                 << contador_buenos                                                              << std::endl;
+1314         std::cout       << " Numero de C_B(C_B())=Id() fallidos = "
+1315                                 << contador_malos                                                               << std::endl;
+1316         std::cout   << " Numero total de pruebas                                        = "
+1317                                 << contador_buenos+contador_malos                               << std::endl;
+1318         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1319                                 << contador                                                                             << std::endl;
+1320         std::cout       << "__END____TESTS_dig\&.C_Bm1()+1=dig\&.C_B()____END__"<< std::endl;
+1321         std::cout       << "_______________________________________________"<< std::endl;
+1322 }
+.fi
+.PP
+Hace referencia a \fBNumRepr::dig_t< UINT_T, B >::C_B()\fP y \fBNumRepr::dig_t< UINT_T, B >::C_Bm1()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_prop_C_Bm1_eq_inv_C_Bm1 ()"
+
+.PP
+.nf
+1257                                        {
+1258         using base_B_dig_t = dig_t<UINT_T,B>;
+1259         constexpr std::int64_t int64_B{B};
+1260         std::uint64_t contador_buenos{};
+1261         std::uint64_t contador_malos{};
+1262         std::uint64_t contador{};
+1263         for(std::int64_t nd{-2*int64_B} ; nd < 2*int64_B ; ++nd) {
+1264                         base_B_dig_t uds{nd};
+1265                         base_B_dig_t result_interm_dig{uds\&.C_Bm1()};
+1266                         base_B_dig_t result_dig{result_interm_dig\&.C_Bm1()};
+1267 
+1268                         if (result_dig == uds)
+1269                                 ++contador_buenos;
+1270                         else
+1271                                 ++contador_malos;
+1272 
+1273                         ++contador;
+1274         }
+1275         std::cout       << "_______________________________________________"<< std::endl;
+1276         std::cout       << "__BEGIN__TESTS_dig\&.C_Bm1()\&.C_Bm1()=dig__BEGIN__"<< std::endl;
+1277         std::cout       << " Numero de C_Bm1(C_Bm1())=Id() correctas    = "
+1278                                 << contador_buenos                                                              << std::endl;
+1279         std::cout       << " Numero de C_B(C_B())=Id() fallidos = "
+1280                                 << contador_malos                                                               << std::endl;
+1281         std::cout   << " Numero total de pruebas                                        = "
+1282                                 << contador_buenos+contador_malos                               << std::endl;
+1283         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1284                                 << contador                                                                             << std::endl;
+1285         std::cout       << "__END____TESTS_dig\&.C_Bm1()\&.C_Bm1()=dig____END__"<< std::endl;
+1286         std::cout       << "_______________________________________________"<< std::endl;
+1287 }
+.fi
+.PP
+Hace referencia a \fBNumRepr::dig_t< UINT_T, B >::C_Bm1()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_unary_operator_minus ()"
+
+.PP
+.nf
+1327                                     {
+1328         using base_B_dig_t = dig_t<UINT_T,B>;
+1329         constexpr std::int64_t int64_B{B};
+1330         std::uint64_t contador_buenos{};
+1331         std::uint64_t contador_malos{};
+1332         std::uint64_t contador{};
+1333         for(std::int64_t nd{-2*int64_B} ; nd < 2*int64_B ; ++nd) {
+1334                         std::int64_t nnd{nd};
+1335                         while (nnd < 0)
+1336                                 nnd += int64_B;
+1337                         while (nnd >= int64_B)
+1338                                 nnd -= int64_B;
+1339 
+1340                         std::int64_t result_int{int64_B-nnd};
+1341                         while (result_int < 0)
+1342                                 result_int += int64_B;
+1343                         while (result_int >= int64_B)
+1344                                 result_int -= int64_B;
+1345 
+1346                         base_B_dig_t uds{nnd};
+1347                         base_B_dig_t result_dig{-uds};
+1348 
+1349                         if (result_dig\&.get() == result_int)
+1350                                 ++contador_buenos;
+1351                         else
+1352                                 ++contador_malos;
+1353 
+1354                         ++contador;
+1355         }
+1356         std::cout       << "___________________________________________"<< std::endl;
+1357         std::cout       << "__BEGIN___TESTS_OPERATOR_-_UNARIO__BEGIN___"<< std::endl;
+1358         std::cout       << " Numero de cambios de signo correctas       = "
+1359                                 << contador_buenos                                                              << std::endl;
+1360         std::cout       << " Numero de cambios de signo fallidos        = "
+1361                                 << contador_malos                                                               << std::endl;
+1362         std::cout   << " Numero total de pruebas                                        = "
+1363                                 << contador_buenos+contador_malos                               << std::endl;
+1364         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1365                                 << contador                                                                             << std::endl;
+1366         std::cout       << "__END_____TESTS_OPERATOR_-_UNARIO____END___"<< std::endl;
+1367         std::cout       << "___________________________________________"<< std::endl;
+1368 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())void NumRepr::display_unary_operator_neg ()"
+
+.PP
+.nf
+1372                                   {
+1373         using base_B_dig_t = dig_t<UINT_T,B>;
+1374         constexpr std::int64_t int64_B{B};
+1375         std::uint64_t contador_buenos{};
+1376         std::uint64_t contador_malos{};
+1377         std::uint64_t contador{};
+1378         for(std::int64_t nd{-2*int64_B} ; nd < 2*int64_B ; ++nd) {
+1379                         std::int64_t nnd{nd};
+1380                         while (nnd < 0)
+1381                                 nnd += int64_B;
+1382                         while (nnd >= int64_B)
+1383                                 nnd -= int64_B;
+1384 
+1385                         std::int64_t result_int{int64_B-nnd-1};
+1386                         while (result_int < 0)
+1387                                 result_int += int64_B;
+1388                         while (result_int >= int64_B)
+1389                                 result_int -= int64_B;
+1390 
+1391                         base_B_dig_t uds{nnd};
+1392                         base_B_dig_t result_dig{!uds};
+1393 
+1394                         if (result_dig\&.get() == result_int)
+1395                                 ++contador_buenos;
+1396                         else
+1397                                 ++contador_malos;
+1398 
+1399                         ++contador;
+1400         }
+1401         std::cout       << "___________________________________________"<< std::endl;
+1402         std::cout       << "__BEGIN___TESTS_OPERATOR_!_UNARIO__BEGIN___"<< std::endl;
+1403         std::cout       << " Numero de negaciones correctas     = "
+1404                                 << contador_buenos                                                              << std::endl;
+1405         std::cout       << " Numero de negaciones fallidas      = "
+1406                                 << contador_malos                                                               << std::endl;
+1407         std::cout   << " Numero total de pruebas                                        = "
+1408                                 << contador_buenos+contador_malos                               << std::endl;
+1409         std::cout   << " Numero limite del ciclo \"for\"                        = "
+1410                                 << contador                                                                             << std::endl;
+1411         std::cout       << "__END_____TESTS_OPERATOR_!_UNARIO____END___"<< std::endl;
+1412         std::cout       << "___________________________________________"<< std::endl;
+1413 }
+.fi
+.SS "template<arith_integral_c IntT> constexpr \fBsign_e\fP NumRepr::Int2Sign (IntT nu)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+20 {
+21         if (nu < 0)
+22                 return sign_e::vminus;
+23         else
+24                 return sign_e::vplus;
+25 }
+.fi
+.PP
+Hace referencia a \fBvminus\fP y \fBvplus\fP\&.
+.SS "template<arith_integral_c IntT> constexpr \fBsign_funct_e\fP NumRepr::Int2SignFunct (IntT nu)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+30 {
+31         if (nu < 0)
+32                 return sign_funct_e::vminus;
+33         else if (nu > 0)
+34                 return sign_funct_e::vplus;
+35         else
+36                 return sign_funct_e::vzero;
+37 }
+.fi
+.PP
+Hace referencia a \fBvminus\fP, \fBvplus\fP y \fBvzero\fP\&.
+.SS "template<typename Int_T , \fBullint\fP B> constexpr \fBullint\fP NumRepr::max_base_B_en_Int_T ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+139                                                        {
+140         constexpr long double max = static_cast<long double>(numeric_limits<Int_T>::max());
+141         constexpr long double n_digs_base_B = static_cast<long double>(num_digs_max_base_B_en_Int_T<Int_T,B>());
+142         constexpr long double dos = static_cast<long double>(2);
+143         constexpr long double base = static_cast<long double>(B);
+144         constexpr ullint ret = static_cast<ullint>(ceil((n_digs_base_B*log(dos))/log(base)));
+145         return ret;
+146 }
+.fi
+.SS "template<arith_natural_c NatIntT> constexpr \fBsign_funct_e\fP NumRepr::Nat2SignFunct (NatIntT nu)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+42 {
+43         if (nu==0)
+44                 return sign_funct_e::vzero;
+45         else
+46                 return sign_funct_e::vplus;
+47 }
+.fi
+.PP
+Hace referencia a \fBvplus\fP y \fBvzero\fP\&.
+.SS "template<typename Int_T , \fBullint\fP B> constexpr \fBullint\fP NumRepr::num_digs_max_base_B_en_Int_T ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+103                                                                 {
+104         constexpr long double max = static_cast<long double>(numeric_limits<Int_T>::max() + 1);
+105         constexpr long double max_unit = 2*static_cast<long double>(numeric_limits<char>::max() + 1);
+106         constexpr long double nb_unit = static_cast<long double>((log(max_unit)/log(2)));
+107         constexpr long double n_units_Int_T = static_cast<long double>(sizeof(Int_T));
+108         constexpr long double nb_Int_T = nb_unit * n_units_Int_T;
+109         constexpr long double log_2_b_B = log(static_cast<long double>(2))/log(static_cast<long double>(B));
+110         long double ld_expB = (floor(nb_Int_T * log_2_b_B));
+111         long double ld_potB = (floor(pow(static_cast<long double>(B),ld_expB)));
+112         //bool B_es_pot_de_2 = false;
+113         ullint pot_2 = 2;
+114         for (ullint b=1 ; b < max_unit; b++) {
+115                 if (B==pot_2) {
+116                         ld_expB+=static_cast<long double>(1);
+117                         //B_es_pot_de_2 = true;
+118                         break;
+119                 }
+120                 pot_2 *= 2;
+121         }
+122         constexpr long double max_pot_B_Int_T = static_cast<long double>(pot_max_base_B_en_Int_T<Int_T,B>());
+123         long double multiplo = 1;
+124         ullint ind = 0;
+125         while((multiplo < max) and (ind < B)) {
+126                 multiplo = floor(multiplo  +  max_pot_B_Int_T);
+127                 if (multiplo > max) {
+128                         multiplo = floor(multiplo - max_pot_B_Int_T);
+129                         ullint ret = static_cast<ullint>(multiplo-1\&.0);
+130                         return ret;
+131                 }
+132                 ++ind;
+133         }
+134         constexpr ullint ret = ullint(ld_expB);
+135         return ret;
+136 }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> 
+.br
+requires (suitable_base<UINT_T,B>() && (L>0))struct \fBNumRepr::nat_reg_digs_t\fP NumRepr::operator (\fBdig_t\fP arg) const\fC [noexcept]\fP"
+
+.PP
+.nf
+2573                 {
+2574                         nat_reg_digs_t ret(*this);
+2575                         ret += arg;
+2576                         return ret;
+2577                 }
+.fi
+.SS "constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP% (const \fBnat_reg_digs_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3439                 {
+3440                         nat_reg_digs_t ret(*this);
+3441                         UINT_T retuds   = ret(0);
+3442                         UINT_T retdecs  = ret(1);
+3443                         UINT_T arguds   = arg(0);
+3444                         UINT_T argdecs  = arg(1);
+3445 
+3446                         retuds  += (B*retdecs);
+3447                         arguds  += (B*argdecs);
+3448                         retuds  %= arguds;
+3449                         retdecs  = retuds;
+3450                         retdecs /= B;
+3451                         retuds  %= B;
+3452                         ret\&.m_dc[1]      = dig_t(retdecs);
+3453                         ret\&.m_dc[0]      = dig_t(retuds);
+3454                         return ret;
+.fi
+.SS "constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP% (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+REMAINDER BY A DIGIT\&. 
+.PP
+.nf
+3119                 {
+3120                         return ((this->fediv(arg))\&.result_content_remainder);
+.fi
+.PP
+Hace referencia a \fBfediv\fP\&.
+.SS "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP* (const \fBbase_N_t\fP< N > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3273                 {
+3274                         nat_reg_digs_t ret(*this);
+3275                         ret *= arg;
+3276                         return ret;
+.fi
+.SS "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP* (const \fBnat_reg_N_digs_t\fP< N > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3300                 {
+3301                         nat_reg_digs_t ret(*this);
+3302                         ret *= arg;
+3303                         return ret;
+.fi
+.SS "constexpr auto \fBNumRepr::operator\fP* (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+TO DO TODAY 20:28-10-11-2022 ARITHMETIC OPERATION : COMPLETE EUCLIDEAN DIVISION BY A BASE_N_T<1> 
+.SS "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBNumRepr::operator\fP*= (const \fBbase_N_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3216         {
+3217                 nat_reg_digs_t cpthis{*this};
+3218                 nat_reg_digs_t& cthis{0};
+3219                 for(size_t ix{0} ; ix < N ; ++ix) {
+3220                         cthis += (cpthis*arg[ix]);
+3221                         cpthis <<= 1;
+3222                 }
+3223                 return (cthis);
+.fi
+.SS "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBNumRepr::operator\fP*= (const \fBnat_reg_N_digs_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3230         {
+3231                 (*this)*= arg\&.m_dc;
+3232                 return (*this);
+.fi
+.SS "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP+ (const \fBbase_N_t\fP< N > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+TO DO\&. TO DO 
+.PP
+.nf
+3255                 {
+3256                         nat_reg_digs_t ret(*this);
+3257                         ret += arg;
+3258                         return std::move(ret);
+.fi
+.SS "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP+ (const \fBnat_reg_N_digs_t\fP< N > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3282                 {
+3283                         nat_reg_digs_t ret(*this);
+3284                         ret += arg;
+3285                         return ret;
+.fi
+.SS "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBNumRepr::operator\fP+= (const \fBbase_N_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3134         {
+3135                 nat_reg_digs_t & cthis = (*this);
+3136                 dig_t                           carry{0};
+3137                 if constexpr (N < L) {
+3138                         for (size_t ix{0} ; ix < N ; ++ix) {
+3139                                 dig_t&                          cthis{cthis\&.m_dc[ix]};
+3140                                 const dig_t     cpthis{cthis\&.m_dc[ix]};
+3141                                 const dig_t     cparg{arg[ix]};
+3142                                 cthis += cparg;
+3143                                 cthis += carry;
+3144                                 if ((cthis < cpthis) || (cparg < cpthis))
+3145                                         carry = dig_1();
+3146                         }
+3147                         for (size_t ix{N} ; ix < L ; ++ix) {
+3148                                 dig_t&                          cthis{cthis\&.m_dc[ix]};
+3149                                 const dig_t     cpthis{cthis\&.m_dc[ix]};
+3150                                 cthis += carry;
+3151                                 if (cthis < cpthis)
+3152                                         carry = dig_1();
+3153                         }
+3154                 }
+3155                 else {
+3156                         for (size_t ix{0} ; ix < L ; ++ix) {
+3157                                 dig_t&                          cthis{cthis\&.m_dc[ix]};
+3158                                 const dig_t     cpthis{cthis\&.m_dc[ix]};
+3159                                 const dig_t     cparg{arg[ix]};
+3160                                 cthis += cparg;
+3161                                 cthis += carry;
+3162                                 if ((cthis < cpthis) || (cparg < cpthis))
+3163                                         carry = dig_1();
+3164                         }
+3165                 }
+3166                 return (cthis);
+.fi
+.SS "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBNumRepr::operator\fP+= (const \fBnat_reg_N_digs_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3173         {
+3174                 (*this)+= arg\&.m_dc;
+3175                 return (*this);
+.fi
+.SS "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP\- (const \fBbase_N_t\fP< N > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3264                 {
+3265                         nat_reg_digs_t ret(*this);
+3266                         ret -= arg;
+3267                         return ret;
+.fi
+.SS "template<\fBsize_t\fP N> constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP\- (const \fBnat_reg_N_digs_t\fP< N > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3291                 {
+3292                         nat_reg_digs_t ret(*this);
+3293                         ret -= arg;
+3294                         return ret;
+.fi
+.SS "constexpr auto \fBNumRepr::operator\fP\- (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2581                 {
+2582                         nat_reg_digs_t ret(*this);
+2583                         ret -= arg;
+2584                         return ret;
+2585                 }
+.fi
+.SS "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBNumRepr::operator\fP\-= (const \fBbase_N_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+< cparg pasa a ser el complemento a la base menos 1 de cparg
+.PP
+.nf
+3182         {
+3183                 nat_reg_digs_t & cthis{*this};
+3184                 base_N_t<N> cparg{arg};
+3186                         // begin
+3187                         for(auto & elem_dig : cparg) {
+3188                                 elem_dig = dig_t(B-1)-elem_dig;
+3189                         }
+3190                         dig_t                   carry{0};
+3191                         for (size_t ix{0} ; ix < N ; ++ix) {
+3192                                 dig_t&                          cthis{cthis\&.m_dc[ix]};
+3193                                 const dig_t     cpthis{cthis\&.m_dc[ix]};
+3194                                 cthis += carry;
+3195                                 if (cthis < cpthis)
+3196                                         carry = dig_1();
+3197                         }
+3198                         // end
+3199                 cthis += cparg;
+3200                 return (cthis);
+.fi
+.SS "template<\fBsize_t\fP N> 
+.br
+requires (N>0)constexpr const \fBnat_reg_digs_t\fP & \fBNumRepr::operator\fP\-= (const \fBnat_reg_N_digs_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+3207         {
+3208                 (*this)-= arg\&.m_dc;
+3209                 return (*this);
+.fi
+.SS "constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP/ (const \fBnat_reg_digs_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+MOST SIGNIFICANT DIGIT DEL DIVISOR [DEL NUMERO NO DEL TIPO]
+.PP
+MOST SIGNIFICANT DIGIT DEL DIVIDENDO [DEL NUMERO NO DEL TIPO]
+.PP
+ERROR DIVISION BY 0
+.PP
+.nf
+3339                 {
+3340                         const nat_reg_digs_t& dndo{*this};
+3341                         const nat_reg_digs_t& dsor{arg};
+3342                         const int32_t num_0s_IZDA_dsor{cuenta_0s_desde_IZDA(dsor)};
+3343                         const int32_t num_0s_IZDA_dndo{cuenta_0s_desde_IZDA(dndo)};
+3344                         const int32_t MSDig_dsor{L-1-num_0s_IZDA_dsor};
+3346                         const int32_t MSDig_dndo{L-1-num_0s_IZDA_dndo};
+3348                         const size_t  dist_dndo_dsor{std::abs(MSDig_dndo-MSDig_dndo)};
+3349                         nat_reg_digs_t rem{regd_0()};
+3350                         nat_reg_digs_t coc{regd_0()};
+3351                         for(size_t num_loops{0} ; num_loops < dist_dndo_dsor ; ++num_loops)
+3352                         {
+3353                                 if (MSDig_dsor > MSDig_dndo) {
+3354                                         coc\&.set_0();
+3355                                         return coc;// DEVUELVE COCIENTE := 0 Y RESTO := DNDO
+3356                                 }
+3357                                 else if (MSDig_dsor == MSDig_dndo) {
+3358                                         for(int32_t ix{MSDig_dsor} ; ix > -1 ; --ix) {
+3359                                                         if (dsor[ix] > dndo[ix]) {
+3360                                                                 return regd_0();// DEVUELVE COCIENTE := 0 Y RESTO := DNDO
+3361                                                         }
+3362                                                         else if (dsor[ix] == dndo[ix]) {
+3363                                                                 if (ix == 0) {
+3364                                                                         coc\&.set_1();
+3365                                                                         return coc;// DEVUELVE COCIENTE := 1 Y RESTO := 0
+3366                                                                 }
+3367                                                         }
+3368                                                         else {
+3369                                                                 nat_reg_digs_t coc{0};
+3370                                                                 nat_reg_digs_t idndo{dndo};
+3371                                                                 nat_reg_digs_t idsor{dsor};
+3372                                                                 while (idndo >= idsor) {
+3373                                                                         idndo -= idsor;
+3374                                                                         ++coc[0];
+3375                                                                 }
+3376                                                                 return coc; // DEVUELVE COCIENTE := 000\&.\&.\&.L-1\&.\&.\&.0D
+3377                                                                                                                 // SIENDO D EL DIGITO 0 (Y EL VALOR DE COCIENTE)
+3378                                                                                                                 // DEVUELVE RESTO    := DNDO - DSOR * D
+3379                                                         }
+3380                                         }
+3381                                 }
+3382                                 else if (dsor == regd_1()) {
+3383                                         return coc;// DEVUELVE COCIENTE := DNDO Y RESTO := 0
+3384                                 }
+3385                                 else if (dsor == regd_0()) {
+3386                                         coc\&.set_0();
+3387                                         return coc;
+3388                                                                                  // DEVUELVE COCIENTE := 0 Y RESTO := 0
+3389                                 }
+3390                                 else {
+3391                                         int32_t pl_dndo{MSDig_dsor};
+3392                                         int32_t ph_dndo{MSDig_dndo};
+3393 
+3394                                         // ph_dndo >= ix > pl_dndo
+3395                                         for(int32_t ix{pl_dndo} ; ix <= ph_dndo ; ++ix) {
+3396                                                 rem[ix-pl_dndo] = dndo[ix];
+3397                                         }
+3398 
+3399                                         if (rem == dsor) {
+3400                                                 coc\&.set_1();
+3401                                                 return regd_1();// DEVUELVE COCIENTE:=1 Y RESTO:=0
+3402                                         }
+3403                                         else if (rem > dsor) {
+3404                                                 dig_t coc_dig{dig_0()};
+3405                                                 while(rem > dsor) {
+3406                                                         ++coc_dig;
+3407                                                         rem -= dsor;
+3408                                                 }
+3409                                                 coc *= regd_B();        // coc = coc * B
+3410                                                 coc[0] = coc_dig; // coc = coc + D  ; B-1 >= D > 1
+3411                                                 --pl_dndo;
+3412                                                 for(int32_t ix{ph_dndo} ; ix > pl_dndo ; --ix) {
+3413                                                         rem[ix-pl_dndo+1] = rem[ix-pl_dndo];
+3414                                                 }
+3415                                                 rem[pl_dndo] = dndo[pl_dndo];
+3416                                                 --ph_dndo;
+3417                                         }
+3418                                         else {
+3419                                                 if (pl_dndo != 0) {
+3420                                                         --pl_dndo;
+3421                                                         for(int32_t ix{ph_dndo} ; ix > pl_dndo ; --ix) {
+3422                                                                 rem[ix-pl_dndo+1] = rem[ix-pl_dndo];
+3423                                                         }
+3424                                                         rem[pl_dndo] = dndo[pl_dndo];
+3425                                                         coc *= regd_B(); // coc = coc * B
+3426                                                         rem -= dsor;    // coc = coc + 0
+3427                                                 }
+3428                                                 else {
+3429                                                         return coc;// DEVOLVEMOS LO CALCULADO EN COC Y EL RESTO ES REM
+3430                                                 }
+3431                                         }
+3432                                 }
+3433                         }
+3434                         return coc;// NO SE DEBERÍA LLEGAR AQUI
+.fi
+.PP
+Hace referencia a \fBrem\fP\&.
+.SS "constexpr \fBnat_reg_digs_t\fP \fBNumRepr::operator\fP/ (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+DIVISION BY A DIGIT\&. 
+.PP
+.nf
+3112                 {
+3113                         return ((this->fediv(arg))\&.result_content_quotient);
+.fi
+.PP
+Hace referencia a \fBfediv\fP\&.
+.SS "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, \fBsize_t\fP Long> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>())std::ostream & \fBNumRepr::operator\fP<< (std::ostream & os, const \fBnat_reg_digs_t\fP< Int_Type, Base, Long > & arg)"
+
+.PP
+.nf
+3343                                                                                      {
+3344                 using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
+3345                 os << "reg_dig#";
+3346                 for(int32_t ix{Long-1} ; ix > 0 ; --ix) {
+3347                                 os << static_cast<inttype>(arg(ix));
+3348                                 os << ':';
+3349                 }
+3350                 os << static_cast<inttype>(arg(0));
+3351                 os << "#B";
+3352                 os << static_cast<inttype>(Base);
+3353                 return (os);
+3354         }
+.fi
+.SS "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, std::size_t Long> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>())std::ostream & \fBNumRepr::operator\fP<< (std::ostream & os, const pfx_rat_reg_digs_t< Int_Type, Base, Long > & arg)"
+
+.PP
+.nf
+2429                                                                                          {
+2430                 using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
+2431                 os << "reg_dig#";
+2432                 for(std::int64_t ix{Long-1} ; ix > 0 ; --ix) {
+2433                                 os << static_cast<inttype>(arg(ix));
+2434                                 os << ':';
+2435                 }
+2436                 os << static_cast<inttype>(arg(0));
+2437                 os << "#B";
+2438                 os << static_cast<inttype>(Base);
+2439                 return (os);
+2440         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T Base> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,Base>())std::ostream & \fBNumRepr::operator\fP<< (std::ostream & os, \fBdig_t\fP< UINT_T, Base > arg)"
+
+.PP
+.nf
+1306                                                                         {
+1307         os  << "d#"
+1308                 << static_cast<std::int64_t>(arg()%Base)
+1309                 << "#B"
+1310                 << static_cast<std::int64_t>(Base) ;
+1311         return os;
+1312 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T Base> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,Base>())std::istream & \fBNumRepr::operator\fP>> (std::istream & is, \fBdig_t\fP< UINT_T, Base > & arg)"
+TODO : ESTA VERSION + VERSION CON TRATAMIENTO DE ERRORES RUNTIME 
+.PP
+.nf
+1206                                                                     {
+1207 
+1208         using SIG_UINT_T        = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+1209         enum estado_e {e0,e1,e2,e3,e4,e5,e6,e7,e8};
+1210 
+1211         std::string sds;
+1212         std::string num_dig;
+1213         std::string num_base;
+1214 
+1215         estado_e est_act = e0;
+1216         SIG_UINT_T indice = 0;
+1217         SIG_UINT_T numero_base_recogido=0;
+1218         UINT_T numero = 0;
+1219 
+1220         char c;
+1221         is >> sds;
+1222         do {
+1223                 c = sds[indice];
+1224                 switch(est_act) {
+1225                         case e0 : if (c=='d'){
+1226                                         est_act = e1;
+1227                                 }
+1228                                 break;
+1229                         case e1 : if (c=='#') {
+1230                                         est_act = e2;
+1231                                 }
+1232                                 else {
+1233                                         est_act = e0;
+1234                                 }
+1235                                 break;
+1236                         case e2 : if ((c<='9')and(c>='0')) {
+1237                                         est_act = e3;
+1238                                         num_dig\&.push_back(c-'0');
+1239                                 }
+1240                                 else {
+1241                                         est_act = e0;
+1242                                         num_dig\&.clear();
+1243                                 }
+1244                                 break;
+1245                         case e3 : if ((c<='9')and(c>='0')) num_dig\&.push_back(c-'0');
+1246                                           else if (c == '#') est_act = e4;
+1247                                           else {
+1248                                                 est_act=e0;
+1249                                                 num_dig\&.clear();
+1250                                           }
+1251                                           break;
+1252                         case e4 : if (c == 'B') est_act = e5;
+1253                                           else {
+1254                                                 est_act = e0;
+1255                                                 num_dig\&.clear();
+1256                                           }
+1257                                           break;
+1258                         case e5 : if ((c<='9')and(c>='0')) {
+1259                                                 est_act = e6;
+1260                                                 num_base\&.push_back(c-'0');
+1261                                           }
+1262                                           else {
+1263                                                 est_act = e0;
+1264                                                 num_dig\&.clear();
+1265                                                 num_base\&.clear();
+1266                                           }
+1267                                           break;
+1268                         case e6 : if ((c<='9')and(c>='0')) num_base\&.push_back(c-'0');
+1269                                           else if ((c==' ')||(c=='\0')) est_act = e7;
+1270                                           break;
+1271                         case e7 : if ((c!=' ')||(c!='\0')){
+1272                                                 est_act = e0;
+1273                                                 num_dig\&.clear();
+1274                                                 num_base\&.clear();
+1275                                                 }
+1276                                           break;
+1277                         case e8 :
+1278                         default : break;
+1279                 }
+1280                 ++indice;
+1281                 if (est_act==e7) {
+1282                         for (SIG_UINT_T k=0 ; k < num_base\&.size() ; ++k ) {
+1283                                 numero_base_recogido *= 10;
+1284                                 numero_base_recogido += num_base[k];
+1285                         }
+1286                         if (numero_base_recogido!=Base) {
+1287                                 est_act = e0;
+1288                                 num_dig\&.clear();
+1289                                 num_base\&.clear();
+1290                         }
+1291                         else est_act = e8;
+1292                 }
+1293         } while (est_act!=e8);
+1294 
+1295         for (SIG_UINT_T k=0 ; k < num_dig\&.size() ; ++k ) {
+1296                 numero *= 10;
+1297                 numero += num_dig[k];
+1298         }
+1299         numero %= Base;
+1300         arg = dig_t<UINT_T,Base>(numero);
+1301         return is;
+1302 }
+.fi
+.SS "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, \fBsize_t\fP Length> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>()&&(Length > 0))std::istream & \fBNumRepr::operator\fP>> (std::istream & is, \fBnat_reg_digs_t\fP< Int_Type, Base, Length > & arg)"
+TODO ESTA VERSION + VERSION CON TRATAMIENTO DE ERRORES EN RUNTIME STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
+.PP
+TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS
+.PP
+INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
+.PP
+VARIABLES PARA ACCIONES EN LOS ESTADOS
+.PP
+VARIABLE DE RETORNO (BINDED TO THE ARG BY REFERENCE)
+.PP
+ESTADO ACTUAL
+.PP
+CARACTER QUE GUARDARA EL INDICADO POR EL INDICE DEL STRING RECOGIDO DESDE CIN
+.PP
+RECOGEMOS DESDE LA ENTRADA EL STRING CON LA INFORMACION CODIFICADA
+.PP
+MAQUINA DE ESTADOS FINITOS QUE HACE EL PARSE() DE LA ENTRADA
+.PP
+.nf
+3090                                                                                  {
+3091                 enum estado_e {
+3092                         e0ini   , e1r           , e1e           , e1g                   , e1sep         ,
+3093                         e1d             , e1i           , e2g           , e2start       , e2dig         ,
+3094                         e2dp    , e2end , e2B           , e3dig         , e0fin
+3095                 };
+3097                 std::string sds;
+3099                 using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
+3100                 using dig_t = dig_t<Int_Type,Base>;
+3101                 using nat_reg_digs_t = nat_reg_digs_t<Int_Type,Base,Length>;
+3103                 size_t  indice{0};
+3105                 Int_Type                digito{0};
+3106                 size_t longitud{0};
+3107                 inttype                 numero_base_recogido{0};
+3109                 nat_reg_digs_t& numero_ret{arg};
+3111                 estado_e est_act = e0ini;
+3113                 char c{'\0'};
+3115                 is >> sds;
+3117                 do {
+3118                         c = sds[indice];
+3119                         switch(est_act) {
+3120                                 case e0ini :
+3121                                         {
+3122                                                 if (c=='r') {
+3123                                                         est_act = e1r;
+3124                                                 } else {
+3125                                                         est_act = e0ini;
+3126                                                 }
+3127                                         }
+3128                                         break;
+3129                                 case e1r :
+3130                                         {
+3131                                                 {
+3132                                                         if (c=='e') {
+3133                                                                 est_act = e1e;
+3134                                                         }
+3135                                                         else {
+3136                                                                 est_act = e0ini;
+3137                                                         }
+3138                                                 }
+3139                                         }
+3140                                         break;
+3141                                 case e1e :
+3142                                         {
+3143                                                 if (c=='g') {
+3144                                                         est_act = e1g;
+3145                                                 }
+3146                                                 else  {
+3147                                                         est_act = e0ini;
+3148                                                 }
+3149                                         }
+3150                                         break;
+3151                                 case e1g :
+3152                                         {
+3153                                                 if (c=='_') {
+3154                                                         est_act = e1sep;
+3155                                                 }
+3156                                                 else  {
+3157                                                         est_act = e0ini;
+3158                                                 }
+3159                                         }
+3160                                         break;
+3161                                 case e1sep :
+3162                                         {
+3163                                                 if (c=='d') {
+3164                                                         est_act = e1d;
+3165                                                 }
+3166                                                 else  {
+3167                                                         est_act = e0ini;
+3168                                                 }
+3169                                         }
+3170                                         break;
+3171                                 case e1d :
+3172                                         {
+3173                                                 if (c=='i') {
+3174                                                         est_act = e1i;
+3175                                                 }
+3176                                                 else  {
+3177                                                         est_act = e0ini;
+3178                                                 }
+3179                                         }
+3180                                         break;
+3181                                 case e1i :
+3182                                         {
+3183                                                 if (c=='g') {
+3184                                                         est_act = e2g;
+3185                                                 }
+3186                                                 else  {
+3187                                                         est_act = e0ini;
+3188                                                 }
+3189                                         }
+3190                                         break;
+3191                                 case e2g :
+3192                                         {
+3193                                                 if (c=='#') {
+3194                                                         est_act = e2start;
+3195                                                 }
+3196                                                 else  {
+3197                                                         est_act = e0ini;
+3198                                                 }
+3199                                         }
+3200                                         break;
+3201                                 case e2start :
+3202                                         {
+3203                                                 if (((c>='0')&&(c<='9'))&&(std::abs(c-'0')<Base)) {
+3204                                                         est_act = e2dig;
+3205                                                         digito = (c-'0');
+3206                                                         longitud = 0;
+3207                                                         numero_base_recogido = 0;
+3208                                                         numero_ret = nat_reg_digs_t::regd_0();
+3209                                                 }
+3210                                                 else  {
+3211                                                         est_act = e0ini;
+3212                                                         digito = 0;
+3213                                                         longitud = 0;
+3214                                                         numero_base_recogido = 0;
+3215                                                         numero_ret = nat_reg_digs_t::regd_0();
+3216                                                 }
+3217                                         }
+3218                                         break;
+3219                                 case e2dig :
+3220                                         {
+3221                                                 const bool dig_c {(c >= '0') && (c <= '9')};
+3222                                                 const bool dig_lt_Base{digito<Base};
+3223                                                 const bool c_es_dig_B {dig_c && dig_lt_Base};
+3224                                                 const bool dig_B_cdl {c_es_dig_B && (longitud < Length-1)};
+3225                                                 const bool tt_dig_B_cdl {(c==':')&&dig_lt_Base&&(longitud < Length-1)};
+3226                                                 const bool tf_dig_B_cdl {(c=='#')&&dig_lt_Base&&(longitud == Length-1)};
+3227                                                 if (dig_B_cdl) {
+3228                                                         digito *= 10;
+3229                                                         digito += (c-'0');
+3230                                                         est_act = e2dig;
+3231                                                 }
+3232                                                 else if (tt_dig_B_cdl) {
+3233                                                         est_act = e2dp;
+3234                                                 }
+3235                                                 else if (tf_dig_B_cdl) {
+3236                                                         est_act = e2end;
+3237                                                 }
+3238                                                 else  {
+3239                                                         est_act = e0ini;
+3240                                                         digito = 0;
+3241                                                         longitud = 0;
+3242                                                         numero_base_recogido = 0;
+3243                                                         numero_ret = nat_reg_digs_t::regd_0();
+3244                                                 }
+3245                                         }
+3246                                         break;
+3247                                 case e2dp :
+3248                                         {
+3249                                                 const bool dig_c {(c >= '0') && (c <= '9')};
+3250                                                 const bool c_es_dig_B {(std::abs(c-'0')<Base) && (digito<Base)};
+3251                                                 const bool dig_B_cdl {dig_c && c_es_dig_B && (longitud < Length-1)};
+3252                                                 const bool rdig_B_cdl {dig_c && c_es_dig_B && dig_B_cdl};
+3253                                                 if (rdig_B_cdl) {
+3254                                                         est_act = e2dig;
+3255                                                         numero_ret[Length-1-longitud] = dig_t(digito);
+3256                                                         ++longitud;
+3257                                                         digito = c-'0';
+3258                                                 }
+3259                                                 else  {
+3260                                                         est_act = e0ini;
+3261                                                         digito = 0;
+3262                                                         longitud = 0;
+3263                                                         numero_base_recogido = 0;
+3264                                                         indice = 0;
+3265                                                         numero_ret = nat_reg_digs_t::regd_0();
+3266                                                 }
+3267                                         }
+3268                                         break;
+3269                                 case e2end :
+3270                                         {
+3271                                                 const bool c_es_sepfin {c == 'B'};
+3272                                                 const bool d_es_digB {digito < Base};
+3273                                                 const bool l_coincide {longitud == Length-1};// llega al cero ?
+3274                                                 const bool rdigB_cdl {c_es_sepfin && d_es_digB && l_coincide};
+3275                                                 if (rdigB_cdl) {
+3276                                                         est_act = e2B;
+3277                                                         numero_ret[Length-1-longitud] = dig_t(digito);
+3278                                                         digito = 0;
+3279                                                         longitud = 0;
+3280                                                 }
+3281                                                 else  {
+3282                                                         est_act = e0ini;
+3283                                                         indice = 0;
+3284                                                         digito = 0;
+3285                                                         longitud = 0;
+3286                                                         numero_ret = nat_reg_digs_t::regd_0();
+3287                                                 }
+3288                                         }
+3289                                         break;
+3290                                 case e2B :
+3291                                         {
+3292                                                 if ((c >= '0')&&(c <= '9')) {
+3293                                                         est_act = e3dig;
+3294                                                         numero_base_recogido = c-'0';
+3295                                                         digito = 0;
+3296                                                 }
+3297                                                 else  {
+3298                                                         est_act = e0ini;
+3299                                                         digito = 0;
+3300                                                         longitud = 0;
+3301                                                         numero_base_recogido = 0;
+3302                                                         numero_ret = nat_reg_digs_t::regd_0();
+3303                                                 }
+3304                                         }
+3305                                         break;
+3306                                 case e3dig :
+3307                                         {
+3308                                                 const bool espacio_c {c < 16};
+3309                                                 const bool digito_c {(c>='0') && (c<='9')};
+3310                                                 const bool num_base_lt_Base {numero_base_recogido < Base};
+3311                                                 const bool num_base_eq_Base {numero_base_recogido == Base};
+3312                                                 if (digito_c && num_base_lt_Base) {
+3313                                                         est_act = e3dig;
+3314                                                         numero_base_recogido *= 10;
+3315                                                         numero_base_recogido += (c-'0');
+3316                                                 }
+3317                                                 else if (espacio_c && num_base_eq_Base) {
+3318                                                         numero_base_recogido *= 10;
+3319                                                         numero_base_recogido += (c-'0');
+3320                                                                 est_act = e0fin;
+3321                                                                 numero_base_recogido = 0;
+3322                                                 }
+3323                                                 else  {
+3324                                                         est_act = e0ini;
+3325                                                         numero_base_recogido = 0;
+3326                                                 }
+3327                                         }
+3328                                         break;
+3329                                 case e0fin :
+3330                                         {
+3331                                                 est_act = e0fin;
+3332                                         }
+3333                         }
+3334                         ++indice;
+3335                 } while (est_act!=e0fin);
+3336 
+3337                 return (is);
+3338         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_reg_digs_t< UINT_T, B, L >::regd_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c Int_Type, Int_Type Base, std::size_t Length> 
+.br
+requires (\fBtype_traits::suitable_base\fP<Int_Type,Base>()&&(Length > 0))std::istream & \fBNumRepr::operator\fP>> (std::istream & is, pfx_rat_reg_digs_t< Int_Type, Base, Length > & arg)"
+STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
+.PP
+TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS
+.PP
+INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
+.PP
+VARIABLES PARA ACCIONES EN LOS ESTADOS
+.PP
+VARIABLE DE RETORNO (BINDED TO THE ARG BY REFERENCE)
+.PP
+ESTADO ACTUAL
+.PP
+CARACTER QUE GUARDARA EL INDICADO POR EL INDICE DEL STRING RECOGIDO DESDE CIN
+.PP
+RECOGEMOS DESDE LA ENTRADA EL STRING CON LA INFORMACION CODIFICADA
+.PP
+MAQUINA DE ESTADOS FINITOS QUE HACE EL PARSE() DE LA ENTRADA
+.PP
+.nf
+2176                                                                                      {
+2177                 enum estado_e {
+2178                         e0ini   , e1r           , e1e           , e1g                   , e1sep         ,
+2179                         e1d             , e1i           , e2g           , e2start       , e2dig         ,
+2180                         e2dp    , e2end , e2B           , e3dig         , e0fin
+2181                 };
+2183                 std::string sds;
+2185                 using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
+2186                 using dig_t = dig_t<Int_Type,Base>;
+2187                 using pfx_rat_reg_digs_t = pfx_rat_reg_digs_t<Int_Type,Base,Length>;
+2189                 std::size_t     indice{0};
+2191                 Int_Type                digito{0};
+2192                 std::size_t longitud{0};
+2193                 inttype                 numero_base_recogido{0};
+2195                 pfx_rat_reg_digs_t& numero_ret{arg};
+2197                 estado_e est_act = e0ini;
+2199                 char c{'\0'};
+2201                 is >> sds;
+2203                 do {
+2204                         c = sds[indice];
+2205                         switch(est_act) {
+2206                                 case e0ini :
+2207                                         {
+2208                                                 if (c=='r') {
+2209                                                         est_act = e1r;
+2210                                                 } else {
+2211                                                         est_act = e0ini;
+2212                                                 }
+2213                                         }
+2214                                         break;
+2215                                 case e1r :
+2216                                         {
+2217                                                 {
+2218                                                         if (c=='e') {
+2219                                                                 est_act = e1e;
+2220                                                         }
+2221                                                         else {
+2222                                                                 est_act = e0ini;
+2223                                                         }
+2224                                                 }
+2225                                         }
+2226                                         break;
+2227                                 case e1e :
+2228                                         {
+2229                                                 if (c=='g') {
+2230                                                         est_act = e1g;
+2231                                                 }
+2232                                                 else  {
+2233                                                         est_act = e0ini;
+2234                                                 }
+2235                                         }
+2236                                         break;
+2237                                 case e1g :
+2238                                         {
+2239                                                 if (c=='_') {
+2240                                                         est_act = e1sep;
+2241                                                 }
+2242                                                 else  {
+2243                                                         est_act = e0ini;
+2244                                                 }
+2245                                         }
+2246                                         break;
+2247                                 case e1sep :
+2248                                         {
+2249                                                 if (c=='d') {
+2250                                                         est_act = e1d;
+2251                                                 }
+2252                                                 else  {
+2253                                                         est_act = e0ini;
+2254                                                 }
+2255                                         }
+2256                                         break;
+2257                                 case e1d :
+2258                                         {
+2259                                                 if (c=='i') {
+2260                                                         est_act = e1i;
+2261                                                 }
+2262                                                 else  {
+2263                                                         est_act = e0ini;
+2264                                                 }
+2265                                         }
+2266                                         break;
+2267                                 case e1i :
+2268                                         {
+2269                                                 if (c=='g') {
+2270                                                         est_act = e2g;
+2271                                                 }
+2272                                                 else  {
+2273                                                         est_act = e0ini;
+2274                                                 }
+2275                                         }
+2276                                         break;
+2277                                 case e2g :
+2278                                         {
+2279                                                 if (c=='#') {
+2280                                                         est_act = e2start;
+2281                                                 }
+2282                                                 else  {
+2283                                                         est_act = e0ini;
+2284                                                 }
+2285                                         }
+2286                                         break;
+2287                                 case e2start :
+2288                                         {
+2289                                                 if (((c>='0')&&(c<='9'))&&(std::abs(c-'0')<Base)) {
+2290                                                         est_act = e2dig;
+2291                                                         digito = (c-'0');
+2292                                                         longitud = 0;
+2293                                                         numero_base_recogido = 0;
+2294                                                         numero_ret = pfx_rat_reg_digs_t::regd_0();
+2295                                                 }
+2296                                                 else  {
+2297                                                         est_act = e0ini;
+2298                                                         digito = 0;
+2299                                                         longitud = 0;
+2300                                                         numero_base_recogido = 0;
+2301                                                         numero_ret = pfx_rat_reg_digs_t::regd_0();
+2302                                                 }
+2303                                         }
+2304                                         break;
+2305                                 case e2dig :
+2306                                         {
+2307                                                 const bool dig_c {(c >= '0') && (c <= '9')};
+2308                                                 const bool dig_lt_Base{digito<Base};
+2309                                                 const bool c_es_dig_B {dig_c && dig_lt_Base};
+2310                                                 const bool dig_B_cdl {c_es_dig_B && (longitud < Length-1)};
+2311                                                 const bool tt_dig_B_cdl {(c==':')&&dig_lt_Base&&(longitud < Length-1)};
+2312                                                 const bool tf_dig_B_cdl {(c=='#')&&dig_lt_Base&&(longitud == Length-1)};
+2313                                                 if (dig_B_cdl) {
+2314                                                         digito *= 10;
+2315                                                         digito += (c-'0');
+2316                                                         est_act = e2dig;
+2317                                                 }
+2318                                                 else if (tt_dig_B_cdl) {
+2319                                                         est_act = e2dp;
+2320                                                 }
+2321                                                 else if (tf_dig_B_cdl) {
+2322                                                         est_act = e2end;
+2323                                                 }
+2324                                                 else  {
+2325                                                         est_act = e0ini;
+2326                                                         digito = 0;
+2327                                                         longitud = 0;
+2328                                                         numero_base_recogido = 0;
+2329                                                         numero_ret = pfx_rat_reg_digs_t::regd_0();
+2330                                                 }
+2331                                         }
+2332                                         break;
+2333                                 case e2dp :
+2334                                         {
+2335                                                 const bool dig_c {(c >= '0') && (c <= '9')};
+2336                                                 const bool c_es_dig_B {(std::abs(c-'0')<Base) && (digito<Base)};
+2337                                                 const bool dig_B_cdl {dig_c && c_es_dig_B && (longitud < Length-1)};
+2338                                                 const bool rdig_B_cdl {dig_c && c_es_dig_B && dig_B_cdl};
+2339                                                 if (rdig_B_cdl) {
+2340                                                         est_act = e2dig;
+2341                                                         numero_ret\&.m_dc[Length-1-longitud] = dig_t(digito);
+2342                                                         ++longitud;
+2343                                                         digito = c-'0';
+2344                                                 }
+2345                                                 else  {
+2346                                                         est_act = e0ini;
+2347                                                         digito = 0;
+2348                                                         longitud = 0;
+2349                                                         numero_base_recogido = 0;
+2350                                                         indice = 0;
+2351                                                         numero_ret = pfx_rat_reg_digs_t::regd_0();
+2352                                                 }
+2353                                         }
+2354                                         break;
+2355                                 case e2end :
+2356                                         {
+2357                                                 const bool c_es_sepfin {c == 'B'};
+2358                                                 const bool d_es_digB {digito < Base};
+2359                                                 const bool l_coincide {longitud == Length-1};// llega al cero ?
+2360                                                 const bool rdigB_cdl {c_es_sepfin && d_es_digB && l_coincide};
+2361                                                 if (rdigB_cdl) {
+2362                                                         est_act = e2B;
+2363                                                         numero_ret\&.m_dc[Length-1-longitud] = dig_t(digito);
+2364                                                         digito = 0;
+2365                                                         longitud = 0;
+2366                                                 }
+2367                                                 else  {
+2368                                                         est_act = e0ini;
+2369                                                         indice = 0;
+2370                                                         digito = 0;
+2371                                                         longitud = 0;
+2372                                                         numero_ret = pfx_rat_reg_digs_t::regd_0();
+2373                                                 }
+2374                                         }
+2375                                         break;
+2376                                 case e2B :
+2377                                         {
+2378                                                 if ((c >= '0')&&(c <= '9')) {
+2379                                                         est_act = e3dig;
+2380                                                         numero_base_recogido = c-'0';
+2381                                                         digito = 0;
+2382                                                 }
+2383                                                 else  {
+2384                                                         est_act = e0ini;
+2385                                                         digito = 0;
+2386                                                         longitud = 0;
+2387                                                         numero_base_recogido = 0;
+2388                                                         numero_ret = pfx_rat_reg_digs_t::regd_0();
+2389                                                 }
+2390                                         }
+2391                                         break;
+2392                                 case e3dig :
+2393                                         {
+2394                                                 const bool espacio_c {c < 16};
+2395                                                 const bool digito_c {(c>='0') && (c<='9')};
+2396                                                 const bool num_base_lt_Base {numero_base_recogido < Base};
+2397                                                 const bool num_base_eq_Base {numero_base_recogido == Base};
+2398                                                 if (digito_c && num_base_lt_Base) {
+2399                                                         est_act = e3dig;
+2400                                                         numero_base_recogido *= 10;
+2401                                                         numero_base_recogido += (c-'0');
+2402                                                 }
+2403                                                 else if (espacio_c && num_base_eq_Base) {
+2404                                                         numero_base_recogido *= 10;
+2405                                                         numero_base_recogido += (c-'0');
+2406                                                                 est_act = e0fin;
+2407                                                                 numero_base_recogido = 0;
+2408                                                 }
+2409                                                 else  {
+2410                                                         est_act = e0ini;
+2411                                                         numero_base_recogido = 0;
+2412                                                 }
+2413                                         }
+2414                                         break;
+2415                                 case e0fin :
+2416                                         {
+2417                                                 est_act = e0fin;
+2418                                         }
+2419                         }
+2420                         ++indice;
+2421                 } while (est_act!=e0fin);
+2422 
+2423                 return (is);
+2424         }
+.fi
+.SS "template<typename Int_T , \fBusint\fP B> constexpr \fBullint\fP NumRepr::pot_max_base_B_en_Int_T ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+89                                           {
+90         constexpr long double max = static_cast<long double>(type_traits::maxbase<Int_T>());
+91         constexpr long double max_unit = static_cast<long double>(numeric_limits<char>::max());
+92         constexpr long double nb_unit = static_cast<long double>(1+(log(max_unit)/log(2)));
+93         constexpr long double n_units_Int_T = static_cast<long double>(sizeof(Int_T));
+94         constexpr long double nb_Int_T = nb_unit * n_units_Int_T;
+95         constexpr long double log_2_b_B = std::log(static_cast<long double>(2))/std::log(static_cast<long double>(B));
+96         constexpr long double ld_expB = (std::floor(nb_Int_T * log_2_b_B));
+97         //long double ld_potB = (floor(pow(static_cast<long double>(B),ld_expB)));
+98         constexpr ullint ret = static_cast<ullint>(ld_expB);
+99         return ret;
+100 }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T, B>())consteval UINT_T NumRepr::ui_1 ()\fC [noexcept]\fP"
+
+.PP
+.nf
+1179 {return UINT_T(1u);}
+.fi
+.PP
+Referenciado por \fBNumRepr::dig_t< UINT_T, B >::is_0_divisor()\fP, \fBNumRepr::dig_t< UINT_T, B >::is_0or1()\fP, \fBNumRepr::dig_t< UINT_T, B >::is_1()\fP, \fBNumRepr::dig_t< UINT_T, B >::is_not_1()\fP, \fBNumRepr::dig_t< UINT_T, B >::is_unit()\fP, \fBNumRepr::dig_t< UINT_T, B >::operator++()\fP y \fBNumRepr::dig_t< UINT_T, B >::operator\-\-()\fP\&.
+.SH "Documentación de las variables"
+.PP 
+.SS "template<typename CharT > constexpr CharT NumRepr::nullchar {CharT('\\0')}\fC [inline]\fP, \fC [constexpr]\fP"
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

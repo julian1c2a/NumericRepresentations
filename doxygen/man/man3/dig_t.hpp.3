@@ -1,0 +1,63 @@
+.TH "dig_t.hpp" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+dig_t.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'auxiliary_functions\&.hpp'\fP
+.br
+\fC#include 'auxiliary_types\&.hpp'\fP
+.br
+
+.SS "Clases"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNumRepr::dig_t< UINT_T, B >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBNumRepr\fP"
+.br
+.in -1c
+.SS "typedefs"
+
+.in +1c
+.ti -1c
+.RI "template<\fBuint128_t\fP B> using \fBNumRepr::digit_t\fP = \fBdig_t\fP< type_traits::TypeFromIntNumber_t< B >, static_cast< type_traits::TypeFromIntNumber_t< B > >(B) >"
+.br
+.RI "SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o \&.\&.\&. "
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (type_traits::suitable_base<UINT_T, B>())consteval UINT_T \fBNumRepr::ui_1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> 
+.br
+requires (type_traits::suitable_base<UINT_T, B>())consteval \fBdig_t\fP< UINT_T, B > \fBNumRepr::dig_max\fP () noexcept"
+.br
+.RI "DEFINCION DE template<uint128_t Radix> digito_t{};\&. "
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T Base> 
+.br
+requires (type_traits::suitable_base<UINT_T,Base>())std::istream & \fBNumRepr::operator>>\fP (std::istream &is, \fBdig_t\fP< UINT_T, Base > &arg)"
+.br
+.ti -1c
+.RI "template<type_traits::allowable_base_type_c UINT_T, UINT_T Base> 
+.br
+requires (type_traits::suitable_base<UINT_T,Base>())std::ostream & \fBNumRepr::operator<<\fP (std::ostream &os, \fBdig_t\fP< UINT_T, Base > arg)"
+.br
+.in -1c
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

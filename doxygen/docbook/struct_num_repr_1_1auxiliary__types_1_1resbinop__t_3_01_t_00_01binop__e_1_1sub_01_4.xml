@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1sub_01_4" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;</title>
+<indexterm><primary>NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;auxiliary_types.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1sub_01_4__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Atributos públicos    </title>
+        <itemizedlist>
+            <listitem><para>T <link linkend="_struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1sub_01_4_1a0d1fb3058de4f695fdca0f3baf4d821f">content</link></para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1sub_01_4_1a8c4fef43f3a92beaa0925dbf34976658">borrow</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename T&gt;<?linebreak?>struct NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;</title></simplesect>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1sub_01_4_1a8c4fef43f3a92beaa0925dbf34976658"/><section>
+    <title>borrow</title>
+<indexterm><primary>borrow</primary><secondary>NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;</primary><secondary>borrow</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T <link linkend="_struct_num_repr_1_1auxiliary__types_1_1resbinop__t">NumRepr::auxiliary_types::resbinop_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a8a68dc3e925eacf92633be230722a140">binop_e::sub</link> &gt;::borrow</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1sub_01_4_1a0d1fb3058de4f695fdca0f3baf4d821f"/><section>
+    <title>content</title>
+<indexterm><primary>content</primary><secondary>NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::sub &gt;</primary><secondary>content</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T <link linkend="_struct_num_repr_1_1auxiliary__types_1_1resbinop__t">NumRepr::auxiliary_types::resbinop_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a8a68dc3e925eacf92633be230722a140">binop_e::sub</link> &gt;::content</computeroutput></para></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_auxiliary__types_8hpp">auxiliary_types.hpp</link></section>
+</section>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;</compoundname>
+    <includes refid="auxiliary__types_8hpp" local="no">auxiliary_types.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <declname>N</declname>
+        <defname>N</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4_1a124214ba33e0721cd08188f6da03c7ff" prot="public" static="no" mutable="no">
+        <type>std::array&lt; T, N &gt;</type>
+        <definition>std::array&lt;T,N&gt; NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;::result_content_low</definition>
+        <argsstring></argsstring>
+        <name>result_content_low</name>
+        <qualifiedname>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;::result_content_low</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="83" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4_1a8a17bf4a25c9f570564ca791bd2da330" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;::carry</definition>
+        <argsstring></argsstring>
+        <name>carry</name>
+        <qualifiedname>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;::carry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="84" column="2" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4_1adc93c9b574f441f2dba221f452171134" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;::good_result</definition>
+        <argsstring></argsstring>
+        <name>good_result</name>
+        <qualifiedname>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;::good_result</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="85" column="5" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <requiresclause>(N &gt; 0)    </requiresclause>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;</label>
+        <link refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="82" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="82" bodyend="86"/>
+    <listofallmembers>
+      <member refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4_1a8a17bf4a25c9f570564ca791bd2da330" prot="public" virt="non-virtual"><scope>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;</scope><name>carry</name></member>
+      <member refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4_1adc93c9b574f441f2dba221f452171134" prot="public" virt="non-virtual"><scope>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;</scope><name>good_result</name></member>
+      <member refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4_1a124214ba33e0721cd08188f6da03c7ff" prot="public" virt="non-virtual"><scope>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::add, N &gt;</scope><name>result_content_low</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,11 @@
+digraph "int_num_t&lt; UINT_T, B &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="{int_num_t\< UINT_T, B \>\n||+ size_t size() const\l+ void resize(size_t arg)\l+ void push_front(dig\l_t\< B \> parg)\l+ void push_back(dig\l_t\< B \> arg)\l+ const num_int & operator&\l=(const num_int &arg)\l+  num_int()\l+  num_int(const num\l_int &a)\l+  num_int(const string &a)\l+  num_int(dig a0)\l+  num_int(dig a1, dig a0)\ly 81 más...\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkgreen",style="solid",arrowtail="onormal"];
+  Node2 [label="{base_num_t\< UINT_T, B \>\n||}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

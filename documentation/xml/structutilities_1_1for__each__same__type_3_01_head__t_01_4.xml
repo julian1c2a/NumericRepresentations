@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="structutilities_1_1for__each__same__type_3_01_head__t_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>utilities::for_each_same_type&lt; Head_t &gt;</compoundname>
+    <includes refid="utilities_8hpp" local="no">utilities.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Head_t</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structutilities_1_1for__each__same__type_3_01_head__t_01_4_1a628ba9e0ff78e1d0115e23aa8ad22121" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool utilities::for_each_same_type&lt; Head_t &gt;::are_same_type_v</definition>
+        <argsstring></argsstring>
+        <name>are_same_type_v</name>
+        <qualifiedname>utilities::for_each_same_type&lt; Head_t &gt;::are_same_type_v</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="85" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>utilities::for_each_same_type&lt; Head_t &gt;</label>
+        <link refid="structutilities_1_1for__each__same__type_3_01_head__t_01_4"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="84" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="84" bodyend="86"/>
+    <listofallmembers>
+      <member refid="structutilities_1_1for__each__same__type_3_01_head__t_01_4_1a628ba9e0ff78e1d0115e23aa8ad22121" prot="public" virt="non-virtual"><scope>utilities::for_each_same_type&lt; Head_t &gt;</scope><name>are_same_type_v</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

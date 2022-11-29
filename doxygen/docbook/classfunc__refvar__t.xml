@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classfunc__refvar__t" xml:lang="es">
+<title>Referencia de la plantilla de la Clase func_refvar_t&lt; aT, T &gt;</title>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;memory_handler.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para func_refvar_t&lt; aT, T &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfunc__refvar__t__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Métodos públicos    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classfunc__refvar__t_1a8e9cb3b8e01b8aa709a2a31e4ab5d554">func_refvar_t</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classfunc__refvar__t_1a0363255e4e3b31424f23054c421829b0">~func_refvar_t</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classfunc__refvar__t_1a2fa19582eaae01cb4af37e335dc17b8b">borra_var</link> (string nombre)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classfunc__refvar__t_1a3f4a4e617944b695448b8927f68245d4">existe_lugar_de_base</link> (<link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> Base)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classfunc__refvar__t_1aef030a35222c267cfa2f81ed9e5b12d7">este_nombre_ya_ha_sido_declarado</link> (string nombre)</para>
+</listitem>
+            <listitem><para>template&lt;const <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt; </para><para>T&lt; B &gt; <link linkend="_classfunc__refvar__t_1abb0355ab86a34517b7db6c90dd2b9e26">get</link> (string nombre)</para>
+</listitem>
+            <listitem><para>template&lt;const <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt; </para><para>bool <link linkend="_classfunc__refvar__t_1a9127c1c5b54819300d13a4f46fbb3610">operator()</link> (string nombre, string lhs)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename aT, template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt;<?linebreak?>class func_refvar_t&lt; aT, T &gt;</title></simplesect>
+</section>
+<section>
+<title>Documentación del constructor y destructor</title>
+<anchor xml:id="_classfunc__refvar__t_1a8e9cb3b8e01b8aa709a2a31e4ab5d554"/><section>
+    <title>func_refvar_t()</title>
+<indexterm><primary>func_refvar_t</primary><secondary>func_refvar_t&lt; aT, T &gt;</secondary></indexterm>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary><secondary>func_refvar_t</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><para><computeroutput><link linkend="_classfunc__refvar__t">func_refvar_t</link>&lt; aT, T &gt;<link linkend="_classfunc__refvar__t">::func_refvar_t</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//inicia_matriz_digs_y_pp(matd,256u,256u);</emphasis>
+00220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matd&#32;=&#32;construye_matriz_de_variables&lt;ppT,pT,T&gt;(matd);
+00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mapmem.resize(256);
+00222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cuentavars.resize(256);
+00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<link linkend="_basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d">uint</link>&#32;I=0&#32;;&#32;I&#32;&lt;&#32;256&#32;;&#32;++I){
+00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mapmem[I].resize(256);
+00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cuentavars[I]=0;
+00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<link linkend="_basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d">uint</link>&#32;J=0&#32;;&#32;J&#32;&lt;&#32;256&#32;;&#32;++J){
+00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mapmem[I][J]=<emphasis role="keyword">false</emphasis>;
+00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_classfunc__refvar__t_1a0363255e4e3b31424f23054c421829b0"/><section>
+    <title>~func_refvar_t()</title>
+<indexterm><primary>~func_refvar_t</primary><secondary>func_refvar_t&lt; aT, T &gt;</secondary></indexterm>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary><secondary>~func_refvar_t</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><para><computeroutput><link linkend="_classfunc__refvar__t">func_refvar_t</link>&lt; aT, T &gt;::~<link linkend="_classfunc__refvar__t">func_refvar_t</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;destruye_matriz_de_variables&lt;T,T&gt;(matd);
+00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Documentación de las funciones miembro</title>
+<anchor xml:id="_classfunc__refvar__t_1a2fa19582eaae01cb4af37e335dc17b8b"/><section>
+    <title>borra_var()</title>
+<indexterm><primary>borra_var</primary><secondary>func_refvar_t&lt; aT, T &gt;</secondary></indexterm>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary><secondary>borra_var</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><para><computeroutput>void <link linkend="_classfunc__refvar__t">func_refvar_t</link>&lt; aT, T &gt;::borra_var (string nombre)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;map&lt;&#32;string&#32;,&#32;par_dir_t&#32;&gt;::iterator&#32;it&#32;=&#32;mapvd.begin();
+00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;map&lt;&#32;string&#32;,&#32;par_dir_t&#32;&gt;::const_iterator&#32;itend&#32;=&#32;mapvd.end();
+00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(&#32;;&#32;it&#32;!=&#32;itend&#32;;&#32;++it)&#32;{
+00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((*it).first==nombre)&#32;{
+00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mapmem[(*it).second.first][(*it).second.second]=<emphasis role="keyword">false</emphasis>;
+00260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;--cuentavars[(*it).second.first];
+00261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mapvd.erase(it);<emphasis role="comment">//&#32;ponerlo&#32;a&#32;0</emphasis>
+00262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_classfunc__refvar__t_1aef030a35222c267cfa2f81ed9e5b12d7"/><section>
+    <title>este_nombre_ya_ha_sido_declarado()</title>
+<indexterm><primary>este_nombre_ya_ha_sido_declarado</primary><secondary>func_refvar_t&lt; aT, T &gt;</secondary></indexterm>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary><secondary>este_nombre_ya_ha_sido_declarado</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><para><computeroutput>bool <link linkend="_classfunc__refvar__t">func_refvar_t</link>&lt; aT, T &gt;::este_nombre_ya_ha_sido_declarado (string nombre)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;map&lt;&#32;string&#32;,&#32;par_dir_t&#32;&gt;::iterator&#32;it&#32;=&#32;mapvd.begin();
+00279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;map&lt;&#32;string&#32;,&#32;par_dir_t&#32;&gt;::const_iterator&#32;itend&#32;=&#32;mapvd.end();
+00280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(&#32;;&#32;it&#32;!=&#32;itend&#32;;&#32;++it)&#32;{
+00281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((*it).first==nombre)&#32;{
+00282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+00283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+00286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting><para>
+Referenciado por <link linkend="_l00295">func_refvar_t&lt; aT, T &gt;::operator()()</link>, <link linkend="_l00416">func_refvar_t&lt; INT **, INT *, INT &gt;::operator()()</link> y <link linkend="_l00539">func_refvar_t&lt; UINT **, UINT *, UINT &gt;::operator()()</link>.</para>
+Gráfico de llamadas a esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfunc__refvar__t_aef030a35222c267cfa2f81ed9e5b12d7_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classfunc__refvar__t_1a3f4a4e617944b695448b8927f68245d4"/><section>
+    <title>existe_lugar_de_base()</title>
+<indexterm><primary>existe_lugar_de_base</primary><secondary>func_refvar_t&lt; aT, T &gt;</secondary></indexterm>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary><secondary>existe_lugar_de_base</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><para><computeroutput>bool <link linkend="_classfunc__refvar__t">func_refvar_t</link>&lt; aT, T &gt;::existe_lugar_de_base (<link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> Base)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;ret&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<link linkend="_basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d">uint</link>&#32;I=0;&#32;I&#32;&lt;&#32;256&#32;;&#32;++I){
+00271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret&#32;=&#32;ret&#32;and&#32;mapmem[Base][I];
+00272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!ret)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+00273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+00275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_classfunc__refvar__t_1abb0355ab86a34517b7db6c90dd2b9e26"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>func_refvar_t&lt; aT, T &gt;</secondary></indexterm>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary><secondary>get</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><computeroutput>template&lt;const <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt; </computeroutput><para><computeroutput>T&lt; B &gt; <link linkend="_classfunc__refvar__t">func_refvar_t</link>&lt; aT, T &gt;::get (string nombre)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<emphasis role="keyword">reinterpret_cast&lt;</emphasis>&#32;T&lt;B&gt;*&#32;<emphasis role="keyword">&gt;</emphasis>(matd[B]))[mapvd[nombre].second];
+00292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_classfunc__refvar__t_1a9127c1c5b54819300d13a4f46fbb3610"/><section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>func_refvar_t&lt; aT, T &gt;</secondary></indexterm>
+<indexterm><primary>func_refvar_t&lt; aT, T &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><computeroutput>template&lt;const <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt; </computeroutput><para><computeroutput>bool <link linkend="_classfunc__refvar__t">func_refvar_t</link>&lt; aT, T &gt;::operator() (string nombre, string lhs)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&lt;B&gt;&#32;temp(lhs);
+00298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;se_puede_hacer&#32;=&#32;<link linkend="_classfunc__refvar__t_1aef030a35222c267cfa2f81ed9e5b12d7">este_nombre_ya_ha_sido_declarado</link>(nombre);
+00299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(se_puede_hacer)&#32;(<emphasis role="keyword">reinterpret_cast&lt;</emphasis>&#32;T&lt;B&gt;*&#32;<emphasis role="keyword">&gt;</emphasis>(matd[B]))[mapvd[nombre].second]=temp;
+00300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;se_puede_hacer;
+00301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_l00277">func_refvar_t&lt; aT, T &gt;::este_nombre_ya_ha_sido_declarado()</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfunc__refvar__t_a9127c1c5b54819300d13a4f46fbb3610_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+La documentación para esta clase fue generada a partir del siguiente fichero:</para>
+<link linkend="_memory__handler_8hpp">memory_handler.hpp</link></section>
+</section>

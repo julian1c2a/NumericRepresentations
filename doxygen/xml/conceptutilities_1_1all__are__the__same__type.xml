@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="conceptutilities_1_1all__are__the__same__type" kind="concept">
+    <compoundname>utilities::all_are_the_same_type</compoundname>
+    <includes refid="utilities_8hpp" local="no">utilities.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename...</type>
+        <declname>Ts</declname>
+        <defname>Ts</defname>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename... Ts&gt;
+concept <ref refid="conceptutilities_1_1all__are__the__same__type" kindref="compound">utilities::all_are_the_same_type</ref> =  requires(Ts...) {
+	for_each_same_type&lt;Ts...&gt;::are_same_type_v;
+}    </initializer>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="88" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,950 @@
+.TH "NumRepr::reg_digs_t< UINT_T, B, L >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::reg_digs_t< UINT_T, B, L >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <reg_digs_t\&.hpp>\fP
+.PP
+Herencias std::array< dig_t< UINT_T, B >, L >\&.
+.SS "Tipos públicos"
+
+.in +1c
+.ti -1c
+.RI "using \fBdig_t\fP = \fBdig_t\fP< UINT_T, B >"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> using \fBbase_N_t\fP = std::array< \fBdig_t\fP, N >"
+.br
+.ti -1c
+.RI "using \fBbase_t\fP = \fBbase_N_t\fP< L >"
+.br
+.ti -1c
+.RI "using \fBSIG_UINT_T\fP = sig_UInt_for_UInt_t< UINT_T >"
+.br
+.ti -1c
+.RI "using \fBSIG_SINT_T\fP = sig_SInt_for_UInt_t< UINT_T >"
+.br
+.ti -1c
+.RI "template<\fBbinop_e\fP op, \fBsize_t\fP N> using \fBres_base_N_op_t\fP = result_operation_t< \fBbase_N_t\fP< N >, op, N >"
+.br
+.ti -1c
+.RI "template<\fBbinop_e\fP op> using \fBres_base_op_t\fP = result_operation_t< \fBbase_t\fP, op, L >"
+.br
+.in -1c
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "constexpr decltype(auto) \fBbegin\fP () noexcept"
+.br
+.RI "En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array  "
+.ti -1c
+.RI "constexpr decltype(auto) \fBcbegin\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr decltype(auto) \fBend\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr decltype(auto) \fBcend\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr decltype(auto) \fBrbegin\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr decltype(auto) \fBcrbegin\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr decltype(auto) \fBrend\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr decltype(auto) \fBcrend\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr size_type \fBsize\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr size_type \fBmax_size\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBempty\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBfront\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP const & \fBfront\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBback\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP const & \fBback\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr void \fBfill\fP (const \fBdig_t\fP &value) noexcept"
+.br
+.ti -1c
+.RI "constexpr void \fBswap\fP (\fBbase_t\fP &\fBother\fP) noexcept"
+.br
+.ti -1c
+.RI "consteval \fBreg_digs_t\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP (const std::initializer_list< \fBdig_t\fP > &arg) noexcept"
+.br
+.RI "Constructor por lista de digitos utilizando la función make_base_t  "
+.ti -1c
+.RI "template<typename \&.\&.\&. Ts> 
+.br
+requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBreg_digs_t\fP (const Ts &\&.\&.\&. args) noexcept"
+.br
+.RI "Constructor por argumentos tipo \fBdig_t\fP: deduce el tipo  "
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP (const \fBbase_t\fP &rarg) noexcept"
+.br
+.RI "CONSTRUCTOR COPIA DESDE EL TIPO BASE\&. "
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP (\fBbase_t\fP &&rarg) noexcept"
+.br
+.RI "CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE\&. "
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBreg_digs_t\fP (const \fBbase_N_t\fP< N > &arg) noexcept"
+.br
+.RI "Constructor copia desde un array cualquiera de dígitos \fBdig_t\fP (usando copy_arg_N<N>)  "
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr \fBreg_digs_t\fP (const \fBbase_N_t\fP< N > &&arg) noexcept"
+.br
+.RI "Constructor por movimiento desde un array cualquiera de dígitos \fBdig_t\fP (usando move_arg_N<N>)  "
+.ti -1c
+.RI "template<type_traits::integral_c \&.\&.\&. Ints_type> constexpr \fBbase_t\fP (Ints_type \&.\&.\&. dig_pow_i) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr const \fBreg_digs_t\fP & \fBoperator=\fP (const reg_N_digs_t< N > &arg) noexcept"
+.br
+.RI "Sobrecarga del operador copia  "
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr reg_dgis_t & \fBoperator=\fP (reg_N_digs_t< N > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr const \fBbase_t\fP & \fBoperator=\fP (reg_N_digs_t< N > &&arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP & \fBoperator=\fP (const \fBdig_t\fP &arg) noexcept"
+.br
+.RI "OPERACION COPIA DESDE UN DIGITO (CONVERSION) "
+.in -1c
+.SS "Métodos públicos estáticos"
+
+.in +1c
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_Bm2\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_Bp1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_SINT_T\fP \fBssi_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_SINT_T\fP \fBssi_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_SINT_T\fP \fBssi_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_SINT_T\fP \fBssi_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_SINT_T\fP \fBssi_Bp1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBregd_base_N_0\fP () noexcept"
+.br
+.RI "PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  "
+.ti -1c
+.RI "template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBregd_base_N_1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBregd_base_N_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBregd_base_N_B\fP () noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N, \fBsize_t\fP n> 
+.br
+requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBregd_base_N_pow_n_B\fP () noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N, \fBsize_t\fP n> 
+.br
+requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBregd_base_N_pow_n_B_m1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBbase_t\fP \fBregd_base_0\fP () noexcept"
+.br
+.RI "IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L> DONDE BASE_T == BASE_N_T<L> TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  "
+.ti -1c
+.RI "static consteval \fBbase_t\fP \fBregd_base_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBbase_t\fP \fBregd_base_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBbase_t\fP \fBregd_base_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBbase_t\fP \fBregd_base_pow_n_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBbase_t\fP \fBregd_base_pow_n_B_m1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBreg_digs_t\fP \fBregd_0\fP () noexcept"
+.br
+.RI "IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  "
+.ti -1c
+.RI "static consteval \fBreg_digs_t\fP \fBregd_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBreg_digs_t\fP \fBregd_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBreg_digs_t\fP \fBregd_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBreg_digs_t\fP \fBregd_pow_n_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBreg_digs_t\fP \fBregd_pow_n_B_m1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBbase_t\fP \fBmake_base_t\fP (const std::initializer_list< \fBdig_t\fP > &larg)"
+.br
+.RI "Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list<dig_t>  "
+.ti -1c
+.RI "template<type_traits::integral_c \&.\&.\&. Ints_type, \fBsize_t\fP N> 
+.br
+requires (((sizeof\&.\&.\&.(Ints_type)) <= L)&&(N>0))static constexpr \fBbase_N_t\fP< N > \fBnormalize\fP (Ints_type \&.\&.\&. digits_pow_i) noexcept"
+.br
+.in -1c
+.SS "Atributos protegidos"
+
+.in +1c
+.ti -1c
+.RI "\fBbase_t\fP \fBm_dc\fP"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L>
+.br
+requires ((suitable_base<UINT_T,B>())&&(L > 0))
+.br
+struct NumRepr::reg_digs_t< UINT_T, B, L >"
+.SH "Documentación de los 'Typedef' miembros de la clase"
+.PP 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::base_N_t\fP =  std::array<\fBdig_t\fP,N>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::base_t\fP =  \fBbase_N_t\fP<L>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::dig_t\fP =  \fBdig_t\fP<UINT_T,B>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBbinop_e\fP op, \fBsize_t\fP N> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::res_base_N_op_t\fP =  result_operation_t<\fBbase_N_t\fP<N>,op,N>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBbinop_e\fP op> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::res_base_op_t\fP =  result_operation_t<\fBbase_t\fP,op,L>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::SIG_SINT_T\fP =  sig_SInt_for_UInt_t<UINT_T>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::SIG_UINT_T\fP =  sig_UInt_for_UInt_t<UINT_T>"
+
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> consteval \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t ()\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Constructores de \fBreg_digs_t\fP
+.PP
+Constructor por defecto (rellena de \fBdig_t(0)\fP todo el array)  
+.PP
+.nf
+283                  : base_t{regd_base_0()} {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const std::initializer_list< \fBdig_t\fP > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Constructor por lista de digitos utilizando la función make_base_t  
+.PP
+.nf
+317                  : base_t{make_base_t(arg)} {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<typename \&.\&.\&. Ts> 
+.br
+requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const Ts &\&.\&.\&. args)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Constructor por argumentos tipo \fBdig_t\fP: deduce el tipo  
+.PP
+.nf
+326                  : base_t{(utilities::pack2array<Ts\&.\&.\&.>{})(args\&.\&.\&.)} {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_t\fP & rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+CONSTRUCTOR COPIA DESDE EL TIPO BASE\&. 
+.PP
+.nf
+330 : m_dc{rarg} {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (\fBbase_t\fP && rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE\&. 
+.PP
+.nf
+333 : m_dc{std::move(rarg)} {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_N_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Constructor copia desde un array cualquiera de dígitos \fBdig_t\fP (usando copy_arg_N<N>)  
+.PP
+.nf
+407                  : base_t{copy_arg_N<N>(arg)} {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_N_t\fP< N > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Constructor por movimiento desde un array cualquiera de dígitos \fBdig_t\fP (usando move_arg_N<N>)  
+.PP
+.nf
+415                  : base_t{move_arg_N<N>(std::move(arg))} {}
+.fi
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP const  & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::back () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+259         { return (const_ref_data()\&.back()); }
+.fi
+.PP
+Hace referencia a \fBconst_ref_data()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::back ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+257         { return (ref_data()\&.back()); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<type_traits::integral_c \&.\&.\&. Ints_type> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::base_t\fP (Ints_type \&.\&.\&. dig_pow_i)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+<summary='Constructor copia desde una sucesión\\
+de objetos enteros variádica, normalizándolos'>  
+.PP
+.nf
+494                                                                   :
+495                 base_t{normalize<Ints_type\&.\&.\&.>(dig_pow_i\&.\&.\&.)} {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::begin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array  
+.PP
+.nf
+229         { return base_t::begin(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cbegin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+231         { return base_t::cbegin(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+235         { return base_t::cend(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::crbegin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+239         { return base_t::crbegin(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::crend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+243         { return base_t::crend(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+46         {return dig_t::dig_0();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+48         {return dig_t::dig_1();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+50         {return dig_t::dig_Bm1();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_Bm2 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+54         {return dig_t::dig_Bm2();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+52         {return dig_t::dig_max();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+56         {return dig_t::dig_submax();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::empty () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+250         { return const_ref_data()\&.empty(); }
+.fi
+.PP
+Hace referencia a \fBconst_ref_data()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::end ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+233         { return base_t::end(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::fill (const \fBdig_t\fP & value)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+262         { ref_data()\&.fill(value); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP const  & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::front () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+255         { return (const_ref_data()\&.front()); }
+.fi
+.PP
+Hace referencia a \fBconst_ref_data()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::front ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+253         { return (ref_data()\&.front()); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::make_base_t (const std::initializer_list< \fBdig_t\fP > & larg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP"
+
+.PP
+Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list<dig_t>  <function name='make_base_t'></function> 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIconst std::initializer_list<dig_t>& larg\fP 
+.RE
+.PP
+<returns='rarg : base_t'>
+.PP
+.nf
+293                                                                                     {
+294                 base_t rarg;
+295                 if (larg\&.size() >= L) {
+296                         for (size_t ix{ 0 }; ix < L; ++ix) {
+297                                 rarg[ix] = larg[ix];
+298                         }
+299                 }
+300                 else {
+301                         for (size_t ix{ 0 }; ix < larg\&.size() ; ++ix) {
+302                                 rarg[ix] = larg[ix];
+303                         }
+304                         for (size_t ix{ larg\&.size() }; ix < L ; ++ix) {
+305                                 rarg[ix] = larg[ix];
+306                         }
+307                 }
+308                 return std::move(rarg);
+309         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr size_type \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::max_size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+248         { return const_ref_data()\&.max_size(); }
+.fi
+.PP
+Hace referencia a \fBconst_ref_data()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<type_traits::integral_c \&.\&.\&. Ints_type, \fBsize_t\fP N> 
+.br
+requires (((sizeof\&.\&.\&.(Ints_type)) <= L)&&(N>0))static constexpr \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::normalize (Ints_type \&.\&.\&. digits_pow_i)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+<summary='Función de normalización a dig_t (dígitos base B) que construye un objeto de tipo '>  <summary='base_t desde una sucesión variádica de enteros cualquiera'>  <function name='normalize'></function> 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIInts_type \&.\&.\&. digits_pow_i\fP 
+.RE
+.PP
+<returns='base_t'>< CREA UN STD_ARRAY DEL TIPO INT PASADO POR ARGUMENTOS DE TAMANO EL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
+.PP
+< DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR [UN TIPO ENTERO]
+.PP
+< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO <= L)
+.PP
+< ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO Y SU TAMANO SEA MAYOR O MENOR QUE EL PROPIO DE LA BASE UINT_T TIPO PROPIO ES : UINT_T TIPO PASADO COMO ARGUMENTO ES : UNIQUE_TYPE LOS TIPOS PASADOS EN LOS ARGUMENTOS HAN DE SER IGUALES ENTRE SI PARA EL INTERROGANTE CONDICIONAL UTILIZAMOS UNSIGNED_INTEGRAL_C PRIMERA PREGUNTA O MAS EXTERIOR IS_UNISGNED_SZ_GT_V<T,S> PREGUNTAS SEGUNDAS O MAS INTERIORES PARA ELEGIR EL TIPO APROPIADO EN CADA CASO USAMOS SIG_UINT_FOR_UINT_T<UINT_T> SIG_UINT_FOR_UINT_T<UNIQUE_TYPE> SIG_UINT_FOR_UINT_T<UINT_T> SIG_UINT_FOR_SINT_T<UNIQUE_TYPE>
+.PP
+
+.PP
+.nf
+430                  {
+433                 using pack_type         = typename utility::pack2array<Ints_type\&.\&.\&.>;
+436                 using unique_type = typename pack_type::elem_type;
+438                 consteval size_t pack_sz{pack_type::pack_size()};
+453                 using NumRepr::type_traits;
+454                 using SUInt_type =
+455                         typename std::conditional_t
+456                         <
+457                                         unsigned_integral_c<unique_type>,
+458                                         typename std::conditional_t<
+459                                                 is_unsigned_sz_gt_v<UINT_T,unique_type>,
+460                                                         sig_UInt_for_UInt_t<UINT_T>,
+461                                                         sig_UInt_for_UInt_t<unique_type>
+462                                          >,
+463                                         typename std::conditional_t<
+464                                                 is_unsigned_sz_gt_v<UINT_T,sig_UInt_for_SInt_t<unique_type>>,
+465                                                         sig_UInt_for_UInt_t<UINT_T>,
+466                                                         sig_UInt_for_SInt_t<unique_type>
+467                                         >
+468                         >;
+469                 std::array<SUInt_type,pack_sz> ret_array{digits_pow_i\&.\&.\&.};
+470                 base_N_t<pack_sz> ret;
+471                 if constexpr (N <= pack_size) {
+472                         for (size_t ix{ 0 }; ix < pack_sz; ++ix) {
+473                                 ret[ix] = dig_t(ret_array[ix]);
+474                         }
+475                 }
+476                 else {
+477                         for (size_t ix{ 0 }; ix < pack_sz; ++ix) {
+478                                 ret[ix] = dig_t(ret_array[ix]);
+479                         }
+480                         for (size_t ix{ pack_sz }; ix < L; ++ix) {
+481                                 ret[ix] = dig_t(0);
+482                         }
+483                 }
+484                 return std::move(ret);
+485         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (const \fBdig_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+OPERACION COPIA DESDE UN DIGITO (CONVERSION) 
+.PP
+.nf
+537                  {
+538                 reg_digs_t & cthis{*this};
+539                 if ((&(cthis[0]))!=(&arg)) {
+540                         set_0();
+541                         cthis[0] = arg;
+542                 }
+543                 return (*this);
+544         }
+.fi
+.PP
+Hace referencia a \fBset_0()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (const reg_N_digs_t< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Sobrecarga del operador copia  OPERACION ASIGNACION POR COPIA REFERENCIA CONST \fINO\fP COPIABLE DESDE REG_N_DIGS_T EN LA IZQUIERDA 
+.PP
+.nf
+506         {
+507                 if (this!= &arg)
+508                         copy_arg_N<N>(arg);
+509                 return (*this);
+510         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr const \fBbase_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (reg_N_digs_t< N > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION ASIGNACION POR MOVIMIENTO DESDE REGS_N_DIGS_T EN LA QUE NO SE PUEDE COPIAR 
+.PP
+.nf
+528         {
+529                 if (this!=(&arg))
+530                         move_arg_N<N>(std::move(arg));
+531                 return (*this);
+532         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr reg_dgis_t & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (reg_N_digs_t< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION ASIGNACION POR COPIA REFERENCIA DESDE REG_N_DIGS_T EN LA IZQUIERDA 
+.PP
+.nf
+517         {
+518                 if (this != &arg)
+519                         copy_arg_N<N>(arg);
+520                 return (*this);
+521         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::rbegin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+237         { return base_t::rbegin(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  
+.PP
+.nf
+194                                      {
+195                 return reg_digs_t{regd_base_N_0<L>()};
+196         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+199                                           {
+200                 return reg_digs_t{regd_base_N_1<L>()};
+201         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+209                                           {
+210                 return reg_digs_t{regd_base_N_B<L>()};
+211         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L> DONDE BASE_T == BASE_N_T<L> TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  
+.PP
+.nf
+159                                       {
+160                 return base_t{regd_base_N_0<L>()};
+161         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+164                                        {
+165                 return base_t{regd_base_N_1<L>()};
+166         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+174                                        {
+175                 return base_t{regd_base_N_B<L>()};
+176         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+169                                          {
+170                 return base_t{regd_base_N_Bm1<L>()};
+171         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  
+.PP
+.nf
+97                                                  {
+98                 base_N_t<N> ret;
+99                 for(dig_t& dig : ret) {
+100                         dig = dig_0();
+101                 }
+102                 return ret;
+103         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+107                                                  {
+108                 base_N_t<N> ret{regd_base_N_0<N>()};
+109                 ret[0] = dig_1();
+110                 return ret;
+111         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+123                                                  {
+124                 base_N_t<N> ret{regd_base_N_0<N>()};
+125                 ret[1] = dig_1();
+126                 return ret;
+127         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+115                                                    {
+116                 base_N_t<N> ret{regd_base_N_0<N>()};
+117                 ret[0] = dig_Bm1();
+118                 return ret;
+119         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP n> 
+.br
+requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+132                                                        {
+133                 base_N_t<N> ret{regd_base_N_0<N>()};
+134                 ret[n] = dig_1();
+135                 return ret;
+136         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP n> 
+.br
+requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+141                                                           {
+142                 base_N_t<N> ret{};
+143                 for(size_t ix{0} ; ix < n ; ++ix) {
+144                         ret[ix] = dig_Bm1();
+145                 }
+146                 for(size_t ix{n} ; ix < N ; ++ix) {
+147                         ret[ix] = dig_0();
+148                 }
+149                 return ret;
+150         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+179                                                  {
+180                 return base_t{regd_base_N_pow_n_B<L>()};
+181         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+184                                                 {
+185                 return base_t{regd_base_N_pow_n_B_m1<L>()};
+186         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+204                                             {
+205                 return reg_digs_t{regd_base_N_Bm1<L>()};
+206         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+214                                                  {
+215                 return reg_digs_t{regd_base_N_pow_n_B<L>()};
+216         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+219                                                         {
+220                 return reg_digs_t{regd_base_N_pow_n_B_m1<L>()};
+221         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::rend ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+241         { return base_t::rend(); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr size_type \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+246         { return const_ref_data()\&.size(); }
+.fi
+.PP
+Hace referencia a \fBconst_ref_data()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+80         {return dig_t::ssi_0();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+82         {return dig_t::ssi_1();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+86         {return dig_t::ssi_B();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+84         {return dig_t::ssi_B()-1;}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_Bp1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+88         {return dig_t::ssi_B()+1;}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+70         {return dig_t::sui_0();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+72         {return dig_t::sui_1();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+76         {return dig_t::sui_B();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+74         {return dig_t::sui_B()-1;}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_Bp1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+78         {return dig_t::sui_B()+1;}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::swap (\fBbase_t\fP & other)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+264         { ref_data()\&.swap(*other\&.data()); }
+.fi
+.PP
+Hace referencia a \fBNumRepr::other\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+58         {return dig_t::ui_0();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+60         {return dig_t::ui_1();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+64         {return B;}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+62         {return B-1;}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+68         {return dig_t::ui_max();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+66         {return dig_t::ui_submax();}
+.fi
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::m_dc\fC [protected]\fP"
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="concept_num_repr_1_1type__traits_1_1allowable__signed__type__c" kind="concept">
+    <compoundname>NumRepr::type_traits::allowable_signed_type_c</compoundname>
+    <includes refid="basic__types_8hpp" local="no">basic_types.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename SINT_T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename SINT_T&gt;
+concept <ref refid="concept_num_repr_1_1type__traits_1_1allowable__signed__type__c" kindref="compound">NumRepr::type_traits::allowable_signed_type_c</ref> =        
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1ab5048cce40e123439815e0c2f44c970e" kindref="member">sint8_t</ref>&gt;       ||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1a4d8d8bd21d0006c49d8254134ae1b791" kindref="member">sint16_t</ref>&gt;	    ||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1a5f80278b6cf4373ed964e11490b4e7d0" kindref="member">sint32_t</ref>&gt;	    ||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1a0b99b5cbd530123932ed0c3d547726c6" kindref="member">sint64_t</ref>&gt;	    ||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1a85b0e776326d79546b9c1be5aaf8fbe5" kindref="member">schint</ref>&gt;		||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1aea0efe89afd5207a49f66e2efb8e5b23" kindref="member">chint</ref>&gt;		||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1abc2bfec16692f211ffdd458503d271a9" kindref="member">ssint</ref>&gt;		||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1a20b5825a1c2afececc61b86b97dab369" kindref="member">sint</ref>&gt;			||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1a4dd12bd8c212fa515a1c3ee359386acc" kindref="member">slint</ref>&gt;		||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1a628f9317d59014c3fe187673c97faec5" kindref="member">sllint</ref>&gt;		||
+			std::is_same_v&lt;SINT_T,<ref refid="basic__types_8hpp_1ac20ff49f0b5abe18cd5058327ff94431" kindref="member">sint128_t</ref>&gt;	    </initializer>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="176" column="1"/>
+  </compounddef>
+</doxygen>

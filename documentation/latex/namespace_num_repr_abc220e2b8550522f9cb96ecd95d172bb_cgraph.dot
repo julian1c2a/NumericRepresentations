@@ -1,0 +1,14 @@
+digraph "NumRepr::operator&gt;&gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="NumRepr::operator\>\>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="NumRepr::nat_reg_digs\l_t::regd_0",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a1735c9e1782d2117df23eb12a0feeda2",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="NumRepr::nat_reg_digs\l_t::regd_base_0",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a9e76fca3636eb9c56b09cda38d61e2bc",tooltip=" "];
+}

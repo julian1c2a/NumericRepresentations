@@ -3,7 +3,7 @@
 
 #include <tuple>
 #include <array>
-#include "src/basic_types.hpp"
+#include "basic_types.hpp"
 
 namespace utilities {
 template<NumRepr::type_traits::unsigned_integral_c UINT_T>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structdetails_1_1cp__delete_3_010u_01_4" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura details::cp_delete&lt; 0u &gt;</title>
+<indexterm><primary>details::cp_delete&lt; 0u &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;memory_handler.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para details::cp_delete&lt; 0u &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdetails_1_1cp__delete_3_010u_01_4__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Métodos públicos    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_structdetails_1_1cp__delete_3_010u_01_4_1ab46c85282606f86e706f42cd9fbd2a93">operator()</link> (aT **var_list_list)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename aT, template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt;<?linebreak?>struct details::cp_delete&lt; 0u &gt;</title></simplesect>
+</section>
+<section>
+<title>Documentación de las funciones miembro</title>
+<anchor xml:id="_structdetails_1_1cp__delete_3_010u_01_4_1ab46c85282606f86e706f42cd9fbd2a93"/><section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>details::cp_delete&lt; 0u &gt;</secondary></indexterm>
+<indexterm><primary>details::cp_delete&lt; 0u &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt; </computeroutput><para><computeroutput>void <link linkend="_structdetails_1_1cp__delete">details::cp_delete</link>&lt; 0u &gt;::operator() (aT ** var_list_list)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(var_list_list[0u]&#32;!=&#32;<emphasis role="keyword">nullptr</emphasis>)
+00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;var_list_list[0u];
+00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;[]&#32;var_list_list;
+00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_memory__handler_8hpp">memory_handler.hpp</link></section>
+</section>

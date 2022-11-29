@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="structutilities_1_1local__void__t" kind="struct" language="C++" prot="public">
+    <compoundname>utilities::local_void_t</compoundname>
+    <includes refid="utilities_8hpp" local="no">utilities.hpp</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>EXAMPLE pack2tuple&lt;int,std::string,double&gt;; // tipo <ref refid="structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9" kindref="member">pack2tuple&lt;int,std::string,double&gt;::tuple_type</ref> == std::tuple&lt;int,std::string,double&gt;; // tupla using mi_tupla = <ref refid="structutilities_1_1pack2tuple_1afd663d6d4e140735452241ee6bf13fd9" kindref="member">pack2tuple&lt;int,std::string,double&gt;::tuple_type</ref>; pack_size() devuelve 3 mi_tupla(2,&quot;xyz&quot;,3.14159) devuelve la tupla {2,&quot;xyz&quot;,3.14159} // por copia o por movimiento elem_type&lt;0&gt; es int elem_type&lt;1&gt; es std::string elem_type&lt;2&gt; es double get&lt;0&gt;(2,&quot;xyz&quot;,3.14159) == 2; get&lt;1&gt;(2,&quot;xyz&quot;,3.14159) == &quot;xyz&quot;; get&lt;2&gt;(2,&quot;xyz&quot;,3.14159) == 3.14159; tuple_obj == mi_tupla(2,&quot;xyz&quot;,3.14159) == {2,&quot;xyz&quot;,3.14159} head of tuple_obj is {2} tail of tuple_obj is {&quot;xyz&quot;,3.14159} BEGIN: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>utilities::local_void_t</label>
+        <link refid="structutilities_1_1local__void__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="73" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="73" bodyend="73"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

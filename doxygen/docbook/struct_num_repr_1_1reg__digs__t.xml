@@ -1,0 +1,1026 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1reg__digs__t" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</title>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;reg_digs_t.hpp&gt;</computeroutput>
+</para>
+Diagrama de herencias de NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Diagrama de colaboración para NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Tipos públicos    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> = <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>&lt; UINT_T, B &gt;</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>using <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link> = std::array&lt; <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>, N &gt;</para>
+</listitem>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> = <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; L &gt;</para>
+</listitem>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> = sig_UInt_for_UInt_t&lt; UINT_T &gt;</para>
+</listitem>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> = sig_SInt_for_UInt_t&lt; UINT_T &gt;</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8">binop_e</link> op, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>using <link linkend="_struct_num_repr_1_1reg__digs__t_1a7792d7a3af98a9af9decb59f02f519e6">res_base_N_op_t</link> = result_operation_t&lt; <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt;, op, N &gt;</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8">binop_e</link> op&gt; </para><para>using <link linkend="_struct_num_repr_1_1reg__digs__t_1afd655eb1254897496c9e8d584524ee86">res_base_op_t</link> = result_operation_t&lt; <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link>, op, L &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Métodos públicos    </title>
+        <itemizedlist>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1a2f8a4ff3bd499089c6440c7992ee13cd">begin</link> () noexcept</para>
+
+<para>En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array  </para>
+</listitem>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1aa912c8d96b92e95e0d751f2a4500c436">cbegin</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1aae1bd8ec380671dcd31c9d7dcd03d445">end</link> () noexcept</para>
+</listitem>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1a2cc438add79ca50b7ec3a0dcb3b4c6df">cend</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1ae0932422c4f294cd994b0f457af37599">rbegin</link> () noexcept</para>
+</listitem>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1abfbe9a50e4c844fa73ee64e3de27d4c1">crbegin</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1a6a98c20beaf0085e9b75ed6a73b6fac5">rend</link> () noexcept</para>
+</listitem>
+            <listitem><para>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t_1ab2f586a22c208f2db8981f236be1f8a5">crend</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr size_type <link linkend="_struct_num_repr_1_1reg__digs__t_1ab30c4be543021566f2b0eca2f70c1570">size</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr size_type <link linkend="_struct_num_repr_1_1reg__digs__t_1a62ed51251249de5b2844ce2936975c39">max_size</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr bool <link linkend="_struct_num_repr_1_1reg__digs__t_1a1344b97a93e4af1c28f04d2f8238ee09">empty</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a3746b11d0b23dc5d2bbba1d9cea58a41">front</link> () noexcept</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> const &amp; <link linkend="_struct_num_repr_1_1reg__digs__t_1a022dc0ba35bb79d3a00d31f6603bcfbe">front</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a5fd5f903aae0b2017103d59e368c71f7">back</link> () noexcept</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> const &amp; <link linkend="_struct_num_repr_1_1reg__digs__t_1ab3d4db33623c17c1f36712663487df1b">back</link> () const noexcept</para>
+</listitem>
+            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1reg__digs__t_1a0456b2f0f8d879695698974f9f2b325d">fill</link> (const <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &amp;value) noexcept</para>
+</listitem>
+            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1reg__digs__t_1aa0d612930f23d7545926c12c6149759b">swap</link> (<link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp;<link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a795f3202b17cb6bc3d4b771d8c6c9eaf">other</link>) noexcept</para>
+</listitem>
+            <listitem><para>consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link> () noexcept</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1af158dcd2b4c5d1cd725810f7b32a6377">reg_digs_t</link> (const std::initializer_list&lt; <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &gt; &amp;arg) noexcept</para>
+
+<para>Constructor por lista de digitos utilizando la función make_base_t  </para>
+</listitem>
+            <listitem><para>template&lt;typename ... Ts&gt; <?linebreak?>requires (std::is_same_v&lt;Ts,<link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>&gt;&amp;&amp;...)</para><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a6d5930c7c0f8583b4000a60bd32aa00c">reg_digs_t</link> (const Ts &amp;... args) noexcept</para>
+
+<para>Constructor por argumentos tipo <link linkend="_struct_num_repr_1_1dig__t">dig_t</link>: deduce el tipo  </para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a5f1afe08bc99f4458f4406fbf8bc4388">reg_digs_t</link> (const <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp;rarg) noexcept</para>
+
+<para>CONSTRUCTOR COPIA DESDE EL TIPO BASE. </para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a667cc7f5b4658b2195c48e794f5c84a6">reg_digs_t</link> (<link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp;&amp;rarg) noexcept</para>
+
+<para>CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE. </para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aaba6b4d99022c55a9b8ca3ce2d62a50c">reg_digs_t</link> (const <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; &amp;arg) noexcept</para>
+
+<para>Constructor copia desde un array cualquiera de dígitos <link linkend="_struct_num_repr_1_1dig__t">dig_t</link> (usando copy_arg_N&lt;N&gt;)  </para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1ad86b53a69638c4c1dddbcc396bd8c341">reg_digs_t</link> (const <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; &amp;&amp;arg) noexcept</para>
+
+<para>Constructor por movimiento desde un array cualquiera de dígitos <link linkend="_struct_num_repr_1_1dig__t">dig_t</link> (usando move_arg_N&lt;N&gt;)  </para>
+</listitem>
+            <listitem><para>template&lt;type_traits::integral_c ... Ints_type&gt; </para><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a31e86837bdfe9777ee5465fde746fbf6">base_t</link> (Ints_type ... dig_pow_i) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>constexpr const <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> &amp; <link linkend="_struct_num_repr_1_1reg__digs__t_1a3556d4ba2e14f426e919f1cfcde675fe">operator=</link> (const reg_N_digs_t&lt; N &gt; &amp;arg) noexcept</para>
+
+<para>Sobrecarga del operador copia  </para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>constexpr reg_dgis_t &amp; <link linkend="_struct_num_repr_1_1reg__digs__t_1a4b2c7a5c03c46a8d5c3fa5d783fdd6ea">operator=</link> (reg_N_digs_t&lt; N &gt; &amp;arg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>constexpr const <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp; <link linkend="_struct_num_repr_1_1reg__digs__t_1add6d93e2ffcc34e57e4698a627d2fd48">operator=</link> (reg_N_digs_t&lt; N &gt; &amp;&amp;arg) noexcept</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> &amp; <link linkend="_struct_num_repr_1_1reg__digs__t_1aa424868f7b7f2da2b989b2eb96ed1ed1">operator=</link> (const <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &amp;arg) noexcept</para>
+
+<para>OPERACION COPIA DESDE UN DIGITO (CONVERSION) </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Métodos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a9d37af8b2ce4db142cb55a932d8fd805">dig_0</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a3c8f7cb71f70468db3ba5ccef33bdd37">dig_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a48a6ce4848e83ccea11c42c2deea38d9">dig_Bm1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1ad9843a6a4dfe3805eb802fdd5694b9aa">dig_max</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1aae46074f8eb1e11d4856e2efc720e3b4">dig_Bm2</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1af999e32e51bcc5cb023447638cc63de9">dig_submax</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t_1aa6b20e53fc72fb5353a27a5db5205ea2">ui_0</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t_1a1ba13ed518c031c71ccd2aa99292c4f5">ui_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t_1aafcea2323aac8fcedfc0f0780e46df5f">ui_Bm1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t_1a3d59521dadb20ede37c648c6ec863bda">ui_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t_1aedf3f393788feaff612bd5c078fc4796">ui_submax</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t_1af6038687dce74b65eb797d535190f52d">ui_max</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a869fb55d18546d9f677b47fd1dd1d8bd">sui_0</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a80e523569503af77fdf36cada4de6700">sui_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a51dd71f63e7ccf1c92adbe3876a5eb19">sui_Bm1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1adaa8d7c0417ae7a7e76237ba2d368ede">sui_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1af47bb7bcb365e6060f836ec7d53c8565">sui_Bp1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1ac1cf8584292927fea378bde2e3172fce">ssi_0</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1af598442408cf2ed05923092e2ccb7cd2">ssi_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a5e0248eb0b0cef64dcbf5fb87823714e">ssi_Bm1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a80fbaa972abc3ee57f5e8561eb4e944d">ssi_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1ae6d6e6d6877d2fe389cdbacbaf7a6f63">ssi_Bp1</link> () noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t_1ac49dc9af3af62aea5a7dfde9114e6c18">regd_base_N_0</link> () noexcept</para>
+
+<para>PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t_1adb436e23c7144ee0da3db08cac34c7ed">regd_base_N_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t_1aa001d41637e1a10c1284b5239b37159c">regd_base_N_Bm1</link> () noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </para><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t_1ad9a96eb8b49ed44884da34180b85fe4f">regd_base_N_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n&gt; <?linebreak?>requires ((n&gt;=0)&amp;&amp;(n &lt; N))</para><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t_1a2ef368bdca679fa51aee6d18644b6a12">regd_base_N_pow_n_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n&gt; <?linebreak?>requires ((n&gt;=0)&amp;&amp;(n &lt; N))</para><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t_1af10d7f31743e81babe1c9d542f30f013">regd_base_N_pow_n_B_m1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1affe99648c3d9c6e3e4decac8d4e46ee1">regd_base_0</link> () noexcept</para>
+
+<para>IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T&lt;L&gt; DONDE BASE_T == BASE_N_T&lt;L&gt; TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a5b1efb8235b79459b15c6f2f84659452">regd_base_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a475a4bf204efd8f87c400575dc49114d">regd_base_Bm1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a69d2abd48bd92a58df7f51fc9e7578dd">regd_base_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a55521e5b02fa0a1d56745066e20eab91">regd_base_pow_n_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a16e44b01fdd4e66c3390c34578f32e2c">regd_base_pow_n_B_m1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1ad04bdf9bcccd5c68c414b2cca9e9bc75">regd_0</link> () noexcept</para>
+
+<para>IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a9d2524d7b34e2e1b7d98ec3a16ccac67">regd_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1af02f9cc5afcc26fb14077a939c26ce85">regd_Bm1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a8f86da208d0c9e947caea1a283711414">regd_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1af4fa7fec5b40b63434a86ee594adaed1">regd_pow_n_B</link> () noexcept</para>
+</listitem>
+            <listitem><para>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a1e76f417daec0f07cb28088baec9fb29">regd_pow_n_B_m1</link> () noexcept</para>
+</listitem>
+            <listitem><para>static constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1aad87f0f5f3bf9825b962e7288d527b96">make_base_t</link> (const std::initializer_list&lt; <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &gt; &amp;larg)</para>
+
+<para>Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list&lt;dig_t&gt;  </para>
+</listitem>
+            <listitem><para>template&lt;type_traits::integral_c ... Ints_type, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; <?linebreak?>requires (((sizeof...(Ints_type)) &lt;= L)&amp;&amp;(N&gt;0))</para><para>static constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t_1afa8cbe8ef5dd2cc62aaff8beebb94124">normalize</link> (Ints_type ... digits_pow_i) noexcept</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Atributos protegidos    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t_1a0538e56a062c8bfabbf65c345990a015">m_dc</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt;<?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(L &gt; 0))<?linebreak?>struct NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</title></simplesect>
+</section>
+<section>
+<title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf"/><section>
+    <title>base_N_t</title>
+<indexterm><primary>base_N_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>base_N_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">::base_N_t</link> =  std::array&lt;<link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>,N&gt;</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01"/><section>
+    <title>base_t</title>
+<indexterm><primary>base_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>base_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">::base_t</link> =  <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt;L&gt;</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e"/><section>
+    <title>dig_t</title>
+<indexterm><primary>dig_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>dig_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">::dig_t</link> =  <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>&lt;UINT_T,B&gt;</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a7792d7a3af98a9af9decb59f02f519e6"/><section>
+    <title>res_base_N_op_t</title>
+<indexterm><primary>res_base_N_op_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>res_base_N_op_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8">binop_e</link> op, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a50eddfd182c56f5bb0ae7232729df2ea">::res_base_N_op_t</link> =  result_operation_t&lt;<link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt;N&gt;,op,N&gt;</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1afd655eb1254897496c9e8d584524ee86"/><section>
+    <title>res_base_op_t</title>
+<indexterm><primary>res_base_op_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>res_base_op_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8">binop_e</link> op&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1af8a7d0fac51131719ef364bd36d174ec">::res_base_op_t</link> =  result_operation_t&lt;<link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link>,op,L&gt;</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc"/><section>
+    <title>SIG_SINT_T</title>
+<indexterm><primary>SIG_SINT_T</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>SIG_SINT_T</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a405e148dab036ec8e5fd14c547061b0f">::SIG_SINT_T</link> =  sig_SInt_for_UInt_t&lt;UINT_T&gt;</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7"/><section>
+    <title>SIG_UINT_T</title>
+<indexterm><primary>SIG_UINT_T</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>SIG_UINT_T</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a169329f4fc827539fe28d786056373be">::SIG_UINT_T</link> =  sig_UInt_for_UInt_t&lt;UINT_T&gt;</computeroutput></para></section>
+</section>
+<section>
+<title>Documentación del constructor y destructor</title>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73"/><section>
+    <title>reg_digs_t()<computeroutput>[1/7]</computeroutput></title>
+<indexterm><primary>reg_digs_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>reg_digs_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>consteval <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::reg_digs_t ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+</para>
+
+<para>Constructores de <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link></para>
+
+<para>Constructor por defecto (rellena de <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t(0)</link> todo el array)  </para>
+<programlisting linenumbering="unnumbered">00283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{<link linkend="_struct_num_repr_1_1reg__digs__t_1affe99648c3d9c6e3e4decac8d4e46ee1">regd_base_0</link>()}&#32;{}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af158dcd2b4c5d1cd725810f7b32a6377"/><section>
+    <title>reg_digs_t()<computeroutput>[2/7]</computeroutput></title>
+<indexterm><primary>reg_digs_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>reg_digs_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::reg_digs_t (const std::initializer_list&lt; <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &gt; &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Constructor por lista de digitos utilizando la función make_base_t  </para>
+</para>
+<programlisting linenumbering="unnumbered">00317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{<link linkend="_struct_num_repr_1_1reg__digs__t_1aad87f0f5f3bf9825b962e7288d527b96">make_base_t</link>(arg)}&#32;{}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a6d5930c7c0f8583b4000a60bd32aa00c"/><section>
+    <title>reg_digs_t()<computeroutput>[3/7]</computeroutput></title>
+<indexterm><primary>reg_digs_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>reg_digs_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;typename ... Ts&gt; <?linebreak?>requires (std::is_same_v&lt;Ts,<link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>&gt;&amp;&amp;...)</computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::reg_digs_t (const Ts &amp;... args)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Constructor por argumentos tipo <link linkend="_struct_num_repr_1_1dig__t">dig_t</link>: deduce el tipo  </para>
+</para>
+<programlisting linenumbering="unnumbered">00326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{(<link linkend="_structutilities_1_1pack2array">utilities::pack2array</link>&lt;Ts...&gt;{})(args...)}&#32;{}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a5f1afe08bc99f4458f4406fbf8bc4388"/><section>
+    <title>reg_digs_t()<computeroutput>[4/7]</computeroutput></title>
+<indexterm><primary>reg_digs_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>reg_digs_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::reg_digs_t (const <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp; rarg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>CONSTRUCTOR COPIA DESDE EL TIPO BASE. </para>
+</para>
+<programlisting linenumbering="unnumbered">00330 :&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a0538e56a062c8bfabbf65c345990a015">m_dc</link>{rarg}&#32;{}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a667cc7f5b4658b2195c48e794f5c84a6"/><section>
+    <title>reg_digs_t()<computeroutput>[5/7]</computeroutput></title>
+<indexterm><primary>reg_digs_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>reg_digs_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::reg_digs_t (<link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp;&amp; rarg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE. </para>
+</para>
+<programlisting linenumbering="unnumbered">00333 :&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a0538e56a062c8bfabbf65c345990a015">m_dc</link>{std::move(rarg)}&#32;{}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aaba6b4d99022c55a9b8ca3ce2d62a50c"/><section>
+    <title>reg_digs_t()<computeroutput>[6/7]</computeroutput></title>
+<indexterm><primary>reg_digs_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>reg_digs_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::reg_digs_t (const <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Constructor copia desde un array cualquiera de dígitos <link linkend="_struct_num_repr_1_1dig__t">dig_t</link> (usando copy_arg_N&lt;N&gt;)  </para>
+</para>
+<programlisting linenumbering="unnumbered">00407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{copy_arg_N&lt;N&gt;(arg)}&#32;{}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ad86b53a69638c4c1dddbcc396bd8c341"/><section>
+    <title>reg_digs_t()<computeroutput>[7/7]</computeroutput></title>
+<indexterm><primary>reg_digs_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>reg_digs_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::reg_digs_t (const <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; &amp;&amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Constructor por movimiento desde un array cualquiera de dígitos <link linkend="_struct_num_repr_1_1dig__t">dig_t</link> (usando move_arg_N&lt;N&gt;)  </para>
+</para>
+<programlisting linenumbering="unnumbered">00415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{move_arg_N&lt;N&gt;(std::move(arg))}&#32;{}
+</programlisting></section>
+</section>
+<section>
+<title>Documentación de las funciones miembro</title>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ab3d4db33623c17c1f36712663487df1b"/><section>
+    <title>back()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>back</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>back</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> const  &amp; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::back ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f">const_ref_data</link>().<link linkend="_struct_num_repr_1_1reg__digs__t_1a5fd5f903aae0b2017103d59e368c71f7">back</link>());&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_l04129">const_ref_data()</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t_ab3d4db33623c17c1f36712663487df1b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a5fd5f903aae0b2017103d59e368c71f7"/><section>
+    <title>back()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>back</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>back</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::back ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;(ref_data().<link linkend="_struct_num_repr_1_1reg__digs__t_1a5fd5f903aae0b2017103d59e368c71f7">back</link>());&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a31e86837bdfe9777ee5465fde746fbf6"/><section>
+    <title>base_t()</title>
+<indexterm><primary>base_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>base_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;type_traits::integral_c ... Ints_type&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">::base_t</link> (Ints_type ... dig_pow_i)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para>
+<para>&lt;summary=&quot;Constructor copia desde una sucesión\
+de objetos enteros variádica, normalizándolos&quot;&gt;  </para>
+<programlisting linenumbering="unnumbered">00494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:
+00495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{<link linkend="_struct_num_repr_1_1reg__digs__t_1afa8cbe8ef5dd2cc62aaff8beebb94124">normalize</link>&lt;Ints_type...&gt;(dig_pow_i...)}&#32;{}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a2f8a4ff3bd499089c6440c7992ee13cd"/><section>
+    <title>begin()</title>
+<indexterm><primary>begin</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::begin ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array  </para>
+</para>
+<programlisting linenumbering="unnumbered">00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::begin();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aa912c8d96b92e95e0d751f2a4500c436"/><section>
+    <title>cbegin()</title>
+<indexterm><primary>cbegin</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>cbegin</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::cbegin ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::cbegin();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a2cc438add79ca50b7ec3a0dcb3b4c6df"/><section>
+    <title>cend()</title>
+<indexterm><primary>cend</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>cend</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::cend ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::cend();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1abfbe9a50e4c844fa73ee64e3de27d4c1"/><section>
+    <title>crbegin()</title>
+<indexterm><primary>crbegin</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>crbegin</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::crbegin ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::crbegin();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ab2f586a22c208f2db8981f236be1f8a5"/><section>
+    <title>crend()</title>
+<indexterm><primary>crend</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>crend</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::crend ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::crend();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a9d37af8b2ce4db142cb55a932d8fd805"/><section>
+    <title>dig_0()</title>
+<indexterm><primary>dig_0</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>dig_0</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::dig_0 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::dig_0();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a3c8f7cb71f70468db3ba5ccef33bdd37"/><section>
+    <title>dig_1()</title>
+<indexterm><primary>dig_1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>dig_1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::dig_1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::dig_1();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a48a6ce4848e83ccea11c42c2deea38d9"/><section>
+    <title>dig_Bm1()</title>
+<indexterm><primary>dig_Bm1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>dig_Bm1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::dig_Bm1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::dig_Bm1();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aae46074f8eb1e11d4856e2efc720e3b4"/><section>
+    <title>dig_Bm2()</title>
+<indexterm><primary>dig_Bm2</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>dig_Bm2</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::dig_Bm2 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::dig_Bm2();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ad9843a6a4dfe3805eb802fdd5694b9aa"/><section>
+    <title>dig_max()</title>
+<indexterm><primary>dig_max</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>dig_max</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::dig_max ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::dig_max();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af999e32e51bcc5cb023447638cc63de9"/><section>
+    <title>dig_submax()</title>
+<indexterm><primary>dig_submax</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>dig_submax</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::dig_submax ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::dig_submax();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a1344b97a93e4af1c28f04d2f8238ee09"/><section>
+    <title>empty()</title>
+<indexterm><primary>empty</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>empty</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr bool <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::empty ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f">const_ref_data</link>().empty();&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_l04129">const_ref_data()</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t_a1344b97a93e4af1c28f04d2f8238ee09_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aae1bd8ec380671dcd31c9d7dcd03d445"/><section>
+    <title>end()</title>
+<indexterm><primary>end</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>end</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::end ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::end();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a0456b2f0f8d879695698974f9f2b325d"/><section>
+    <title>fill()</title>
+<indexterm><primary>fill</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>fill</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::fill (const <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &amp; value)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;ref_data().fill(value);&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a022dc0ba35bb79d3a00d31f6603bcfbe"/><section>
+    <title>front()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>front</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>front</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> const  &amp; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::front ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f">const_ref_data</link>().<link linkend="_struct_num_repr_1_1reg__digs__t_1a3746b11d0b23dc5d2bbba1d9cea58a41">front</link>());&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_l04129">const_ref_data()</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t_a022dc0ba35bb79d3a00d31f6603bcfbe_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a3746b11d0b23dc5d2bbba1d9cea58a41"/><section>
+    <title>front()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>front</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>front</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::front ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;(ref_data().<link linkend="_struct_num_repr_1_1reg__digs__t_1a3746b11d0b23dc5d2bbba1d9cea58a41">front</link>());&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aad87f0f5f3bf9825b962e7288d527b96"/><section>
+    <title>make_base_t()</title>
+<indexterm><primary>make_base_t</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>make_base_t</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::make_base_t (const std::initializer_list&lt; <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &gt; &amp; larg)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
+
+<para>Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list&lt;dig_t&gt;  </para>
+</para>
+
+<para>&lt;function name=&quot;make_base_t&quot;&gt;&lt;/function&gt; 
+                <formalpara>
+                    <title>
+Parámetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>const std::initializer_list&lt;dig_t&gt;&amp; larg</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                &lt;returns=&quot;rarg : base_t&quot;&gt;</para>
+<programlisting linenumbering="unnumbered">00293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>&#32;rarg;
+00295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(larg.size()&#32;&gt;=&#32;L)&#32;{
+00296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{&#32;0&#32;};&#32;ix&#32;&lt;&#32;L;&#32;++ix)&#32;{
+00297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rarg[ix]&#32;=&#32;larg[ix];
+00298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{&#32;0&#32;};&#32;ix&#32;&lt;&#32;larg.size()&#32;;&#32;++ix)&#32;{
+00302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rarg[ix]&#32;=&#32;larg[ix];
+00303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{&#32;larg.size()&#32;};&#32;ix&#32;&lt;&#32;L&#32;;&#32;++ix)&#32;{
+00305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rarg[ix]&#32;=&#32;larg[ix];
+00306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::move(rarg);
+00309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a62ed51251249de5b2844ce2936975c39"/><section>
+    <title>max_size()</title>
+<indexterm><primary>max_size</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>max_size</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr size_type <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::max_size ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f">const_ref_data</link>().max_size();&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_l04129">const_ref_data()</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t_a62ed51251249de5b2844ce2936975c39_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1afa8cbe8ef5dd2cc62aaff8beebb94124"/><section>
+    <title>normalize()</title>
+<indexterm><primary>normalize</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>normalize</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;type_traits::integral_c ... Ints_type, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; <?linebreak?>requires (((sizeof...(Ints_type)) &lt;= L)&amp;&amp;(N&gt;0))</computeroutput><para><computeroutput>static constexpr <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::normalize (Ints_type ... digits_pow_i)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para>
+<para>&lt;summary=&quot;Función de normalización a dig_t (dígitos base B) que construye un objeto de tipo &quot;&gt;  &lt;summary=&quot;base_t desde una sucesión variádica de enteros cualquiera&quot;&gt;  &lt;function name=&quot;normalize&quot;&gt;&lt;/function&gt; 
+                <formalpara>
+                    <title>
+Parámetros</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Ints_type ... digits_pow_i</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                &lt;returns=&quot;base_t&quot;&gt;</para>
+
+<para>&lt; CREA UN STD_ARRAY DEL TIPO INT PASADO POR ARGUMENTOS DE TAMANO EL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)</para>
+
+<para>&lt; DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR [UN TIPO ENTERO]</para>
+
+<para>&lt; DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO &lt;= L)</para>
+
+<para>&lt; ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO Y SU TAMANO SEA MAYOR O MENOR QUE EL PROPIO DE LA BASE UINT_T TIPO PROPIO ES : UINT_T TIPO PASADO COMO ARGUMENTO ES : UNIQUE_TYPE LOS TIPOS PASADOS EN LOS ARGUMENTOS HAN DE SER IGUALES ENTRE SI PARA EL INTERROGANTE CONDICIONAL UTILIZAMOS UNSIGNED_INTEGRAL_C PRIMERA PREGUNTA O MAS EXTERIOR IS_UNISGNED_SZ_GT_V&lt;T,S&gt; PREGUNTAS SEGUNDAS O MAS INTERIORES PARA ELEGIR EL TIPO APROPIADO EN CADA CASO USAMOS SIG_UINT_FOR_UINT_T&lt;UINT_T&gt; SIG_UINT_FOR_UINT_T&lt;UNIQUE_TYPE&gt; SIG_UINT_FOR_UINT_T&lt;UINT_T&gt; SIG_UINT_FOR_SINT_T&lt;UNIQUE_TYPE&gt;</para>
+
+<para></para>
+<programlisting linenumbering="unnumbered">00430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis>pack_type&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;<emphasis role="keyword">typename</emphasis>&#32;utility::pack2array&lt;Ints_type...&gt;;
+00436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis>unique_type&#32;=&#32;<emphasis role="keyword">typename</emphasis>&#32;pack_type::elem_type;
+00438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">consteval</emphasis>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;pack_sz{pack_type::pack_size()};
+00453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis><link linkend="_namespace_num_repr_1_1type__traits">NumRepr::type_traits</link>;
+00454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis>SUInt_type&#32;=
+00455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::conditional_t
+00456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;
+00457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;unsigned_integral_c&lt;unique_type&gt;,
+00458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::conditional_t&lt;
+00459 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_unsigned_sz_gt_v&lt;UINT_T,unique_type&gt;,
+00460 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9">sig_UInt_for_UInt_t&lt;UINT_T&gt;</link>,
+00461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9">sig_UInt_for_UInt_t&lt;unique_type&gt;</link>
+00462 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&gt;,
+00463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">typename</emphasis>&#32;std::conditional_t&lt;
+00464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_unsigned_sz_gt_v&lt;UINT_T,sig_UInt_for_SInt_t&lt;unique_type&gt;&gt;,
+00465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9">sig_UInt_for_UInt_t&lt;UINT_T&gt;</link>,
+00466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_num_repr_1_1type__traits_1a78161f55798c2f15126db200161b7cda">sig_UInt_for_SInt_t&lt;unique_type&gt;</link>
+00467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&gt;
+00468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&gt;;
+00469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::array&lt;SUInt_type,pack_sz&gt;&#32;ret_array{digits_pow_i...};
+00470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">base_N_t&lt;pack_sz&gt;</link>&#32;ret;
+00471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;<emphasis role="keyword">constexpr</emphasis>&#32;(N&#32;&lt;=&#32;pack_size)&#32;{
+00472 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{&#32;0&#32;};&#32;ix&#32;&lt;&#32;pack_sz;&#32;++ix)&#32;{
+00473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[ix]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>(ret_array[ix]);
+00474 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{&#32;0&#32;};&#32;ix&#32;&lt;&#32;pack_sz;&#32;++ix)&#32;{
+00478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[ix]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>(ret_array[ix]);
+00479 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{&#32;pack_sz&#32;};&#32;ix&#32;&lt;&#32;L;&#32;++ix)&#32;{
+00481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[ix]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link>(0);
+00482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::move(ret);
+00485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aa424868f7b7f2da2b989b2eb96ed1ed1"/><section>
+    <title>operator=()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> &amp; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_namespace_num_repr_1aae8203ac76946e39f03d5b06f3fb6d4e">::operator</link>= (const <link linkend="_struct_num_repr_1_1reg__digs__t_1aeb4b982cfd4f96af707fc66dfef1653e">dig_t</link> &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>OPERACION COPIA DESDE UN DIGITO (CONVERSION) </para>
+</para>
+<programlisting linenumbering="unnumbered">00537 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00538 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link>&#32;&amp;&#32;cthis{*<emphasis role="keyword">this</emphasis>};
+00539 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((&amp;(cthis[0]))!=(&amp;arg))&#32;{
+00540 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a3cded391678ea04df0fb832f1b9a7259">set_0</link>();
+00541 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cthis[0]&#32;=&#32;arg;
+00542 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00543 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*<emphasis role="keyword">this</emphasis>);
+00544 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_l03210">set_0()</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t_aa424868f7b7f2da2b989b2eb96ed1ed1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a3556d4ba2e14f426e919f1cfcde675fe"/><section>
+    <title>operator=()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>constexpr const <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> &amp; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_namespace_num_repr_1aae8203ac76946e39f03d5b06f3fb6d4e">::operator</link>= (const reg_N_digs_t&lt; N &gt; &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Sobrecarga del operador copia  </para>
+</para>
+
+<para>OPERACION ASIGNACION POR COPIA REFERENCIA CONST <emphasis>NO</emphasis> COPIABLE DESDE REG_N_DIGS_T EN LA IZQUIERDA </para>
+<programlisting linenumbering="unnumbered">00506 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00507 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>!=&#32;&amp;arg)
+00508 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;copy_arg_N&lt;N&gt;(arg);
+00509 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*<emphasis role="keyword">this</emphasis>);
+00510 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1add6d93e2ffcc34e57e4698a627d2fd48"/><section>
+    <title>operator=()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>constexpr const <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_namespace_num_repr_1aae8203ac76946e39f03d5b06f3fb6d4e">::operator</link>= (reg_N_digs_t&lt; N &gt; &amp;&amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para>
+<para>OPERACION ASIGNACION POR MOVIMIENTO DESDE REGS_N_DIGS_T EN LA QUE NO SE PUEDE COPIAR </para>
+<programlisting linenumbering="unnumbered">00528 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00529 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>!=(&amp;arg))
+00530 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;move_arg_N&lt;N&gt;(std::move(arg));
+00531 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*<emphasis role="keyword">this</emphasis>);
+00532 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a4b2c7a5c03c46a8d5c3fa5d783fdd6ea"/><section>
+    <title>operator=()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>constexpr reg_dgis_t &amp; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;<link linkend="_namespace_num_repr_1aae8203ac76946e39f03d5b06f3fb6d4e">::operator</link>= (reg_N_digs_t&lt; N &gt; &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para>
+<para>OPERACION ASIGNACION POR COPIA REFERENCIA DESDE REG_N_DIGS_T EN LA IZQUIERDA </para>
+<programlisting linenumbering="unnumbered">00517 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00518 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;!=&#32;&amp;arg)
+00519 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;copy_arg_N&lt;N&gt;(arg);
+00520 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*<emphasis role="keyword">this</emphasis>);
+00521 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ae0932422c4f294cd994b0f457af37599"/><section>
+    <title>rbegin()</title>
+<indexterm><primary>rbegin</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>rbegin</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::rbegin ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::rbegin();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ad04bdf9bcccd5c68c414b2cca9e9bc75"/><section>
+    <title>regd_0()</title>
+<indexterm><primary>regd_0</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_0</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_0 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+</para>
+<programlisting linenumbering="unnumbered">00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link>{regd_base_N_0&lt;L&gt;()};
+00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a9d2524d7b34e2e1b7d98ec3a16ccac67"/><section>
+    <title>regd_1()</title>
+<indexterm><primary>regd_1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link>{regd_base_N_1&lt;L&gt;()};
+00201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a8f86da208d0c9e947caea1a283711414"/><section>
+    <title>regd_B()</title>
+<indexterm><primary>regd_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link>{regd_base_N_B&lt;L&gt;()};
+00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1affe99648c3d9c6e3e4decac8d4e46ee1"/><section>
+    <title>regd_base_0()</title>
+<indexterm><primary>regd_base_0</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_0</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_0 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T&lt;L&gt; DONDE BASE_T == BASE_N_T&lt;L&gt; TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+</para>
+<programlisting linenumbering="unnumbered">00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{regd_base_N_0&lt;L&gt;()};
+00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a5b1efb8235b79459b15c6f2f84659452"/><section>
+    <title>regd_base_1()</title>
+<indexterm><primary>regd_base_1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{regd_base_N_1&lt;L&gt;()};
+00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a69d2abd48bd92a58df7f51fc9e7578dd"/><section>
+    <title>regd_base_B()</title>
+<indexterm><primary>regd_base_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{regd_base_N_B&lt;L&gt;()};
+00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a475a4bf204efd8f87c400575dc49114d"/><section>
+    <title>regd_base_Bm1()</title>
+<indexterm><primary>regd_base_Bm1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_Bm1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_Bm1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{regd_base_N_Bm1&lt;L&gt;()};
+00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ac49dc9af3af62aea5a7dfde9114e6c18"/><section>
+    <title>regd_base_N_0()</title>
+<indexterm><primary>regd_base_N_0</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_N_0</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_N_0 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  </para>
+</para>
+<programlisting linenumbering="unnumbered">00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">base_N_t&lt;N&gt;</link>&#32;ret;
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">dig_t</link>&amp;&#32;dig&#32;:&#32;ret)&#32;{
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a9d37af8b2ce4db142cb55a932d8fd805">dig_0</link>();
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1adb436e23c7144ee0da3db08cac34c7ed"/><section>
+    <title>regd_base_N_1()</title>
+<indexterm><primary>regd_base_N_1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_N_1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_N_1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">base_N_t&lt;N&gt;</link>&#32;ret{regd_base_N_0&lt;N&gt;()};
+00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[0]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a3c8f7cb71f70468db3ba5ccef33bdd37">dig_1</link>();
+00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ad9a96eb8b49ed44884da34180b85fe4f"/><section>
+    <title>regd_base_N_B()</title>
+<indexterm><primary>regd_base_N_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_N_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_N_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">base_N_t&lt;N&gt;</link>&#32;ret{regd_base_N_0&lt;N&gt;()};
+00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[1]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a3c8f7cb71f70468db3ba5ccef33bdd37">dig_1</link>();
+00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aa001d41637e1a10c1284b5239b37159c"/><section>
+    <title>regd_base_N_Bm1()</title>
+<indexterm><primary>regd_base_N_Bm1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_N_Bm1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_N_Bm1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">base_N_t&lt;N&gt;</link>&#32;ret{regd_base_N_0&lt;N&gt;()};
+00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[0]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a48a6ce4848e83ccea11c42c2deea38d9">dig_Bm1</link>();
+00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a2ef368bdca679fa51aee6d18644b6a12"/><section>
+    <title>regd_base_N_pow_n_B()</title>
+<indexterm><primary>regd_base_N_pow_n_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_N_pow_n_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n&gt; <?linebreak?>requires ((n&gt;=0)&amp;&amp;(n &lt; N))</computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_N_pow_n_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">base_N_t&lt;N&gt;</link>&#32;ret{regd_base_N_0&lt;N&gt;()};
+00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[n]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a3c8f7cb71f70468db3ba5ccef33bdd37">dig_1</link>();
+00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af10d7f31743e81babe1c9d542f30f013"/><section>
+    <title>regd_base_N_pow_n_B_m1()</title>
+<indexterm><primary>regd_base_N_pow_n_B_m1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_N_pow_n_B_m1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n&gt; <?linebreak?>requires ((n&gt;=0)&amp;&amp;(n &lt; N))</computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a2dbaa5b4a1bb00dcfbdfa0414ef53cbf">base_N_t</link>&lt; N &gt; <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_N_pow_n_B_m1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a863e7ee55c02da13512180e546d6fd29">base_N_t&lt;N&gt;</link>&#32;ret{};
+00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{0}&#32;;&#32;ix&#32;&lt;&#32;n&#32;;&#32;++ix)&#32;{
+00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[ix]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a48a6ce4848e83ccea11c42c2deea38d9">dig_Bm1</link>();
+00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">size_t</emphasis>&#32;ix{n}&#32;;&#32;ix&#32;&lt;&#32;N&#32;;&#32;++ix)&#32;{
+00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[ix]&#32;=&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1a9d37af8b2ce4db142cb55a932d8fd805">dig_0</link>();
+00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a55521e5b02fa0a1d56745066e20eab91"/><section>
+    <title>regd_base_pow_n_B()</title>
+<indexterm><primary>regd_base_pow_n_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_pow_n_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_pow_n_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{regd_base_N_pow_n_B&lt;L&gt;()};
+00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a16e44b01fdd4e66c3390c34578f32e2c"/><section>
+    <title>regd_base_pow_n_B_m1()</title>
+<indexterm><primary>regd_base_pow_n_B_m1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_base_pow_n_B_m1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_base_pow_n_B_m1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a67b3e6f4b8a503e96dabc1bc39ea6fc7">base_t</link>{regd_base_N_pow_n_B_m1&lt;L&gt;()};
+00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af02f9cc5afcc26fb14077a939c26ce85"/><section>
+    <title>regd_Bm1()</title>
+<indexterm><primary>regd_Bm1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_Bm1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_Bm1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link>{regd_base_N_Bm1&lt;L&gt;()};
+00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af4fa7fec5b40b63434a86ee594adaed1"/><section>
+    <title>regd_pow_n_B()</title>
+<indexterm><primary>regd_pow_n_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_pow_n_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_pow_n_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link>{regd_base_N_pow_n_B&lt;L&gt;()};
+00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a1e76f417daec0f07cb28088baec9fb29"/><section>
+    <title>regd_pow_n_B_m1()</title>
+<indexterm><primary>regd_pow_n_B_m1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>regd_pow_n_B_m1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t">reg_digs_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::regd_pow_n_B_m1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1reg__digs__t_1ab93743da3d764bb199f0d93b13247b73">reg_digs_t</link>{regd_base_N_pow_n_B_m1&lt;L&gt;()};
+00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a6a98c20beaf0085e9b75ed6a73b6fac5"/><section>
+    <title>rend()</title>
+<indexterm><primary>rend</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>rend</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr decltype(auto) <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::rend ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;base_t::rend();&#32;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ab30c4be543021566f2b0eca2f70c1570"/><section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr size_type <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::size ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1aceee9eed725c6c4085378d119a9fa96f">const_ref_data</link>().size();&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_l04129">const_ref_data()</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1reg__digs__t_ab30c4be543021566f2b0eca2f70c1570_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ac1cf8584292927fea378bde2e3172fce"/><section>
+    <title>ssi_0()</title>
+<indexterm><primary>ssi_0</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ssi_0</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ssi_0 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ssi_0();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af598442408cf2ed05923092e2ccb7cd2"/><section>
+    <title>ssi_1()</title>
+<indexterm><primary>ssi_1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ssi_1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ssi_1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ssi_1();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a80fbaa972abc3ee57f5e8561eb4e944d"/><section>
+    <title>ssi_B()</title>
+<indexterm><primary>ssi_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ssi_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ssi_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ssi_B();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a5e0248eb0b0cef64dcbf5fb87823714e"/><section>
+    <title>ssi_Bm1()</title>
+<indexterm><primary>ssi_Bm1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ssi_Bm1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ssi_Bm1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ssi_B()-1;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1ae6d6e6d6877d2fe389cdbacbaf7a6f63"/><section>
+    <title>ssi_Bp1()</title>
+<indexterm><primary>ssi_Bp1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ssi_Bp1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1a1f38a54f82dbf4cd37b498cc0dbf3afc">SIG_SINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ssi_Bp1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ssi_B()+1;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a869fb55d18546d9f677b47fd1dd1d8bd"/><section>
+    <title>sui_0()</title>
+<indexterm><primary>sui_0</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>sui_0</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::sui_0 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::sui_0();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a80e523569503af77fdf36cada4de6700"/><section>
+    <title>sui_1()</title>
+<indexterm><primary>sui_1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>sui_1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::sui_1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::sui_1();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1adaa8d7c0417ae7a7e76237ba2d368ede"/><section>
+    <title>sui_B()</title>
+<indexterm><primary>sui_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>sui_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::sui_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::sui_B();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a51dd71f63e7ccf1c92adbe3876a5eb19"/><section>
+    <title>sui_Bm1()</title>
+<indexterm><primary>sui_Bm1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>sui_Bm1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::sui_Bm1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::sui_B()-1;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af47bb7bcb365e6060f836ec7d53c8565"/><section>
+    <title>sui_Bp1()</title>
+<indexterm><primary>sui_Bp1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>sui_Bp1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval <link linkend="_struct_num_repr_1_1reg__digs__t_1ab92d0e111cbe9cd99b0c9fd7feace6d7">SIG_UINT_T</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::sui_Bp1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::sui_B()+1;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aa0d612930f23d7545926c12c6149759b"/><section>
+    <title>swap()</title>
+<indexterm><primary>swap</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>swap</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::swap (<link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> &amp; other)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;ref_data().swap(*<link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a795f3202b17cb6bc3d4b771d8c6c9eaf">other</link>.data());&#32;}
+</programlisting><para>
+Hace referencia a <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a795f3202b17cb6bc3d4b771d8c6c9eaf">NumRepr::other</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aa6b20e53fc72fb5353a27a5db5205ea2"/><section>
+    <title>ui_0()</title>
+<indexterm><primary>ui_0</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ui_0</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ui_0 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ui_0();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a1ba13ed518c031c71ccd2aa99292c4f5"/><section>
+    <title>ui_1()</title>
+<indexterm><primary>ui_1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ui_1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ui_1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ui_1();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a3d59521dadb20ede37c648c6ec863bda"/><section>
+    <title>ui_B()</title>
+<indexterm><primary>ui_B</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ui_B</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ui_B ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;B;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aafcea2323aac8fcedfc0f0780e46df5f"/><section>
+    <title>ui_Bm1()</title>
+<indexterm><primary>ui_Bm1</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ui_Bm1</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ui_Bm1 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;B-1;}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1af6038687dce74b65eb797d535190f52d"/><section>
+    <title>ui_max()</title>
+<indexterm><primary>ui_max</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ui_max</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ui_max ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ui_max();}
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1aedf3f393788feaff612bd5c078fc4796"/><section>
+    <title>ui_submax()</title>
+<indexterm><primary>ui_submax</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>ui_submax</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput>static consteval UINT_T <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::ui_submax ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="keywordflow">return</emphasis>&#32;dig_t::ui_submax();}
+</programlisting></section>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_struct_num_repr_1_1reg__digs__t_1a0538e56a062c8bfabbf65c345990a015"/><section>
+    <title>m_dc</title>
+<indexterm><primary>m_dc</primary><secondary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</primary><secondary>m_dc</secondary></indexterm>
+<computeroutput>template&lt;allowable_base_type_c UINT_T, UINT_T B, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> L&gt; </computeroutput><para><computeroutput><link linkend="_struct_num_repr_1_1reg__digs__t_1a4c1027d34df36c4d275a07ac00c3bf01">base_t</link> <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t</link>&lt; UINT_T, B, L &gt;::m_dc<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_reg__digs__t_8hpp">reg_digs_t.hpp</link></section>
+</section>

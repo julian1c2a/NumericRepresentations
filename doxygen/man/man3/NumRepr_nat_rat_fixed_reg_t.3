@@ -1,0 +1,2665 @@
+.TH "NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <nat_rat_fixed_reg_t\&.hpp>\fP
+.SS "Tipos públicos"
+
+.in +1c
+.ti -1c
+.RI "using \fBdig_t\fP = \fBdig_t\fP< UINT_T, B >"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> using \fBbase_NEXNF_t\fP = std::array< \fBdig_t\fP< UINT_T, B >, NE+NF >"
+.br
+.ti -1c
+.RI "using \fBbase_t\fP = \fBbase_NEXNF_t\fP< LE, LF >"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> using \fBpfx_rat_reg_NExNF_digs_t\fP = \fBpfx_rat_reg_digs_t\fP< UINT_T, B, NE, NF >"
+.br
+.ti -1c
+.RI "using \fBSIG_UINT_T\fP = typename \fBtype_traits::sig_UInt_for_UInt_t\fP< UINT_T >"
+.br
+.ti -1c
+.RI "using \fBSIG_SINT_T\fP = typename \fBtype_traits::sig_SInt_for_UInt_t\fP< UINT_T >"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> using \fBnat_reg_NExNF_digs_t\fP = \fBnat_reg_digs_t\fP< UINT_T, B, NE+NF >"
+.br
+.ti -1c
+.RI "using \fBnat_reg_digs_t\fP = \fBnat_reg_digs_t\fP< UINT_T, B, LE+LF >"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> using \fBreg_ints_t\fP = typename std::array< UINT_T, NE+NF >"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> using \fBreg_suints_t\fP = typename std::array< \fBSIG_UINT_T\fP, NE+NF >"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> using \fBreg_ssints_t\fP = typename std::array< \fBSIG_SINT_T\fP, NE+NF >"
+.br
+.in -1c
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP (const std::initializer_list< \fBdig_t\fP > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<typename \&.\&.\&. Ts> 
+.br
+requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBpfx_rat_reg_digs_t\fP (const Ts &\&.\&.\&. args) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)void \fBcopy_arg_N\fP (const \fBbase_NEXNF_t\fP< NE, NF > &arg)"
+.br
+.RI "BEGIN : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS\&. "
+.ti -1c
+.RI "template<std::size_t N> 
+.br
+requires (N>0)void \fBmove_arg_N\fP (\fBbase_N_t\fP< NE, NF > &&arg)"
+.br
+.ti -1c
+.RI "template<std::size_t N> 
+.br
+requires (N>0)constexpr \fBpfx_rat_reg_digs_t\fP (const base_NExNF_t< NE, NF > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t N> 
+.br
+requires (N>0)constexpr \fBpfx_rat_reg_digs_t\fP (const base_NExNF_t< NE, NF > &&arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c \&.\&.\&. Ints_type> constexpr \fBpfx_rat_reg_digs_t\fP (Ints_type \&.\&.\&. dig_pow_i) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP (\fBnat_reg_NExNF_digs_t\fP< NE, NF > &&arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP & \fBoperator=\fP (\fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP & \fBoperator=\fP (\fBnat_reg_NExNF_digs_t\fP< NE, NF > &&arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator=\fP (const \fBnat_reg_N_digs_t\fP< NE, NF > &arg) noexcept"
+.br
+.RI "OPERACION ASIGNACION POR COPIA EN LA QUE \fINO\fP SE PUEDE MODIFICAR EL ARGUMENTO\&. "
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP & \fBoperator=\fP (const \fBbase_NEXNF_t\fP< NE, NF > &arg) noexcept"
+.br
+.RI "OPERACION ASIGNACION POR COPIA DESDE BASE_N_T\&. "
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP & \fBoperator=\fP (const \fBdig_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_Type> constexpr \fBpfx_rat_reg_digs_t\fP & \fBoperator=\fP (Int_Type arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBconcat\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr reg_N_digs_t< LE+LF+1 > \fBconcat\fP (const \fBdig_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBconcat_inv\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr reg_N_digs_t< LE+LF+1 > \fBconcat_inv\fP (const \fBdig_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBconcat\fP (\fBnat_reg_NExNF_digs_t\fP< NE, NF > &&arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr reg_N_digs_t< LE+LF+1 > \fBconcat\fP (\fBdig_t\fP &&arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBconcat_inv\fP (\fBnat_reg_NExNF_digs_t\fP< NE, NF > &&arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr reg_N_digs_t< LE+LF+1 > \fBconcat_inv\fP (\fBdig_t\fP &&arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend\-ibegin>0)&&(iend <= LE+LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBsubreg_digs\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend\-ibegin>0)&&(iend <= LE+LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBrev_subreg_digs\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend <= LE+LF)&&(ibegin < iend)&&(ibegin >= LF))constexpr reg_N_digs_t< iend\-ibegin > \fBsubreg_digs_pe\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend <= LE+LF)&&(ibegin < iend)&&(ibegin >= LF))constexpr reg_N_digs_t< iend\-ibegin > \fBrev_subreg_digs_pe\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend < LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBsubreg_digs_pf\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend < LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBrev_subreg_digs_pf\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_Type> constexpr Int_Type \fBIntPart\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator==\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator==\fP (const \fBpfx_rat_reg_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator!=\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator!=\fP (const \fBpfx_rat_reg_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator<=\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator<=\fP (const \fBpfx_rat_reg_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator>=\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator>=\fP (const \fBpfx_rat_reg_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator<\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator<\fP (const \fBpfx_rat_reg_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBoperator>\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr std::weak_ordering \fBoperator<=>\fP (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr std::strong_ordering \fBoperator<=>\fP (const \fBpfx_rat_reg_digs_t\fP< NE, NF > &arg) const noexcept"
+.br
+.ti -1c
+.RI "template<std::int32_t I> 
+.br
+requires ((I < LE)&&(std::abs(I) < LF+1))constexpr const \fBdig_t\fP & \fBget\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<std::int32_t I> 
+.br
+requires ((I < LE)&&(std::abs(I) < LF+1))constexpr void \fBput\fP (const \fBdig_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "template<std::int32_t I> 
+.br
+requires ((I < LE)&&(std::abs(I) < LF+1))constexpr void \fBput\fP (\fBdig_t\fP &&arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator[]\fP (std::int32_t idx) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP & \fBoperator[]\fP (std::int32_t idx) noexcept"
+.br
+.ti -1c
+.RI "constexpr UINT_T \fBoperator()\fP (std::int32_t idx) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator++\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator++\fP (int) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator\-\-\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator\-\-\fP (int) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBmC_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBmC_B\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBC_Bm1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBC_B\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator!\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator\-\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator+=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator\-=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBmult\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBadd\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.RI "'@' = '+' "
+.ti -1c
+.RI "constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBsubst\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr auto \fBoperator+\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr auto \fBoperator\-\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr auto \fBoperator*\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator<<\fP (std::size_t n) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator<<=\fP (std::size_t n) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator>>\fP (std::size_t n) const noexcept"
+.br
+.RI "DIVIDE BY THE BASE B (/10_B) "
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator>>=\fP (std::size_t n) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBrem_B\fP (std::size_t n) const noexcept"
+.br
+.RI "END : OPERATORS >> >>= << <<=\&. "
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBm_rem_B\fP (std::size_t n) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator|=\fP (const \fBpfx_rat_reg_digs_t\fP &arg) noexcept"
+.br
+.RI "BEGIN : OPERATORS | & |= &=\&. "
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator|\fP (const \fBpfx_rat_reg_digs_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator&=\fP (const \fBpfx_rat_reg_digs_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator&\fP (const \fBpfx_rat_reg_digs_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr std::pair< \fBdig_t\fP, \fBpfx_rat_reg_digs_t\fP > \fBoperator+\fP (const \fBpfx_rat_reg_digs_t\fP &arg) const noexcept"
+.br
+.RI "END : OPERATORS | & |= &=\&. "
+.ti -1c
+.RI "constexpr std::pair< \fBdig_t\fP, \fBpfx_rat_reg_digs_t\fP > \fBoperator\-\fP (const \fBpfx_rat_reg_digs_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBoperator*\fP (const \fBpfx_rat_reg_digs_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator+\fP (const \fBbase_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator\-\fP (const \fBbase_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBpfx_rat_reg_digs_t\fP \fBoperator*\fP (const \fBbase_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator+=\fP (const \fBbase_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator\-=\fP (const \fBbase_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator*=\fP (const \fBbase_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator+=\fP (const \fBpfx_rat_reg_digs_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator\-=\fP (const \fBpfx_rat_reg_digs_t\fP &arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBpfx_rat_reg_digs_t\fP & \fBoperator*=\fP (const \fBpfx_rat_reg_digs_t\fP &arg) noexcept"
+.br
+.in -1c
+.SS "Métodos públicos estáticos"
+
+.in +1c
+.ti -1c
+.RI "static constexpr \fBdig_t\fP \fBdig_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBdig_t\fP \fBdig_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBdig_t\fP \fBdig_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBdig_t\fP \fBdig_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBdig_t\fP \fBdig_Bm2\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBdig_t\fP \fBdig_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr UINT_T \fBui_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr UINT_T \fBui_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr UINT_T \fBui_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBSIG_UINT_T\fP \fBsui_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBSIG_UINT_T\fP \fBsui_Bp1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr UINT_T \fBui_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr UINT_T \fBui_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBpfx_rat_reg_digs_t\fP \fBregd_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBpfx_rat_reg_digs_t\fP \fBregd_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBpfx_rat_reg_digs_t\fP \fBregd_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBpfx_rat_reg_digs_t\fP \fBregd_B\fP () noexcept"
+.br
+.ti -1c
+.RI "template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBpfx_rat_reg_digs_t\fP \fBregd_pow_n_B\fP () noexcept"
+.br
+.ti -1c
+.RI "template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBpfx_rat_reg_digs_t\fP \fBregd_pow_n_B_m1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBreg_ints_t\fP< LE+LF > \fBregi_0\fP () noexcept"
+.br
+.RI "ARRAYS DE ENTEROS QUE SON DE AYUDA\&. "
+.ti -1c
+.RI "static constexpr \fBreg_ints_t\fP< LE+LF > \fBregi_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBreg_ints_t\fP< LE+LF > \fBregi_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBreg_ints_t\fP< LE+LF > \fBregi_B\fP () noexcept"
+.br
+.ti -1c
+.RI "template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBreg_ints_t\fP< LE+LF > \fBregi_pow_n_B\fP () noexcept"
+.br
+.ti -1c
+.RI "template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBreg_ints_t\fP< LE+LF > \fBregi_pow_n_B_m1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c \&.\&.\&. Ints_type> 
+.br
+requires ((sizeof\&.\&.\&.(Ints_type))<=L)static constexpr \fBbase_t\fP \fBnormalize\fP (Ints_type \&.\&.\&. digits_pow_i) noexcept"
+.br
+.RI "END : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS\&. "
+.ti -1c
+.RI "static constexpr std::size_t \fBcuenta_0s_desde_IZDA\fP (const \fBreg_ints_t\fP< LE+LF > &arg) noexcept"
+.br
+.ti -1c
+.RI "static constexpr std::size_t \fBcuenta_0s_desde_DRCHA\fP (const \fBreg_ints_t\fP< LE+LF > &arg) noexcept"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF>
+.br
+requires (\fBtype_traits::suitable_base\fP<UINT_T,B>() && (LE>0))
+.br
+struct NumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >"
+.SH "Documentación de los 'Typedef' miembros de la clase"
+.PP 
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::base_NEXNF_t =  std::array<\fBdig_t\fP<UINT_T,B>,NE+NF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::base_t\fP =  \fBbase_NEXNF_t\fP<LE,LF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::dig_t\fP =  \fBdig_t\fP<UINT_T,B>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::nat_reg_digs_t =  \fBnat_reg_digs_t\fP<UINT_T,B,LE+LF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::nat_reg_NExNF_digs_t =  \fBnat_reg_digs_t\fP<UINT_T,B,NE+NF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_NExNF_digs_t =  \fBpfx_rat_reg_digs_t\fP<UINT_T,B,NE,NF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::reg_ints_t\fP =  typename std::array<UINT_T,NE+NF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::reg_ssints_t\fP =  typename std::array<\fBSIG_SINT_T\fP,NE+NF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::reg_suints_t\fP =  typename std::array<\fBSIG_UINT_T\fP,NE+NF>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::SIG_SINT_T\fP =  typename \fBtype_traits::sig_SInt_for_UInt_t\fP<UINT_T>"
+
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> using \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::SIG_UINT_T\fP =  typename \fBtype_traits::sig_UInt_for_UInt_t\fP<UINT_T>"
+
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::add (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+'@' = '+' 
+.PP
+.nf
+1455                  {
+1456                 const pfx_rat_reg_digs_t& cthis{*this};
+1457                 std::array<pfx_rat_reg_digs_t,2> result{dig_0(),cthis};
+1458                 dig_t carry{dig_0()};
+1459                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1460                         auto    temp_result   =      result[0]\&.m_dc[ix]\&.add(arg);
+1461                         auto  temp_result_2 = temp_result[0]\&.m_dc[ix]\&.add(carry);
+1462                         result[0]\&.m_dc[ix] = temp_result_2[0];
+1463                         result[1]\&.m_dc[ix]  = temp_result_2[1];
+1464                         carry = result[1]\&.m_dc[0];
+1465                 }
+1466                 for(std::size_t ix{1} ; ix < LE+LF ; ++ix) {
+1467                         result[1]\&.m_dc[ix] = dig_0();
+1468                 }
+1469                 return result;
+1470         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::C_B () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1238                  {
+1239                 pfx_rat_reg_digs_t cpthis(*this);
+1240                 cpthis\&.mC_B();
+1241                 return cpthis;
+1242         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::C_Bm1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1230         {
+1231                 pfx_rat_reg_digs_t cpthis(*this);
+1232                 cpthis\&.mC_Bm1();
+1233                 return cpthis;
+1234         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr reg_N_digs_t< LE+LF+1 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat (const \fBdig_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONCAT : CONCATENACION pfx_rat_reg_digs_t<23,7> var1{ \fBdig_t(1)\fP, \fBdig_t(2)\fP, \fBdig_t(3)\fP, \fBdig_t(4)\fP, \fBdig_t(5)\fP, \fBdig_t(6)\fP, \fBdig_t(7)\fP }; dig_t<23> var2{22}; var1\&.concat(var2) == nat#1:2:3:4:5:6:7:20#B23 
+.PP
+.nf
+452                  {
+453                 const pfx_rat_reg_digs_t & cthis{*this};
+454                 reg_N_digs_t<LE+LF+1> ret{};
+455                 ret[0] = arg;
+456                 for(std::size_t ix{1} ; ix < LE+LF+1 ; ++ix) {
+457                         ret[ix] = cthis[ix-1];
+458                 }
+459                 return ret;
+460         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+FORMACION DE UN REG_M_DIGS_T<M> DESDE EL THIS REG_DIGS_T (L) Y REG_N_DIGS_T<N> EN SUS DOS FORMAS: (*THIS)SEGUIDO(ARG) Y (ARG)SEGUIDO(*THIS) : OPERACIONES DE CONCATENACION A SU VEZ PUEDEN SER POR COPIA Y POR MOVIMIENTO CONCAT : CONCATENACION pfx_rat_reg_digs_t<23,7> var1{ \fBdig_t(1)\fP, \fBdig_t(2)\fP, \fBdig_t(3)\fP, \fBdig_t(4)\fP, \fBdig_t(5)\fP, \fBdig_t(6)\fP, \fBdig_t(7)\fP } pfx_rat_reg_digs_t<23,3> var2{ \fBdig_t(22)\fP, \fBdig_t(21)\fP, \fBdig_t(20)\fP } var1\&.concat(var2) == nat#1:2:3:4:5:6:7:22:21:20#B23 
+.PP
+.nf
+433                  {
+434                 const pfx_rat_reg_digs_t & cthis{*this};
+435                 nat_reg_NExNF_digs_t<LE+NE,LF+NF> ret{};
+436                 for(std::size_t ix{0} ; ix < NE+NF ; ++ix) {
+437                         ret[ix] = arg[ix];
+438                 }
+439                 for(std::size_t ix{NE+NF} ; ix < LE+LF+NE+NF ; ++ix) {
+440                         ret[ix] = cthis[ix-NE-NF];
+441                 }
+442                 return ret;
+443         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr reg_N_digs_t< LE+LF+1 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat (\fBdig_t\fP && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+508                  {
+509                 const pfx_rat_reg_digs_t & cthis{*this};
+510                 reg_N_digs_t<LE+LF+1> ret{};
+511                 ret[0] = std::move(arg);
+512                 for(std::size_t ix{1} ; ix < LE+LF+1 ; ++ix) {
+513                         ret[ix] = cthis[ix-1];
+514                 }
+515                 return ret;
+516         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat (\fBnat_reg_NExNF_digs_t\fP< NE, NF > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+494                  {
+495                 const pfx_rat_reg_digs_t & cthis{*this};
+496                 nat_reg_NExNF_digs_t<LE+NE,LF+NF> ret{};
+497                 for(std::size_t ix{0} ; ix < NE+NF ; ++ix) {
+498                         ret[ix] = std::move(arg[ix]);
+499                 }
+500                 for(std::size_t ix{NE+NF} ; ix < LE+LF+NE+NF ; ++ix) {
+501                         ret[ix] = cthis[ix-NE-NF];
+502                 }
+503                 return ret;
+504         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr reg_N_digs_t< LE+LF+1 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat_inv (const \fBdig_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+480                  {
+481                 const pfx_rat_reg_digs_t & cthis{*this};
+482                 reg_N_digs_t<LE+LF+1> ret{};
+483                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+484                         ret[ix] = cthis[ix];
+485                 }
+486                 ret[LE+LF] = arg;
+487                 return ret;
+488         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat_inv (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+466                  {
+467                 const pfx_rat_reg_digs_t & cthis{*this};
+468                 nat_reg_NExNF_digs_t<LE+NE,LF+NF> ret{};
+469                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+470                         ret[ix] = cthis[ix];
+471                 }
+472                 for(std::size_t ix{LE+LF} ; ix < NE+NF+LE+LF ; ++ix) {
+473                         ret[ix] = arg[ix-LE-LF];
+474                 }
+475                 return ret;
+476         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr reg_N_digs_t< LE+LF+1 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat_inv (\fBdig_t\fP && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+535                  {
+536                 const pfx_rat_reg_digs_t & cthis{*this};
+537                 reg_N_digs_t<LE+LF+1> ret{};
+538                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+539                         ret[ix] = cthis[ix];
+540                 }
+541                 ret[LE+LF] = std::move(arg);
+542                 return ret;
+543         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBnat_reg_NExNF_digs_t\fP< LE+NE, LF+NF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::concat_inv (\fBnat_reg_NExNF_digs_t\fP< NE, NF > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+521                  {
+522                 const pfx_rat_reg_digs_t & cthis{*this};
+523                 nat_reg_NExNF_digs_t<LE+NE,LF+NF> ret{};
+524                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+525                         ret[ix] = cthis[ix];
+526                 }
+527                 for(std::size_t ix{LE+LF} ; ix < NE+NF+LE+LF ; ++ix) {
+528                         ret[ix] = std::move(arg[ix-LE-LF]);
+529                 }
+530                 return ret;
+531         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)void \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::copy_arg_N (const \fBbase_NEXNF_t\fP< NE, NF > & arg)\fC [inline]\fP"
+
+.PP
+BEGIN : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS\&. FUNCION DELEGADA PARA COPIA DE UN ARRAY DE DISTINTO TAMANO O TAMANO CUALQUIERA 'N' INTERNO 
+.PP
+.nf
+174                                                          {
+175                 constexpr int64_t cLE{LE};
+176                 constexpr int64_t cLF{LF};
+177                 constexpr int64_t cNE{NE};
+178                 constexpr int64_t cNF{NF};
+179                 if constexpr (NE<LE) {
+180                         if constexpr (NF<LF) {
+181                                 for(std::size_t ix{NE} ; ix < LE ; ++ix)
+182                                         m_dc[LF+ix]=dig_0();
+183                                 for(std::size_t ix{0} ; ix < LF-NE ; ++ix)
+184                                         m_dc[LF+ix]=arg[NF+ix];
+185                         }
+186                         else {
+187                                 for(std::size_t ix{NE} ; ix < LE ; ++ix)
+188                                         m_dc[LF+ix]=dig_0();
+189                                 for(std::size_t ix{0} ; ix < NF-LF ; ++ix)
+190                                         m_dc[cLF+ix]=arg[cNF+ix];
+191                         }
+192                 }
+193                 else {
+194                         if constexpr (NF<LF) {
+195                                 for(std::size_t ix{LF} ; ix < LE ; ++ix)
+196                                         m_dc[NF+ix]=arg[ix];
+197                         }
+198                         else {
+199 
+200                         }
+201                 }
+202         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr std::size_t \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::cuenta_0s_desde_DRCHA (const \fBreg_ints_t\fP< LE+LF > & arg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1911                  {
+1912                 std::size_t ret{0};
+1913                 for(std::int64_t ix{0} ; ix < LE+LF ; ++ix) {
+1914                         if (arg[ix]==0) {
+1915                                 ++ret;
+1916                         }
+1917                         else {
+1918                                 return ret;
+1919                         }
+1920                 }
+1921                 return LE+LF;
+1922         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr std::size_t \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::cuenta_0s_desde_IZDA (const \fBreg_ints_t\fP< LE+LF > & arg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1896                  {
+1897                 std::size_t ret{0};
+1898                 for(std::int64_t ix{LE+LF-1} ; ix > -1 ; --ix) {
+1899                         if (arg[ix]==0) {
+1900                                 ++ret;
+1901                         }
+1902                         else {
+1903                                 return ret;
+1904                         }
+1905                 }
+1906                 return LE+LF;
+1907         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBdig_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::dig_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+36 {return dig_t::dig_0();}
+.fi
+.PP
+Referenciado por \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::add()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::copy_arg_N()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::m_rem_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::mC_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::move_arg_N()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::mult()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::normalize()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator++()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator+=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator\-\-()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator\-=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator<<()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator<<=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator>>()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator>>=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator[]()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_0()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::subst()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBdig_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::dig_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+37 {return dig_t::dig_1();}
+.fi
+.PP
+Referenciado por \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::mC_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator++()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator+=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator\-=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_pow_n_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_B()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_pow_n_B()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBdig_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::dig_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+38 {return dig_t::dig_max();}
+.fi
+.PP
+Referenciado por \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::mC_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator++()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator+=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator\-=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_Bm1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_Bm1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::subst()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBdig_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::dig_Bm2 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+40 {return dig_t::dig_submax();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBdig_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::dig_max ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+39 {return dig_t::dig_max();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBdig_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::dig_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+41 {return dig_t::dig_submax();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::int32_t I> 
+.br
+requires ((I < LE)&&(std::abs(I) < LF+1))constexpr const \fBdig_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::get () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t A{}; I en [LE-1,-LF] A\&.get<LE-1>() [devuelve el digito de peso B^(LE-1)] \&.\&.\&.\&.\&.\&.\&.\&.\&.\&. A\&.get<2>() [devuelve el digito de peso B^2] A\&.get<1>() [devuelve el digito de peso B^1] A\&.get<0>() [devuelve el digito de peso (B^0)==1] A\&.get<-1>() [devuelve el digito de peso B^-1] A\&.get<-2>() [devuelve el digito de peso B^-2] \&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&. A\&.get<-LF>() [devuelve el digito de peso B^-LF] MSB == MSB_E == LE-1 LSB_E == LF MSB_F == LF-1 LSB_F == 0 == LSB 
+.PP
+.nf
+1089                                                            {
+1090                 return (m_dc[I+LF]);
+1091         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<type_traits::integral_c Int_Type> constexpr Int_Type \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::IntPart () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+632                                                            {
+633                 std::uint64_t retInt{0};
+634                 std::uint64_t BasePowIx{1};
+635                 for(std::size_t k{LF} ; k < LE+LF ; ++k) {
+636                         retInt += m_dc[k]*BasePowIx;
+637                         BasePowIx *= B;
+638                 }
+639                 return (retInt);
+640         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::m_rem_B (std::size_t n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1710                  {
+1711                 if (n < LE+LF) {
+1712                         for(std::size_t ix{n} ; ix < LE+LF ; ++ix) {
+1713                                 m_dc[ix] = dig_0();
+1714                         }
+1715                 }
+1716                 else {
+1717                         for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1718                                 m_dc[ix] = dig_0();
+1719                         }
+1720                 }
+1721                 return (*this);
+1722         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::mC_B ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+BUCLE FOR QUE SUMA CTHIS Y 1 DESDE IDX=0 A IDX=L-1
+.PP
+.nf
+1209                  {
+1210                 pfx_rat_reg_digs_t& cthis(*this);
+1211                 cthis\&.mC_Bm1();
+1212                 dig_t carry{dig_1()};
+1214                 for(std::size_t ix{0} ; ix < LE+LF-1 ; ++ix) {
+1215                         if ((m_dc[ix]==dig_Bm1())&&(carry != dig_1())) {
+1216                                 m_dc[ix]=dig_0();
+1217                                 carry = dig_1();
+1218                         }
+1219                         else if (carry == dig_1()){
+1220                                 ++m_dc[ix];
+1221                                 break;
+1222                         }
+1223                 }
+1224                 return (cthis);
+1225         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_Bm1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::mC_Bm1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1199                  {
+1200                 pfx_rat_reg_digs_t& cthis(*this);
+1201                 for(std::size_t ix{0} ; ix < LE+LF-1 ; ++ix) {
+1202                                 m_dc[ix] = !m_dc[ix];
+1203                 }
+1204                 return cthis;
+1205         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t N> 
+.br
+requires (N>0)void \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::move_arg_N (\fBbase_N_t\fP< NE, NF > && arg)\fC [inline]\fP"
+FUNCION DELEGADA PARA MOVER DE UN ARRAY DE DISTINTO TAMANO O TAMANO CUALQUIERA 'N' INTERNO 
+.PP
+.nf
+209                                                {
+210                 if constexpr (N<L) {
+211                         for(std::size_t ix{N} ; ix < L ; ++ix)
+212                                 m_dc[ix]=dig_0();
+213                         for(std::size_t ix{0} ; ix < N ; ++ix)
+214                                 m_dc[ix]=std::move(arg[ix]);
+215                 }
+216                 else {
+217                         for(std::size_t ix{0} ; ix < L ; ++ix)
+218                                 m_dc[ix]=std::move(arg[ix]);
+219                 }
+220         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::mult (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACIONES '@'(REG_DIGS_T,DIG_T)->STD::ARRAY<REG_DIGS_T,2> '@' = MULT 
+.PP
+.nf
+1373                  {
+1374                 pfx_rat_reg_digs_t cpthis(*this);
+1375                 std::array<pfx_rat_reg_digs_t,2> ret{};
+1376                 if (arg\&.is_0()) {
+1377                         for (auto& elem : ret[0]\&.m_dc)
+1378                                 elem = dig_0();
+1379                         for (auto& elem : ret[1]\&.m_dc)
+1380                                 elem = dig_0();
+1381                         return ret;
+1382                 }
+1383                 else if (arg\&.is_1()) {
+1384                         ret[0] = cpthis;
+1385                         for (auto& elem : ret[1]\&.m_dc)
+1386                                 elem = dig_0();
+1387                         return ret;
+1388                 }
+1389                 else {
+1390                         dig_t carry{dig_0()};
+1391                         for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1392                                 const auto res = m_dc[ix]\&.mult(arg);
+1393                                 const auto uds = res[0]\&.add(carry);
+1394                                 ret[0]\&.m_dc[ix] = m_dc[ix] = uds[0] + carry;
+1395                                 carry = res[1] + uds[1];
+1396                         }
+1397                         ret[1]\&.m_dc[0]=carry;
+1398                         return ret;
+1399                 }
+1400         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<type_traits::integral_c \&.\&.\&. Ints_type> 
+.br
+requires ((sizeof\&.\&.\&.(Ints_type))<=L)static constexpr \fBbase_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::normalize (Ints_type \&.\&.\&. digits_pow_i)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+END : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS\&. FUNCION DE NORMALIZACION A LA BASE B DE UN ARGUMENTOS EN UN PACK DE ENTEROS CUALQUIERA INTERNA 
+.PP
+.nf
+244                  {
+245                 using pack_type         = typename utility::pack2array<Ints_type\&.\&.\&.>;
+246                 using unique_type = typename pack_type::elem_type;
+247                 constexpr std::size_t pack_sz{pack_type::pack_size()};
+248                 if constexpr ( type_traits::unsigned_integral_c<unique_type> ) {
+249                         if constexpr (type_traits::is_unsigned_sz_gt_v<UINT_T,unique_type>) {
+250                                         using SUInt_type = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+251                                         std::array<SUInt_type,L> ret_array{digits_pow_i\&.\&.\&.};
+252                                         base_t ret{};
+253                                         for(std::size_t ix{0} ; ix < pack_sz ; ++ix) {
+254                                                 ret[ix] = dig_t(ret_array[ix]);
+255                                         }
+256                                         for(std::size_t ix{pack_sz} ; ix < L ; ++ix) {
+257                                                 ret[ix] = dig_t(0);
+258                                         }
+259                                         return ret;
+260                         }
+261                         else {
+262                                         using SUInt_type = type_traits::sig_UInt_for_UInt_t<unique_type>;
+263                                         std::array<SUInt_type,L> ret_array{digits_pow_i\&.\&.\&.};
+264                                         base_t ret{};
+265                                         for(std::size_t ix{0} ; ix < pack_sz ; ++ix) {
+266                                                 ret[ix] = dig_t(ret_array[ix]);
+267                                         }
+268                                         for(std::size_t ix{pack_sz} ; ix < L ; ++ix) {
+269                                                 ret[ix] = dig_t(0);
+270                                         }
+271                                         return ret;
+272                         }
+273                 }
+274                 else {
+275                         using temp_SUInt_type = type_traits::sig_UInt_for_SInt_t<unique_type>;
+276                         if constexpr (type_traits::is_unsigned_sz_gt_v<UINT_T,temp_SUInt_type>)
+277                         {
+278                                         using SUInt_type = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+279                                         std::array<SUInt_type,L> ret_array{digits_pow_i\&.\&.\&.};
+280                                         base_t ret{};
+281                                         for(std::size_t ix{0} ; ix < pack_sz ; ++ix) {
+282                                                 if (ret_array[ix] < 0)
+283                                                         ret[ix] = dig_t((((ret_array[ix]/(-B))+1)*B)+ret_array[ix]);
+284                                                 else
+285                                                         ret[ix] = dig_t(ret_array[ix]);
+286                                         }
+287                                         for(std::size_t ix{pack_sz} ; ix < L ; ++ix) {
+288                                                 ret[ix] = dig_0();
+289                                         }
+290                                         return ret;
+291                         }
+292                         else {
+293                                         using SUInt_type = temp_SUInt_type;
+294                                         std::array<SUInt_type,L> ret_array{digits_pow_i\&.\&.\&.};
+295                                         base_t ret{};
+296                                         for(std::size_t ix{0} ; ix < pack_sz ; ++ix) {
+297                                                 if (ret_array[ix] < 0)
+298                                                         ret[ix] = dig_t((((ret_array[ix]/(-B))+1)*B)+ret_array[ix]);
+299                                                 else
+300                                                         ret[ix] = dig_t(ret_array[ix]);
+301                                         }
+302                                         for(std::size_t ix{pack_sz} ; ix < L ; ++ix) {
+303                                                 ret[ix] = dig_0();
+304                                         }
+305                                         return ret;
+306                         }
+307                 }
+308         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.PP
+Referenciado por \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::operator! () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1246                  {
+1247                 pfx_rat_reg_digs_t cpthis(*this);
+1248                 cpthis\&.mC_Bm1();
+1249                 return cpthis;
+1250         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator!\fP= (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t<23,12> A; A = \&.\&.\&. pfx_rat_reg_digs_t<23,10> B; B = \&.\&.\&. A != B => true or false 
+.PP
+.nf
+717                  {
+718                 if constexpr (LE<NE) {
+719                         for(std::size_t k{LE} ; k < NE ; ++k) {
+720                                 if (!(arg[k+NF]\&.is_0())) {
+721                                         return true;
+722                                 }
+723                         }
+724                 }
+725                 else if constexpr (NE<LE) {
+726                         for(std::size_t k{NE} ; k < LE ; ++k) {
+727                                 if (!(m_dc[k+LF]\&.is_0())) {
+728                                         return true;
+729                                 }
+730                         }
+731                 }
+732 
+733                         constexpr auto ZE{std::min(LE,NE)};
+734                         for(std::size_t k{0} ; k < ZE ; ++k) {
+735                                 if (m_dc[k+LF]!=arg\&.m_dc[k+NF]) {
+736                                         return true;
+737                                 }
+738                         }
+739 
+740                         constexpr auto ZF{std::min(LF,NF)};
+741                         for(std::size_t k{0} ; k < ZF ; ++k) {
+742                                 if (m_dc[LF-1-k]!=arg\&.m_dc[NF-1-k]) {
+743                                         return true;
+744                                 }
+745                         }
+746 
+747                 if constexpr (LF<NF) {
+748                         for(std::size_t k{LF-1} ; k < NF ; ++k) {
+749                                 if (!(arg[k+NF]\&.is_0())) {
+750                                         return true;
+751                                 }
+752                         }
+753                 }
+754                 else if constexpr (NF<LF) {
+755                         for(std::size_t k{NF-1} ; k < LF ; ++k) {
+756                                 if (!(m_dc[k+LF]\&.is_0())) {
+757                                         return true;
+758                                 }
+759                         }
+760                 }
+761 
+762                 return false;
+763         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator!\fP= (const \fBpfx_rat_reg_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+769                  {
+770                 return ((*this)!=arg\&.m_dc);
+771         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP& (const \fBpfx_rat_reg_digs_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1755                  {
+1756                 pfx_rat_reg_digs_t ret{*this};
+1757                 ret &= arg;
+1758                 return ret;
+1759         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP&= (const \fBpfx_rat_reg_digs_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1746                  {
+1747                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1748                         m_dc[ix] &= arg\&.m_dc[ix];
+1749                 }
+1750                 return (*this);
+1751         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr UINT_T \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP() (std::int32_t idx) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1121                                                                           {
+1122                 return (m_dc[idx]());
+1123         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP* (const \fBbase_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2066                  {
+2067                 pfx_rat_reg_digs_t ret(*this);
+2068                 pfx_rat_reg_digs_t narg(arg);
+2069                 ret *= narg;
+2070                 return ret;
+2071         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP* (const \fBpfx_rat_reg_digs_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+BEGIN : DECLARACIONES E INICIALIZACIONES
+.PP
+END : DECLARACIONES E INICIALIZACIONES
+.PP
+BEGIN : OBTENEMOS TODOS LOS SUMANDOS MULTIPLICANDO POR UN DIGITO FIJO COLOCADOS CONVENIENTEMENTE
+.PP
+COLOCADOS CONVENIENTEMENTE END : OBTENEMOS TODOS LOS SUMANDOS MULTIPLICANDO POR UN DIGITO FIJO
+.PP
+BEGIN : SUMAMOS TODOS LOS SUMANDOS
+.PP
+END : SUMAMOS TODOS LOS SUMANDOS BEGIN : PREPARAMOS EL PAR DE RETORNO
+.PP
+END : PREPARAMOS EL PAR DE RETORNO
+.PP
+.nf
+1835                  {
+1836                 const pfx_rat_reg_digs_t & cthis{*this};
+1838                 reg_ints_t<LE+LF> actints{};
+1839                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1840                         actints[ix] = cthis(ix);
+1841                 }
+1842                 reg_ints_t<LE+LF> argints{};
+1843                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1844                         argints[ix] = arg(ix);
+1845                 }
+1846                 reg_ints_t<2*(LE+LF)> carryints{};
+1847                 for(std::size_t iy{0} ; iy < 2*(LE+LF) ; ++iy) {
+1848                         carryints[iy]=0;
+1849                 }
+1850                 std::array<reg_suints_t<2*(LE+LF)>,LE+LF> retints{};
+1851                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1852                         for(std::size_t iy{0} ; iy < 2*(LE+LF) ; ++iy) {
+1853                                 retints[ix][iy]   =             0;
+1854                         }
+1855                 }
+1857 
+1860                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1861                         for(std::size_t iy{0} ; ix+iy < 2*(LE+LF) ; ++iy) {
+1862                                 retints[ix][ix+iy]      =               (       static_cast<SIG_UINT_T>(actints[ix])    *
+1863                                                                                                                                                 static_cast<SIG_UINT_T>(argints[iy])     )+
+1864                                                                                                                                                 static_cast<SIG_UINT_T>(carryints[iy]);
+1865                                 carryints[iy]                           =       retints[ix][ix+iy]/B;
+1866                                 retints[ix][ix+iy]   %=         B;
+1867                         }
+1868                 }
+1871 
+1873                 std::array<pfx_rat_reg_digs_t,LE+LF> rets{};
+1874                 for(std::size_t iz{0} ; iz < LE+LF ; ++iz) {
+1875                                 rets\&.m_dc[iz] = pfx_rat_reg_digs_t(retints[iz]);
+1876                 }
+1877                 for(std::size_t iw{1} ; iw < LE+LF ; ++iw) {
+1878                                 rets\&.m_dc[0] += rets\&.m_dc[iw];
+1879                                 // no hace falta que la suma sea de tamano L+1
+1880                 }
+1883                 std::array<pfx_rat_reg_digs_t,2> retpair{};
+1884                 for(std::size_t ix{0} ; ix < 2*LF ; ++ix) {
+1885                                 retpair[0]\&.m_dc[ix] = rets[0]\&.m_dc[ix];
+1886                 }
+1887                 for(std::size_t ix{2*LF} ; ix < 2*(LE+LF) ; ++ix) {
+1888                                 retpair[1]\&.m_dc[ix-2*LF] = rets[0]\&.m_dc[ix];
+1889                 }
+1891                 return retpair;
+1892         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr auto \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP* (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1522                  {
+1523                 pfx_rat_reg_digs_t ret(*this);
+1524                 ret *= arg;
+1525                 return ret;
+1526         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP*= (const \fBbase_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2119                  {
+2120                                         pfx_rat_reg_digs_t& cthis(*this);
+2121                 const pfx_rat_reg_digs_t        narg(arg);
+2122                 cthis *= narg;
+2123                 return (cthis);
+2124         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP*= (const \fBpfx_rat_reg_digs_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2142                  {
+2143                 (*this)*=arg\&.m_dc;
+2144                 return (*this);
+2145         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP+ (const \fBbase_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2048                  {
+2049                 pfx_rat_reg_digs_t ret(*this);
+2050                 pfx_rat_reg_digs_t narg(arg);
+2051                 ret += narg;
+2052                 return ret;
+2053         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr std::pair< \fBdig_t\fP, \fBpfx_rat_reg_digs_t\fP > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP+ (const \fBpfx_rat_reg_digs_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+END : OPERATORS | & |= &=\&. CARRY INICIAL ES 0
+.PP
+INT_ARRAY TEMPORAL COPIA DE (*THIS) [SUMANDO 0]
+.PP
+INT_ARRAY TEMPORAL COPIA DE ARG [SUMANDO 1]
+.PP
+BUCLE FOR QUE SUMA RETINTS Y ARGINTS DESDE IDX=0 A IDX=L-1
+.PP
+GUARDAMOS EL CARRY FINAL Y RETORNAMOS LA SUMA
+.PP
+.nf
+1772                  {
+1773                 pfx_rat_reg_digs_t ret(*this);
+1775                 UINT_T carry{0};
+1777                 reg_ints_t<LE+LF> retints{};
+1778                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1779                         retints[ix] = ret(ix);
+1780                 }
+1782                 reg_ints_t<LE+LF> argints{};
+1783                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1784                         argints[ix] = arg(ix);
+1785                 }
+1787                 for(std::size_t ix{0} ; ix < LE+LF-1 ; ++ix) {
+1788                         retints[ix] += (argints[ix]+carry);
+1789                         carry = retints[ix]/B;
+1790                         ret\&.m_dc[ix] = dig_t(retints[ix]);
+1791                 }
+1793                 auto retpair = std::make_pair(dig_t(carry),ret);
+1794                 return ret;
+1795         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr auto \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP+ (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1506                  {
+1507                 pfx_rat_reg_digs_t ret(*this);
+1508                 ret += arg;
+1509                 return ret;
+1510         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP++ ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CARRY INICIAL ES 1
+.PP
+BUCLE FOR QUE SUMA CTHIS Y 1 DESDE IDX=0 A IDX=L-1
+.PP
+.nf
+1137                  {
+1138                 pfx_rat_reg_digs_t& cthis(*this);
+1140                 dig_t carry{dig_1()};
+1142                 for(std::size_t ix{0} ; ix < LE+LF-1 ; ++ix) {
+1143                         if ((m_dc[ix]==dig_Bm1())&&(carry == dig_1())) {
+1144                                 m_dc[ix]=dig_0();
+1145                                 carry = dig_1();
+1146                         }
+1147                         else if ((cthis\&.m_dc[ix]<dig_Bm1())&&(carry == dig_1())){
+1148                                 if (carry != dig_0()) {
+1149                                         ++m_dc[ix];
+1150                                         break;
+1151                                 }
+1152                         }
+1153                 }
+1154                 return cthis;
+1155         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_Bm1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP++ (int)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1159                  {
+1160                 pfx_rat_reg_digs_t cpthis(*this);
+1161                 ++(*this);
+1162                 return cpthis;
+1163         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP+= (const \fBbase_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2101                  {
+2102                                         pfx_rat_reg_digs_t& cthis(*this);
+2103                 const pfx_rat_reg_digs_t        narg(arg);
+2104                 cthis += narg;
+2105                 return (cthis);
+2106         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP+= (const \fBpfx_rat_reg_digs_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2128                  {
+2129                 (*this)+=arg\&.m_dc;
+2130                 return (*this);
+2131         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP+= (\fBdig_t\fP arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CARRY INICIAL ES 1
+.PP
+CASOS CARRY==0[ULTIMA], CARRY==1[VECES SIGUIENTES], CARRY=ARG [1A VEZ] SI ARG == 0 ENTONCES SE DEVUELVE SIN MÁS SI ARG == 1 ENTONCES ++CTHIS SI ARG > 1 ENTONCES 1a VEZ dig_BmArg 2a VEZ dig_Bm1 Y SIGUIENTES ULTIMA VEZ CARRY ==0
+.PP
+PRIMERA VEZ : ARG > 1 usamos dig_BmArg
+.PP
+SEGUNDA VEZ Y SIGUIENTES BUCLE FOR QUE SUMA CTHIS Y 1 DESDE IDX=0 A IDX=L-1
+.PP
+.nf
+1277                  {
+1278                 pfx_rat_reg_digs_t& cthis(*this);
+1280                 dig_t carry{arg};
+1287                 if (arg\&.is_0()) {
+1288                         return (cthis);
+1289                 } else if (arg\&.is_1()) {
+1290                         return (++cthis);
+1291                 } else {
+1292                         const dig_t dig_BmArg{dig_Bm1()-(arg-dig_1())};
+1294                         if (m_dc[0]==dig_BmArg) {
+1295                                 m_dc[0] = dig_0();
+1296                                 carry    = dig_1();
+1297                         }
+1300                         for(std::size_t ix{1} ; ix < LE+LF-1 ; ++ix) {
+1301                                 if (m_dc[ix]==dig_Bm1()&& !(carry\&.is_0())) {
+1302                                         m_dc[ix]=dig_0();
+1303                                         carry = dig_1();
+1304                                 }
+1305                                 else if ((m_dc[ix]<dig_Bm1())&&(carry == dig_1())){
+1306                                         if (carry != dig_0()) {
+1307                                                 ++m_dc[ix];
+1308                                                 break;
+1309                                         }
+1310                                 }
+1311                         }
+1312                         return (cthis);
+1313                 }
+1314         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_Bm1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\- () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1254                  {
+1255                 pfx_rat_reg_digs_t cpthis(*this);
+1256                 cpthis\&.mC_B();
+1257                 return cpthis;
+1258         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\- (const \fBbase_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2057                  {
+2058                 pfx_rat_reg_digs_t ret(*this);
+2059                 pfx_rat_reg_digs_t narg(arg);
+2060                 ret -= narg;
+2061                 return ret;
+2062         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr std::pair< \fBdig_t\fP, \fBpfx_rat_reg_digs_t\fP > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\- (const \fBpfx_rat_reg_digs_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+INICIALIZAMOS EL CARRY/BORROW A 0
+.PP
+GUARDAMOS EL COMPLEMENTO A LA BASE MENOS 1 DEL MINUENDO
+.PP
+COMPLETAMOS EL COMPLEMENTO A LA BASE SUMANDO 1 [carry_CB vale en el inicio 1]
+.PP
+SE HA COMPLETADO EL COMPLEMENTO A LA BASE
+.PP
+SUMAMOS SUMANDO_0 + C_B(SUMANDO_1)
+.PP
+.nf
+1799                  {
+1800                 pfx_rat_reg_digs_t ret(*this);
+1802                 UINT_T carry_CB{1};
+1803                 UINT_T carry_add{0};
+1804 
+1805                 reg_ints_t<LE+LF> retints{};
+1806                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1807                         retints[ix] = ret(ix);
+1808                 }
+1809 
+1810                 reg_ints_t<LE+LF> argints{};
+1811                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1813                         argints[ix] = (B-1)-arg(ix);
+1814                 }
+1817                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix){
+1818                                 argints[ix] = argints[ix]+carry_CB;
+1819                                 carry_CB = argints[ix]/B;
+1820                 }
+1822 
+1824                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1825                         retints[ix] += (argints[ix]+carry_add);
+1826                         carry_add = retints[ix]/B;
+1827                         ret\&.m_dc[ix] = dig_t(retints[ix]);
+1828                 }
+1829                 auto pairret = std::make_pair(dig_t(carry_add),ret);
+1830                 return pairret;
+1831         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr auto \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\- (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1514                  {
+1515                 pfx_rat_reg_digs_t ret(*this);
+1516                 ret -= arg;
+1517                 return ret;
+1518         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\-\- ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CARRY INICIAL ES EL COMPLEMENTO A LA BASE DE 1
+.PP
+BUCLE FOR QUE SUMA CTHIS Y C_B(1) DESDE IDX=0 A IDX=LE+LF-1
+.PP
+.nf
+1167                  {
+1168                 pfx_rat_reg_digs_t& cthis(*this);
+1170                 dig_t carry{dig_0()};
+1172                 for(std::size_t ix{0} ; ix < LE+LF-1 ; ++ix) {
+1173                                 SIG_UINT_T temp{cthis(ix)+B-1+carry()};
+1174                                 m_dc[ix]=dig_t(temp);
+1175                                 carry = dig_t(temp/B);
+1176                 }
+1177                 return cthis;
+1178         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\-\- (int)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1182                  {
+1183                 pfx_rat_reg_digs_t cpthis(*this);
+1184                 --(*this);
+1185                 return cpthis;
+1186         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\-= (const \fBbase_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2110                  {
+2111                                         pfx_rat_reg_digs_t& cthis(*this);
+2112                 const pfx_rat_reg_digs_t        narg(arg);
+2113                 cthis -= narg;
+2114                 return (cthis);
+2115         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\-= (const \fBpfx_rat_reg_digs_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+2135                  {
+2136                 (*this)-=arg\&.m_dc;
+2137                 return (*this);
+2138         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP\-= (\fBdig_t\fP arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CARRY INICIAL ES 1
+.PP
+CASOS CARRY==0[ULTIMA], CARRY==1[VECES SIGUIENTES], CARRY=ARG [1A VEZ] SI ARG == 0 ENTONCES SE DEVUELVE SIN MÁS SI ARG == 1 ENTONCES --CTHIS SI ARG > 1 ENTONCES 1a VEZ dig_BmArg 2a VEZ dig_Bm1 Y SIGUIENTES ULTIMA VEZ CARRY ==0
+.PP
+PRIMERA VEZ : SUMAMOS EL COMPLEMENTO A LA BASE DE ARG
+.PP
+SEGUNDA VEZ Y SIGUIENTES BUCLE FOR QUE SUMA CTHIS Y 1 DESDE IDX=0 A IDX=L-1
+.PP
+.nf
+1318                  {
+1319                 pfx_rat_reg_digs_t& cthis(*this);
+1321                 dig_t carry{arg};
+1328                 if (arg==dig_0()) {
+1329                         return (cthis);
+1330                 } else if (arg == dig_1()) {
+1331                         return (--cthis);
+1332                 } else {
+1333                         const dig_t dig_CBArg{arg\&.C_B()};
+1334                         const dig_t dig_sig_Arg{dig_Bm1()};
+1335 
+1337                         if (m_dc[0]())+dig_CBArg()>dig_Bm1()()) {
+1338                                 carry = dig_1();
+1339                         } else {
+1340                                 carry = dig_0();
+1341                         }
+1342                         m_dc[0] += dig_CBArg;
+1343 
+1346                         for(std::size_t ix{1} ; ix < LE+LF-1 ; ++ix) {
+1347                                 if (m_dc[ix]\&.is_0() && carry\&.is_0()) {
+1348                                         m_dc[ix]=dig_Bm1();
+1349                                         carry = dig_0();
+1350                                 }
+1351                                 else if (m_dc[ix]\&.is_0() && !carry\&.is_0()) {
+1352                                         m_dc[ix]=dig_0();
+1353                                         carry = dig_1();
+1354                                 }
+1355                                 else if (m_dc[ix]\&.is_1() && carry\&.is_0()) {
+1356                                         m_dc[ix]=dig_0();
+1357                                         carry = dig_1();
+1358                                 }
+1359                                 else {
+1360                                         m_dc[ix] += dig_Bm1();
+1361                                         m_dc[ix] += carry;
+1362                                         carry = dig_1();
+1363                                 }
+1364                         }
+1365                         return (cthis);
+1366                 }
+1367         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_Bm1()\fP, \fBis_0()\fP, \fBis_1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP< (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t<23,12> A; A = \&.\&.\&. pfx_rat_reg_digs_t<23,10> B; B = \&.\&.\&. A < B => true or false 
+.PP
+.nf
+919                  {
+920                 if constexpr (NE<LE) {
+921                         for(std::size_t k{NE} ; k < LE ; ++k) {
+922                                 if (!(arg[k+NF]\&.is_0())) {
+923                                         return true;
+924                                 }
+925                         }
+926                 }
+927                 else if constexpr (LE<NE) {
+928                         for(std::size_t k{LE} ; k < NE ; ++k) {
+929                                 if (!(m_dc[k+LF]\&.is_0())) {
+930                                         return false;
+931                                 }
+932                         }
+933                 }
+934                 constexpr auto ZE{std::min(LE,NE)};
+935                 for(std::size_t k{0} ; k < ZE ; ++k) {
+936                                 if (m_dc[k+NF]<arg\&.m_dc[k+LF]) {
+937                                         return true;
+938                                 }
+939                                 else if (m_dc[k+NF]>arg\&.m_dc[k+LF]) {
+940                                         return false;
+941                                 }
+942                 }
+943                 constexpr auto ZF{std::min(LF,NF)};
+944                 for(std::size_t k{0} ; k < ZF ; ++k) {
+945                                 if (m_dc[NF-1-k]<arg\&.m_dc[LF-1-k]) {
+946                                         return true;
+947                                 }
+948                                 else if (m_dc[NF-1-k]>arg\&.m_dc[LF-1-k]) {
+949                                         return false;
+950                                 }
+951                 }
+952                 if constexpr (NF<LF) {
+953                         for(std::size_t k{0} ; k < LF-NF ; ++k) {
+954                                 if (!(arg[NF-1-k]\&.is_0())) {
+955                                         return true;
+956                                 }
+957                         }
+958                 }
+959                 else if constexpr (LF<NF) {
+960                         for(std::size_t k{0} ; k < NF-LF ; ++k) {
+961                                 if (!(m_dc[LF-1-k]\&.is_0())) {
+962                                         return false;
+963                                 }
+964                         }
+965                 }
+966                 return false;
+967         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP< (const \fBpfx_rat_reg_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+973                  {
+974                 return ((*this)<arg\&.m_dc);
+975         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP<< (std::size_t n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+BEGIN : OPERATORS >> >>= << <<= MULTIPLY BY THE BASE B (10) 
+.PP
+.nf
+1632                  {
+1633                 if (n<LE+LF) {
+1634                         pfx_rat_reg_digs_t cpthis{*this};
+1635                         for(std::int64_t ix{n-1} ; ix > -1 ; --ix) {
+1636                                 cpthis\&.m_dc[ix+n] = cpthis\&.m_dc[ix];
+1637                                 cpthis\&.m_dc[ix] = dig_0();
+1638                         }
+1639                         return cpthis;
+1640                 }
+1641                 else
+1642                         return (pfx_rat_reg_digs_t{});
+1643         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP<<= (std::size_t n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1647                  {
+1648                 pfx_rat_reg_digs_t& cthis{*this};
+1649                 if (n < LE+LF) {
+1650                         for(std::int64_t ix{n-1} ; ix > -1 ; --ix) {
+1651                                 cthis\&.m_dc[ix+n] = cthis\&.m_dc[ix];
+1652                                 cthis\&.m_dc[ix] = dig_0();
+1653                         }
+1654                 }
+1655                 else {
+1656                         cthis = (pfx_rat_reg_digs_t{});
+1657                 }
+1658                 return (*this);
+1659         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP<= (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t<23,12> A; A = \&.\&.\&. pfx_rat_reg_digs_t<23,10> B; B = \&.\&.\&. A <= B => true or false 
+.PP
+.nf
+783                  {
+784                 if constexpr (NE<LE) {
+785                         for(std::size_t k{NE} ; k < LE ; ++k) {
+786                                 if (!(arg[k+NF]\&.is_0())) {
+787                                         return true;
+788                                 }
+789                         }
+790                 }
+791                 else if constexpr (LE<NE) {
+792                         for(std::size_t k{LE} ; k < NE ; ++k) {
+793                                 if (!(m_dc[k+LF]\&.is_0())) {
+794                                         return false;
+795                                 }
+796                         }
+797                 }
+798                 constexpr auto ZE{std::min(LE,NE)};
+799                 for(std::size_t k{0} ; k < ZE ; ++k) {
+800                                 if (m_dc[k+NF]<arg\&.m_dc[k+LF]) {
+801                                         return true;
+802                                 }
+803                                 else if (m_dc[k+NF]>arg\&.m_dc[k+LF]) {
+804                                         return false;
+805                                 }
+806                 }
+807                 constexpr auto ZF{std::min(LF,NF)};
+808                 for(std::size_t k{0} ; k < ZF ; ++k) {
+809                                 if (m_dc[NF-1-k]<arg\&.m_dc[LF-1-k]) {
+810                                         return true;
+811                                 }
+812                                 else if (m_dc[NF-1-k]>arg\&.m_dc[LF-1-k]) {
+813                                         return false;
+814                                 }
+815                 }
+816                 if constexpr (NF<LF) {
+817                         for(std::size_t k{0} ; k < LF-NF ; ++k) {
+818                                 if (!(arg[NF-1-k]\&.is_0())) {
+819                                         return true;
+820                                 }
+821                         }
+822                 }
+823                 else if constexpr (LF<NF) {
+824                         for(std::size_t k{0} ; k < NF-LF ; ++k) {
+825                                 if (!(m_dc[LF-1-k]\&.is_0())) {
+826                                         return false;
+827                                 }
+828                         }
+829                 }
+830                 return true;
+831         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP<= (const \fBpfx_rat_reg_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+837                  {
+838                 return ((*this)<=arg\&.m_dc);
+839         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr std::weak_ordering \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP<=> (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR COMPARACION OPERADOR SPACESHIP C++20 Comparaciones con un array estandar de otra longitud La salida devuelta es greater,less,equivalent 
+.PP
+.nf
+1044                  {
+1045                 const pfx_rat_reg_digs_t & cthis{*this};
+1046                 if (cthis > arg)
+1047                         return std::weak_ordering::greater;
+1048                 else if (cthis < arg)
+1049                         return std::weak_ordering::less;
+1050                 else
+1051                         return std::weak_ordering::equivalent;
+1052         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr std::strong_ordering \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP<=> (const \fBpfx_rat_reg_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1058                  {
+1059                 const pfx_rat_reg_digs_t & cthis{*this};
+1060                 if (cthis > arg)
+1061                         return std::strong_ordering::greater;
+1062                 else if (cthis < arg)
+1063                         return std::strong_ordering::less;
+1064                 else
+1065                         return std::strong_ordering::equal;
+1066         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP= (const \fBbase_NEXNF_t\fP< NE, NF > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+OPERACION ASIGNACION POR COPIA DESDE BASE_N_T\&. 
+.PP
+.nf
+376         {
+377                 if (&(this->m_dc)!=(&arg))
+378                         copy_arg<NE+NF>(arg);
+379                 return (*this);
+380         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP= (const \fBdig_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION COPIA DESDE UN DIGITO (CONVERSION) dig_t<13> a{3}; pfx_rat_reg_digs_t<13,16> A{}; A = a; A = nat#0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:3#B13 
+.PP
+.nf
+386                                                                                       {
+387                 if (&(this->m_dc[LF])!=(&arg)) {
+388                         for (dig_t& dig : m_dc)
+389                                 dig = dig_0();
+390                         m_dc[LF] = arg;
+391                 }
+392                 return (*this);
+393         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP= (const \fBnat_reg_N_digs_t\fP< NE, NF > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+OPERACION ASIGNACION POR COPIA EN LA QUE \fINO\fP SE PUEDE MODIFICAR EL ARGUMENTO\&. 
+.PP
+.nf
+366                  {
+367                 if (this != &arg) {
+368                                 copy_arg<NE,NF>(arg\&.m_dc);
+369                 }
+370                 return (*this);
+371         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<type_traits::integral_c Int_Type> constexpr \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP= (Int_Type arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION COPIA DESDE UN ENTERO (CONVERSION A LA BASE B) pfx_rat_reg_digs_t<16,4> var{}; var = 1324; 1324/%16 = 82|12 82/%16 = 5|2 => var == nat#5:2:12#B16 
+.PP
+.nf
+399                                                                                  {
+400                 Int_Type creg_g{arg};
+401                 if ((&(this->m_dc()))!=(&arg)) {
+402                         uint128_t BasePowIx{1};
+403                         for(std::size_t k{LF} ; k < LE+LF ; ++k) {
+404                                 BasePowIx *= B;
+405                         }
+406                         while (creg_g < 0) {
+407                                 creg_g += BasePowIx;
+408                         }
+409                         for(std::size_t k{LF} ; k < LE+LF ; ++k){
+410                                 m_dc[k] = dig_t(creg_g);
+411                                 creg_g /= B;
+412                         }
+413                         for(std::size_t k{LF-1} ; k >= 0 ; --k)
+414                                 m_dc[k]= dig_0();
+415                 }
+416                 return (*this);
+417         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP= (\fBnat_reg_NExNF_digs_t\fP< NE, NF > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION ASIGNACION POR MOVIMIENTO reg_N_digs_t == std::array<dig_t,N>; pfx_rat_reg_digs_t<21,5> var{}; pfx_rat_reg_digs_t var2{}; var2 = std::move(var); var2 == antigua var; var actual no sabemos su valor; 
+.PP
+.nf
+356         {
+357                 if (this != &arg) {
+358                         move_arg<NE,NF>(arg\&.m_dc);
+359                 }
+360                 return (*this);
+361         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP= (\fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION ASIGNACION POR COPIA EN LA QUE SE PUEDE COPIAR reg_N_digs_t == std::array<dig_t,N>; pfx_rat_reg_digs_t<21,5> var{}; pfx_rat_reg_digs_t var2{}; var2 = var; var2 == var 
+.PP
+.nf
+341         {
+342                 if (this != &arg) {
+343                         copy_arg<NE,NF>(arg\&.m_dc);
+344                 }
+345                 return (*this);
+346         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP== (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t<23,12> A; A = \&.\&.\&. pfx_rat_reg_digs_t<23,10> B; B = \&.\&.\&. A == B => true or false 
+.PP
+.nf
+657                  {
+658                 if constexpr (NE>LE) {
+659                         for(std::size_t k{LE} ; k < NE ; ++k) {
+660                                 if (!(arg[k+NF]\&.is_0())) {
+661                                         return false;
+662                                 }
+663                         }
+664                 }
+665                 else if constexpr (LE>NE) {
+666                         for(std::size_t k{NE} ; k < LE ; ++k) {
+667                                 if (!(m_dc[k+LF]\&.is_0())) {
+668                                         return false;
+669                                 }
+670                         }
+671                 }
+672                 constexpr auto ZE{std::min(LE,NE)};
+673                 for(std::size_t k{0} ; k < ZE ; ++k) {
+674                                 if (m_dc[k+LF]!=arg\&.m_dc[k+NF])
+675                                         return false;
+676                 }
+677                 constexpr auto ZF{std::min(LF,NF)};
+678                 for(std::size_t k{0} ; k < ZF-1 ; ++k) {
+679                                 if (m_dc[LF-1-k]!=arg\&.m_dc[NF-1-k])
+680                                         return false;
+681                 }
+682                 if constexpr (NF>LF) {
+683                         for(std::size_t k{LF} ; k < NF ; ++k) {
+684                                 if (!(arg[k]\&.is_0())) {
+685                                         return false;
+686                                 }
+687                         }
+688                 }
+689                 else if constexpr (LF>NF) {
+690                         for(std::size_t k{NF} ; k < LF ; ++k) {
+691                                 if (!(m_dc[k]\&.is_0())) {
+692                                         return false;
+693                                 }
+694                         }
+695                 }
+696                 return true;
+697         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP== (const \fBpfx_rat_reg_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+703                  {
+704                 return ((*this)==arg\&.m_dc);
+705         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP> (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t<23,12> A; A = \&.\&.\&. pfx_rat_reg_digs_t<23,10> B; B = \&.\&.\&. A > B => true or false 
+.PP
+.nf
+987                  {
+988                 if constexpr (NE>LE) {
+989                         for(std::size_t k{LE} ; k < NE ; ++k) {
+990                                 if (!(arg[k+NF]\&.is_0())) {
+991                                         return false;
+992                                 }
+993                         }
+994                 }
+995                 else if constexpr (LE>NE) {
+996                         for(std::size_t k{NE} ; k < LE ; ++k) {
+997                                 if (!(m_dc[k+LF]\&.is_0())) {
+998                                         return true;
+999                                 }
+1000                         }
+1001                 }
+1002                 constexpr auto ZE{std::min(LE,NE)};
+1003                 for(std::int64_t k{ZE-1} ; k > -1 ; --k) {
+1004                                 if (m_dc[k+LF]>arg\&.m_dc[k+NF]) {
+1005                                         return true;
+1006                                 }
+1007                                 else if (m_dc[k+LF]<arg\&.m_dc[k+NF]) {
+1008                                         return false;
+1009                                 }
+1010                 }
+1011                 constexpr auto ZF{std::min(LF,NF)};
+1012                 for(std::int64_t k{ZF-1} ; k > -1 ; --k) {
+1013                                 if (m_dc[LF-1-k]>arg\&.m_dc[NF-1-k]) {
+1014                                         return true;
+1015                                 }
+1016                                 else if (m_dc[LF-1-k]<arg\&.m_dc[NF-1-k]) {
+1017                                         return false;
+1018                                 }
+1019                 }
+1020                 if constexpr (LF<NF) {
+1021                         for(std::size_t k{0} ; k < NF-LF ; ++k) {
+1022                                 if (!(arg[NF-1-k]\&.is_0())) {
+1023                                         return false;
+1024                                 }
+1025                         }
+1026                 }
+1027                 else if constexpr (NF<LF) {
+1028                         for(std::size_t k{0} ; k < LF-NF ; ++k) {
+1029                                 if (!(m_dc[LF-1-k]\&.is_0())) {
+1030                                         return true;
+1031                                 }
+1032                         }
+1033                 }
+1034                 return false;
+1035         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP>= (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t<23,12> A; A = \&.\&.\&. pfx_rat_reg_digs_t<23,10> B; B = \&.\&.\&. A >= B => true or false 
+.PP
+.nf
+851                  {
+852                 if constexpr (NE>LE) {
+853                         for(std::size_t k{LE} ; k < NE ; ++k) {
+854                                 if (!(arg[k+NF]\&.is_0())) {
+855                                         return false;
+856                                 }
+857                         }
+858                 }
+859                 else if constexpr (LE>NE) {
+860                         for(std::size_t k{NE} ; k < LE ; ++k) {
+861                                 if (!(m_dc[k+LF]\&.is_0())) {
+862                                         return true;
+863                                 }
+864                         }
+865                 }
+866                 constexpr auto ZE{std::min(LE,NE)};
+867                 for(std::int64_t k{ZE-1} ; k > -1 ; --k) {
+868                                 if (m_dc[k+LF]>arg\&.m_dc[k+NF]) {
+869                                         return true;
+870                                 }
+871                                 else if (m_dc[k+LF]<arg\&.m_dc[k+NF]) {
+872                                         return false;
+873                                 }
+874                 }
+875                 constexpr auto ZF{std::min(LF,NF)};
+876                 for(std::int64_t k{ZF-1} ; k > -1 ; --k) {
+877                                 if (m_dc[LF-1-k]>arg\&.m_dc[NF-1-k]) {
+878                                         return true;
+879                                 }
+880                                 else if (m_dc[LF-1-k]<arg\&.m_dc[NF-1-k]) {
+881                                         return false;
+882                                 }
+883                 }
+884                 if constexpr (LF<NF) {
+885                         for(std::size_t k{0} ; k < NF-LF ; ++k) {
+886                                 if (!(arg[NF-1-k]\&.is_0())) {
+887                                         return false;
+888                                 }
+889                         }
+890                 }
+891                 else if constexpr (NF<LF) {
+892                         for(std::size_t k{0} ; k < LF-NF ; ++k) {
+893                                 if (!(m_dc[LF-1-k]\&.is_0())) {
+894                                         return true;
+895                                 }
+896                         }
+897                 }
+898                 return true;
+899         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr bool \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP>= (const \fBpfx_rat_reg_digs_t\fP< NE, NF > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+905                  {
+906                 return ((*this)>=arg\&.m_dc);
+907         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP>> (std::size_t n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+DIVIDE BY THE BASE B (/10_B) 
+.PP
+.nf
+1664                  {
+1665                 if (n<LE+LF) {
+1666                         pfx_rat_reg_digs_t cpthis{*this};
+1667                         for(std::int64_t ix{0} ; ix < n ; ++ix) {
+1668                                 cpthis\&.m_dc[ix] = cpthis\&.m_dc[ix+n];
+1669                                 cpthis\&.m_dc[ix+n] = dig_0();
+1670                         }
+1671                         return cpthis;
+1672                 }
+1673                 else
+1674                 return (pfx_rat_reg_digs_t{});
+1675         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP>>= (std::size_t n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1679                  {
+1680                 pfx_rat_reg_digs_t& cthis{*this};
+1681                 if (n < LE+LF) {
+1682                         for(std::int64_t ix{0} ; ix < n ; ++ix) {
+1683                                 cthis\&.m_dc[ix] = cthis\&.m_dc[ix+n];
+1684                                 cthis\&.m_dc[ix+n] = dig_0();
+1685                         }
+1686                 }
+1687                 else
+1688                         cthis = (pfx_rat_reg_digs_t{});
+1689                 return (*this);
+1690         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBdig_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP[] (std::int32_t idx) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1107                                                                                  {
+1108                 if ((idx < LE)&&(std::abs(idx) < LF+1))
+1109                         return (m_dc[idx+LF]);
+1110                 else
+1111                         return dig_0();
+1112         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBdig_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP[] (std::int32_t idx)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1114                                                                      {
+1115                 if ((idx < LE)&&(std::abs(idx) < LF+1))
+1116                         return (m_dc[idx+LF]);
+1117                 else
+1118                         return dig_0();
+1119         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP| (const \fBpfx_rat_reg_digs_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1738                  {
+1739                 pfx_rat_reg_digs_t ret{*this};
+1740                 ret |= arg;
+1741                 return ret;
+1742         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr const \fBpfx_rat_reg_digs_t\fP & \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >\fB::operator\fP|= (const \fBpfx_rat_reg_digs_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+BEGIN : OPERATORS | & |= &=\&. REMAINDER BY THE BASE B (%10_B) END : 'OPERATORS' REM_B^n AND M_REM_B^n 
+.PP
+.nf
+1729                  {
+1730                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1731                         m_dc[ix] |= arg\&.m_dc[ix];
+1732                 }
+1733                 return (*this);
+1734         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR POR DEFECTO pfx_rat_reg_digs_t<10,3,2> var(); var == nat#0:0:0:s:0:0#B10 
+.PP
+.nf
+152                  : m_dc{dig_0()} {}
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.PP
+Referenciado por \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::add()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::C_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::C_Bm1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::concat()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::concat_inv()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::mC_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::mC_Bm1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::mult()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator!()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator&()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator*()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator*=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator+()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator++()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator+=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator\-()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator\-\-()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator\-=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator<<()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator<<=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator<=>()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator>>()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator>>=()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::operator|()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_0()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_Bm1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_pow_n_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_pow_n_B_m1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::rem_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::rev_subreg_digs()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::rev_subreg_digs_pe()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::rev_subreg_digs_pf()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::subreg_digs()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::subreg_digs_pe()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::subreg_digs_pf()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::subst()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t N> 
+.br
+requires (N>0)constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t (const base_NExNF_t< NE, NF > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR MOVIMIENTO DESDE UN ARRAY DE DIGITOS INTERNO 
+.PP
+.nf
+234                  : m_dc{move_arg_N<N>(arg)} {}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t N> 
+.br
+requires (N>0)constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t (const base_NExNF_t< NE, NF > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR COPIA REFERENCIA DESDE UN ARRAY DE DIGITOS INTERNO 
+.PP
+.nf
+227                  : m_dc{copy_arg_N<N>(arg)} {}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t (const \fBnat_reg_NExNF_digs_t\fP< NE, NF > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR COPIA pfx_rat_reg_digs_t<10,3,2> var{1,3,2,5,6}; pfx_rat_reg_digs_t<10,3,2> var2(var); 
+.PP
+.nf
+321                                                                                               :
+322                 m_dc{copy_arg<NE,NF>(arg\&.m_dc)} {}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t (const std::initializer_list< \fBdig_t\fP > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR POR LISTA DE DIGITOS pfx_rat_reg_digs_t<10,3,2> var{\fBdig_t(1)\fP,\fBdig_t(3)\fP,\fBdig_t(2)\fP,\fBdig_t(5)\fP,\fBdig_t(6)\fP}; var == nat#1:3:2:s:5:6#B10 
+.PP
+.nf
+158                  : m_dc{arg} {}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<typename \&.\&.\&. Ts> 
+.br
+requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t (const Ts &\&.\&.\&. args)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR POR ARGUMENTOS DIGITOS SIN LIMITE: DEDUCE EL TIPO pfx_rat_reg_digs_t<10,3,2> var(\fBdig_t(1)\fP,\fBdig_t(3)\fP,\fBdig_t(2)\fP,\fBdig_t(5)\fP,\fBdig_t(6)\fP); var == nat#1:3:2:5:6#B10 
+.PP
+.nf
+166                  : m_dc{(utility::pack2array<Ts\&.\&.\&.>{})(args\&.\&.\&.)} {}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<type_traits::integral_c \&.\&.\&. Ints_type> constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t (Ints_type \&.\&.\&. dig_pow_i)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR COPIA DESDE ARGUMENTOS ENTEROS SIN LIMITE : DEDUCE EL TIPO pfx_rat_reg_digs_t<10,3,2> var{1,3,2,5,6}; var == nat#1:3:2:s:5:6#B10 
+.PP
+.nf
+314                                                                               :
+315                 m_dc{normalize<Ints_type\&.\&.\&.>(dig_pow_i\&.\&.\&.)} {}
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::normalize()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t NE, std::size_t NF> 
+.br
+requires (NE>0)constexpr \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t (\fBnat_reg_NExNF_digs_t\fP< NE, NF > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR MOVIMIENTO pfx_rat_reg_digs_t<10,3,2> var{1,3,2,5,6}; pfx_rat_reg_digs_t<10,3,2> var2(std::move(var)); var queda no sabemos su valor 
+.PP
+.nf
+329                                                                                          :
+330                 m_dc{move_arg<NE,NF>(arg\&.m_dc)} {}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::int32_t I> 
+.br
+requires ((I < LE)&&(std::abs(I) < LF+1))constexpr void \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::put (const \fBdig_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+pfx_rat_reg_digs_t A{}; A\&.put<2>(B-1-A\&.get<2>()) [pone un valor en un digito por su indice] 
+.PP
+.nf
+1097                                                               {
+1098                 m_dc[I+LF] = arg; return;
+1099         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::int32_t I> 
+.br
+requires ((I < LE)&&(std::abs(I) < LF+1))constexpr void \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::put (\fBdig_t\fP && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1103                                                          {
+1104                 m_dc[I+LF] = std::move(arg); return;
+1105         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regd_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+50                                                                                     {
+51                 pfx_rat_reg_digs_t ret{};
+52                 for(auto& dig : ret\&.m_dc) {
+53                         dig = dig_0();
+54                 }
+55                 return ret;
+56         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.PP
+Referenciado por \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_Bm1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_pow_n_B()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::rem_B()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regd_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+57                                                                                          {
+58                 pfx_rat_reg_digs_t ret{regd_0()};
+59                 ret\&.m_dc[LF] = dig_1();
+60                 return ret;
+61         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regd_B ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+67                                                                                          {
+68                 pfx_rat_reg_digs_t ret{regd_0()};
+69                 ret\&.m_dc[LF+1] = dig_1();
+70                 return ret;
+71         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regd_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+62                                                                                          {
+63                 pfx_rat_reg_digs_t ret{regd_0()};
+64                 ret\&.m_dc[LF] = dig_Bm1();
+65                 return ret;
+66         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_Bm1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regd_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+75                                                                                  {
+76                 pfx_rat_reg_digs_t ret{regd_0()};
+77                 ret\&.m_dc[LF+n] = dig_1();
+78                 return ret;
+79         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regd_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+82                                                                                             {
+83                 pfx_rat_reg_digs_t ret{};
+84                 for(std::size_t ix{-LF} ; ix < n ; ++ix) {
+85                         ret\&.m_dc[LF+ix] = dig_t(B-1);
+86                 }
+87                 for(std::size_t ix{n} ; ix < LE ; ++ix) {
+88                         ret\&.m_dc[LF+ix] = dig_t(0);
+89                 }
+90                 return ret;
+91         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBreg_ints_t\fP< LE+LF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regi_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+ARRAYS DE ENTEROS QUE SON DE AYUDA\&. 
+.PP
+.nf
+93                                                                                                         {
+94                 reg_ints_t<LE+LF> ret{};
+95                 for(auto& digint : ret) {
+96                         digint = dig_0()();
+97                 }
+98                 return ret;
+99         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP\&.
+.PP
+Referenciado por \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_1()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_B()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_Bm1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_pow_n_B()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBreg_ints_t\fP< LE+LF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regi_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+101                                                                                                 {
+102                 reg_ints_t<LE+LF> ret{regi_0()};
+103                 ret[LF] = dig_1()();
+104                 return ret;
+105         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBreg_ints_t\fP< LE+LF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regi_B ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+113                                                                                             {
+114                 reg_ints_t<LE+LF> ret{regi_0()};
+115                 ret[LF+1] = dig_1()();
+116                 return ret;
+117         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBreg_ints_t\fP< LE+LF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regi_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+107                                                                                                 {
+108                 reg_ints_t<LE+LF> ret{regi_0()};
+109                 ret[LF] = dig_Bm1()();
+110                 return ret;
+111         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_Bm1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBreg_ints_t\fP< LE+LF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regi_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+121                                                                                         {
+122                 reg_ints_t<LE+LF> ret{regi_0()};
+123                 ret[LF+n] = dig_1()();
+124                 return ret;
+125         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regi_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::int32_t n> 
+.br
+requires ((n < LE) && (n > \-(LF+1)))static constexpr \fBreg_ints_t\fP< LE+LF > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::regi_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+129                                                                                         {
+130                 reg_ints_t<LE+LF> ret{};
+131                 for(std::int32_t ix{-LF} ; ix < n ; ++ix) {
+132                         ret[LF+ix] = dig_t(B-1)();
+133                 }
+134                 for(std::int32_t ix{n} ; ix < LE ; ++ix) {
+135                         ret[LF+ix] = dig_t(0)();
+136                 }
+137                 return ret;
+138         }
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr \fBpfx_rat_reg_digs_t\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::rem_B (std::size_t n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+END : OPERATORS >> >>= << <<=\&. BEGIN : 'OPERATORS' REM_B^n AND M_REM_B^n REMAINDER BY THE BASE B (%10_B) 
+.PP
+.nf
+1698                  {
+1699                 pfx_rat_reg_digs_t ret{regd_0()};
+1700                 if (n < LE+LF) {
+1701                         for(std::size_t ix{0} ; ix < n ; ++ix) {
+1702                                 ret\&.m_dc[ix] = m_dc[ix];
+1703                         }
+1704                 }
+1705                 return ret;
+1706         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::regd_0()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend\-ibegin>0)&&(iend <= LE+LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::rev_subreg_digs () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+562                  {
+563                 const pfx_rat_reg_digs_t & cthis{*this};
+564                 reg_N_digs_t<iend-ibegin> ret{};
+565                 for(std::size_t ix{iend} ; ix > ibegin-1 ; --ix) {
+566                         ret[ix-ibegin] = cthis[LE+LF-1-ix];
+567                 }
+568                 return ret;
+569         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend <= LE+LF)&&(ibegin < iend)&&(ibegin >= LF))constexpr reg_N_digs_t< iend\-ibegin > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::rev_subreg_digs_pe () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+588                  {
+589                 const pfx_rat_reg_digs_t & cthis{*this};
+590                 reg_N_digs_t<iend-ibegin> ret{};
+591                 for(std::size_t ix{iend} ; ix > ibegin-1 ; --ix) {
+592                         ret[ix-ibegin] = cthis[LE+LF-1-ix];
+593                 }
+594                 return ret;
+595         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend < LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::rev_subreg_digs_pf () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+614                  {
+615                 const pfx_rat_reg_digs_t & cthis{*this};
+616                 reg_N_digs_t<iend-ibegin> ret{};
+617                 for(std::size_t ix{iend} ; ix > ibegin-1 ; --ix) {
+618                         ret[ix-ibegin] = cthis[LF-1-ix];
+619                 }
+620                 return ret;
+621         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend\-ibegin>0)&&(iend <= LE+LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::subreg_digs () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+549                  {
+550                 const pfx_rat_reg_digs_t & cthis{*this};
+551                 reg_N_digs_t<iend-ibegin> ret{};
+552                 for(std::size_t ix{ibegin} ; ix < iend ; ++ix) {
+553                         ret[ix-ibegin] = cthis[ix];
+554                 }
+555                 return ret;
+556         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend <= LE+LF)&&(ibegin < iend)&&(ibegin >= LF))constexpr reg_N_digs_t< iend\-ibegin > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::subreg_digs_pe () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+575                  {
+576                 const pfx_rat_reg_digs_t & cthis{*this};
+577                 reg_N_digs_t<iend-ibegin> ret{};
+578                 for(std::size_t ix{ibegin} ; ix < iend ; ++ix) {
+579                         ret[ix-ibegin] = cthis[ix];
+580                 }
+581                 return ret;
+582         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> template<std::size_t ibegin, std::size_t iend> 
+.br
+requires ((iend < LF)&&(ibegin < iend))constexpr reg_N_digs_t< iend\-ibegin > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::subreg_digs_pf () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+601                  {
+602                 const pfx_rat_reg_digs_t & cthis{*this};
+603                 reg_N_digs_t<iend-ibegin> ret{};
+604                 for(std::size_t ix{ibegin} ; ix < iend ; ++ix) {
+605                         ret[ix-ibegin] = cthis[ix];
+606                 }
+607                 return ret;
+608         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> constexpr std::array< \fBpfx_rat_reg_digs_t\fP, 2 > \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::subst (\fBdig_t\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+TO DO REPASAR '@' = '-' 
+.PP
+.nf
+1476                  {
+1477                 const pfx_rat_reg_digs_t& cthis{*this};
+1478                 std::array<pfx_rat_reg_digs_t,2> result{dig_0(),cthis};
+1479                 pfx_rat_reg_digs_t cb_arg{-arg};
+1480                 if (!(arg\&.is_0())) {
+1481                         for(std::size_t ix{1} ; ix < L ; ++ix) {
+1482                                 cb_arg\&.m_dc[ix] = dig_Bm1();
+1483                         }
+1484                 }
+1485                 dig_t carry{dig_0()};
+1486                 for(std::size_t ix{0} ; ix < LE+LF ; ++ix) {
+1487                         auto    temp_result   =      result[0]\&.m_dc[ix]\&.add(cb_arg[ix]);
+1488                         auto  temp_result_2 =      temp_result[0]\&.add(carry);
+1489                         result[0]\&.m_dc[ix]  = temp_result_2[0];
+1490                         result[1]\&.m_dc[ix]  = (temp_result_2[1]\&.add(temp_result_2[1]))[0];
+1491                         carry = result[1]\&.m_dc[ix];
+1492                 }
+1493                 return result;
+1494         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_0()\fP, \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::dig_Bm1()\fP y \fBNumRepr::nat_rat_fixed_reg_t< UINT_T, B, LE, LF >::pfx_rat_reg_digs_t()\fP\&.
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBSIG_UINT_T\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::sui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+45 {return dig_t::sui_B();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr \fBSIG_UINT_T\fP \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::sui_Bp1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+46 {return dig_t::sui_B()+1;}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr UINT_T \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::ui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+42 {return dig_t::ui_0();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr UINT_T \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::ui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+43 {return dig_t::ui_1();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr UINT_T \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::ui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+44 {return dig_t::ui_Bm1();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr UINT_T \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::ui_max ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+48 {return dig_t::ui_max();}
+.fi
+.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B, std::size_t LE, std::size_t LF> static constexpr UINT_T \fBNumRepr::nat_rat_fixed_reg_t\fP< UINT_T, B, LE, LF >::ui_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+47 {return dig_t::ui_submax();}
+.fi
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

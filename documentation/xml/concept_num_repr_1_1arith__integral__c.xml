@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="concept_num_repr_1_1arith__integral__c" kind="concept">
+    <compoundname>NumRepr::arith_integral_c</compoundname>
+    <includes refid="basic__types_8hpp" local="no">basic_types.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename IntT</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename IntT&gt;
+concept <ref refid="concept_num_repr_1_1arith__integral__c" kindref="compound">NumRepr::arith_integral_c</ref> =  	std::is_arithmetic_v&lt;IntT&gt;	&amp;&amp;
+                            std::is_integral_v&lt;IntT&gt;    </initializer>
+    <briefdescription>
+<para>TYPE_TRAITS AND CONCEPTS. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="84" column="1"/>
+  </compounddef>
+</doxygen>

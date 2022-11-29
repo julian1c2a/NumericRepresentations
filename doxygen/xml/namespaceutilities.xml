@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="namespaceutilities" kind="namespace" language="C++">
+    <compoundname>utilities</compoundname>
+    <innerclass refid="structutilities_1_1for__each__same__type" prot="public">utilities::for_each_same_type</innerclass>
+    <innerclass refid="structutilities_1_1for__each__same__type_3_01_head__t_01_4" prot="public">utilities::for_each_same_type&lt; Head_t &gt;</innerclass>
+    <innerclass refid="structutilities_1_1local__void__t" prot="public">utilities::local_void_t</innerclass>
+    <innerclass refid="structutilities_1_1pack2array" prot="public">utilities::pack2array</innerclass>
+    <innerclass refid="structutilities_1_1pack2tuple" prot="public">utilities::pack2tuple</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="concept_num_repr_1_1type__traits_1_1unsigned__integral__c" kindref="compound">NumRepr::type_traits::unsigned_integral_c</ref></type>
+            <declname>UINT_T</declname>
+            <defname>UINT_T</defname>
+          </param>
+        </templateparamlist>
+        <type>typename std::array&lt; UINT_T, 2 &gt;</type>
+        <definition>using utilities::uintspair = typedef typename std::array&lt;UINT_T,2&gt;</definition>
+        <argsstring></argsstring>
+        <name>uintspair</name>
+        <qualifiedname>utilities::uintspair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="10" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceutilities_1a19b04f837f493034c4612e5bcb58da22" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="concept_num_repr_1_1type__traits_1_1unsigned__integral__c" kindref="compound">NumRepr::type_traits::unsigned_integral_c</ref></type>
+            <declname>UINT_T</declname>
+            <defname>UINT_T</defname>
+          </param>
+          <param>
+            <type>UINT_T</type>
+            <declname>B</declname>
+            <defname>B</defname>
+          </param>
+        </templateparamlist>
+        <type>typename std::array&lt; <ref refid="namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee" kindref="member">uintspair</ref>&lt; UINT_T &gt;, B &gt;</type>
+        <definition>using utilities::uintspairlist = typedef typename std::array&lt;uintspair&lt;UINT_T&gt;,B&gt;</definition>
+        <argsstring></argsstring>
+        <name>uintspairlist</name>
+        <qualifiedname>utilities::uintspairlist</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="12" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceutilities_1ab05788cb7517fec011dd7e174edcd6a9" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="concept_num_repr_1_1type__traits_1_1unsigned__integral__c" kindref="compound">NumRepr::type_traits::unsigned_integral_c</ref></type>
+            <declname>UINT_T</declname>
+            <defname>UINT_T</defname>
+          </param>
+          <param>
+            <type>UINT_T</type>
+            <declname>B</declname>
+            <defname>B</defname>
+          </param>
+        </templateparamlist>
+        <type>typename std::array&lt; <ref refid="namespaceutilities_1a19b04f837f493034c4612e5bcb58da22" kindref="member">uintspairlist</ref>&lt; UINT_T, B &gt;, B &gt;</type>
+        <definition>using utilities::uintspairtbl = typedef typename std::array&lt;uintspairlist&lt;UINT_T,B&gt;,B&gt;</definition>
+        <argsstring></argsstring>
+        <name>uintspairtbl</name>
+        <qualifiedname>utilities::uintspairtbl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="14" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceutilities_1a2ab88d0a656f1609a891e9ea35ce185e" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void utilities::assign_with_order</definition>
+        <argsstring>(auto &amp;dest, const Ts &amp;... args) noexcept</argsstring>
+        <name>assign_with_order</name>
+        <qualifiedname>utilities::assign_with_order</qualifiedname>
+        <param>
+          <type>auto &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const Ts &amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>( all_are_the_same_type&lt;Ts...&gt; &amp;&amp; all_are_more_than_zero&lt;Ts...&gt; )    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="154" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="154" bodyend="161"/>
+        <references refid="structutilities_1_1pack2array_1acb47f65fafd84139fa3eef8d3a6baedd" compoundref="utilities_8hpp" startline="138" endline="146">utilities::pack2array&lt; Ts &gt;::for_each</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="8" column="1"/>
+  </compounddef>
+</doxygen>

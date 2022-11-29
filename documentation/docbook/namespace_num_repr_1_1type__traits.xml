@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_num_repr_1_1type__traits" xml:lang="es">
+<title>Referencia del Namespace NumRepr::type_traits</title>
+<indexterm><primary>NumRepr::type_traits</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_num_repr_1_1type__traits_1_1detail">detail</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1empty__type">empty_type</link></para>
+
+<para>DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES SIN DEFINCION. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt">is_signed_sz_gt</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt">is_unsigned_sz_gt</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">UIntTypeForRadix</link></para>
+
+<para>FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINTTYPEFORRADIX. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01int64__t_00_01_radix_01_4">UIntTypeForRadix&lt; int64_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint16__t_00_01_radix_01_4">UIntTypeForRadix&lt; sint16_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint32__t_00_01_radix_01_4">UIntTypeForRadix&lt; sint32_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint8__t_00_01_radix_01_4">UIntTypeForRadix&lt; sint8_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint128__t_00_01_radix_01_4">UIntTypeForRadix&lt; uint128_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint16__t_00_01_radix_01_4">UIntTypeForRadix&lt; uint16_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint32__t_00_01_radix_01_4">UIntTypeForRadix&lt; uint32_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint64__t_00_01_radix_01_4">UIntTypeForRadix&lt; uint64_t, Radix &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint8__t_00_01_radix_01_4">UIntTypeForRadix&lt; uint8_t, Radix &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Concepts    </title>
+        <itemizedlist>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1allowable__base__type__c">allowable_base_type_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1allowable__unsigned__type__c">allowable_unsigned_type_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">unsigned_integral_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1allowable__signed__type__c">allowable_signed_type_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1signed__integral__c">signed_integral_c</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_concept_num_repr_1_1type__traits_1_1integral__c">integral_c</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>typedefs    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;unsigned_integral_c UInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9">sig_UInt_for_UInt_t</link> = typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t">detail::__sig_UInt_for_UInt_t</link>&lt; UInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;unsigned_integral_c UInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1a9b443da6cd532ae6d0d5482d8f610737">sig_SInt_for_UInt_t</link> = typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t">detail::__sig_SInt_for_UInt_t</link>&lt; UInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c SInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1a78161f55798c2f15126db200161b7cda">sig_UInt_for_SInt_t</link> = typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t">detail::__sig_UInt_for_SInt_t</link>&lt; SInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c SInt_t&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1ad43c24c639cf0910d71316896a9f39c2">sig_SInt_for_SInt_t</link> = typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t">detail::__sig_SInt_for_SInt_t</link>&lt; SInt_t &gt;::type</para>
+</listitem>
+            <listitem><para>template&lt;integral_c Type, Type Radix&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6">UIntTypeForRadix_t</link> = typename <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">UIntTypeForRadix</link>&lt; Type, Radix &gt;::UIntType</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> Radix&gt; </para><para>using <link linkend="_namespace_num_repr_1_1type__traits_1af319111801e531a4ba8fee6e00e5b0f3">TypeFromIntNumber_t</link> = <link linkend="_namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6">UIntTypeForRadix_t</link>&lt; decltype(Radix), Radix &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Funciones    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a4f0f4b9cd9964b406c8299bcbd74f506">maxbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ae6c52c70d58ecbc58b9ce8ddeff3c42e">submaxbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a1a5c6f8a01fa8a777470dd479b3ae87a">minbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ae6d7996db2b7cdee98b72342bc0f976b">subminbase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a3265677e1277882355b102f90ce5fc69">monobase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a1d046b3da7103b9ca5a7dacb674f49f0">nobase</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1addc313fbab4434c736167b0510d95a97">maxdigit</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a7197bd8a89fcc647c18b49f63a1b49f5">submaxdigit</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a8c8928703a18d48613b88d4eee0e967a">digit_0</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ad0267c5c18b47ea7d823e17e735d1e42">digit_1</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ad3c536f8264351b7aa3d9bd8e648d2e2">base_2</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>consteval bool <link linkend="_namespace_num_repr_1_1type__traits_1a7fe2595394f638eb83fc857ba0076f09">base_geqt_2</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>consteval bool <link linkend="_namespace_num_repr_1_1type__traits_1a10f4b5abfc1e0a202341bf4481596e66">base_leqt_max</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>consteval bool <link linkend="_namespace_num_repr_1_1type__traits_1ae7b0da6237614a2d93ed8d40ee5596a5">suitable_base</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1ab7aafe6bcb405d5c200145181755984f">middle_max</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T &gt; </para><para>consteval UINT_T <link linkend="_namespace_num_repr_1_1type__traits_1a9c68ad4f3469998252d88633edf8e908">sqrt_max</link> ()</para>
+
+<para>DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T , typename S &gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1abdd3c894685f7a3c5a75a1e11030be9f">has_the_same_size</link> = (sizeof(T)==sizeof(S))</para>
+</listitem>
+            <listitem><para>template&lt;unsigned_integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750">is_unsigned_sz_gt_v</link> = <link linkend="_struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt">is_unsigned_sz_gt</link>&lt;T,S&gt;::value</para>
+</listitem>
+            <listitem><para>template&lt;unsigned_integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a789b3b413126236b864ee49857240dc9">is_unsigned_sz_geqt_v</link> = (<link linkend="_namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750">is_unsigned_sz_gt_v</link>&lt;T,S&gt; || std::is_same_v&lt;T,S&gt;)</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c T, signed_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a7c29ce492dab6daf5c494a845385d0b2">is_signed_sz_gt_v</link> = <link linkend="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt">is_signed_sz_gt</link>&lt;T,S&gt;::value</para>
+</listitem>
+            <listitem><para>template&lt;signed_integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1a20b53f5a6dfecf867091ecfc36246c2a">is_signed_sz_geqt_v</link></para>
+</listitem>
+            <listitem><para>template&lt;integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1abc08a96a36443cef681ab6550813015e">is_sz_gt_v</link></para>
+</listitem>
+            <listitem><para>template&lt;integral_c T, unsigned_integral_c S&gt; </para><para>constexpr bool <link linkend="_namespace_num_repr_1_1type__traits_1af1b7c5a6fa97bd83aab53761c28f2ece">is_sz_geqt_v</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentación de los &apos;typedefs&apos;</title>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1ad43c24c639cf0910d71316896a9f39c2"/><section>
+    <title>sig_SInt_for_SInt_t</title>
+<indexterm><primary>sig_SInt_for_SInt_t</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>sig_SInt_for_SInt_t</secondary></indexterm>
+<computeroutput>template&lt;signed_integral_c SInt_t&gt; </computeroutput><para><computeroutput>using <link linkend="_namespace_num_repr_1_1type__traits_1ad43c24c639cf0910d71316896a9f39c2">NumRepr::type_traits::sig_SInt_for_SInt_t</link> = typedef typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t">detail::__sig_SInt_for_SInt_t</link>&lt;SInt_t&gt;::type</computeroutput></para>
+<para>METAFUNCIONES PARA DAR CON LOS MAXIMOS NUMEROS QUE CABEN EN UN TIPO Y SIMILARES </para>
+</section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a9b443da6cd532ae6d0d5482d8f610737"/><section>
+    <title>sig_SInt_for_UInt_t</title>
+<indexterm><primary>sig_SInt_for_UInt_t</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>sig_SInt_for_UInt_t</secondary></indexterm>
+<computeroutput>template&lt;unsigned_integral_c UInt_t&gt; </computeroutput><para><computeroutput>using <link linkend="_namespace_num_repr_1_1type__traits_1a9b443da6cd532ae6d0d5482d8f610737">NumRepr::type_traits::sig_SInt_for_UInt_t</link> = typedef typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t">detail::__sig_SInt_for_UInt_t</link>&lt;UInt_t&gt;::type</computeroutput></para></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a78161f55798c2f15126db200161b7cda"/><section>
+    <title>sig_UInt_for_SInt_t</title>
+<indexterm><primary>sig_UInt_for_SInt_t</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>sig_UInt_for_SInt_t</secondary></indexterm>
+<computeroutput>template&lt;signed_integral_c SInt_t&gt; </computeroutput><para><computeroutput>using <link linkend="_namespace_num_repr_1_1type__traits_1a78161f55798c2f15126db200161b7cda">NumRepr::type_traits::sig_UInt_for_SInt_t</link> = typedef typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t">detail::__sig_UInt_for_SInt_t</link>&lt;SInt_t&gt;::type</computeroutput></para>
+<para>METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO ENTERO POR ESPCECIALIZACION EXPLICITA </para>
+</section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9"/><section>
+    <title>sig_UInt_for_UInt_t</title>
+<indexterm><primary>sig_UInt_for_UInt_t</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>sig_UInt_for_UInt_t</secondary></indexterm>
+<computeroutput>template&lt;unsigned_integral_c UInt_t&gt; </computeroutput><para><computeroutput>using <link linkend="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9">NumRepr::type_traits::sig_UInt_for_UInt_t</link> = typedef typename <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t">detail::__sig_UInt_for_UInt_t</link>&lt;UInt_t&gt;::type</computeroutput></para></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1af319111801e531a4ba8fee6e00e5b0f3"/><section>
+    <title>TypeFromIntNumber_t</title>
+<indexterm><primary>TypeFromIntNumber_t</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>TypeFromIntNumber_t</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> Radix&gt; </computeroutput><para><computeroutput>using <link linkend="_namespace_num_repr_1_1type__traits_1af319111801e531a4ba8fee6e00e5b0f3">NumRepr::type_traits::TypeFromIntNumber_t</link> = typedef <link linkend="_namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6">UIntTypeForRadix_t</link>&lt;decltype(Radix),Radix&gt;</computeroutput></para></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6"/><section>
+    <title>UIntTypeForRadix_t</title>
+<indexterm><primary>UIntTypeForRadix_t</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>UIntTypeForRadix_t</secondary></indexterm>
+<computeroutput>template&lt;integral_c Type, Type Radix&gt; </computeroutput><para><computeroutput>using <link linkend="_namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6">NumRepr::type_traits::UIntTypeForRadix_t</link> = typedef typename <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">UIntTypeForRadix</link>&lt;Type,Radix&gt;::UIntType</computeroutput></para>
+<para>DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINTTYPEFORRADIX UNSIGNED POSIBLY RADIX NON VALID </para>
+</section>
+</section>
+<section>
+<title>Documentación de las funciones</title>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1ad3c536f8264351b7aa3d9bd8e648d2e2"/><section>
+    <title>base_2()</title>
+<indexterm><primary>base_2</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>base_2</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::base_2 ( )</computeroutput></para><programlisting linenumbering="unnumbered">00428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(2u);
+00430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a7fe2595394f638eb83fc857ba0076f09"/><section>
+    <title>base_geqt_2()</title>
+<indexterm><primary>base_geqt_2</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>base_geqt_2</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T , UINT_T B&gt; </computeroutput><para><computeroutput>consteval bool NumRepr::type_traits::base_geqt_2 ( )</computeroutput></para><programlisting linenumbering="unnumbered">00433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(B&#32;&gt;=&#32;base_2&lt;UINT_T&gt;());
+00435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a10f4b5abfc1e0a202341bf4481596e66"/><section>
+    <title>base_leqt_max()</title>
+<indexterm><primary>base_leqt_max</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>base_leqt_max</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T , UINT_T B&gt; </computeroutput><para><computeroutput>consteval bool NumRepr::type_traits::base_leqt_max ( )</computeroutput></para><programlisting linenumbering="unnumbered">00438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(B&#32;&lt;=&#32;maxbase&lt;UINT_T&gt;());
+00440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a8c8928703a18d48613b88d4eee0e967a"/><section>
+    <title>digit_0()</title>
+<indexterm><primary>digit_0</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>digit_0</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::digit_0 ( )</computeroutput></para><programlisting linenumbering="unnumbered">00418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(0u);
+00420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1ad0267c5c18b47ea7d823e17e735d1e42"/><section>
+    <title>digit_1()</title>
+<indexterm><primary>digit_1</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>digit_1</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::digit_1 ( )</computeroutput></para><programlisting linenumbering="unnumbered">00423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(1u);
+00425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a4f0f4b9cd9964b406c8299bcbd74f506"/><section>
+    <title>maxbase()</title>
+<indexterm><primary>maxbase</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>maxbase</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::maxbase ( )</computeroutput></para><programlisting linenumbering="unnumbered">00378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(std::numeric_limits&lt;UINT_T&gt;::max()));
+00380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting><para>
+Referenciado por <link linkend="_l00707">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::assign()</link>, <link linkend="_l00931">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::operator Int_Type()</link>, <link linkend="_l00631">NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator Int_Type()</link> y <link linkend="_l00599">NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator=()</link>.</para>
+Gráfico de llamadas a esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespace_num_repr_1_1type__traits_a4f0f4b9cd9964b406c8299bcbd74f506_icgraph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1addc313fbab4434c736167b0510d95a97"/><section>
+    <title>maxdigit()</title>
+<indexterm><primary>maxdigit</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>maxdigit</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::maxdigit ( )</computeroutput></para><programlisting linenumbering="unnumbered">00408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(submaxbase&lt;UINT_T&gt;());
+00410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1ab7aafe6bcb405d5c200145181755984f"/><section>
+    <title>middle_max()</title>
+<indexterm><primary>middle_max</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>middle_max</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::middle_max ( )</computeroutput></para><programlisting linenumbering="unnumbered">00448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis><link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a169329f4fc827539fe28d786056373be">SIG_UINT_T</link>&#32;=&#32;<link linkend="_namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9">sig_UInt_for_UInt_t&lt;UINT_T&gt;</link>;
+00450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a169329f4fc827539fe28d786056373be">SIG_UINT_T</link>&#32;maximo&#32;=&#32;maxbase&lt;UINT_T&gt;();
+00451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a169329f4fc827539fe28d786056373be">SIG_UINT_T</link>&#32;uno{1};
+00452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a169329f4fc827539fe28d786056373be">SIG_UINT_T</link>&#32;dos{2};
+00453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>((maximo+uno)/dos);
+00454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a1a5c6f8a01fa8a777470dd479b3ae87a"/><section>
+    <title>minbase()</title>
+<indexterm><primary>minbase</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>minbase</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::minbase ( )</computeroutput></para><programlisting linenumbering="unnumbered">00388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(2);
+00390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a3265677e1277882355b102f90ce5fc69"/><section>
+    <title>monobase()</title>
+<indexterm><primary>monobase</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>monobase</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::monobase ( )</computeroutput></para><programlisting linenumbering="unnumbered">00398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(1);
+00400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a1d046b3da7103b9ca5a7dacb674f49f0"/><section>
+    <title>nobase()</title>
+<indexterm><primary>nobase</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>nobase</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::nobase ( )</computeroutput></para><programlisting linenumbering="unnumbered">00403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(0);
+00405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a9c68ad4f3469998252d88633edf8e908"/><section>
+    <title>sqrt_max()</title>
+<indexterm><primary>sqrt_max</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>sqrt_max</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::sqrt_max ( )</computeroutput></para><para>
+
+<para>DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS. </para>
+</para>
+
+<para>QUEREMOS FABRICAR LA METAFUNCION TypeFromIntNumber_t&lt;numero_sin_signo&gt; QUE DEVUELVA EL TIPO ENTERO SIN SIGNO MAS PEQUENO PARA EL NUMERO numero_sin_signo </para>
+</section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1ae6c52c70d58ecbc58b9ce8ddeff3c42e"/><section>
+    <title>submaxbase()</title>
+<indexterm><primary>submaxbase</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>submaxbase</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::submaxbase ( )</computeroutput></para><programlisting linenumbering="unnumbered">00383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(maxbase&lt;UINT_T&gt;()-1);
+00385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a7197bd8a89fcc647c18b49f63a1b49f5"/><section>
+    <title>submaxdigit()</title>
+<indexterm><primary>submaxdigit</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>submaxdigit</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::submaxdigit ( )</computeroutput></para><programlisting linenumbering="unnumbered">00413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(submaxbase&lt;UINT_T&gt;()-1);
+00415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1ae6d7996db2b7cdee98b72342bc0f976b"/><section>
+    <title>subminbase()</title>
+<indexterm><primary>subminbase</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>subminbase</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T &gt; </computeroutput><para><computeroutput>consteval UINT_T NumRepr::type_traits::subminbase ( )</computeroutput></para><programlisting linenumbering="unnumbered">00393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis>UINT_T<emphasis role="keyword">&gt;</emphasis>(3);
+00395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1ae7b0da6237614a2d93ed8d40ee5596a5"/><section>
+    <title>suitable_base()</title>
+<indexterm><primary>suitable_base</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>suitable_base</secondary></indexterm>
+<computeroutput>template&lt;typename UINT_T , UINT_T B&gt; </computeroutput><para><computeroutput>consteval bool NumRepr::type_traits::suitable_base ( )</computeroutput></para><programlisting linenumbering="unnumbered">00443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;<emphasis role="comment">//&#32;requires&#32;on&#32;B</emphasis>
+00444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(base_geqt_2&lt;UINT_T,B&gt;()&#32;&amp;&amp;&#32;base_leqt_max&lt;UINT_T,B&gt;());
+00445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Documentación de las variables</title>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1abdd3c894685f7a3c5a75a1e11030be9f"/><section>
+    <title>has_the_same_size</title>
+<indexterm><primary>has_the_same_size</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>has_the_same_size</secondary></indexterm>
+<computeroutput>template&lt;typename T , typename S &gt; </computeroutput><para><computeroutput>constexpr bool NumRepr::type_traits::has_the_same_size = (sizeof(T)==sizeof(S))<computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a20b53f5a6dfecf867091ecfc36246c2a"/><section>
+    <title>is_signed_sz_geqt_v</title>
+<indexterm><primary>is_signed_sz_geqt_v</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>is_signed_sz_geqt_v</secondary></indexterm>
+<computeroutput>template&lt;signed_integral_c T, unsigned_integral_c S&gt; </computeroutput><para><computeroutput>constexpr bool NumRepr::type_traits::is_signed_sz_geqt_v<computeroutput>[constexpr]</computeroutput></computeroutput></para><emphasis role="strong">Valor inicial:</emphasis><programlisting linenumbering="unnumbered">=&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_signed_sz_gt_v&lt;T,S&gt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::is_same_v&lt;T,S&gt;
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a7c29ce492dab6daf5c494a845385d0b2"/><section>
+    <title>is_signed_sz_gt_v</title>
+<indexterm><primary>is_signed_sz_gt_v</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>is_signed_sz_gt_v</secondary></indexterm>
+<computeroutput>template&lt;signed_integral_c T, signed_integral_c S&gt; </computeroutput><para><computeroutput>constexpr bool NumRepr::type_traits::is_signed_sz_gt_v = <link linkend="_struct_num_repr_1_1type__traits_1_1is__signed__sz__gt">is_signed_sz_gt</link>&lt;T,S&gt;::value<computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1af1b7c5a6fa97bd83aab53761c28f2ece"/><section>
+    <title>is_sz_geqt_v</title>
+<indexterm><primary>is_sz_geqt_v</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>is_sz_geqt_v</secondary></indexterm>
+<computeroutput>template&lt;integral_c T, unsigned_integral_c S&gt; </computeroutput><para><computeroutput>constexpr bool NumRepr::type_traits::is_sz_geqt_v<computeroutput>[constexpr]</computeroutput></computeroutput></para><emphasis role="strong">Valor inicial:</emphasis><programlisting linenumbering="unnumbered">=&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_signed_sz_geqt_v&lt;T,S&gt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_unsigned_sz_geqt_v&lt;T,S&gt;
+</programlisting>
+<para>METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO NATURAL POR ESPECIALIZACION EXPLICITA </para>
+</section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1abc08a96a36443cef681ab6550813015e"/><section>
+    <title>is_sz_gt_v</title>
+<indexterm><primary>is_sz_gt_v</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>is_sz_gt_v</secondary></indexterm>
+<computeroutput>template&lt;integral_c T, unsigned_integral_c S&gt; </computeroutput><para><computeroutput>constexpr bool NumRepr::type_traits::is_sz_gt_v<computeroutput>[constexpr]</computeroutput></computeroutput></para><emphasis role="strong">Valor inicial:</emphasis><programlisting linenumbering="unnumbered">=&#32;&#32;&#32;is_signed_sz_gt_v&lt;T,S&gt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_unsigned_sz_gt_v&lt;T,S&gt;
+</programlisting></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a789b3b413126236b864ee49857240dc9"/><section>
+    <title>is_unsigned_sz_geqt_v</title>
+<indexterm><primary>is_unsigned_sz_geqt_v</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>is_unsigned_sz_geqt_v</secondary></indexterm>
+<computeroutput>template&lt;unsigned_integral_c T, unsigned_integral_c S&gt; </computeroutput><para><computeroutput>constexpr bool NumRepr::type_traits::is_unsigned_sz_geqt_v = (<link linkend="_namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750">is_unsigned_sz_gt_v</link>&lt;T,S&gt; || std::is_same_v&lt;T,S&gt;)<computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750"/><section>
+    <title>is_unsigned_sz_gt_v</title>
+<indexterm><primary>is_unsigned_sz_gt_v</primary><secondary>NumRepr::type_traits</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits</primary><secondary>is_unsigned_sz_gt_v</secondary></indexterm>
+<computeroutput>template&lt;unsigned_integral_c T, unsigned_integral_c S&gt; </computeroutput><para><computeroutput>constexpr bool NumRepr::type_traits::is_unsigned_sz_gt_v = <link linkend="_struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt">is_unsigned_sz_gt</link>&lt;T,S&gt;::value<computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+</section>
+</section>

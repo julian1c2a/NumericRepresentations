@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</title>
+<indexterm><primary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</primary></indexterm>
+<para>
+
+<para>FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINTTYPEFORRADIX. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;basic_types.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Tipos públicos    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a0133ef04751a731ab4670e75dd89c439">actUIntType</link> = std::conditional_t&lt; <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685">bool_value</link>, <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>, <link linkend="_struct_num_repr_1_1type__traits_1_1empty__type">empty_type</link> &gt;</para>
+</listitem>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a4df3de7682e8c3978af4c9eb4c3c8af3">UIntType</link> = std::conditional_t&lt; <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685">bool_value</link>, typename <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">UIntTypeForRadix</link>&lt; <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>, <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6">uint_value</link> &gt;::UIntType, <link linkend="_struct_num_repr_1_1type__traits_1_1empty__type">empty_type</link> &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Atributos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static constexpr <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a2900a303e782d0e1fdb0312710dc9519">uint_value_max</link> = <link linkend="_namespace_num_repr_1_1type__traits_1a4f0f4b9cd9964b406c8299bcbd74f506">maxbase</link>&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>&gt;()</para>
+</listitem>
+            <listitem><para>static constexpr <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6">uint_value</link> = static_cast&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>&gt;(Radix)</para>
+</listitem>
+            <listitem><para>static constexpr bool <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685">bool_value</link></para>
+</listitem>
+            <listitem><para>static constexpr <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a0133ef04751a731ab4670e75dd89c439">actUIntType</link> <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1afa308db4427307f9dee31f208b37de01">act_uint_value</link> = ( <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685">bool_value</link> ? <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6">uint_value</link> : 0 )</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename Type, Type Radix&gt;<?linebreak?>struct NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</title></simplesect>
+
+<para>FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINTTYPEFORRADIX. </para>
+</section>
+<section>
+<title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a0133ef04751a731ab4670e75dd89c439"/><section>
+    <title>actUIntType</title>
+<indexterm><primary>actUIntType</primary><secondary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</primary><secondary>actUIntType</secondary></indexterm>
+<computeroutput>template&lt;typename Type , Type Radix&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">NumRepr::type_traits::UIntTypeForRadix</link>&lt; Type, Radix &gt;::actUIntType =  std::conditional_t&lt; <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685">bool_value</link>, <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>, <link linkend="_struct_num_repr_1_1type__traits_1_1empty__type">empty_type</link> &gt;</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a4df3de7682e8c3978af4c9eb4c3c8af3"/><section>
+    <title>UIntType</title>
+<indexterm><primary>UIntType</primary><secondary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</primary><secondary>UIntType</secondary></indexterm>
+<computeroutput>template&lt;typename Type , Type Radix&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">NumRepr::type_traits::UIntTypeForRadix</link>&lt; Type, Radix &gt;::UIntType =  std::conditional_t&lt; <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685">bool_value</link>, typename <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">UIntTypeForRadix</link>&lt; <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>, <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6">uint_value</link> &gt;::UIntType, <link linkend="_struct_num_repr_1_1type__traits_1_1empty__type">empty_type</link> &gt;</computeroutput></para></section>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1afa308db4427307f9dee31f208b37de01"/><section>
+    <title>act_uint_value</title>
+<indexterm><primary>act_uint_value</primary><secondary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</primary><secondary>act_uint_value</secondary></indexterm>
+<computeroutput>template&lt;typename Type , Type Radix&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a0133ef04751a731ab4670e75dd89c439">actUIntType</link> <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">NumRepr::type_traits::UIntTypeForRadix</link>&lt; Type, Radix &gt;::act_uint_value = ( <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685">bool_value</link> ? <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6">uint_value</link> : 0 )<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1ae0c3d0a4fefd19d6c1245f0e45a9c685"/><section>
+    <title>bool_value</title>
+<indexterm><primary>bool_value</primary><secondary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</primary><secondary>bool_value</secondary></indexterm>
+<computeroutput>template&lt;typename Type , Type Radix&gt; </computeroutput><para><computeroutput>constexpr bool <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">NumRepr::type_traits::UIntTypeForRadix</link>&lt; Type, Radix &gt;::bool_value<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><emphasis role="strong">Valor inicial:</emphasis><programlisting linenumbering="unnumbered">=&#32;&#32;&#32;(Radix&#32;&lt;=&#32;<link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a2900a303e782d0e1fdb0312710dc9519">uint_value_max</link>)&#32;&amp;&amp;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(Radix&#32;&gt;&#32;1)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&amp;&amp;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::is_integral_v&lt;Type&gt;
+</programlisting></section>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a37e1c7967966d864c29e49b7aa902cf6"/><section>
+    <title>uint_value</title>
+<indexterm><primary>uint_value</primary><secondary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</primary><secondary>uint_value</secondary></indexterm>
+<computeroutput>template&lt;typename Type , Type Radix&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">NumRepr::type_traits::UIntTypeForRadix</link>&lt; Type, Radix &gt;::uint_value = static_cast&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>&gt;(Radix)<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_1a2900a303e782d0e1fdb0312710dc9519"/><section>
+    <title>uint_value_max</title>
+<indexterm><primary>uint_value_max</primary><secondary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::UIntTypeForRadix&lt; Type, Radix &gt;</primary><secondary>uint_value_max</secondary></indexterm>
+<computeroutput>template&lt;typename Type , Type Radix&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> <link linkend="_struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix">NumRepr::type_traits::UIntTypeForRadix</link>&lt; Type, Radix &gt;::uint_value_max = <link linkend="_namespace_num_repr_1_1type__traits_1a4f0f4b9cd9964b406c8299bcbd74f506">maxbase</link>&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>&gt;()<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_basic__types_8hpp">basic_types.hpp</link></section>
+</section>

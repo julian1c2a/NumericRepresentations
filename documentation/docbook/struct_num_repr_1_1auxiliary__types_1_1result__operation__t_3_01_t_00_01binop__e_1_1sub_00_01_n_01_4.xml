@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</title>
+<indexterm><primary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;auxiliary_types.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Atributos públicos    </title>
+        <itemizedlist>
+            <listitem><para>std::array&lt; T, N &gt; <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4_1a841c6c5da2db6f0e8ed3a66aaaa7e4d5">result_content_low</link></para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4_1aea36d0c92c9837277c5c2260ca47f716">borrow</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4_1a0de35f418398d60ca957f1e8b2bc3bf7">good_result</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename T, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt;<?linebreak?>requires (N &gt; 0)<?linebreak?>struct NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</title></simplesect>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4_1aea36d0c92c9837277c5c2260ca47f716"/><section>
+    <title>borrow</title>
+<indexterm><primary>borrow</primary><secondary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</primary><secondary>borrow</secondary></indexterm>
+<computeroutput>template&lt;typename T , <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t">NumRepr::auxiliary_types::result_operation_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a8a68dc3e925eacf92633be230722a140">binop_e::sub</link>, N &gt;::borrow</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4_1a0de35f418398d60ca957f1e8b2bc3bf7"/><section>
+    <title>good_result</title>
+<indexterm><primary>good_result</primary><secondary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</primary><secondary>good_result</secondary></indexterm>
+<computeroutput>template&lt;typename T , <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t">NumRepr::auxiliary_types::result_operation_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a8a68dc3e925eacf92633be230722a140">binop_e::sub</link>, N &gt;::good_result</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4_1a841c6c5da2db6f0e8ed3a66aaaa7e4d5"/><section>
+    <title>result_content_low</title>
+<indexterm><primary>result_content_low</primary><secondary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::sub, N &gt;</primary><secondary>result_content_low</secondary></indexterm>
+<computeroutput>template&lt;typename T , <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>std::array&lt;T,N&gt; <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t">NumRepr::auxiliary_types::result_operation_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a8a68dc3e925eacf92633be230722a140">binop_e::sub</link>, N &gt;::result_content_low</computeroutput></para></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_auxiliary__types_8hpp">auxiliary_types.hpp</link></section>
+</section>

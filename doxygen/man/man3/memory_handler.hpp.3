@@ -1,0 +1,176 @@
+.TH "memory_handler.hpp" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+memory_handler.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'dig_t\&.hpp'\fP
+.br
+
+.SS "Clases"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdetails::cp_new< aT, T, num_vars, B >\fP"
+.br
+.ti -1c
+.RI "struct \fBdetails::cp_new< 2 >\fP"
+.br
+.ti -1c
+.RI "struct \fBdetails::cp_new< 1u >\fP"
+.br
+.ti -1c
+.RI "struct \fBdetails::cp_new< 0u >\fP"
+.br
+.ti -1c
+.RI "struct \fBdetails::cp_delete< aT, T, B >\fP"
+.br
+.ti -1c
+.RI "struct \fBdetails::cp_delete< 2u >\fP"
+.br
+.ti -1c
+.RI "struct \fBdetails::cp_delete< 1u >\fP"
+.br
+.ti -1c
+.RI "struct \fBdetails::cp_delete< 0u >\fP"
+.br
+.ti -1c
+.RI "class \fBfunc_refvar_t< aT, T >\fP"
+.br
+.ti -1c
+.RI "class \fBfunc_refvar_t< INT **, INT *, INT >\fP"
+.br
+.ti -1c
+.RI "class \fBfunc_refvar_t< UINT **, UINT *, UINT >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBdetails\fP"
+.br
+.in -1c
+.SS "typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBpar_dir_t\fP = std::pair< \fBuchint\fP, \fBuchint\fP >"
+.br
+.ti -1c
+.RI "using \fBfunc_refn2digs_prim_t\fP = std::map< std::string, \fBpar_dir_t\fP >"
+.br
+.ti -1c
+.RI "using \fBfunc_refdig_prim_t\fP = std::map< std::string, \fBpar_dir_t\fP >"
+.br
+.ti -1c
+.RI "using \fBINT\fP = long long int"
+.br
+.ti -1c
+.RI "using \fBUINT\fP = unsigned long long int"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars> 
+.br
+requires (num_vars>0)aT ** \fBconstruye_matriz_de_variables\fP (aT **matd)"
+.br
+.ti -1c
+.RI "template<typename aT , template< \fBuchint\fP > class T> void \fBdestruye_matriz_de_variables\fP (aT **matd)"
+.br
+.ti -1c
+.RI "template<\fBusint\fP num_vars> 
+.br
+requires (num_vars>0)\fBINT\fP ** \fBconstruye_matriz_de_variables< INT, INT >\fP (\fBINT\fP **matd)"
+.br
+.ti -1c
+.RI "template<> void \fBdestruye_matriz_de_variables< INT, INT >\fP (\fBINT\fP **matd)"
+.br
+.ti -1c
+.RI "template<\fBusint\fP num_vars> \fBUINT\fP ** \fBconstruye_matriz_de_variables< UINT, UINT >\fP (\fBUINT\fP **matd)"
+.br
+.ti -1c
+.RI "template<> void \fBdestruye_matriz_de_variables< UINT, UINT >\fP (\fBUINT\fP **matd)"
+.br
+.in -1c
+.SH "Documentación de los 'typedefs'"
+.PP 
+.SS "using \fBfunc_refdig_prim_t\fP =  std::map< std::string , \fBpar_dir_t\fP >"
+
+.SS "using \fBfunc_refn2digs_prim_t\fP =  std::map< std::string , \fBpar_dir_t\fP >"
+
+.SS "using \fBINT\fP =  long long int"
+
+.SS "using \fBpar_dir_t\fP =  std::pair< \fBuchint\fP , \fBuchint\fP >"
+
+.SS "using \fBUINT\fP =  unsigned long long int"
+
+.SH "Documentación de las funciones"
+.PP 
+.SS "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars> 
+.br
+requires (num_vars>0)aT ** construye_matriz_de_variables (aT ** matd)"
+
+.PP
+.nf
+136                                               {
+137                 details::cp_new<aT,T,num_vars,std::numeric_limits<uchint>::max()>(matd);
+138                 return matd;
+139 }
+.fi
+.SS "template<\fBusint\fP num_vars> 
+.br
+requires (num_vars>0)\fBINT\fP ** \fBconstruye_matriz_de_variables\fP< \fBINT\fP, \fBINT\fP > (\fBINT\fP ** matd)"
+
+.PP
+.nf
+151 {
+152         matd = new (INT*);
+153         *matd = new INT[num_vars];
+154         return matd;
+155 }
+.fi
+.SS "template<\fBusint\fP num_vars> \fBUINT\fP ** \fBconstruye_matriz_de_variables\fP< \fBUINT\fP, \fBUINT\fP > (\fBUINT\fP ** matd)"
+
+.PP
+.nf
+168 {
+169         matd = new (UINT*);
+170         *matd = new UINT[num_vars];
+171         return matd;
+172 }
+.fi
+.SS "template<typename aT , template< \fBuchint\fP > class T> void destruye_matriz_de_variables (aT ** matd)"
+
+.PP
+.nf
+142                                              {
+143                 details::cp_delete<aT,T,std::numeric_limits<uchint>::max()>(matd);
+144 }
+.fi
+.SS "template<> void \fBdestruye_matriz_de_variables\fP< \fBINT\fP, \fBINT\fP > (\fBINT\fP ** matd)"
+
+.PP
+.nf
+159 {
+160         delete *matd;
+161         delete [] matd;
+162 }
+.fi
+.SS "template<> void \fBdestruye_matriz_de_variables\fP< \fBUINT\fP, \fBUINT\fP > (\fBUINT\fP ** matd)"
+
+.PP
+.nf
+175 {
+176         delete *matd;
+177         delete [] matd;
+178 }
+.fi
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

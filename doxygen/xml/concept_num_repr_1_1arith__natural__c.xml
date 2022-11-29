@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="concept_num_repr_1_1arith__natural__c" kind="concept">
+    <compoundname>NumRepr::arith_natural_c</compoundname>
+    <includes refid="basic__types_8hpp" local="no">basic_types.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename NatIntT</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename NatIntT&gt;
+concept <ref refid="concept_num_repr_1_1arith__natural__c" kindref="compound">NumRepr::arith_natural_c</ref> =    std::is_arithmetic_v&lt;NatIntT&gt;   &amp;&amp;
+						    std::is_unsigned_v&lt;NatIntT&gt;     &amp;&amp;
+							std::is_integral_v&lt;NatIntT&gt;    </initializer>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="88" column="1"/>
+  </compounddef>
+</doxygen>

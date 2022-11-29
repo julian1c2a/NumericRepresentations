@@ -1,0 +1,2922 @@
+.TH "int_num_t< UINT_T, B >" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+int_num_t< UINT_T, B >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <int_num_t\&.hpp>\fP
+.PP
+Herencias base_num_t< UINT_T, B >\&.
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBsize_t\fP \fBsize\fP () const"
+.br
+.ti -1c
+.RI "void \fBresize\fP (\fBsize_t\fP arg)"
+.br
+.ti -1c
+.RI "void \fBpush_front\fP (\fBdig_t\fP< B > parg)"
+.br
+.ti -1c
+.RI "void \fBpush_back\fP (\fBdig_t\fP< B > arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator&=\fP (const \fBnum_int\fP &arg)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP ()"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (const num_int &a)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (const string &a)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (dig a0)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (dig a1, dig a0)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (dig a2, dig a1, dig a0)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (const std::vector< dig > &arg)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (const std::list< dig > &arg)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (sign_e s, dig a0)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (sign_e s, dig a1, dig a0)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (sign_e s, dig a2, dig a1, dig a0)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (sign_e s, const std::vector< dig > &arg, \fBforma_t\fP argforma=\fBnoraw\fP)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (sign_e s, const std::list< dig > &arg)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (spardigs a)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (pardigs a)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (sign_e s, pardigs a)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (char ch)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP (\fBuchint\fP a)"
+.br
+.ti -1c
+.RI "template<typename Int_T > \fBnum_int\fP (Int_T a)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator=\fP (const \fBnum_int\fP &a)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator=\fP (const num_uint< B > &a)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator=\fP (const pardigs_t< B > &a)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator=\fP (const spardigs_t< B > &a)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator=\fP (const \fBdig_t\fP< B > &a)"
+.br
+.ti -1c
+.RI "template<typename Int_T > const \fBnum_int\fP & \fBoperator=\fP (Int_T a)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator=\fP (const std::vector< dig > &arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator=\fP (const std::list< dig > &arg)"
+.br
+.ti -1c
+.RI "\fBusint\fP \fBceros_a_la_izqda\fP () const"
+.br
+.ti -1c
+.RI "\fBusint\fP \fBunos_a_la_izqda\fP () const"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBceros_a_la_drcha\fP () const"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBunos_a_la_drcha\fP () const"
+.br
+.ti -1c
+.RI "bool \fBfilled_of_all_digits_are_Bm1\fP () const"
+.br
+.ti -1c
+.RI "bool \fBfilled_of_all_digits_are_0\fP () const"
+.br
+.ti -1c
+.RI "\fBusint\fP \fBdigs_no_significativos\fP () const"
+.br
+.ti -1c
+.RI "\fBusint\fP \fBdigs_fracc_no_significativos\fP () const"
+.br
+.ti -1c
+.RI "\fBusint\fP \fBBm1_a_la_izqda\fP () const"
+.br
+.ti -1c
+.RI "\fBusint\fP \fBBm1_a_la_drcha\fP () const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator+\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator\-\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator*\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator/\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator%\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator*\fP (pardigs a) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator+\fP (dig arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator\-\fP (dig arg) const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator*\fP (dig a) const"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator+=\fP (const \fBnum_int\fP &arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator\-=\fP (const \fBnum_int\fP &arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator*=\fP (const \fBnum_int\fP &arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator/=\fP (const \fBnum_int\fP &arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator%=\fP (const \fBnum_int\fP &arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator*=\fP (pardigs a)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator+=\fP (dig arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator\-=\fP (dig arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator*=\fP (dig arg)"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator\-\fP () const"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBoperator!\fP () const"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBmC_B\fP ()"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBmC_Bm1\fP ()"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBabs\fP () const"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBabsp\fP ()"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBdivB\fP () const"
+.br
+.ti -1c
+.RI "dig \fBremB\fP () const"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBdivBp\fP ()"
+.br
+.ti -1c
+.RI "dig \fBremBp\fP ()"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBdiv2\fP () const"
+.br
+.ti -1c
+.RI "dig \fBrem2\fP () const"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBdiv2p\fP ()"
+.br
+.ti -1c
+.RI "dig \fBrem2p\fP ()"
+.br
+.ti -1c
+.RI "dig \fBremBm1\fP () const"
+.br
+.ti -1c
+.RI "pair< \fBnum_int\fP, \fBnum_int\fP > \fBEuclidDiv\fP (const \fBnum_int\fP &arg) const"
+.br
+.ti -1c
+.RI "pair< \fBnum_int\fP, const \fBnum_int\fP & > \fBEuclidDivP\fP (const \fBnum_int\fP &arg)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP \fBoperator++\fP (int)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBoperator\-\-\fP ()"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP \fBoperator\-\-\fP (int)"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBreduce\fP ()"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBreduce\fP () const"
+.br
+.ti -1c
+.RI "const \fBnum_int\fP & \fBreduce_fracc\fP ()"
+.br
+.ti -1c
+.RI "\fBnum_int\fP \fBreduce_fracc\fP () const"
+.br
+.in -1c
+.SS "Amigas"
+
+.in +1c
+.ti -1c
+.RI "template<const \fBuchint\fP Base> istream & \fBoperator>>\fP (istream &is, \fBnum_int\fP< Base > &arg)"
+.br
+.ti -1c
+.RI "template<const \fBuchint\fP Base> ostream & \fBoperator<<\fP (ostream &os, \fBnum_int\fP< Base > arg)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B>
+.br
+struct int_num_t< UINT_T, B >"
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::abs () const\fC [inline]\fP"
+
+.PP
+.nf
+1601                             {
+1602             const num_int cthis(*this);
+1603             cthis\&.reduce();
+1604             if (signo==vminus)
+1605                 cthis\&.mC_B();
+1606             cthis\&.reduce();
+1607             return cthis;
+1608         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::operator%()\fP y \fBint_num_t< UINT_T, B >::operator/()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::absp ()\fC [inline]\fP"
+
+.PP
+.nf
+1610                                {
+1611             num_int & cthis = (*this);
+1612             cthis\&.reduce();
+1613             if (signo==vminus) cthis\&.mC_B();
+1614             cthis\&.reduce();
+1615             return cthis;
+1616         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::operator*=()\fP y \fBint_num_t< UINT_T, B >::operator/=()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBusint\fP \fBint_num_t\fP< UINT_T, B >::Bm1_a_la_drcha () const\fC [inline]\fP"
+
+.PP
+.nf
+627                                               {
+628             num_int & cthis = *this;
+629             // digitos no significativos para números negativos fraccionarios
+630                         const size_t fin = cthis\&.size();
+631             bool Exit = false;
+632             usint sz=0;
+633             usint k=0;
+634             for ( ; (k < fin) and (!Exit) ; ++k) {
+635                 if (cthis[k]==(B-1)) ++sz;
+636                 else Exit=true;
+637             }
+638             return sz;
+639         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBusint\fP \fBint_num_t\fP< UINT_T, B >::Bm1_a_la_izqda () const\fC [inline]\fP"
+
+.PP
+.nf
+613                                       {
+614             num_int & cthis = *this;
+615             //digitos no significativos para números negativos
+616             bool Exit = false;
+617             usint sz=0;
+618             usint k=(cthis\&.size()-1);
+619             for ( ; (k > 0) and (!Exit) ; --k) {
+620                 if (cthis[k]==(B-1)) ++sz;
+621                 else Exit=true;
+622             }
+623             if ((k==0) and (cthis[0]==(B-1)) and (!Exit)) ++sz;
+624             return sz;
+625         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBsize_t\fP \fBint_num_t\fP< UINT_T, B >::ceros_a_la_drcha () const\fC [inline]\fP"
+
+.PP
+.nf
+545                                  {
+546         //const num_uint & cthis = (*this);
+547         bool Exit = false;
+548         size_t sz=0;
+549         const size_t fin=this->size();
+550         const size_t finl = fin-1;
+551         if (this->operator[](finl)==0) {
+552                 for ( int i=finl ; (i >=0) and (!Exit) ; --i) {
+553                         if (this->operator[](i)==0) ++sz;
+554                         else Exit=true;
+555                 }
+556         }
+557         return sz;
+558 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::size()\fP\&.
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::digs_fracc_no_significativos()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBusint\fP \fBint_num_t\fP< UINT_T, B >::ceros_a_la_izqda () const\fC [inline]\fP"
+
+.PP
+.nf
+511                                 {
+512         const num_int & cthis = (*this);
+513         //digitos no significativos para números positivos
+514         bool Exit = false;
+515         int sz=0;
+516         const size_t fin= this->size();
+517         for ( int i=fin-1 ; (i >= 0) and (!Exit) ; --i) {
+518                 bool char_es_0 = (cthis[i]==0);
+519                 if (char_es_0){
+520                         ++sz;
+521                 }
+522                 else Exit=true;
+523         }
+524         return sz;
+525 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::size()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBusint\fP \fBint_num_t\fP< UINT_T, B >::digs_fracc_no_significativos () const\fC [inline]\fP"
+
+.PP
+.nf
+607                                             {
+608         //const num_uint & cthis = (*this);
+609         //digitos no significativos
+610         return this->ceros_a_la_drcha();
+611 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::ceros_a_la_drcha()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBusint\fP \fBint_num_t\fP< UINT_T, B >::digs_no_significativos () const\fC [inline]\fP"
+
+.PP
+.nf
+592                                       {
+593         const num_int & cthis = (*this);
+594         //digitos no significativos
+595         usint retorno;
+596         //if ((size()<1) and (signo==vminus)) return 0;
+597         if (signo==vplus) {
+598                 retorno = cthis\&.ceros_a_la_izqda();
+599                 return retorno;
+600         }
+601         else {
+602                 retorno = cthis\&.unos_a_la_izqda();
+603                 return retorno;
+604         }
+605 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::operator!=()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::div2 () const\fC [inline]\fP"
+
+.PP
+.nf
+1660                               {
+1661             num_int & cthis = *this;
+1662             const sign_e sgn = signo;
+1663             num_int dvndo_int(cthis\&.abs());
+1664             dvndo_int\&.reduce();
+1665             num_int rem(dvndo_int);
+1666             const dig dos = 2;
+1667 
+1668             num_int dvsor_int(dos);
+1669 
+1670             const usint cssor = ((B==2)?(1):(0));
+1671 
+1672             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+1673             if (B==2) dvsor_int[0]=1;// division por una potencia de B
+1674 
+1675             dvndo_int\&.reduce();
+1676             dvndo_fra\&.reduce();
+1677 
+1678             const usint longtndo  = dvndo_int\&.size();
+1679             const usint longtndo2 = dvndo_fra\&.size();
+1680             const usint longtsor  = 1;
+1681             const usint longsor   = 0;
+1682 
+1683             // hemos dividido por los ceros del divisor (por una potencia de B)
+1684             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+1685             // cocientes enteros\&.
+1686             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+1687             // ahora hacemos lo mismo con el cociente de las potencias de B del
+1688             // dividendo obteniendo dvndo_fra
+1689 
+1690             /* *
+1691                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+1692 
+1693                 rem = rem\&.cthis\&.insert(0,cssor,0);
+1694                 rem += dvndo_fra;
+1695             * */
+1696             if (sgn==vminus) dvndo_int\&.mC_B();
+1697             // rehacer el resto tomando en cuenta los ceros quitados
+1698             // acomodar el formato al signo de la operacion
+1699             // determinar el signo de la operacion
+1700             return dvndo_int;
+1701         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::div2p ()\fC [inline]\fP"
+
+.PP
+.nf
+1725                                 {
+1726             num_int & cthis = *this;
+1727             sign_e sgn = signo;
+1728             cthis\&.absp();
+1729             cthis\&.reduce();
+1730             num_int & dvndo_int = (*this);
+1731             num_int rem(dvndo_int);
+1732             const dig dos = 2;
+1733 
+1734             num_int dvsor_int(dos);
+1735 
+1736             const usint cssor = ((B==2)?(1):(0));
+1737 
+1738             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+1739             if (B==2) dvsor_int[0]=1;// division por una potencia de B
+1740 
+1741             dvndo_int\&.reduce();
+1742             dvndo_fra\&.reduce();
+1743 
+1744             const usint longtndo  = dvndo_int\&.size();
+1745             const usint longtndo2 = dvndo_fra\&.size();
+1746             const usint longtsor  = 1;
+1747             const usint longsor   = 0;
+1748 
+1749             // hemos dividido por los ceros del divisor (por una potencia de B)
+1750             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+1751             // cocientes enteros\&.
+1752             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+1753             // ahora hacemos lo mismo con el cociente de las potencias de B del
+1754             // dividendo obteniendo dvndo_fra
+1755 
+1756             /* *
+1757                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+1758 
+1759                 rem = rem\&.lst_digs\&.insert(0,cssor,0);
+1760                 rem += dvndo_fra;
+1761             * */
+1762             if (sgn==vminus) dvndo_int\&.mC_B();
+1763             // rehacer el resto tomando en cuenta los ceros quitados
+1764             // acomodar el formato al signo de la operacion
+1765             // determinar el signo de la operacion
+1766             return dvndo_int;
+1767         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::divB () const\fC [inline]\fP"
+
+.PP
+.nf
+1624                               {
+1625             num_int cpy(*this);
+1626             cpy\&.reduce();
+1627             sign_e sgn = cpy\&.signo;
+1628             cpy\&.absp();
+1629             cpy\&.cthis\&.erase(0,1);
+1630             if (sgn==vminus) cpy\&.mC_B();
+1631             cpy\&.reduce();
+1632             return cpy;
+1633         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::divBp ()\fC [inline]\fP"
+
+.PP
+.nf
+1642                                 {
+1643             num_int & cpy = (*this);
+1644             cpy\&.reduce();
+1645             sign_e sgn = cpy\&.signo;
+1646             cpy\&.absp();
+1647             cpy\&.cthis\&.erase(0,1);
+1648             if (sgn==vminus) cpy\&.mC_B();
+1649             cpy\&.reduce();
+1650             return cpy;
+1651         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> pair< \fBnum_int\fP, \fBnum_int\fP > \fBint_num_t\fP< UINT_T, B >::EuclidDiv (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+2079                                                                         {
+2080             num_int & cthis = *this;
+2081             const sign_e sgn_ndo = signo;
+2082             const sign_e sgn_sor = arg\&.signo;
+2083             num_int dvndo_int = cthis;
+2084             dvndo_int\&.absp();
+2085             dvndo_int\&.reduce();
+2086             num_int dvsor_int = arg\&.abs();
+2087             dvsor_int\&.reduce();
+2088 
+2089             num_int rem(dvndo_int);
+2090 
+2091             const usint cssor = dvsor_int\&.ceros_a_la_drcha(); //¿?
+2092 
+2093             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+2094             dvsor_int\&.erase(0,cssor);// division por una potencia de B
+2095 
+2096             dvsor_int\&.reduce();
+2097             dvndo_int\&.reduce();
+2098 
+2099             dvndo_fra\&.reduce();
+2100 
+2101             const usint longtndo  = dvndo_int\&.size();
+2102             const usint longtndo2 = dvndo_fra\&.size();
+2103             const usint longtsor  = dvsor_int\&.size();
+2104             const usint longsor   = longtsor;
+2105 
+2106             // hemos dividido por los ceros del divisor (por una potencia de B)
+2107             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+2108             // cocientes enteros\&.
+2109             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+2110             // ahora hacemos lo mismo con el cociente de las potencias de B del
+2111             // dividendo obteniendo dvndo_fra
+2112 
+2113             /* *
+2114                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+2115              * */
+2116             rem = rem\&.insert(0,cssor,0);
+2117             rem += dvndo_fra;
+2118 
+2119             if (sgn_ndo != sgn_sor) dvndo_int\&.mC_B();
+2120             // rehacer el resto tomando en cuenta los ceros quitados
+2121             // acomodar el formato al signo de la operacion
+2122             // determinar el signo de la operacion
+2123             return make_pair(rem,dvndo_int);
+2124         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> pair< \fBnum_int\fP, const \fBnum_int\fP & > \fBint_num_t\fP< UINT_T, B >::EuclidDivP (const \fBnum_int\fP & arg)\fC [inline]\fP"
+
+.PP
+.nf
+2126                                                                            {
+2127             num_int & cthis = *this;
+2128             const sign_e sgn_ndo = signo;
+2129             const sign_e sgn_sor = arg\&.signo;
+2130             cthis\&.absp();
+2131             cthis\&.reduce();
+2132             num_int & dvndo_int = cthis;
+2133             num_int dvsor_int = arg\&.abs();
+2134             dvsor_int\&.reduce();
+2135 
+2136             num_int rem(dvndo_int);
+2137 
+2138             const usint cssor = dvsor_int\&.ceros_a_la_drcha(); //¿?
+2139 
+2140             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+2141             dvsor_int\&.erase(0,cssor);// division por una potencia de B
+2142 
+2143             dvsor_int\&.reduce();
+2144             dvndo_int\&.reduce();
+2145 
+2146             dvndo_fra\&.reduce();
+2147 
+2148             const usint longtndo  = dvndo_int\&.size();
+2149             const usint longtndo2 = dvndo_fra\&.size();
+2150             const usint longtsor  = dvsor_int\&.size();
+2151             const usint longsor   = longtsor;
+2152 
+2153             // hemos dividido por los ceros del divisor (por una potencia de B)
+2154             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+2155             // cocientes enteros\&.
+2156             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+2157             // ahora hacemos lo mismo con el cociente de las potencias de B del
+2158             // dividendo obteniendo dvndo_fra
+2159 
+2160             /* *
+2161                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+2162              * */
+2163             rem = rem\&.insert(0,cssor,0);
+2164             rem += dvndo_fra;
+2165 
+2166             if (sgn_ndo != sgn_sor) dvndo_int\&.mC_B();
+2167             // rehacer el resto tomando en cuenta los ceros quitados
+2168             // acomodar el formato al signo de la operacion
+2169             // determinar el signo de la operacion
+2170             return make_pair(rem,dvndo_int);
+2171         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >::filled_of_all_digits_are_0 () const\fC [inline]\fP"
+
+.PP
+.nf
+584                                         {
+585         const num_int & cthis = (*this);
+586         const int longitud = cthis\&.size();
+587         for(int i=0;i<longitud;++i)
+588                 if (cthis[i]!=dig(0)) return false;
+589         return true;
+590 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >::filled_of_all_digits_are_Bm1 () const\fC [inline]\fP"
+
+.PP
+.nf
+576                                           {
+577         const num_int & cthis = (*this);
+578         const int longitud = cthis\&.size();
+579         for(int i=0;i<longitud;i++)
+580                 if (cthis[i]!=dig(B-1)) return false;
+581         return true;
+582 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::mC_B ()\fC [inline]\fP"
+
+.PP
+.nf
+1555                                {
+1556             num_int & cthis = *this;
+1557             cthis\&.reduce();
+1558             const striterator fin = cthis\&.end();
+1559             striterator  it = cthis\&.begin();
+1560             for ( ; it != fin ; ++it )
+1561                 (*it) = (!(*it));
+1562             it = cthis\&.begin();
+1563             aux = (*it)+1;
+1564             cthis[0]=aux\&.g_first();
+1565             ++it;
+1566             if ((aux\&.g_second())!= spardigs()) {
+1567                 for ( ; it != fin ; ++it ) {
+1568                     aux\&.p_first(aux\&.g_second());
+1569                     aux\&.p_second(0);
+1570                     if (aux == spardigs()) break;
+1571                     aux += spardigs(*it);
+1572                 }
+1573                 push_back(aux\&.g_first());
+1574                 push_back(aux\&.g_second());
+1575             }
+1576             signo = ((signo==vminus)?vplus:vminus);
+1577             aux = spardigs();
+1578             cthis\&.reduce();
+1579             return cthis;
+1580         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::push_back()\fP\&.
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::operator*=()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::mC_Bm1 ()\fC [inline]\fP"
+
+.PP
+.nf
+1582                                  {
+1583             num_int & cthis = *this;
+1584             num_int & cpy = (*this);
+1585             const striterator fin = cpy\&.end();
+1586             striterator  it = cpy\&.begin();
+1587             for ( ; it != fin ; ++it )
+1588                 (*it) = (!(*it));
+1589             cpy\&.signo = ((cpy\&.signo==vminus)?vplus:vminus);
+1590             cpy\&.aux = spardigs();
+1591             cpy\&.reduce();
+1592             return cpy;
+1593         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int ()\fC [inline]\fP"
+
+.PP
+.nf
+133                   {
+134             num_int & cthis = *this;
+135             signo=vplus;
+136                         aux = spardigs();
+137             cthis\&.num_basic::clear();
+138             cthis\&.num_basic::push_back(dig_t<B>(0));
+139         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::abs()\fP, \fBint_num_t< UINT_T, B >::absp()\fP, \fBint_num_t< UINT_T, B >::Bm1_a_la_drcha()\fP, \fBint_num_t< UINT_T, B >::Bm1_a_la_izqda()\fP, \fBint_num_t< UINT_T, B >::ceros_a_la_izqda()\fP, \fBint_num_t< UINT_T, B >::digs_no_significativos()\fP, \fBint_num_t< UINT_T, B >::div2()\fP, \fBint_num_t< UINT_T, B >::div2p()\fP, \fBint_num_t< UINT_T, B >::divB()\fP, \fBint_num_t< UINT_T, B >::divBp()\fP, \fBint_num_t< UINT_T, B >::EuclidDiv()\fP, \fBint_num_t< UINT_T, B >::EuclidDivP()\fP, \fBint_num_t< UINT_T, B >::filled_of_all_digits_are_0()\fP, \fBint_num_t< UINT_T, B >::filled_of_all_digits_are_Bm1()\fP, \fBint_num_t< UINT_T, B >::mC_B()\fP, \fBint_num_t< UINT_T, B >::mC_Bm1()\fP, \fBint_num_t< UINT_T, B >::num_int()\fP, \fBint_num_t< UINT_T, B >::operator!()\fP, \fBint_num_t< UINT_T, B >::operator!=()\fP, \fBint_num_t< UINT_T, B >::operator%()\fP, \fBint_num_t< UINT_T, B >::operator%=()\fP, \fBint_num_t< UINT_T, B >::operator*()\fP, \fBint_num_t< UINT_T, B >::operator*=()\fP, \fBint_num_t< UINT_T, B >::operator+()\fP, \fBint_num_t< UINT_T, B >::operator++()\fP, \fBint_num_t< UINT_T, B >::operator+=()\fP, \fBint_num_t< UINT_T, B >::operator\-()\fP, \fBint_num_t< UINT_T, B >::operator\-\-()\fP, \fBint_num_t< UINT_T, B >::operator\-=()\fP, \fBint_num_t< UINT_T, B >::operator/()\fP, \fBint_num_t< UINT_T, B >::operator/=()\fP, \fBint_num_t< UINT_T, B >::operator<()\fP, \fBint_num_t< UINT_T, B >::operator<=()\fP, \fBint_num_t< UINT_T, B >::operator=()\fP, \fBint_num_t< UINT_T, B >::operator==()\fP, \fBint_num_t< UINT_T, B >::operator>()\fP, \fBint_num_t< UINT_T, B >::operator>=()\fP, \fBint_num_t< UINT_T, B >::reduce()\fP, \fBint_num_t< UINT_T, B >::reduce_fracc()\fP, \fBint_num_t< UINT_T, B >::rem2()\fP, \fBint_num_t< UINT_T, B >::rem2p()\fP, \fBint_num_t< UINT_T, B >::remB()\fP, \fBint_num_t< UINT_T, B >::remBm1()\fP, \fBint_num_t< UINT_T, B >::remBp()\fP y \fBint_num_t< UINT_T, B >::unos_a_la_izqda()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (char ch)\fC [inline]\fP"
+
+.PP
+.nf
+316                          {
+317             num_int & cthis = *this;
+318             cthis\&.clear();
+319             signo=vplus;
+320             cthis\&.resize(1);
+321             cthis[0] = Char2Dig<B>(ch);
+322         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (const num_int & a)\fC [inline]\fP"
+
+.PP
+.nf
+141                                    {
+142             num_int & cthis = *this;
+143             signo=a\&.signo;
+144             aux=a\&.aux;
+145             cthis\&.clear();
+146             cthis\&.resize(a\&.size());
+147             for (usint k=0; k < a\&.size() ; ++k)
+148                 cthis[k]=a[k];
+149             cthis\&.reduce();
+150         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (const std::list< dig > & arg)\fC [inline]\fP"
+
+.PP
+.nf
+217                                           {
+218             num_int & cthis = *this;
+219             signo=vplus;
+220             cthis\&.clear();
+221                         typename list<dig>::iterator it=arg\&.begin();
+222                         typename list<dig>::const_iterator itf=arg\&.end();
+223             for ( ; it != itf ; ++it )
+224                 cthis\&.push_back(*it);
+225             cthis\&.reduce();
+226         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (const std::vector< dig > & arg)\fC [inline]\fP"
+
+.PP
+.nf
+207                                             {
+208             num_int & cthis = *this;
+209             signo=vplus;
+210             cthis\&.clear();
+211             cthis\&.resize( arg\&.size() );
+212             for ( uint ix=0; ix < arg\&.size() ; ++ix )
+213                 cthis[ix]=arg[ix];
+214             cthis\&.reduce();
+215         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (const string & a)\fC [inline]\fP"
+
+.PP
+.nf
+152                                    {
+153             num_int & cthis = *this;
+154             signo=vplus;
+155             cthis\&.clear();
+156             cthis\&.resize(a\&.size());
+157                         unsigned int l=0;
+158             bool Exit = false;
+159             usint k = 0;
+160             while ((a[k]<'0')||(a[k] > (char(B-1)+'0'))) ++k;
+161             if (k >= a\&.size()) { num_int & cthis = *this;
+162                 cthis\&.resize(0);
+163                 Exit=true;
+164             }
+165             if (!Exit) {
+166                 for ( ; (k < a\&.size())&&(!Exit) ; ++k) {
+167                     if ((a[k]>='0')&&(a[k] <= (char(B-1)+'0')))
+168                                         {
+169                         cthis[l]=Char2Dig<B>(a[k]);
+170                                                 ++l;
+171                                         }
+172                     else Exit=true;
+173                 }
+174             }
+175                         cthis\&.reduce();
+176         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (dig a0)\fC [inline]\fP"
+
+.PP
+.nf
+178                         {
+179             num_int & cthis = *this;
+180             signo=vplus;
+181             cthis\&.clear();
+182             cthis\&.resize(1);
+183             cthis[0]=a0;
+184         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (dig a1, dig a0)\fC [inline]\fP"
+
+.PP
+.nf
+186                                 {
+187             num_int & cthis = *this;
+188             signo=vplus;
+189             cthis\&.clear();
+190             cthis\&.resize(2);
+191             cthis[0]=a0;
+192             cthis[1]=a1;
+193             cthis\&.reduce();
+194         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (dig a2, dig a1, dig a0)\fC [inline]\fP"
+
+.PP
+.nf
+196                                       {
+197             num_int & cthis = *this;
+198             signo=vplus;
+199             cthis\&.clear();
+200             cthis\&.resize(3);
+201             cthis[0]=a0;
+202             cthis[1]=a1;
+203             cthis[2]=a2;
+204             cthis\&.reduce();
+205         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> template<typename Int_T > \fBint_num_t\fP< UINT_T, B >::num_int (Int_T a)\fC [inline]\fP"
+
+.PP
+.nf
+333                          {
+334             num_int & cthis = *this;
+335             cthis\&.clear();
+336                         const ullint longitud = num_digs_max_base_B_en_Int_T<Int_T,B>();
+337             cthis\&.resize(longitud);
+338                         uint indice = 0;
+339             if (a>=0) {
+340                                 for(int i=0;i<longitud;i++) cthis[i]=dig(0);
+341                 signo=vplus;
+342                 ullint rem=0,coc=a;
+343                 while (coc >= B) {
+344                     rem = coc%B;
+345                     cthis[indice] = UInt2Dig<B>(rem);
+346                                         indice++;
+347                     coc = coc/B;
+348                 }
+349                 rem = coc%B;
+350                 cthis[indice] = UInt2Dig<B>(rem);
+351                                 indice++;
+352             }
+353             else {
+354                                 for(int i=0;i<longitud;i++) cthis[i]=dig(B-1);
+355                 signo=vminus;
+356                 long long int rem=0,coc=-a;
+357                 while (coc >= B) {
+358                     rem = coc%B;
+359                     cthis[indice] = !(Int2Dig<B>(rem));
+360                                         indice++;
+361                     coc = coc/B;
+362                 }
+363                 cthis[indice] = !(Int2Dig<B>(coc));
+364                                 ++cthis;
+365                                 //cthis\&.signo = vplus;
+366                                 //cthis\&.reduce();
+367                                 cthis\&.signo = vminus;
+368             }
+369                         cthis\&.reduce();
+370         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (pardigs a)\fC [inline]\fP"
+
+.PP
+.nf
+296                            {
+297             num_int & cthis = *this;
+298             signo=vplus;
+299             cthis\&.clear();
+300             cthis\&.resize(2);
+301             cthis[0] = a\&.g_first();
+302             cthis[1] = a\&.g_second();
+303             cthis\&.reduce();
+304         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (sign_e s, const std::list< dig > & arg)\fC [inline]\fP"
+
+.PP
+.nf
+274                                                    {
+275             num_int & cthis = *this;
+276             signo=s;
+277             cthis\&.clear();
+278             cthis\&.resize( arg\&.size() );
+279                         typename std::list<dig>::const_iterator it=arg\&.begin();
+280                         typename std::list<dig>::const_iterator it_end=arg\&.end();
+281             for ( ; it != it_end ; ++it )
+282                 cthis\&.push_front(*it);
+283             cthis\&.reduce();
+284         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (sign_e s, const std::vector< dig > & arg, \fBforma_t\fP argforma = \fC\fBnoraw\fP\fP)\fC [inline]\fP"
+
+.PP
+.nf
+263                                                                             {
+264             num_int & cthis = *this;
+265             signo=s;
+266             cthis\&.clear();
+267             cthis\&.resize( arg\&.size() );
+268             for ( uint ix=0; ix < arg\&.size() ; ++ix ){
+269                 cthis[ix]=arg[ix];
+270                         }
+271                         if (argforma==noraw) cthis\&.reduce();
+272         }
+.fi
+.PP
+Hace referencia a \fBnoraw\fP y \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (sign_e s, dig a0)\fC [inline]\fP"
+
+.PP
+.nf
+228                                  {
+229             num_int & cthis = *this;
+230             signo=s;
+231             aux = spardigs(vplus,0,a0);
+232             cthis\&.clear();
+233             cthis\&.resize(1);
+234             cthis[0]=aux\&.g_uds();
+235                         aux = spardigs(vplus,0,0);
+236             cthis\&.reduce();
+237         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (sign_e s, dig a1, dig a0)\fC [inline]\fP"
+
+.PP
+.nf
+239                                         {
+240             num_int & cthis = *this;
+241             signo=s;
+242             aux = spardigs(vplus,0,0);
+243             cthis\&.clear();
+244             cthis\&.resize(2);
+245             cthis[0]=a0;
+246             cthis[1]=a1;
+247             cthis\&.reduce();
+248         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (sign_e s, dig a2, dig a1, dig a0)\fC [inline]\fP"
+
+.PP
+.nf
+251                 {
+252             num_int & cthis = *this;
+253             signo=s;
+254             aux = spardigs(vplus,0,0);
+255             cthis\&.clear();
+256             cthis\&.resize(3);
+257             cthis[0]=a0;
+258             cthis[1]=a1;
+259             cthis[2]=a2;
+260             cthis\&.reduce();
+261         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (sign_e s, pardigs a)\fC [inline]\fP"
+
+.PP
+.nf
+306                                               {
+307             num_int & cthis = *this;
+308             cthis\&.signo=s;
+309             cthis\&.clear();
+310             cthis\&.resize(2);
+311                         cthis[0] = a\&.g_first();
+312                         cthis[1] = a\&.g_second();
+313             cthis\&.reduce();
+314         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (spardigs a)\fC [inline]\fP"
+
+.PP
+.nf
+286                             {
+287             num_int & cthis = *this;
+288             signo=a\&.g_sign();
+289             cthis\&.clear();
+290             cthis\&.resize(2);
+291             cthis[0] = a\&.g_first();
+292             cthis[1] = a\&.g_second();
+293             cthis\&.reduce();
+294         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBint_num_t\fP< UINT_T, B >::num_int (\fBuchint\fP a)\fC [inline]\fP"
+
+.PP
+.nf
+324                           {
+325             num_int & cthis = *this;
+326             signo=vplus;
+327             cthis\&.clear();
+328             cthis\&.resize(1);
+329             cthis[0] = UInt2Dig<B>(a);
+330         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator! () const\fC [inline]\fP"
+
+.PP
+.nf
+1534                                    {
+1535             num_int & cthis = *this;
+1536             num_int cpy(*this);
+1537             const striterator fin = cpy\&.end();
+1538             striterator  it = cpy\&.begin();
+1539             for ( ; it != fin ; ++it )
+1540                 (*it) = (!(*it));
+1541             cpy\&.signo = ((cpy\&.signo==vminus)?vplus:vminus);
+1542             cpy\&.aux = spardigs();
+1543             cpy\&.reduce();
+1544             return cpy;
+1545         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >\fB::operator!\fP= (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+663                                                      {
+664             const num_int & cthis = *this;
+665             const slint thisnsz = digs_no_significativos();
+666             const slint thisvsz = (cthis\&.size())-thisnsz;
+667             const slint argnsz = arg\&.digs_no_significativos();
+668             const slint argvsz = arg\&.size()-argnsz;
+669             if ((thisvsz > argvsz)||(thisvsz < argvsz)||(signo!=arg\&.signo)) return true;
+670             else {
+671                 for (slint k=(thisvsz-1);k>0;--k)
+672                     if (arg[k]!=cthis[k])
+673                         return true;
+674                 if (arg[0]!= cthis[0])
+675                     return true;
+676                 else return false;
+677             }
+678         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::digs_no_significativos()\fP y \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator% (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+978                                                        {
+979             num_int & cthis = *this;
+980             num_int dvndo_int(this->abs());
+981             dvndo_int\&.reduce();
+982             num_int rem(dvndo_int);
+983 
+984             num_int dvsor_int(arg\&.abs());
+985             dvsor_int\&.reduce();
+986 
+987             const usint cssor = dvsor_int\&.ceros_a_la_drcha(); //¿?
+988 
+989             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+990             dvsor_int\&.lst_digs\&.erase(0,cssor);// division por una potencia de B
+991 
+992 
+993             dvsor_int\&.reduce();
+994             dvndo_int\&.reduce();
+995 
+996             dvndo_fra\&.reduce();
+997 
+998             const usint longtndo  = dvndo_int\&.size();
+999             const usint longtndo2 = dvndo_fra\&.size();
+1000             const usint longtsor  = dvsor_int\&.size();
+1001             const usint longsor   = longtsor;
+1002 
+1003             // hemos dividido por los ceros del divisor (por una potencia de B)
+1004             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+1005             // cocientes enteros\&.
+1006             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+1007             // ahora hacemos lo mismo con el cociente de las potencias de B del
+1008             // dividendo obteniendo dvndo_fra
+1009 
+1010             /* *
+1011                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+1012             * */
+1013             rem = rem\&.lst_digs\&.insert(0,cssor,0);
+1014             rem += dvndo_fra;
+1015             // rehacer el resto tomando en cuenta los ceros quitados
+1016             // acomodar el formato al signo de la operacion
+1017             // determinar el signo de la operacion
+1018             return rem;
+1019         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::abs()\fP y \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator%= (const \fBnum_int\fP & arg)\fC [inline]\fP"
+
+.PP
+.nf
+1343                                                           {
+1344             num_int & cthis = *this;
+1345             (*this)\&.absp();
+1346             num_int & rem = *this;
+1347             rem\&.reduce();
+1348             num_int dvndo_int(rem);
+1349 
+1350             num_int dvsor_int(arg\&.abs());
+1351             dvsor_int\&.reduce();
+1352 
+1353             const usint cssor = dvsor_int\&.ceros_a_la_drcha(); //¿?
+1354 
+1355             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+1356             dvsor_int\&.lst_digs\&.erase(0,cssor);// division por una potencia de B
+1357 
+1358 
+1359             dvsor_int\&.reduce();
+1360             dvndo_int\&.reduce();
+1361 
+1362             dvndo_fra\&.reduce();
+1363 
+1364             const usint longtndo  = dvndo_int\&.size();
+1365             const usint longtndo2 = dvndo_fra\&.size();
+1366             const usint longtsor  = dvsor_int\&.size();
+1367             const usint longsor   = longtsor;
+1368 
+1369             // hemos dividido por los ceros del divisor (por una potencia de B)
+1370             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+1371             // cocientes enteros\&.
+1372             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+1373             // ahora hacemos lo mismo con el cociente de las potencias de B del
+1374             // dividendo obteniendo dvndo_fra
+1375 
+1376             /* *
+1377                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+1378             * */
+1379 
+1380             rem = rem\&.lst_digs\&.insert(0,cssor,0);
+1381             rem += dvndo_fra;
+1382 
+1383             return rem;
+1384         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator&= (const \fBnum_int\fP & arg)\fC [inline]\fP"
+
+.PP
+.nf
+98                                                                  {
+99                 num_basic & cthis = (*this);
+100                 cthis+=arg;
+101                 return (*this);
+102         }
+.fi
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator* (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+912                                                        {
+913             num_int & cthis = *this;
+914             num_int sumatemp;
+915             num_int multtemp;
+916             num_int m1(cthis\&.abs());
+917             m1\&.reduce();
+918             num_int m2(arg\&.abs());
+919             m2\&.reduce();
+920             multtemp = cthis*m2[0];
+921             sumatemp = multtemp;
+922             for (usint j = 1 ; j < m2\&.size() ; ++j) {
+923                 multtemp = cthis*m2[j]; // num_int * dig_t
+924                 multtemp\&.insert(0,j,0);
+925                 sumatemp += multtemp;
+926             }
+927             if (signo!=arg\&.signo) sumatemp\&.mC_B();
+928             return sumatemp;
+929         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator* (dig a) const\fC [inline]\fP"
+
+.PP
+.nf
+1161                                          {
+1162             num_int & cthis = *this;
+1163             pardigs temp;
+1164             dig         carry=0;
+1165             num_int ret(*this);
+1166             if (ret\&.signo==vminus) ret\&.mC_B();
+1167             for ( usint k=0 ; k < (cthis\&.size()) ; ++k ) {
+1168                 temp = cthis[k]*a;
+1169                 temp += carry;
+1170                 ret[k]= temp\&.g_first();
+1171                 carry=temp\&.g_second();
+1172             }
+1173             if (carry != 0)
+1174                 ret\&.insert((cthis\&.size())-1,1,carry);
+1175             if (ret\&.signo==vminus) ret\&.mC_B();
+1176             return ret;
+1177         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator* (pardigs a) const\fC [inline]\fP"
+
+.PP
+.nf
+1035                                              {
+1036             num_int & cthis = *this;
+1037             pardigs             temp;
+1038             dig                         carry=0;
+1039             num_int             ret(*this);
+1040             for ( usint k=0 ; k < (cthis\&.size()-1) ; ++k ) {
+1041                 temp = cthis[k]*(a\&.g_first());
+1042                 temp += carry;
+1043                 ret[k]= temp\&.g_first();
+1044                 carry=temp\&.g_second();
+1045             }
+1046             if (carry != 0)
+1047                 ret\&.insert((cthis\&.size())-1,1,carry);
+1048             ret\&.reduce();
+1049             carry = 0;
+1050             for ( usint k=0 ; k < ((cthis\&.size())-1) ; ++k ) {
+1051                 temp = cthis[k]*(a\&.g_second());
+1052                 temp += carry;
+1053                 ret\&.substr(k+1,ret\&.size()-1)+= temp\&.g_first();//¿?
+1054                 carry=temp\&.g_second();
+1055             }
+1056             if (carry != 0)
+1057                 ret\&.insert((cthis\&.size())-1,1,carry);
+1058             ret\&.reduce();
+1059 
+1060             if (signo==vminus) ret\&.mC_B();
+1061 
+1062             return ret;
+1063         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator*= (const \fBnum_int\fP & arg)\fC [inline]\fP"
+
+.PP
+.nf
+1275                                                           {
+1276             num_int & cthis = *this;
+1277             num_int multtemp;
+1278             const sign_e sgn_ndo = signo;
+1279             this->absp();
+1280             this->reduce();
+1281             num_int & m1 = (*this);
+1282             num_int m2(arg\&.abs());
+1283             m2\&.reduce();
+1284 
+1285             cthis *= m2[0];
+1286             for (usint j = 1 ; j < m2\&.size() ; ++j) {
+1287                 multtemp = m1*m2[j];
+1288                 multtemp\&.insert(0,j,0);
+1289                 cthis += multtemp;
+1290             }
+1291             if (sgn_ndo!=arg\&.signo) m1\&.mC_B();
+1292             return (*this);
+1293         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::absp()\fP, \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::reduce()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator*= (dig arg)\fC [inline]\fP"
+
+.PP
+.nf
+1475                                               {
+1476             num_int & cthis = *this;
+1477             pardigs temp;
+1478             dig         carry=0;
+1479             sign_e  sgn = this->signo;
+1480             this->absp();
+1481             this->reduce();
+1482             for ( usint k=0 ; k < (cthis\&.size()) ; ++k ) {
+1483                 temp = cthis[k]*arg;
+1484                 temp += carry;
+1485                 cthis[k]= temp\&.g_first();
+1486                 carry=temp\&.g_second();
+1487             }
+1488             if (carry != 0)
+1489                 insert((cthis\&.size())-1,1,carry);
+1490             if (sgn==vminus)
+1491                 this->mC_B();
+1492             return (*this);
+1493         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::absp()\fP, \fBint_num_t< UINT_T, B >::mC_B()\fP, \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::reduce()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator*= (pardigs a)\fC [inline]\fP"
+
+.PP
+.nf
+1394                                                 {
+1395             num_int & cthis = *this;
+1396             pardigs             temp;
+1397             dig                         carry = 0;
+1398             num_int &           ret = (*this);
+1399             for ( usint k=0 ; k < cthis\&.size() ; ++k ) {
+1400                 temp = cthis[k]*(a\&.g_first());
+1401                 temp += carry;
+1402                 ret[k]= temp\&.g_first();
+1403                 carry=temp\&.g_second();
+1404             }
+1405             if (carry != 0)
+1406                 ret\&.insert((cthis\&.size())-1,1,carry);
+1407             ret\&.reduce();
+1408             carry = 0;
+1409             for ( usint k=0 ; k < ((cthis\&.size())-1) ; ++k ) {
+1410                 temp = cthis[k]*(a\&.g_second());
+1411                 temp += carry;
+1412                 ret\&.substr(k+1,ret\&.size()-1)+= temp\&.g_first();//¿?
+1413                 carry=temp\&.g_second();
+1414             }
+1415             if (carry != 0)
+1416                 ret\&.insert((cthis\&.size())-1,1,carry);
+1417             ret\&.reduce();
+1418 
+1419             if (signo==vminus) ret\&.mC_B();
+1420 
+1421             return ret;
+1422         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator+ (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+799                                                        {
+800             const num_int & cthis = *this;
+801             num_int ret(cthis);
+802             ret\&.reduce();
+803             num_int cpy(arg);
+804             cpy\&.reduce();
+805             spardigs_t<B> tempt();
+806             spardigs_t<B> tempa();
+807             const num_int* po =0;
+808             usint sza = arg\&.size();
+809             usint szt = ret\&.size();
+810             p_usint  pszmin=0;
+811             p_usint  pszmax=0;
+812             if (sza<=szt) {
+813                 pszmin = &sza;
+814                 pszmax = &szt;
+815                 po     = &ret;
+816             } else {
+817                 pszmin = &szt;
+818                 pszmax = &sza;
+819                 po     = &cpy;
+820             }
+821 
+822             usint & szmin = *pszmin;
+823             usint & szmax = *pszmax;
+824             const num_int & obj = *po;
+825             usint k = 0;
+826             ret\&.aux = spardigs();
+827             for ( ; k<szmin ; ++k) {
+828                 tempt\&.p_uds(ret[k]);
+829                 tempa\&.p_uds(arg[k]);
+830                 tempt += tempa;
+831                 tempt += aux;
+832                 ret[k]=tempt\&.g_uds();
+833                 ret\&.aux=spardigs(tempt\&.g_sign(),
+834                                  ((tempt\&.g_sign()==vplus)?(0):(B-1)),
+835                                  tempt\&.g_decs()
+836                                 );
+837             }
+838             for ( ; k<szmax ; ++k) {
+839                 tempt\&.p_first(obj[k]);
+840                 tempt += aux;
+841                 ret[k]=tempt\&.g_first();
+842                 ret\&.aux=spardigs(tempt\&.g_sign(),
+843                                  ((tempt\&.g_sign()==vplus)?(0):(B-1)),
+844                                  tempt\&.g_decs()
+845                                 );
+846             }
+847 
+848             ret\&.push_back(ret\&.aux\&.g_uds());
+849             ret\&.push_back(ret\&.aux\&.g_decs());
+850             ret\&.signo=ret\&.aux\&.g_sign();
+851             ret\&.aux =  spardigs();
+852             return ret;
+853         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator+ (dig arg) const\fC [inline]\fP"
+
+.PP
+.nf
+1068                                            {
+1069             num_int & cthis = *this;
+1070             num_int ret(*this);
+1071             ret\&.reduce();
+1072             spardigs tempt();
+1073             spardigs tempa();
+1074             const num_int* po =0;
+1075             const usint sza = 1;
+1076             usint szt = ret\&.lst_arg\&.size();
+1077             p_usint  pszmin=0;
+1078             p_usint  pszmax=0;
+1079             if (sza<=szt) {
+1080                 pszmin = &sza;
+1081                 pszmax = &szt;
+1082                 po     = &ret;
+1083             } else {
+1084                 pszmin = &szt;
+1085                 pszmax = &sza;
+1086                 po     = &arg;
+1087             }
+1088 
+1089             usint & szmin = *pszmin;
+1090             usint & szmax = *pszmax;
+1091             const num_int & obj = *po;
+1092             usint k = 0;
+1093             ret\&.aux = spardigs();
+1094             tempt\&.p_first(ret[0]);
+1095             tempa\&.p_first(arg);
+1096 
+1097             for ( k=1 ; k<szmin ; ++k) {
+1098                 tempt\&.p_first(ret[k]);
+1099                 tempt += tempa;
+1100                 tempt += aux;
+1101                 ret[k]=tempt\&.g_first();
+1102                 ret\&.aux=spardigs(tempt\&.g_sign(),
+1103                                  ((tempt\&.g_sign()==vplus)?(0):(B-1)),
+1104                                  tempt\&.g_second()
+1105                                 );
+1106             }
+1107             for ( ; k<szmax ; ++k) {
+1108                 dig D = ret[k];
+1109                 tempt\&.p_first(D);
+1110                 tempt += aux;
+1111                 ret[k]=tempt\&.g_first();
+1112                 ret\&.aux=spardigs(tempt\&.g_sign(),
+1113                                  ((tempt\&.g_sign()==vplus)?(0):(B-1)),
+1114                                  tempt\&.g_second()
+1115                                 );
+1116             }
+1117 
+1118             ret\&.cthis\&.push_back(ret\&.aux\&.g_first());
+1119             ret\&.cthis\&.push_back(ret\&.aux\&.g_second());
+1120             ret\&.signo=ret\&.aux\&.g_sign();
+1121             ret\&.aux =  spardigs();
+1122             return ret;
+1123         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator++ ()\fC [inline]\fP"
+
+.PP
+.nf
+2196                                        {
+2197             num_int & cthis = *this;
+2198                         const size_t long_inic = cthis\&.size();
+2199                         if (long_inic>1){
+2200                                 cthis\&.reduce();}
+2201                         if (cthis==num_int(vminus,dig(B-1),dig(B-1))){
+2202                                 cthis\&.clear();
+2203                                 cthis\&.resize(1);
+2204                                 cthis[0]=dig(0);
+2205                                 signo = vplus;
+2206                                 cthis\&.reduce();
+2207                                 return cthis;}
+2208                         bool es_negativo = (signo==vminus);
+2209                         signo = vplus;
+2210                         aux=spardigs(vplus,0,1);
+2211                         aux += spardigs(vplus,0,cthis[0]);
+2212                         cthis[0] = aux\&.g_uds();
+2213                         aux\&.p_uds(aux\&.g_decs());
+2214                         aux\&.p_decs(0);
+2215                         bool seguir = (aux\&.g_uds()!=dig(0));
+2216                         ullint i=1;
+2217                         while( seguir and (i<long_inic)) {
+2218                                 aux += spardigs(vplus,0,cthis[i]);
+2219                                 cthis[i]=(aux\&.g_uds());
+2220                                 aux\&.p_uds(aux\&.g_decs());
+2221                                 seguir = (aux\&.g_uds()!=dig(0));
+2222                                 aux\&.p_decs(0);
+2223                                 ++i;
+2224                         }
+2225                         if( seguir and (i >= long_inic) ) {
+2226                                 cthis\&.resize(long_inic+1);
+2227                                 cthis[i]=aux\&.g_uds();
+2228                         }
+2229                         ((seguir)and(es_negativo)?(signo=vplus):(signo=vminus));//
+2230                         signo=(es_negativo?vminus:vplus);
+2231                         cthis\&.reduce();
+2232                         return cthis;
+2233         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator++ (int)\fC [inline]\fP"
+
+.PP
+.nf
+2235                                         {
+2236                         num_int cpThis(*this);
+2237                         num_int & cthis = (*this);
+2238                         const size_t long_inic = cthis\&.size();
+2239                         if (cthis==num_int(vminus,dig(B-1),dig(B-1))){
+2240                                 cthis\&.clear();
+2241                                 cthis\&.resize(1);
+2242                                 cthis[0]=dig(0);
+2243                                 signo = vplus;
+2244                                 cthis\&.reduce();
+2245                                 return cpThis;
+2246                         }
+2247                         bool es_negativo = (signo==vminus);
+2248                         signo = vplus;
+2249                         aux=spardigs(vplus,0,1);
+2250                         aux += spardigs(vplus,0,cthis[0]);
+2251                         cthis[0] = aux\&.g_uds();
+2252                         aux\&.p_uds(aux\&.g_decs());
+2253                         aux\&.p_decs(0);
+2254                         bool seguir = (aux\&.g_uds()!=dig(0));
+2255                         ullint i=1;
+2256                         while( seguir and (i<long_inic)) {
+2257                                 aux += spardigs(vplus,0,cthis[i]);
+2258                                 cthis[i]=(aux\&.g_uds());
+2259                                 aux\&.p_uds(aux\&.g_decs());
+2260                                 seguir = (aux\&.g_uds()!=dig(0));
+2261                                 aux\&.p_decs(0);
+2262                                 ++i;
+2263                         }
+2264                         if( seguir and (i >= long_inic) ) {
+2265                                 cthis\&.resize(long_inic+1);
+2266                                 cthis[i]=aux\&.g_uds();
+2267                         }
+2268                         ((seguir)and(es_negativo)?(signo=vplus):(signo=vminus));//
+2269                         signo=(es_negativo?vminus:vplus);
+2270                         cthis\&.reduce();
+2271             return cpThis;
+2272         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator+= (const \fBnum_int\fP & arg)\fC [inline]\fP"
+
+.PP
+.nf
+1189                                                           {
+1190             num_int & cthis = *this;
+1191             this->reduce();
+1192             num_int carg(arg\&.reduce());
+1193             spardigs tempt;
+1194             spardigs tempa;
+1195             const num_int*       po    =0;
+1196             usint sza = carg\&.size();
+1197             usint szt = cthis\&.size();
+1198             p_usint pszmin=0;
+1199             p_usint pszmax=0;
+1200             if (sza<=szt) {
+1201                 pszmin = &sza;
+1202                 pszmax = &szt;
+1203                 po     = this;
+1204             } else {
+1205                 pszmin = &szt;
+1206                 pszmax = &sza;
+1207                 po     = &carg;
+1208             }
+1209             const num_int & obj = (*po);
+1210             tempt\&.p_decs(dig_t<B>(0));
+1211             tempa\&.p_decs(0);
+1212             usint & szmin = *pszmin;
+1213             usint & szmax = *pszmax;
+1214             usint k = 0;
+1215             for ( ; k<szmin ; ++k ) {
+1216                 tempt\&.p_uds(cthis[k]);
+1217                 tempa\&.p_uds(carg[k]);
+1218                 tempt += tempa;
+1219                 cthis[k]=tempt\&.g_uds();
+1220             }
+1221             for (; k<szmax ; ++k) {
+1222                 tempt\&.p_first(obj[k]);
+1223                 tempt += (obj\&.aux);
+1224                 cthis[k]=tempt\&.g_first();
+1225             }
+1226             aux\&.p_first(tempt\&.g_second());
+1227             aux\&.p_second(0);
+1228             this->reduce();
+1229             return (*this);
+1230         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::reduce()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator+= (dig arg)\fC [inline]\fP"
+
+.PP
+.nf
+1427                                               {
+1428             num_int & cthis = *this;
+1429             this->reduce();
+1430             spardigs tempt();
+1431 
+1432             tempt\&.p_second(0);
+1433             usint k = 1;
+1434             tempt\&.p_first(cthis[0]);
+1435             tempt += spardigs(arg);
+1436             cthis[0]=tempt\&.g_first();
+1437             aux = spardigs(tempt\&.g_second());
+1438             for (; k < cthis\&.size() ; ++k) {
+1439                 tempt\&.p_first(0);
+1440                 tempt += aux;
+1441                 cthis[k]=tempt\&.g_first();
+1442                 aux = spardigs(tempt\&.g_second());
+1443             }
+1444             aux\&.p_first(tempt\&.g_second());
+1445             aux\&.p_second(0);
+1446             this->reduce();
+1447             return (*this);
+1448         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::reduce()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator\- () const\fC [inline]\fP"
+
+.PP
+.nf
+1505                                    {
+1506             num_int & cthis = *this;
+1507             num_int cpy(*this);
+1508             cpy\&.reduce();
+1509             const striterator fin = cpy\&.end();
+1510             striterator  it = cpy\&.begin();
+1511             for ( ; it != fin ; ++it )
+1512                 (*it) = (!(*it));
+1513 
+1514             it = cpy\&.begin();
+1515             cpy\&.aux = (*it)+1;
+1516             cpy[0]=cpy\&.aux\&.g_first();
+1517             ++it;
+1518             if ((cpy\&.aux\&.g_second())!= spardigs()) {
+1519                 for ( ; it != fin ; ++it ) {
+1520                     cpy\&.aux\&.p_first(cpy\&.aux\&.g_second());
+1521                     cpy\&.aux\&.p_second(0);
+1522                     if (cpy\&.aux == spardigs()) break;
+1523                     cpy\&.aux += spardigs(*it);
+1524                 }
+1525                 cpy\&.push_back(cpy\&.aux\&.g_first());
+1526                 cpy\&.push_back(cpy\&.aux\&.g_second());
+1527             }
+1528             cpy\&.signo = ((cpy\&.signo==vminus)?vplus:vminus);
+1529             cpy\&.aux = spardigs();
+1530             cpy\&.reduce();
+1531             return cpy;
+1532         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator\- (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+855                                                        {
+856             num_int & cthis = *this;
+857             num_int ret;
+858             num_int cpy(-arg);
+859             ret\&.reduce();
+860             cpy\&.reduce();
+861             spardigs tempt();
+862             spardigs tempa();
+863             const num_int* po =0;
+864             usint sza = arg\&.lst_arg\&.size();
+865             usint szt = ret\&.lst_arg\&.size();
+866             p_usint  pszmin=0;
+867             p_usint  pszmax=0;
+868             if (sza<=szt) {
+869                 pszmin = &sza;
+870                 pszmax = &szt;
+871                 po     = &ret;
+872             } else {
+873                 pszmin = &szt;
+874                 pszmax = &sza;
+875                 po     = &cpy;
+876             }
+877 
+878             usint & szmin = *pszmin;
+879             usint & szmax = *pszmax;
+880             const num_int & obj = *po;
+881             usint k = 0;
+882             ret\&.aux = spardigs();
+883             for ( ; k<szmin ; ++k) {
+884                 tempt\&.p_first(ret[k]);
+885                 tempa\&.p_first(arg[k]);
+886                 tempt += tempa;
+887                 tempt += aux;
+888                 ret[k]=tempt\&.g_first();
+889                 ret\&.aux=spardigs(tempt\&.g_sign(),
+890                                  ((tempt\&.g_sign()==vplus)?(0):(B-1)),
+891                                  tempt\&.g_second()
+892                                 );
+893             }
+894             for ( ; k<szmax ; ++k) {
+895                 tempt\&.p_first(obj[k]);
+896                 tempt += aux;
+897                 ret[k]=tempt\&.g_first();
+898                 ret\&.aux=spardigs(tempt\&.g_sign(),
+899                                  ((tempt\&.g_sign()==vplus)?(0):(B-1)),
+900                                  tempt\&.g_second()
+901                                 );
+902             }
+903 
+904             ret\&.lst_digs\&.push_back(ret\&.aux\&.g_first());
+905             ret\&.lst_digs\&.push_back(ret\&.aux\&.g_second());
+906             ret\&.signo=ret\&.aux\&.g_sign();
+907             ret\&.aux =  spardigs();
+908             return ret;
+909         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator\- (dig arg) const\fC [inline]\fP"
+
+.PP
+.nf
+1125                                            {
+1126             num_int & cthis = *this;
+1127             num_int ret(*this);
+1128             ret\&.reduce();
+1129             spardigs cpy(-arg);
+1130             spardigs tempt();
+1131             spardigs tempa();
+1132             usint szt = ret\&.lst_arg\&.size();
+1133             usint k = 0;
+1134             ret\&.aux = spardigs();
+1135             tempt\&.p_first(ret[0]);
+1136             tempa\&.p_first(arg\&.g_first());
+1137             tempt += tempa;
+1138             ret[0] =tempt\&.g_first();
+1139             tempa = spardigs(vplus,0,tempt\&.g_second());
+1140             tempt = spardigs(vplus,0,ret[1]);
+1141             tempt += tempa;
+1142             ret[1] = tempt\&.g_first();
+1143 
+1144             for ( k=2 ; k < ret\&.lst_digs\&.size() ; ++k) {
+1145                 tempt\&.p_first(ret[k]);
+1146                 tempt += aux;
+1147                 ret[k]=tempt\&.g_first();
+1148                 ret\&.aux=spardigs(tempt\&.g_sign(),
+1149                                  ((tempt\&.g_sign()==vplus)?(0):(B-1)),
+1150                                  tempt\&.g_second()
+1151                                 );
+1152             }
+1153 
+1154             ret\&.lst_digs\&.push_back(ret\&.aux\&.g_first());
+1155             ret\&.lst_digs\&.push_back(ret\&.aux\&.g_second());
+1156             ret\&.signo=ret\&.aux\&.g_sign();
+1157             ret\&.aux =  spardigs();
+1158             return ret;
+1159         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator\-\- ()\fC [inline]\fP"
+
+.PP
+.nf
+2274                                        {
+2275             num_int & cthis = *this;
+2276                         const size_t long_inic = cthis\&.size();
+2277                         // BEGIN TRATAMIENTO DEL 0
+2278                         if (cthis==num_int(vplus,dig(0),dig(0))){
+2279                                 cthis\&.clear();
+2280                                 cthis\&.resize(1);
+2281                                 cthis[0]=dig(B-1);
+2282                                 signo = vminus;
+2283                                 return cthis;
+2284                         }
+2285                         bool es_negativo = (signo==vminus);
+2286                         // END TRATAMIENTO DEL 0
+2287                         // BEGIN TRATAMIENTO DE POTENCIA DE B NEGATIVAS
+2288                         bool es_pot_de_B_neg = false;
+2289                         if (es_negativo) {
+2290                                 es_pot_de_B_neg = true;
+2291                                 for(slint i=0 ; (i < long_inic) and es_pot_de_B_neg ; ++i)
+2292                                 {
+2293                                         es_pot_de_B_neg = es_pot_de_B_neg and (cthis[i]==dig(0));
+2294                                 }
+2295                         } // Hemos calculado si es potencia de 10 negativa
+2296                         if (es_pot_de_B_neg) {
+2297                                 cthis\&.resize(long_inic+1);
+2298                                 for(slint i=0; i < long_inic; ++i)
+2299                                         cthis[i]=dig(B-1);
+2300                                 cthis[long_inic] = dig(B-2);
+2301                                 signo = vminus;
+2302                                 return cthis;
+2303                         } // Vemos que -000 pasa a -8999
+2304                         // END TRATAMIENTO DE POTENCIA DE B NEGATIVAS
+2305                         signo = vplus;
+2306                         aux=spardigs(vminus,dig(B-1),dig(B-1));
+2307                         aux+= spardigs(vplus,0,cthis[0]);
+2308                         cthis[0] = aux\&.g_uds();
+2309                         aux\&.p_uds(aux\&.g_decs());
+2310                         aux\&.p_decs(B-1);
+2311                         bool seguir = (aux\&.g_uds()!=dig(0));
+2312                         ullint i=1;
+2313                         while( seguir and (i<long_inic)) {
+2314                                 aux += spardigs(vplus,0,cthis[i]);
+2315                                 cthis[i]=(aux\&.g_uds());
+2316                                 aux\&.p_uds(aux\&.g_decs());
+2317                                 seguir = (aux\&.g_uds()!=dig(0));
+2318                                 aux\&.p_decs(B-1);
+2319                                 ++i;
+2320                         }
+2321                         if( seguir and (i >= long_inic) ) {
+2322                                 cthis\&.resize(long_inic+1);
+2323                                 cthis[i]=aux\&.g_uds();
+2324                         }
+2325                         signo=(es_negativo?vminus:vplus);
+2326                         cthis\&.reduce();
+2327                         return cthis;
+2328         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator\-\- (int)\fC [inline]\fP"
+
+.PP
+.nf
+2330                                         {
+2331             num_int & cthis = (*this);
+2332                         const num_int cpThis(*this);
+2333                         const size_t long_inic = cthis\&.size();
+2334                         // BEGIN TRATAMIENTO DEL 0
+2335                         if (cthis==num_int(vplus,dig(0),dig(0))){
+2336                                 cthis\&.clear();
+2337                                 cthis\&.resize(1);
+2338                                 cthis[0]=dig(B-1);
+2339                                 signo = vminus;
+2340                                 return cpThis;
+2341                         }
+2342                         bool es_negativo = (signo==vminus);
+2343                         // END TRATAMIENTO DEL 0
+2344                         // BEGIN TRATAMIENTO DE POTENCIA DE B NEGATIVAS
+2345                         bool es_pot_de_B_neg = false;
+2346                         if (es_negativo) {
+2347                                 es_pot_de_B_neg = true;
+2348                                 for(slint i=0 ; (i < long_inic) and es_pot_de_B_neg ; ++i)
+2349                                 {
+2350                                         es_pot_de_B_neg = es_pot_de_B_neg and (cthis[i]==dig(0));
+2351                                 }
+2352                         } // Hemos calculado si es potencia de 10 negativa
+2353                         if (es_pot_de_B_neg) {
+2354                                 cthis\&.resize(long_inic+1);
+2355                                 for(slint i=0; i < long_inic; ++i)
+2356                                         cthis[i]=dig(B-1);
+2357                                 cthis[long_inic] = dig(B-2);
+2358                                 signo = vminus;
+2359                                 return cpThis;
+2360                         } // Vemos que -000 pasa a -8999
+2361                         // END TRATAMIENTO DE POTENCIA DE B NEGATIVAS
+2362                         signo = vplus;
+2363                         aux=spardigs(vminus,dig(B-1),dig(B-1));
+2364                         aux+= spardigs(vplus,0,cthis[0]);
+2365                         cthis[0] = aux\&.g_uds();
+2366                         aux\&.p_uds(aux\&.g_decs());
+2367                         aux\&.p_decs(B-1);
+2368                         bool seguir = (aux\&.g_uds()!=dig(0));
+2369                         ullint i=1;
+2370                         while( seguir and (i<long_inic)) {
+2371                                 aux += spardigs(vplus,0,cthis[i]);
+2372                                 cthis[i]=(aux\&.g_uds());
+2373                                 aux\&.p_uds(aux\&.g_decs());
+2374                                 seguir = (aux\&.g_uds()!=dig(0));
+2375                                 aux\&.p_decs(B-1);
+2376                                 ++i;
+2377                         }
+2378                         if( seguir and (i >= long_inic) ) {
+2379                                 cthis\&.resize(long_inic+1);
+2380                                 cthis[i]=aux\&.g_uds();
+2381                         }
+2382                         signo=(es_negativo?vminus:vplus);
+2383                         cthis\&.reduce();
+2384                         return cpThis;
+2385         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator\-= (const \fBnum_int\fP & arg)\fC [inline]\fP"
+
+.PP
+.nf
+1232                                                           {
+1233             num_int & cthis = *this;
+1234             this->reduce();
+1235             num_int carg((-arg)\&.reduce());
+1236             spardigs tempt();
+1237             spardigs tempa();
+1238             const num_int*       po    =0;
+1239             usint sza = carg\&.size();
+1240             usint szt = (cthis\&.size());
+1241             p_usint pszmin=0;
+1242             p_usint pszmax=0;
+1243             if (sza<=szt) {
+1244                 pszmin = &sza;
+1245                 pszmax = &szt;
+1246                 po     = this;
+1247             } else {
+1248                 pszmin = &szt;
+1249                 pszmax = &sza;
+1250                 po     = &carg;
+1251             }
+1252             const num_int & obj = (*po);
+1253             tempt\&.p_second(0);
+1254             tempa\&.p_second(0);
+1255             usint & szmin = *pszmin;
+1256             usint & szmax = *pszmax;
+1257             usint k = 0;
+1258             for ( ; k<szmin ; ++k) {
+1259                 tempt\&.p_first(cthis[k]);
+1260                 tempa\&.p_first(carg[k]);
+1261                 tempt += tempa;
+1262                 cthis[k]=tempt\&.g_first();
+1263             }
+1264             for (; k<szmax ; ++k) {
+1265                 tempt\&.p_first(obj\&.lst_digs[k]);
+1266                 tempt += (obj\&.aux);
+1267                 cthis[k]=tempt\&.g_first();
+1268             }
+1269             aux\&.p_first(tempt\&.g_second());
+1270             aux\&.p_second(0);
+1271             this->reduce();
+1272             return (*this);
+1273         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::reduce()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator\-= (dig arg)\fC [inline]\fP"
+
+.PP
+.nf
+1450                                               {
+1451             num_int & cthis = *this;
+1452             this->reduce();
+1453             dig arg_CB = (dig(B-1)-arg)+dig(1);
+1454             spardigs tempt();
+1455 
+1456             tempt\&.p_second(0);
+1457             usint k = 1;
+1458             tempt\&.p_first(cthis[0]);
+1459             tempt += arg_CB;
+1460             cthis[0]=tempt\&.g_first();
+1461             aux = spardigs(tempt\&.g_second());
+1462             if (arg==0) aux += dig(B-1);
+1463             for (; k < cthis\&.size() ; ++k) {
+1464                 tempt\&.p_first(0);
+1465                 tempt += aux;
+1466                 cthis[k]=tempt\&.g_first();
+1467                 aux = spardigs(tempt\&.g_second());
+1468             }
+1469             aux\&.p_first(tempt\&.g_second());
+1470             aux\&.p_second(0);
+1471             this->reduce();
+1472             return (*this);
+1473         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP y \fBint_num_t< UINT_T, B >::reduce()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::operator/ (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+931                                                        {
+932             num_int & cthis = *this;
+933             const sign_e sgn_ndo = signo;
+934             const sign_e sgn_sor = arg\&.signo;
+935             num_int dvndo_int(this->abs());
+936             dvndo_int\&.reduce();
+937             num_int rem(dvndo_int);
+938 
+939             num_int dvsor_int(arg\&.abs());
+940             dvsor_int\&.reduce();
+941 
+942             const usint cssor = dvsor_int\&.ceros_a_la_drcha(); //¿?
+943 
+944             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+945             dvsor_int\&.lst_digs\&.erase(0,cssor);// division por una potencia de B
+946 
+947 
+948             dvsor_int\&.reduce();
+949             dvndo_int\&.reduce();
+950 
+951             dvndo_fra\&.reduce();
+952 
+953             const usint longtndo  = dvndo_int\&.size();
+954             const usint longtndo2 = dvndo_fra\&.size();
+955             const usint longtsor  = dvsor_int\&.size();
+956             const usint longsor   = longtsor;
+957 
+958             // hemos dividido por los ceros del divisor (por una potencia de B)
+959             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+960             // cocientes enteros\&.
+961             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+962             // ahora hacemos lo mismo con el cociente de las potencias de B del
+963             // dividendo obteniendo dvndo_fra
+964 
+965             /* *
+966                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+967 
+968                 rem = rem\&.lst_digs\&.insert(0,cssor,0);
+969                 rem += dvndo_fra;
+970             * */
+971             if (sgn_ndo!=sgn_sor) dvndo_int\&.mC_B();
+972             // rehacer el resto tomando en cuenta los ceros quitados
+973             // acomodar el formato al signo de la operacion
+974             // determinar el signo de la operacion
+975             return dvndo_int;
+976         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::abs()\fP y \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator/= (const \fBnum_int\fP & arg)\fC [inline]\fP"
+
+.PP
+.nf
+1295                                                           {
+1296             num_int & cthis = *this;
+1297             const sign_e sgn_ndo = signo;
+1298             const sign_e sgn_sor = arg\&.signo;
+1299             this->absp();
+1300             num_int & dvndo_int = *this;
+1301             dvndo_int\&.reduce();
+1302             num_int rem(dvndo_int);
+1303 
+1304             num_int dvsor_int(arg\&.abs());
+1305             dvsor_int\&.reduce();
+1306 
+1307             const usint cssor = dvsor_int\&.ceros_a_la_drcha(); //¿?
+1308 
+1309             num_int dvndo_fra(dvndo_int\&.substr(0,cssor));
+1310             dvsor_int\&.lst_digs\&.erase(0,cssor);// division por una potencia de B
+1311 
+1312 
+1313             dvsor_int\&.reduce();
+1314             dvndo_int\&.reduce();
+1315 
+1316             dvndo_fra\&.reduce();
+1317 
+1318             const usint longtndo  = dvndo_int\&.size();
+1319             const usint longtndo2 = dvndo_fra\&.size();
+1320             const usint longtsor  = dvsor_int\&.size();
+1321             const usint longsor   = longtsor;
+1322 
+1323             // hemos dividido por los ceros del divisor (por una potencia de B)
+1324             // tanto divisor como dividendo, obteniendo dvndo_int y dvsor_int como
+1325             // cocientes enteros\&.
+1326             div_uno(rem,dvndo_int,dvsor_int,longtndo,longsor);
+1327             // ahora hacemos lo mismo con el cociente de las potencias de B del
+1328             // dividendo obteniendo dvndo_fra
+1329 
+1330             /* *
+1331                 RemReal = RemObtenido*B^cssor + Dvndo_fra
+1332 
+1333                 rem = rem\&.lst_digs\&.insert(0,cssor,0);
+1334                 rem += dvndo_fra;
+1335             * */
+1336             if (sgn_ndo!=sgn_sor) dvndo_int\&.mC_B();
+1337             // rehacer el resto tomando en cuenta los ceros quitados
+1338             // acomodar el formato al signo de la operacion
+1339             // determinar el signo de la operacion
+1340             return dvndo_int;
+1341         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::absp()\fP y \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >::operator< (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+765                                                      {
+766             const num_int & cthis = *this;
+767                         const slint thissz  = cthis\&.size();
+768             const slint thisnsz = ((thissz==1)?0:(cthis\&.digs_no_significativos()));
+769                         //cout << "J vale   " << cthis << endl;
+770             const slint thisvsz = thissz-thisnsz;
+771                         const slint argsz  = arg\&.size();
+772             const slint argnsz = ((argsz==1)?0:(arg\&.digs_no_significativos()));
+773                         //cout << "I vale   " << arg << endl;
+774             const slint argvsz = argsz-argnsz;
+775 
+776             if ((signo == vplus)and(arg\&.signo == vminus)) return false;
+777             else if ((signo == vminus)and(arg\&.signo == vplus)) return true;
+778             else if ((signo == vminus)and(arg\&.signo == vminus)){
+779                 if (thisvsz < argvsz) return false;
+780                 else if (thisvsz > argvsz) return true;
+781             }
+782                         else if ((signo == vplus)and(arg\&.signo == vplus)){
+783                 if (thisvsz > argvsz) return false;
+784                 else if (thisvsz < argvsz) return true;
+785             }
+786             for (slint k=(thisvsz-1);k>-1;--k) {
+787                 if ((cthis[k] > arg[k])) return false;
+788                 else if ((cthis[k] < arg[k])) return true;
+789             }
+790             return false;
+791         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >::operator<= (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+708                                                      {
+709             const num_int & cthis = *this;
+710                         const slint thissz  = cthis\&.size();
+711             const slint thisnsz = ((thissz==1)?0:(cthis\&.digs_no_significativos()));
+712                         //cout << "J vale   " << cthis << endl;
+713             const slint thisvsz = thissz-thisnsz;
+714                         const slint argsz  = arg\&.size();
+715             const slint argnsz = ((argsz==1)?0:(arg\&.digs_no_significativos()));
+716                         //cout << "I vale   " << arg << endl;
+717             const slint argvsz = argsz-argnsz;
+718 
+719             if ((signo == vplus)and(arg\&.signo == vminus)) return false;
+720             else if ((signo == vminus)and(arg\&.signo == vplus)) return true;
+721             else if ((signo == vminus)and(arg\&.signo == vminus)){
+722                 if (thisvsz < argvsz) return false;
+723                 else if (thisvsz > argvsz) return true;
+724             }
+725                         else if ((signo == vplus)and(arg\&.signo == vplus)){
+726                 if (thisvsz > argvsz) return false;
+727                 else if (thisvsz < argvsz) return true;
+728             }
+729             for (slint k=(thisvsz-1);k>-1;--k) {
+730                 if ((cthis[k] > arg[k])) return false;
+731                 else if ((cthis[k] < arg[k])) return true;
+732             }
+733             return true;
+734         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (const \fBdig_t\fP< B > & a)\fC [inline]\fP"
+
+.PP
+.nf
+424                                                         {
+425             num_int & cthis = *this;
+426             signo=vplus;
+427             aux\&.p_sign(vplus);
+428                         aux\&.p_decs(0);
+429                         aux\&.p_uds(0);
+430             cthis\&.clear();
+431             cthis\&.resize(1);
+432             cthis[0]=a;
+433             return cthis;
+434         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (const \fBnum_int\fP & a)\fC [inline]\fP"
+
+.PP
+.nf
+372                                                        {
+373             num_int & cthis = *this;
+374             signo=a\&.signo;
+375             aux=a\&.aux;
+376             cthis\&.clear();
+377             cthis\&.resize(a\&.size());
+378             for (usint k=0; k < a\&.size() ; ++k)
+379                 cthis[k]=a[k];
+380             cthis\&.reduce();
+381             return cthis;
+382         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (const num_uint< B > & a)\fC [inline]\fP"
+
+.PP
+.nf
+384                                                                    {
+385             num_int & cthis = *this;
+386             signo=vplus;
+387             aux=vplus;
+388             cthis\&.clear();
+389             cthis\&.resize(a\&.size());
+390             for (usint k=0; k < a\&.size() ; ++k)
+391                 cthis[k]=a[k];
+392             cthis\&.reduce();
+393             return cthis;
+394         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (const pardigs_t< B > & a)\fC [inline]\fP"
+
+.PP
+.nf
+396                                                             {
+397             num_int & cthis = *this;
+398             signo=vplus;
+399             aux\&.p_sign(vplus);
+400                         aux\&.p_decs(0);
+401                         aux\&.p_uds(0);
+402             cthis\&.clear();
+403             cthis\&.resize(2);
+404             cthis[1]=a\&.g_decs();
+405             cthis[0]=a\&.g_uds();
+406             cthis\&.reduce();
+407             return cthis;
+408         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (const spardigs_t< B > & a)\fC [inline]\fP"
+
+.PP
+.nf
+410                                                                      {
+411             num_int & cthis = *this;
+412             signo=a\&.signo;
+413             aux\&.p_sign(vplus);
+414                         aux\&.p_decs(0);
+415                         aux\&.p_uds(0);
+416             cthis\&.clear();
+417             cthis\&.resize(2);
+418             cthis[1]=a\&.g_decs();
+419             cthis[0]=a\&.g_uds();
+420             cthis\&.reduce();
+421             return cthis;
+422         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (const std::list< dig > & arg)\fC [inline]\fP"
+
+.PP
+.nf
+490                                                               {
+491             num_int & cthis = *this;
+492             signo=vplus;
+493             cthis\&.clear();
+494             cthis\&.resize( arg\&.size() );
+495                         typename std::list<dig>::const_iterator it=arg\&.begin();
+496                         typename std::list<dig>::const_iterator it_end=arg\&.end();
+497             for ( ; it != it_end ; ++it )
+498                 cthis\&.push_front(*it);
+499             cthis\&.reduce();
+500                         return cthis;
+501         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (const std::vector< dig > & arg)\fC [inline]\fP"
+
+.PP
+.nf
+478                                                                 {
+479             num_int & cthis = *this;
+480             signo=vplus;
+481             cthis\&.clear();
+482             cthis\&.resize( arg\&.size() );
+483             for ( uint ix=0; ix < arg\&.size() ; ++ix ){
+484                 cthis[ix]=arg[ix];
+485                         }
+486                         cthis\&.reduce();
+487                         return cthis;
+488         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> template<typename Int_T > const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::operator= (Int_T a)\fC [inline]\fP"
+
+.PP
+.nf
+437                                              {
+438             num_int & cthis = *this;
+439             cthis\&.clear();
+440                         const ullint longitud = num_digs_max_base_B_en_Int_T<Int_T,B>();
+441             cthis\&.resize(longitud);
+442                         uint indice = 0;
+443             if (a>=0) {
+444                                 for(int i=0;i<longitud;i++) cthis[i]=dig(0);
+445                 signo=vplus;
+446                 ullint rem=0,coc=a;
+447                 while (coc >= B) {
+448                     rem = coc%B;
+449                     cthis[indice] = UInt2Dig<B>(rem);
+450                                         indice++;
+451                     coc = coc/B;
+452                 }
+453                 rem = coc%B;
+454                 cthis[indice] = UInt2Dig<B>(rem);
+455                                 indice++;
+456             }
+457             else {
+458                                 for(int i=0;i<longitud;i++) cthis[i]=dig(B-1);
+459                 signo=vminus;
+460                 long long int rem=0,coc=-a;
+461                 while (coc >= B) {
+462                     rem = coc%B;
+463                     cthis[indice] = Int2Dig<B>(rem);
+464                                         indice++;
+465                     coc = coc/B;
+466                 }
+467                 cthis[indice] = Int2Dig<B>(coc);
+468                                 cthis\&.mC_B_incondicionado();
+469                                 cthis\&.signo = vplus;
+470                                 cthis\&.reduce();
+471                                 cthis\&.signo = vminus;
+472             }
+473                         cthis\&.reduce();
+474                         return cthis;
+475         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >::operator== (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+647                                                      {
+648             const num_int & cthis = *this;
+649             const slint thisnsz = cthis\&.digs_no_significativos();
+650             const slint thisvsz = cthis\&.size()-thisnsz;
+651             const slint argnsz = arg\&.digs_no_significativos();
+652             const slint argvsz = arg\&.size()-argnsz;
+653             if ((thisvsz > argvsz)||(thisvsz < argvsz)||(signo!=arg\&.signo)) return false;
+654             else {
+655                 for (slint k=(thisvsz-1);k>0;--k) {
+656                     if (arg[k]!=cthis[k]) return false;
+657                 }
+658                 if ((arg[0])!=(cthis[0])) return false;
+659                 else return true;
+660             }
+661         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >::operator> (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+736                                                       {
+737             const num_int & cthis = *this;
+738                         const slint thissz  = cthis\&.size();
+739             const slint thisnsz = ((thissz==1)?0:(cthis\&.digs_no_significativos()));
+740             const slint thisvsz = thissz-thisnsz;
+741                         const slint argsz  = arg\&.size();
+742             const slint argnsz = ((argsz==1)?0:(arg\&.digs_no_significativos()));
+743             const slint argvsz = argsz-argnsz;
+744 
+745             if ((signo == vplus)and(arg\&.signo == vminus)) return true;
+746             else if ((signo == vminus)and(arg\&.signo == vplus)) return false;
+747             else if ((signo == vminus)and(arg\&.signo == vminus))
+748                         {
+749                 if (thisvsz < argvsz) return true;
+750                 else if (thisvsz > argvsz) return false;
+751             }
+752                         else if ((signo == vplus)and(arg\&.signo == vplus))
+753                         {
+754                 if (thisvsz > argvsz) return true;
+755                 else if (thisvsz < argvsz) return false;
+756             }
+757                         for (slint k=(thisvsz-1);k>-1;--k)
+758                         {
+759                                 if ((cthis[k] > arg[k])) return true;
+760                                 else if ((cthis[k] < arg[k])) return false;
+761                         }
+762                         return false;
+763                 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> bool \fBint_num_t\fP< UINT_T, B >::operator>= (const \fBnum_int\fP & arg) const\fC [inline]\fP"
+
+.PP
+.nf
+680                                                      {
+681             const num_int & cthis = *this;
+682                         const slint thissz  = cthis\&.size();
+683             const slint thisnsz = ((thissz==1)?0:(cthis\&.digs_no_significativos()));
+684                         //cout << "J vale   " << cthis << endl;
+685             const slint thisvsz = thissz-thisnsz;
+686                         const slint argsz  = arg\&.size();
+687             const slint argnsz = ((argsz==1)?0:(arg\&.digs_no_significativos()));
+688                         //cout << "I vale   " << arg << endl;
+689             const slint argvsz = argsz-argnsz;
+690 
+691             if ((signo == vplus)and(arg\&.signo == vminus)) return true;
+692             else if ((signo == vminus)and(arg\&.signo == vplus)) return false;
+693             else if ((signo == vminus)and(arg\&.signo == vminus)){
+694                 if (thisvsz < argvsz) return true;
+695                 else if (thisvsz > argvsz) return false;
+696             }
+697                         else if ((signo == vplus)and(arg\&.signo == vplus)){
+698                 if (thisvsz > argvsz) return true;
+699                 else if (thisvsz < argvsz) return false;
+700             }
+701             for (slint k=(thisvsz-1);k>-1;--k) {
+702                 if ((cthis[k] > arg[k])) return true;
+703                 else if ((cthis[k] < arg[k])) return false;
+704             }
+705             return true;
+706         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> void \fBint_num_t\fP< UINT_T, B >::push_back (\fBdig_t\fP< B > arg)\fC [inline]\fP"
+
+.PP
+.nf
+83                                             {
+84                 this->num_basic_t<B>::push_back(arg);
+85         }
+.fi
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::mC_B()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> void \fBint_num_t\fP< UINT_T, B >::push_front (\fBdig_t\fP< B > parg)\fC [inline]\fP"
+
+.PP
+.nf
+78                                               {
+79                 num_basic & cthis = (*this);
+80                 cthis\&.num_basic::push_front(parg);
+81                 return;
+82         }
+.fi
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::reduce ()\fC [inline]\fP"
+
+.PP
+.nf
+2393                                  {
+2394             num_int & cthis = *this;
+2395                         const usint nsz = cthis\&.digs_no_significativos();
+2396                         const usint longitud = cthis\&.size();
+2397                         if ((longitud==1)or(longitud==0)) return cthis;
+2398                         const usint pos_p1 = longitud-nsz;
+2399                         return cthis\&.erase(pos_p1,nsz);
+2400         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::operator*=()\fP, \fBint_num_t< UINT_T, B >::operator+=()\fP y \fBint_num_t< UINT_T, B >::operator\-=()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::reduce () const\fC [inline]\fP"
+
+.PP
+.nf
+2402                                {
+2403             const num_int & cthis = *this;
+2404             num_int cpyreducida(cthis);
+2405             const usint nsz = cpyreducida\&.digs_no_significativos();
+2406                         const usint longitud = cpyreducida\&.size();
+2407             const usint pos = longitud-nsz;
+2408                         return cpyreducida\&.erase(pos,nsz);
+2409         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> const \fBnum_int\fP & \fBint_num_t\fP< UINT_T, B >::reduce_fracc ()\fC [inline]\fP"
+
+.PP
+.nf
+2411                                                {
+2412             num_int & cthis = *this;
+2413             const usint nsz = cthis\&.digs_fracc_no_significativos()-1;
+2414             const usint pos = 0;
+2415             cthis\&.erase(pos,nsz);
+2416             return cthis;
+2417         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBnum_int\fP \fBint_num_t\fP< UINT_T, B >::reduce_fracc () const\fC [inline]\fP"
+
+.PP
+.nf
+2419                                      {
+2420             num_int & cthis = *this;
+2421             num_int cpyreducida(cthis);
+2422             const usint nsz = cpyreducida\&.digs_no_significativos()-1;
+2423             const usint pos = 0;
+2424             cpyreducida\&.erase(pos,nsz);
+2425             return cpyreducida;
+2426         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> dig \fBint_num_t\fP< UINT_T, B >::rem2 () const\fC [inline]\fP"
+
+.PP
+.nf
+1703                           {
+1704             num_int & cthis = *this;
+1705             sign_e sgn = signo;
+1706             num_int cpy = cthis\&.reduce();
+1707             cpy\&.absp();
+1708             cpy\&.reduce();
+1709             if (B%2==1) {
+1710                 if (cpy\&.lst_digs\&.size()==1)
+1711                     return dig::Rem2(cpy\&.lst_digs[0]);
+1712                 else {
+1713                     usint paridad = 0;
+1714                     for ( usint k=0 ; k < cpy\&.lst_digs\&.size() ; ++k )
+1715                         paridad += dig::Dig2UInt(dig::Rem2(cpy\&.lst_digs[k]));
+1716                     paridad %= 2;
+1717                     return dig(paridad);
+1718                 }
+1719             }
+1720             else {
+1721                 return dig::Rem2(cpy\&.lst_digs[0]);
+1722             }
+1723         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> dig \fBint_num_t\fP< UINT_T, B >::rem2p ()\fC [inline]\fP"
+
+.PP
+.nf
+1769                     {
+1770             num_int & cthis = *this;
+1771             sign_e sgn = signo;
+1772             cthis\&.absp();
+1773             cthis\&.reduce();
+1774             num_int & cpy = (*this);
+1775             if (B%2==1) {
+1776                 if (cpy\&.size()==1)
+1777                     return dig::Rem2(cpy\&.lst_digs[0]);
+1778                 else {
+1779                     usint paridad = 0;
+1780                     for ( usint k=0 ; k < cpy\&.size() ; ++k )
+1781                         paridad += dig::Dig2UInt(dig::Rem2(cpy[k]));
+1782                     paridad %= 2;
+1783                     return dig(paridad);
+1784                 }
+1785             }
+1786             else {
+1787                 return dig::Rem2(cpy[0]);
+1788             }
+1789         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> dig \fBint_num_t\fP< UINT_T, B >::remB () const\fC [inline]\fP"
+
+.PP
+.nf
+1635                           {
+1636             num_int cpy(*this);
+1637             cpy\&.reduce();
+1638             if (signo==vminus) return cpy\&.absp();
+1639             return cpy\&.lst_digs[0];
+1640         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> dig \fBint_num_t\fP< UINT_T, B >::remBm1 () const\fC [inline]\fP"
+
+.PP
+.nf
+1805                                                       {
+1806             num_int cthis(*this),suma;
+1807             sign_e sgn = signo;
+1808             cthis\&.abs();
+1809             cthis\&.reduce();
+1810             suma\&.reduce();
+1811             suma\&.lst_digs\&.insert(0,1,0);
+1812             suma\&.lst_digs\&.erase(0,(cthis\&.size())-1);
+1813             do {
+1814                 for ( usint i = 0 ; i < cthis\&.size() ; ++i ) {
+1815                     suma += cthis[i];
+1816                     suma\&.reduce();
+1817                 }
+1818             } while (suma\&.size()>1);
+1819 
+1820             if ((suma[0]==0)||(suma[0]==(B-1))) return 0;
+1821             else return suma[0];
+1822         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> dig \fBint_num_t\fP< UINT_T, B >::remBp ()\fC [inline]\fP"
+
+.PP
+.nf
+1653                     {
+1654             num_int & cpy = (*this);
+1655             cpy\&.reduce();
+1656             if (signo==vminus) return cpy\&.absp();
+1657             return cpy\&.lst_digs[0];
+1658         }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> void \fBint_num_t\fP< UINT_T, B >::resize (\fBsize_t\fP arg)\fC [inline]\fP"
+
+.PP
+.nf
+73                                        {
+74                 num_basic & cthis = (*this);
+75                 cthis\&.num_basic::resize(arg);
+76                 return;
+77         }
+.fi
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBsize_t\fP \fBint_num_t\fP< UINT_T, B >::size () const\fC [inline]\fP"
+
+.PP
+.nf
+46                                    {
+47                 const num_basic & cthis = (*this);
+48                 return cthis\&.num_basic::size();
+49         }
+.fi
+.PP
+Referenciado por \fBint_num_t< UINT_T, B >::ceros_a_la_drcha()\fP, \fBint_num_t< UINT_T, B >::ceros_a_la_izqda()\fP y \fBint_num_t< UINT_T, B >::unos_a_la_drcha()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBsize_t\fP \fBint_num_t\fP< UINT_T, B >::unos_a_la_drcha () const\fC [inline]\fP"
+
+.PP
+.nf
+561                                 {
+562         //const num_uint & cthis = (*this);
+563         bool Exit = false;
+564         size_t sz=0;
+565         const size_t fin=this->size();
+566         const size_t finl = fin-1;
+567         if (this->operator[](finl)==0) {
+568                 for ( int i=finl ; (i >=0) and (!Exit) ; --i) {
+569                         if (this->operator[](i)==dig_t<B>::max) ++sz;
+570                         else Exit=true;
+571                 }
+572         }
+573         return sz;
+574 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::size()\fP\&.
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> \fBusint\fP \fBint_num_t\fP< UINT_T, B >::unos_a_la_izqda () const\fC [inline]\fP"
+
+.PP
+.nf
+528                                {
+529         const num_int & cthis = (*this);
+530         //digitos no significativos para números negativos
+531         bool Exit = false;
+532         int sz=0;
+533         const size_t fin = cthis\&.size();
+534         for ( int i=fin-1 ; (i >= 0) and (!Exit) ; --i) {
+535                 bool char_es_max = (cthis[i]==(dig_t<B>::max_dig()));
+536                 if (char_es_max){
+537                         ++sz;
+538                 }
+539                 else Exit=true;
+540         }
+541         return sz;
+542 }
+.fi
+.PP
+Hace referencia a \fBint_num_t< UINT_T, B >::num_int()\fP\&.
+.SH "Documentación de las funciones relacionadas y clases amigas"
+.PP 
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> template<const \fBuchint\fP Base> ostream & operator<< (ostream & os, \fBnum_int\fP< Base > arg)\fC [friend]\fP"
+
+.PP
+.nf
+2544                                                                {
+2545             const uchint sz = arg\&.size();
+2546             os << "int#"
+2547             << ((arg\&.signo == vplus)?('+'):('-'));
+2548             for (int k=sz-1 ; k>-1 ; --k) {
+2549                 os << "::"
+2550                    << static_cast<usint>(arg[k]());
+2551             }
+2552             os <<"#B"
+2553             << static_cast<usint>(Base) ;
+2554             return os;
+2555         }
+.fi
+.SS "template<type_traits::unsigned_integral_c UINT_T, UINT_T B> template<const \fBuchint\fP Base> istream & operator>> (istream & is, \fBnum_int\fP< Base > & arg)\fC [friend]\fP"
+
+.PP
+.nf
+2437                                                                  {
+2438             enum estado_e {e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11};
+2439             vector<string> num(255);
+2440             string num_sgn;
+2441             string num_base;
+2442             estado_e est_act = e0;
+2443             uchint i=0;
+2444             char c;
+2445             do {
+2446                 is >> c;
+2447                 switch (est_act) {
+2448                 case e0 :
+2449                     if (c=='i') est_act = e1;
+2450                     break;
+2451                 case e1 :
+2452                     if (c=='n') est_act = e2;
+2453                     else est_act = e0;
+2454                     break;
+2455                 case e2 :
+2456                     if (c=='t') est_act = e3;
+2457                     else est_act = e0;
+2458                     break;
+2459                 case e3 :
+2460                     if (c=='#') est_act = e4;
+2461                     else est_act = e0;
+2462                     break;
+2463                 case e4 :
+2464                     if ((c=='1')||(c=='0')||(c=='-')||(c=='+')) {
+2465                         est_act = e5;
+2466                         num_sgn\&.push_back(c-'0');
+2467                     }
+2468                     else est_act = e0;
+2469                     break;
+2470                 case e5 :
+2471                     if (c==':') est_act = e6;
+2472                     else est_act = e0;
+2473                     break;
+2474                 case e6 :
+2475                     if (c==':') est_act = e7;
+2476                     else est_act = e0;
+2477                     break;
+2478                 case e7 :
+2479                     if ((c<='9')and(c>='0')) {
+2480                         num[i]\&.push_back(c-'0');
+2481                     }
+2482                     else if (c==':') {
+2483                         ++i;
+2484                         est_act = e6;
+2485                     }
+2486                     else if (c=='#') est_act = e8;
+2487                     else est_act=e0;
+2488                     break;
+2489                 case e8 :
+2490                     if (c == 'B') est_act = e9;
+2491                     else est_act = e0;
+2492                     break;
+2493                 case e9 :
+2494                     if ((c<='9')and(c>='0')) {
+2495                         est_act = e10;
+2496                         num_base\&.push_back(c-'0');
+2497                     }
+2498                     else est_act = e0;
+2499                     break;
+2500                 case e10 :
+2501                     if ((c<='9')and(c>='0')) {
+2502                         num_base\&.push_back(c-'0');
+2503                     }
+2504                     else est_act = e11;
+2505                     break;
+2506                 case e11 :
+2507                     break;
+2508                 default :
+2509                     est_act = e0;
+2510                 }
+2511                 uint numero_base_recogido=0;
+2512                 if (est_act==e11) {
+2513                     for (uint k=num_base\&.size() ; k > 0 ; --k ) {
+2514                         numero_base_recogido *= 10;
+2515                         numero_base_recogido += num_base[k];
+2516                     }
+2517                     numero_base_recogido *= 10;
+2518                     numero_base_recogido += num_base[0];
+2519                     if (numero_base_recogido!=Base) est_act = e0;
+2520                 }
+2521             } while ((est_act!=e11)and(c!='\n'));
+2522             basic_string< dig_t<Base> > digito;
+2523             digito\&.resize(i+1);
+2524             for (uchint j=0 ; j < 256 ; ++j) {
+2525                 digito[j]=0;
+2526                 for (uint k=num[j]\&.size() ; k > 0 ; --k ) {
+2527                     digito[j] *= 10;
+2528                     digito[j] += (num[j][k]-'0');
+2529                 }
+2530                 digito[j] *= 10;
+2531                 digito[j] += (num[j][0]-'0');
+2532             }
+2533             sign_e sgn;
+2534             if ((num_sgn[0]=='1') || (num_sgn[0]=='-')) sgn = vminus;
+2535             else sgn = vplus;
+2536             arg\&.signo = sgn;
+2537             arg\&.lst_digs = digito;
+2538             arg\&.aux = spardigs_t<Base>();
+2539             return is;
+2540         }
+.fi
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

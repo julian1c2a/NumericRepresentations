@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1auxiliary__types_1_1result__operation__t" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::auxiliary_types::result_operation_t</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type><ref refid="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8" kindref="member">binop_e</ref></type>
+        <declname>oper</declname>
+        <defname>oper</defname>
+      </param>
+      <param>
+        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <declname>N</declname>
+        <defname>N</defname>
+      </param>
+    </templateparamlist>
+    <requiresclause>(N&gt;0)    </requiresclause>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::auxiliary_types::result_operation_t&lt; T, oper, N &gt;</label>
+        <link refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="78" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="78" bodyend="-1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

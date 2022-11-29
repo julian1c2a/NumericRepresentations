@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="concept_num_repr_1_1char__type" kind="concept">
+    <compoundname>NumRepr::char_type</compoundname>
+    <includes refid="basic__types_8hpp" local="no">basic_types.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename CharT</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename CharT&gt;
+concept <ref refid="concept_num_repr_1_1char__type" kindref="compound">NumRepr::char_type</ref> =  std::is_same_v&lt;CharT,char&gt; 						||
+										std::is_same_v&lt;CharT,signed char&gt; 		||
+										std::is_same_v&lt;CharT,unsigned char&gt; 	||
+										std::is_same_v&lt;CharT,wchar_t&gt;    </initializer>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="93" column="1"/>
+  </compounddef>
+</doxygen>

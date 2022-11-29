@@ -1,0 +1,23 @@
+.TH "utilities::all_are_the_same_type" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+utilities::all_are_the_same_type
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <utilities\&.hpp>\fP
+.SH "Concept definition"
+.PP 
+.nf
+template<typename\&.\&.\&. Ts>
+concept utilities::all_are_the_same_type =  requires(Ts\&.\&.\&.) {
+        for_each_same_type<Ts\&.\&.\&.>::are_same_type_v;
+}
+.fi
+.SH "Descripción detallada"
+.PP 
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

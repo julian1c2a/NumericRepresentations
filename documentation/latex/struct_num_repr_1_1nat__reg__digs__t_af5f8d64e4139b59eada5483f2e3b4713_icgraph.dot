@@ -1,0 +1,30 @@
+digraph "NumRepr::nat_reg_digs_t::dig_1"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="NumRepr::nat_reg_digs\l_t::dig_1",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="NumRepr::nat_reg_digs\l_t::m_add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#af990d1acc2982f27df4ce9d72c3f327d",tooltip="END : OPERATORS | & |= &=."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="NumRepr::nat_reg_digs\l_t::m_sub",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a65523219739c53202de6718061c2867d",tooltip="OPERATOR BASE_T -= DIG_T CON NOMBRE M_SUB."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="NumRepr::nat_reg_digs\l_t::operator+=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a4f4dcebb7aaf1dacde690b6b847e66d4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="NumRepr::nat_reg_digs\l_t::operator-=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#ae1fb554a49a057b8e372a7c3b661559b",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="NumRepr::nat_reg_digs\l_t::regd_base_N_1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a4348d3c7e66b4316c9336de940900b4f",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="NumRepr::nat_reg_digs\l_t::regd_base_N_B",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#ac1b7ea3317908fc13e2372226218f30c",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="NumRepr::nat_reg_digs\l_t::regd_base_N_pow_n_B",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#afa3463868582493cbae113570c005ff5",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="NumRepr::nat_reg_digs\l_t::regi_1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a11a8669870d26e8e0e4d0d2af3c814d8",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="NumRepr::nat_reg_digs\l_t::regi_B",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a197912d151a7d43a251ec8c019701678",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="NumRepr::nat_reg_digs\l_t::regi_pow_n_B",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a72cde29ddb63c9bc1d77bd7ba9954e78",tooltip=" "];
+}

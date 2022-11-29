@@ -1,0 +1,20 @@
+digraph "NumRepr::nat_reg_digs_t::dig_Bm1"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="NumRepr::nat_reg_digs\l_t::dig_Bm1",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="NumRepr::nat_reg_digs\l_t::m_add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#af990d1acc2982f27df4ce9d72c3f327d",tooltip="END : OPERATORS | & |= &=."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="NumRepr::nat_reg_digs\l_t::m_sub",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a65523219739c53202de6718061c2867d",tooltip="OPERATOR BASE_T -= DIG_T CON NOMBRE M_SUB."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="NumRepr::nat_reg_digs\l_t::regd_base_N_Bm1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a207bbdbb5f8b3ba6fef2cbd0fb3b2fd4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="NumRepr::nat_reg_digs\l_t::regd_base_N_pow_n_B_m1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#aced30ba689f6251588687cbc4891b055",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="NumRepr::nat_reg_digs\l_t::regi_Bm1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1nat__reg__digs__t.html#a9fb67b33d8f8d153fce5b8bcc575f283",tooltip=" "];
+}

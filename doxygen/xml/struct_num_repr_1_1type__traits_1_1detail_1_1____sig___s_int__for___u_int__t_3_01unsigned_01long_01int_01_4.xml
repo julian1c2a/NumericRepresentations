@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01int_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned long int &gt;</compoundname>
+    <includes refid="basic__types_8hpp" local="no">basic_types.hpp</includes>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01int_01_4_1ad29887748427b5fbb1a6c1271f7eee5c" prot="public" static="no">
+        <type>signed long long int</type>
+        <definition>using NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned long int &gt;::type =  signed long long int</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned long int &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="286" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned long int &gt;</label>
+        <link refid="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01int_01_4"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="285" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="286" bodyend="286"/>
+    <listofallmembers>
+      <member refid="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01int_01_4_1ad29887748427b5fbb1a6c1271f7eee5c" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::detail::__sig_SInt_for_UInt_t&lt; unsigned long int &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

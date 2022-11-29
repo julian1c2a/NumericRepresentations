@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_utilities_8hpp" xml:lang="es">
+<title>Referencia del Archivo utilities.hpp</title>
+<indexterm><primary>utilities.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;tuple&gt;<?linebreak?>#include &lt;array&gt;<?linebreak?>#include &quot;basic_types.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para utilities.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="utilities_8hpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="utilities_8hpp__dep__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structutilities_1_1pack2tuple">utilities::pack2tuple&lt; Ts &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1local__void__t">utilities::local_void_t</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1for__each__same__type">utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1for__each__same__type_3_01_head__t_01_4">utilities::for_each_same_type&lt; Head_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1pack2array">utilities::pack2array&lt; Ts &gt;</link></para>
+
+<para>END: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceutilities">utilities</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Concepts    </title>
+        <itemizedlist>
+            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__the__same__type">utilities::all_are_the_same_type</link></para>
+</listitem>
+            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__more__than__zero">utilities::all_are_more_than_zero</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>typedefs    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T&gt; </para><para>using <link linkend="_namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee">utilities::uintspair</link> = typename std::array&lt; UINT_T, 2 &gt;</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T, UINT_T B&gt; </para><para>using <link linkend="_namespaceutilities_1a19b04f837f493034c4612e5bcb58da22">utilities::uintspairlist</link> = typename std::array&lt; uintspair&lt; UINT_T &gt;, B &gt;</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T, UINT_T B&gt; </para><para>using <link linkend="_namespaceutilities_1ab05788cb7517fec011dd7e174edcd6a9">utilities::uintspairtbl</link> = typename std::array&lt; uintspairlist&lt; UINT_T, B &gt;, B &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Funciones    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class... Ts&gt; <?linebreak?>requires ( all_are_the_same_type&lt;Ts...&gt; &amp;&amp; all_are_more_than_zero&lt;Ts...&gt; )</para><para>void <link linkend="_namespaceutilities_1a2ab88d0a656f1609a891e9ea35ce185e">utilities::assign_with_order</link> (auto &amp;dest, const Ts &amp;... args) noexcept</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

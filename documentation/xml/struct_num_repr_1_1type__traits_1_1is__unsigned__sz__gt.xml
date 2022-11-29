@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+  <compounddef id="struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt" kind="struct" language="C++" prot="public">
+    <compoundname>NumRepr::type_traits::is_unsigned_sz_gt</compoundname>
+    <includes refid="basic__types_8hpp" local="no">basic_types.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>unsigned_integral_c</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>unsigned_integral_c</type>
+        <declname>S</declname>
+        <defname>S</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt_1aa3c7c6b7539e039e6db84ff1e9655662" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::type_traits::is_unsigned_sz_gt&lt; T, S &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>NumRepr::type_traits::is_unsigned_sz_gt::value</qualifiedname>
+        <initializer>= ((sizeof(T)&gt;sizeof(S))?true:false)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="200" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NumRepr::type_traits::is_unsigned_sz_gt&lt; T, S &gt;</label>
+        <link refid="struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="199" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="199" bodyend="201"/>
+    <listofallmembers>
+      <member refid="struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt_1aa3c7c6b7539e039e6db84ff1e9655662" prot="public" virt="non-virtual"><scope>NumRepr::type_traits::is_unsigned_sz_gt</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

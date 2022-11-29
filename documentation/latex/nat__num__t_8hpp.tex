@@ -1,0 +1,205 @@
+\hypertarget{nat__num__t_8hpp}{}\doxysection{Referencia del Archivo nat\+\_\+num\+\_\+t.\+hpp}
+\label{nat__num__t_8hpp}\index{nat\_num\_t.hpp@{nat\_num\_t.hpp}}
+{\ttfamily \#include \char`\"{}base\+\_\+num\+\_\+t.\+hpp\char`\"{}}\newline
+Dependencia gráfica adjunta para nat\+\_\+num\+\_\+t.\+hpp\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnat__num__t}{nat\+\_\+num\+\_\+t$<$ UINT\+\_\+\+T, B $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} Base$>$ }\\istream \& \mbox{\hyperlink{nat__num__t_8hpp_abb536e9b1b1447052db560972a06adbe}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classnat__num__t}{nat\+\_\+num\+\_\+t}}$<$ Base $>$ \&arg)
+\item 
+{\footnotesize template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} Base$>$ }\\ostream \& \mbox{\hyperlink{nat__num__t_8hpp_a326c05d0b52b1046d8d49c08bad23fa1}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classnat__num__t}{nat\+\_\+num\+\_\+t}}$<$ Base $>$ \&arg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{nat__num__t_8hpp_a326c05d0b52b1046d8d49c08bad23fa1}\label{nat__num__t_8hpp_a326c05d0b52b1046d8d49c08bad23fa1}} 
+\index{nat\_num\_t.hpp@{nat\_num\_t.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!nat\_num\_t.hpp@{nat\_num\_t.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} Base$>$ \\
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classnat__num__t}{nat\+\_\+num\+\_\+t}}$<$ Base $>$ \&}]{arg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02103                                                                  \{}
+\DoxyCodeLine{02104         \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}} sz = arg.\mbox{\hyperlink{classnat__num__t_a3f420ff49cf6b55ef38936b2035a4071}{size}}();}
+\DoxyCodeLine{02105         os  << \textcolor{stringliteral}{"{}uint\#"{}};}
+\DoxyCodeLine{02106         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0 ; k<sz ; ++k) \{}
+\DoxyCodeLine{02107                 \textcolor{keywordflow}{if} (k==0)}
+\DoxyCodeLine{02108                         os      << arg[k].Dig2Int();}
+\DoxyCodeLine{02109                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{02110                         os      << \textcolor{stringliteral}{"{}:"{}} << arg[k].Dig2Int();}
+\DoxyCodeLine{02111         \}}
+\DoxyCodeLine{02112         os      <<\textcolor{stringliteral}{"{}\#B"{}}}
+\DoxyCodeLine{02113                 << \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Base) ;}
+\DoxyCodeLine{02114         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{02115 \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a \mbox{\hyperlink{l00049}{nat\+\_\+num\+\_\+t$<$ UINT\+\_\+\+T, B $>$\+::size()}}.
+
+Gráfico de llamadas para esta función\+:
+% FIG 2
+\mbox{\Hypertarget{nat__num__t_8hpp_abb536e9b1b1447052db560972a06adbe}\label{nat__num__t_8hpp_abb536e9b1b1447052db560972a06adbe}} 
+\index{nat\_num\_t.hpp@{nat\_num\_t.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!nat\_num\_t.hpp@{nat\_num\_t.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$const \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} Base$>$ \\
+istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classnat__num__t}{nat\+\_\+num\+\_\+t}}$<$ Base $>$ \&}]{arg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01965                                                            \{}
+\DoxyCodeLine{01966         \textcolor{keyword}{enum} estado\_e \{e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13\};}
+\DoxyCodeLine{01967         vector<string> num(255);}
+\DoxyCodeLine{01968         \textcolor{keywordtype}{string} sds;}
+\DoxyCodeLine{01969         \textcolor{keywordtype}{string} num\_digint;}
+\DoxyCodeLine{01970         \textcolor{keywordtype}{string} num\_base;}
+\DoxyCodeLine{01971         \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}} numero\_base\_recogido         = 0;}
+\DoxyCodeLine{01972         \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}} ind\_sds                              = 0;}
+\DoxyCodeLine{01973         \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}} digint                               = 0;}
+\DoxyCodeLine{01974         \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}} ind\_num                      = 0;}
+\DoxyCodeLine{01975         estado\_e est\_act                        = e0;}
+\DoxyCodeLine{01976         \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{01977         is >> sds;}
+\DoxyCodeLine{01978         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{01979                 c = sds[ind\_sds];}
+\DoxyCodeLine{01980                 \textcolor{keywordflow}{switch} (est\_act) \{}
+\DoxyCodeLine{01981                 \textcolor{keywordflow}{case} e0 :}
+\DoxyCodeLine{01982                         \{}
+\DoxyCodeLine{01983                                 num\_digint.clear();}
+\DoxyCodeLine{01984                                 num\_base.clear();}
+\DoxyCodeLine{01985                                 numero\_base\_recogido = 0;}
+\DoxyCodeLine{01986                                 digint = 0;}
+\DoxyCodeLine{01987                                 ind\_num = 0;}
+\DoxyCodeLine{01988                         \}}
+\DoxyCodeLine{01989                         \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'u'}) est\_act = e1;}
+\DoxyCodeLine{01990                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01991 }
+\DoxyCodeLine{01992                 \textcolor{keywordflow}{case} e1 :}
+\DoxyCodeLine{01993                         \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'i'}) est\_act = e2;}
+\DoxyCodeLine{01994                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{01995                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01996 }
+\DoxyCodeLine{01997                 \textcolor{keywordflow}{case} e2 :}
+\DoxyCodeLine{01998                         \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'n'}) est\_act = e3;}
+\DoxyCodeLine{01999                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{02000                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02001 }
+\DoxyCodeLine{02002                 \textcolor{keywordflow}{case} e3 :}
+\DoxyCodeLine{02003                         \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'t'}) est\_act = e4;}
+\DoxyCodeLine{02004                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{02005                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02006 }
+\DoxyCodeLine{02007                 \textcolor{keywordflow}{case} e4 :}
+\DoxyCodeLine{02008                         \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'\#'}) est\_act = e5;}
+\DoxyCodeLine{02009                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{02010                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02011 }
+\DoxyCodeLine{02012                 \textcolor{keywordflow}{case} e5 :}
+\DoxyCodeLine{02013                         \textcolor{keywordflow}{if} ((c>=\textcolor{charliteral}{'1'})and(c<=\textcolor{charliteral}{'9'})) \{}
+\DoxyCodeLine{02014                                 num[ind\_num].push\_back(c-\/\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{02015                                 est\_act = e6;}
+\DoxyCodeLine{02016                         \}}
+\DoxyCodeLine{02017                         \textcolor{keywordflow}{else} est\_act=e0;}
+\DoxyCodeLine{02018                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02019                 \textcolor{keywordflow}{case} e6 :}
+\DoxyCodeLine{02020                         \textcolor{keywordflow}{if} ((c>=\textcolor{charliteral}{'0'})and(c<=\textcolor{charliteral}{'9'})) \{}
+\DoxyCodeLine{02021                                 num[ind\_num].push\_back(c-\/\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{02022                         \}}
+\DoxyCodeLine{02023                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{':'}) \{}
+\DoxyCodeLine{02024                                 est\_act=e7;}
+\DoxyCodeLine{02025                                 ++ind\_num;}
+\DoxyCodeLine{02026                         \}}
+\DoxyCodeLine{02027                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'\#'}) \{}
+\DoxyCodeLine{02028                                 est\_act=e8;}
+\DoxyCodeLine{02029                                 ++ind\_num;}
+\DoxyCodeLine{02030                         \}}
+\DoxyCodeLine{02031                         \textcolor{keywordflow}{else} est\_act=e0;}
+\DoxyCodeLine{02032                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02033                 \textcolor{keywordflow}{case} e7 :}
+\DoxyCodeLine{02034                         \textcolor{keywordflow}{if} ((c>=\textcolor{charliteral}{'0'})and(c<=\textcolor{charliteral}{'9'})) \{}
+\DoxyCodeLine{02035                                 est\_act = e6;}
+\DoxyCodeLine{02036                                 num[ind\_num].push\_back(c-\/\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{02037                         \}}
+\DoxyCodeLine{02038                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{02039                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02040                 \textcolor{keywordflow}{case} e8 :}
+\DoxyCodeLine{02041                         \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'B'}) \{}
+\DoxyCodeLine{02042                                 est\_act = e9;}
+\DoxyCodeLine{02043                         \}}
+\DoxyCodeLine{02044                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{02045                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02046                 \textcolor{keywordflow}{case} e9 :}
+\DoxyCodeLine{02047                         \textcolor{keywordflow}{if} ((c<=\textcolor{charliteral}{'9'})and(c>=\textcolor{charliteral}{'2'}))\{}
+\DoxyCodeLine{02048                                 est\_act = e10;}
+\DoxyCodeLine{02049                                 num\_base.push\_back(c-\/\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{02050                         \}}
+\DoxyCodeLine{02051                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{'1'}) \{}
+\DoxyCodeLine{02052                                 est\_act = e11;}
+\DoxyCodeLine{02053                                 num\_base.push\_back(1);}
+\DoxyCodeLine{02054                         \}}
+\DoxyCodeLine{02055                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c==\textcolor{charliteral}{' '} || c==\textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{02056                                 est\_act = e12;}
+\DoxyCodeLine{02057                         \textcolor{keywordflow}{else} est\_act=e0;}
+\DoxyCodeLine{02058                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02059                 \textcolor{keywordflow}{case} e10 :}
+\DoxyCodeLine{02060                         \textcolor{keywordflow}{if} ((c<=\textcolor{charliteral}{'9'})and(c>=\textcolor{charliteral}{'0'}))}
+\DoxyCodeLine{02061                                 num\_base.push\_back(c-\/\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{02062                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c==\textcolor{charliteral}{' '} || c==\textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{02063                                 est\_act = e12;}
+\DoxyCodeLine{02064                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{02065                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02066                 \textcolor{keywordflow}{case} e11 :}
+\DoxyCodeLine{02067                         \textcolor{keywordflow}{if} ((c<=\textcolor{charliteral}{'9'})and(c>=\textcolor{charliteral}{'0'})) \{}
+\DoxyCodeLine{02068                                 est\_act=e9;}
+\DoxyCodeLine{02069                                 num\_base.push\_back(c-\/\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{02070                         \}}
+\DoxyCodeLine{02071                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c==\textcolor{charliteral}{' '} || c==\textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{02072                                 est\_act = e12;}
+\DoxyCodeLine{02073                         \textcolor{keywordflow}{else} est\_act = e0;}
+\DoxyCodeLine{02074                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02075                 \textcolor{keywordflow}{case} e12 :}
+\DoxyCodeLine{02076                         \textcolor{keywordflow}{for} (\mbox{\hyperlink{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}{uint}} k=0 ; k < num\_base.size() ; ++k ) \{}
+\DoxyCodeLine{02077                                 numero\_base\_recogido *= 10;}
+\DoxyCodeLine{02078                                 numero\_base\_recogido += num\_base[k];}
+\DoxyCodeLine{02079                         \}}
+\DoxyCodeLine{02080                         \textcolor{keywordflow}{if} (numero\_base\_recogido!=Base) est\_act = e0;}
+\DoxyCodeLine{02081                         \textcolor{keywordflow}{else} est\_act = e13;}
+\DoxyCodeLine{02082                 \textcolor{keywordflow}{case} e13 : \textcolor{keywordflow}{break};}
+\DoxyCodeLine{02083                 default  : est\_act=e0;}
+\DoxyCodeLine{02084                 \}}
+\DoxyCodeLine{02085                 ++ind\_sds;}
+\DoxyCodeLine{02086         \} \textcolor{keywordflow}{while} ((est\_act!=e13)and(c!=\textcolor{charliteral}{'\(\backslash\)0'}));}
+\DoxyCodeLine{02087 }
+\DoxyCodeLine{02088         arg.\mbox{\hyperlink{classnat__num__t_a296e66bafb159169f28cab2ef1357f14}{clear}}();}
+\DoxyCodeLine{02089         \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} numero;}
+\DoxyCodeLine{02090         \textcolor{keywordflow}{for} (\mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} j=0 ; j < ind\_num ; ++j) \{}
+\DoxyCodeLine{02091                 numero=0;}
+\DoxyCodeLine{02092                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}{uint}} k=0 ; k < num[j].size() ; ++k ) \{}
+\DoxyCodeLine{02093                         numero *= 10;}
+\DoxyCodeLine{02094                         numero += num[j][k];}
+\DoxyCodeLine{02095                 \}}
+\DoxyCodeLine{02096                 arg.\mbox{\hyperlink{classnat__num__t_aef1019272164e14682dc667e158afa53}{push\_back}}(\mbox{\hyperlink{nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a2f1cc69e474f8f2734aef69506857e18}{dig\_t<Base>}}(numero));}
+\DoxyCodeLine{02097         \}}
+\DoxyCodeLine{02098         arg.\mbox{\hyperlink{classnat__num__t_a05f88959b68523c08a10f864e73a6fc6}{p\_aux}}(pardigs\_t<Base>());}
+\DoxyCodeLine{02099         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{02100 \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a \mbox{\hyperlink{l00116}{nat\+\_\+num\+\_\+t$<$ UINT\+\_\+\+T, B $>$\+::clear()}}, \mbox{\hyperlink{l01594}{nat\+\_\+num\+\_\+t$<$ UINT\+\_\+\+T, B $>$\+::p\+\_\+aux()}} y \mbox{\hyperlink{l00121}{nat\+\_\+num\+\_\+t$<$ UINT\+\_\+\+T, B $>$\+::push\+\_\+back()}}.
+
+Gráfico de llamadas para esta función\+:
+% FIG 3

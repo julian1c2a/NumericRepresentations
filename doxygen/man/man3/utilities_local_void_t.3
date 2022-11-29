@@ -1,0 +1,17 @@
+.TH "utilities::local_void_t" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+utilities::local_void_t
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <utilities\&.hpp>\fP
+.SH "Descripción detallada"
+.PP 
+EXAMPLE pack2tuple<int,std::string,double>; // tipo \fBpack2tuple<int,std::string,double>::tuple_type\fP == std::tuple<int,std::string,double>; // tupla using mi_tupla = \fBpack2tuple<int,std::string,double>::tuple_type\fP; pack_size() devuelve 3 mi_tupla(2,'xyz',3\&.14159) devuelve la tupla {2,'xyz',3\&.14159} // por copia o por movimiento elem_type<0> es int elem_type<1> es std::string elem_type<2> es double get<0>(2,'xyz',3\&.14159) == 2; get<1>(2,'xyz',3\&.14159) == 'xyz'; get<2>(2,'xyz',3\&.14159) == 3\&.14159; tuple_obj == mi_tupla(2,'xyz',3\&.14159) == {2,'xyz',3\&.14159} head of tuple_obj is {2} tail of tuple_obj is {'xyz',3\&.14159} BEGIN: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES 
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

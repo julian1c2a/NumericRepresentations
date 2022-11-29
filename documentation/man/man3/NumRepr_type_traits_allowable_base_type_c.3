@@ -1,0 +1,31 @@
+.TH "NumRepr::type_traits::allowable_base_type_c" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::type_traits::allowable_base_type_c
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <basic_types\&.hpp>\fP
+.SH "Concept definition"
+.PP 
+.nf
+template<typename UINT_T>
+concept NumRepr::type_traits::allowable_base_type_c =          
+                        std::is_same_v<UINT_T,uint8_t>  ||
+                        std::is_same_v<UINT_T,uint16_t> ||
+                        std::is_same_v<UINT_T,uint32_t> ||
+                        std::is_same_v<UINT_T,uint64_t> ||
+                        std::is_same_v<UINT_T,uchint>   ||
+                        std::is_same_v<UINT_T,usint>    ||
+                        std::is_same_v<UINT_T,uint>             ||
+                        std::is_same_v<UINT_T,ulint>    ||
+                        std::is_same_v<UINT_T,ullint>   
+.fi
+.SH "Descripción detallada"
+.PP 
+'CLASS' TYPE TYPE DEFINITION template<typename              int_type,int_type base> class digito<int_type,base> {}; CONCEPT TYPE TYPE DEFINITION template<allowable_base_type_c int_type,int_type base> class digito<int_type,base> {}; 
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

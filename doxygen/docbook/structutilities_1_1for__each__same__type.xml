@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structutilities_1_1for__each__same__type" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</title>
+<indexterm><primary>utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;utilities.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para utilities::for_each_same_type&lt; Head_t, Tail_t &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structutilities_1_1for__each__same__type__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Tipos públicos    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_structutilities_1_1for__each__same__type_1acf16b98533524aefda115e880faa2baf">second_t</link> = std::tuple_element&lt; 0, std::tuple&lt; Tail_t... &gt; &gt;::type</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Atributos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static constexpr bool <link linkend="_structutilities_1_1for__each__same__type_1a10069179aea7ad89090b1e1db8926772">are_same_type_v</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;class Head_t, class... Tail_t&gt;<?linebreak?>struct utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</title></simplesect>
+</section>
+<section>
+<title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
+<anchor xml:id="_structutilities_1_1for__each__same__type_1acf16b98533524aefda115e880faa2baf"/><section>
+    <title>second_t</title>
+<indexterm><primary>second_t</primary><secondary>utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</secondary></indexterm>
+<indexterm><primary>utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</primary><secondary>second_t</secondary></indexterm>
+<computeroutput>template&lt;class Head_t , class... Tail_t&gt; </computeroutput><para><computeroutput>using <link linkend="_structutilities_1_1for__each__same__type">utilities::for_each_same_type</link>&lt; Head_t, Tail_t &gt;::second_t =  std::tuple_element&lt;0,std::tuple&lt;Tail_t...&gt; &gt;::type</computeroutput></para></section>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_structutilities_1_1for__each__same__type_1a10069179aea7ad89090b1e1db8926772"/><section>
+    <title>are_same_type_v</title>
+<indexterm><primary>are_same_type_v</primary><secondary>utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</secondary></indexterm>
+<indexterm><primary>utilities::for_each_same_type&lt; Head_t, Tail_t &gt;</primary><secondary>are_same_type_v</secondary></indexterm>
+<computeroutput>template&lt;class Head_t , class... Tail_t&gt; </computeroutput><para><computeroutput>constexpr bool <link linkend="_structutilities_1_1for__each__same__type">utilities::for_each_same_type</link>&lt; Head_t, Tail_t &gt;::are_same_type_v<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><emphasis role="strong">Valor inicial:</emphasis><programlisting linenumbering="unnumbered">=&#32;(
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(std::is_same_v&lt;Head_t,second_t&gt;)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&amp;&amp;&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="_structutilities_1_1for__each__same__type_1a10069179aea7ad89090b1e1db8926772">for_each_same_type&lt;Tail_t...&gt;::are_same_type_v</link>)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;)
+</programlisting></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_utilities_8hpp">utilities.hpp</link></section>
+</section>

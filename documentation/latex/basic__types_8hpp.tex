@@ -1,0 +1,399 @@
+\hypertarget{basic__types_8hpp}{}\doxysection{Referencia del Archivo basic\+\_\+types.\+hpp}
+\label{basic__types_8hpp}\index{basic\_types.hpp@{basic\_types.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$compare$>$}\newline
+{\ttfamily \#include $<$concepts$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+Dependencia gráfica adjunta para basic\+\_\+types.\+hpp\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+unsigned\+\_\+sz\+\_\+gt$<$ T, S $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1is__signed__sz__gt}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+signed\+\_\+sz\+\_\+gt$<$ T, S $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UInt\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01char_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned char $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01short_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned short int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t_3_01unsigned_01long_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned long long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UInt $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01char_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned char $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01short_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned short int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t_3_01unsigned_01long_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ unsigned long long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ SInt $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01char_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed char $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01char_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ char $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01short_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed short int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01signed_01long_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed long long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t_3_01sint128__t_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ sint128\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ SInt $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01char_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed char $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01char_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ char $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01short_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed short int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01signed_01long_01long_01int_01_4}{Num\+Repr\+::type\+\_\+traits\+::detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ signed long long int $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1empty__type}{Num\+Repr\+::type\+\_\+traits\+::empty\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em DECLARACION DE UN TYPE\+\_\+\+TRAITS PARA LITERALES INTEGRALES SIN DEFINCION. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ Type, Radix $>$}}
+\begin{DoxyCompactList}\small\item\em FUNCION TYPE\+\_\+\+TRAITS DE AYUDA PARA TYPE\+\_\+\+TRAITS\+::\+UINTTYPEFORRADIX. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint128__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ uint128\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint64__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ uint64\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01int64__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ int64\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint32__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ uint32\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint32__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ sint32\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint16__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ uint16\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint16__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ sint16\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint8__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ uint8\+\_\+t, Radix $>$}}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint8__t_00_01_radix_01_4}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix$<$ sint8\+\_\+t, Radix $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_num_repr}{Num\+Repr}}
+\item 
+namespace \mbox{\hyperlink{namespace_num_repr_1_1type__traits}{Num\+Repr\+::type\+\_\+traits}}
+\item 
+namespace \mbox{\hyperlink{namespace_num_repr_1_1type__traits_1_1detail}{Num\+Repr\+::type\+\_\+traits\+::detail}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1arith__integral__c}{Num\+Repr\+::arith\+\_\+integral\+\_\+c}}
+\begin{DoxyCompactList}\small\item\em TYPE\+\_\+\+TRAITS AND CONCEPTS. \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1arith__natural__c}{Num\+Repr\+::arith\+\_\+natural\+\_\+c}}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1char__type}{Num\+Repr\+::char\+\_\+type}}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1type__traits_1_1allowable__base__type__c}{Num\+Repr\+::type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c}}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1type__traits_1_1allowable__unsigned__type__c}{Num\+Repr\+::type\+\_\+traits\+::allowable\+\_\+unsigned\+\_\+type\+\_\+c}}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1type__traits_1_1unsigned__integral__c}{Num\+Repr\+::type\+\_\+traits\+::unsigned\+\_\+integral\+\_\+c}}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1type__traits_1_1allowable__signed__type__c}{Num\+Repr\+::type\+\_\+traits\+::allowable\+\_\+signed\+\_\+type\+\_\+c}}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1type__traits_1_1signed__integral__c}{Num\+Repr\+::type\+\_\+traits\+::signed\+\_\+integral\+\_\+c}}
+\item 
+concept \mbox{\hyperlink{concept_num_repr_1_1type__traits_1_1integral__c}{Num\+Repr\+::type\+\_\+traits\+::integral\+\_\+c}}
+\end{DoxyCompactItemize}
+\doxysubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_aea0efe89afd5207a49f66e2efb8e5b23}{chint}} = char
+\begin{DoxyCompactList}\small\item\em NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{basic__types_8hpp_a85b0e776326d79546b9c1be5aaf8fbe5}{schint}} = signed char
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_abc2bfec16692f211ffdd458503d271a9}{ssint}} = signed short int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a20b5825a1c2afececc61b86b97dab369}{sint}} = signed int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a4dd12bd8c212fa515a1c3ee359386acc}{slint}} = signed long int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a628f9317d59014c3fe187673c97faec5}{sllint}} = signed long long int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} = unsigned char
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}} = unsigned short int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}{uint}} = unsigned int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_accbad71b3b2a0c00b93b3b065d660140}{ulint}} = unsigned long int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}{ullint}} = unsigned long long int
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}} = \+\_\+\+\_\+uint128\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_ac20ff49f0b5abe18cd5058327ff94431}{sint128\+\_\+t}} = \+\_\+\+\_\+int128\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} = std\+::size\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_ab5048cce40e123439815e0c2f44c970e}{sint8\+\_\+t}} = std\+::int8\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a4d8d8bd21d0006c49d8254134ae1b791}{sint16\+\_\+t}} = std\+::int16\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a5f80278b6cf4373ed964e11490b4e7d0}{sint32\+\_\+t}} = std\+::int32\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a0b99b5cbd530123932ed0c3d547726c6}{sint64\+\_\+t}} = std\+::int64\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_ab83d5f0c064cbee3702ccc57cea87f14}{uint8\+\_\+t}} = std\+::uint8\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a8555fdd0d9fc8b577eaccc6ceb884e37}{uint16\+\_\+t}} = std\+::uint16\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_ad2500cd316889e2ea5c919df9288f2a6}{uint32\+\_\+t}} = std\+::uint32\+\_\+t
+\item 
+using \mbox{\hyperlink{basic__types_8hpp_a339c01c5b79a3378ee67ee5a6f293cc7}{uint64\+\_\+t}} = std\+::uint64\+\_\+t
+\item 
+{\footnotesize template$<$unsigned\+\_\+integral\+\_\+c UInt\+\_\+t$>$ }\\using \mbox{\hyperlink{namespace_num_repr_1_1type__traits_aceacfae33a2bdedd9b890f2766f9b5a9}{Num\+Repr\+::type\+\_\+traits\+::sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t}} = typename detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UInt\+\_\+t $>$\+::type
+\item 
+{\footnotesize template$<$unsigned\+\_\+integral\+\_\+c UInt\+\_\+t$>$ }\\using \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a9b443da6cd532ae6d0d5482d8f610737}{Num\+Repr\+::type\+\_\+traits\+::sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t}} = typename detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UInt\+\_\+t $>$\+::type
+\item 
+{\footnotesize template$<$signed\+\_\+integral\+\_\+c SInt\+\_\+t$>$ }\\using \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a78161f55798c2f15126db200161b7cda}{Num\+Repr\+::type\+\_\+traits\+::sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t}} = typename detail\+::\+\_\+\+\_\+sig\+\_\+\+UInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ SInt\+\_\+t $>$\+::type
+\item 
+{\footnotesize template$<$signed\+\_\+integral\+\_\+c SInt\+\_\+t$>$ }\\using \mbox{\hyperlink{namespace_num_repr_1_1type__traits_ad43c24c639cf0910d71316896a9f39c2}{Num\+Repr\+::type\+\_\+traits\+::sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t}} = typename detail\+::\+\_\+\+\_\+sig\+\_\+\+SInt\+\_\+for\+\_\+\+SInt\+\_\+t$<$ SInt\+\_\+t $>$\+::type
+\item 
+{\footnotesize template$<$integral\+\_\+c Type, Type Radix$>$ }\\using \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a351a7a8b4e624e101708c6d24ffeefb6}{Num\+Repr\+::type\+\_\+traits\+::\+UInt\+Type\+For\+Radix\+\_\+t}} = typename UInt\+Type\+For\+Radix$<$ Type, Radix $>$\+::\+UInt\+Type
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}} Radix$>$ }\\using \mbox{\hyperlink{namespace_num_repr_1_1type__traits_af319111801e531a4ba8fee6e00e5b0f3}{Num\+Repr\+::type\+\_\+traits\+::\+Type\+From\+Int\+Number\+\_\+t}} = UInt\+Type\+For\+Radix\+\_\+t$<$ decltype(Radix), Radix $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{namespace_num_repr_a05a3dcfc9d03be48f1fb5f03ab8936f1}{Num\+Repr\+::clear\+\_\+ccad}} (char $\ast$, \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}})
+\item 
+{\footnotesize template$<$template$<$ \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} B $>$ class T, \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} B$>$ }\\constexpr const char $\ast$ \mbox{\hyperlink{namespace_num_repr_a36edd93a4de5c8ef300823ce73625440}{Num\+Repr\+::dev\+CadenaC}} (T$<$ B $>$ arg, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{std\+::size\+\_\+t}} long\+\_\+ccad=64) noexcept
+\item 
+constexpr char $\ast$ \mbox{\hyperlink{namespace_num_repr_a233042cc13bd5079b36824a1bf521264}{Num\+Repr\+::clear\+\_\+ccad}} (char $\ast$cad\+\_\+c, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{std\+::size\+\_\+t}} long\+\_\+de\+\_\+cad\+\_\+c) noexcept
+\item 
+constexpr unsigned long long \mbox{\hyperlink{namespace_num_repr_a98a67aedc0e9a8fc2ec450eea84c153a}{Num\+Repr\+::atoull}} (char $\ast$text) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a4f0f4b9cd9964b406c8299bcbd74f506}{Num\+Repr\+::type\+\_\+traits\+::maxbase}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_ae6c52c70d58ecbc58b9ce8ddeff3c42e}{Num\+Repr\+::type\+\_\+traits\+::submaxbase}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a1a5c6f8a01fa8a777470dd479b3ae87a}{Num\+Repr\+::type\+\_\+traits\+::minbase}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_ae6d7996db2b7cdee98b72342bc0f976b}{Num\+Repr\+::type\+\_\+traits\+::subminbase}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a3265677e1277882355b102f90ce5fc69}{Num\+Repr\+::type\+\_\+traits\+::monobase}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a1d046b3da7103b9ca5a7dacb674f49f0}{Num\+Repr\+::type\+\_\+traits\+::nobase}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_addc313fbab4434c736167b0510d95a97}{Num\+Repr\+::type\+\_\+traits\+::maxdigit}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a7197bd8a89fcc647c18b49f63a1b49f5}{Num\+Repr\+::type\+\_\+traits\+::submaxdigit}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a8c8928703a18d48613b88d4eee0e967a}{Num\+Repr\+::type\+\_\+traits\+::digit\+\_\+0}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_ad0267c5c18b47ea7d823e17e735d1e42}{Num\+Repr\+::type\+\_\+traits\+::digit\+\_\+1}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_ad3c536f8264351b7aa3d9bd8e648d2e2}{Num\+Repr\+::type\+\_\+traits\+::base\+\_\+2}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B$>$ }\\consteval bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a7fe2595394f638eb83fc857ba0076f09}{Num\+Repr\+::type\+\_\+traits\+::base\+\_\+geqt\+\_\+2}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B$>$ }\\consteval bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a10f4b5abfc1e0a202341bf4481596e66}{Num\+Repr\+::type\+\_\+traits\+::base\+\_\+leqt\+\_\+max}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B$>$ }\\consteval bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_ae7b0da6237614a2d93ed8d40ee5596a5}{Num\+Repr\+::type\+\_\+traits\+::suitable\+\_\+base}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_ab7aafe6bcb405d5c200145181755984f}{Num\+Repr\+::type\+\_\+traits\+::middle\+\_\+max}} ()
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T $>$ }\\consteval UINT\+\_\+T \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a9c68ad4f3469998252d88633edf8e908}{Num\+Repr\+::type\+\_\+traits\+::sqrt\+\_\+max}} ()
+\begin{DoxyCompactList}\small\item\em DECLARACION DE UN TYPE\+\_\+\+TRAITS PARA LITERALES INTEGRALES NOVALIDOS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename CharT $>$ }\\constexpr CharT \mbox{\hyperlink{namespace_num_repr_a9e06f6d5fa7a7c2262986bba0c4d7f35}{Num\+Repr\+::nullchar}} \{CharT(\textquotesingle{}\textbackslash{}0\textquotesingle{})\}
+\item 
+{\footnotesize template$<$typename T , typename S $>$ }\\constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_abdd3c894685f7a3c5a75a1e11030be9f}{Num\+Repr\+::type\+\_\+traits\+::has\+\_\+the\+\_\+same\+\_\+size}} = (sizeof(T)==sizeof(S))
+\item 
+{\footnotesize template$<$unsigned\+\_\+integral\+\_\+c T, unsigned\+\_\+integral\+\_\+c S$>$ }\\constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a6fbb9b711f734a52551166219e61a750}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+unsigned\+\_\+sz\+\_\+gt\+\_\+v}} = is\+\_\+unsigned\+\_\+sz\+\_\+gt$<$T,S$>$\+::value
+\item 
+{\footnotesize template$<$unsigned\+\_\+integral\+\_\+c T, unsigned\+\_\+integral\+\_\+c S$>$ }\\constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a789b3b413126236b864ee49857240dc9}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+unsigned\+\_\+sz\+\_\+geqt\+\_\+v}} = (is\+\_\+unsigned\+\_\+sz\+\_\+gt\+\_\+v$<$T,S$>$ $\vert$$\vert$ std\+::is\+\_\+same\+\_\+v$<$T,S$>$)
+\item 
+{\footnotesize template$<$signed\+\_\+integral\+\_\+c T, signed\+\_\+integral\+\_\+c S$>$ }\\constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a7c29ce492dab6daf5c494a845385d0b2}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+signed\+\_\+sz\+\_\+gt\+\_\+v}} = is\+\_\+signed\+\_\+sz\+\_\+gt$<$T,S$>$\+::value
+\item 
+{\footnotesize template$<$signed\+\_\+integral\+\_\+c T, unsigned\+\_\+integral\+\_\+c S$>$ }\\constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_a20b53f5a6dfecf867091ecfc36246c2a}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+signed\+\_\+sz\+\_\+geqt\+\_\+v}}
+\item 
+{\footnotesize template$<$integral\+\_\+c T, unsigned\+\_\+integral\+\_\+c S$>$ }\\constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_abc08a96a36443cef681ab6550813015e}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+sz\+\_\+gt\+\_\+v}}
+\item 
+{\footnotesize template$<$integral\+\_\+c T, unsigned\+\_\+integral\+\_\+c S$>$ }\\constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1type__traits_af1b7c5a6fa97bd83aab53761c28f2ece}{Num\+Repr\+::type\+\_\+traits\+::is\+\_\+sz\+\_\+geqt\+\_\+v}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de los \textquotesingle{}typedefs\textquotesingle{}}
+\mbox{\Hypertarget{basic__types_8hpp_aea0efe89afd5207a49f66e2efb8e5b23}\label{basic__types_8hpp_aea0efe89afd5207a49f66e2efb8e5b23}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!chint@{chint}}
+\index{chint@{chint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{chint}{chint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_aea0efe89afd5207a49f66e2efb8e5b23}{chint}} =  char}
+
+
+
+NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS. 
+
+\mbox{\Hypertarget{basic__types_8hpp_a85b0e776326d79546b9c1be5aaf8fbe5}\label{basic__types_8hpp_a85b0e776326d79546b9c1be5aaf8fbe5}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!schint@{schint}}
+\index{schint@{schint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{schint}{schint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a85b0e776326d79546b9c1be5aaf8fbe5}{schint}} =  signed char}
+
+\mbox{\Hypertarget{basic__types_8hpp_a20b5825a1c2afececc61b86b97dab369}\label{basic__types_8hpp_a20b5825a1c2afececc61b86b97dab369}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!sint@{sint}}
+\index{sint@{sint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{sint}{sint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a20b5825a1c2afececc61b86b97dab369}{sint}} =  signed int}
+
+\mbox{\Hypertarget{basic__types_8hpp_ac20ff49f0b5abe18cd5058327ff94431}\label{basic__types_8hpp_ac20ff49f0b5abe18cd5058327ff94431}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!sint128\_t@{sint128\_t}}
+\index{sint128\_t@{sint128\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{sint128\_t}{sint128\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_ac20ff49f0b5abe18cd5058327ff94431}{sint128\+\_\+t}} =  \+\_\+\+\_\+int128\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_a4d8d8bd21d0006c49d8254134ae1b791}\label{basic__types_8hpp_a4d8d8bd21d0006c49d8254134ae1b791}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!sint16\_t@{sint16\_t}}
+\index{sint16\_t@{sint16\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{sint16\_t}{sint16\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a4d8d8bd21d0006c49d8254134ae1b791}{sint16\+\_\+t}} =  std\+::int16\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_a5f80278b6cf4373ed964e11490b4e7d0}\label{basic__types_8hpp_a5f80278b6cf4373ed964e11490b4e7d0}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!sint32\_t@{sint32\_t}}
+\index{sint32\_t@{sint32\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{sint32\_t}{sint32\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a5f80278b6cf4373ed964e11490b4e7d0}{sint32\+\_\+t}} =  std\+::int32\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_a0b99b5cbd530123932ed0c3d547726c6}\label{basic__types_8hpp_a0b99b5cbd530123932ed0c3d547726c6}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!sint64\_t@{sint64\_t}}
+\index{sint64\_t@{sint64\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{sint64\_t}{sint64\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a0b99b5cbd530123932ed0c3d547726c6}{sint64\+\_\+t}} =  std\+::int64\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_ab5048cce40e123439815e0c2f44c970e}\label{basic__types_8hpp_ab5048cce40e123439815e0c2f44c970e}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!sint8\_t@{sint8\_t}}
+\index{sint8\_t@{sint8\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{sint8\_t}{sint8\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_ab5048cce40e123439815e0c2f44c970e}{sint8\+\_\+t}} =  std\+::int8\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}\label{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!size\_t@{size\_t}}
+\index{size\_t@{size\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{size\_t}{size\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} =  std\+::size\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_a4dd12bd8c212fa515a1c3ee359386acc}\label{basic__types_8hpp_a4dd12bd8c212fa515a1c3ee359386acc}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!slint@{slint}}
+\index{slint@{slint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{slint}{slint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a4dd12bd8c212fa515a1c3ee359386acc}{slint}} =  signed long int}
+
+\mbox{\Hypertarget{basic__types_8hpp_a628f9317d59014c3fe187673c97faec5}\label{basic__types_8hpp_a628f9317d59014c3fe187673c97faec5}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!sllint@{sllint}}
+\index{sllint@{sllint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{sllint}{sllint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a628f9317d59014c3fe187673c97faec5}{sllint}} =  signed long long int}
+
+\mbox{\Hypertarget{basic__types_8hpp_abc2bfec16692f211ffdd458503d271a9}\label{basic__types_8hpp_abc2bfec16692f211ffdd458503d271a9}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!ssint@{ssint}}
+\index{ssint@{ssint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{ssint}{ssint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_abc2bfec16692f211ffdd458503d271a9}{ssint}} =  signed short int}
+
+\mbox{\Hypertarget{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}\label{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!uchint@{uchint}}
+\index{uchint@{uchint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{uchint}{uchint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a5cf78cc304f4de6824a26eb05aa832f2}{uchint}} =  unsigned char}
+
+\mbox{\Hypertarget{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}\label{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!uint@{uint}}
+\index{uint@{uint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{uint}{uint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a69aa29b598b851b0640aa225a9e5d61d}{uint}} =  unsigned int}
+
+\mbox{\Hypertarget{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}\label{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!uint128\_t@{uint128\_t}}
+\index{uint128\_t@{uint128\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{uint128\_t}{uint128\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\+\_\+t}} =  \+\_\+\+\_\+uint128\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_a8555fdd0d9fc8b577eaccc6ceb884e37}\label{basic__types_8hpp_a8555fdd0d9fc8b577eaccc6ceb884e37}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!uint16\_t@{uint16\_t}}
+\index{uint16\_t@{uint16\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{uint16\_t}{uint16\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a8555fdd0d9fc8b577eaccc6ceb884e37}{uint16\+\_\+t}} =  std\+::uint16\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_ad2500cd316889e2ea5c919df9288f2a6}\label{basic__types_8hpp_ad2500cd316889e2ea5c919df9288f2a6}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!uint32\_t@{uint32\_t}}
+\index{uint32\_t@{uint32\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{uint32\_t}{uint32\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_ad2500cd316889e2ea5c919df9288f2a6}{uint32\+\_\+t}} =  std\+::uint32\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_a339c01c5b79a3378ee67ee5a6f293cc7}\label{basic__types_8hpp_a339c01c5b79a3378ee67ee5a6f293cc7}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!uint64\_t@{uint64\_t}}
+\index{uint64\_t@{uint64\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{uint64\_t}{uint64\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a339c01c5b79a3378ee67ee5a6f293cc7}{uint64\+\_\+t}} =  std\+::uint64\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_ab83d5f0c064cbee3702ccc57cea87f14}\label{basic__types_8hpp_ab83d5f0c064cbee3702ccc57cea87f14}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!uint8\_t@{uint8\_t}}
+\index{uint8\_t@{uint8\_t}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{uint8\_t}{uint8\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_ab83d5f0c064cbee3702ccc57cea87f14}{uint8\+\_\+t}} =  std\+::uint8\+\_\+t}
+
+\mbox{\Hypertarget{basic__types_8hpp_accbad71b3b2a0c00b93b3b065d660140}\label{basic__types_8hpp_accbad71b3b2a0c00b93b3b065d660140}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!ulint@{ulint}}
+\index{ulint@{ulint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{ulint}{ulint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_accbad71b3b2a0c00b93b3b065d660140}{ulint}} =  unsigned long int}
+
+\mbox{\Hypertarget{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}\label{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!ullint@{ullint}}
+\index{ullint@{ullint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{ullint}{ullint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}{ullint}} =  unsigned long long int}
+
+\mbox{\Hypertarget{basic__types_8hpp_aea9446a386112c2a90c00874130877df}\label{basic__types_8hpp_aea9446a386112c2a90c00874130877df}} 
+\index{basic\_types.hpp@{basic\_types.hpp}!usint@{usint}}
+\index{usint@{usint}!basic\_types.hpp@{basic\_types.hpp}}
+\doxysubsubsection{\texorpdfstring{usint}{usint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{basic__types_8hpp_aea9446a386112c2a90c00874130877df}{usint}} =  unsigned short int}
+

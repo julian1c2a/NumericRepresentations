@@ -1,0 +1,18 @@
+\hypertarget{conceptutilities_1_1all__are__more__than__zero}{}\doxysection{utilities\+::all\+\_\+are\+\_\+more\+\_\+than\+\_\+zero Concept Reference}
+\label{conceptutilities_1_1all__are__more__than__zero}\index{utilities::all\_are\_more\_than\_zero@{utilities::all\_are\_more\_than\_zero}}
+
+
+{\ttfamily \#include $<$utilities.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutilities_1_1all__are__more__than__zero}{utilities::all\_are\_more\_than\_zero}} =  \textcolor{keyword}{requires}(Ts...) \{}
+\DoxyCodeLine{        ((\textcolor{keyword}{sizeof}...(Ts))>0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}

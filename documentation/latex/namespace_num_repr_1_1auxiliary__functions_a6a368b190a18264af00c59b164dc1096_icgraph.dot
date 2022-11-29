@@ -1,0 +1,12 @@
+digraph "NumRepr::auxiliary_functions::is_prime"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="NumRepr::auxiliary\l_functions::is_prime",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="NumRepr::dig_t::is\l_prime",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_num_repr_1_1dig__t.html#a2e4a2d001d8b4a6e97639da50e33d3cb",tooltip=" "];
+}

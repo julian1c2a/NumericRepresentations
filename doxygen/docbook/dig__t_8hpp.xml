@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dig__t_8hpp" xml:lang="es">
+<title>Referencia del Archivo dig_t.hpp</title>
+<indexterm><primary>dig_t.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;auxiliary_functions.hpp&quot;<?linebreak?>#include &quot;auxiliary_types.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para dig_t.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dig__t_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dig__t_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1dig__t">NumRepr::dig_t&lt; UINT_T, B &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_num_repr">NumRepr</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>typedefs    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> B&gt; </para><para>using <link linkend="_namespace_num_repr_1a10e7466eb7ce2646e7f8502d665e61f0">NumRepr::digit_t</link> = <link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">dig_t</link>&lt; type_traits::TypeFromIntNumber_t&lt; B &gt;, static_cast&lt; type_traits::TypeFromIntNumber_t&lt; B &gt; &gt;(B) &gt;</para>
+
+<para>SOLO HAY QUE DECLARAR digit_t&lt;2&gt; o digit_t&lt;10&gt; o ... </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Funciones    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; <?linebreak?>requires (type_traits::suitable_base&lt;UINT_T, B&gt;())</para><para>consteval UINT_T <link linkend="_namespace_num_repr_1a2546ea7fb1f063e87dbb450cfe5e3623">NumRepr::ui_1</link> () noexcept</para>
+</listitem>
+            <listitem><para>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; <?linebreak?>requires (type_traits::suitable_base&lt;UINT_T, B&gt;())</para><para>consteval <link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">dig_t</link>&lt; UINT_T, B &gt; <link linkend="_namespace_num_repr_1a46e6abf96f0de3f606c367f6217adfc5">NumRepr::dig_max</link> () noexcept</para>
+
+<para>DEFINCION DE template&lt;uint128_t Radix&gt; digito_t{};. </para>
+</listitem>
+            <listitem><para>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T Base&gt; <?linebreak?>requires (type_traits::suitable_base&lt;UINT_T,Base&gt;())</para><para>std::istream &amp; <link linkend="_namespace_num_repr_1a8b055ff0ba4ecbadf6045bae114b69ac">NumRepr::operator&gt;&gt;</link> (std::istream &amp;is, <link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">dig_t</link>&lt; UINT_T, Base &gt; &amp;arg)</para>
+</listitem>
+            <listitem><para>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T Base&gt; <?linebreak?>requires (type_traits::suitable_base&lt;UINT_T,Base&gt;())</para><para>std::ostream &amp; <link linkend="_namespace_num_repr_1a193915060bdae5eb3972386dbb6cb9d8">NumRepr::operator&lt;&lt;</link> (std::ostream &amp;os, <link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">dig_t</link>&lt; UINT_T, Base &gt; arg)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

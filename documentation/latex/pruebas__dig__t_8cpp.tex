@@ -1,0 +1,77 @@
+\hypertarget{pruebas__dig__t_8cpp}{}\doxysection{Referencia del Archivo pruebas\+\_\+dig\+\_\+t.\+cpp}
+\label{pruebas__dig__t_8cpp}\index{pruebas\_dig\_t.cpp@{pruebas\_dig\_t.cpp}}
+{\ttfamily \#include \char`\"{}reg\+\_\+digs\+\_\+t.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$typeinfo$>$}\newline
+Dependencia gráfica adjunta para pruebas\+\_\+dig\+\_\+t.\+cpp\+:
+% FIG 0
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pruebas__dig__t_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{pruebas__dig__t_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{pruebas__dig__t_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{pruebas\_dig\_t.cpp@{pruebas\_dig\_t.cpp}!main@{main}}
+\index{main@{main}!pruebas\_dig\_t.cpp@{pruebas\_dig\_t.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004            \{}
+\DoxyCodeLine{00005         \textcolor{comment}{//template<uchint B,std::size\_t L>}}
+\DoxyCodeLine{00006         \textcolor{comment}{//using reg\_digs\_t = typename NumRepr::reg\_digs\_t<uchint,B,L>;}}
+\DoxyCodeLine{00007 \textcolor{comment}{/*}}
+\DoxyCodeLine{00008 \textcolor{comment}{        uchint a='a';}}
+\DoxyCodeLine{00009 \textcolor{comment}{        std::cout << "{}sizeof(a="{} << a << "{})="{} << sizeof(a) << "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00010 \textcolor{comment}{        usint b='b';}}
+\DoxyCodeLine{00011 \textcolor{comment}{        std::cout << "{}sizeof(b="{} << b << "{})="{} << sizeof(b) << "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00012 \textcolor{comment}{        ulint c='c';}}
+\DoxyCodeLine{00013 \textcolor{comment}{        std::cout << "{}sizeof(c="{} << c << "{})="{} << sizeof(c) << "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00014 \textcolor{comment}{        ullint d='d';}}
+\DoxyCodeLine{00015 \textcolor{comment}{        std::cout << "{}sizeof(d="{} << d << "{})="{} << sizeof(d) << "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00016 \textcolor{comment}{*/}}
+\DoxyCodeLine{00017 \textcolor{comment}{/*}}
+\DoxyCodeLine{00018 \textcolor{comment}{        constexpr char fdl\{'\(\backslash\)n'\};}}
+\DoxyCodeLine{00019 \textcolor{comment}{        dig\_t v0\{dig\_t::dig\_0()\};}}
+\DoxyCodeLine{00020 \textcolor{comment}{        dig\_t v1\{dig\_t::dig\_1()\};}}
+\DoxyCodeLine{00021 \textcolor{comment}{        dig\_t vBm1\{dig\_t::dig\_max()\};}}
+\DoxyCodeLine{00022 \textcolor{comment}{        dig\_t vBm2\{dig\_t::dig\_submax()\};}}
+\DoxyCodeLine{00023 \textcolor{comment}{        std::cout << "{}v0    =  "{} << v0.to\_string()              << fdl}}
+\DoxyCodeLine{00024 \textcolor{comment}{                                                << "{}v1    =  "{} << v1.to\_string()                << fdl}}
+\DoxyCodeLine{00025 \textcolor{comment}{                                                << "{}vBm1  =  "{} << vBm1.to\_string()      << fdl}}
+\DoxyCodeLine{00026 \textcolor{comment}{                                                << "{}vBm2  =  "{} << vBm2.to\_string()      << fdl;}}
+\DoxyCodeLine{00027 \textcolor{comment}{        std::cout << "{}Size of type dig\_t = "{} << sizeof(dig\_t) << fdl;}}
+\DoxyCodeLine{00028 \textcolor{comment}{        for(std::size\_t ix\{0\} ; ix < 23 ; ++ix) \{}}
+\DoxyCodeLine{00029 \textcolor{comment}{                std::cout << "{}TABLAS DE MULTIPLICAR PARA BASE "{} << dig\_t::radix\_str() << fdl;}}
+\DoxyCodeLine{00030 \textcolor{comment}{                std::cout << "{}TABLAS DEL : "{} << ix << fdl;}}
+\DoxyCodeLine{00031 \textcolor{comment}{                for(std::size\_t iy\{ix\} ; iy < 23 ; ++iy) \{}}
+\DoxyCodeLine{00032 \textcolor{comment}{                        dig\_t dx\{ix\};}}
+\DoxyCodeLine{00033 \textcolor{comment}{                        dig\_t dy\{iy\};}}
+\DoxyCodeLine{00034 \textcolor{comment}{                        std::cout << dx << "{} * "{} << dy << "{} = "{} << dx.multcarry(dy)}}
+\DoxyCodeLine{00035 \textcolor{comment}{                                                                << ' ' << dx.multresult(dy) << fdl;}}
+\DoxyCodeLine{00036 \textcolor{comment}{                \}}}
+\DoxyCodeLine{00037 \textcolor{comment}{        \}}}
+\DoxyCodeLine{00038 \textcolor{comment}{        dig\_t a\{22\};}}
+\DoxyCodeLine{00039 \textcolor{comment}{        dig\_t b\{22\};}}
+\DoxyCodeLine{00040 \textcolor{comment}{        dig\_t c = a*b;}}
+\DoxyCodeLine{00041 \textcolor{comment}{        dig\_t d = a.multresult(b);}}
+\DoxyCodeLine{00042 \textcolor{comment}{        std::cout << c << fdl;}}
+\DoxyCodeLine{00043 \textcolor{comment}{        std::cout << d << fdl;}}
+\DoxyCodeLine{00044 \textcolor{comment}{*/}}
+\DoxyCodeLine{00045         \textcolor{keyword}{constexpr} \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\_t}} B\{111114444444444444\};}
+\DoxyCodeLine{00046         \textcolor{keyword}{constexpr} \mbox{\hyperlink{basic__types_8hpp_a8fe9f5218406354b79aac7a41bd4823f}{uint128\_t}} Bm1\{B-\/1\};}
+\DoxyCodeLine{00047         \textcolor{keyword}{using }\mbox{\hyperlink{namespace_num_repr_a10e7466eb7ce2646e7f8502d665e61f0}{digit\_t}} = \textcolor{keyword}{typename} \mbox{\hyperlink{struct_num_repr_1_1dig__t}{NumRepr::digit\_t<B>}};}
+\DoxyCodeLine{00048         \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespace_num_repr_a10e7466eb7ce2646e7f8502d665e61f0}{digit\_t}} A\{Bm1\};}
+\DoxyCodeLine{00049         \textcolor{keyword}{const} std::type\_info\& type\_of\_A = \textcolor{keyword}{typeid}(\textcolor{keyword}{decltype}(A()));}
+\DoxyCodeLine{00050         std::cout << type\_of\_A.name() << \textcolor{stringliteral}{"{} "{}} << \mbox{\hyperlink{namespace_num_repr_a10e7466eb7ce2646e7f8502d665e61f0}{digit\_t}}\{A()\} << \textcolor{stringliteral}{"{} < "{}};}
+\DoxyCodeLine{00051         \textcolor{keyword}{using }tipo\_de\_A = \textcolor{keyword}{decltype}(A());}
+\DoxyCodeLine{00052         \textcolor{keyword}{using }limites\_de\_A = std::numeric\_limits<tipo\_de\_A>;}
+\DoxyCodeLine{00053         std::cout << limites\_de\_A::max() << std::endl;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00056 \}}
+
+\end{DoxyCode}

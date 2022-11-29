@@ -1,0 +1,16 @@
+digraph "NumRepr::dig_t::C_B"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="NumRepr::dig_t::C_B",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="\"C_B\" es identico a \"operator-()\""];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="NumRepr::display_operator_C_B",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_num_repr.html#a0aa113da9c3c91f1af1c073958cc12a3",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="NumRepr::display_prop\l_C_B_eq_inv_C_B",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_num_repr.html#aec8203e0be75e913ece973211c4b1386",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="NumRepr::display_prop\l_C_B_minus_1_eq_C_Bm1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_num_repr.html#ae0fc1d1a1935c51de9fa9490f212c168",tooltip=" "];
+}

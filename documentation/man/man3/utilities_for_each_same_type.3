@@ -1,0 +1,50 @@
+.TH "utilities::for_each_same_type< Head_t, Tail_t >" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+utilities::for_each_same_type< Head_t, Tail_t >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <utilities\&.hpp>\fP
+.SS "Tipos públicos"
+
+.in +1c
+.ti -1c
+.RI "using \fBsecond_t\fP = std::tuple_element< 0, std::tuple< Tail_t\&.\&.\&. > >::type"
+.br
+.in -1c
+.SS "Atributos públicos estáticos"
+
+.in +1c
+.ti -1c
+.RI "static constexpr bool \fBare_same_type_v\fP"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<class Head_t, class\&.\&.\&. Tail_t>
+.br
+struct utilities::for_each_same_type< Head_t, Tail_t >"
+.SH "Documentación de los 'Typedef' miembros de la clase"
+.PP 
+.SS "template<class Head_t , class\&.\&.\&. Tail_t> using \fButilities::for_each_same_type\fP< Head_t, Tail_t >::second_t =  std::tuple_element<0,std::tuple<Tail_t\&.\&.\&.> >::type"
+
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "template<class Head_t , class\&.\&.\&. Tail_t> constexpr bool \fButilities::for_each_same_type\fP< Head_t, Tail_t >::are_same_type_v\fC [static]\fP, \fC [constexpr]\fP"
+\fBValor inicial:\fP
+.PP
+.nf
+= (
+        (std::is_same_v<Head_t,second_t>)
+                &&      (for_each_same_type<Tail_t\&.\&.\&.>::are_same_type_v)
+        )
+.fi
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

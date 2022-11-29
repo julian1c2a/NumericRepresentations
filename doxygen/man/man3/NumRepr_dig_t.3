@@ -1,0 +1,1664 @@
+.TH "NumRepr::dig_t< UINT_T, B >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::dig_t< UINT_T, B >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dig_t\&.hpp>\fP
+.SS "Tipos públicos"
+
+.in +1c
+.ti -1c
+.RI "using \fBSIG_UINT_T\fP = sig_UInt_for_UInt_t< UINT_T >"
+.br
+.ti -1c
+.RI "using \fBSIG_SINT_T\fP = sig_SInt_for_UInt_t< UINT_T >"
+.br
+.ti -1c
+.RI "using \fBuintspair\fP = std::array< UINT_T, 2 >"
+.br
+.ti -1c
+.RI "using \fBdigspair\fP = std::array< \fBdig_t\fP, 2 >"
+.br
+.ti -1c
+.RI "using \fBuintspairlist\fP = std::array< \fBuintspair\fP, B >"
+.br
+.ti -1c
+.RI "using \fBuintspairtbl\fP = std::array< \fBuintspairlist\fP, B >"
+.br
+.ti -1c
+.RI "template<\fBbinop_e\fP op> using \fBresbinop_t\fP = \fBauxiliary_types::resbinop_t\fP< \fBdig_t\fP, op >"
+.br
+.in -1c
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "constexpr \fBoperator UINT_T\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr const UINT_T & \fBget\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBoperator SIG_UINT_T\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBoperator SIG_SINT_T\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr UINT_T \fBoperator()\fP () const noexcept"
+.br
+.ti -1c
+.RI "consteval \fBdig_t\fP () noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr \fBdig_t\fP (Int_t arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP (const \fBdig_t\fP &) noexcept=default"
+.br
+.RI "CONSTRUCTOR COPIA POR REFERENCIA\&. "
+.ti -1c
+.RI "constexpr \fBdig_t\fP (\fBdig_t\fP &&) noexcept=default"
+.br
+.RI "CONSTRUCTOR POR MOVIMIENTO\&. "
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBoperator=\fP (const Int_t &a) noexcept"
+.br
+.RI "SOBRECARGA DEL OPERATOR=() MEDIANTE REFERENCIA CTE DESDE UN INT_T\&. "
+.ti -1c
+.RI "constexpr \fBdig_t\fP & \fBoperator=\fP (const \fBdig_t\fP &) noexcept=default"
+.br
+.RI "SOBRECARGA DEL OPERATOR=() MEDIANTE REFERENCIA CTE DESDE UN DIG_T\&. "
+.ti -1c
+.RI "constexpr \fBdig_t\fP & \fBoperator=\fP (\fBdig_t\fP &&) noexcept=default"
+.br
+.RI "SOBRECARGA DEL OPERATOR=() MEDIANTE MOVIMIENTO DESDE UN DIG_T\&. "
+.ti -1c
+.RI "constexpr bool \fBis_unit\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_0_divisor\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBmult_inv\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator&\fP (const \fBdig_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator&=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator|\fP (const \fBdig_t\fP &arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator|=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::unsigned_integral_c UIntType> constexpr const \fBdig_t\fP & \fBoperator^=\fP (UIntType exp) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::unsigned_integral_c UIntType> constexpr \fBdig_t\fP \fBoperator^\fP (UIntType exp) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator==\fP (\fBdig_t\fP a) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator!=\fP (\fBdig_t\fP a) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator>=\fP (\fBdig_t\fP a) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator>\fP (\fBdig_t\fP a) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator<=\fP (\fBdig_t\fP a) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator<\fP (\fBdig_t\fP a) const noexcept"
+.br
+.ti -1c
+.RI "constexpr std::strong_ordering \fBoperator<=>\fP (\fBdig_t\fP rhs) const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr bool \fBoperator==\fP (Int_t rhs) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr std::weak_ordering \fBoperator<=>\fP (Int_t rhs) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator+=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBoperator+=\fP (Int_t arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator\-=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBoperator\-=\fP (Int_t arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator*=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBoperator*=\fP (Int_t arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator/=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBoperator/=\fP (Int_t arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator%=\fP (\fBdig_t\fP arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBoperator%=\fP (Int_t arg) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator++\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator++\fP (int) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator\-\-\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator\-\-\fP (int) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator+\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator\-\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator*\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator/\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator%\fP (\fBdig_t\fP arg) const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBoperator+\fP (Int_type arg) const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBoperator\-\fP (Int_type arg) const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBoperator*\fP (Int_type arg) const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBoperator/\fP (Int_type arg) const noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBoperator%\fP (Int_type arg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator!\fP () const noexcept"
+.br
+.RI "EN BASE B, B-1-m_d ES EL COMPL_Bm1(m_d) "
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBoperator\-\fP () const noexcept"
+.br
+.RI "EN BASE B, B-m_d ES EL COMPL_B(m_d) "
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBC_Bm1\fP () const noexcept"
+.br
+.RI "'C_Bm1' es identico a 'operator!()' "
+.ti -1c
+.RI "constexpr \fBdig_t\fP \fBC_B\fP () const noexcept"
+.br
+.RI "'C_B' es identico a 'operator-()' "
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBmC_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBmC_B\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_0\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_0or1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_0\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_0or1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_max\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_max\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_Bm1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_Bm1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_submax\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_maxorsubmax\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_Bm1orBm2\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_maxorsubmax\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_Bm1orBm2\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_submax\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_Bm2\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_Bm2\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_not_maxormin\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_maxormin\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_far_maxormin\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_near_maxormin\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr std::string \fBto_string\fP () const noexcept"
+.br
+.in -1c
+.SS "Métodos públicos estáticos"
+
+.in +1c
+.ti -1c
+.RI "template<UINT_T n, UINT_T m> 
+.br
+requires ((n<B)&&(m<B))static consteval \fBuintspair\fP \fBmult\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval bool \fBis_prime\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_Bm2\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBdig_t\fP \fBdig_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_Bm2\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval UINT_T \fBui_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBsui_1\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_SINT_T\fP \fBssi_B\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_SINT_T\fP \fBssi_max\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBssi_submax\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBssi_0\fP () noexcept"
+.br
+.ti -1c
+.RI "static consteval \fBSIG_UINT_T\fP \fBssi_1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_t> static constexpr UINT_T \fBnormaliza\fP (Int_t arg) noexcept"
+.br
+.ti -1c
+.RI "static constexpr \fBdig_t\fP \fBsum_carry\fP (\fBdig_t\fP arg_1, \fBdig_t\fP arg_2) noexcept"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B>
+.br
+requires (suitable_base<UINT_T,B>())
+.br
+struct NumRepr::dig_t< UINT_T, B >"< WRAPPER PARA UN TIPO UINT_T QUE UNSIGNED_INTEGRAL_T<UINT_T> SE SOBRECARGAN LOS OPERADORES ARITMETICOS PARA ARITMETICA MODULAR DIG_T = SUMA Y MULTIPLICACION CIRCULAR (MODULAR CON MOD B) 
+.SH "Documentación de los 'Typedef' miembros de la clase"
+.PP 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::dig_t\fP< UINT_T, B >::digspair =  std::array<\fBdig_t\fP,2>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<\fBbinop_e\fP op> using \fBNumRepr::dig_t\fP< UINT_T, B >::resbinop_t =  \fBauxiliary_types::resbinop_t\fP<\fBdig_t\fP,op>"
+BEGIN : CONSTRUCCION DE LAS TABLAS DE MULTIPLICAR ESTATICAS PARA TODA LA CLASE 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::dig_t\fP< UINT_T, B >\fB::SIG_SINT_T\fP =  sig_SInt_for_UInt_t<UINT_T>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::dig_t\fP< UINT_T, B >\fB::SIG_UINT_T\fP =  sig_UInt_for_UInt_t<UINT_T>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::dig_t\fP< UINT_T, B >::uintspair =  std::array<UINT_T,2>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::dig_t\fP< UINT_T, B >::uintspairlist =  std::array<\fBuintspair\fP,B>"
+
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::dig_t\fP< UINT_T, B >::uintspairtbl =  std::array<\fBuintspairlist\fP,B>"
+
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> consteval \fBNumRepr::dig_t\fP< UINT_T, B >\fB::dig_t\fP ()\fC [inline]\fP, \fC [noexcept]\fP"
+< CONSTRUCTORES CONSTRUCTOR POR DEFECTO NORMALIZA ES UNA FUNCION QUE BASICAMENTE SI ENTRA 1524 DEVUELVE 1524B TENIENDO EN CUENTA TIPOS Y SIGNOS 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr \fBNumRepr::dig_t\fP< UINT_T, B >\fB::dig_t\fP (Int_t arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+CONSTRUCTOR A PARTIR DE UN ENTERO ARG ARG EQUIV ARG+Z*B DONDE Z ES UN ENTERO EN m_d SOLO QUEREMOS QUE HAYA UN NUMERO ENTRE 0 Y B-1 INCLUSIVES 
+.PP
+.nf
+277                                                    :
+278                 m_d(normaliza<Int_t>(arg))
+279         {}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBNumRepr::dig_t\fP< UINT_T, B >\fB::dig_t\fP (const \fBdig_t\fP< UINT_T, B > &)\fC [inline]\fP, \fC [constexpr]\fP, \fC [default]\fP, \fC [noexcept]\fP"
+
+.PP
+CONSTRUCTOR COPIA POR REFERENCIA\&. 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBNumRepr::dig_t\fP< UINT_T, B >\fB::dig_t\fP (\fBdig_t\fP< UINT_T, B > &&)\fC [inline]\fP, \fC [constexpr]\fP, \fC [default]\fP, \fC [noexcept]\fP"
+
+.PP
+CONSTRUCTOR POR MOVIMIENTO\&. 
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::C_B () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+'C_B' es identico a 'operator-()' 
+.PP
+.nf
+945                  {
+946                         return dig_t((m_d==0)?0:(B-m_d));
+947         }
+.fi
+.PP
+Referenciado por \fBNumRepr::display_operator_C_B()\fP, \fBNumRepr::display_prop_C_B_eq_inv_C_B()\fP y \fBNumRepr::display_prop_C_B_minus_1_eq_C_Bm1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::C_Bm1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+'C_Bm1' es identico a 'operator!()' 
+.PP
+.nf
+939                  {
+940                         return dig_t(ui_max()-m_d);
+941         }
+.fi
+.PP
+Referenciado por \fBNumRepr::display_operator_C_Bm1()\fP, \fBNumRepr::display_prop_C_B_minus_1_eq_C_Bm1()\fP y \fBNumRepr::display_prop_C_Bm1_eq_inv_C_Bm1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::dig_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+147 {return dig_t();}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::dig_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+148 {return dig_t(1u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::dig_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+145 {return dig_t(B-1u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::dig_Bm2 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+146 {return dig_t(B-2u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::dig_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+143 {return dig_t(B-1u);};
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::dig_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+144 {return dig_t(B-2u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const UINT_T & \fBNumRepr::dig_t\fP< UINT_T, B >::get () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+121                  { return (m_d); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_0 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+dig_t<uchint,7> a,b,c; a = 5; b = 2; c = 0; !a == 1 is TRUE a\&.C_Bm1() == 1 is TRUE !b == 4 is TRUE b\&.C_Bm1() == 4 is TRUE !c == 6 is TRUE c\&.C_Bm1() == 6 is TRUE -a == 2 is TRUE a\&.C_B() == 2 is TRUE -b == 5 is TRUE b\&.C_B() == 5 is TRUE -c == 0 is TRUE c\&.C_B() == 0 is TRUE a\&.mC_Bm1() == 1 is TRUE a == 1 is TRUE b\&.mC_Bm1() == 4 is TRUE b == 4 is TRUE c\&.mC_Bm1() == 6 is TRUE c == 6 is TRUE a\&.mC_B() == 2 is TRUE a == 2 is TRUE b\&.mC_B() == 5 is TRUE b == 5 is TRUE c\&.mC_B() == 0 is TRUE c == 0 is TRUE 
+.PP
+.nf
+996                  {
+997                 return (m_d == ui_0());
+998         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_0_divisor () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+344                                                             { // FROM FINITE RINGS
+349                 if constexpr (is_prime()) {
+350                         if (is_0()) {
+351                                 return true;
+352                         }
+353                         else {
+354                                 return false;
+355                         }
+356                 }
+357                 else {
+358                         if (is_0())
+359                                 return true;
+360                         else if (std::gcd(B,m_d)!=ui_1())
+361                                 return true;
+362                         else
+363                                 return false;
+364                 }
+365         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP y \fBNumRepr::ui_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_0or1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1008                  {
+1009                 return ((m_d == ui_0())||(m_d == ui_1()));
+1010         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::ui_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1002                  {
+1003                 return (m_d == ui_1());
+1004         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::ui_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_Bm1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1044                  {
+1045                 return (m_d == ui_Bm1);
+1046         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_Bm1orBm2 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1068                  {
+1069                 return (is_Bm1() || is_Bm2());
+1070         }
+.fi
+.PP
+Hace referencia a \fBis_Bm1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_Bm2 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1092                  {
+1093                 return (m_d == ui_Bm2);
+1094         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_far_maxormin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1116                  {
+1117                 if constexpr (B == 2u) {
+1118                         return false;
+1119                 }
+1120                 else {
+1121                         return (is_not_0() && is_not_Bm1() && is_not_1() && is_not_Bm2());
+1122                 }
+1123         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_max () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1032                  {
+1033                 return (m_d == ui_max);
+1034         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_maxormin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1110                  {
+1111                 return (is_0() || is_Bm1());
+1112         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP y \fBis_Bm1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_maxorsubmax () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1062                  {
+1063                 return (is_max() || is_submax());
+1064         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_near_maxormin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1127                  {
+1128                 if constexpr (B == 2u) {
+1129                         return true;
+1130                 }
+1131                 else {
+1132                         return (is_0() || is_Bm1() || is_1() || is_Bm2());
+1133                 }
+1134         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP, \fBis_1()\fP y \fBis_Bm1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_0 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1020                  {
+1021                 return (m_d != ui_0());
+1022         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_0or1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1026                  {
+1027                 return ( ! is_0or1() );
+1028         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1014                  {
+1015                 return (m_d != ui_1());
+1016         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::ui_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_Bm1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1050                  {
+1051                 return (m_d != ui_Bm1);
+1052         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_Bm1orBm2 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1080                  {
+1081                 return (is_not_Bm1() && is_not_Bm2());
+1082         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_Bm2 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1098                  {
+1099                 return (m_d != ui_Bm2);
+1100         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_max () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1038                  {
+1039                 return (m_d != ui_max);
+1040         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_maxormin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1104                  {
+1105                 return (is_not_0() && is_not_Bm1());
+1106         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_maxorsubmax () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1074                  {
+1075                 return (is_not_max() && is_not_submax());
+1076         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_not_submax () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1086                  {
+1087                 return (m_d != ui_submax);
+1088         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_prime ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+dig_t<uchint,10> digito{4}; digito() devuelve un 4 de tipo uchint 
+.PP
+.nf
+139                                                          {
+140                 return auxiliary_functions::is_prime(static_cast<std::size_t>(B));
+141         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::auxiliary_functions::is_prime()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_submax () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1056                  {
+1057                 return (m_d == ui_submax);
+1058         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >::is_unit () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+a y b son digitos; a = std::move(b); a es identico a b; en b puede no queda nada; 
+.PP
+.nf
+320                                                        { // FROM FINITE RINGS
+325                 dig_t& cthis{*this};
+326                 if constexpr (is_prime()) {
+327                         if (!is_0()) {
+328                                 return true;
+329                         }
+330                         else {
+331                                 return false;
+332                         }
+333                 }
+334                 else {
+335                         if (is_1())
+336                                 return true;
+337                         else if (std::gcd(B, m_d) != ui_1())
+338                                 return false;
+339                         else
+340                                 return true;
+341                 }
+342         }
+.fi
+.PP
+Hace referencia a \fBis_0()\fP, \fBis_1()\fP y \fBNumRepr::ui_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >::mC_B ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+964                  {
+965                 (m_d==0)                                                ?
+966                         (m_d)                                                   :
+967                         (m_d=(B-m_d));
+968                 return (*this);
+969         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >::mC_Bm1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+957                  {
+958                 m_d=(ui_max()-m_d);
+959                 return (*this);
+960         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<UINT_T n, UINT_T m> 
+.br
+requires ((n<B)&&(m<B))static consteval \fBuintspair\fP \fBNumRepr::dig_t\fP< UINT_T, B >::mult ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+41                  {
+42                 if constexpr (B > type_traits::sqrt_max<UINT_T>()) {
+43                         constexpr SIG_UINT_T sup_n{n};
+44                         constexpr SIG_UINT_T sup_m{m};
+45                         constexpr SIG_UINT_T result{sup_n * sup_m};
+46                         constexpr UINT_T ret_1{result/B}; // "DECENAS"
+47                         constexpr UINT_T ret_0{result%B}; // "UNIDADES"
+48                         constexpr uintspair ret{ret_1,ret_0};
+49                         return ret;
+50                 } else {
+51                         constexpr UINT_T result{n * m};
+52                         constexpr UINT_T ret_1{result/B}; // "DECENAS"
+53                         constexpr UINT_T ret_0{result%B}; // "UNIDADES"
+54                         constexpr uintspair ret{ret_1,ret_0};
+55                         return ret;
+56                 }
+57         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::mult_inv () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+367                                                          { // FROM FINITE RINGS
+368                 if (is_unit()) {
+369                         dig_t& cthis{*this};
+370                         if (is_1()) {
+371                                 return dig_1();
+372                         } else if (is_max()) return dig_max();
+373                         else {
+374                                 for (dig_t index(2); !is_max(); ++index) {
+375                                         if (index\&.is_unit()) {
+376                                                 if ((cthis * index)\&.is_1()) {
+377                                                         return index;
+378                                                 }
+379                                         }
+380                                 }
+381                         }
+382                 }
+383                 else {
+384                         return dig_0();
+385                 }
+386         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::dig_max()\fP y \fBis_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> static constexpr UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >::normaliza (Int_t arg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+207                  {
+208                 if constexpr (std::is_same_v<Int_t,UINT_T>) {
+209                         return (arg%B);
+210                 }
+211                 else if constexpr (std::is_signed_v<Int_t>) {
+212                         if constexpr (
+213                                 type_traits::maxbase<Int_t>()
+214                                                         >=
+215                                 type_traits::maxbase<SIG_SINT_T>()
+216                         ) {
+217                                 constexpr Int_t sint_0{0}; // ssi_0()
+218                                 constexpr Int_t sint_B{B}; // ssi_B()
+219                                 Int_t cparg{arg};
+220                                 if (arg<sint_0) {
+221                                         Int_t coc{(-arg)/sint_B};
+222                                         coc *= sint_B;
+223                                         cparg += coc;
+224                                         if (cparg<0)
+225                                                 cparg += sint_B;
+226                                         if (cparg>=sint_B)
+227                                                 cparg -= sint_B;
+228                                 }
+229                                 else {
+230                                         cparg %= sint_B;
+231                                 }
+232                                 return static_cast<UINT_T>(cparg);
+233                         }
+234                         else {
+235                                 constexpr SIG_SINT_T sint_0{0};
+236                                 constexpr SIG_SINT_T sint_B{B};
+237                                 SIG_SINT_T cparg{arg};
+238                                 if (arg<sint_0) {
+239                                         SIG_SINT_T coc{(-arg)/sint_B};
+240                                         coc *= sint_B;
+241                                         cparg += coc;
+242                                         if (cparg<0)
+243                                                 cparg += sint_B;
+244                                         if (cparg>=sint_B)
+245                                                 cparg -= sint_B;
+246                                 }
+247                                 else {
+248                                         cparg %= sint_B;
+249                                 }
+250                                 return static_cast<UINT_T>(cparg);
+251                         }
+252                 }
+253                 else {
+254                         if constexpr (maxbase<Int_t>() < maxbase<UINT_T>() ) {
+255                                 constexpr SIG_UINT_T uint_B{B};
+256                                 SIG_UINT_T cparg{arg};
+257                                 if (arg >= uint_B) {
+258                                         cparg %= uint_B;
+259                                 }
+260                                 return static_cast<UINT_T>(cparg);
+261                         }
+262                         else {
+263                                 constexpr Int_t uint_B{B};
+264                                 Int_t cparg{arg};
+265                                 if (arg >= uint_B) {
+266                                         cparg %= uint_B;
+267                                 }
+268                                 return static_cast<UINT_T>(cparg);
+269                         }
+270                 }
+271         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP \fBSIG_SINT_T\fP () const\fC [inline]\fP, \fC [explicit]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+129                  { return static_cast<SIG_SINT_T>(m_d); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP \fBSIG_UINT_T\fP () const\fC [inline]\fP, \fC [explicit]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+125                  { return static_cast<SIG_UINT_T>(m_d); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP UINT_T () const\fC [inline]\fP, \fC [explicit]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+PARA B=3 2*2 1 COMIENZAN POR 2 B-2 PARA B=4 2*2 2*3 3*4 3 COMIENZAN POR 2 B-2, 3 B-3 PARA B=5 2*2 2*3 2*4 3*3 3*4 4*4 6 COMIENZAN POR 2 B-2, 3 B-3, 4 B-4 PARA B=6 2*2 2*3 2*4 2*5 3*3 3*4 3*5 4*4 4*5 5*5 10 COMIENZAN POR 2 B-2, 3 B-3, 4 B-4, 5 B-5 PARA B=r 2*2 2*(2+1) \&.\&.\&. 2*(r-1) r-1 r COMIENZAN POR 2 B-2, 3 B-3, 4 B-4, 5 B-1, \&.\&.\&. , r-1 B-r+1 3*3 \&.\&.\&. 3*(r-1) r-2 \&.\&.\&. (r-1)*(r-1) r-(r-1) 
+.PP
+ (r-2)r-(r-1)*r/2 + 1 = [2(r-2)-((r-2)+1)]r/2 + 1 = ((r-3)r + 2)/2 = (r^2 - 3r + 2) / 2 
+.SS "a r^2 + b r + c"
+1 = a 9 + b 3 + c 3 = a 16 + b 4 + c 
+.SS "6 = a 25 + b 5 + c"
+1 = a 9 + b 3 + c 2 = a 7 + b 1 
+.SS "5 = a 16 + b 2"
+1 = a 9 + b 3 + c 2 = a 7 + b 
+.SS "1 = a  2"
+c = 2/2 b = -3/2 
+.SS "a =  1/2"
+SIZE = (B^2 - 3B + 2)/2 2+3+4+\&.\&.\&.+B-1 = 1+2+3+4+\&.\&.\&.+B-1 - 1 = (B-1)B/2 - 2(B-1)/2 = (B^2 - B - 2B +2)/2 = =(B^2-3B+2)/2
+.PP
+FALTARIA HACER SOLO PARA BASES MAYORES QUE 2 CODE NEW USING TYPES : using pair_map = std::pair<uintspair,uintspair>; CODE MULTTABLE: static consteval std::array<pair_map,(B^2 - 3B + 2)/2> multtable{make_multtables()}; CODE FOR MAKE_MULTTABLES(): static consteval std::array<pair_map,(B^2 - 3B + 2)/2> make_multtables() noexcept { std::array<pair_map,(B^2 - 3B + 2)/2> ret; /// ESTO QUE SIGUE HABRIA QUE HACERLO POR UNROOLING LOOP EN COMPILE TIME /// YA QUE IDX E IDY NO SON CONSTANTES EN TIEMPO DE COMPILACION /// LO MEJOR ES HACERLO EN UNA CLASE TEMPLATE POR RECURSION for(size_t idx{2} ; idx < B ; ++idx) { for(size_t idy{idx} ; idy < B ; ++idy) { make_pair(make_array(idx,idy),\fBmult<idx,idy>()\fP); } } } 
+.PP
+.nf
+117                  { return m_d; }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::operator! () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+EN BASE B, B-1-m_d ES EL COMPL_Bm1(m_d) 
+.PP
+.nf
+927                  {
+928                         return dig_t(ui_max()-m_d);
+929         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator!\fP= (\fBdig_t\fP< UINT_T, B > a) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+558                 {return ((a() != m_d)? true : false);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP% (\fBdig_t\fP< UINT_T, B > arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+860                  {
+861                 dig_t ret(*this);
+862                 ret %= arg;
+863                 return ret;
+864         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP% (Int_type arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+909                  {
+910                 dig_t ret(*this);
+911                 const dig_t cparg(normaliza<Int_type>(arg));
+912                 if (cparg != dig_0())
+913                         ret %= cparg;
+914                 return ret;
+915         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP%= (\fBdig_t\fP< UINT_T, B > arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+768         {
+769                 if (arg\&.m_d != ui_0())
+770                         m_d %= arg\&.m_d;
+771                 return (*this);
+772         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP%= (Int_t arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+776         {
+777                 dig_t cparg{normaliza<Int_t>(arg)};
+778                 if (cparg != dig_0())
+779                         (*this)%=cparg;
+780                 return (*this);
+781         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP& (const \fBdig_t\fP< UINT_T, B > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+DEVOLVER EL MENOR: ANDBITWISE NO TIENE POSIBILIDAD DE ERROR 
+.PP
+.nf
+469         {
+470                 return (((*this)<=arg)?(*this):arg);
+471         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP&= (\fBdig_t\fP< UINT_T, B > arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+DEVOLVER EL MENOR HABIENDOLO ASIGNADO ANDBITWISE AND ASSIGN NO TIENE POSIBILIDAD DE ERROR 
+.PP
+.nf
+478         {
+479                 if (arg < (*this))
+480                         (*this) = arg;
+481                 return (*this);
+482         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP() () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+133                  { return (m_d); }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP* (\fBdig_t\fP< UINT_T, B > arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+844                  {
+845                 dig_t ret(*this);
+846                 ret *= arg;
+847                 return ret;
+848         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP* (Int_type arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+888                  {
+889                 dig_t ret(*this);
+890                 const dig_t tmp(normaliza<Int_type>(arg));
+891                 ret *= tmp;
+892                 return ret;
+893         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP*= (\fBdig_t\fP< UINT_T, B > arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+686         {
+687                 if constexpr (B < type_traits::sqrt_max<UINT_T>()) {
+688                         m_d *= arg\&.m_d;
+689                         m_d %= B;
+690                         return (*this);
+691                 } else {
+692                         SIG_UINT_T tmp{m_d};
+693                         tmp *= arg\&.m_d;
+694                         tmp %= static_cast<SIG_UINT_T>(B);
+695                         m_d = static_cast<UINT_T>(tmp);
+696                         return (*this);
+697                 }
+698         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP*= (Int_t arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+702         {
+703                 const Int_t tmp{normaliza<Int_t>(arg)};
+704                 if constexpr (std::is_signed_v<Int_t>)
+705                 {
+706                         if constexpr (sizeof(Int_t)>sizeof(UINT_T))
+707                         {
+708                                 using SIG2_SINT_T = type_traits::sig_SInt_for_SInt_t<Int_t>;
+709                                 const SIG2_SINT_T norm_arg{tmp};
+710                                 SIG2_SINT_T este{m_d};
+711                                 este *= norm_arg;
+712                                 este %= static_cast<SIG2_SINT_T>(B);
+713                                 m_d = static_cast<UINT_T>(este);
+714                                 return (*this);
+715                         }
+716                         else
+717                         {
+718                                 const SIG_SINT_T norm_arg{tmp};
+719                                 SIG_SINT_T este{m_d};
+720                                 este *= norm_arg;
+721                                 este %= static_cast<SIG_SINT_T>(B);
+722                                 m_d = static_cast<UINT_T>(este);
+723                                 return (*this);
+724                         }
+725                 }
+726                 else
+727                 {
+728                         if constexpr (sizeof(Int_t)>sizeof(UINT_T))
+729                         {
+730                                 using SIG2_UINT_T = type_traits::sig_UInt_for_UInt_t<Int_t>;
+731                                 const SIG2_UINT_T norm_arg{tmp};
+732                                 SIG2_UINT_T este{m_d};
+733                                 este *= norm_arg;
+734                                 este %= static_cast<SIG2_UINT_T>(B);
+735                                 m_d = static_cast<UINT_T>(este);
+736                                 return (*this);
+737                         }
+738                         else
+739                         {
+740                                 const SIG_UINT_T norm_arg{tmp};
+741                                 SIG_UINT_T este{m_d};
+742                                 este *= norm_arg;
+743                                 este %= static_cast<SIG_UINT_T>(B);
+744                                 m_d = static_cast<UINT_T>(este);
+745                                 return (*this);
+746                         }
+747                 }
+748         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP+ (\fBdig_t\fP< UINT_T, B > arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+828                  {
+829                 dig_t ret(*this);
+830                 ret += arg;
+831                 return ret;
+832         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP+ (Int_type arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+869                  {
+870                 dig_t ret(*this);
+871                 ret += normaliza<Int_type>(arg);
+872                 return ret;
+873         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP++ ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Tengo serias dudas que la division y el resto euclideo tengan cabida entre los operadores aritmeticos de un tipo \fBdig_t\fP DUDA SATISFECHA: TIENEN CABIDA PORQUE EL INVERSO MULTIPLICATIVO ETC\&. SOLO NOS SIRVE SI ESTUVIERAMOS CONSTRUYENDO NUMEROS DE UN ANILLO FINITO 
+.PP
+.nf
+794                                                                {
+795                 (m_d < ui_max())        ?
+796                         (m_d+=ui_1())   :
+797                         (m_d=ui_0());
+798                 return(*this);
+799         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::ui_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP++ (int)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+801                                                           {
+802                 dig_t ret(*this);
+803                 ++(*this);
+804                 return ret;
+805         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP+= (\fBdig_t\fP< UINT_T, B > arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+620         {
+621                 dig_t & cthis{*this};
+622                 if constexpr (B < type_traits::middle_max<UINT_T>())
+623                 {
+624                         m_d += arg\&.m_d;
+625                         if(m_d >= B)
+626                                 m_d -= B;
+627                         return (cthis);
+628                 }
+629                 else
+630                 {
+631                         SIG_UINT_T tmp{m_d};
+632                         tmp += (arg\&.m_d);
+633                         if(tmp>=B)
+634                                 tmp -= B;
+635                         m_d = static_cast<UINT_T>(tmp);
+636                         return (cthis);
+637                 }
+638         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP+= (Int_t arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+642         {
+643                 if constexpr (B >= type_traits::middle_max<UINT_T>())
+644                 {
+645                         const SIG_UINT_T arg1{normaliza<Int_t>(arg)};
+646                         SIG_UINT_T arg2{m_d};
+647                         arg2+=arg1;
+648                         if (arg2 >= static_cast<Int_t>(B))
+649                                 arg2-=static_cast<Int_t>(B);
+650                         m_d = static_cast<UINT_T>(arg2);
+651                         return (*this);
+652                 } else {
+653                         const UINT_T arg1{normaliza<Int_t>(arg)};
+654                         UINT_T arg2{m_d};
+655                         arg2+=arg1;
+656                         if (arg2 >= static_cast<Int_t>(B))
+657                                 arg2-=static_cast<Int_t>(B);
+658                         m_d = static_cast<UINT_T>(arg2);
+659                         return (*this);
+660                 }
+661         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP\- () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+EN BASE B, B-m_d ES EL COMPL_B(m_d) 
+.PP
+.nf
+933                  {
+934                         return dig_t((m_d==0)?0:(B-m_d));
+935         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP\- (\fBdig_t\fP< UINT_T, B > arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+836                  {
+837                 dig_t ret(*this);
+838                 ret -= arg;
+839                 return ret;
+840         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP\- (Int_type arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+878                  {
+879                 dig_t ret(*this);
+880                 const dig_t tmp(normaliza<Int_type>(arg));
+881                 ret -= tmp;
+882                 return ret;
+883         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP\-\- ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+807                                                                {
+808                 m_d = (m_d > ui_0())                    ?
+809                                                 (m_d-ui_1())    :
+810                                                 (ui_max())      ;
+811                 return(*this);
+812         }
+.fi
+.PP
+Hace referencia a \fBNumRepr::ui_1()\fP\&.
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP\-\- (int)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+814                                                           {
+815                 dig_t ret(*this);
+816                 --(*this);
+817                 return ret;
+818         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP\-= (\fBdig_t\fP< UINT_T, B > arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+664         {
+665                 SIG_SINT_T cp_dm{m_d};
+666                 cp_dm-=arg\&.m_d;
+667                 if (cp_dm < 0)
+668                         cp_dm += ssi_B();
+669                 m_d = cp_dm;
+670                 return (*this);
+671         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP\-= (Int_t arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+675         {
+676                 SIG_SINT_T tmp{normaliza<Int_t>(arg)};
+677                 SIG_SINT_T este{m_d};
+678                 este-=tmp;
+679                 if (este<static_cast<SIG_SINT_T>(0))
+680                         este += ssi_B();
+681                 m_d = este;
+682                 return (*this);
+683         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP/ (\fBdig_t\fP< UINT_T, B > arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+852                  {
+853                 dig_t ret(*this);
+854                 ret /= arg;
+855                 return ret;
+856         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_type> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP/ (Int_type arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+898                  {
+899                 dig_t ret(*this);
+900                 const dig_t cparg(normaliza<Int_type>(arg));
+901                 if (cparg != dig_0())
+902                         ret /= cparg;
+903                 return ret;
+904         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP/= (\fBdig_t\fP< UINT_T, B > arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+751         {
+752                 if (arg\&.m_d != ui_0())
+753                         m_d /= arg\&.m_d;
+754                 return (*this);
+755         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP/= (Int_t arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+759         {
+760                 UINT_T cparg{normaliza<Int_t>(arg)};
+761                 dig_t tmp{cparg};
+762                 if (tmp != dig_0())
+763                         (*this)/=tmp;
+764                 return (*this);
+765         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP< (\fBdig_t\fP< UINT_T, B > a) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+566                 {return ((a() >  m_d )? true : false);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP<= (\fBdig_t\fP< UINT_T, B > a) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+564                 {return ((a() >= m_d )? true : false);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr std::strong_ordering \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP<=> (\fBdig_t\fP< UINT_T, B > rhs) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+SI COMPARAMOS O HACEMOS UNA OPERACION CON UN INT_T SIEMPRE SERA DIG_T @ INT_T -> DIG_T Y NUNCA INT_T @ DIG_T -> ANY_TYPE METODO PROPIO DE C++20 
+.PP
+.nf
+572                  {
+573                 const auto lhs_d{m_d};
+574                 const auto rhs_d{rhs()};
+575                 return (
+576                         (lhs_d<rhs_d)                                                                           ?
+577                                         std::strong_ordering::less      :
+578                                         ((lhs_d>rhs_d)                                                                          ?
+579                                                         std::strong_ordering::greater   :
+580                                                         std::strong_ordering::equal)
+581                 );
+582         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr std::weak_ordering \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP<=> (Int_t rhs) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+METODO PROPIO DE C++20 ESTABLECEMOS UN ORDEN PARCIAL SOBRE LOS ENTEROS SI a b EN Z ESTANDO EN ESTE AMBITO DE BASE B SI a mod B = b mod B 
+.PP
+.nf
+602                  {
+603                 const dig_t& lhs{*this};
+604                 const UINT_T rhs_B{normaliza<Int_t>(rhs)};
+605                 return ((lhs() < rhs_B)                                                                 ?
+606                                                 std::weak_ordering::less                                :
+607                                                 (lhs() > rhs_B)                                                                         ?
+608                                                         std::weak_ordering::greater             :
+609                                                         std::weak_ordering::equivalent
+610                 );
+611         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP= (const \fBdig_t\fP< UINT_T, B > &)\fC [inline]\fP, \fC [constexpr]\fP, \fC [default]\fP, \fC [noexcept]\fP"
+
+.PP
+SOBRECARGA DEL OPERATOR=() MEDIANTE REFERENCIA CTE DESDE UN DIG_T\&. 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP= (const Int_t & a)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+SOBRECARGA DEL OPERATOR=() MEDIANTE REFERENCIA CTE DESDE UN INT_T\&. PODEMOS PASAR ARGUMENTOS POR COPIA, REFERENCIA (PUNTEROS) Y MOVIMIENTO COPIA : COPIA EL ARGUMENTO LITERALMENTE PARA PASARLO: EL ORIGINAL INTACTO REFERENCIA: COPIA LA DIRECCION DEL ARGUMENTO (SI ES CONST EL COMPILADOR NO TE DEJA COMPILAR SI LO CAMBIAS) MOVIMIENTO: SI EL ARGUMETO NO SE VA A UTILIZAR MAS SE LE PASA LA PROPIEDAD A LA FUNCION 
+.PP
+.nf
+302                  {
+303                 if (&a != &m_d) {
+304                         m_d = normaliza<Int_t>(a);
+305                 }
+306                 return (*this);
+307         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP= (\fBdig_t\fP< UINT_T, B > &&)\fC [inline]\fP, \fC [constexpr]\fP, \fC [default]\fP, \fC [noexcept]\fP"
+
+.PP
+SOBRECARGA DEL OPERATOR=() MEDIANTE MOVIMIENTO DESDE UN DIG_T\&. 
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP== (\fBdig_t\fP< UINT_T, B > a) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+556                 {return ((a() == m_d)? true : false);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::integral_c Int_t> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP== (Int_t rhs)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+587                  {
+588                 const dig_t& lhs{*this};
+589                 return
+590                         (
+591                                 (lhs\&.m_d == normaliza<Int_t>(rhs))               ?
+592                                         true                                    :
+593                                         false
+594                         );
+595         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP> (\fBdig_t\fP< UINT_T, B > a) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+562                 {return ((a() < m_d )? true : false);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr bool \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP>= (\fBdig_t\fP< UINT_T, B > a) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+560                 {return ((a() <= m_d)? true : false);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::unsigned_integral_c UIntType> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP^ (UIntType exp) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+543         {
+544                 dig_t cpthis{*this};
+545                 cpthis ^= exp;
+546                 return cpthis;
+547         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> template<type_traits::unsigned_integral_c UIntType> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP^= (UIntType exp)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+516         {
+517                 dig_t& cthis{*this};
+518                 if (exp == 0) {
+519                         cthis = dig_1();
+520                         return (cthis);
+521                 }
+522                 else if (exp == 1) {
+523                         return (cthis);
+524                 }
+525                 else if (exp == 2) {
+526                         cthis *= cthis;
+527                         return (cthis);
+528                 }
+529                 else {
+530                         const dig_t  vthis{*this};
+531                         cthis *= vthis;
+532                         for(UIntType ix{2} ; ix < exp ; ++ix) {
+533                                 cthis *= vthis;
+534                         }
+535                         return (cthis);
+536                 }
+537         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP| (const \fBdig_t\fP< UINT_T, B > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+DEVOLVER EL MAYOR ORBITWISE NO TIENE POSIBILIDAD DE ERROR 
+.PP
+.nf
+489         {
+490                 return (((*this)>=arg)?(*this):arg);
+491         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr const \fBdig_t\fP & \fBNumRepr::dig_t\fP< UINT_T, B >\fB::operator\fP|= (\fBdig_t\fP< UINT_T, B > arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+DEVOLVER EL MAYOR HABIENDOLO ASIGNADO ORBITWISE AND ASSIGN NO TIENE POSIBILIDAD DE ERROR 
+.PP
+.nf
+498         {
+499                 if (arg > (*this))
+500                         (*this) = arg;
+501                 return (*this);
+502         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::ssi_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+182                                                                                 {
+183                 return static_cast<SIG_SINT_T>(0u);
+184         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::ssi_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+185                                                                                 {
+186                 return static_cast<SIG_SINT_T>(1u);
+187         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_SINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::ssi_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+173                                                                                 {
+174                 return static_cast<SIG_SINT_T>(B);
+175         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_SINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::ssi_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+176                                                                         {
+177                 return static_cast<SIG_SINT_T>(B-1u);
+178         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::ssi_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+179                                                                         {
+180                 return static_cast<SIG_SINT_T>(B-2u);
+181         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::sui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+166                                                                                 {
+167                 return static_cast<SIG_UINT_T>(0u);
+168         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::sui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+169                                                                                 {
+170                 return static_cast<SIG_UINT_T>(1u);
+171         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::sui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+157                                                                                 {
+158                 return static_cast<SIG_UINT_T>(B);
+159         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::sui_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+160                                                                         {
+161                 return static_cast<SIG_UINT_T>(B-1u);
+162         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval \fBSIG_UINT_T\fP \fBNumRepr::dig_t\fP< UINT_T, B >::sui_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+163                                                                         {
+164                 return static_cast<SIG_UINT_T>(B-2u);
+165         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static constexpr \fBdig_t\fP \fBNumRepr::dig_t\fP< UINT_T, B >::sum_carry (\fBdig_t\fP< UINT_T, B > arg_1, \fBdig_t\fP< UINT_T, B > arg_2)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+396                  {
+397                 if constexpr (B <= type_traits::middle_max<UINT_T>()) {
+398                         if constexpr ((B%2) == 0) {
+399                                 constexpr UINT_T Bdiv2{B/2};
+400                                 if ((arg_1() < Bdiv2)&&(arg_2() < Bdiv2)) {
+401                                         return dig_0();
+402                                 } else if ((arg_1() >= Bdiv2)&&(arg_2() >= Bdiv2)) {
+403                                         return dig_1();
+404                                 } else if ( arg_1() >= B-arg_2() ) {
+405                                         return dig_1();
+406                                 } else {
+407                                         return dig_0();
+408                                 }
+409                         } else {
+410                                 constexpr UINT_T Bdiv2_1{B/2};
+411                                 constexpr UINT_T Bdiv2_2{(B/2)+1};
+412                                 if (   ((arg_1() < Bdiv2_1)&&(arg_2() < Bdiv2_2))
+413                                                 || ((arg_1() < Bdiv2_2)&&(arg_2() < Bdiv2_1))
+414                                         )       {
+415                                         return dig_0();
+416                                 } else if (             ((arg_1() >= Bdiv2_1)&&(arg_2() >= Bdiv2_2))
+417                                                                                 ||((arg_1() >= Bdiv2_2)&&(arg_2() >= Bdiv2_1))
+418                                         ) {
+419                                         return dig_1();
+420                                 } else if ( arg_1() >= B-arg_2() ) {
+421                                         return dig_1();
+422                                 } else {
+423                                         return dig_0();
+424                                 }
+425                         }
+426                 } else {
+427                         if constexpr ((B%2) == 0) {
+428                                 constexpr SIG_UINT_T Bdiv2{B/2};
+429                                 if ((arg_1() < Bdiv2)&&(arg_2() < Bdiv2)) {
+430                                         return dig_0();
+431                                 } else if ((arg_1() >= Bdiv2)&&(arg_2() >= Bdiv2)) {
+432                                         return dig_1();
+433                                 } else if ( arg_1() >= B-arg_2() ) {
+434                                         return dig_1();
+435                                 } else {
+436                                         return dig_0();
+437                                 }
+438                         } else {
+439                                 constexpr SIG_UINT_T Bdiv2_1{B/2};
+440                                 constexpr SIG_UINT_T Bdiv2_2{(B/2)+1};
+441                                 if (   ((arg_1() < Bdiv2_1)&&(arg_2() < Bdiv2_2))
+442                                                 || ((arg_1() < Bdiv2_2)&&(arg_2() < Bdiv2_1))
+443                                         )       {
+444                                         return dig_0();
+445                                 } else if (             ((arg_1() >= Bdiv2_1)&&(arg_2() >= Bdiv2_2))
+446                                                                                 ||((arg_1() >= Bdiv2_2)&&(arg_2() >= Bdiv2_1))
+447                                         ) {
+448                                         return dig_1();
+449                                 } else if ( arg_1() >= B-arg_2() ) {
+450                                         return dig_1();
+451                                 } else {
+452                                         return dig_0();
+453                                 }
+454                         }
+455                 }
+456         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> constexpr std::string \fBNumRepr::dig_t\fP< UINT_T, B >::to_string () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+1169         {
+1170                 const std::string num{this->num_to_string()};
+1171                 const std::string ret{"dig#"+num+"#"+radix_str()};
+1172                 return ret;
+1173         }
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >::ui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+154 {return UINT_T(0u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >::ui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+155 {return UINT_T(1u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >::ui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+152 {return UINT_T(B-1u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >::ui_Bm2 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+153 {return UINT_T(B-2u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >::ui_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+150 {return UINT_T(B-1u);}
+.fi
+.SS "template<allowable_base_type_c UINT_T, UINT_T B> static consteval UINT_T \fBNumRepr::dig_t\fP< UINT_T, B >::ui_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+.nf
+151 {return UINT_T(B-2u);}
+.fi
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

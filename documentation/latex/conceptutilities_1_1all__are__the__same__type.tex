@@ -1,0 +1,18 @@
+\hypertarget{conceptutilities_1_1all__are__the__same__type}{}\doxysection{utilities\+::all\+\_\+are\+\_\+the\+\_\+same\+\_\+type Concept Reference}
+\label{conceptutilities_1_1all__are__the__same__type}\index{utilities::all\_are\_the\_same\_type@{utilities::all\_are\_the\_same\_type}}
+
+
+{\ttfamily \#include $<$utilities.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutilities_1_1all__are__the__same__type}{utilities::all\_are\_the\_same\_type}} =  \textcolor{keyword}{requires}(Ts...) \{}
+\DoxyCodeLine{        for\_each\_same\_type<Ts...>::are\_same\_type\_v;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}

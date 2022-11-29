@@ -1,0 +1,40 @@
+.TH "details::cp_delete< 0u >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+details::cp_delete< 0u >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <memory_handler\&.hpp>\fP
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "void \fBoperator()\fP (aT **var_list_list)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<typename aT, template< \fBuchint\fP > class T, \fBusint\fP num_vars>
+.br
+struct details::cp_delete< 0u >"
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars> void \fBdetails::cp_delete\fP< 0u >::operator() (aT ** var_list_list)\fC [inline]\fP"
+
+.PP
+.nf
+126                                             {
+127                 if (var_list_list[0u] != nullptr)
+128                         delete var_list_list[0u];
+129                 delete [] var_list_list;
+130         }
+.fi
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

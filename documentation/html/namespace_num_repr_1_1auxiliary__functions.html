@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NumericRepresentations: Referencia del Namespace NumRepr::auxiliary_functions</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">NumericRepresentations<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Proyecto Didáctico para simular distintas Representaciones Numéricas en un computador</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.5 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="concepts.html"><span>Concepts</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Lista&#160;de&#160;'namespaces'</span></a></li>
+      <li><a href="namespacemembers.html"><span>Miembros&#160;del&#160;Namespace&#160;</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_num_repr.html">NumRepr</a></li><li class="navelem"><a class="el" href="namespace_num_repr_1_1auxiliary__functions.html">auxiliary_functions</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del Namespace NumRepr::auxiliary_functions</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a6a368b190a18264af00c59b164dc1096"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_num_repr_1_1auxiliary__functions.html#a6a368b190a18264af00c59b164dc1096">is_prime</a> (<a class="el" href="basic__types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> n) noexcept</td></tr>
+<tr class="separator:a6a368b190a18264af00c59b164dc1096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea0c809df1b14220a5fc969a28d7a8d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_num_repr_1_1auxiliary__functions.html#a3ea0c809df1b14220a5fc969a28d7a8d">is_power_of_2</a> (<a class="el" href="basic__types_8hpp.html#a8fe9f5218406354b79aac7a41bd4823f">uint128_t</a> num) noexcept</td></tr>
+<tr class="separator:a3ea0c809df1b14220a5fc969a28d7a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a3ea0c809df1b14220a5fc969a28d7a8d" name="a3ea0c809df1b14220a5fc969a28d7a8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea0c809df1b14220a5fc969a28d7a8d">&#9670;&#160;</a></span>is_power_of_2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool NumRepr::auxiliary_functions::is_power_of_2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="basic__types_8hpp.html#a8fe9f5218406354b79aac7a41bd4823f">uint128_t</a>&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  116</span>        {</div>
+<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">if</span>((num % 2) != 0)</div>
+<div class="line"><span class="lineno">  118</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  119</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  120</span>                        <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_num_repr_1_1auxiliary__functions.html#a3ea0c809df1b14220a5fc969a28d7a8d">is_power_of_2</a>(num / 2);</div>
+<div class="line"><span class="lineno">  121</span>        }</div>
+<div class="ttc" id="anamespace_num_repr_1_1auxiliary__functions_html_a3ea0c809df1b14220a5fc969a28d7a8d"><div class="ttname"><a href="namespace_num_repr_1_1auxiliary__functions.html#a3ea0c809df1b14220a5fc969a28d7a8d">NumRepr::auxiliary_functions::is_power_of_2</a></div><div class="ttdeci">constexpr bool is_power_of_2(uint128_t num) noexcept</div><div class="ttdef"><b>Definition:</b> auxiliary_functions.hpp:115</div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="#l00115">is_power_of_2()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="#l00115">is_power_of_2()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespace_num_repr_1_1auxiliary__functions_a3ea0c809df1b14220a5fc969a28d7a8d_cgraph.svg" width="186" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespace_num_repr_1_1auxiliary__functions_a3ea0c809df1b14220a5fc969a28d7a8d_icgraph.svg" width="186" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6a368b190a18264af00c59b164dc1096" name="a6a368b190a18264af00c59b164dc1096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a368b190a18264af00c59b164dc1096">&#9670;&#160;</a></span>is_prime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool NumRepr::auxiliary_functions::is_prime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="basic__types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  106</span>        {</div>
+<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">if</span> (n &lt; 2)</div>
+<div class="line"><span class="lineno">  108</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  109</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n==2)||(n==3))</div>
+<div class="line"><span class="lineno">  110</span>                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  111</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  112</span>                        <span class="keywordflow">return</span> (!detail::find_factor(n, 1, (detail::ceilsqrt(n) + 1) / 2));</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="#l00052">NumRepr::detail::ceilsqrt()</a> y <a class="el" href="#l00088">NumRepr::detail::find_factor()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="#l00139">NumRepr::dig_t&lt; UINT_T, B &gt;::is_prime()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespace_num_repr_1_1auxiliary__functions_a6a368b190a18264af00c59b164dc1096_cgraph.svg" width="364" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespace_num_repr_1_1auxiliary__functions_a6a368b190a18264af00c59b164dc1096_icgraph.svg" width="330" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 29 de Noviembre de 2022 18:54:58 para NumericRepresentations por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

@@ -1,0 +1,18 @@
+digraph "int_num_t::size"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="int_num_t::size",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="int_num_t::ceros_a\l_la_drcha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structint__num__t.html#ae09c19efabf27eb9caf36f33f0f380dd",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="int_num_t::digs_fracc\l_no_significativos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structint__num__t.html#a4bf7f711400d921df1c0d05cbe3c9d3d",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="int_num_t::ceros_a\l_la_izqda",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structint__num__t.html#aae2d5fd1815a61a2aadc21c151a34e6b",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="int_num_t::unos_a_la\l_drcha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structint__num__t.html#a9ffbfe2524e6104557827b766b800890",tooltip=" "];
+}

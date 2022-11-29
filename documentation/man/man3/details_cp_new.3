@@ -1,0 +1,39 @@
+.TH "details::cp_new< aT, T, num_vars, B >" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+details::cp_new< aT, T, num_vars, B >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <memory_handler\&.hpp>\fP
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "void \fBoperator()\fP (aT **var_list_list)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<typename aT, template< \fBuchint\fP > class T, \fBusint\fP num_vars, \fBuchint\fP B>
+.br
+struct details::cp_new< aT, T, num_vars, B >"
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars, \fBuchint\fP B> void \fBdetails::cp_new\fP< aT, T, num_vars, B >::operator() (aT ** var_list_list)\fC [inline]\fP"
+
+.PP
+.nf
+22                                             {
+23                         static_cast<T<B>*>(contruye_lista_de_variables(var_list_list[B]));
+24                         cp_new<aT,T,num_vars,B-1u>(var_list_list);
+25         }
+.fi
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

@@ -1,0 +1,69 @@
+.TH "NumRepr::type_traits::UIntTypeForRadix< uint16_t, Radix >" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::type_traits::UIntTypeForRadix< uint16_t, Radix >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <basic_types\&.hpp>\fP
+.SS "Tipos públicos"
+
+.in +1c
+.ti -1c
+.RI "using \fBactUIntType\fP = std::conditional_t< \fBbool_value\fP, \fBuint8_t\fP, \fBuint16_t\fP >"
+.br
+.ti -1c
+.RI "using \fBUIntType\fP = std::conditional_t< \fBbool_value\fP, \fBUIntTypeForRadix_t\fP< \fBuint8_t\fP, \fBuint_value\fP >, \fBuint16_t\fP >"
+.br
+.in -1c
+.SS "Atributos públicos estáticos"
+
+.in +1c
+.ti -1c
+.RI "static constexpr \fBuint16_t\fP \fBuint_value_max\fP = \fBmaxbase\fP<\fBuint8_t\fP>()"
+.br
+.ti -1c
+.RI "static constexpr \fBuint16_t\fP \fBuint_value\fP = static_cast<\fBuint8_t\fP>(Radix)"
+.br
+.ti -1c
+.RI "static constexpr \fBuint8_t\fP \fBuint_value_sig\fP = static_cast<\fBuint8_t\fP>(Radix)"
+.br
+.ti -1c
+.RI "static constexpr bool \fBbool_value\fP = (Radix <= \fBuint_value_max\fP)"
+.br
+.ti -1c
+.RI "static constexpr \fBactUIntType\fP \fBact_uint_value\fP = ( \fBbool_value\fP ? \fBuint_value_sig\fP : \fBuint_value\fP )"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+
+.SS "template<\fBuint16_t\fP Radix>
+.br
+requires (Radix > 1)
+.br
+struct NumRepr::type_traits::UIntTypeForRadix< uint16_t, Radix >"DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINTTYPEFORRADIX SIGNED RADIX VALID 
+.SH "Documentación de los 'Typedef' miembros de la clase"
+.PP 
+.SS "template<\fBuint16_t\fP Radix> using \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBuint16_t\fP, Radix >::actUIntType =  std::conditional_t < \fBbool_value\fP, \fBuint8_t\fP, \fBuint16_t\fP >"
+
+.SS "template<\fBuint16_t\fP Radix> using \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBuint16_t\fP, Radix >::UIntType =  std::conditional_t< \fBbool_value\fP, \fBUIntTypeForRadix_t\fP< \fBuint8_t\fP, \fBuint_value\fP >, \fBuint16_t\fP >"
+
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "template<\fBuint16_t\fP Radix> constexpr \fBactUIntType\fP \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBuint16_t\fP, Radix >::act_uint_value = ( \fBbool_value\fP ? \fBuint_value_sig\fP : \fBuint_value\fP )\fC [static]\fP, \fC [constexpr]\fP"
+
+.SS "template<\fBuint16_t\fP Radix> constexpr bool \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBuint16_t\fP, Radix >::bool_value = (Radix <= \fBuint_value_max\fP)\fC [static]\fP, \fC [constexpr]\fP"
+
+.SS "template<\fBuint16_t\fP Radix> constexpr \fBuint16_t\fP \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBuint16_t\fP, Radix >::uint_value = static_cast<\fBuint8_t\fP>(Radix)\fC [static]\fP, \fC [constexpr]\fP"
+
+.SS "template<\fBuint16_t\fP Radix> constexpr \fBuint16_t\fP \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBuint16_t\fP, Radix >::uint_value_max = \fBmaxbase\fP<\fBuint8_t\fP>()\fC [static]\fP, \fC [constexpr]\fP"
+
+.SS "template<\fBuint16_t\fP Radix> constexpr \fBuint8_t\fP \fBNumRepr::type_traits::UIntTypeForRadix\fP< \fBuint16_t\fP, Radix >::uint_value_sig = static_cast<\fBuint8_t\fP>(Radix)\fC [static]\fP, \fC [constexpr]\fP"
+
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

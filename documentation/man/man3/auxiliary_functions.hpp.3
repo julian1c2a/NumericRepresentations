@@ -1,0 +1,58 @@
+.TH "auxiliary_functions.hpp" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+auxiliary_functions.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'auxiliary_types\&.hpp'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBNumRepr\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::detail\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::auxiliary_functions\fP"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "constexpr sign_e \fBNumRepr::Char2Sign\fP (char ch) noexcept"
+.br
+.ti -1c
+.RI "template<arith_integral_c IntT> constexpr sign_e \fBNumRepr::Int2Sign\fP (IntT nu) noexcept"
+.br
+.ti -1c
+.RI "template<arith_integral_c IntT> constexpr sign_funct_e \fBNumRepr::Int2SignFunct\fP (IntT nu) noexcept"
+.br
+.ti -1c
+.RI "template<arith_natural_c NatIntT> constexpr sign_funct_e \fBNumRepr::Nat2SignFunct\fP (NatIntT nu) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBsize_t\fP \fBNumRepr::detail::ceilsqrt\fP (\fBsize_t\fP n, \fBsize_t\fP low, \fBsize_t\fP high) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBsize_t\fP \fBNumRepr::detail::ceilsqrt\fP (\fBsize_t\fP n) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBNumRepr::detail::find_factor\fP (\fBsize_t\fP n, \fBsize_t\fP low, \fBsize_t\fP high) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBNumRepr::auxiliary_functions::is_prime\fP (\fBsize_t\fP n) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBNumRepr::auxiliary_functions::is_power_of_2\fP (\fBuint128_t\fP num) noexcept"
+.br
+.in -1c
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

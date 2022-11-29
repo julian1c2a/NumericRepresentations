@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_int__num__t_8hpp" xml:lang="es">
+<title>Referencia del Archivo int_num_t.hpp</title>
+<indexterm><primary>int_num_t.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;dig_t.hpp&quot;<?linebreak?>#include &quot;int_reg_digs_t.hpp&quot;<?linebreak?>#include &quot;nat_num_t.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para int_num_t.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="int__num__t_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structint__num__t">int_num_t&lt; UINT_T, B &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumeraciones    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccf">forma_t</link> { <link linkend="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccfa4f005c0b220d0d145556380873d149cc">noraw</link>
+, <link linkend="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccfa58ee402b69bb1b9fe5f437ab6e82e7d5">raw</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentación de las enumeraciones</title>
+<anchor xml:id="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccf"/><section>
+    <title>forma_t</title>
+<indexterm><primary>forma_t</primary><secondary>int_num_t.hpp</secondary></indexterm>
+<indexterm><primary>int_num_t.hpp</primary><secondary>forma_t</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccf">forma_t</link></computeroutput></para><informaltable frame="all">
+<title>Valores de enumeraciones</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>noraw</primary><secondary>int_num_t.hpp</secondary></indexterm>
+<indexterm><primary>int_num_t.hpp</primary><secondary>noraw</secondary></indexterm>
+<anchor xml:id="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccfa4f005c0b220d0d145556380873d149cc"/>noraw</entry><entry></entry></row><row><entry><indexterm><primary>raw</primary><secondary>int_num_t.hpp</secondary></indexterm>
+<indexterm><primary>int_num_t.hpp</primary><secondary>raw</secondary></indexterm>
+<anchor xml:id="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccfa58ee402b69bb1b9fe5f437ab6e82e7d5"/>raw</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+<programlisting linenumbering="unnumbered">00010 {<link linkend="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccfa4f005c0b220d0d145556380873d149cc">noraw</link>,<link linkend="_int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccfa58ee402b69bb1b9fe5f437ab6e82e7d5">raw</link>};
+</programlisting></section>
+</section>
+</section>

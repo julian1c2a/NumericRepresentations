@@ -1,0 +1,114 @@
+\hypertarget{namespace_num_repr_1_1detail}{}\doxysection{Referencia del Namespace Num\+Repr\+::detail}
+\label{namespace_num_repr_1_1detail}\index{NumRepr::detail@{NumRepr::detail}}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} \mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{ceilsqrt}} (\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} n, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} low, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} high) noexcept
+\item 
+constexpr \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} \mbox{\hyperlink{namespace_num_repr_1_1detail_ad76e295a8cfd29f1f6e2a02983e4717a}{ceilsqrt}} (\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} n) noexcept
+\item 
+constexpr bool \mbox{\hyperlink{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}{find\+\_\+factor}} (\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} n, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} low, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} high) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{namespace_num_repr_1_1detail_ad76e295a8cfd29f1f6e2a02983e4717a}\label{namespace_num_repr_1_1detail_ad76e295a8cfd29f1f6e2a02983e4717a}} 
+\index{NumRepr::detail@{NumRepr::detail}!ceilsqrt@{ceilsqrt}}
+\index{ceilsqrt@{ceilsqrt}!NumRepr::detail@{NumRepr::detail}}
+\doxysubsubsection{\texorpdfstring{ceilsqrt()}{ceilsqrt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} Num\+Repr\+::detail\+::ceilsqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071 \{}
+\DoxyCodeLine{00072   \textcolor{keyword}{const} \textcolor{keyword}{auto} num\_max\_dig\{std::numeric\_limits<std::size\_t>::digits\};}
+\DoxyCodeLine{00073   \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00074         (}
+\DoxyCodeLine{00075                 (n < 3) ?}
+\DoxyCodeLine{00076                         n       :}
+\DoxyCodeLine{00077                         ceilsqrt(}
+\DoxyCodeLine{00078                                 n,}
+\DoxyCodeLine{00079                                 1,}
+\DoxyCodeLine{00080                                 std::size\_t(1) << (num\_max\_dig / 2)}
+\DoxyCodeLine{00081                         )}
+\DoxyCodeLine{00082         );}
+\DoxyCodeLine{00083 \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a \mbox{\hyperlink{l00052}{ceilsqrt()}}.
+
+Gráfico de llamadas para esta función\+:
+% FIG 0
+\mbox{\Hypertarget{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}\label{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}} 
+\index{NumRepr::detail@{NumRepr::detail}!ceilsqrt@{ceilsqrt}}
+\index{ceilsqrt@{ceilsqrt}!NumRepr::detail@{NumRepr::detail}}
+\doxysubsubsection{\texorpdfstring{ceilsqrt()}{ceilsqrt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} Num\+Repr\+::detail\+::ceilsqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{low,  }\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{high }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053 \{}
+\DoxyCodeLine{00054   \textcolor{keyword}{const} \textcolor{keyword}{auto} mid\{std::midpoint(low, high)\};}
+\DoxyCodeLine{00055   \textcolor{keyword}{const} \textcolor{keyword}{auto} sqmid\{mid*mid\};}
+\DoxyCodeLine{00056   \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00057         (}
+\DoxyCodeLine{00058                 (low + 1 >= high)       ?}
+\DoxyCodeLine{00059                         high                    :}
+\DoxyCodeLine{00060                         (sqmid == n)            ?}
+\DoxyCodeLine{00061                                 mid                     :}
+\DoxyCodeLine{00062                                 (sqmid <  n)            ?}
+\DoxyCodeLine{00063                                         ceilsqrt(n, mid, high)  :}
+\DoxyCodeLine{00064                                         ceilsqrt(n, low, mid)}
+\DoxyCodeLine{00065         );}
+\DoxyCodeLine{00066 \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a \mbox{\hyperlink{l00052}{ceilsqrt()}}.
+
+
+
+Referenciado por \mbox{\hyperlink{l00052}{ceilsqrt()}} y \mbox{\hyperlink{l00105}{Num\+Repr\+::auxiliary\+\_\+functions\+::is\+\_\+prime()}}.
+
+Gráfico de llamadas para esta función\+:
+% FIG 1
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\mbox{\Hypertarget{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}\label{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}} 
+\index{NumRepr::detail@{NumRepr::detail}!find\_factor@{find\_factor}}
+\index{find\_factor@{find\_factor}!NumRepr::detail@{NumRepr::detail}}
+\doxysubsubsection{\texorpdfstring{find\_factor()}{find\_factor()}}
+{\footnotesize\ttfamily constexpr bool Num\+Repr\+::detail\+::find\+\_\+factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{low,  }\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{high }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089 \{}
+\DoxyCodeLine{00090   \textcolor{keyword}{const} \textcolor{keyword}{auto} mid\{std::midpoint(low, high)\};}
+\DoxyCodeLine{00091   \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00092         (}
+\DoxyCodeLine{00093                 (low + 1 >= high)                               ?}
+\DoxyCodeLine{00094                         (n \% (2 * low + 1)) == 0        :}
+\DoxyCodeLine{00095                         (}
+\DoxyCodeLine{00096                                 find\_factor(n, low, mid)}
+\DoxyCodeLine{00097                                 ||}
+\DoxyCodeLine{00098                                 find\_factor(n, mid, high)}
+\DoxyCodeLine{00099                         )}
+\DoxyCodeLine{00100         );}
+\DoxyCodeLine{00101 \}}
+
+\end{DoxyCode}
+
+
+Hace referencia a \mbox{\hyperlink{l00088}{find\+\_\+factor()}}.
+
+
+
+Referenciado por \mbox{\hyperlink{l00088}{find\+\_\+factor()}} y \mbox{\hyperlink{l00105}{Num\+Repr\+::auxiliary\+\_\+functions\+::is\+\_\+prime()}}.
+
+Gráfico de llamadas para esta función\+:
+% FIG 3
+Gráfico de llamadas a esta función\+:
+% FIG 4

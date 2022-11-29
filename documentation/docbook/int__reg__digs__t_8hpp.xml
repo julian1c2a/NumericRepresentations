@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_int__reg__digs__t_8hpp" xml:lang="es">
+<title>Referencia del Archivo int_reg_digs_t.hpp</title>
+<indexterm><primary>int_reg_digs_t.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;nat_reg_digs_t.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para int_reg_digs_t.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="int__reg__digs__t_8hpp__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="int__reg__digs__t_8hpp__dep__incl.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>

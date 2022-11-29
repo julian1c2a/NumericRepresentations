@@ -1,0 +1,138 @@
+.TH "func_refvar_t< UINT **, UINT *, UINT >" 3 "Martes, 29 de Noviembre de 2022" "Version 0.8" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+func_refvar_t< UINT **, UINT *, UINT >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <memory_handler\&.hpp>\fP
+.SS "Métodos públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBfunc_refvar_t\fP ()"
+.br
+.ti -1c
+.RI "\fB~func_refvar_t\fP ()"
+.br
+.ti -1c
+.RI "void \fBborra_var\fP (string nombre)"
+.br
+.ti -1c
+.RI "bool \fBexiste_lugar_de_base\fP (\fBuchint\fP Base)"
+.br
+.ti -1c
+.RI "bool \fBeste_nombre_ya_ha_sido_declarado\fP (string nombre)"
+.br
+.ti -1c
+.RI "template<const \fBuchint\fP B> \fBUINT\fP \fBget\fP (string nombre)"
+.br
+.ti -1c
+.RI "bool \fBoperator()\fP (string nombre, string lhs)"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+.SH "Documentación del constructor y destructor"
+.PP 
+.SS "\fBfunc_refvar_t\fP< \fBUINT\fP **, \fBUINT\fP *, \fBUINT\fP >\fB::func_refvar_t\fP ()\fC [inline]\fP"
+
+.PP
+.nf
+462         {
+463                 //inicia_matriz_digs_y_pp(matd,256u,256u);
+464                 matd = construye_matriz_de_variables<UINT**,UINT*,UINT>(matd);
+465                 mapmem\&.resize(256);
+466                 cuentavars\&.resize(256);
+467                 for(uint I=0 ; I < 256 ; ++I){
+468                         mapmem[I]\&.resize(256);
+469                         cuentavars[I]=0;
+470                         for(uint J=0 ; J < 256 ; ++J){
+471                                 mapmem[I][J]=false;
+472                         }
+473                 }
+474         }
+.fi
+.SS "\fBfunc_refvar_t\fP< \fBUINT\fP **, \fBUINT\fP *, \fBUINT\fP >::~\fBfunc_refvar_t\fP ()\fC [inline]\fP"
+
+.PP
+.nf
+477         {
+478                 destruye_matriz_de_variables<UINT**,UINT*,UINT>(matd);
+479         }
+.fi
+.SH "Documentación de las funciones miembro"
+.PP 
+.SS "void \fBfunc_refvar_t\fP< \fBUINT\fP **, \fBUINT\fP *, \fBUINT\fP >::borra_var (string nombre)\fC [inline]\fP"
+
+.PP
+.nf
+498                                         {
+499                 map< string , par_dir_t >::iterator it = mapvd\&.begin();
+500                 map< string , par_dir_t >::const_iterator itend = mapvd\&.end();
+501                 for( ; it != itend ; ++it) {
+502                         if ((*it)\&.first==nombre) {
+503                                 mapmem[(*it)\&.second\&.first][(*it)\&.second\&.second]=false;
+504                                 --cuentavars[(*it)\&.second\&.first];
+505                                 mapvd\&.erase(it);// ponerlo a 0
+506                                 return;
+507                         }
+508                 }
+509                 return;
+510         }
+.fi
+.SS "bool \fBfunc_refvar_t\fP< \fBUINT\fP **, \fBUINT\fP *, \fBUINT\fP >::este_nombre_ya_ha_sido_declarado (string nombre)\fC [inline]\fP"
+
+.PP
+.nf
+521                                                             {
+522                 map< string , par_dir_t >::iterator it = mapvd\&.begin();
+523                 map< string , par_dir_t >::const_iterator itend = mapvd\&.end();
+524                 for( ; it != itend ; ++it) {
+525                         if ((*it)\&.first==nombre) {
+526                                 return true;
+527                         }
+528                 }
+529                 return false;
+530         }
+.fi
+.SS "bool \fBfunc_refvar_t\fP< \fBUINT\fP **, \fBUINT\fP *, \fBUINT\fP >::existe_lugar_de_base (\fBuchint\fP Base)\fC [inline]\fP"
+
+.PP
+.nf
+512                                                  {
+513                 bool ret = true;
+514                 for(uint I=0; I < 256 ; ++I){
+515                         ret = ret and mapmem[Base][I];
+516                         if (!ret) return true;
+517                 }
+518                 return false;
+519         }
+.fi
+.SS "template<const \fBuchint\fP B> \fBUINT\fP \fBfunc_refvar_t\fP< \fBUINT\fP **, \fBUINT\fP *, \fBUINT\fP >::get (string nombre)\fC [inline]\fP"
+
+.PP
+.nf
+534         {
+535                 return (*matd)[mapvd[nombre]\&.second];
+536         }
+.fi
+.SS "bool \fBfunc_refvar_t\fP< \fBUINT\fP **, \fBUINT\fP *, \fBUINT\fP >::operator() (string nombre, string lhs)\fC [inline]\fP"
+
+.PP
+.nf
+540         {
+541                 UINT temp(lhs);
+542                 bool se_puede_hacer = este_nombre_ya_ha_sido_declarado(nombre);
+543                 if (se_puede_hacer) *matd[mapvd[nombre]\&.second]=temp;
+544                 return se_puede_hacer;
+545         }
+.fi
+.PP
+Hace referencia a \fBfunc_refvar_t< aT, T >::este_nombre_ya_ha_sido_declarado()\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

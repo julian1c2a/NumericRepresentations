@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01char_01_4" xml:lang="es">
+<title>Referencia de la Estructura NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; char &gt;</title>
+<indexterm><primary>NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; char &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;basic_types.hpp&gt;</computeroutput>
+</para>
+Diagrama de colaboración para NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; char &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01char_01_4__coll__graph.svg"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Tipos públicos    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01char_01_4_1a0e6c4ac0bc4ccac00b855d1688634341">type</link> = signed short int</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+</section>
+<section>
+<title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t_3_01char_01_4_1a0e6c4ac0bc4ccac00b855d1688634341"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; char &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::detail::__sig_SInt_for_SInt_t&lt; char &gt;</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>using <link linkend="_struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t">NumRepr::type_traits::detail::__sig_SInt_for_SInt_t</link>&lt; char &gt;::type =  signed short int</computeroutput></para></section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_basic__types_8hpp">basic_types.hpp</link></section>
+</section>

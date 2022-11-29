@@ -1,0 +1,351 @@
+\hypertarget{struct_num_repr_1_1base__num__t}{}\doxysection{Referencia de la plantilla de la Estructura Num\+Repr\+::base\+\_\+num\+\_\+t\texorpdfstring{$<$}{<} UINT\+\_\+T, B \texorpdfstring{$>$}{>}}
+\label{struct_num_repr_1_1base__num__t}\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+
+
+{\ttfamily \#include $<$base\+\_\+num\+\_\+t.\+hpp$>$}
+
+
+
+Diagrama de colaboración para Num\+Repr\+::base\+\_\+num\+\_\+t\texorpdfstring{$<$}{<} UINT\+\_\+T, B \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} = \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}$<$ UINT\+\_\+T, B $>$
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a21e924224be346831465d62658048e8d}{nbstr}} = basic\+\_\+string$<$ \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} $>$
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t_aa9bc0366bf9701cb6a9e1a376ad1d72c}{striterator}} = typename nbstr\+::iterator
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a191af9d669240a254ae0baf13b42e4eb}{cstriterator}} = typename nbstr\+::const\+\_\+iterator
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab44d302436000bf34977f77a71d8625b}{rstriterator}} = typename nbstr\+::reverse\+\_\+iterator \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab44d302436000bf34977f77a71d8625b}{rstriterator}}
+\item 
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab280333280a8a03cd74695e9dcd575f8}{crstriterator}} = typename nbstr\+::const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab280333280a8a03cd74695e9dcd575f8}{crstriterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ae9342a10ee981b65001a2b4ac9531c2a}{size}} () const noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a787fd6e3da2fc99d82cafb0c019d3a6e}{resize}} (\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} arg) noexcept
+\item 
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_aa87935430034d037a47f77d48129d396}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}{ullint}} arg) const noexcept
+\item 
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} \& \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab45f89faa50972e77b570e23000d880b}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}{ullint}} arg) noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a2228b2ea1c8eb9e62cab5195997ba27c}{clear}} () noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ac3b9a3016627cc57cd83994fb1cff928}{push\+\_\+back}} (\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} arg) noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a6f5da3393f245c55d9d5bd9b60f84605}{insert}} (\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} pos, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} tam, \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} parg) noexcept
+\item 
+constexpr num\+\_\+basic\+\_\+t \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a840806eac58252d667191b46398cc2bf}{substr}} (\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} pos, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} n) const noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a3cadf0a0ed7ae17bedd45c9679ea0471}{push\+\_\+front}} (\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} parg) noexcept
+\item 
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_aa9bc0366bf9701cb6a9e1a376ad1d72c}{striterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_aa62e4f311f8a54460324fbe74ba8ca55}{begin}} () noexcept
+\item 
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a191af9d669240a254ae0baf13b42e4eb}{cstriterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a950b55fad9a60d1f6de766ea81bd5c1d}{end}} () const noexcept
+\item 
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab44d302436000bf34977f77a71d8625b}{rstriterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a34beb03b3bf13ab17bbe0c09be0b4c1f}{rbegin}} () noexcept
+\item 
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab280333280a8a03cd74695e9dcd575f8}{crstriterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ac2c79936cb8ae389665174a2d26cb1a5}{rend}} () const noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a6ae3c24171fa8af240327437913ac659}{erase}} (\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} pos, \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} tam) noexcept
+\item 
+constexpr const num\+\_\+basic\+\_\+t \& \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a6e6eeda172a8ae2ded447ce44a2718dc}{operator\&=}} (const num\+\_\+basic\+\_\+t \&arg) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+basic\+\_\+string$<$ \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}$<$ UINT\+\_\+T, B $>$ $>$ \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\+\_\+dstr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$\newline
+requires (\mbox{\hyperlink{namespace_num_repr_1_1type__traits_ae7b0da6237614a2d93ed8d40ee5596a5}{type\+\_\+traits\+::suitable\+\_\+base}}$<$UINT\+\_\+T,B$>$())\newline
+struct Num\+Repr\+::base\+\_\+num\+\_\+t$<$ UINT\+\_\+\+T, B $>$}
+
+
+\doxysubsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_ab280333280a8a03cd74695e9dcd575f8}\label{struct_num_repr_1_1base__num__t_ab280333280a8a03cd74695e9dcd575f8}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!crstriterator@{crstriterator}}
+\index{crstriterator@{crstriterator}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{crstriterator}{crstriterator}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::crstriterator =  typename nbstr\+::const\+\_\+reverse\+\_\+iterator \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab280333280a8a03cd74695e9dcd575f8}{crstriterator}}}
+
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a191af9d669240a254ae0baf13b42e4eb}\label{struct_num_repr_1_1base__num__t_a191af9d669240a254ae0baf13b42e4eb}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!cstriterator@{cstriterator}}
+\index{cstriterator@{cstriterator}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{cstriterator}{cstriterator}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::cstriterator =  typename nbstr\+::const\+\_\+iterator}
+
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}\label{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!dig\_t@{dig\_t}}
+\index{dig\_t@{dig\_t}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{dig\_t}{dig\_t}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\mbox{\hyperlink{nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a2f1cc69e474f8f2734aef69506857e18}{\+::dig\+\_\+t}} =  \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}$<$UINT\+\_\+T,B$>$}
+
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a21e924224be346831465d62658048e8d}\label{struct_num_repr_1_1base__num__t_a21e924224be346831465d62658048e8d}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!nbstr@{nbstr}}
+\index{nbstr@{nbstr}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{nbstr}{nbstr}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::nbstr =  basic\+\_\+string$<$\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}$>$}
+
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_ab44d302436000bf34977f77a71d8625b}\label{struct_num_repr_1_1base__num__t_ab44d302436000bf34977f77a71d8625b}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!rstriterator@{rstriterator}}
+\index{rstriterator@{rstriterator}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{rstriterator}{rstriterator}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::rstriterator =  typename nbstr\+::reverse\+\_\+iterator \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab44d302436000bf34977f77a71d8625b}{rstriterator}}}
+
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_aa9bc0366bf9701cb6a9e1a376ad1d72c}\label{struct_num_repr_1_1base__num__t_aa9bc0366bf9701cb6a9e1a376ad1d72c}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!striterator@{striterator}}
+\index{striterator@{striterator}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{striterator}{striterator}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+using \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::striterator =  typename nbstr\+::iterator}
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_aa62e4f311f8a54460324fbe74ba8ca55}\label{struct_num_repr_1_1base__num__t_aa62e4f311f8a54460324fbe74ba8ca55}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!begin@{begin}}
+\index{begin@{begin}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_aa9bc0366bf9701cb6a9e1a376ad1d72c}{striterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064                                                       \{}
+\DoxyCodeLine{00065                 \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.begin();}
+\DoxyCodeLine{00066         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a2228b2ea1c8eb9e62cab5195997ba27c}\label{struct_num_repr_1_1base__num__t_a2228b2ea1c8eb9e62cab5195997ba27c}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!clear@{clear}}
+\index{clear@{clear}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039                                                \{}
+\DoxyCodeLine{00040                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.clear();}
+\DoxyCodeLine{00041                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00042         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a950b55fad9a60d1f6de766ea81bd5c1d}\label{struct_num_repr_1_1base__num__t_a950b55fad9a60d1f6de766ea81bd5c1d}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!end@{end}}
+\index{end@{end}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a191af9d669240a254ae0baf13b42e4eb}{cstriterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067                                                            \{}
+\DoxyCodeLine{00068                 \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.end();}
+\DoxyCodeLine{00069         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a6ae3c24171fa8af240327437913ac659}\label{struct_num_repr_1_1base__num__t_a6ae3c24171fa8af240327437913ac659}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!erase@{erase}}
+\index{erase@{erase}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{pos,  }\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{tam }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076                                                                     \{}
+\DoxyCodeLine{00077                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.erase(pos,tam);}
+\DoxyCodeLine{00078                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00079         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a6f5da3393f245c55d9d5bd9b60f84605}\label{struct_num_repr_1_1base__num__t_a6f5da3393f245c55d9d5bd9b60f84605}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!insert@{insert}}
+\index{insert@{insert}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{pos,  }\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{tam,  }\item[{\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}}]{parg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049                                                                                 \{}
+\DoxyCodeLine{00050                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.insert(pos,tam,parg);}
+\DoxyCodeLine{00051                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00052         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a6e6eeda172a8ae2ded447ce44a2718dc}\label{struct_num_repr_1_1base__num__t_a6e6eeda172a8ae2ded447ce44a2718dc}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!operator\&=@{operator\&=}}
+\index{operator\&=@{operator\&=}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{operator\&=()}{operator\&=()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr const num\+\_\+basic\+\_\+t \& \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\mbox{\hyperlink{namespace_num_repr_aae8203ac76946e39f03d5b06f3fb6d4e}{\+::operator}}\&= (\begin{DoxyParamCaption}\item[{const num\+\_\+basic\+\_\+t \&}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081                                                                                             \{}
+\DoxyCodeLine{00082                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}} += arg.m\_dstr;}
+\DoxyCodeLine{00083                 \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00084         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_aa87935430034d037a47f77d48129d396}\label{struct_num_repr_1_1base__num__t_aa87935430034d037a47f77d48129d396}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\mbox{\hyperlink{namespace_num_repr_aae8203ac76946e39f03d5b06f3fb6d4e}{\+::operator}}\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}{ullint}}}]{arg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029                                                                      \{}
+\DoxyCodeLine{00030                 \mbox{\hyperlink{nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a2f1cc69e474f8f2734aef69506857e18}{dig\_t}} ret = \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}[arg];}
+\DoxyCodeLine{00031                 \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}[arg];}
+\DoxyCodeLine{00032         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_ab45f89faa50972e77b570e23000d880b}\label{struct_num_repr_1_1base__num__t_ab45f89faa50972e77b570e23000d880b}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}} \& \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\mbox{\hyperlink{namespace_num_repr_aae8203ac76946e39f03d5b06f3fb6d4e}{\+::operator}}\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a8f78164b7293cf042eec95957a96a542}{ullint}}}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034                                                                  \{}
+\DoxyCodeLine{00035                 \mbox{\hyperlink{nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_a2f1cc69e474f8f2734aef69506857e18}{dig\_t}} ret = \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}[arg];}
+\DoxyCodeLine{00036                 \textcolor{keywordflow}{return} (\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}[arg]);}
+\DoxyCodeLine{00037         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_ac3b9a3016627cc57cd83994fb1cff928}\label{struct_num_repr_1_1base__num__t_ac3b9a3016627cc57cd83994fb1cff928}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044                                                             \{}
+\DoxyCodeLine{00045                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.push\_back(arg);}
+\DoxyCodeLine{00046                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a3cadf0a0ed7ae17bedd45c9679ea0471}\label{struct_num_repr_1_1base__num__t_a3cadf0a0ed7ae17bedd45c9679ea0471}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!push\_front@{push\_front}}
+\index{push\_front@{push\_front}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}}]{parg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059                                                               \{}
+\DoxyCodeLine{00060                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.insert(0,1,parg);}
+\DoxyCodeLine{00061                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00062         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a34beb03b3bf13ab17bbe0c09be0b4c1f}\label{struct_num_repr_1_1base__num__t_a34beb03b3bf13ab17bbe0c09be0b4c1f}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!rbegin@{rbegin}}
+\index{rbegin@{rbegin}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{rbegin()}{rbegin()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab44d302436000bf34977f77a71d8625b}{rstriterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::rbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070                                                         \{}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.rbegin();}
+\DoxyCodeLine{00072         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_ac2c79936cb8ae389665174a2d26cb1a5}\label{struct_num_repr_1_1base__num__t_ac2c79936cb8ae389665174a2d26cb1a5}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!rend@{rend}}
+\index{rend@{rend}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{rend()}{rend()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr \mbox{\hyperlink{struct_num_repr_1_1base__num__t_ab280333280a8a03cd74695e9dcd575f8}{crstriterator}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::rend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073                                                              \{}
+\DoxyCodeLine{00074                 \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.rend();}
+\DoxyCodeLine{00075         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a787fd6e3da2fc99d82cafb0c019d3a6e}\label{struct_num_repr_1_1base__num__t_a787fd6e3da2fc99d82cafb0c019d3a6e}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!resize@{resize}}
+\index{resize@{resize}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr void \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025                                                           \{}
+\DoxyCodeLine{00026                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.resize(arg); \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00027         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_ae9342a10ee981b65001a2b4ac9531c2a}\label{struct_num_repr_1_1base__num__t_ae9342a10ee981b65001a2b4ac9531c2a}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!size@{size}}
+\index{size@{size}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr \mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}} \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021                                                       \{}
+\DoxyCodeLine{00022                 \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.size();}
+\DoxyCodeLine{00023         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a840806eac58252d667191b46398cc2bf}\label{struct_num_repr_1_1base__num__t_a840806eac58252d667191b46398cc2bf}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!substr@{substr}}
+\index{substr@{substr}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{substr()}{substr()}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+constexpr num\+\_\+basic\+\_\+t \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::substr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{pos,  }\item[{\mbox{\hyperlink{basic__types_8hpp_a801d6a451a01953ef8cbae6feb6a3638}{size\+\_\+t}}}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054                                                                                      \{}
+\DoxyCodeLine{00055                 \mbox{\hyperlink{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}{m\_dstr}}.substr(pos,n);}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00057         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}\label{struct_num_repr_1_1base__num__t_a523deb97f871bc82d20ecbd24e08c4f0}} 
+\index{NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}!m\_dstr@{m\_dstr}}
+\index{m\_dstr@{m\_dstr}!NumRepr::base\_num\_t$<$ UINT\_T, B $>$@{NumRepr::base\_num\_t$<$ UINT\_T, B $>$}}
+\doxysubsubsection{\texorpdfstring{m\_dstr}{m\_dstr}}
+{\footnotesize\ttfamily template$<$type\+\_\+traits\+::allowable\+\_\+base\+\_\+type\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ \\
+basic\+\_\+string$<$\mbox{\hyperlink{struct_num_repr_1_1base__num__t_a7659e7b2966d79b14fba17dbb4df50e9}{dig\+\_\+t}}$<$UINT\+\_\+T,B$>$ $>$ \mbox{\hyperlink{struct_num_repr_1_1base__num__t}{Num\+Repr\+::base\+\_\+num\+\_\+t}}$<$ UINT\+\_\+T, B $>$\+::m\+\_\+dstr}
+
+
+
+La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{base__num__t_8hpp}{base\+\_\+num\+\_\+t.\+hpp}}\end{DoxyCompactItemize}

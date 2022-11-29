@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::auxiliary_types::result_operation_t&lt; T, oper, N &gt;</title>
+<indexterm><primary>NumRepr::auxiliary_types::result_operation_t&lt; T, oper, N &gt;</primary></indexterm>
+Diagrama de colaboración para NumRepr::auxiliary_types::result_operation_t&lt; T, oper, N &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1auxiliary__types_1_1result__operation__t__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8">binop_e</link> oper, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt;<?linebreak?>requires (N&gt;0)<?linebreak?>struct NumRepr::auxiliary_types::result_operation_t&lt; T, oper, N &gt;</title></simplesect>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_auxiliary__types_8hpp">auxiliary_types.hpp</link></section>
+</section>
