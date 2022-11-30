@@ -51,7 +51,8 @@ int main() {
 	using tipo_de_A = decltype(A());
 	using limites_de_A = std::numeric_limits<tipo_de_A>;
 	std::cout << limites_de_A::max() << std::endl;
-
+	NumRepr::int_reg_digs_t<uint8_t,25,5> mi_valor;
+	get_int_reg_digs<uint8_t,25,5>(std::cin,std::cerr,mi_valor);
 	return 0;
 }
 

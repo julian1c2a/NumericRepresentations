@@ -35,13 +35,13 @@ struct int_reg_digs_t : protected nat_reg_digs_t<UINT_T,B,L> {
 
 	template<std::size_t N>
 		requires (N>0)
-	using reg_N_ints_t		        = typename std::array<UINT_T,N>;
+	using reg_N_ints_t		      = typename std::array<UINT_T,N>;
 	template<std::size_t N>
 		requires (N>0)
 	using reg_N_ints_t_suints_t	= typename std::array<SIG_UINT_T,N>;
 	template<std::size_t N>
 		requires (N>0)
-	using reg_N_ssints_t			= typename std::array<SIG_SINT_T,N>;
+	using reg_N_ssints_t				= typename std::array<SIG_SINT_T,N>;
 
 	constexpr auto minus           = sign_e::vminus;
 	constexpr auto plus              = sign_e::vplus;
@@ -2114,107 +2114,124 @@ public:
 	///										st_sem_05 st_sem_06 st_sem_07 st_sem_08 st_sem_09
 	///										st_sem_10 st_sem_11 st_sem_12
 	namespace lex{
-	enum class reglexst_e : uint16_t {
-		st_00 = 0,st_01 = 1,st_02 = 2,st_03 = 3 ,st_04 = 4 ,st_05 = 5 ,
-		st_06 = 6,st_07 = 7,st_08 = 8,st_09 = 9 ,st_10 = 10,st_11 = 11,
-		st_12 = 12
-	};
-	enum class sintaxerrlexst_e : uint16_t {
-		st_err_00 = 256,st_err_01 = 257,st_err_02 = 258,
-		st_err_03 = 259,st_err_04 = 260,st_err_05 = 261,
-		st_err_06 = 262,st_err_07 = 263,st_err_08 = 264,
-		st_err_09 = 265,st_err_10 = 266,st_err_11 = 267
-	};
-	enum class semerrlexst_e : uint16_t {
-		st_sem_00 = 4096,st_sem_01 = 4097,st_sem_02 = 4098,st_sem_03 = 4099,
-		st_sem_04 = 4100,st_sem_05 = 4101,st_sem_06 = 4102,st_sem_07 = 4103,
-		st_sem_08 = 4104,st_sem_09 = 4105,st_sem_10 = 4106,st_sem_11 = 4107,
-		st_sem_12 = 4108
-	};
-	enum class lexst_e : reglexst_e,sintaxerrlexst_e,semerrlexst_e {
-		reg_00 = reglexst_e::st_00,
-		reg_01 = reglexst_e::st_01,
-		reg_02 = reglexst_e::st_02,
-		reg_03 = reglexst_e::st_03,
-		reg_04 = reglexst_e::st_04,
-		reg_05 = reglexst_e::st_05,
-		reg_06 = reglexst_e::st_06,
-		reg_07 = reglexst_e::st_07,
-		reg_08 = reglexst_e::st_08,
-		reg_09 = reglexst_e::st_09,
-		reg_10 = reglexst_e::st_10,
-		reg_11 = reglexst_e::st_11,
-		reg_12 = reglexst_e::st_12,
-		err_00 = sintaxerrlexst_e::st_err_00,
-		err_01 = sintaxerrlexst_e::st_err_01,
-		err_02 = sintaxerrlexst_e::st_err_02,
-		err_03 = sintaxerrlexst_e::st_err_03,
-		err_04 = sintaxerrlexst_e::st_err_04,
-		err_05 = sintaxerrlexst_e::st_err_05,
-		err_06 = sintaxerrlexst_e::st_err_06,
-		err_07 = sintaxerrlexst_e::st_err_07,
-		err_08 = sintaxerrlexst_e::st_err_08,
-		err_09 = sintaxerrlexst_e::st_err_09,
-		err_10 = sintaxerrlexst_e::st_err_10,
-		err_11 = sintaxerrlexst_e::st_err_11,
-		sem_00 = semerrlexst_e::st_sem_00,
-		sem_01 = semerrlexst_e::st_sem_01,
-		sem_02 = semerrlexst_e::st_sem_02,
-		sem_03 = semerrlexst_e::st_sem_03,
-		sem_04 = semerrlexst_e::st_sem_04,
-		sem_05 = semerrlexst_e::st_sem_05,
-		sem_06 = semerrlexst_e::st_sem_06,
-		sem_07 = semerrlexst_e::st_sem_07,
-		sem_08 = semerrlexst_e::st_sem_08,
-		sem_09 = semerrlexst_e::st_sem_09,
-		sem_10 = semerrlexst_e::st_sem_10,
-		sem_11 = semerrlexst_e::st_sem_11,
-		sem_12 = semerrlexst_e::st_sem_12
-	};
-	enum class type_token_e {
-		nothing,type,separator,whitespace,digit,desc_radix,desc_end,sign
-	};
-	enum class action_e {
-		nothing,report_error,go_to_another_st,get_number_digit,get_radix,get_sign
-	};
-	bool is_digit(char in) {
-		return ((in >= '0')||(in <= '8'));
-	}
-	bool is_valid_char(char in) {
-		return (in>='a' && in <='z')||(in>='A' && in<='Z');
-	}
-	bool is_separator(char in) {
-		return (in == '#');
-	}
-	bool is_space(char in) {
-		return ((in == ' ')||(in == '\t'));
-	}
-	bool is_desc_end(char in) {
-		return (in == '\n');/// PODRIA SER TAMBIEN EOL
-	}
-	bool is_desc_radix(char in) {
-		return ((in == 'b')||(in == 'B'));
-	}
-	bool is_sign(char in) {
-		return ((in == '+')||(in == '-'));
-	}
-	bool is_type_id(string in) {
-		return
-			(
-				(in == "int_reg_digs")||
-				(in == "int_reg_dig")||
-				(in == "int_reg_di")||
-				(in == "int_reg_d")||
-				(in == "int_reg_")||
-				(in == "int_reg")||
-				(in == "int_re")||
-				(in == "int_r")||
-				(in == "int_")||
-				(in == "int")||
-				(in == "in")||
-				(in == "i")
-			);
-	}
+		enum class reglexst_e : uint16_t {
+			st_00 = 0 ,st_01 = 1,st_02 = 2,st_03 = 3 ,st_04 = 4 ,st_05 = 5 ,
+			st_06 = 6 ,st_07 = 7,st_08 = 8,st_09 = 9 ,st_10 = 10,st_11 = 11,
+			st_12 = 12,st_13 = 13
+		};
+		enum class sintaxerrlexst_e : uint16_t {
+			st_err_00 = 256,st_err_01 = 257,st_err_02 = 258,
+			st_err_03 = 259,st_err_04 = 260,st_err_05 = 261,
+			st_err_06 = 262,st_err_07 = 263,st_err_08 = 264,
+			st_err_09 = 265,st_err_10 = 266,st_err_11 = 267,
+			st_err_12 = 268,st_err_13 = 269
+		};
+		enum class semerrlexst_e : uint16_t {
+			st_sem_00 = 4096,st_sem_01 = 4097,st_sem_02 = 4098,st_sem_03 = 4099,
+			st_sem_04 = 4100,st_sem_05 = 4101,st_sem_06 = 4102,st_sem_07 = 4103,
+			st_sem_08 = 4104,st_sem_09 = 4105,st_sem_10 = 4106,st_sem_11 = 4107,
+			st_sem_12 = 4108,st_sem_13 = 4109
+		};
+		enum class lexst_e : reglexst_e,sintaxerrlexst_e,semerrlexst_e {
+			reg_00 = reglexst_e::st_00,
+			reg_01 = reglexst_e::st_01,
+			reg_02 = reglexst_e::st_02,
+			reg_03 = reglexst_e::st_03,
+			reg_04 = reglexst_e::st_04,
+			reg_05 = reglexst_e::st_05,
+			reg_06 = reglexst_e::st_06,
+			reg_07 = reglexst_e::st_07,
+			reg_08 = reglexst_e::st_08,
+			reg_09 = reglexst_e::st_09,
+			reg_10 = reglexst_e::st_10,
+			reg_11 = reglexst_e::st_11,
+			reg_12 = reglexst_e::st_12,
+			reg_13 = reglexst_e::st_13,
+			err_00 = sintaxerrlexst_e::st_err_00,
+			err_01 = sintaxerrlexst_e::st_err_01,
+			err_02 = sintaxerrlexst_e::st_err_02,
+			err_03 = sintaxerrlexst_e::st_err_03,
+			err_04 = sintaxerrlexst_e::st_err_04,
+			err_05 = sintaxerrlexst_e::st_err_05,
+			err_06 = sintaxerrlexst_e::st_err_06,
+			err_07 = sintaxerrlexst_e::st_err_07,
+			err_08 = sintaxerrlexst_e::st_err_08,
+			err_09 = sintaxerrlexst_e::st_err_09,
+			err_10 = sintaxerrlexst_e::st_err_10,
+			err_11 = sintaxerrlexst_e::st_err_11,
+			err_12 = sintaxerrlexst_e::st_err_12,
+			err_13 = sintaxerrlexst_e::st_err_13,
+			sem_00 = semerrlexst_e::st_sem_00,
+			sem_01 = semerrlexst_e::st_sem_01,
+			sem_02 = semerrlexst_e::st_sem_02,
+			sem_03 = semerrlexst_e::st_sem_03,
+			sem_04 = semerrlexst_e::st_sem_04,
+			sem_05 = semerrlexst_e::st_sem_05,
+			sem_06 = semerrlexst_e::st_sem_06,
+			sem_07 = semerrlexst_e::st_sem_07,
+			sem_08 = semerrlexst_e::st_sem_08,
+			sem_09 = semerrlexst_e::st_sem_09,
+			sem_10 = semerrlexst_e::st_sem_10,
+			sem_11 = semerrlexst_e::st_sem_11,
+			sem_12 = semerrlexst_e::st_sem_12,
+			sem_13 = semerrlexst_e::st_sem_13
+		};
+
+		bool is_digit(char in) {
+			return ((in >= '0')||(in <= '9'));
+		}
+		size_t uint8_t digit_value(char in) {
+			return static_cast<size_t>(in-'0');
+		}
+		bool is_valid_char(char in) {
+			return (in>='a' && in <='z')||(in>='A' && in<='Z');
+		}
+		bool char_value(char in) {
+			if (in>='a' && in <='z'){
+				return in;
+			}
+			else{
+				return (in-('A'-'a'));
+			}
+		}
+		bool is_separator(char in) {
+			return (in == '#');
+		}
+		bool is_whitespace(char in) {
+			return ((in == ' ')||(in == '\t'));
+		}
+		bool is_desc_end(char in) {
+			return (in == '\n')||(in == std::char_traits<char>::eof());
+		}
+		bool is_desc_radix(char in) {
+			return ((in == 'b')||(in == 'B'));
+		}
+		bool is_sign(char in) {
+			return ((in == '+')||(in == '-'));
+		}
+		sign_e sign_value(char in) {
+			if (in == '+')
+				return sign_e::vplus;
+			else
+				return sign_e::vminus;
+		}
+		bool is_type_id(string in) {
+			return
+				(
+					(in == "int_reg_digs")||
+					(in == "int_reg_dig")||
+					(in == "int_reg_di")||
+					(in == "int_reg_d")||
+					(in == "int_reg_")||
+					(in == "int_reg")||
+					(in == "int_re")||
+					(in == "int_r")||
+					(in == "int_")||
+					(in == "int")||
+					(in == "in")||
+					(in == "i")
+				);
+		}
 	}//END NAMESPACE LEX
 	template<type_traits::allowable_base_type_c Int_Type,
 					Int_Type Base,
@@ -2229,126 +2246,680 @@ public:
 		using lextk 	= typename lex::type_token_e;
 		using lexact 	= typename lex::action_e;
 
-		lexst actual_st 	= lexst::reg_00;
-		lextk actual_tk 	= lextk::nothing;
+		lexst  actual_st 	= lexst::reg_00;
+		lextk  actual_tk 	= lextk::nothing;
 		lexact actual_act = lexact::nothing;
 
-		bool get_new_char_in = true;
-		std::string buffer_in;
-		char input_char = nullchar();
-		size_t index = 0;
+		bool get_new_char_in 				= true;
+		std::string buffer_in				= "";
+		std::string type_descriptor = "";
+		std::string err							= "";
+		char input_char 						= nullchar<char>;
+		Int_Type explicit_digit 		= 0;
+		Int_Type explicit_radix 		= 0;
+		size_t index 								= 0;
+		semantic_error_number				= 0;
+		sintax_error_number					= 0;
 
-		while (input_char != std::ios::eof()) {
+		while (true) {
 			switch(actual_st) {
 				case lexst::reg_00 : {
-					if (is_space(input_char)) {
+					if (is_whitespace(input_char)) {
 							actual_st  = lexst::reg_00;
-							actual_tk  = lextk::nothing;
-							actual_act = lexact::nothing;
 							get_new_char_in = true;
 					}
 					else if (is_valid_char(input_char)) {
-						local_buffer_in += input_char;
-						if (is_type_id(local_buffer_in)) {
+						if (input_char == 'i') {
 							actual_st  = lexst::reg_01;
-							actual_tk  = lextk::type;
-							actual_act = lexact::nothing;
 							get_new_char_in = true;
 						}
 						else {
-							actual_st  = lexst::reg_00;
-							actual_tk  = lextk::nothing;
-							actual_act = lexact::report_error;
+							actual_st  = lexst::err_00;
+							err ="En esta posición, que es la primera, \
+							solo cabe la letra \'i\' del descriptor de tipo \"int_reg_digs\"";
 							get_new_char_in = false;
+							++sintax_error_number;
 						}
 					}
 					else {
-						actual_st  = lexst::reg_00;
-						actual_tk  = lextk::nothing;
-						actual_act = lexact::report_error;
+						actual_st  = lexst::err_00;
+						err = "En esta posición, que es la primera, \
+						solo caben caracteres, concretamente la \'i\' del descriptor de \
+						tipo \"int_reg_digs\"";
 						get_new_char_in = false;
+						++sintax_error_number;
 					}
 				}
 				break;
-				case lexst::reg_01 :
-					break;
-				case lexst::reg_02 :
-					break;
-				case lexst::reg_03 :
-					break;
-				case lexst::reg_04 :
-					break;
-				case lexst::reg_05 :
-					break;
-				case lexst::reg_06 :
-					break;
-				case lexst::reg_07 :
-					break;
-				case lexst::reg_08 :
-					break;
-				case lexst::reg_09 :
-					break;
-				case lexst::reg_10 :
-					break;
-				case lexst::reg_11 :
-					break;
-				case lexst::reg_12 :
-					break;
-				case lexst::err_00 :
-					break;
-				case lexst::err_01 :
-					break;
-				case lexst::err_02 :
-					break;
-				case lexst::err_03 :
-					break;
-				case lexst::err_04 :
-					break;
-				case lexst::err_05 :
-					break;
-				case lexst::err_06 :
-					break;
-				case lexst::err_07 :
-					break;
-				case lexst::err_08 :
-					break;
-				case lexst::err_09 :
-					break;
-				case lexst::err_10 :
-					break;
-				case lexst::err_11 :
-					break;
-				case lexst::sem_00 :
-					break;
-				case lexst::sem_01 :
-					break;
-				case lexst::sem_02 :
-					break;
-				case lexst::sem_03 :
-					break;
-				case lexst::sem_04 :
-					break;
-				case lexst::sem_05 :
-					break;
-				case lexst::sem_06 :
-					break;
-				case lexst::sem_07 :
-					break;
-				case lexst::sem_08 :
-					break;
-				case lexst::sem_09 :
-					break;
-				case lexst::sem_10 :
-					break;
-				case lexst::sem_11 :
-					break;
-				case lexst::sem_12 :
-					break;
-				default :
+				case lexst::reg_01 : {
+					if (is_valid_char(input_char)) {
+						descriptor_type += value_char(input_char);
+						if (is_type_id(descriptor_type)) {
+							if (descriptor_type == "int_reg_digs") {
+								actual_st  = lexst::reg_02;
+								get_new_char_in = true;
+							}
+							else {
+								actual_st  = lexst::reg_01;
+								get_new_char_in = true;
+							}
+						}
+						else {
+							actual_st  = lexst::err_01;
+							err = "En esta posición, que es la primera, \
+							solo cabe el descriptor de tipo \"int_reg_digs\" y has \
+							roto la cadena con el último carácter";
+							get_new_char_in = false;
+							++sintax_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_01;
+						err = "En esta posición, que es la primera, \
+						solo cabe el descriptor de tipo \"int_reg_digs\", y has \
+						introducido un carácter inválido";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_02 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_02;
+						get_new_char_in = true;
+					}
+					else if  (is_separator(input_char)) {
+						if (index < Length) {
+							value[index] = dig_t{explicit_digit};
+							++index;
+							explicit_digit = 0;
+							actual_st  = lexst::reg_03;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							err = "El índice acaba de igualar la longitud máxima,\
+							 con lo que ya es erróneo.";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_03;
+						err = "En esta posición, estamos esperando un separador\
+						# pero el carácter que has puesto no coincide.";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_03 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_03;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						actual_st  = lexst::reg_06;
+						value.sign = sign_e::vplus;
+						get_new_char_in = true;
+					}
+					else if (is_sign(input_char)) {
+						actual_st  = lexst::reg_04;
+						value.sign = sign_value(input_char);
+						get_new_char_in = true;
+					}
+					else if (is_separator(input_charar)) {
+						if (index < Length) {
+							value[index] = dig_t{explicit_digit};
+							++index;
+							explicit_digit = 0;
+							actual_st  = lexst::reg_07;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							err = "El índice acaba de igualar la longitud máxima,\
+							 con lo que ya es erróneo.";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_03;
+						err = "En esta posición, estamos esperando bien un signo explícito\
+						 , bien un dígito suponiendo un signo positivo implícito, o bien el\
+						  separador #, pero el carácter que has puesto no coincide.";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_04 :{
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_04;
+						get_new_char_in = true;
+					}
+					else if (is_separator(input_char)) {
+						if (index < Length) {
+							value[index] = dig_t{explicit_digit};
+							++index;
+							explicit_digit = 0;
+							actual_st  = lexst::reg_05;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							err = "El índice acaba de igualar la longitud máxima,\
+							 con lo que ya es erróneo.";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_04;
+						err = "En esta posición, estamos esperando \
+						 el separador #, pero el carácter que has puesto no coincide.";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_05 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_05;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						if (digit_value(input_char) < Radix) {
+							actual_st  = lexst::reg_06;
+							explicit_digit *= 10;
+							explicit_digit += digit_value(input_char);
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_05;
+							err = "El dígito que has escrito \'"+ input_char + " \'\
+							es mayor que el valor de la base menos 1 : \""+char(Radix-1+'0')+"\"";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_05;
+						err = "Estamos esperando bien un espacio, bien un dígito";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_06 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_06;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						if (digit_value(input_char) < Radix) {
+							explicit_digit *= 10;
+							explicit_digit += digit_value(input_char);
+							if (explicit_digit < Radix) {
+								actual_st  = lexst::reg_06;
+								get_new_char_in = true;
+							}
+							else {
+								actual_st  = lexst::sem_06;
+								stringstream ss;
+								ss << explicit_digit;
+								err = "El dígito que has escrito \'"+ input_char + " \'\
+								conforma un número que no puede ser un dígito de la base :\
+								 \""+char(Radix+'0')+"\"el número actual es \"\
+								 " + std::string(ss.str())  + "\"";
+								get_new_char_in = false;
+								++semantic_error_number;
+							}
+						}
+						else {
+							actual_st  = lexst::sem_06;
+							err = "El dígito que has escrito \'"+ input_char + " \'\
+							es mayor que el valor de la base menos 1 : \""+char(Radix-1+'0')+"\"";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else if (is_separator(input_char)) {
+						if (index < Length) {
+							value[index] = dig_t{explicit_digit};
+							++index;
+							explicit_digit = 0;
+							actual_st  = lexst::reg_08;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							err = "El índice acaba de igualar la longitud máxima,\
+							 con lo que ya es erróneo.";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_06;
+						err = "Esperamos bien un dígito 0-9 o bien un separador # ";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_07 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_07;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						if (value_digit(input_char) < Radix){
+							explicit_digit *= 10;
+							explicit_digit += digit_value(input_char);
+							actual_st  = lexst::reg_06;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_08;
+							err = "El dígito que has escrito \'"+ input_char + " \'\
+							es mayor que el valor de la base menos 1 : \""+char(Radix-1+'0')+"\"";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_08;
+						err = "Esperamos bien un dígito 0-9";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_08 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_08;
+						get_new_char_in = true;
+					}
+					else if (is_radix_descriptor(input_char)) {
+						if (index < Length) {
+							value[index] = dig_t{explicit_digit};
+							++index;
+							explicit_digit = 0;
+							actual_st  = lexst::reg_11;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							err = "El índice acaba de igualar la longitud máxima,\
+							 con lo que ya es erróneo.";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else if (is_digit(input_char)) {
+						if (value_digit(input_char) < Radix){
+							actual_st  = lexst::reg_09;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_08;
+							err = "El dígito que has escrito \'"+ input_char + " \'\
+							es mayor que el valor de la base menos 1 : \""+char(Radix-1+'0')+"\"";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_08;
+						err = "Esperamos bien un dígito 0-9 o bien el\
+						 descriptor de base \'B\' o \'b\'";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_09 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_09;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						if (digit_value(input_char) < Radix) {
+							explicit_digit *= 10;
+							explicit_digit += digit_value(input_char);
+							if (explicit_digit < Radix) {
+								actual_st  = lexst::reg_10;
+								get_new_char_in = true;
+							}
+							else {
+								actual_st  = lexst::sem_09;
+								stringstream ss;
+								ss << explicit_digit;
+								err = "El dígito que has escrito \'"+ input_char + " \'\
+								conforma un número que no puede ser un dígito de la base :\
+								 \""+char(Radix+'0')+"\"el número actual es \"\
+								 " + std::string(ss.str())  + "\"";
+								get_new_char_in = false;
+								++semantic_error_number;
+							}
+						}
+						else {
+							actual_st  = lexst::sem_09;
+							err = "El dígito que has escrito \'"+ input_char + " \'\
+							es mayor que el valor de la base menos 1 : \""+char(Radix-1+'0')+"\"";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else if (is_separator(input_char)) {
+						if (index < Length) {
+							value[index] = dig_t{explicit_digit};
+							++index;
+							explicit_digit = 0;
+							actual_st  = lexst::reg_10;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							err = "El índice acaba de igualar la longitud máxima,\
+							 con lo que ya es erróneo.";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_09;
+						err = "Esperamos bien un dígito 0-9 o bien un separador # ";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_10 : {
+					if(is_whitespace(input_char)) {
+						actual_st  = lexst::reg_10;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						if (digit_value(input_char) < Radix) {
+							explicit_digit *= 10;
+							explicit_digit += digit_value(input_char);
+							if (explicit_digit < Radix) {
+								actual_st  = lexst::reg_09;
+								get_new_char_in = true;
+							}
+							else {
+								actual_st  = lexst::sem_10;
+								stringstream ss;
+								ss << explicit_digit;
+								err = "El dígito que has escrito \'"+ input_char + " \'\
+								conforma un número que no puede ser un dígito de la base :\
+								 \" " + char(Radix+'0') + " \"el número actual es \"\
+								 " + std::string(ss.str())  + "\"";
+								get_new_char_in = false;
+								++semantic_error_number;
+							}
+						}
+					}
+					else if (is_radix_descriptor(input_char)) {
+						if (index < Length) {
+							value[index] = dig_t{explicit_digit};
+							++index;
+							explicit_digit = 0;
+							actual_st  = lexst::reg_11;
+							get_new_char_in = true;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							err = "El índice acaba de igualar la longitud máxima,\
+							 con lo que ya es erróneo.";
+							get_new_char_in = false;
+							++semantic_error_number;
+						}
+					}
+					else {
+						actual_st  = lexst::err_10;
+						err = "Esperamos bien un dígito 0-9 o bien un descriptor\
+						 de base como \'b\' o \'B\'";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_11 : {
+					if(is_whitespace(input_char)) {
+						actual_st  = lexst::reg_11;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						if (digit_value(input_char) <= Radix) {
+							explicit_radix *= 10;
+							explicit_radix += digit_value(input_char);
+							if (explicit_radix <= Radix) {
+								actual_st  = lexst::reg_12;
+								get_new_char_in = true;
+							}
+							else {
+								actual_st  = lexst::sem_11;
+								stringstream ss;
+								ss << explicit_digit;
+								err = "El dígito que has escrito \'"+ input_char + " \'\
+								conforma un número que no puede ser un dígito de la base :\
+								 \" " + char(Radix+'0') + " \"el número actual es \"\
+								 " + std::string(ss.str())  + "\"";
+								get_new_char_in = false;
+								++semantic_error_number;
+							}
+						}
+					}
+					else {
+						actual_st  = lexst::err_11;
+						err = "Esperamos un dígito 0-9";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::reg_12 : {
+					if (is_whitespace(input_char)) {
+						actual_st  = lexst::reg_12;
+						get_new_char_in = true;
+					}
+					else if (is_digit(input_char)) {
+						if (digit_value(input_char) <= Radix) {
+							explicit_radix *= 10;
+							explicit_radix += digit_value(input_char);
+							if (explicit_digit <= Radix) {
+								actual_st  = lexst::reg_12;
+								get_new_char_in = true;
+							}
+							else {
+								actual_st  = lexst::sem_12;
+								stringstream ss;
+								ss << explicit_digit;
+								err = "El dígito que has escrito \'"+ input_char + " \'\
+								conforma un número que no puede ser un dígito de la base :\
+								 \" "+ char(Radix+'0')+" \"el número actual es \"\
+								 " + std::string(ss.str())  + "\"";
+								get_new_char_in = false;
+								++semantic_error_number;
+							}
+						}
+					}
+					else if (is_end_descriptor(input_char)) {
+						explicit_radix = 0;
+						if (index == L) {
+							actual_st  = lexst::reg_13;
+							get_new_char_in = false;
+							return;
+						}
+						else if (index < L){
+							actual_st  = lexst::sem_13;
+							stringstream ss;
+							ss << index;
+							stringstream ll;
+							ll << Length;
+							err = "El número de dígitos introducidos es menor que\
+							 la longitud del registro " + std::string(ss.str())  + "\" \
+							 < "+ll+" ";
+							get_new_char_in = false;
+							return;
+						}
+						else {
+							actual_st  = lexst::sem_13;
+							stringstream ss;
+							ss << index;
+							stringstream ll;
+							ll << Length;
+							err = "El número de dígitos introducidos es mayor que\
+							 la longitud del registro " + std::string(ss.str())  + "\" \
+							 > "+ll+" ";
+							get_new_char_in = false;
+							return;
+						}
+					}
+					else {
+						actual_st  = lexst::err_12;
+						err = "Esperamos un dígito 0-9 o fin de la entrada";
+						get_new_char_in = false;
+						++sintax_error_number;
+					}
+				}
+				break;
+				case lexst::err_00 : {
+					actual_st  = lexst::reg_00;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_01 : {
+					actual_st  = lexst::reg_01;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_02 : {
+					actual_st  = lexst::reg_02;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_03 : {
+					actual_st  = lexst::reg_03;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_04 : {
+					actual_st  = lexst::reg_04;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_05 : {
+					actual_st  = lexst::reg_05;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_06 : {
+					actual_st  = lexst::reg_06;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_07 : {
+					actual_st  = lexst::reg_07;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_08 : {
+					actual_st  = lexst::reg_08;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_09 : {
+					actual_st  = lexst::reg_09;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_10 : {
+					actual_st  = lexst::reg_10;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_11 : {
+					actual_st  = lexst::reg_11;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_12 : {
+					actual_st  = lexst::reg_12;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::err_13 : {
+					actual_st  = lexst::reg_13;
+					errs << err << '\n';
+				}
+				break;
+				case lexst::sem_00 : {
+					actual_st  = lexst::reg_00;
+					errs << err << '\n';
+				}
+				case lexst::sem_01 : {
+					actual_st  = lexst::reg_01;
+					errs << err << '\n';
+				}
+				case lexst::sem_02 : {
+					actual_st  = lexst::reg_02;
+					errs << err << '\n';
+				}
+				case lexst::sem_03 : {
+					actual_st  = lexst::reg_03;
+					errs << err << '\n';
+				}
+				case lexst::sem_04 : {
+					actual_st  = lexst::reg_04;
+					errs << err << '\n';
+				}
+				case lexst::sem_05 : {
+					actual_st  = lexst::reg_05;
+					errs << err << '\n';
+				}
+				case lexst::sem_06 : {
+					actual_st  = lexst::reg_06;
+					errs << err << '\n';
+				}
+				case lexst::sem_07 : {
+					actual_st  = lexst::reg_07;
+					errs << err << '\n';
+				}
+				case lexst::sem_08 : {
+					actual_st  = lexst::reg_08;
+					errs << err << '\n';
+				}
+				case lexst::sem_09 : {
+					actual_st  = lexst::reg_09;
+					errs << err << '\n';
+				}
+				case lexst::sem_10 : {
+					actual_st  = lexst::reg_10;
+					errs << err << '\n';
+				}
+				case lexst::sem_11 : {
+					actual_st  = lexst::reg_11;
+					errs << err << '\n';
+				}
+				case lexst::sem_12 : {
+					actual_st  = lexst::reg_12;
+					errs << err << '\n';
+				}
+			}
+			if ((semantic_error_number > 1)||(sintax_error_number > 2)) {
+				value = reg_digs_t<Int_Type,Radix,Length>::reg_digs_0();
+				errs << "Número de errores semánticos = " << semantic_error_number << '\n';
+				errs << "Número de errores sintácticos = " << sintax_error_number << '\n';
+				errs << "Devolvemos valor por defecto nulo" << '\n';
+				return;
 			}
 			if (get_new_char_in) {
-				input_char = buffer_iner_in[index];
-				++index;
+				is >> input_char;
 			}
 		}
 	}

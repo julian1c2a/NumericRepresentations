@@ -6,13 +6,14 @@
 
 /// En general me gustaría tener las siguientes macros desenrrollantes:
 /// const reg_digs_t & 	cr_cthis{*this};
-/// 			reg_digs_t & 	r_cthis	{*this};
-/// 			reg_digs_t 		cthis		{*this};
+/// 			reg_digs_t & 	 r_cthis{*this};
+/// 			reg_digs_t 		cp_cthis{*this};
 /// Como :
 ///#define cr(type) 	const type & cr_cthis{*this};
 ///#define	r(type)  	type & r_cthis{*this};
 ///#define cp(type) 	type cp_cthis{*this};
-/// Pero de forma local
+/// Pero de forma local, quedará:
+///
 
 namespace NumRepr {
 
@@ -248,27 +249,27 @@ public :
 
 	static consteval
 	reg_digs_t	regd_1() noexcept {
-		return reg_digs_t{regd_base_N_1<L>()};
+		return reg_digs_t{regd_base_1()};
 	}
 
 	static consteval
 	reg_digs_t	regd_Bm1() noexcept {
-		return reg_digs_t{regd_base_N_Bm1<L>()};
+		return reg_digs_t{regd_base_Bm1()};
 	}
 
 	static consteval
 	reg_digs_t	regd_B() noexcept {
-		return reg_digs_t{regd_base_N_B<L>()};
+		return reg_digs_t{regd_base_B()};
 	}
 
 	static consteval
 	reg_digs_t	regd_pow_n_B()	noexcept {
-		return reg_digs_t{regd_base_N_pow_n_B<L>()};
+		return reg_digs_t{regd_base_pow_n_B()};
 	}
 
 	static consteval
 	reg_digs_t	regd_pow_n_B_m1() noexcept	{
-		return reg_digs_t{regd_base_N_pow_n_B_m1<L>()};
+		return reg_digs_t{regd_base_pow_n_B_m1()};
 	}
 
 public :
@@ -475,12 +476,12 @@ public :
 	/// <param name="Ints_type ... digits_pow_i"></param>
 	/// <returns="base_t"></returns>
 	template<type_traits::integral_c ... Ints_type,size_t N>
-		requires (((sizeof...(Ints_type)) <= L)&&(N>0))
+		requires (((sizeof...(Ints_type)) > 0)&&((sizeof...(Ints_type)) <= L)&&(N>0))
 	static constexpr inline
 	base_N_t<N> normalize(Ints_type ... digits_pow_i)
 	noexcept {
-	///< CREA UN STD_ARRAY DEL TIPO INT PASADO POR ARGUMENTOS
-	///< DE TAMANO EL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
+	///< CREA UN STD_ARRAY DEL TIPO INT PASADO POR UN PACK DE ARGUMENTOS
+	///< EL TAMANO ES EL DEL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
 		using pack_type 	= typename utilities::pack2array<Ints_type...>;
 	///< DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR
 	///< [UN TIPO ENTERO]
@@ -576,7 +577,7 @@ public:
 	constexpr inline
 	const base_t & operator = (reg_N_digs_t<N>&& arg) noexcept
 	{
-		if (this!=(&arg))
+		if (this != &arg)
 			move_arg_N<N>(std::move(arg));
 		return (*this);
 	}
@@ -661,23 +662,19 @@ public :
 		return (static_cast<const dig_t*>(this->base_t::data()));
 	}
 	inline constexpr
-	auto& ref_data() const {
-		return (*(this->data()));
-	}
-	inline constexpr
-	auto cpy_data() const {
-		auto cpy_this{*(this->data())};
+	decltype(auto) cpy_data() const {
+		auto cpy_this{*(this->base_t::data())};
 		return cpy_this;
 	}
 
 	///	<summary="Sobrecarga del const dig_t & operator[](size_t) const"></summary>
 	const dig_t& operator[](size_t ix) const {
-		return (cr_cthis().base_t::operator[](ix));
+		return (cr_base_cthis(ix));
 	}
 
 	/// <summary="Sobrecarga del dig_t & operator[](size_t)"></summary>
 	dig_t& operator[](size_t ix) {
-		return (r_cthis().base_t::operator[](ix));
+		return (r_base_cthis(ix));
 	}
 
 
@@ -740,7 +737,7 @@ public :
 	constexpr inline
 	void set_interval_0() noexcept {
 		for (size_t ix{N_i} ; ix < N_pf ; ++ix)
-			r_cthis()[ix].set_0();
+			r_cthis(ix).set_0();
 	}
 
 	/// OPERACION DE PONER A VALOR DIG_Bm1 DEL ARRAY
@@ -751,7 +748,7 @@ public :
 	constexpr inline
 	void set_interval_Bm1() noexcept {
 		for (size_t ix{N_i} ; ix < N_pf ; ++ix)
-			r_cthis()[ix].set_Bm1();
+			r_cthis(ix).set_Bm1();
 	}
 
 	/// OPERACION DE PONER A VALOR DIG DEL ARRAY
@@ -762,7 +759,7 @@ public :
 	constexpr inline
 	void set_interval_dig(dig_t dig) noexcept {
 		for (size_t ix{N_i} ; ix < N_pf ; ++ix)
-			r_cthis()[ix] = dig;
+			r_cthis(ix) = dig;
 	}
 
 	///<summary="Funciones comparativas con constantes tipo constexpr"></summary>
@@ -772,7 +769,7 @@ public :
 	inline constexpr
 	bool is_0() const noexcept
 	{
-		for(const auto elem : cr_cthis()) {
+		for(const auto& elem : cr_cthis()) {
 			if(elem.is_not_0())
 				return false;
 		}
@@ -781,10 +778,10 @@ public :
 
 	inline constexpr
 	bool is_1() const noexcept {
-		if (cr_cthis()[0].is_not_1())
+		if (cr_cthis(0).is_not_1())
 			return false;
 		for(size_t ix{1} ; ix<L ; ++ix) {
-			if(cr_cthis()[ix].is_not_0())
+			if(cr_cthis(ix).is_not_0())
 				return false;
 		}
 		return true;
@@ -792,10 +789,10 @@ public :
 
 	inline constexpr
 	bool is_Bm1() const noexcept {
-		if (cr_cthis()[0].is_not_Bm1())
+		if (cr_cthis(0).is_not_Bm1())
 			return false;
 		for(size_t ix{1} ; ix<L ; ++ix) {
-			if(cr_cthis()[ix].is_not_0())
+			if(cr_cthis(ix).is_not_0())
 				return false;
 		}
 		return true;
@@ -806,12 +803,12 @@ public :
 	{
 		if constexpr (L == 1) return false;
 		else {
-			if (cr_cthis()[0].is_not_0())
+			if (cr_cthis(0).is_not_0())
 				return false;
-			if (cr_cthis()[1].is_not_1())
+			if (cr_cthis(1).is_not_1())
 				return false;
 			for (size_t ix{ 2 }; ix < L; ++ix) {
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			}
 			return true;
@@ -822,12 +819,12 @@ public :
 	bool is_Bp1() const noexcept {
 		if constexpr (L == 1) return false;
 		else {
-			if (cr_cthis()[0].is_not_1())
+			if (cr_cthis(0).is_not_1())
 				return false;
-			if (cr_cthis()[1].is_not_1())
+			if (cr_cthis(1).is_not_1())
 				return false;
 			for (size_t ix{ 2 }; ix < L; ++ix) {
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			}
 			return true;
@@ -846,19 +843,19 @@ public :
 			return cr_cthis().is_Bm1();
 		}
 		else if constexpr (n == 2) {
-			if (cr_cthis()[1].is_not_Bm1() || cr_cthis()[0].is_not_Bm1())
+			if (cr_cthis(1).is_not_Bm1() || cr_cthis(0).is_not_Bm1())
 				return false;
 			for(size_t ix{2} ; ix < L ; ++ix)
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			return true;
 		}
 		else {
 			for(size_t ix{0} ; ix < n ; ++ix)
-				if (cr_cthis()[ix].is_not_Bm1())
+				if (cr_cthis(ix).is_not_Bm1())
 					return false;
 			for(size_t ix{n} ; ix < L ; ++ix)
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			return true;
 		}
@@ -870,41 +867,41 @@ public :
 	bool is_B_pow() const noexcept
 	{
 		if constexpr (n == 0) {
-			if (cr_cthis()[0].is_not_1())
+			if (cr_cthis(0).is_not_1())
 				return false;
 			for (size_t ix{1} ; ix < L ; ++ix)
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			return true;
 		}
 		else if constexpr (n == 1) {
-			if (cr_cthis()[0].is_not_0())
+			if (cr_cthis(0).is_not_0())
 				return false;
-			if (cr_cthis()[1].is_not_1())
+			if (cr_cthis(1).is_not_1())
 				return false;
 			for (size_t ix{2} ; ix < L ; ++ix)
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			return true;
 		}
 		else if constexpr (n == 2) {
-			if (cr_cthis()[0].is_not_0() || cr_cthis()[1].is_not_0())
+			if (cr_cthis(0).is_not_0() || cr_cthis(1).is_not_0())
 				return false;
-			if (cr_cthis()[2].is_not_1())
+			if (cr_cthis(2).is_not_1())
 				return false;
 			for (size_t ix{3} ; ix < L ; ++ix)
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			return true;
 		}
 		else {
 			for (size_t ix{0} ; ix < n ; ++ix)
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
-			if (cr_cthis()[n].is_not_1())
+			if (cr_cthis(n).is_not_1())
 				return false;
 			for (size_t ix{n+1} ; ix < L ; ++ix)
-				if (cr_cthis()[ix].is_not_0())
+				if (cr_cthis(ix).is_not_0())
 					return false;
 			return true;
 		}
@@ -928,7 +925,7 @@ public :
 	inline constexpr
 	bool is_filled_of_1() const noexcept {
 		for (size_t ix{0} ; ix < L ; ++ix)
-			if (cr_cthis()[ix].is_not_1())
+			if (cr_cthis(ix).is_not_1())
 				return false;
 		return true;
 	}
@@ -936,7 +933,7 @@ public :
 	inline constexpr
 	bool is_filled_of_Bm1() const noexcept {
 		for (size_t ix{0} ; ix < L ; ++ix)
-			if (cr_cthis()[ix].is_not_Bm1())
+			if (cr_cthis(ix).is_not_Bm1())
 				return false;
 		return true;
 	}
@@ -944,7 +941,7 @@ public :
 	inline constexpr
 	bool is_filled_of(dig_t d) const {
 		for (size_t ix{0} ; ix < L ; ++ix)
-			if (cr_cthis()[ix] != d)
+			if (cr_cthis(ix) != d)
 				return false;
 		return true;
 	}
@@ -1147,15 +1144,16 @@ public :
 	/// MULTIPLICATIVE CARRY BY THE BASE B (10) MER_B_N M_MER_B_N
 	constexpr inline
 	reg_digs_t operator << (size_t n) const noexcept {
-		reg_digs_t cpthis{*this};
 		for(int32_t ix{L-1-n} ; ix > -1 ; --ix) {
-			cpthis[ix+n]	= cpthis[ix];
+			cp_cthis(ix+n)	= cr_cthis(ix);
 		}
 		for(int32_t ix{0} ; ix < n ; ++ix) {
-			cpthis[ix]		= dig_0();
+			cp_cthis(ix+n)	=	dig_0();
 		}
-		return std::move(cpthis);
+		return std::move(cp_cthis());
 	}
+
+	/// TODO TO DO VOY POR AQUI CON EL TEMA DE LOS CTHIS
 
 	constexpr inline
 	const reg_digs_t & operator <<= (size_t n) noexcept {
