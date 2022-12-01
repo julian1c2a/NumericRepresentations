@@ -2100,6 +2100,142 @@ public:
 					/*													*/
 					/****************************/
 
+	/// std::istream operator >> int_reg_digs_t 
+			/// pasamos error a std::cerr
+	/// get_reg_digs_t(std::istream,std::ostream,int_reg_digs_t)
+	///
+	/// estados regulares 
+	///		st_00 st_01 st_02 st_03 st_04 st_05 st_06 st_07 st_08
+	///		st_09 st_10 st_11 st_12 st_13
+	/// estados error sintáctico
+	///		st_err_00 st_err_01 st_err_02 st_err_03 st_err_04
+	///		st_err_05 st_err_06 st_err_07 st_err_08 st_err_09
+	///		st_err_10 st_err_11 st_err_12 st_err_13
+	/// estados error semántico
+	///		st_sem_00 st_sem_01 st_sem_02 st_sem_03 st_sem_04
+	///		st_sem_05 st_sem_06 st_sem_07 st_sem_08 st_sem_09
+	///		st_sem_10 st_sem_11 st_sem_12 st_sem_13
+	namespace lex{
+		enum class reglexst_e : uint16_t {
+			st_00 = 0 ,st_01 = 1,st_02 = 2,st_03 = 3 ,st_04 = 4 ,st_05 = 5 ,
+			st_06 = 6 ,st_07 = 7,st_08 = 8,st_09 = 9 ,st_10 = 10,st_11 = 11,
+			st_12 = 12,st_13 = 13
+		};
+		enum class sintaxerrlexst_e : uint16_t {
+			st_err_00 = 256,st_err_01 = 257,st_err_02 = 258,
+			st_err_03 = 259,st_err_04 = 260,st_err_05 = 261,
+			st_err_06 = 262,st_err_07 = 263,st_err_08 = 264,
+			st_err_09 = 265,st_err_10 = 266,st_err_11 = 267,
+			st_err_12 = 268,st_err_13 = 269
+		};
+		enum class semerrlexst_e : uint16_t {
+			st_sem_00 = 4096,st_sem_01 = 4097,st_sem_02 = 4098,
+			st_sem_03 = 4099,st_sem_04 = 4100,st_sem_05 = 4101,
+			st_sem_06 = 4102,st_sem_07 = 4103,st_sem_08 = 4104,
+			st_sem_09 = 4105,st_sem_10 = 4106,st_sem_11 = 4107,
+			st_sem_12 = 4108,st_sem_13 = 4109
+		};
+		enum class lexst_e : reglexst_e,sintaxerrlexst_e,semerrlexst_e {
+			reg_00 = reglexst_e::st_00,
+			reg_01 = reglexst_e::st_01,
+			reg_02 = reglexst_e::st_02,
+			reg_03 = reglexst_e::st_03,
+			reg_04 = reglexst_e::st_04,
+			reg_05 = reglexst_e::st_05,
+			reg_06 = reglexst_e::st_06,
+			reg_07 = reglexst_e::st_07,
+			reg_08 = reglexst_e::st_08,
+			reg_09 = reglexst_e::st_09,
+			reg_10 = reglexst_e::st_10,
+			reg_11 = reglexst_e::st_11,
+			reg_12 = reglexst_e::st_12,
+			reg_13 = reglexst_e::st_13,
+			err_00 = sintaxerrlexst_e::st_err_00,
+			err_01 = sintaxerrlexst_e::st_err_01,
+			err_02 = sintaxerrlexst_e::st_err_02,
+			err_03 = sintaxerrlexst_e::st_err_03,
+			err_04 = sintaxerrlexst_e::st_err_04,
+			err_05 = sintaxerrlexst_e::st_err_05,
+			err_06 = sintaxerrlexst_e::st_err_06,
+			err_07 = sintaxerrlexst_e::st_err_07,
+			err_08 = sintaxerrlexst_e::st_err_08,
+			err_09 = sintaxerrlexst_e::st_err_09,
+			err_10 = sintaxerrlexst_e::st_err_10,
+			err_11 = sintaxerrlexst_e::st_err_11,
+			err_12 = sintaxerrlexst_e::st_err_12,
+			err_13 = sintaxerrlexst_e::st_err_13,
+			sem_00 = semerrlexst_e::st_sem_00,
+			sem_01 = semerrlexst_e::st_sem_01,
+			sem_02 = semerrlexst_e::st_sem_02,
+			sem_03 = semerrlexst_e::st_sem_03,
+			sem_04 = semerrlexst_e::st_sem_04,
+			sem_05 = semerrlexst_e::st_sem_05,
+			sem_06 = semerrlexst_e::st_sem_06,
+			sem_07 = semerrlexst_e::st_sem_07,
+			sem_08 = semerrlexst_e::st_sem_08,
+			sem_09 = semerrlexst_e::st_sem_09,
+			sem_10 = semerrlexst_e::st_sem_10,
+			sem_11 = semerrlexst_e::st_sem_11,
+			sem_12 = semerrlexst_e::st_sem_12,
+			sem_13 = semerrlexst_e::st_sem_13
+		};
+		
+		bool is_digit(char in) {
+			return ((in >= '0')||(in <= '9'));
+		}
+		size_t uint8_t digit_value(char in) {
+			return static_cast<size_t>(in-'0');
+		}
+		bool is_valid_char(char in) {
+			return (in>='a' && in <='z')||(in>='A' && in<='Z');
+		}
+		bool char_value(char in) {
+			if (in>='a' && in <='z'){
+				return in;
+			}
+			else{
+				return (in-('A'-'a'));
+			}
+		}
+		bool is_separator(char in) {
+			return (in == '#');
+		}
+		bool is_whitespace(char in) {
+			return ((in == ' ')||(in == '\t'));
+		}
+		bool is_desc_end(char in) {
+			return (in == '\n')||(in == std::char_traits<char>::eof());
+		}
+		bool is_desc_radix(char in) {
+			return ((in == 'b')||(in == 'B'));
+		}
+		bool is_sign(char in) {
+			return ((in == '+')||(in == '-'));
+		}
+		sign_e sign_value(char in) {
+			if (in == '+')
+				return sign_e::vplus;
+			else
+				return sign_e::vminus;
+		}
+		bool is_type_id(string in) {
+			return
+				(
+					(in == "int_reg_digs")||
+					(in == "int_reg_dig")||
+					(in == "int_reg_di")||
+					(in == "int_reg_d")||
+					(in == "int_reg_")||
+					(in == "int_reg")||
+					(in == "int_re")||
+					(in == "int_r")||
+					(in == "int_")||
+					(in == "int")||
+					(in == "in")||
+					(in == "i")
+				);
+		}
+	}//END NAMESPACE LEX
 	template<type_traits::allowable_base_type_c Int_Type,
 					Int_Type Base,
 					size_t Length>
