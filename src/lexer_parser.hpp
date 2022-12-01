@@ -13,11 +13,11 @@ namespace lex {
 	/// estados regulares
 	///		st_00 st_01 st_02 st_03 st_04 st_05 st_06 st_07 st_08
 	///		st_09 st_10 st_11 st_12 st_13
-	/// estados error sintáctico
+	/// estados error sintactico
 	///		st_err_00 st_err_01 st_err_02 st_err_03 st_err_04
 	///		st_err_05 st_err_06 st_err_07 st_err_08 st_err_09
 	///		st_err_10 st_err_11 st_err_12 st_err_13
-	/// estados error semántico
+	/// estados error semantico
 	///		st_sem_00 st_sem_01 st_sem_02 st_sem_03 st_sem_04
 	///		st_sem_05 st_sem_06 st_sem_07 st_sem_08 st_sem_09
 	///		st_sem_10 st_sem_11 st_sem_12 st_sem_13
@@ -88,16 +88,16 @@ namespace lex {
 		};
 
 		bool is_digit(char in) {
-			return ((in >= '0')||(in <= '9'));
+			return ((in >= '0')&&(in <= '9'));
 		}
-		size_t uint8_t digit_value(char in) {
+		size_t digit_value(char in) {
 			return static_cast<size_t>(in-'0');
 		}
 		bool is_valid_char(char in) {
 			return (in>='a' && in <='z')||(in>='A' && in<='Z');
 		}
 		bool char_value(char in) {
-			if (in>='a' && in <='z'){
+			if ((in>='a')&&(in <='z')){
 				return in;
 			}
 			else{
@@ -106,6 +106,9 @@ namespace lex {
 		}
 		bool is_separator(char in) {
 			return (in == '#');
+		}
+		bool is_end_of_digit(char in) {
+			return (in == '_');
 		}
 		bool is_whitespace(char in) {
 			return ((in == ' ')||(in == '\t'));
@@ -125,87 +128,60 @@ namespace lex {
 			else
 				return sign_e::vminus;
 		}
+	
+}
 
-		/// FUNCIÓN OBTENCIÓN DEL TIPO
+		/// DECLARACION GENERICA : FUNCION OBTENCION DEL TIPO
 		template<
 			template T,typename UIn_t,UIn_t B,size_t LE,size_t LF
 		>
 		bool is_type_id(std::string in);
-		/// FUNCIÓN OBTENCIÓN DEL STRING IDENTIFICADOR DEL TIPO
+		/// DECLARACION GENERICA : FUNCION OBTENCION DEL STRING IDENTIFICADOR DEL TIPO
 		template<
 			template T,typename UIn_t,UIn_t B,size_t LE,size_t LF
 		> std::string to_string<T>();
-		/// FUNCIÓN OBTENCIÓN DEL STRING IDENTIFICADOR DEL TIPO
-		template<
-			template T,typename UIn_t,UIn_t B,size_t LE,size_t LF
-		> size_t size_of_string_idT<T>();
+		/// DECLARACION GENERICA : FUNCION OBTENCION DEL STRING IDENTIFICADOR DEL TIPO
+		template<template T,typename UIn_t,UIn_t B,size_t LE,size_t LF>
+		size_t size_of_string_idT<T>();
 		/// ESPECIALIZACIONES PARA DIG_T
 		template<typename UIn_t,UIn_t B>
-		bool
-		is_type_id<dig_t,UInt_t,B,0,0>(std::string in) {
-			return
-				(
-					(in == "dig")||
-					(in == "di")||
-					(in == "d")
-				);
+		bool is_type_id<dig_t,UInt_t,B,0,0>(std::string in) {
+			return	(
+						(in == "dig")||
+						(in == "di")||
+						(in == "d")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		std::string
-		to_string<dig_t,UInt_t,B,0,0>() {
-			return std::string{"dig"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<dig_t,UInt_t,B,0,0>() {
-			return 3;
-		}
+		template<typename UInt_t,UInt_t B>
+		std::string to_string<dig_t,UInt_t,B,0,0>()
+		{	return std::string{"dig"};	}
+		template<typename UInt_t,UInt_t B>
+		size_t size_of_string_idT<dig_t,UInt_t,B,0,0>()
+		{	return (to_string<dig_t,UInt_t,B,0,0>()).size();    }
 		/// ESPECIALIZACIONES PARA REG_DIGS
-		template<typename UIn_t,UIn_t B,size_t LE>
-		bool
-		is_type_id<reg_digs_t,UInt_t,B,LE,0>(
-				std::string in
-		) {
-			return
-				(
-					(in == "reg_digs")||
-					(in == "reg_dig")||
-					(in == "reg_di")||
-					(in == "reg_d")||
-					(in == "reg_")||
-					(in == "reg")||
-					(in == "re")||
-					(in == "r")
-				);
+		template<typename UInt_t,UInt_t B,size_t LE>
+		bool is_type_id<reg_digs_t,UInt_t,B,LE,0>(std::string in) {
+			return	(
+						(in == "reg_digs")||
+						(in == "reg_dig")||
+						(in == "reg_di")||
+						(in == "reg_d")||
+						(in == "reg_")||
+						(in == "reg")||
+						(in == "re")||
+						(in == "r")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B,size_t LE
-		>
-		std::string
-		to_string<reg_digs_t,UInt_t,B,LE,0>()
-		{
-			return std::string{"reg_digs"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<reg_digs_t,UInt_t,B,LE,0>()
-		{
-			return 8;
-		}
+		template<typename UInt_t,UInt_t B,size_t LE>
+		std::string to_string<reg_digs_t,UInt_t,B,LE,0>()
+		{	return std::string{"reg_digs"};	}
+		template<typename UIn_t,UIn_t B>
+		size_t size_of_string_idT<reg_digs_t,UInt_t,B,LE,0>()
+		{	return (to_string<reg_digs_t,UInt_t,B,LE,0>()),size();	}
 		/// ESPECIALIZACIONES PARA NAT_REG_DIGS
-		template<typename UIn_t,UIn_t B,size_t LE>
-		bool
-		is_type_id<nat_reg_digs_t,UInt_t,B,LE,0>(
-						std::string in
-		) {
-			return
-				(
+		template<typename UInt_t,UInt_t B,size_t LE>
+		bool is_type_id<nat_reg_digs_t,UInt_t,B,LE,0>(std::string in)
+		{   return(
 					(in == "nat_reg_digs")||
 					(in == "nat_reg_dig")||
 					(in == "nat_reg_di")||
@@ -220,345 +196,196 @@ namespace lex {
 					(in == "n")
 				);
 		}
-		template<
-			typename UIn_t,UIn_t B,size_t LE
-		>
-		std::string
-		to_string<nat_reg_digs_t,UInt_t,B,LE,0>()
-		{
-			return std::string{"nat_reg_digs"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<nat_reg_digs_t,UInt_t,B,LE,0>()
-		{
-			return 12;
-		}
-
-		/// ESPECIALIZACIONES PARA INT_REG_DIGS_T
-
 		template<typename UIn_t,UIn_t B,size_t LE>
-		bool is_type_id<int_reg_digs_t,UInt_t,B,LE,0>(
-									std::string in
-		) {
-			return
-				(
-					(in == "int_reg_digs")||
-					(in == "int_reg_dig")||
-					(in == "int_reg_di")||
-					(in == "int_reg_d")||
-					(in == "int_reg_")||
-					(in == "int_reg")||
-					(in == "int_re")||
-					(in == "int_r")||
-					(in == "int_")||
-					(in == "int")||
-					(in == "in")||
-					(in == "i")
-				);
+		std::string to_string<nat_reg_digs_t,UInt_t,B,LE,0>()
+		{   return std::string{"nat_reg_digs"};		}
+		template<typename UInt_t,UInt_t B>
+		size_t size_of_string_idT<nat_reg_digs_t,UInt_t,B,LE,0>()
+		{	return (to_string<nat_reg_digs_t,UInt_t,B,LE,0>()).size();	}
+		/// ESPECIALIZACIONES PARA INT_REG_DIGS_T
+		template<typename UInt_t,UInt_t B,size_t LE>
+		bool is_type_id<int_reg_digs_t,UInt_t,B,LE,0>(std::string in)
+		{	return	(
+						(in == "int_reg_digs")||
+						(in == "int_reg_dig")||
+						(in == "int_reg_di")||
+						(in == "int_reg_d")||
+						(in == "int_reg_")||
+						(in == "int_reg")||
+						(in == "int_re")||
+						(in == "int_r")||
+						(in == "int_")||
+						(in == "int")||
+						(in == "in")||
+						(in == "i")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B,size_t LE
-		>
-		std::string
-		to_string<int_reg_digs_t,UInt_t,B,LE,0>()
-		{
-			return std::string{"int_reg_digs"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<int_reg_digs_t,UInt_t,B,LE,0>()
-		{
-			return 12;
-		}
-
+		template<typename UInt_t,UInt_t B,size_t LE>
+		std::string to_string<int_reg_digs_t,UInt_t,B,LE,0>()
+		{	return std::string{"int_reg_digs"}; 	}
+		template<typename UInt_t,UInt_t B>
+		size_t size_of_string_idT<int_reg_digs_t,UInt_t,B,LE,0>()
+		{   return (to_string<int_reg_digs_t,UInt_t,B,LE,0>()).size();	}
 		/// ESPECIALIZACIONES PARA NAT_RAT_FIXED_REG_T
-
-		template<typename UIn_t,UIn_t B,size_t LE,size_t LF>
-		bool is_type_id<nat_rat_fixed_reg_t,UInt_t,B,LE,LF>(
-									std::string in
-		){
-			return
-				(
-					(in == "nat_rat_fixed_reg")||
-					(in == "nat_rat_fixed_re")||
-					(in == "nat_rat_fixed_r")||
-					(in == "nat_rat_fixed_")||
-					(in == "nat_rat_fixed")||
-					(in == "nat_rat_fixe")||
-					(in == "nat_rat_fix")||
-					(in == "nat_rat_fi")||
-					(in == "nat_rat_f")||
-					(in == "nat_rat_")||
-					(in == "nat_rat")||
-					(in == "nat_ra")||
-					(in == "nat_r")||
-					(in == "nat_")||
-					(in == "nat")||
-					(in == "na")||
-					(in == "n")
-				);
+		template<typename UInt_t,UInt_t B,size_t LE,size_t LF>
+		bool is_type_id<nat_rat_fixed_reg_t,UInt_t,B,LE,LF>(std::string in)
+		{   return	(
+						(in == "nat_rat_fixed_reg")||
+						(in == "nat_rat_fixed_re")||
+						(in == "nat_rat_fixed_r")||
+						(in == "nat_rat_fixed_")||
+						(in == "nat_rat_fixed")||
+						(in == "nat_rat_fixe")||
+						(in == "nat_rat_fix")||
+						(in == "nat_rat_fi")||
+						(in == "nat_rat_f")||
+						(in == "nat_rat_")||
+						(in == "nat_rat")||
+						(in == "nat_ra")||
+						(in == "nat_r")||
+						(in == "nat_")||
+						(in == "nat")||
+						(in == "na")||
+						(in == "n")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B,size_t LE,size_t LF
-		>
-		std::string
-		to_string<nat_rat_fixed_reg_t,UInt_t,B,LE,LF>()
-		{
-			return std::string{"nat_rat_fixed_reg"};
-		}
-		template<
-			typename UIn_t,UIn_t B,size_t LE,size_t LF
-		>
-		size_t
-		size_of_string_idT<
-			nat_rat_fixed_reg_t,UInt_t,B,LE,LF
-		>()
-		{
-			return 17;
-		}
-
+		template<typename UInt_t,UInt_t B,size_t LE,size_t LF>
+		std::string to_string<nat_rat_fixed_reg_t,UInt_t,B,LE,LF>()
+		{   return std::string{"nat_rat_fixed_reg"};	}
+		template<typename UInt_t,UInt_t B,size_t LE,size_t LF>
+		size_t size_of_string_idT<nat_rat_fixed_reg_t,UInt_t,B,LE,LF>()
+		{   return (to_string<nat_rat_fixed_reg_t,UInt_t,B,LE,LF>()).size();	}
 		/// ESPECIALIZACIONES PARA NAT_RAT_FIXED_REG_T
-
-		template<typename UIn_t,UIn_t B,size_t LE,size_t LF>
-		bool is_type_id<rat_fixed_reg_t,UInt_t,B,LE,LF>(
-										std::string in
-		) {
-			return
-				(
-					(in == "rat_fixed_reg")||
-					(in == "rat_fixed_re")||
-					(in == "rat_fixed_r")||
-					(in == "rat_fixed_")||
-					(in == "rat_fixed")||
-					(in == "rat_fixe")||
-					(in == "rat_fix")||
-					(in == "rat_fi")||
-					(in == "rat_f")||
-					(in == "rat_")||
-					(in == "rat")||
-					(in == "ra")||
-					(in == "r")
-				);
+		template<typename UInt_t,UInt_t B,size_t LE,size_t LF>
+		bool is_type_id<rat_fixed_reg_t,UInt_t,B,LE,LF>(std::string in)
+		{   return	(
+						(in == "rat_fixed_reg")||
+						(in == "rat_fixed_re")||
+						(in == "rat_fixed_r")||
+						(in == "rat_fixed_")||
+						(in == "rat_fixed")||
+						(in == "rat_fixe")||
+						(in == "rat_fix")||
+						(in == "rat_fi")||
+						(in == "rat_f")||
+						(in == "rat_")||
+						(in == "rat")||
+						(in == "ra")||
+						(in == "r")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B,size_t LE,size_t LF
-		>
-		std::string
-		to_string<rat_fixed_reg_t,UInt_t,B,LE,LF>()
-		{
-			return std::string{"rat_fixed_reg"};
-		}
-		template<
-			typename UIn_t,UIn_t B,size_t LE,size_t LF
-		>
-		size_t
-		size_of_string_idT<
-			rat_fixed_reg_t,UInt_t,B,LE,LF
-		>()
-		{
-			return 13;
-		}
-
+		template<typename UInt_t,UInt_t B,size_t LE,size_t LF>
+		std::string to_string<rat_fixed_reg_t,UInt_t,B,LE,LF>()
+		{	return std::string{"rat_fixed_reg"};	}
+		template<typename UInt_t,UInt_t B,size_t LE,size_t LF>
+		size_t size_of_string_idT<rat_fixed_reg_t,UInt_t,B,LE,LF>()
+		{	return (to_string<rat_fixed_reg_t,UInt_t,B,LE,LF>()).size();		}
 		/// ESPECIALIZACIONES PARA BASE_NUM_T
-
-		template<typename UIn_t,UIn_t B>
-		bool is_type_id<base_num_t,UInt_t,B,0,0>(
-									std::string in
-		)	{
-			return
-				(
-					(in == "base_num")||
-					(in == "base_nu")||
-					(in == "base_n")||
-					(in == "base_")||
-					(in == "base")||
-					(in == "bas")||
-					(in == "ba")||
-					(in == "b")
-				);
+		template<typename UInt_t,UInt_t B>
+		bool is_type_id<base_num_t,UInt_t,B,0,0>(std::string in)
+		{	return	(
+						(in == "base_num")||
+						(in == "base_nu")||
+						(in == "base_n")||
+						(in == "base_")||
+						(in == "base")||
+						(in == "bas")||
+						(in == "ba")||
+						(in == "b")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B
-		>
+		template<typename UInt_t,UInt_t B>
 		std::string
 		to_string<base_num_t,UInt_t,B,0,0>()
-		{
-			return std::string{"base_num"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<
-			base_num_t,UInt_t,B,0,0
-		>()
-		{
-			return 8;
-		}
-
+		{	return std::string{"base_num"};	}
+		template<typename UInt_t,UInt_t B>
+		size_t	size_of_string_idT<base_num_t,UInt_t,B,0,0>()
+		{	return (to_string<base_num_t,UInt_t,B,0,0>()).size();	}
 		/// ESPECIALIZACIONES PARA NAT_NUM_T
-
-		template<typename UIn_t,UIn_t B>
-		bool is_type_id<nat_num_t,UInt_t,B,0,0>(
-							std::string in
-		)
-		{
-			return
-				(
-					(in == "nat_num")||
-					(in == "nat_nu")||
-					(in == "nat_n")||
-					(in == "nat_")||
-					(in == "nat")||
-					(in == "na")||
-					(in == "n")
-				);
+		template<typename UInt_t,UInt_t B>
+		bool is_type_id<nat_num_t,UInt_t,B,0,0>(std::string in)
+		{	return	(
+						(in == "nat_num")||
+						(in == "nat_nu")||
+						(in == "nat_n")||
+						(in == "nat_")||
+						(in == "nat")||
+						(in == "na")||
+						(in == "n")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		std::string
-		to_string<nat_num_t,UInt_t,B,0,0>()
-		{
-			return std::string{"nat_num"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<
-			nat_num_t,UInt_t,B,0,0
-		>()
-		{
-			return 7;
-		}
-
+		template<typename UInt_t,UInt_t B>
+		std::string	to_string<nat_num_t,UInt_t,B,0,0>()
+		{	return std::string{"nat_num"};	}
+		template<typename UInt_t,UInt_t B>
+		size_t	size_of_string_idT<nat_num_t,UInt_t,B,0,0>()
+		{	return (to_string<nat_num_t,UInt_t,B,0,0>()).size();	}
 		/// ESPECIALIZACIONES PARA NAT_NUM_T
-
-		template<typename UIn_t,UIn_t B>
-		bool is_type_id<int_num_t,UInt_t,B,0,0>(
-										std::string in
-		) {
-			return
-				(
-					(in == "int_num")||
-					(in == "int_nu")||
-					(in == "int_n")||
-					(in == "int_")||
-					(in == "int")||
-					(in == "in")||
-					(in == "i")
-				);
+		template<typename UInt_t,UInt_t B>
+		bool is_type_id<int_num_t,UInt_t,B,0,0>(std::string in)
+		{	return	(
+						(in == "int_num")||
+						(in == "int_nu")||
+						(in == "int_n")||
+						(in == "int_")||
+						(in == "int")||
+						(in == "in")||
+						(in == "i")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		std::string
-		to_string<int_num_t,UInt_t,B,0,0>()
-		{
-			return std::string{"int_num"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<
-			int_num_t,UInt_t,B,0,0
-		>()
-		{
-			return 7;
-		}
-
+		template<typename UInt_t,UInt_t B>
+		std::string	to_string<int_num_t,UInt_t,B,0,0>()
+		{	return std::string{"int_num"};	}
+		template<typename UInt_t,UInt_t B>
+		size_t size_of_string_idT<int_num_t,UInt_t,B,0,0>()
+		{	return (to_string<int_num_t,UInt_t,B,0,0>()).size();	}
 		/// ESPECIALIZACIONES PARA NAT_RAT_NUM_T
-		template<typename UIn_t,UIn_t B>
-		bool is_type_id<nat_rat_num_t,UInt_t,B,0,0>(
-										std::string in
-		) {
-			return
-				(
-					(in == "nat_rat_num")||
-					(in == "nat_rat_nu")||
-					(in == "nat_rat_n")||
-					(in == "nat_rat_")||
-					(in == "nat_rat")||
-					(in == "nat_ra")||
-					(in == "nat_r")||
-					(in == "nat_")||
-					(in == "nat")||
-					(in == "na")||
-					(in == "n")
-				);
+		template<typename UInt_t,UInt_t B>
+		bool is_type_id<nat_rat_num_t,UInt_t,B,0,0>(std::string in)
+		{	return	(
+						(in == "nat_rat_num")||
+						(in == "nat_rat_nu")||
+						(in == "nat_rat_n")||
+						(in == "nat_rat_")||
+						(in == "nat_rat")||
+						(in == "nat_ra")||
+						(in == "nat_r")||
+						(in == "nat_")||
+						(in == "nat")||
+						(in == "na")||
+						(in == "n")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		std::string
-		to_string<nat_rat_num_t,UInt_t,B,0,0>()
-		{
-			return std::string{"nat_rat_num"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<
-			nat_rat_num_t,UInt_t,B,0,0
-		>()
-		{
-			return 11;
-		}
-
-
+		template<typename UInt_t,UInt_t B>
+		std::string to_string<nat_rat_num_t,UInt_t,B,0,0>()
+		{	return std::string{"nat_rat_num"};	}
+		template<typename UInt_t,UInt_t B>
+		size_t size_of_string_idT<nat_rat_num_t,UInt_t,B,0,0>()
+		{	return (to_string<nat_rat_num_t,UInt_t,B,0,0>()).size();	}
 		/// ESPECIALIZACIONES PARA RAT_NUM_T
-		template<typename UIn_t,UIn_t B>
-		bool is_type_id<rat_num_t,UInt_t,B,0,0>(
-										std::string in
-		) {
-			return
-				(
-					(in == "rat_num")||
-					(in == "rat_nu")||
-					(in == "rat_n")||
-					(in == "rat_")||
-					(in == "rat")||
-					(in == "ra")||
-					(in == "r")
-				);
+		template<typename UInt_t,UInt_t B>
+		bool is_type_id<rat_num_t,UInt_t,B,0,0>(std::string in)
+		{	return	(
+						(in == "rat_num")||
+						(in == "rat_nu")||
+						(in == "rat_n")||
+						(in == "rat_")||
+						(in == "rat")||
+						(in == "ra")||
+						(in == "r")
+					);
 		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		std::string
-		to_string<rat_num_t,UInt_t,B,0,0>()
-		{
-			return std::string{"rat_num"};
-		}
-		template<
-			typename UIn_t,UIn_t B
-		>
-		size_t
-		size_of_string_idT<
-			rat_num_t,UInt_t,B,0,0
-		>()
-		{
-			return 7;
-		}
+		template<typename UInt_t,UInt_t B>
+		std::string	to_string<rat_num_t,UInt_t,B,0,0>()
+		{	return std::string{"rat_num"};		}
+		template<typename UInt_t,UInt_t B>
+		size_t	size_of_string_idT<rat_num_t,UInt_t,B,0,0>()
+		{	return (to_string<rat_num_t,UInt_t,B,0,0>()).size();   }
 		/// FUNCION QUE CONSIGUE EL TOKEN TYPE PARA LA
 		/// OBTENCION DEL OBJETO CORRESPONDIENTE POR TECLADO
-		template<
-			template T,typename UIn_t,UIn_t B,
-			size_t LE=0,size_t LF=0
-		>
-		void get_type_token(
-			std::istream& is,
-			std::ostream& errs,
-			type& value
-		) {
+		template<template T,typename UIn_t,UIn_t B,size_t LE=0,size_t LF=0>
+		void get_type_token(std::istream& is,std::ostream& errs,type& value)
+		{
 			std::string old_input_string{""};
 			std::string new_input_string{""};
 			while(true) {
@@ -571,34 +398,29 @@ namespace lex {
 					continue;
 				}
 				else {
-					errs << "Has cometido un error, tenías que\
+					errs << "Has cometido un error, ten?as que\
 					 escribir \
 					\" " << to_string<T,UInt_t,B,LE,LF>()
 					<< " \"  y has escrito "
 					<< input_string << std::endl;
 					errs << "Considera que has escrito "
 					<< old_input_string
-					<< " y continua escribiendo a partir de ahí";
+					<< " y continua escribiendo a partir de ah?";
 					new_input_string = old_input_string;
 				}
 			}
-			if (
-					new_input_string.length()
-						==
-					to_string<T,UInt_t,B,LE,LF>()
-			)
+			if (new_input_string.length()
+					==
+				to_string<T,UInt_t,B,LE,LF>())
 				return true;
 			else
 				return false;
 		}
 
 		/// FUNCION QUE CONSIGUE EL TOKEN PUNTO FIJO
-		template<typename UIn_t,UIn_t B>
-		void get_type_token(
-			std::istream& is,
-			std::ostream& errs,
-			bool& value
-		) {
+		template<typename UInt_t,UInt_t B>
+		void get_type_token(std::istream& is,std::ostream& errs,bool& value)
+		{
 			std::string old_input_string{""};
 			std::string new_input_string{""};
 			size_t index{0};
@@ -613,14 +435,14 @@ namespace lex {
 				else if (
 					(index == 0)&&(! is_separator(input_char))
 				) {
-					errs << "Has cometido un error, tenías que\
+					errs << "Has cometido un error, ten?as que\
 					 escribir \
 					\" " << '#'
 					<< " \"  y has escrito "
 					<< new_input_string << std::endl;
 					errs << "Considera que has escrito "
 					<< old_input_string
-					<< " y continua escribiendo a partir de ahí";
+					<< " y continua escribiendo a partir de ah?";
 					new_input_string = old_input_string;
 				}
 				else if (index==1)&&(input_char == '.') {
@@ -630,14 +452,14 @@ namespace lex {
 					return;
 				}
 				else{
-					errs << "Has cometido un error, tenías que\
+					errs << "Has cometido un error, tenias que \
 					 escribir \
 					\" " << "#."
 					<< " \"  y has escrito "
 					<< new_input_string << std::endl;
 					errs << "Considera que has escrito "
 					<< old_input_string
-					<< " y continua escribiendo a partir de ahí";
+					<< " y continua escribiendo a partir de ahi";
 					new_input_string = old_input_string;
 				}
 			}
@@ -646,14 +468,10 @@ namespace lex {
 			else
 				return false;
 		}
-
 		/// FUNCION QUE CONSIGUE EL TOKEN PUNTO FIJO
-		template<typename UIn_t,UIn_t B>
-		void get_explicit_sign_token(
-			std::istream& is,
-			std::ostream& errs,
-			bool& value, sign_e& signo
-		) {
+		template<typename UInt_t,UInt_t B>
+		void get_explicit_sign_token(std::istream& is,std::ostream& errs,bool& value, sign_e& signo)
+		{
 			std::string old_input_string{""};
 			std::string new_input_string{""};
 			size_t index{0};
@@ -668,14 +486,14 @@ namespace lex {
 				else if (
 					(index == 0)&&(! is_separator(input_char))
 				) {
-					errs << "Has cometido un error, tenías que\
+					errs << "Has cometido un error, ten?as que\
 					 escribir \
 					\" " << '#'
 					<< " \"  y has escrito "
 					<< new_input_string << std::endl;
 					errs << "Considera que has escrito "
 					<< old_input_string
-					<< " y continua escribiendo a partir de ahí";
+					<< " y continua escribiendo a partir de ah?";
 					new_input_string = old_input_string;
 				}
 				else if(
@@ -692,31 +510,27 @@ namespace lex {
 					return;
 				}
 				else{
-					errs << "Has cometido un error, tenías que\
+					errs << "Has cometido un error, tenias que \
 					 escribir \
 					\" " << "#+ o #-"
 					<< " \"  y has escrito "
 					<< new_input_string << std::endl;
 					errs << "Considera que has escrito "
 					<< old_input_string
-					<< " y continua escribiendo a partir de ahí";
+					<< " y continua escribiendo a partir de ahi";
 					new_input_string = old_input_string;
 				}
 			}
-			if((new_input_string=="#+")||
-				 (new_input_string=="#-"))
+			if( (new_input_string=="#+")||
+				(new_input_string=="#-")    )
 				return true;
 			else
 				return false;
 		}
-
 		/// FUNCION QUE CONSIGUE EL TOKEN DIGITO
-		template<typename UIn_t,UIn_t B>
-		void get_explicit_sign_token(
-			std::istream& is,
-			std::ostream& errs,
-			bool& value, UInt_t& uint_value
-		) {
+		template<typename UInt_t,UInt_t B>
+		void get_explicit_sign_token(std::istream& is,std::ostream& errs,bool& value,UInt_t& uint_value)
+		{
 			std::string old_input_string{""};
 			std::string new_input_string{""};
 			size_t index{0};
@@ -733,22 +547,20 @@ namespace lex {
 				else if (
 					(index == 0)&&(! is_separator(input_char))
 				) {
-					errs << "Has cometido un error, tenías que\
+					errs << "Has cometido un error, tenias que \
 					 escribir \
 					\" " << '#'
 					<< " \"  y has escrito "
 					<< new_input_string << std::endl;
 					errs << "Considera que has escrito "
 					<< old_input_string
-					<< " y continua escribiendo a partir de ahí";
+					<< " y continua escribiendo a partir de ahi";
 					new_input_string = old_input_string;
 				}
 				else if(
 					(index==1)&&
-					(
-						(input_char >= '0')&&
-						(input_char <= '9')
-					)
+					(	(input_char >= '0')&&
+						(input_char <= '9')	    )
 				){
 					if (digit_value(input_char) < B) {
 						new_input_string += input_char;
@@ -761,7 +573,7 @@ namespace lex {
 						else {
 							old_input_string = "#";
 								value = false;
-							errs << "Has cometido un error, tenías que\
+							errs << "Has cometido un error, tenias que \
 							poner un valor menor que la base y has \
 							 puesto \
 							\" " << uint_value
@@ -769,40 +581,37 @@ namespace lex {
 							<< new_input_string << std::endl;
 							errs << "Considera que has escrito "
 							<< old_input_string
-							<< " y continua escribiendo a partir de ahí";
+							<< " y continua escribiendo a partir de ahi";
 							index = 1;
 						}
 					}
 				}
 				else if(
 					(index>1)&&
-					(input_char >= '$')
+					(input_char == '_')
 				){
 					value = true;
 					return;
 				}
 				else{
-					errs << "Has cometido un error, tenías que\
+					errs << "Has cometido un error, tenias que \
 					 escribir \
 					\" " << "#digdigdig..."
 					<< " \"  y has escrito "
 					<< new_input_string << std::endl;
 					errs << "Considera que has escrito "
 					<< old_input_string
-					<< " y continua escribiendo a partir de ahí";
+					<< " y continua escribiendo a partir de ahi";
 					new_input_string = old_input_string;
 				}
 			}
-			if(input_char=='$')
+			if(input_char=='_')
 				return true;
 			else
 				return false;
 		}
 		/// FUNCION QUE CONSIGUE EL TOKEN BASE
-		template<typename UIn_t,UIn_t B>
-		void get_explicit_radix_token(
-			std::istream& is,
-			std::ostream& errs,
-			bool& value, UInt_t& uint_radix);
+		template<typename UInt_t,UInt_t B>
+		void get_explicit_radix_token(std::istream& is,std::ostream& errs,bool& value,UInt_t& uint_radix);
 }
 #endif // LEXER_PARSER_HPP_INCLUDED
