@@ -578,7 +578,7 @@ public:
 						ret[ix] = dig_t(ret_array[ix]);
 					}
 					for(std::size_t ix{pack_sz} ; ix < L ; ++ix) {
-						ret[ix] = dig_t(0);
+						ret[ix] = dig_0();
 					}
 					return ret;
 			}
@@ -2099,6 +2099,34 @@ public:
 					/* 	   ISTREAM Y OSTREAM		*/
 					/*													*/
 					/****************************/
+
+	/// ESPECIALIZACIONES PARA INT_REG_DIGS_T
+  template<typename UInt_t,UInt_t B,size_t LE>
+  bool is_int_reg_digs_type_id(std::string in)
+  {	return	(
+      (in == "int_reg_digs")||
+      (in == "int_reg_dig")||
+      (in == "int_reg_di")||
+      (in == "int_reg_d")||
+      (in == "int_reg_")||
+      (in == "int_reg")||
+      (in == "int_re")||
+      (in == "int_r")||
+      (in == "int_")||
+      (in == "int")||
+      (in == "in")||
+      (in == "i")
+    );
+  }
+
+  template<typename UInt_t,UInt_t B,size_t LE>
+  std::string to_int_reg_digs_type_string()
+  {	return std::string{"int_reg_digs"}; 	}
+
+  template<typename UInt_t,UInt_t B>
+  size_t size_of_int_reg_digs_type_string_idT()
+  {   return (to_int_reg_digs_type_string<UInt_t,B,LE>()).size();	}
+
 
 	template<type_traits::allowable_base_type_c Int_Type,
 					Int_Type Base,

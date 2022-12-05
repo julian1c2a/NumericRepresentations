@@ -3074,10 +3074,37 @@ public :
 
 
 					/****************************/
-					/*							*/
-					/* 	   ISTREAM Y OSTREAM	*/
-					/*							*/
+					/*													*/
+					/* 	   ISTREAM Y OSTREAM		*/
+					/*													*/
 					/****************************/
+
+	/// ESPECIALIZACIONES PARA NAT_REG_DIGS
+  template<typename UInt_t,UInt_t B,size_t LE>
+  bool is_nat_reg_digs_type_id(std::string in)
+  {   return(
+      (in == "nat_reg_digs")||
+      (in == "nat_reg_dig")||
+      (in == "nat_reg_di")||
+      (in == "nat_reg_d")||
+      (in == "nat_reg_")||
+      (in == "nat_reg")||
+      (in == "nat_re")||
+      (in == "nat_r")||
+      (in == "nat_")||
+      (in == "nat")||
+      (in == "na")||
+      (in == "n")
+    );
+  }
+
+  template<typename UInt_t,UInt_t B,size_t LE>
+  std::string to_nat_reg_digs_type_string()
+  {   return std::string{"nat_reg_digs"};		}
+
+  template<typename UInt_t,UInt_t B>
+  size_t size_of_nat_reg_digs_type_string_idT()
+  {	return (to_nat_reg_digs_type_string<UInt_t,B,LE>()).size();	}
 
 	///	TODO
 	/// ESTA VERSION +

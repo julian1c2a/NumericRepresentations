@@ -71,6 +71,10 @@ using		sint8_t 	= std::int8_t;
 using		sint16_t	= std::int16_t;
 using		sint32_t	= std::int32_t;
 using		sint64_t	= std::int64_t;
+using		int8_t 	= std::int8_t;
+using		int16_t	= std::int16_t;
+using		int32_t	= std::int32_t;
+using		int64_t	= std::int64_t;
 //using		ssize_t 	= std::ssize_t;
 using		uint8_t 	= std::uint8_t;
 using		uint16_t 	= std::uint16_t;
@@ -140,7 +144,6 @@ unsigned long long atoull(char* text) noexcept {
 		return(i);
 }
 
-class is_same_v;
 namespace type_traits {
 ///            "CLASS"              TYPE                   TYPE DEFINITION
 /// template<typename              int_type,int_type base> class digito<int_type,base> {};
@@ -152,24 +155,14 @@ namespace type_traits {
 			std::is_same_v<UINT_T,uint8_t>	||
 			std::is_same_v<UINT_T,uint16_t>	||
 			std::is_same_v<UINT_T,uint32_t>	||
-			std::is_same_v<UINT_T,uint64_t>	||
-			std::is_same_v<UINT_T,uchint>   ||
-			std::is_same_v<UINT_T,usint>	||
-			std::is_same_v<UINT_T,uint>		||
-			std::is_same_v<UINT_T,ulint>	||
-			std::is_same_v<UINT_T,ullint>	;
+			std::is_same_v<UINT_T,uint64_t>;
 
   template<typename UINT_T>
 	concept allowable_unsigned_type_c =         // concept on UINT_T
 			std::is_same_v<UINT_T,uint8_t>	||
 			std::is_same_v<UINT_T,uint16_t>	||
 			std::is_same_v<UINT_T,uint32_t>	||
-			std::is_same_v<UINT_T,uint64_t>	||
-			std::is_same_v<UINT_T,uchint>	||
-			std::is_same_v<UINT_T,usint>	||
-			std::is_same_v<UINT_T,uint>		||
-			std::is_same_v<UINT_T,ulint>	||
-			std::is_same_v<UINT_T,ullint>	||
+			std::is_same_v<UINT_T,uint64_t> ||
 			std::is_same_v<UINT_T,uint128_t>;
 
 	template<typename UINT_T>
@@ -177,7 +170,7 @@ namespace type_traits {
 
 	template<typename SINT_T>
 	concept allowable_signed_type_c =       // concept on SINT_T
-			std::is_same_v<SINT_T,sint8_t>       ||
+			std::is_same_v<SINT_T,sint8_t>      ||
 			std::is_same_v<SINT_T,sint16_t>	    ||
 			std::is_same_v<SINT_T,sint32_t>	    ||
 			std::is_same_v<SINT_T,sint64_t>	    ||
@@ -200,7 +193,7 @@ namespace type_traits {
 
 	template<unsigned_integral_c T,unsigned_integral_c S>
 	struct is_unsigned_sz_gt {
-		static inline constexpr bool value = ((sizeof(T)>sizeof(S))?true:false);
+		static inline constexpr bool value = ((sizeof(T) > sizeof(S))?true:false);
 	};
 
 	template<unsigned_integral_c T,unsigned_integral_c S>
@@ -223,11 +216,20 @@ namespace type_traits {
 											std::is_same_v<T,S>;
 
 	template<integral_c T,unsigned_integral_c S>
-	constexpr bool is_sz_gt_v		=   is_signed_sz_gt_v<T,S>
+	constexpr bool is_int_unsig_sz_gt_v		=   is_signed_sz_gt_v<T,S>
 										||
 										is_unsigned_sz_gt_v<T,S>;
 	template<integral_c T,unsigned_integral_c S>
-	constexpr bool is_sz_geqt_v	    =	is_signed_sz_geqt_v<T,S>
+	constexpr bool is_int_unsig_sz_geqt_v	    =	is_signed_sz_geqt_v<T,S>
+										||
+										is_unsigned_sz_geqt_v<T,S>;
+
+	template<unsigned_integral_c T,integral_c S>
+	constexpr bool is_unsig_int_sz_gt_v		=   is_signed_sz_gt_v<T,S>
+										||
+										is_unsigned_sz_gt_v<T,S>;
+	template<unsigned_integral_c T,integral_c S>
+	constexpr bool is_unsig_int_sz_geqt_v	    =	is_signed_sz_geqt_v<T,S>
 										||
 										is_unsigned_sz_geqt_v<T,S>;
 
@@ -238,24 +240,20 @@ namespace type_traits {
 		struct __sig_UInt_for_UInt_t {using type = void;};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<unsigned char>
-		{using type = unsigned short int;};
+		struct __sig_UInt_for_UInt_t<uint8_t>
+		{using type = uint16_t;};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<unsigned short int>
-		{using type = unsigned long int;};
+		struct __sig_UInt_for_UInt_t<uint16_t>
+		{using type = uint32_t;};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<unsigned int>
-		{using type = unsigned long long int;};
+		struct __sig_UInt_for_UInt_t<uint32_t>
+		{using type = uint64_t;};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<unsigned long int>
-		{using type = unsigned long long int;};
-
-		template<>
-		struct __sig_UInt_for_UInt_t<unsigned long long int>
-		{using type = __uint128_t;};
+		struct __sig_UInt_for_UInt_t<uint64_t>
+		{using type = uint128_t;};
 	}
 	template<unsigned_integral_c UInt_t>
 	using sig_UInt_for_UInt_t = typename detail::__sig_UInt_for_UInt_t<UInt_t>::type;
@@ -273,23 +271,19 @@ namespace type_traits {
 		{using type = void;};
 
 		template<>
-		struct __sig_SInt_for_UInt_t<unsigned char>
-		{using type = signed short int;};
+		struct __sig_SInt_for_UInt_t<uint8_t>
+		{using type = int16_t;};
 
 		template<>
-		struct __sig_SInt_for_UInt_t<unsigned short int>
-		{using type = signed long int;};
+		struct __sig_SInt_for_UInt_t<uint16_t>
+		{using type = int32_t;};
 
 		template<>
-		struct __sig_SInt_for_UInt_t<unsigned int>
-		{using type = signed long long int;};
+		struct __sig_SInt_for_UInt_t<uint32_t>
+		{using type = int64_t;};
 
 		template<>
-		struct __sig_SInt_for_UInt_t<unsigned long int>
-		{using type = signed long long int;};
-
-		template<>
-		struct __sig_SInt_for_UInt_t<unsigned long long int>
+		struct __sig_SInt_for_UInt_t<uint64_t>
 		{using type = sint128_t;};
 	}
 
@@ -304,40 +298,52 @@ namespace type_traits {
 	///<  METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO ENTERO
 	///<  POR ESPCEIALIZACION EXPLICITA
 	namespace detail{
-		template<signed_integral_c SInt>
+		template<integral_c SInt>
 		struct __sig_UInt_for_SInt_t
 		{using type = void;};
 
 		template<>
-		struct __sig_UInt_for_SInt_t<signed char>
-		{using type = unsigned char;};
+		struct __sig_UInt_for_SInt_t<int8_t>
+		{using type = uint8_t;};
 
 		template<>
-		struct __sig_UInt_for_SInt_t<char>
-		{using type = unsigned char;};
+		struct __sig_UInt_for_SInt_t<int16_t>
+		{using type = uint16_t;};
 
 		template<>
-		struct __sig_UInt_for_SInt_t<signed short int>
-		{using type = unsigned short int;};
+		struct __sig_UInt_for_SInt_t<int32_t>
+		{using type = uint32_t;};
 
 		template<>
-		struct __sig_UInt_for_SInt_t<signed int>
-		{using type = unsigned int;};
-
-		template<>
-		struct __sig_UInt_for_SInt_t<signed long int>
-		{using type = unsigned long int;};
-
-		template<>
-		struct __sig_UInt_for_SInt_t<signed long long int>
-		{using type = unsigned long long int;};
+		struct __sig_UInt_for_SInt_t<int64_t>
+		{using type = uint64_t;};
 
 		template<>
 		struct __sig_UInt_for_SInt_t<sint128_t>
 		{using type = uint128_t;};
+
+		template<>
+		struct __sig_UInt_for_SInt_t<uint8_t>
+		{using type = uint8_t;};
+
+		template<>
+		struct __sig_UInt_for_SInt_t<uint16_t>
+		{using type = uint16_t;};
+
+		template<>
+		struct __sig_UInt_for_SInt_t<uint32_t>
+		{using type = uint32_t;};
+
+		template<>
+		struct __sig_UInt_for_SInt_t<uint64_t>
+		{using type = uint64_t;};
+
+		template<>
+		struct __sig_UInt_for_SInt_t<uint128_t>
+		{using type = uint128_t;};
 	}
 
-	template<signed_integral_c SInt_t>
+	template<integral_c SInt_t>
 	using sig_UInt_for_SInt_t = typename detail::__sig_UInt_for_SInt_t<SInt_t>::type;
 
 	///<  METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO ENTERO
@@ -348,27 +354,19 @@ namespace type_traits {
 		{using type = void;};
 
 		template<>
-		struct __sig_SInt_for_SInt_t<signed char>
-		{using type = signed short int;};
+		struct __sig_SInt_for_SInt_t<int8_t>
+		{using type = int16_t;};
 
 		template<>
-		struct __sig_SInt_for_SInt_t<char>
-		{using type = signed short int;};
+		struct __sig_SInt_for_SInt_t<int16_t>
+		{using type = int32_t;};
 
 		template<>
-		struct __sig_SInt_for_SInt_t<signed short int>
-		{using type = signed long int;};
+		struct __sig_SInt_for_SInt_t<int32_t>
+		{using type = int64_t;};
 
 		template<>
-		struct __sig_SInt_for_SInt_t<signed int>
-		{using type = signed long long int;};
-
-		template<>
-		struct __sig_SInt_for_SInt_t<signed long int>
-		{using type = signed long long int;};
-
-		template<>
-		struct __sig_SInt_for_SInt_t<signed long long int>
+		struct __sig_SInt_for_SInt_t<int64_t>
 		{using type = sint128_t;};
 	}
 

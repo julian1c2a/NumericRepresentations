@@ -4,26 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>30-11-2022 at 20:32.17</u><br />
-Build ended on: <u>30-11-2022 at 20:32.18</u><p />
+Build started on: <u>05-12-2022 at 20:15.31</u><br />
+Build ended on: <u>05-12-2022 at 20:15.32</u><p />
 <b>-------------- Build: Debug in NumericRepresentations (compiler: GNU GCC Compiler)---------------</b><br />
 g++.exe -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -m64 -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -IC:\msys64\mingw64\include\c++ -c C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp -o obj\Debug\src\pruebas_dig_t.o<br />
-C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp: In function 'int main()':<br />
-<font color="#ff0000">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:54:18: error: 'int_reg_digs_t' is not a member of 'NumRepr'; did you mean 'reg_digs_t'?</font><br />
-   54 |         NumRepr::int_reg_digs_t&lt;uint8_t,25,5&gt; mi_valor;<br />
-      |                  ^~~~~~~~~~~~~~<br />
-      |                  reg_digs_t<br />
-<font color="#ff0000">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:54:40: error: expected primary-expression before ',' token</font><br />
-   54 |         NumRepr::int_reg_digs_t&lt;uint8_t,25,5&gt; mi_valor;<br />
-      |                                        ^<br />
-<font color="#ff0000">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:54:47: error: 'mi_valor' was not declared in this scope</font><br />
-   54 |         NumRepr::int_reg_digs_t&lt;uint8_t,25,5&gt; mi_valor;<br />
-      |                                               ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:55:9: error: 'get_int_reg_digs' was not declared in this scope</font><br />
-   55 |         get_int_reg_digs&lt;uint8_t,25,5&gt;(std::cin,std::cerr,mi_valor);<br />
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
-<font color="#a00000">Process terminated with status 1 (0 minute(s), 1 second(s))</font><br />
-<font color="#a00000">4 error(s), 0 warning(s) (0 minute(s), 1 second(s))</font><br />
+g++.exe  -o bin\Debug\NumericRepresentations.exe obj\Debug\src\pruebas_dig_t.o  -static-libstdc++ -static-libgcc -static -m64 -static-libstdc++ -static-libgcc -static -m64 -fopenmp<br />
+Output file is bin\Debug\NumericRepresentations.exe with size 2,81 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minute(s), 1 second(s))</font><br />
+<font color="#0000ff">0 error(s), 0 warning(s) (0 minute(s), 1 second(s))</font><br />
 </tt>
 </body>
 </html>

@@ -3,6 +3,7 @@
 
 #include "dig_t.hpp"
 #include "utilities.hpp"
+#include "lexer_parser.hpp"
 
 /// En general me gustaría tener las siguientes macros desenrrollantes:
 /// const reg_digs_t & 	cr_cthis{*this};
@@ -41,45 +42,52 @@ public :
 ///  r_cthis 	== 				actual_type &  	r_cthis{*this};
 /// cp_cthis 	== 				actual_type  	 cp_cthis{*this};
 
-/// #define crrefcthis const reg_digs_t & cr_cthis{*this}
-inline consteval const reg_digs_t & cr_cthis()  const noexcept {
-	return (*this);
+/// devolucion de punteros a la clase base
+inline const base_t* const const_base_this() const noexcept {
+	return static_cast<const base_t* const>(this);
 }
-inline consteval const base_t* c_base_this()    const noexcept {
-	return static_cast<const base_t*>(this);
+
+inline base_t* base_this() noexcept {
+	return static_cast<base_t*>(this);
 }
-inline consteval const base_t & cr_base_cthis() const noexcept {
-	return (*(c_base_this()));
-}
-inline constexpr const dig_t & cr_cthis(size_t k) const noexcept {
-	const base_t& cthis{ cr_base_cthis() };
-	return (cthis[k]);
-}
-/// #define	rrefcthis  reg_digs_t & r_cthis{*this}
-inline consteval reg_digs_t & r_cthis() noexcept {
-	return (*this);
-}
-inline consteval base_t* base_this() noexcept {
-	return static_cast<const base_t*>(this);
-}
-inline consteval base_t & r_base_cthis() noexcept {
+/// devolucion de referencias a la clase base
+inline base_t& r_base_cthis() noexcept {
 	return (*base_this());
 }
-inline constexpr dig_t & r_cthis(size_t k) noexcept {
-	auto& cthis{ r_base_cthis() };
-	return (cthis[k]);
+/// devolucion de copia de la clase base
+inline const base_t& cr_base_cthis() const noexcept {
+	return (static_cast<const base_t&>(*const_base_this()));
 }
-/// #define	cpcthis   	reg_digs_t cp_cthis{*this}
-inline consteval reg_digs_t cp_cthis() const noexcept {
-	return std::move(reg_digs_t{*this});
-}
-inline consteval base_t cp_base_cthis() const noexcept {
+
+inline base_t cp_base_cthis() const noexcept {
 	return std::move(base_t{*(cr_base_cthis())});
 }
-inline constexpr const dig_t & cp_cthis(size_t k) const noexcept {
-	base_t cthis{ cp_base_cthis() };
-	return std::move(cthis[k]);
+/// devolucion de referencias de la clase actual
+inline reg_digs_t & r_cthis() noexcept {
+	return (*this);
 }
+
+inline const reg_digs_t & cr_cthis() const noexcept {
+	return (*this);
+}
+/// devolucion de copia de la clase actual
+inline reg_digs_t cp_cthis() const noexcept {
+	return std::move(reg_digs_t{*this});
+}
+/// devoluciones por referencias y por copia de los elementos
+inline dig_t cp_cthis_at(size_t k) const noexcept {
+	return std::move(cp_base_cthis()[k]);
+}
+
+inline dig_t & r_cthis_at(size_t k) noexcept {
+	return (r_base_cthis()[k]);
+}
+
+inline const dig_t & cr_cthis_at(size_t k) const noexcept {
+	return (cr_base_cthis()[k]);
+}
+/// #define	cpcthis   	reg_digs_t cp_cthis{*this}
+
 
 public :
 
@@ -345,8 +353,12 @@ public :
 	static constexpr base_t make_base_t(const std::initializer_list<dig_t>& larg) {
 		base_t rarg;
 		if (larg.size() >= L) {
-			for (size_t ix{ 0 }; ix < L; ++ix) {
-				rarg[ix] = larg[ix];
+			auto itlist{larg.begin()};
+			auto itcthis{rarg.begin()};
+			const auto itlistend{larg.end()};
+			const auto itcthisend{rarg.end()};
+			while (itcthis != itcthisend) {
+				*itcthis = *itlist;
 			}
 		}
 		else {
@@ -470,24 +482,29 @@ public :
 
 	/// <summary="Función de normalización a dig_t (dígitos base B) que construye un objeto de tipo ">
 	/// </summary>
-	/// <summary="base_t desde una sucesión variádica de enteros cualquiera">
+	/// <summary="base_t desde una sucesion variadica de enteros cualquiera">
 	/// </summary>
 	/// <function name="normalize"></function>
 	/// <param name="Ints_type ... digits_pow_i"></param>
 	/// <returns="base_t"></returns>
-	template<type_traits::integral_c ... Ints_type,size_t N>
-		requires (((sizeof...(Ints_type)) > 0)&&((sizeof...(Ints_type)) <= L)&&(N>0))
+	template<typename ... Ints_type>
+		requires ((sizeof...(Ints_type)) > 0)
 	static constexpr inline
-	base_N_t<N> normalize(Ints_type ... digits_pow_i)
+	base_N_t<sizeof...(Ints_type)> normalize(Ints_type ... digits_pow_i)
 	noexcept {
 	///< CREA UN STD_ARRAY DEL TIPO INT PASADO POR UN PACK DE ARGUMENTOS
 	///< EL TAMANO ES EL DEL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
 		using pack_type 	= typename utilities::pack2array<Ints_type...>;
 	///< DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR
 	///< [UN TIPO ENTERO]
-		using unique_type = typename pack_type::elem_type;
+		using unique_type =
+			std::conditional_t<
+				std::is_unsigned_v<typename pack_type::elem_type>,
+					typename pack_type::elem_type,
+					typename type_traits::sig_UInt_for_SInt_t<typename pack_type::elem_type>
+			>;
 	///< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO <= L)
-		constexpr size_t pack_sz{pack_type::pack_size()};
+		static constexpr size_t pack_sz{pack_type::pack_size()};
 	///< ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO
 	///< Y SU TAMANO
 	///< SEA MAYOR O MENOR QUE EL PROPIO DE LA BASE UINT_T
@@ -504,36 +521,27 @@ public :
 	///<		SIG_UINT_FOR_SINT_T<UNIQUE_TYPE>
 		using namespace NumRepr::type_traits;
 		using SUInt_type =
-			typename std::conditional_t
-			<
-					unsigned_integral_c<unique_type>,
+			typename std::conditional_t<
+					std::is_unsigned_v<unique_type>,
 					typename std::conditional_t<
 						is_unsigned_sz_gt_v<UINT_T,unique_type>,
 							sig_UInt_for_UInt_t<UINT_T>,
 							sig_UInt_for_UInt_t<unique_type>
-					 >,
+					>,
 					typename std::conditional_t<
 						is_unsigned_sz_gt_v<UINT_T,sig_UInt_for_SInt_t<unique_type>>,
 							sig_UInt_for_UInt_t<UINT_T>,
 							sig_UInt_for_SInt_t<unique_type>
 					>
 			>;
-		std::array<SUInt_type,pack_sz> ret_array{digits_pow_i...};
+		std::array<SUInt_type,pack_sz> ret_array{(dig_t(digits_pow_i))()...};
 		base_N_t<pack_sz> ret;
-		if constexpr (N <= pack_sz) {
-			for (size_t ix{ 0 }; ix < pack_sz; ++ix) {
-				ret[ix] = dig_t(ret_array[ix]);
-			}
+
+		for (size_t ix{ 0 }; ix < pack_sz; ++ix) {
+			ret[ix] = dig_t(ret_array[ix]);
 		}
-		else {
-			for (size_t ix{ 0 }; ix < pack_sz; ++ix) {
-				ret[ix] = dig_t(ret_array[ix]);
-			}
-			for (size_t ix{ pack_sz }; ix < L; ++ix) {
-				ret[ix] = dig_t(0);
-			}
-		}
-		return std::move(ret);
+
+		return ret;
 	}
 
 public:
@@ -542,8 +550,9 @@ public:
 	/// </summary>
 
 	template<type_traits::integral_c ... Ints_type>
+		requires ((sizeof...(Ints_type))==L)
 	constexpr inline reg_digs_t(Ints_type ... dig_pow_i) noexcept :
-		base_t(normalize<Ints_type...>(dig_pow_i...)) {}
+		base_t(normalize<Ints_type...>((dig_t(dig_pow_i))()...)) {}
 
 	///	<summary>
 	/// Sobrecarga del operador copia
@@ -658,23 +667,22 @@ public :
 	/// constexpr const dig_t* data() const noexcept;
 	/// </summary>
 	/// <returns name="const dig_t*"></returns>
-	constexpr const dig_t* data() const noexcept {
+	constexpr const dig_t* const data() const noexcept {
 		return (static_cast<const dig_t*>(this->base_t::data()));
 	}
 	inline constexpr
 	decltype(auto) cpy_data() const {
-		auto cpy_this{*(this->base_t::data())};
-		return cpy_this;
+		return (*(this->base_t::data()));
 	}
 
 	///	<summary="Sobrecarga del const dig_t & operator[](size_t) const"></summary>
 	const dig_t& operator[](size_t ix) const {
-		return (cr_base_cthis(ix));
+		return (cr_cthis_at[ix]);
 	}
 
 	/// <summary="Sobrecarga del dig_t & operator[](size_t)"></summary>
 	dig_t& operator[](size_t ix) {
-		return (r_base_cthis(ix));
+		return (this->base_t::operator[](ix));
 	}
 
 
@@ -1484,6 +1492,289 @@ public :
 			return std::weak_ordering::less;
 		else
 			return std::weak_ordering::equivalent;
+	}
+
+	/// Funciones de ayuda para
+  /// el parser/lexer del reg_digs_t
+
+  static constexpr
+  bool is_type_template_string_id(std::string in) noexcept {
+    return	(
+      (in == "reg_digs_t")||
+			(in == "reg_digs_")||
+			(in == "reg_digs")||
+      (in == "reg_dig")||
+      (in == "reg_di")||
+      (in == "reg_d")||
+      (in == "reg_")||
+      (in == "reg")||
+      (in == "re")||
+      (in == "r")
+    );
+  }
+
+  static constexpr
+  std::string to_type_template_string_id() noexcept
+  {	return std::string{"reg_digs"};	}
+
+  static constexpr
+  size_t size_of_type_template_string_id() noexcept
+  {	return (to_type_template_string_id()).size();	}
+
+
+  /// FUNCION GENERICA QUE CONSIGUE EL TOKEN TYPE PARA LA
+  /// OBTENCION DEL OBJETO CORRESPONDIENTE POR TECLADO
+  static constexpr
+  bool get_type_template_string_id_token(std::istream& is,std::ostream& errs)
+  {
+  	char input_char{'\0'};
+    std::string old_input_string{""};
+    std::string new_input_string{""};
+    while(true) {
+      is >> input_char;
+      new_input_string += input_char;
+      if (is_type_template_string_id(new_input_string)) {
+        old_input_string = new_input_string;
+      }
+      else {
+        errs << "Has cometido un error, tenias que escribir "
+        << "\" " << to_type_template_string_id()
+        << " \"  y has escrito "
+        << new_input_string << std::endl;
+        errs << "Considera que has escrito "
+        << old_input_string
+        << " y continua escribiendo a partir de ahi";
+        new_input_string = old_input_string;
+      }
+
+      if (new_input_string==to_type_template_string_id())
+        return true;
+      else
+        return false;
+    }
+  }
+
+//  /// FUNCION QUE CONSIGUE EL TOKEN PUNTO FIJO
+//  bool get_fixed_point_token(std::istream& is,std::ostream& errs)
+//  {
+//    std::string old_input_string{""};
+//    std::string new_input_string{""};
+//    size_t index{0};
+//    char input_char = nullchar<char>;
+//    while(true) {
+//      is >> input_char;
+//      if ((index==0)&&(is_separator(input_char))) {
+//        new_input_string += input_char;
+//        old_input_string = new_input_string;
+//        ++index;
+//      }
+//      else if ((index == 0)&&(! is_separator(input_char))) {
+//        errs << "Has cometido un error, tenias que escribir "
+//        << "\" " << '#'	<< " \"  y has escrito "
+//        << new_input_string << std::endl;
+//        errs << "Considera que has escrito "
+//        << old_input_string
+//        << " y continua escribiendo a partir de ahi";
+//        new_input_string = old_input_string;
+//      }
+//      else if ((index == 1)&&(input_char == '.')) {
+//        new_input_string += input_char;
+//        old_input_string = new_input_string;
+//      }
+//      else{
+//        errs << "Has cometido un error, tenias que escribir "
+//        << " \" " << "#."
+//        << " \"  y has escrito "
+//        << new_input_string << std::endl;
+//        errs << "Considera que has escrito "
+//        << old_input_string
+//        << " y continua escribiendo a partir de ahi";
+//        new_input_string = old_input_string;
+//      }
+//
+//      if (new_input_string=="#.")
+//        return true;
+//      else
+//        return false;
+//    }
+//  }
+
+//  /// FUNCION QUE CONSIGUE EL TOKEN SIGNO EXPLICITO
+//  bool get_explicit_sign_token(
+//		std::istream& is,std::ostream& errs,sign_e& signo
+//	) {
+//    std::string old_input_string{""};
+//    std::string new_input_string{""};
+//    size_t index{0};
+//    char input_char = nullchar<char>;
+//    while(true) {
+//      is >> input_char;
+//      if ((index==0)&&(is_separator(input_char))) {
+//        new_input_string += input_char;
+//        old_input_string = new_input_string;
+//        ++index;
+//      }
+//      else if (
+//        (index == 0)&&(! is_separator(input_char))
+//      ) {
+//        errs << "Has cometido un error, tenias que escribir "
+//        << " \" " << '#' << " \"  y has escrito "
+//        << new_input_string << std::endl;
+//        errs << "Considera que has escrito "
+//        << old_input_string
+//        << " y continua escribiendo a partir de ahi";
+//        new_input_string = old_input_string;
+//      }
+//      else if((index==1)&&((input_char == '+')||
+//                           (input_char == '-')
+//                          )											)
+//      {
+//        new_input_string += input_char;
+//        old_input_string = new_input_string;
+//        signo = sign_value(input_char);
+//        break;
+//      }
+//      else{
+//        errs << "Has cometido un error, tenias que "
+//        <<" escribir \" " << "#+ o #-" << " \"  y has escrito "
+//        << new_input_string << std::endl;
+//        errs << "Considera que has escrito "
+//        << old_input_string
+//        << " y continua escribiendo a partir de ahi";
+//        new_input_string = old_input_string;
+//      }
+//
+//      if( (new_input_string=="#+")||
+//          (new_input_string=="#-")    )
+//        return true;
+//      else
+//        return false;
+//    }
+//  }
+
+  /// FUNCION QUE CONSIGUE EL TOKEN DIGITO
+  static constexpr
+  bool get_digit_token(
+		std::istream& is,std::ostream& errs,dig_t& dig_value
+	) {
+    std::string old_input_string{""};
+    std::string new_input_string{""};
+    size_t index{0};
+    char input_char = nullchar<char>;
+    UINT_T uint_value = 0;
+    dig_value = dig_0();
+    while(true) {
+      is >> input_char;
+      if ((index==0)&&(lex::is_separator(input_char))) {
+        new_input_string += input_char;
+        old_input_string = new_input_string;
+        ++index;
+      }
+      else if ((index == 0)&&(! lex::is_separator(input_char))) {
+        errs << "Has cometido un error, tenias que "
+        << " escribir \" " << '#' << " \"  y has escrito "
+        << new_input_string << std::endl;
+        errs << "Considera que has escrito "
+        << old_input_string
+        << " y continua escribiendo a partir de ahi";
+        new_input_string = old_input_string;
+      }
+      else if((index>=1) && lex::is_digit(input_char)) {
+        if (lex::digit_value(input_char) < B) {
+          new_input_string += input_char;
+          uint_value *= B;
+          uint_value += lex::digit_value(input_char);
+          if (uint_value < B) {
+            old_input_string = new_input_string;
+            dig_value = dig_t(uint_value);
+            ++index;
+          }
+          else {
+            old_input_string = "#";
+            errs << "Has cometido un error, tenias que "
+            << "poner un valor menor que la base y has "
+            << "puesto \" " << uint_value << " \" escrito como \" "
+            << new_input_string << " \" " << std::endl;
+            uint_value = 0;
+            return false;
+          }
+        }
+        else if((index>=1) && ! lex::is_digit(input_char) && (input_char != '_')) {
+          errs << "El caracter " << input_char << " no es valido aqui "
+          << std::endl;
+          uint_value = 0;
+          return false;
+        }
+      }
+      else if((index>1)&&(input_char == '_')) {
+        return true;
+      }
+      else{
+        errs << "Has cometido un error, tenias que escribir "
+        << " \" " << "#digdigdig..._"
+        << " \"  y has escrito "
+        << new_input_string << std::endl;
+        uint_value = 0;
+        return false;
+      }
+    }
+  }
+
+  /// FUNCION QUE CONSIGUE EL TOKEN BASE
+  bool get_radix_token(
+		std::istream& is,std::ostream& errs,UINT_T& uint_radix
+	) {
+    return dig_t::get_radix_token(is,errs,uint_radix);
+  }
+
+  static constexpr
+  bool get_digit_loop_token (
+		std::istream& is,std::ostream& errs,reg_digs_t& value
+	) noexcept {
+		size_t idx{0};
+		while(true) {
+			if(idx < L) {
+				if (get_digit_token(is,errs,value[idx])) {
+					++idx;
+				}
+				else {
+					for(;idx < L;++idx) {
+						value[idx] = 0;
+					}
+					errs << " error consiguiendo el digito " << idx << std::endl;
+					errs << " digitos a 0 a partir del indice = " << idx << std::endl;
+					return false;
+				}
+			}
+			if (idx >= L)
+				return true;
+		}
+	}
+
+  static constexpr
+	bool read(
+		std::istream& is,std::ostream& errs,reg_digs_t& value
+	) noexcept {
+		reg_digs_t default_value{};
+		bool type_token = get_type_template_string_id_token(is,errs);
+		if (type_token) {
+			if (get_digit_loop_token(is,errs,value)) {
+				if (dig_t::get_radix_token(is,errs)) {
+					return true;
+				}
+				else {
+					value = default_value;
+					return false;
+				}
+			}
+			else {
+				value = default_value;
+				return false;
+			}
+		} else {
+			value = default_value;
+			return false;
+		}
 	}
 
   };

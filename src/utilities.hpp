@@ -70,7 +70,9 @@ struct pack2tuple {
 /// head of tuple_obj is {2}
 /// tail of tuple_obj is {"xyz",3.14159}
 /// BEGIN: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES
+
 struct local_void_t {};
+
 template<class Head_t,class...Tail_t>
 struct for_each_same_type {
 	using second_t = std::tuple_element<0,std::tuple<Tail_t...>>::type;
@@ -80,22 +82,26 @@ struct for_each_same_type {
 		&&	(for_each_same_type<Tail_t...>::are_same_type_v)
 	);
 };
+
 template<class Head_t>
 struct for_each_same_type<Head_t> {
 	constexpr static bool are_same_type_v = true;
 };
+
 template<typename...Ts>
-concept all_are_the_same_type = requires(Ts...) {
+concept all_are_the_same_type_c = requires(Ts...) {
 	for_each_same_type<Ts...>::are_same_type_v;
 };
+
 template<typename...Ts>
-concept all_are_more_than_zero = requires(Ts...) {
+concept there_is_one_or_more_c = requires(Ts...) {
 	((sizeof...(Ts))>0);
 };
+
 /// END: 	TEMPLATE GENERICO Y SUS ESPECIALIZACIONES
 
 template<typename...Ts>
-	requires  (all_are_the_same_type<Ts...>&&all_are_more_than_zero<Ts...>)
+	requires  (all_are_the_same_type_c<Ts...>&&there_is_one_or_more_c<Ts...>)
 struct pack2array {
 	using array_type = std::array<
 						typename pack2tuple<Ts...>::elem_type<0>,
@@ -148,8 +154,8 @@ struct pack2array {
 
 template<class... Ts>
 	requires	(
-			  all_are_the_same_type<Ts...>
-		&&	all_are_more_than_zero<Ts...>
+			  all_are_the_same_type_c<Ts...>
+		&&	there_is_one_or_more_c<Ts...>
 	)
 void assign_with_order(
 	auto& dest ,

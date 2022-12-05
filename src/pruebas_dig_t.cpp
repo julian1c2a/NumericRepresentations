@@ -42,6 +42,8 @@ int main() {
 	std::cout << c << fdl;
 	std::cout << d << fdl;
 */
+	using namespace NumRepr;
+	using reg_digs_t = reg_digs_t<uint8_t,25,5>;
 	constexpr uint128_t B{111114444444444444};
 	constexpr uint128_t Bm1{B-1};
 	using digit_t = typename NumRepr::digit_t<B>;
@@ -51,8 +53,8 @@ int main() {
 	using tipo_de_A = decltype(A());
 	using limites_de_A = std::numeric_limits<tipo_de_A>;
 	std::cout << limites_de_A::max() << std::endl;
-	NumRepr::int_reg_digs_t<uint8_t,25,5> mi_valor;
-	get_int_reg_digs<uint8_t,25,5>(std::cin,std::cerr,mi_valor);
+	reg_digs_t mi_valor(10,5,2,23,11);
+	reg_digs_t::read(std::cin,std::cerr,mi_valor);
 	return 0;
 }
 
