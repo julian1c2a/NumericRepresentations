@@ -408,7 +408,7 @@ private :
 						is_unsigned_sz_gt_v<UINT_T,unique_type>,
 							sig_UInt_for_UInt_t<UINT_T>,
 							sig_UInt_for_UInt_t<unique_type>
-					 >
+					>
 					,typename std::conditional_t<
 						is_unsigned_sz_gt_v<UINT_T,sig_UInt_for_SInt_t<unique_type>>,
 							sig_UInt_for_UInt_t<UINT_T>,

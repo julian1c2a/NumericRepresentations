@@ -1,9 +1,0 @@
-digraph "NumRepr::type_traits::detail::__sig_UInt_for_UInt_t&lt; unsigned char &gt;"
-{
- // INTERACTIVE_SVG=YES
- // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="{NumRepr::type_traits\l::detail::__sig_UInt\l_for_UInt_t\< unsigned\l char \>\n||}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-}

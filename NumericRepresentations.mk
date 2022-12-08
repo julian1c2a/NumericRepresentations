@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=julia
-Date                   :=25/11/2022
+Date                   :=07/12/2022
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/msys64/mingw64/bin/g++.exe
 SharedObjectLinkerName :=C:/msys64/mingw64/bin/g++.exe -shared -fPIC
@@ -45,7 +45,7 @@ IncludePCH             :=
 RcIncludePath          := 
 Libs                   := 
 ArLibs                 :=  
-LibPath                :=$(LibraryPathSwitch)C:/msys64/clang64/lib  $(LibraryPathSwitch). $(LibraryPathSwitch). $(LibraryPathSwitch)Debug 
+LibPath                :=$(LibraryPathSwitch)C:/msys64/mingw64/lib  $(LibraryPathSwitch). $(LibraryPathSwitch). $(LibraryPathSwitch)Debug 
 
 ##
 ## Common variables

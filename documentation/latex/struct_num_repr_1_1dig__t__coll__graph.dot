@@ -1,9 +1,0 @@
-digraph "NumRepr::dig_t&lt; UINT_T, B &gt;"
-{
- // INTERACTIVE_SVG=YES
- // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="{NumRepr::dig_t\< UINT\l_T, B \>\n||+ constexpr operator\l UINT_T() const noexcept\l+ constexpr const UINT\l_T & get() const noexcept\l+ constexpr operator\l SIG_UINT_T() const\l noexcept\l+ constexpr operator\l SIG_SINT_T() const\l noexcept\l+ constexpr UINT_T operator\l()() const noexcept\l+ consteval dig_t() noexcept\l+ constexpr dig_t(Int\l_t arg) noexcept\l+ constexpr dig_t(const\l dig_t &) noexcept=default\l+ constexpr dig_t(dig\l_t &&) noexcept=default\l+ constexpr const dig\l_t & operator=(const\l Int_t &a) noexcept\ly 73 más...\l+ static consteval uintspair\l mult() noexcept\l+ static consteval bool\l is_prime() noexcept\l+ static consteval dig\l_t dig_max() noexcept\l+ static consteval dig\l_t dig_submax() noexcept\l+ static consteval dig\l_t dig_Bm1() noexcept\l+ static consteval dig\l_t dig_Bm2() noexcept\l+ static consteval dig\l_t dig_0() noexcept\l+ static consteval dig\l_t dig_1() noexcept\l+ static consteval UINT\l_T ui_max() noexcept\l+ static consteval UINT\l_T ui_submax() noexcept\ly 16 más...\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-}

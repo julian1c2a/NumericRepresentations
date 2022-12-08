@@ -37,11 +37,11 @@
 1668675582 c:\users\julian\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1670266128 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1670420623 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"reg_digs_t.hpp"
 	<typeinfo>
 
-1670262719 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
+1670497018 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
 	"auxiliary_functions.hpp"
 	"auxiliary_types.hpp"
 	"lexer_parser.hpp"
@@ -76,15 +76,15 @@
 1668745867 c:\users\julia\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1669382485 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
+1670420351 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
 	"auxiliary_types.hpp"
 
-1669382496 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
+1670420372 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
 	"basic_types.hpp"
 
-1670011131 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
+1670529398 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
 	"istream"
-	<cstdint>
+	<cinttypes>
 	<type_traits>
 	<optional>
 	<compare>
@@ -94,6 +94,7 @@
 	<string>
 	<sstream>
 	<fstream>
+	<fmt/format.h>
 	<array>
 	<vector>
 	<list>
@@ -133,16 +134,16 @@
 	<iterator>
 	<functional>
 
-1670267728 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1670531265 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 	"lexer_parser.hpp"
 
-1670006791 c:\users\julia\dropbox\github\numericrepresentations\src\utilities.hpp
+1670420902 c:\users\julia\dropbox\github\numericrepresentations\src\utilities.hpp
 	<tuple>
 	<array>
 	"basic_types.hpp"
 
-1670260674 c:\users\julia\dropbox\github\numericrepresentations\src\lexer_parser.hpp
+1670420528 c:\users\julia\dropbox\github\numericrepresentations\src\lexer_parser.hpp
 	"auxiliary_types.hpp"
 

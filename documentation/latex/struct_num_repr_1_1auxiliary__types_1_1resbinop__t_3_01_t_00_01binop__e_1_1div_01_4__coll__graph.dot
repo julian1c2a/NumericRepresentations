@@ -1,9 +1,0 @@
-digraph "NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::div &gt;"
-{
- // INTERACTIVE_SVG=YES
- // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="{NumRepr::auxiliary\l_types::resbinop_t\<\l T, binop_e::div \>\n|+ T quotient\l+ bool no_div_by_0\l|}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-}

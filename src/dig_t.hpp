@@ -6,7 +6,7 @@
 #include "lexer_parser.hpp"
 
 namespace NumRepr {
-using type_traits::allowable_base_type_c;
+using type_traits::uint_type_for_radix_c;
 using type_traits::suitable_base;
 using type_traits::sig_UInt_for_UInt_t;
 using type_traits::sig_SInt_for_UInt_t;
@@ -14,7 +14,7 @@ using type_traits::maxbase;
 ///< WRAPPER PARA UN TIPO UINT_T QUE UNSIGNED_INTEGRAL_T<UINT_T>
 ///< SE SOBRECARGAN LOS OPERADORES ARITMETICOS PARA ARITMETICA MODULAR
 ///< DIG_T = SUMA Y MULTIPLICACION CIRCULAR (MODULAR CON MOD B)
-template<allowable_base_type_c UINT_T, UINT_T B>
+template<uint_type_for_radix_c UINT_T, UINT_T B>
 	requires (suitable_base<UINT_T,B>())
 struct dig_t {
 private:
@@ -1507,15 +1507,15 @@ public:
 
 };
 
-	template<type_traits::allowable_base_type_c UINT_T, UINT_T B>
-		requires (type_traits::suitable_base<UINT_T, B>())
-	consteval UINT_T ui_1() noexcept {return UINT_T(1u);}
+template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B>
+	requires (type_traits::suitable_base<UINT_T, B>())
+consteval UINT_T ui_1() noexcept {return UINT_T(1u);}
 
-	template<type_traits::allowable_base_type_c UINT_T, UINT_T B>
-		requires (type_traits::suitable_base<UINT_T, B>())
-	consteval dig_t<UINT_T, B> dig_max() noexcept {
-		return dig_t<UINT_T, B>(B-1u);
-	}
+template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B>
+	requires (type_traits::suitable_base<UINT_T, B>())
+consteval dig_t<UINT_T, B> dig_max() noexcept {
+	return dig_t<UINT_T, B>(B-1u);
+}
 
 ///< DEFINCION DE template<uint128_t Radix> digito_t{};
 template<uint128_t B>
@@ -1531,7 +1531,7 @@ using digit_t = dig_t<
 			/*                              		*/
 			/************************************/
 
-template<type_traits::allowable_base_type_c UINT_T,UINT_T Base>
+template<type_traits::uint_type_for_radix_c UINT_T,UINT_T Base>
 	requires (type_traits::suitable_base<UINT_T,Base>())
 std::istream & operator >> (std::istream & is,dig_t<UINT_T,Base> & arg) {
 
@@ -1631,7 +1631,7 @@ std::istream & operator >> (std::istream & is,dig_t<UINT_T,Base> & arg) {
 	return is;
 }
 
-template<type_traits::allowable_base_type_c UINT_T,UINT_T Base>
+template<type_traits::uint_type_for_radix_c UINT_T,UINT_T Base>
 	requires (type_traits::suitable_base<UINT_T,Base>())
 std::ostream & operator << (std::ostream & os,dig_t<UINT_T,Base> arg) 	{
 	os  << "d#"

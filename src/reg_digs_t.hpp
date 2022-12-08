@@ -18,10 +18,10 @@
 
 namespace NumRepr {
 
-using type_traits::allowable_base_type_c;
+using type_traits::uint_type_for_radix_c;
 using type_traits::suitable_base;
 
-template<allowable_base_type_c UINT_T,UINT_T B,size_t L>
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t L>
   requires ((suitable_base<UINT_T,B>())&&(L > 0))
 struct reg_digs_t : protected std::array<dig_t<UINT_T,B>,L> {
 public :
@@ -488,9 +488,9 @@ public :
 	/// <param name="Ints_type ... digits_pow_i"></param>
 	/// <returns="base_t"></returns>
 	template<typename ... Ints_type>
-		requires ((sizeof...(Ints_type)) > 0)
+		requires ((sizeof...(Ints_type)) == L)
 	static constexpr inline
-	base_N_t<sizeof...(Ints_type)> normalize(Ints_type ... digits_pow_i)
+	base_t normalize(Ints_type ... digits_pow_i)
 	noexcept {
 	///< CREA UN STD_ARRAY DEL TIPO INT PASADO POR UN PACK DE ARGUMENTOS
 	///< EL TAMANO ES EL DEL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
@@ -503,7 +503,7 @@ public :
 					typename pack_type::elem_type,
 					typename type_traits::sig_UInt_for_SInt_t<typename pack_type::elem_type>
 			>;
-	///< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO <= L)
+	///< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO == L)
 		static constexpr size_t pack_sz{pack_type::pack_size()};
 	///< ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO
 	///< Y SU TAMANO
@@ -522,7 +522,7 @@ public :
 		using namespace NumRepr::type_traits;
 		using SUInt_type =
 			typename std::conditional_t<
-					std::is_unsigned_v<unique_type>,
+					is_unsigned_type_v<unique_type>,
 					typename std::conditional_t<
 						is_unsigned_sz_gt_v<UINT_T,unique_type>,
 							sig_UInt_for_UInt_t<UINT_T>,

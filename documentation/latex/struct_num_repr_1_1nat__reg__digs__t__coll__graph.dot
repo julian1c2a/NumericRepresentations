@@ -1,9 +1,0 @@
-digraph "NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;"
-{
- // INTERACTIVE_SVG=YES
- // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="{NumRepr::nat_reg_digs\l_t\< UINT_T, B, L \>\n||+ consteval nat_reg_digs\l_t() noexcept\l+ constexpr nat_reg_digs\l_t(const std::initializer\l_list\< dig_t \> &arg) noexcept\l+ constexpr nat_reg_digs\l_t(const Ts &... args)\l noexcept\l+ constexpr nat_reg_digs\l_t(const base_N_t\< N \>\l &arg) noexcept\l+ constexpr nat_reg_digs\l_t(const base_N_t\< N \>\l &&arg) noexcept\l+ constexpr nat_reg_digs\l_t(Ints_type ... dig_pow\l_i) noexcept\l+ constexpr nat_reg_digs\l_t(const nat_reg_N_digs\l_t\< N \> &arg) noexcept\l+ constexpr nat_reg_digs\l_t(nat_reg_N_digs_t\< N\l \> &&arg) noexcept\l+ constexpr const nat\l_reg_digs_t & operator\l=(const base_N_t\< N \>\l &arg) noexcept\l+ constexpr nat_reg_digs\l_t & operator=(base_N\l_t\< N \> &arg) noexcept\ly 180 más...\l+ static consteval dig\l_t dig_0() noexcept\l+ static consteval dig\l_t dig_1() noexcept\l+ static consteval dig\l_t dig_Bm1() noexcept\l+ static consteval dig\l_t dig_max() noexcept\l+ static consteval dig\l_t dig_Bm2() noexcept\l+ static consteval dig\l_t dig_submax() noexcept\l+ static consteval UINT\l_T ui_0() noexcept\l+ static consteval UINT\l_T ui_1() noexcept\l+ static consteval UINT\l_T ui_Bm1() noexcept\l+ static consteval UINT\l_T ui_B() noexcept\ly 107 más...\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-}
