@@ -524,12 +524,12 @@ public :
 			typename std::conditional_t<
 					is_unsigned_type_v<unique_type>,
 					typename std::conditional_t<
-						is_unsigned_sz_gt_v<UINT_T,unique_type>,
+						ge_sz_v<UINT_T,unique_type>,
 							sig_UInt_for_UInt_t<UINT_T>,
 							sig_UInt_for_UInt_t<unique_type>
 					>,
 					typename std::conditional_t<
-						is_unsigned_sz_gt_v<UINT_T,sig_UInt_for_SInt_t<unique_type>>,
+						gt_sz_v<UINT_T,unique_type>,
 							sig_UInt_for_UInt_t<UINT_T>,
 							sig_UInt_for_SInt_t<unique_type>
 					>

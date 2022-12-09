@@ -174,7 +174,7 @@ namespace type_traits {
 	/// AQUI EL MAYOR CONSIDERADO ES UINT128_T
 	template<typename UINT_T>	// variable on compile time for concept on UINT_T for BASE
 	constexpr bool is_uint_type_for_radix_v = std::is_unsigned_v<UINT_T> && (! std::is_same_v<UINT_T,uint128_t>);
-
+		/// CONCEPT FOR UNSIGNED INTEGRAL TYPES VALID FOR THE RADIX
 	template<typename UINT_T>
 	concept uint_type_for_radix_c = is_uint_type_for_radix_v<UINT_T>;
 
@@ -184,14 +184,14 @@ namespace type_traits {
   template<typename UINT_T> // variable on compile time for concept on UINT_T
 	constexpr bool is_unsigned_type_v =
 			is_uint_type_for_radix_v<UINT_T>	|| std::is_same_v<UINT_T,uint128_t>;
-
+		/// CONCEPT FOR UNSIGNED INTEGRAL TYPES
 	template<typename UINT_T>
 	concept unsigned_integral_c = is_unsigned_type_v<UINT_T>;
 
 	/// METAOPERADOR QUE NOS DA SI UN TIPO INTEGRAL ES SIGNED
 	template<typename SINT_T> // concept on SINT_T
 	constexpr bool is_signed_type_v = std::is_signed_v<SINT_T>;
-
+		/// CONCEPT FOR SIGNED INTEGRAL TYPES
 	template<typename SINT_T>
 	concept signed_integral_c = is_signed_type_v<SINT_T>;
 
@@ -214,27 +214,27 @@ namespace type_traits {
 	template<typename T,typename S>
 	constexpr bool le_sz_v = lt_sz_v<T,S>||eq_sz_v<T,S>;
 
-	template<unsigned_integral_c T,unsigned_integral_c S>
-	constexpr bool is_unsigned_sz_gt_v = gt_sz_v<T,S>;
-
-	template<unsigned_integral_c T,unsigned_integral_c S>
-	constexpr bool is_unsigned_sz_ge_v	=	ge_sz_v<T,S>;
-
-	template<signed_integral_c T,unsigned_integral_c S>
-	constexpr bool is_signed_sz_gt_v = gt_sz_v<T,S>;
-
-	template<signed_integral_c T,unsigned_integral_c S>
-	constexpr bool is_signed_sz_ge_v	=	ge_sz_v<T,S>;
-
-	/// REVISAR
-	template<integral_c T,unsigned_integral_c S>
-	constexpr bool is_sig_unsig_sz_ge_v =
-		is_unsigned_type_v<T>	?
-				ge_sz_v<T,S> :
-				sizeof(T)>=2*sizeof(S);
-
-	template<unsigned_integral_c T,integral_c S>
-	constexpr bool is_unsig_int_sz_ge_v	= ge_sz_v<T,S>;
+//	template<unsigned_integral_c T,unsigned_integral_c S>
+//	constexpr bool is_unsigned_sz_gt_v = gt_sz_v<T,S>;
+//
+//	template<unsigned_integral_c T,unsigned_integral_c S>
+//	constexpr bool is_unsigned_sz_ge_v	=	ge_sz_v<T,S>;
+//
+//	template<signed_integral_c T,unsigned_integral_c S>
+//	constexpr bool is_signed_sz_gt_v = gt_sz_v<T,S>;
+//
+//	template<signed_integral_c T,unsigned_integral_c S>
+//	constexpr bool is_signed_sz_ge_v	=	ge_sz_v<T,S>;
+//
+//	/// REVISAR
+//	template<integral_c T,unsigned_integral_c S>
+//	constexpr bool is_sig_unsig_sz_ge_v =
+//		is_unsigned_type_v<T>	?
+//				ge_sz_v<T,S> :
+//				sizeof(T)>=2*sizeof(S);
+//
+//	template<unsigned_integral_c T,integral_c S>
+//	constexpr bool is_unsig_int_sz_ge_v	= ge_sz_v<T,S>;
 
 	///<  METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO NATURAL
 	///<  POR ESPECIALIZACION EXPLICITA
