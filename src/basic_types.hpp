@@ -104,7 +104,7 @@ using   uleast64_t 	= std::uint_least64_t;
 using		intmax_t		= std::intmax_t;
 using		uintmax_t		= std::uintmax_t;
 
-
+namespace type_traits {
 /// TYPE_TRAITS AND CONCEPTS
 template<typename IntT>
 concept arith_integral_c = 	std::is_arithmetic_v<IntT>	&&
@@ -163,7 +163,6 @@ unsigned long long atoull(char* text) noexcept {
 		return(i);
 }
 
-namespace type_traits {
 ///            "CLASS"              TYPE                   TYPE DEFINITION
 /// template<typename              int_type,int_type base> class digito<int_type,base> {};
 ///            CONCEPT              TYPE                   TYPE DEFINITION
@@ -214,28 +213,6 @@ namespace type_traits {
 	template<typename T,typename S>
 	constexpr bool le_sz_v = lt_sz_v<T,S>||eq_sz_v<T,S>;
 
-//	template<unsigned_integral_c T,unsigned_integral_c S>
-//	constexpr bool is_unsigned_sz_gt_v = gt_sz_v<T,S>;
-//
-//	template<unsigned_integral_c T,unsigned_integral_c S>
-//	constexpr bool is_unsigned_sz_ge_v	=	ge_sz_v<T,S>;
-//
-//	template<signed_integral_c T,unsigned_integral_c S>
-//	constexpr bool is_signed_sz_gt_v = gt_sz_v<T,S>;
-//
-//	template<signed_integral_c T,unsigned_integral_c S>
-//	constexpr bool is_signed_sz_ge_v	=	ge_sz_v<T,S>;
-//
-//	/// REVISAR
-//	template<integral_c T,unsigned_integral_c S>
-//	constexpr bool is_sig_unsig_sz_ge_v =
-//		is_unsigned_type_v<T>	?
-//				ge_sz_v<T,S> :
-//				sizeof(T)>=2*sizeof(S);
-//
-//	template<unsigned_integral_c T,integral_c S>
-//	constexpr bool is_unsig_int_sz_ge_v	= ge_sz_v<T,S>;
-
 	///<  METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO NATURAL
 	///<  POR ESPECIALIZACION EXPLICITA
 	namespace ugly_details_UInt_for_UInt {
@@ -243,50 +220,21 @@ namespace type_traits {
 		struct __sig_UInt_for_UInt_t {using type = void;};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<uchint_t>
-		{
-			template<unsigned_integral_c uint_type>
-			static inline constexpr bool uint_type_gt_this_type_v = gt_sz_v<uint_type,uchint_t>;
-
-			using type =
-				std::conditional_t<
-					uint_type_gt_this_type_v<usint_t>,
-						usint_t,
-						std::conditional_t<
-							uint_type_gt_this_type_v<uint_t>,
-								uint_t,
-								std::conditional_t<
-									uint_type_gt_this_type_v<ulint_t>,
-										ulint_t,
-										std::conditional_t<
-											uint_type_gt_this_type_v<ullint_t>,
-												ullint_t,
-												uint128_t
-										>
-								>
-						>
-				>;
-		};
+		struct __sig_UInt_for_UInt_t<ullint_t>
+		{	using type = uint128_t;};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<usint_t>
+		struct __sig_UInt_for_UInt_t<ulint_t>
 		{
 			template<unsigned_integral_c uint_type>
-			static inline constexpr bool uint_type_gt_this_type_v = gt_sz_v<uint_type,usint_t>;
+			static inline constexpr bool uint_type_gt_this_type_v = gt_sz_v<uint_type,ulint_t>;
 
 			using type =
+				typename
 				std::conditional_t<
-					uint_type_gt_this_type_v<uint_t>,
-						uint_t,
-						std::conditional_t<
-							uint_type_gt_this_type_v<ulint_t>,
-								ulint_t,
-								std::conditional_t<
-									uint_type_gt_this_type_v<ullint_t>,
-										ullint_t,
-										uint128_t
-								>
-						>
+					uint_type_gt_this_type_v<ullint_t>,
+						ullint_t,
+						typename __sig_UInt_for_UInt_t<ullint_t>::type
 				>;
 		};
 
@@ -300,139 +248,125 @@ namespace type_traits {
 				std::conditional_t<
 					uint_type_gt_this_type_v<ulint_t>,
 						ulint_t,
-						std::conditional_t<
-							uint_type_gt_this_type_v<ullint_t>,
-								ullint_t,
-								uint128_t
-						>
+						typename __sig_UInt_for_UInt_t<ulint_t>::type
 				>;
 		};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<ulint_t>
+		struct __sig_UInt_for_UInt_t<usint_t>
 		{
 			template<unsigned_integral_c uint_type>
-			static inline constexpr bool uint_type_gt_this_type_v = gt_sz_v<uint_type,ulint_t>;
+			static inline constexpr bool uint_type_gt_this_type_v = gt_sz_v<uint_type,usint_t>;
 
 			using type =
-				typename
 				std::conditional_t<
-					uint_type_gt_this_type_v<ullint_t>,
-						ullint_t,
-						uint128_t
+					uint_type_gt_this_type_v<uint_t>,
+						uint_t,
+						typename __sig_UInt_for_UInt_t<uint_t>::type
 				>;
 		};
 
 		template<>
-		struct __sig_UInt_for_UInt_t<ullint_t>
-		{	using type = uint128_t;};
+		struct __sig_UInt_for_UInt_t<uchint_t>
+		{
+			template<unsigned_integral_c uint_type>
+			static inline constexpr bool uint_type_gt_this_type_v = gt_sz_v<uint_type,uchint_t>;
+
+			using type =
+				std::conditional_t<
+					uint_type_gt_this_type_v<usint_t>,
+						usint_t,
+						typename __sig_UInt_for_UInt_t<usint_t>::type
+				>;
+		};
 
 
 	}
 
-	template<unsigned_integral_c UInt_t>
-	using sig_UInt_for_UInt_t = typename ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t<UInt_t>::type;
+
+	template<typename UInt_t>
+	using sig_UInt_for_UInt_t =
+	typename ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t<UInt_t>::type;
 
 	///<  METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO NATURAL
 	///<  POR ESPECIALIZACION EXPLICITA
 	namespace ugly_details_sig_SInt_for_UInt {
-		template<unsigned_integral_c UInt>
+		template<typename UInt>
 		struct __sig_SInt_for_UInt_t
 		{using type = void;};
 
 		template<>
-		struct __sig_SInt_for_UInt_t<uchint_t>
-		{
-			template<signed_integral_c int_type>
-			static inline constexpr bool int_type_gt_this_type_v = gt_sz_v<int_type,uchint_t>;
-
-			using type =
-				std::conditional_t<
-					int_type_gt_this_type_v<ssint_t>,
-						ssint_t,
-						std::conditional_t<
-							int_type_gt_this_type_v<sint_t>,
-								sint_t,
-								std::conditional_t<
-									int_type_gt_this_type_v<slint_t>,
-										slint_t,
-										std::conditional_t<
-											int_type_gt_this_type_v<sllint_t>,
-												sllint_t,
-												sint128_t
-										>
-								>
-						>
-				>;
-		};
-
-		template<>
-		struct __sig_SInt_for_UInt_t<usint_t>
-		{
-			template<signed_integral_c int_type>
-			static inline constexpr bool int_type_gt_this_type_v = gt_sz_v<int_type,usint_t>;
-
-			using type =
-				std::conditional_t<
-					int_type_gt_this_type_v<sint_t>,
-						sint_t,
-						std::conditional_t<
-							int_type_gt_this_type_v<slint_t>,
-								slint_t,
-								std::conditional_t<
-									int_type_gt_this_type_v<sllint_t>,
-										sllint_t,
-										sint128_t
-								>
-						>
-				>;
-		};
-
-		template<>
-		struct __sig_SInt_for_UInt_t<uint_t>
-		{
-			template<signed_integral_c int_type>
-			static inline constexpr bool int_type_gt_this_type_v = gt_sz_v<int_type,uint_t>;
-
-			using type =
-				std::conditional_t<
-					int_type_gt_this_type_v<slint_t>,
-						slint_t,
-						std::conditional_t<
-							int_type_gt_this_type_v<sllint_t>,
-								sllint_t,
-								sint128_t
-						>
-				>;
-		};
+		struct __sig_SInt_for_UInt_t<ullint_t>
+		{	using type = sint128_t;};
 
 		template<>
 		struct __sig_SInt_for_UInt_t<ulint_t>
 		{
-			template<signed_integral_c int_type>
+			template<typename int_type>
 			static inline constexpr bool int_type_gt_this_type_v = gt_sz_v<int_type,ulint_t>;
 
 			using type =
 				std::conditional_t<
 					int_type_gt_this_type_v<sllint_t>,
 						sllint_t,
-						sint128_t
+						typename __sig_SInt_for_UInt_t<ullint_t>::type
 				>;
 		};
 
 		template<>
-		struct __sig_SInt_for_UInt_t<ullint_t>
-		{	using type = sint128_t;};
+		struct __sig_SInt_for_UInt_t<uint_t>
+		{
+			template<typename int_type>
+			static inline constexpr bool int_type_gt_this_type_v = gt_sz_v<int_type,uint_t>;
+
+			using type =
+				std::conditional_t<
+					int_type_gt_this_type_v<slint_t>,
+						slint_t,
+						typename __sig_SInt_for_UInt_t<ulint_t>::type
+				>;
+		};
+
+		template<>
+		struct __sig_SInt_for_UInt_t<usint_t>
+		{
+			template<typename int_type>
+			static inline constexpr bool int_type_gt_this_type_v = gt_sz_v<int_type,usint_t>;
+
+			using type =
+				std::conditional_t<
+					int_type_gt_this_type_v<sint_t>,
+						sint_t,
+						typename __sig_SInt_for_UInt_t<uint_t>::type
+				>;
+		};
+
+		template<>
+		struct __sig_SInt_for_UInt_t<uchint_t>
+		{
+			template<typename int_type>
+			static inline constexpr bool int_type_gt_this_type_v = gt_sz_v<int_type,uchint_t>;
+
+			using type =
+				std::conditional_t<
+					int_type_gt_this_type_v<ssint_t>,
+						ssint_t,
+						typename __sig_SInt_for_UInt_t<usint_t>::type
+				>;
+		};
+
+
 
 	}
 
-	template<unsigned_integral_c UInt_t>
-	using sig_SInt_for_UInt_t = typename ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t<UInt_t>::type;
+	template<typename UInt_t>
+	using sig_SInt_for_UInt_t =
+	typename ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t<UInt_t>::type;
 
 	///<  METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO ENTERO
 	///<  POR ESPECIALIZACION EXPLICITA
 	namespace ugly_details_UInt_for_SInt	{
-		template<signed_integral_c SInt>
+		template<typename SInt>
 		struct __sig_UInt_for_SInt_t
 		{using type = void;};
 
@@ -452,7 +386,6 @@ namespace type_traits {
 		struct __sig_UInt_for_SInt_t<sint_t>
 		{using type = uint_t;};
 
-
 		template<>
 		struct __sig_UInt_for_SInt_t<slint_t>
 		{using type = ulint_t;};
@@ -460,92 +393,25 @@ namespace type_traits {
 		template<>
 		struct __sig_UInt_for_SInt_t<sllint_t>
 		{using type = ullint_t;};
+
+
 	}
 
-	template<integral_c SInt_t>
-	using sig_UInt_for_SInt_t = typename ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t<SInt_t>::type;
+	template<typename Int_t>
+	using sig_UInt_for_SInt_t =
+	typename ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t<Int_t>::type;
 
 	///<  METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO ENTERO
 	///<  POR ESPECIALIZACION EXPLICITA
 	namespace ugly_details_SInt_for_SInt {
-		template<signed_integral_c SInt>
+
+		template<typename SInt>
 		struct __sig_SInt_for_SInt_t
 		{using type = void;};
 
 		template<>
-		struct __sig_SInt_for_SInt_t<schint_t> {
-			template<signed_integral_c SINT_T>
-			static inline constexpr bool signed_gt_signed_v = gt_sz_v<SINT_T,schint_t>;
-
-			using type =
-				std::conditional_t<
-					signed_gt_signed_v<ssint_t>,
-						ssint_t,
-						std::conditional_t<
-							signed_gt_signed_v<sint_t>,
-								sint_t,
-								std::conditional_t<
-									signed_gt_signed_v<int>,
-										int,
-										std::conditional_t<
-											signed_gt_signed_v<slint_t>,
-												slint_t,
-												std::conditional_t<
-													signed_gt_signed_v<sllint_t>,
-														sllint_t,
-														sint128_t
-												>
-										>
-								>
-						>
-				>;
-		};
-
-		template<>
-		struct __sig_SInt_for_SInt_t<ssint_t> {
-			template<signed_integral_c SINT_T>
-			static inline constexpr bool signed_gt_signed_v = gt_sz_v<SINT_T,ssint_t>;
-
-			using type =
-				std::conditional_t<
-					signed_gt_signed_v<sint_t>,
-						sint_t,
-						std::conditional_t<
-							signed_gt_signed_v<int>,
-								int,
-								std::conditional_t<
-									signed_gt_signed_v<slint_t>,
-										slint_t,
-										std::conditional_t<
-											signed_gt_signed_v<sllint_t>,
-												sllint_t,
-												sint128_t
-										>
-								>
-						>
-				>;
-		};
-
-		template<>
-		struct __sig_SInt_for_SInt_t<sint_t> {
-			template<signed_integral_c SINT_T>
-			static inline constexpr bool signed_gt_signed_v = gt_sz_v<SINT_T,sint_t>;
-
-			using type =
-				std::conditional_t<
-					signed_gt_signed_v<int>,
-						int,
-						std::conditional_t<
-							signed_gt_signed_v<slint_t>,
-								slint_t,
-								std::conditional_t<
-									signed_gt_signed_v<sllint_t>,
-										sllint_t,
-										sint128_t
-								>
-						>
-				>;
-		};
+		struct __sig_SInt_for_SInt_t<sllint_t>
+		{	using type = sint128_t;};
 
 		template<>
 		struct __sig_SInt_for_SInt_t<slint_t> {
@@ -556,18 +422,55 @@ namespace type_traits {
 				std::conditional_t<
 					signed_gt_signed_v<sllint_t>,
 						sllint_t,
-						sint128_t
+						typename __sig_SInt_for_SInt_t<sllint_t>::type
 				>;
 		};
 
 		template<>
-		struct __sig_SInt_for_SInt_t<sllint_t>
-		{	using type = sint128_t;};
+		struct __sig_SInt_for_SInt_t<sint_t> {
+			template<typename SINT_T>
+			static inline constexpr bool signed_gt_signed_v = gt_sz_v<SINT_T,sint_t>;
+
+			using type =
+				std::conditional_t<
+					signed_gt_signed_v<slint_t>,
+						slint_t,
+						typename __sig_SInt_for_SInt_t<slint_t>::type
+				>;
+		};
+
+		template<>
+		struct __sig_SInt_for_SInt_t<ssint_t> {
+			template<typename SINT_T>
+			static inline constexpr bool signed_gt_signed_v = gt_sz_v<SINT_T,ssint_t>;
+
+			using type =
+				std::conditional_t<
+					signed_gt_signed_v<sint_t>,
+						sint_t,
+						typename __sig_SInt_for_SInt_t<sint_t>::type
+				>;
+		};
+
+		template<>
+		struct __sig_SInt_for_SInt_t<schint_t> {
+			template<typename SINT_T>
+			static inline constexpr bool signed_gt_signed_v = gt_sz_v<SINT_T,schint_t>;
+
+			using type =
+				std::conditional_t<
+					signed_gt_signed_v<ssint_t>,
+						ssint_t,
+						typename __sig_SInt_for_SInt_t<ssint_t>::type
+				>;
+		};
+
 
 	}
 
-	template<signed_integral_c SInt_t>
-	using sig_SInt_for_SInt_t = typename ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t<SInt_t>::type;
+	template<typename SInt_t>
+	using sig_SInt_for_SInt_t =
+	typename ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t<SInt_t>::type;
 
 	///< METAFUNCIONES PARA DAR CON LOS MAXIMOS NUMEROS QUE CABEN EN UN TIPO
 	///< Y SIMILARES
@@ -663,298 +566,104 @@ namespace type_traits {
 	///< QUEREMOS FABRICAR LA METAFUNCION TypeFromIntNumber_t<numero_sin_signo>
 	///< QUE DEVUELVA EL TIPO ENTERO SIN SIGNO MAS PEQUENO PARA EL NUMERO numero_sin_signo
 	namespace ugly_details_for_suitable_type_deduction {
-		///< DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS
-		struct empty_type{};
-		///< DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES SIN DEFINCION
-		template<typename Type,Type Radix>
-		struct UIntTypeForRadix{
-			static constexpr 	uint128_t		uint_value_max  = maxbase<uint128_t>();
-			static constexpr 	uint128_t		uint_value 			= static_cast<uint128_t>(Radix);
-			static constexpr 	bool				bool_value 			= (Radix <= uint_value_max) &&
-																											(Radix > 1)								&&
-																											std::is_integral_v<Type>   ;
-			using  						actUIntType			            = std::conditional_t<
-																												bool_value,
-																													uint128_t,
-																													empty_type
-																											>;
-			static constexpr 	actUIntType act_uint_value 	= bool_value ? uint_value : 0;
-			using 						UIntType										= std::conditional_t<
-																												bool_value,
-																													typename
-																													UIntTypeForRadix<
-																														uint128_t,
-																														uint_value
-																													>::UIntType,
-																													empty_type
-																											>;
-		};
-		///< FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINT_TYPE_FOR_RADIX
-		template<integral_c Type,Type Radix>
+		template<typename T, T Radix>
+		struct UIntTypeForRadix;
+		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX
+		///< FOR RADIX VALID
+		template<integral_c T, T Radix>
 			requires (Radix > 1)
-		using UIntTypeForRadix_t = typename UIntTypeForRadix<Type,Radix>::UIntType;
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX UNSIGNED
-		///< POSIBLY RADIX NON VALID
-		template<uint128_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<uint128_t, Radix> {
-			static constexpr 	uint128_t				uint_value_max 	  = maxbase<uint64_t>();
-			static constexpr 	uint128_t				uint_value 				= static_cast<uint64_t>(Radix);
-			static constexpr 	uint64_t				uint_value_sig		= static_cast<uint64_t>(Radix);
-			static constexpr 	bool						bool_value 				= Radix <= uint_value_max;
-			using  						actUIntType 			                = std::conditional_t<
-																															bool_value,
-																																uint64_t ,
-																																empty_type
-																														>;
-			static constexpr 	actUIntType 		ct_uint_value 		= bool_value ? uint_value_sig : 0;
-			using 						UIntType 				                  = std::conditional_t<
-                                                              bool_value,
-																																UIntTypeForRadix_t<
-                                                                  uint64_t,
-                                                                  uint_value
-																																>,
-																																empty_type
-																														>;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX SIGNED
-		///< POSIBLY RADIX NON VALID
-		template<sint128_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<uint128_t, Radix> {
-			static constexpr 	uint128_t			uint_value_max 	  = maxbase<int64_t>();
-			static constexpr 	uint128_t			uint_value 				= static_cast<uint64_t>(Radix);
-			static constexpr 	uint64_t			uint_value_sig		= static_cast<uint64_t>(Radix);
-			static constexpr 	bool					bool_value 				= Radix <= uint_value_max;
-			using  						actUIntType 			              = std::conditional_t<
-																														bool_value,
-																															uint64_t,
-																															empty_type
-																													>;
-			static constexpr 	actUIntType 	act_uint_value		= bool_value ? uint_value_sig : 0;
-			using 						UIntType				                = std::conditional_t<
-																														bool_value,
-																															UIntTypeForRadix_t<
-																																uint64_t,
-																																uint_value
-																															>,
-																															empty_type
-																													>;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX UNSIGNED
-		///< RADIX VALID
-		template<uint64_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<uint64_t, Radix> {
-			static constexpr 	uint64_t		uint_value_max 	    = maxbase<uint32_t>();
-			static constexpr 	uint64_t		uint_value 					= static_cast<uint64_t>(Radix);
-			static constexpr 	uint32_t		uint_value_sig			= static_cast<uint32_t>(Radix);
-			static constexpr 	bool				bool_value 					= Radix <= uint_value_max;
-			using  						actUIntType 		                = std::conditional_t<
-																														bool_value,
-																															uint32_t,
-																															uint64_t
-																													>;
-			static constexpr 	actUIntType act_uint_value 			= bool_value ? uint_value_sig : uint_value;
-			using 						UIntType 			                	= std::conditional_t<
-																														bool_value,
-																															UIntTypeForRadix_t<
-																																uint32_t,
-																																uint_value
-																															>,
-																															uint64_t
-																													>;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX SIGNED
-		///< RADIX VALID
-		template<std::int64_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<int64_t, Radix> {
-			static constexpr 	uint64_t		uint_value_max 	    = maxbase<uint32_t>();
-			static constexpr 	uint64_t		uint_value 					= static_cast<uint64_t>(Radix);
-			static constexpr 	uint32_t		uint_value_sig			= static_cast<uint32_t>(Radix);
-			static constexpr 	bool				bool_value 					= Radix <= uint_value_max;
-			using  						actUIntType 			            	= std::conditional_t<
-																														bool_value,
-																															uint32_t,
-																															uint64_t
-																													>;
-			static constexpr 	actUIntType act_uint_value 			= bool_value ? uint_value_sig : uint_value;
-			using 						UIntType 				            		= std::conditional_t<
-																														bool_value,
-																															UIntTypeForRadix_t<
-																																uint32_t,
-																																uint_value
-																															>,
-																															uint64_t
-																													>;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINTTYPEFORRADIX UNSIGNED
-		///< RADIX VALID
-		template<uint32_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<uint32_t, Radix> {
-			static constexpr 	uint32_t			uint_value_max  	= maxbase<uint16_t>();
-			static constexpr 	uint32_t			uint_value 				= static_cast<uint16_t>(Radix);
-			static constexpr 	std::uint16_t	uint_value_sig		= static_cast<uint16_t>(Radix);
-			static constexpr 	bool					bool_value 				= Radix <= uint_value_max;
-			using  						actUIntType 			            	= std::conditional_t	<
-																														bool_value,
-																															uint16_t,
-																															uint32_t
-																													>;
-			static constexpr 	actUIntType 	act_uint_value 		= bool_value ? uint_value_sig : uint_value;
-			using 						UIntType 												= std::conditional_t<
-																														bool_value,
-																														UIntTypeForRadix_t<
-																															uint16_t,
-																															uint_value
-																														>,
-																														uint32_t
-                                                          >;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX SIGNED
-		///< RADIX VALID
-		template<sint32_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<sint32_t, Radix> {
-			static constexpr 	uint32_t		uint_value_max 	    = maxbase<uint16_t>();
-			static constexpr 	uint32_t		uint_value 					= static_cast<uint16_t>(Radix);
-			static constexpr 	uint16_t		uint_value_sig			= static_cast<uint16_t>(Radix);
-			static constexpr 	bool				bool_value 					= Radix <= uint_value_max;
-			using  						actUIntType 			            	= std::conditional_t	<
-																														bool_value,
-																															uint16_t,
-																															uint32_t
-																													>;
-			static constexpr 	actUIntType act_uint_value			=	bool_value ? uint_value_sig : uint_value;
-			using 						UIntType 				            		= std::conditional_t<
-																														bool_value,
-																															UIntTypeForRadix_t<
-																																uint16_t,
-																																uint_value
-																															>,
-																															uint32_t
-																													>;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX UNSIGNED
-		///< RADIX VALID
-		template<uint16_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<uint16_t, Radix> {
-			static constexpr 	uint16_t		uint_value_max 	    = maxbase<uint8_t>();
-			static constexpr 	uint16_t		uint_value 					= static_cast<uint8_t>(Radix);
-			static constexpr 	uint8_t		  uint_value_sig			= static_cast<uint8_t>(Radix);
-			static constexpr 	bool				bool_value 					= Radix <= uint_value_max;
-			using  						actUIntType 			            	= std::conditional_t<
-																														bool_value,
-																															uint8_t,
-																															uint16_t
-																													>;
-			static constexpr 	actUIntType act_uint_value			= bool_value ? uint_value_sig : uint_value;
-			using 						UIntType 				            		= std::conditional_t<
-																														bool_value,
-																															UIntTypeForRadix_t<
-																																uint8_t,
-																																uint_value
-																															>,
-																															uint16_t
-																													>;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX SIGNED
-		///< RADIX VALID
-		template<sint16_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<sint16_t, Radix> {
-			static constexpr 	uint16_t		uint_value_max 	    = maxbase<uint8_t>();
-			static constexpr 	uint16_t		uint_value 					= static_cast<uint8_t>(Radix);
-			static constexpr 	uint8_t		  uint_value_sig			= static_cast<uint8_t>(Radix);
-			static constexpr 	bool				bool_value 					= Radix <= uint_value_max;
-			using  						actUIntType 			            	= std::conditional_t<
-                                                            bool_value,
-																															uint8_t,
-																															uint16_t
-																													>;
-			static constexpr 	actUIntType act_uint_value			= bool_value ? uint_value_sig : uint_value;
-			using 						UIntType 												= std::conditional_t<
-																														bool_value,
-																															UIntTypeForRadix_t<
-																																uint8_t,
-																																uint_value
-																															>,
-																															uint16_t
-																													>;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX UNSIGNED
-		///< RADIX VALID FINAL
-		template<uint8_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<uint8_t, Radix> {
-			static constexpr 	uint8_t		uint_value_max 	    = maxbase<uint8_t>();
-			static constexpr 	uint8_t		uint_value 					= static_cast<uint8_t>(Radix);
-			static constexpr 	bool			bool_value 					= true;
-			using 						UIntType 				        			= uint8_t;
-		};
-		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX SIGNED
-		///< RADIX VALID FINAL
-		template<sint8_t Radix>
-			requires (Radix > 1)
-		struct UIntTypeForRadix<sint8_t, Radix> {
-			static constexpr 	uint8_t		uint_value_max 	    = maxbase<uint8_t>();
-			static constexpr 	uint8_t		uint_value 					= static_cast<uint8_t>(Radix);
-			static constexpr 	bool			bool_value 					= true;
-			using 						UIntType 				        			= uint8_t;
+		struct UIntTypeForRadix<T, Radix> {
+			static constexpr 	ullint_t		uint_value_0_max    = static_cast<ullint_t>(maxbase<uchint_t>());
+			static constexpr 	ullint_t		uint_value_1_max    = static_cast<ullint_t>(maxbase<usint_t>());
+			static constexpr 	ullint_t		uint_value_2_max    = static_cast<ullint_t>(maxbase<uint_t>());
+			static constexpr 	ullint_t		uint_value_3_max    = static_cast<ullint_t>(maxbase<ulint_t>());
+			static constexpr 	ullint_t		uint_value_4_max    = static_cast<ullint_t>(maxbase<ullint_t>());
+			static constexpr 	ullint_t		uint_value 					= static_cast<ullint_t>(Radix);
+			using UIntType =
+				std::conditional_t<
+					uint_value <= uint_value_0_max,
+						uchint_t,
+						std::conditional_t<
+							uint_value <= uint_value_1_max,
+								usint_t,
+								std::conditional_t<
+									uint_value <= uint_value_2_max,
+										uint_t,
+										std::conditional_t<
+											uint_value <= uint_value_3_max,
+												ulint_t,
+												std::conditional_t<
+													uint_value <= uint_value_4_max,
+														ullint_t,
+														uint128_t
+												>
+										>
+								>
+						>
+				>;
 		};
 	}
+
 	///< DEFINICION PARA LLAMAR A TYPE_TRAITS::UINT_TYPE_FOR_RADIX
 	///< CON SOLO RADIX
 	///< DEVUELVE EL TIPO MAS PEQUENO PARA EL NUMERO SIN SIGNO ENTERO QUE LE
 	///< PASAMOS EN TIEMPO DE COMPILACION
-	template<uint128_t Radix>
-	using TypeFromIntNumber_t = typename ugly_details_for_suitable_type_deduction::UIntTypeForRadix_t<decltype(Radix),Radix>;
-}
-//
-/////< CONCATENACION DE ARRAYS HOMOGENEOS
-/////< DEFINICION GENERAL PARA 3+* ARRAYS DE LONGITUDES n_head Y n_tail_head Y ... n_tail_tail
-//template<
-//		typename T_head		,  typename T_tail_head		,   typename ... T_tail_tail  ,
-//		std::size_t n_head		,  std::size_t n_tail_head		,	std::size_t ... n_tail_tail
-//>
-//	requires (
-//		((n_head > 0) && (n_tail_head > 0) && ( ... && (n_tail_tail > 0)))
-//		&&
-//		(std::is_same_v<T_head,T_tail_head> && ( ... && (std::is_same_v<T_tail_head,T_tail_tail>)))
-//	)
-//static inline constexpr
-//std::array<T_head,n_head+n_tail_head+(...+(n_tail_tail))>&&
-//concatenate_arrays(
-//	std::array<T_head       ,n_head      	>&& arg_head,
-//	std::array<T_tail_head	,n_tail_head	>&& arg_tail_head,
-//	std::array<T_tail_tail  ,n_tail_tail  >&&  ...   arg_tail_tail
-//) noexcept {
-//	return std::move(
-//			concatenate_arrays< T_head ,T_tail_tail ... , n_head+n_tail_head , n_tail_tail ... >(
-//				concatenate_arrays< T_head , T_tail_head , n_head , n_tail_head >( arg_head , arg_tail_head ),
-//				arg_tail_tail ...
-//		)
-//	);
-//}
-//
-/////< CONCATENACION DE ARRAYS HOMOGENEOS
-/////< DEFINICION PARA 2 ARRAYS DE LONGITUDES T_1 Y T_0
-//template< typename T_1 , typename T_0 , std::size_t n_1 , std::size_t n_0 >
-//	requires ((n_1 > 0)&&(n_0 > 0)&&(std::is_same_v<T_1,T_0>))
-//static inline constexpr
-//std::array<T_0,n_1+n_0>&&
-//concatenate_arrays(std::array<T_1,n_1>&& arg_l,std::array<T_0,n_0>&& arg_r)
-//noexcept {
-//	std::array<T_0,n_1+n_0> ret;
-//	for(std::size_t idx{0} ; idx < n_0 ; ++idx)
-//		ret[idx] = std::move(arg_r[idx]);
-//	for(std::size_t idx{n_0} ; idx < n_1+n_0 ; ++idx)
-//		ret[idx] = std::move(arg_l[idx-n_0]);
-//	return std::move(ret);
-//}
+	using namespace ugly_details_for_suitable_type_deduction;
+	template<ullint_t Radix>
+	using TypeFromIntNumber_t =
+			typename UIntTypeForRadix<decltype(Radix),Radix>::UIntType;
 
-}
+
+	///< QUEREMOS FABRICAR LA METAFUNCION TypeFromIntNumberLTSqrtMaxOfType_t<numero>
+	///< QUE DEVUELVA EL TIPO ENTERO SIN SIGNO MAS PEQUENO PARA EL NUMERO numero
+	///< TAL QUE SQRT(TYPE::MAX())>=B-1
+	namespace ugly_details_for_greater_suitable_type_deduction {
+		template<typename T, T Radix>
+		struct UIntTypeForRadixContainsMultResult;
+		///< DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINT_TYPE_FOR_RADIX_WITH_CONTAINS_MULT_RESULT
+		///< FOR RADIX VALID
+		template<integral_c T, T Radix>
+			requires (Radix > 1)
+		struct UIntTypeForRadixContainsMultResult<T, Radix> {
+			static constexpr 	ullint_t		uint_value_0_max    = static_cast<ullint_t>(sqrt_max<uchint_t>());
+			static constexpr 	ullint_t		uint_value_1_max    = static_cast<ullint_t>(sqrt_max<usint_t>());
+			static constexpr 	ullint_t		uint_value_2_max    = static_cast<ullint_t>(sqrt_max<uint_t>());
+			static constexpr 	ullint_t		uint_value_3_max    = static_cast<ullint_t>(sqrt_max<ulint_t>());
+			static constexpr 	ullint_t		uint_value_4_max    = static_cast<ullint_t>(sqrt_max<ullint_t>());
+			static constexpr 	ullint_t		uint_value 					= static_cast<ullint_t>(Radix);
+			using UIntType =
+				std::conditional_t<
+					uint_value <= uint_value_0_max,
+						uchint_t,
+						std::conditional_t<
+							uint_value <= uint_value_1_max,
+								usint_t,
+								std::conditional_t<
+									uint_value <= uint_value_2_max,
+										uint_t,
+										std::conditional_t<
+											uint_value <= uint_value_3_max,
+												ulint_t,
+												std::conditional_t<
+													uint_value <= uint_value_4_max,
+														ullint_t,
+														uint128_t
+												>
+										>
+								>
+						>
+				>;
+		};
+	}
+	///< DEFINICION PARA LLAMAR A TYPE_TRAITS::UINT_TYPE_FOR_RADIX_WITH_HOLD_OPS_t
+	///< CON SOLO RADIX
+	///< DEVUELVE EL TIPO MAS PEQUENO PARA EL NUMERO SIN SIGNO ENTERO QUE LE
+	///< PASAMOS EN TIEMPO DE COMPILACION
+	using namespace ugly_details_for_greater_suitable_type_deduction;
+	template<integral_c IntType, IntType Radix>
+	using GreaterTypeFromIntNumber_t =
+	typename UIntTypeForRadixContainsMultResult<decltype(Radix),Radix>::UIntType;
+}// END NAMESPACE TYPE_TRAITS
+}// END NAMESPACE NUMREPR
+
 #endif // BASIC_TYPES_HPP_INCLUDED

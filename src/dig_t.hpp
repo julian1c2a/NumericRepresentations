@@ -1204,7 +1204,7 @@ public:
 
   /// FUNCION GENERICA QUE CONSIGUE EL TOKEN TYPE PARA LA
   /// OBTENCION DEL OBJETO CORRESPONDIENTE POR TECLADO
-  bool get_type_template_string_id_token(std::istream& is,std::ostream& errs)
+  bool get_type_template_string_id_token(std::istream& is)
   noexcept {
   	char input_char{'\0'};
     std::string old_input_string{""};
@@ -1217,11 +1217,11 @@ public:
         old_input_string = new_input_string;
       }
       else {
-        errs << "Has cometido un error, tenias que escribir "
+        std::cerr << "Has cometido un error, tenias que escribir "
         << "\" " << to_type_template_string_id()
         << " \"  y has escrito "
         << new_input_string << std::endl;
-        errs << "Considera que has escrito "
+        std::cerr << "Considera que has escrito "
         << old_input_string
         << " y continua escribiendo a partir de ahi";
         new_input_string = old_input_string;
@@ -1334,13 +1334,12 @@ public:
 
   /// FUNCION QUE CONSIGUE EL TOKEN DIGITO
   static constexpr
-  bool get_digit_token(
-		std::istream& is,std::ostream& errs,UINT_T& uint_value
-	) {
+  bool get_digit_token(std::istream& is,UINT_T& uint_value)
+  {
     std::string old_input_string{""};
     std::string new_input_string{""};
     size_t index{0};
-    char input_char = nullchar<char>;
+    char input_char = type_traits::nullchar<char>;
     uint_value = 0;
     while(true) {
       is >> input_char;
@@ -1350,10 +1349,10 @@ public:
         ++index;
       }
       else if ((index == 0)&&(! lex::is_separator(input_char))) {
-        errs << "Has cometido un error, tenias que "
+        std::cerr << "Has cometido un error, tenias que "
         << " escribir \" " << '#' << " \"  y has escrito "
         << new_input_string << std::endl;
-        errs << "Considera que has escrito "
+        std::cerr << "Considera que has escrito "
         << old_input_string
         << " y continua escribiendo a partir de ahi";
         new_input_string = old_input_string;
@@ -1369,7 +1368,7 @@ public:
           }
           else {
             old_input_string = "#";
-            errs << "Has cometido un error, tenias que "
+            std::cerr << "Has cometido un error, tenias que "
             << "poner un valor menor que la base y has "
             << "puesto \" " << uint_value << " \" escrito como \" "
             << new_input_string << " \" " << std::endl;
@@ -1378,7 +1377,7 @@ public:
           }
         }
         else if((index>=1) && ! lex::is_digit(input_char) && (input_char != '_')) {
-          errs << "El caracter " << input_char << " no es valido aqui "
+          std::cerr << "El caracter " << input_char << " no es valido aqui "
           << std::endl;
           uint_value = 0;
           return false;
@@ -1388,7 +1387,7 @@ public:
         return true;
       }
       else{
-        errs << "Has cometido un error, tenias que escribir "
+        std::cerr << "Has cometido un error, tenias que escribir "
         << " \" " << "#digdigdig..._"
         << " \"  y has escrito "
         << new_input_string << std::endl;
@@ -1399,15 +1398,14 @@ public:
   }
 
   /// FUNCION QUE CONSIGUE EL TOKEN BASE
-  static constexpr
-  bool get_radix_token(
-		std::istream& is,std::ostream& errs
-	) {
+  static
+  bool get_radix_token(std::istream& is)
+  {
     std::string old_input_string{""};
     std::string new_input_string{""};
     UINT_T uint_radix;
     size_t index{0};
-    char input_char = nullchar<char>;
+    char input_char = type_traits::nullchar<char>;
     uint_radix = 0;
     while(true) {
       is >> input_char;
@@ -1417,10 +1415,10 @@ public:
         ++index;
       }
       else if ((index == 0)&&(! lex::is_separator(input_char))) {
-        errs << "Has cometido un error, tenias que "
+        std::cerr << "Has cometido un error, tenias que "
         << " escribir \" " << '#' << " \"  y has escrito "
         << new_input_string << std::endl;
-        errs << "Considera que has escrito "
+        std::cerr << "Considera que has escrito "
         << old_input_string
         << " y continua escribiendo a partir de ahi";
         new_input_string = old_input_string;
@@ -1431,10 +1429,10 @@ public:
         ++index;
       }
       else if ((index == 1)&&((input_char!='b')&&(input_char!='B'))) {
-        errs << "Has cometido un error, tenias que "
+        std::cerr << "Has cometido un error, tenias que "
         << " escribir \" " << '#' << " \"  y has escrito "
         << new_input_string << std::endl;
-        errs << "Considera que has escrito "
+        std::cerr << "Considera que has escrito "
         << old_input_string
         << " y continua escribiendo a partir de ahi";
         new_input_string = old_input_string;
@@ -1450,7 +1448,7 @@ public:
           }
           else {
             old_input_string = "#";
-            errs << "Has cometido un error, tenias que "
+            std::cerr << "Has cometido un error, tenias que "
             << "poner un valor menor que la base y has "
             << "puesto \" " << uint_radix << " \" escrito como \" "
             << new_input_string << " \" " << std::endl;
@@ -1459,7 +1457,7 @@ public:
           }
         }
         else if((index>=3) && ! lex::is_digit(input_char) && (input_char != '_')) {
-          errs << "El caracter " << input_char << " no es valido aqui "
+          std::cerr << "El caracter " << input_char << " no es valido aqui "
           << std::endl;
           uint_radix = 0;
           return false;
@@ -1469,7 +1467,7 @@ public:
         return true;
       }
       else{
-        errs << "Has cometido un error, tenias que escribir "
+        std::cerr << "Has cometido un error, tenias que escribir "
         << " \" " << "#Bdigdigdig..._"
         << " \"  y has escrito "
         << new_input_string << std::endl;
@@ -1479,15 +1477,13 @@ public:
     }
   }
 
-	static constexpr
-	bool read(
-		std::istream& is,std::ostream& errs,dig_t& value
-	) noexcept {
+	static
+	bool read(std::istream& is,dig_t& value) noexcept {
 		dig_t default_value{};
-		bool type_token = dig_t::get_type_template_string_id_token(is,errs);
+		bool type_token = dig_t::get_type_template_string_id_token(is);
 		if (type_token) {
-			if (get_digit_token(is,errs,value)) {
-				if (get_radix_token(is,errs)) {
+			if (get_digit_token(is,value)) {
+				if (get_radix_token(is)) {
 					return true;
 				}
 				else {
@@ -1520,8 +1516,8 @@ consteval dig_t<UINT_T, B> dig_max() noexcept {
 ///< DEFINCION DE template<uint128_t Radix> digito_t{};
 template<uint128_t B>
 using digit_t = dig_t<
-		type_traits::TypeFromIntNumber_t<B>,
-		static_cast<type_traits::TypeFromIntNumber_t<B>>(B)
+		type_traits::TypeFromIntNumber_t<static_cast<uint128_t>(B)>,
+		static_cast<type_traits::TypeFromIntNumber_t<static_cast<uint128_t>(B)>>(static_cast<uint128_t>(B))
 	>;
 ///< SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o ...
 

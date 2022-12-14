@@ -43,18 +43,31 @@ int main() {
 	std::cout << d << fdl;
 */
 	using namespace NumRepr;
-	using reg_digs_t = reg_digs_t<uint8_t,25,5>;
-	constexpr uint128_t B{111114444444444444};
-	constexpr uint128_t Bm1{B-1};
+	constexpr ullint_t B{25u};
+	constexpr ullint_t Bm1{B-1};
+	constexpr size_t L{5};
+	using register_digs_t = typename NumRepr::register_digs_t<B,L>;
 	using digit_t = typename NumRepr::digit_t<B>;
+
 	constexpr digit_t A{Bm1};
 	const std::type_info& type_of_A = typeid(decltype(A()));
 	std::cout << type_of_A.name() << " " << digit_t{A()} << " < ";
 	using tipo_de_A = decltype(A());
 	using limites_de_A = std::numeric_limits<tipo_de_A>;
 	std::cout << limites_de_A::max() << std::endl;
-	reg_digs_t mi_valor(10,5,2,23,11);
-	reg_digs_t::read(std::cin,std::cerr,mi_valor);
+
+	register_digs_t mi_valor(10u,5u,2u,23u,11u);// escrito alreves
+	std::cout << mi_valor << std::endl;
+	for(int i{0} ; i<5 ; ++i) {
+		std::cout << mi_valor[i] << " ";
+	}
+	std::cout << std::endl;
+	std::cin >> mi_valor;
+	for(int i{0} ; i<5 ; ++i) {
+		std::cout << mi_valor[i] << " ";
+	}
+	std::cout << std::endl;
+	std::cout << "Adios" << std::endl;
 	return 0;
 }
 

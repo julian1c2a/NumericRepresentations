@@ -37,11 +37,11 @@
 1668675582 c:\users\julian\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1670420623 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1670613161 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"reg_digs_t.hpp"
 	<typeinfo>
 
-1670497018 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
+1670611752 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
 	"auxiliary_functions.hpp"
 	"auxiliary_types.hpp"
 	"lexer_parser.hpp"
@@ -76,13 +76,13 @@
 1668745867 c:\users\julia\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1670420351 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
+1670606529 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
 	"auxiliary_types.hpp"
 
 1670420372 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
 	"basic_types.hpp"
 
-1670529398 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
+1670607804 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
 	"istream"
 	<cinttypes>
 	<type_traits>
@@ -134,7 +134,7 @@
 	<iterator>
 	<functional>
 
-1670531265 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1670670030 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 	"lexer_parser.hpp"
