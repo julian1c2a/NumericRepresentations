@@ -306,6 +306,8 @@ public :
 	{ this->base_t::fill(value); }
 	constexpr void	swap(base_t& other)	noexcept
 	{ this->base_t::swap(*other.data()); }
+	constexpr void  reverse() noexcept
+	{ std::reverse(this->begin(),this->end()); }
 
 	/// <summary>
 	///
@@ -326,7 +328,7 @@ public:
 	reg_digs_t()
 	noexcept : base_t{regd_base_0()} {}
 
-public :
+private :
 	/// <summary>
 	/// Funcion miembro para generar un objeto tipo base_t y
 	///	devolverlo desde un std::initializer_list<dig_t>
@@ -339,7 +341,6 @@ public :
 		if (larg.size() >= L) {
 			auto itlist{larg.begin()};
 			auto itcthis{rarg.begin()};
-			const auto itlistend{larg.end()};
 			const auto itcthisend{rarg.end()};
 			while (itcthis != itcthisend) {
 				*itcthis = *itlist;
@@ -348,14 +349,22 @@ public :
 			}
 		}
 		else {
-			for (size_t ix{ 0 }; ix < larg.size() ; ++ix) {
-				rarg[ix] = larg[ix];
+			auto itlist{larg.begin()};
+			auto itcthis{rarg.begin()};
+			const auto itlistend{larg.end()};
+			const auto itcthisend{rarg.end()};
+			while (itcthis != itlistend) {
+				*itcthis = *itlist;
+				++itcthis;
+				++itlist;
 			}
-			for (size_t ix{ larg.size() }; ix < L ; ++ix) {
-				rarg[ix] = dig_0();
+			while (itcthis != itcthisend) {
+				*itcthis = dig_0();
+				++itcthis;
 			}
 		}
-		return std::move(rarg);
+		std::reverse(rarg.begin(),rarg.end());
+		return rarg;
 	}
 
 public:
@@ -386,6 +395,7 @@ public:
 	/// Constructor por Copia/Movimiento desde una
 	/// sucesión variádica de dígitos dig_t
 	/// </summary>
+
 private:
 
 	/// <summary>
@@ -485,11 +495,7 @@ public :
 	///< DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR
 	///< [UN TIPO ENTERO]
 		using unique_type = typename pack_type::elem_type;
-		//std::conditional_t<
-		//	type_traits::is_unsigned_type_v<typename pack_type::elem_type>,
-		//		typename pack_type::elem_type,
-		//		typename type_traits::sig_UInt_for_SInt_t<typename pack_type::elem_type>
-		//>;
+
 	///< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO == L)
 
 	///< ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO
@@ -556,7 +562,7 @@ public:
 		requires ((sizeof...(Ints_type))==L)
 	constexpr inline reg_digs_t(Ints_type ... dig_pow_i) noexcept :
 		base_t(normalize<Ints_type...>((dig_t(dig_pow_i))()...)) {
-			std::reverse(this->begin(),this->end());
+			this->reverse();
 		}
 
 	///	<summary>
@@ -667,6 +673,7 @@ private :
 	constexpr dig_t* data() noexcept {
 		return (this->base_t::data());
 	}
+
 public :
 	/// <summary=" sobrecarga de las funciones miembro : ">
 	/// constexpr const dig_t* data() const noexcept;
@@ -675,6 +682,7 @@ public :
 	constexpr const dig_t* const data() const noexcept {
 		return (static_cast<const dig_t*>(this->base_t::data()));
 	}
+
 	inline constexpr
 	decltype(auto) cpy_data() const {
 		return (*(this->base_t::data()));

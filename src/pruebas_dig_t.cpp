@@ -55,7 +55,10 @@ int main() {
 	using tipo_de_A = decltype(A());
 	using limites_de_A = std::numeric_limits<tipo_de_A>;
 	std::cout << limites_de_A::max() << std::endl;
-
+	register_digs_t mi_otro_otro_valor{7,11,13,23,5};
+	std::cout << mi_otro_otro_valor << std::endl;
+	register_digs_t mi_otro_valor{digit_t(7),digit_t(11),digit_t(13),digit_t(23),digit_t(5)};
+	std::cout << mi_otro_valor << std::endl;
 	register_digs_t mi_valor(10u,5u,2u,23u,11u);// escrito alreves
 	std::cout << mi_valor << std::endl;
 	for(int i{0} ; i<5 ; ++i) {
