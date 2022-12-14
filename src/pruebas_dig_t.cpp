@@ -63,9 +63,7 @@ int main() {
 	}
 	std::cout << std::endl;
 	std::cin >> mi_valor;
-	for(int i{0} ; i<5 ; ++i) {
-		std::cout << mi_valor[i] << " ";
-	}
+	std::cout << mi_valor << std::endl;
 	std::cout << std::endl;
 	std::cout << "Adios" << std::endl;
 	return 0;

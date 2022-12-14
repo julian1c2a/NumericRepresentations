@@ -6,17 +6,17 @@
 
 namespace NumRepr {
 
-using type_traits::allowable_base_type_c;
+using type_traits::uint_type_for_radix_c
 using type_traits::suitable_base;
 
-template<allowable_base_type_c UINT_T,UINT_T B,size_t L>
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t L>
 	requires (suitable_base<UINT_T,B>() && (L>0))
 struct nat_reg_digs_t {
 
-	using SIG_UINT_T 			= typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
-	using SIG_SINT_T 			= typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
+	using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
+	using SIG_SINT_T = typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
 
-	using dig_t 					= dig_t<UINT_T,B>;
+	using dig_t 		= dig_t<UINT_T,B>;
 
 	template<size_t N>
 		requires (N>0)
@@ -36,20 +36,20 @@ struct nat_reg_digs_t {
 
 	template<binop_e op,size_t N>
 	using res_N_op_t 			=
-				typename auxiliary_types::result_operation_t<nat_reg_N_digs_t<N>,op,N>;
+		typename auxiliary_types::result_operation_t<nat_reg_N_digs_t<N>,op,N>;
 	template<binop_e op>
 	using res_op_t 				=
-				typename auxiliary_types::result_operation_t<nat_reg_digs_t,op,L>;
+		typename auxiliary_types::result_operation_t<nat_reg_digs_t,op,L>;
 
 	template<size_t N>
 		requires (N>0)
 	using reg_ints_t		= typename std::array<UINT_T,N>;
 	template<size_t N>
 		requires (N>0)
-	using reg_suints_t		= typename std::array<SIG_UINT_T,N>;
+	using reg_suints_t	= typename std::array<SIG_UINT_T,N>;
 	template<size_t N>
 		requires (N>0)
-	using reg_ssints_t		= typename std::array<SIG_SINT_T,N>;
+	using reg_ssints_t	= typename std::array<SIG_SINT_T,N>;
 
 private:
 	base_t m_dc;

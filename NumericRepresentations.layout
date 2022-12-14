@@ -2,395 +2,112 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src\rat_num_t.hpp" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\basic_types.hpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="104" topLine="0" />
+			<Cursor1 position="16405" topLine="594" />
 		</Cursor>
 	</File>
-	<File name="src\nat_num_t.hpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\nat_rat_fixed_reg_t.hpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="51117" topLine="0" />
+			<Cursor1 position="564" topLine="46" />
 		</Cursor>
 	</File>
-	<File name="src\int_num_t.hpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\nat_reg_digs_t.hpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="86156" topLine="0" />
+			<Cursor1 position="1502" topLine="41" />
 		</Cursor>
 	</File>
-	<File name="src\nat_reg_digs_t.hpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="85742" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\lexer_parser.hpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2858" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\basic_types.hpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="18875" topLine="512" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="148" />
-			<Collapse line="367" />
-			<Collapse line="477" />
-			<Collapse line="482" />
-			<Collapse line="487" />
-			<Collapse line="492" />
-			<Collapse line="497" />
-			<Collapse line="502" />
-			<Collapse line="507" />
-			<Collapse line="512" />
-			<Collapse line="517" />
-			<Collapse line="522" />
-			<Collapse line="527" />
-			<Collapse line="532" />
-			<Collapse line="537" />
-			<Collapse line="542" />
-			<Collapse line="547" />
-			<Collapse line="556" />
-		</Folding>
-	</File>
-	<File name="src\auxiliary_functions.hpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="195" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\auxiliary_types.hpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="106" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\utilities.hpp" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5283" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\pruebas_dig_t.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2302" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\reg_digs_t.hpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="56801" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="0" />
-			<Collapse line="18" />
-			<Collapse line="25" />
-			<Collapse line="45" />
-			<Collapse line="49" />
-			<Collapse line="53" />
-			<Collapse line="57" />
-			<Collapse line="61" />
-			<Collapse line="65" />
-			<Collapse line="69" />
-			<Collapse line="73" />
-			<Collapse line="77" />
-			<Collapse line="81" />
-			<Collapse line="85" />
-			<Collapse line="156" />
-			<Collapse line="158" />
-			<Collapse line="166" />
-			<Collapse line="174" />
-			<Collapse line="182" />
-			<Collapse line="191" />
-			<Collapse line="200" />
-			<Collapse line="202" />
-			<Collapse line="205" />
-			<Collapse line="218" />
-			<Collapse line="223" />
-			<Collapse line="228" />
-			<Collapse line="233" />
-			<Collapse line="238" />
-			<Collapse line="243" />
-			<Collapse line="253" />
-			<Collapse line="258" />
-			<Collapse line="263" />
-			<Collapse line="268" />
-			<Collapse line="273" />
-			<Collapse line="278" />
-			<Collapse line="352" />
-			<Collapse line="354" />
-			<Collapse line="359" />
-			<Collapse line="363" />
-			<Collapse line="364" />
-			<Collapse line="367" />
-			<Collapse line="413" />
-			<Collapse line="418" />
-			<Collapse line="422" />
-			<Collapse line="428" />
-			<Collapse line="442" />
-			<Collapse line="447" />
-			<Collapse line="451" />
-			<Collapse line="457" />
-			<Collapse line="493" />
-			<Collapse line="555" />
-			<Collapse line="581" />
-			<Collapse line="592" />
-			<Collapse line="603" />
-			<Collapse line="612" />
-			<Collapse line="613" />
-			<Collapse line="624" />
-			<Collapse line="627" />
-			<Collapse line="630" />
-			<Collapse line="633" />
-			<Collapse line="639" />
-			<Collapse line="642" />
-			<Collapse line="656" />
-			<Collapse line="660" />
-			<Collapse line="663" />
-			<Collapse line="665" />
-			<Collapse line="677" />
-			<Collapse line="685" />
-			<Collapse line="689" />
-			<Collapse line="694" />
-			<Collapse line="699" />
-			<Collapse line="718" />
-			<Collapse line="723" />
-			<Collapse line="728" />
-			<Collapse line="761" />
-			<Collapse line="772" />
-			<Collapse line="783" />
-			<Collapse line="794" />
-			<Collapse line="795" />
-			<Collapse line="803" />
-			<Collapse line="806" />
-			<Collapse line="814" />
-			<Collapse line="817" />
-			<Collapse line="826" />
-			<Collapse line="828" />
-			<Collapse line="833" />
-			<Collapse line="842" />
-			<Collapse line="844" />
-			<Collapse line="849" />
-			<Collapse line="861" />
-			<Collapse line="862" />
-			<Collapse line="865" />
-			<Collapse line="868" />
-			<Collapse line="876" />
-			<Collapse line="891" />
-			<Collapse line="892" />
-			<Collapse line="900" />
-			<Collapse line="910" />
-			<Collapse line="920" />
-			<Collapse line="935" />
-			<Collapse line="938" />
-			<Collapse line="949" />
-			<Collapse line="957" />
-			<Collapse line="965" />
-			<Collapse line="992" />
-			<Collapse line="1004" />
-			<Collapse line="1015" />
-			<Collapse line="1030" />
-			<Collapse line="1040" />
-			<Collapse line="1046" />
-			<Collapse line="1053" />
-			<Collapse line="1059" />
-			<Collapse line="1066" />
-			<Collapse line="1073" />
-			<Collapse line="1086" />
-			<Collapse line="1095" />
-			<Collapse line="1097" />
-			<Collapse line="1099" />
-			<Collapse line="1104" />
-			<Collapse line="1106" />
-			<Collapse line="1119" />
-			<Collapse line="1120" />
-			<Collapse line="1127" />
-			<Collapse line="1129" />
-			<Collapse line="1130" />
-			<Collapse line="1134" />
-			<Collapse line="1169" />
-			<Collapse line="1170" />
-			<Collapse line="1173" />
-			<Collapse line="1182" />
-			<Collapse line="1184" />
-			<Collapse line="1187" />
-			<Collapse line="1194" />
-			<Collapse line="1196" />
-			<Collapse line="1199" />
-			<Collapse line="1206" />
-			<Collapse line="1213" />
-			<Collapse line="1220" />
-			<Collapse line="1228" />
-			<Collapse line="1235" />
-			<Collapse line="1242" />
-			<Collapse line="1244" />
-			<Collapse line="1251" />
-			<Collapse line="1258" />
-			<Collapse line="1260" />
-			<Collapse line="1267" />
-			<Collapse line="1278" />
-			<Collapse line="1279" />
-			<Collapse line="1294" />
-			<Collapse line="1305" />
-			<Collapse line="1317" />
-			<Collapse line="1328" />
-			<Collapse line="1339" />
-			<Collapse line="1350" />
-			<Collapse line="1366" />
-			<Collapse line="1373" />
-			<Collapse line="1374" />
-			<Collapse line="1375" />
-			<Collapse line="1379" />
-			<Collapse line="1393" />
-			<Collapse line="1400" />
-			<Collapse line="1401" />
-			<Collapse line="1402" />
-			<Collapse line="1406" />
-			<Collapse line="1420" />
-			<Collapse line="1426" />
-			<Collapse line="1427" />
-			<Collapse line="1428" />
-			<Collapse line="1432" />
-			<Collapse line="1447" />
-			<Collapse line="1453" />
-			<Collapse line="1454" />
-			<Collapse line="1455" />
-			<Collapse line="1459" />
-			<Collapse line="1474" />
-			<Collapse line="1480" />
-			<Collapse line="1489" />
-			<Collapse line="1502" />
-			<Collapse line="1515" />
-			<Collapse line="1516" />
-			<Collapse line="1543" />
-			<Collapse line="1547" />
-			<Collapse line="1550" />
-			<Collapse line="1553" />
-			<Collapse line="1673" />
-			<Collapse line="1680" />
-			<Collapse line="1682" />
-			<Collapse line="1687" />
-			<Collapse line="1696" />
-			<Collapse line="1697" />
-			<Collapse line="1701" />
-			<Collapse line="1706" />
-			<Collapse line="1716" />
-			<Collapse line="1723" />
-			<Collapse line="1726" />
-			<Collapse line="1739" />
-			<Collapse line="1744" />
-			<Collapse line="1748" />
-			<Collapse line="1749" />
-			<Collapse line="1750" />
-			<Collapse line="1753" />
-			<Collapse line="1754" />
-			<Collapse line="1770" />
-			<Collapse line="1774" />
-			<Collapse line="1775" />
-			<Collapse line="1776" />
-			<Collapse line="1779" />
-			<Collapse line="1784" />
-			<Collapse line="1812" />
-			<Collapse line="1813" />
-			<Collapse line="1842" />
-			<Collapse line="1844" />
-			<Collapse line="1846" />
-			<Collapse line="1847" />
-			<Collapse line="1855" />
-			<Collapse line="1856" />
-			<Collapse line="1857" />
-			<Collapse line="1860" />
-			<Collapse line="1867" />
-			<Collapse line="1868" />
-			<Collapse line="1871" />
-			<Collapse line="1877" />
-			<Collapse line="1878" />
-			<Collapse line="1881" />
-			<Collapse line="1887" />
-			<Collapse line="1888" />
-			<Collapse line="1891" />
-			<Collapse line="1897" />
-			<Collapse line="1898" />
-			<Collapse line="1901" />
-			<Collapse line="1907" />
-			<Collapse line="1908" />
-			<Collapse line="1911" />
-			<Collapse line="1917" />
-			<Collapse line="1918" />
-			<Collapse line="1921" />
-			<Collapse line="1927" />
-			<Collapse line="1928" />
-			<Collapse line="1935" />
-			<Collapse line="1945" />
-			<Collapse line="1952" />
-			<Collapse line="1957" />
-			<Collapse line="1960" />
-			<Collapse line="1963" />
-			<Collapse line="1973" />
-			<Collapse line="1978" />
-			<Collapse line="1984" />
-			<Collapse line="1995" />
-			<Collapse line="2000" />
-			<Collapse line="2006" />
-			<Collapse line="2016" />
-			<Collapse line="2017" />
-			<Collapse line="2022" />
-			<Collapse line="2032" />
-			<Collapse line="2037" />
-			<Collapse line="2042" />
-			<Collapse line="2048" />
-			<Collapse line="2055" />
-			<Collapse line="2068" />
-			<Collapse line="2071" />
-		</Folding>
-	</File>
-	<File name="src\test_dig_t.hpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="49049" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\rat_fixed_reg_t.hpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\rat_fixed_reg_t.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="120" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\documentation\documentacion.doc" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\documentation\documentacion.doc" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\dig_t.hpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\base_num_t.hpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="45877" topLine="0" />
+			<Cursor1 position="5388" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\memory_handler.hpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\rat_num_t.hpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="14808" topLine="0" />
+			<Cursor1 position="104" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\int_reg_digs_t.hpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="85052" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\base_num_t.hpp" open="1" top="1" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4589" topLine="100" />
-		</Cursor>
-	</File>
-	<File name="src\nat_rat_fixed_reg_t.hpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="67497" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\nat_rat_num_t.hpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\nat_rat_num_t.hpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="116" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\documentation\interfaz_dig_t.doc" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\int_reg_digs_t.hpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2792" topLine="75" />
+			<Cursor1 position="85052" topLine="0" />
 		</Cursor>
 	</File>
-	<EditorTabsLayout layout="0c1e5ce0639990c9000120d700000002=0;NumericRepresentations:src\basic_types.hpp,1;NumericRepresentations:src\dig_t.hpp,2;NumericRepresentations:src\reg_digs_t.hpp,3;NumericRepresentations:src\pruebas_dig_t.cpp,4;NumericRepresentations:src\int_reg_digs_t.hpp,5;NumericRepresentations:src\nat_rat_fixed_reg_t.hpp,6;NumericRepresentations:src\nat_reg_digs_t.hpp,7;NumericRepresentations:src\auxiliary_functions.hpp,8;NumericRepresentations:src\auxiliary_types.hpp,*9;NumericRepresentations:src\base_num_t.hpp,10;NumericRepresentations:src\int_num_t.hpp,11;NumericRepresentations:src\lexer_parser.hpp,12;NumericRepresentations:src\memory_handler.hpp,13;NumericRepresentations:src\nat_num_t.hpp,14;NumericRepresentations:src\nat_rat_num_t.hpp,15;NumericRepresentations:src\rat_fixed_reg_t.hpp,16;NumericRepresentations:src\rat_num_t.hpp,17;NumericRepresentations:src\test_dig_t.hpp,18;NumericRepresentations:src\utilities.hpp@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=953;besth=442;minw=953;minh=442;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=0c1e5ce0639990c9000120d700000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+	<File name="src\memory_handler.hpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="429" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="src\test_dig_t.hpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="49049" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\auxiliary_types.hpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3114" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\int_num_t.hpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="86156" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\documentation\interfaz_dig_t.doc" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\dig_t.hpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="46021" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\reg_digs_t.hpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="-7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16340" topLine="546" />
+		</Cursor>
+	</File>
+	<File name="src\pruebas_dig_t.cpp" open="1" top="1" tabpos="17" split="0" active="1" splitpos="0" zoom_1="-7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2181" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\nat_num_t.hpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="130" topLine="396" />
+		</Cursor>
+	</File>
+	<File name="src\auxiliary_functions.hpp" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2428" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\lexer_parser.hpp" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2662" topLine="107" />
+		</Cursor>
+	</File>
+	<File name="src\utilities.hpp" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5283" topLine="0" />
+		</Cursor>
+	</File>
+	<EditorTabsLayout layout="08877da06399c741000082e600000002=0;NumericRepresentations:src\basic_types.hpp,1;NumericRepresentations:src\nat_rat_fixed_reg_t.hpp,2;NumericRepresentations:src\nat_reg_digs_t.hpp,3;NumericRepresentations:src\rat_fixed_reg_t.hpp,4;NumericRepresentations:src\documentation\documentacion.doc,5;NumericRepresentations:src\base_num_t.hpp,6;NumericRepresentations:src\rat_num_t.hpp,7;NumericRepresentations:src\nat_rat_num_t.hpp,8;NumericRepresentations:src\int_reg_digs_t.hpp,9;NumericRepresentations:src\memory_handler.hpp,10;NumericRepresentations:src\test_dig_t.hpp,11;NumericRepresentations:src\auxiliary_types.hpp,12;NumericRepresentations:src\int_num_t.hpp,13;NumericRepresentations:src\documentation\interfaz_dig_t.doc,14;NumericRepresentations:src\dig_t.hpp,15;NumericRepresentations:src\reg_digs_t.hpp,*16;NumericRepresentations:src\pruebas_dig_t.cpp,17;NumericRepresentations:src\nat_num_t.hpp,18;NumericRepresentations:src\auxiliary_functions.hpp,19;NumericRepresentations:src\lexer_parser.hpp,20;NumericRepresentations:src\utilities.hpp@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=793;besth=321;minw=793;minh=321;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=08877da06399c741000082e600000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=350;besth=350;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=352|" />
 	<Target name="Debug" top="src\base_num_t.hpp">
 		<File name="src\basic_types.hpp" />
 		<File name="src\dig_t.hpp" />

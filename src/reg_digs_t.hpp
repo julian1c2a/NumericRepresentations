@@ -5,17 +5,6 @@
 #include "utilities.hpp"
 #include "lexer_parser.hpp"
 
-/// En general me gustaría tener las siguientes macros desenrrollantes:
-/// const reg_digs_t & 	cr_cthis{*this};
-/// 			reg_digs_t & 	 r_cthis{*this};
-/// 			reg_digs_t 		cp_cthis{*this};
-/// Como :
-///#define cr(type) 	const type & cr_cthis{*this};
-///#define	r(type)  	type & r_cthis{*this};
-///#define cp(type) 	type cp_cthis{*this};
-/// Pero de forma local, quedará:
-///
-
 namespace NumRepr {
 
 using type_traits::uint_type_for_radix_c;
@@ -37,70 +26,64 @@ public :
 	template<size_t N>
 	using reg_N_digs_t  = reg_digs_t<UINT_T,B,N>;
 
-/// cthis significa this_content y es referencia u objeto copia
-/// cr_cthis 	== const	actual_type &  cr_cthis{*this};
-///  r_cthis 	== 				actual_type &  	r_cthis{*this};
-/// cp_cthis 	== 				actual_type  	 cp_cthis{*this};
+	/// devolucion de punteros a la clase base
+	inline const base_t* const const_base_this() const noexcept {
+		return static_cast<const base_t* const>(this);
+	}
 
-/// devolucion de punteros a la clase base
-inline const base_t* const const_base_this() const noexcept {
-	return static_cast<const base_t* const>(this);
-}
+	inline base_t* base_this() noexcept {
+		return static_cast<base_t*>(this);
+	}
+	/// devolucion de referencias a la clase base
+	inline base_t& r_base_cthis() noexcept {
+		return (*base_this());
+	}
+	/// devolucion de copia de la clase base
+	inline const base_t& cr_base_cthis() const noexcept {
+		return (static_cast<const base_t&>(*const_base_this()));
+	}
 
-inline base_t* base_this() noexcept {
-	return static_cast<base_t*>(this);
-}
-/// devolucion de referencias a la clase base
-inline base_t& r_base_cthis() noexcept {
-	return (*base_this());
-}
-/// devolucion de copia de la clase base
-inline const base_t& cr_base_cthis() const noexcept {
-	return (static_cast<const base_t&>(*const_base_this()));
-}
+	inline base_t cp_base_cthis() const noexcept {
+		return std::move(base_t{*(cr_base_cthis())});
+	}
+	/// devolucion de referencias de la clase actual
+	inline reg_digs_t & r_cthis() noexcept {
+		return (*this);
+	}
 
-inline base_t cp_base_cthis() const noexcept {
-	return std::move(base_t{*(cr_base_cthis())});
-}
-/// devolucion de referencias de la clase actual
-inline reg_digs_t & r_cthis() noexcept {
-	return (*this);
-}
+	inline const reg_digs_t & cr_cthis() const noexcept {
+		return (*this);
+	}
+	/// devolucion de copia de la clase actual
+	inline reg_digs_t cp_cthis() const noexcept {
+		return std::move(reg_digs_t{*this});
+	}
+	/// devoluciones por referencias y por copia de los elementos
+	inline dig_t cp_cthis_at(size_t k) const noexcept {
+		return std::move(cp_base_cthis()[k]);
+	}
 
-inline const reg_digs_t & cr_cthis() const noexcept {
-	return (*this);
-}
-/// devolucion de copia de la clase actual
-inline reg_digs_t cp_cthis() const noexcept {
-	return std::move(reg_digs_t{*this});
-}
-/// devoluciones por referencias y por copia de los elementos
-inline dig_t cp_cthis_at(size_t k) const noexcept {
-	return std::move(cp_base_cthis()[k]);
-}
+	inline dig_t & r_cthis_at(size_t k) noexcept {
+		return (r_base_cthis()[k]);
+	}
 
-inline dig_t & r_cthis_at(size_t k) noexcept {
-	return (r_base_cthis()[k]);
-}
-
-inline const dig_t & cr_cthis_at(size_t k) const noexcept {
-	return (cr_base_cthis()[k]);
-}
-/// #define	cpcthis   	reg_digs_t cp_cthis{*this}
+	inline const dig_t & cr_cthis_at(size_t k) const noexcept {
+		return (cr_base_cthis()[k]);
+	}
 
 
 public :
 
-	using SIG_UINT_T	= typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
-	using SIG_SINT_T	= typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
+	using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
+	using SIG_SINT_T = typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
 
 	template<binop_e op,size_t N>
 	using res_base_N_op_t	=
-			typename auxiliary_types::result_operation_t<base_N_t<N>,op,N>;
+		typename auxiliary_types::result_operation_t<base_N_t<N>,op,N>;
 
 	template<binop_e op>
 	using res_base_op_t		=
-			typename auxiliary_types::result_operation_t<base_t,op,L>;
+		typename auxiliary_types::result_operation_t<base_t,op,L>;
 
 	static consteval dig_t		dig_0()			noexcept
 	{return dig_t::dig_0();}
@@ -210,7 +193,8 @@ public :
 	}
 
 	/// <summary>
-	/// IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L>
+	/// IDEM QUE ANTES PERO CON EL TIPO BASE_T
+	/// ESPECIALIZANDO AL TIPO BASE_N_T<L>
 	/// DONDE BASE_T == BASE_N_T<L>
 	/// TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL
 	/// </summary>
@@ -359,6 +343,8 @@ public :
 			const auto itcthisend{rarg.end()};
 			while (itcthis != itcthisend) {
 				*itcthis = *itlist;
+				++itcthis;
+				++itlist;
 			}
 		}
 		else {
@@ -366,7 +352,7 @@ public :
 				rarg[ix] = larg[ix];
 			}
 			for (size_t ix{ larg.size() }; ix < L ; ++ix) {
-				rarg[ix] = larg[ix];
+				rarg[ix] = dig_0();
 			}
 		}
 		return std::move(rarg);
@@ -397,7 +383,8 @@ public:
 	reg_digs_t(base_t && rarg) noexcept : base_t{std::move(rarg)} {}
 
 	/// <summary>
-	/// Constructor por Copia/Movimiento desde una sucesión variádica de dígitos dig_t
+	/// Constructor por Copia/Movimiento desde una
+	/// sucesión variádica de dígitos dig_t
 	/// </summary>
 private:
 
@@ -568,7 +555,9 @@ public:
 	template<type_traits::integral_c ... Ints_type>
 		requires ((sizeof...(Ints_type))==L)
 	constexpr inline reg_digs_t(Ints_type ... dig_pow_i) noexcept :
-		base_t(normalize<Ints_type...>((dig_t(dig_pow_i))()...)) {}
+		base_t(normalize<Ints_type...>((dig_t(dig_pow_i))()...)) {
+			std::reverse(this->begin(),this->end());
+		}
 
 	///	<summary>
 	/// Sobrecarga del operador copia
@@ -1828,9 +1817,9 @@ public :
 		/// INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
 		size_t	indice{0};
 		/// VARIABLES PARA ACCIONES EN LOS ESTADOS
-		Int_Type 		digito{0};
+		Int_Type digito{0};
 		size_t longitud{0};
-		inttype 		numero_base_recogido{0};
+		inttype numero_base_recogido{0};
 		/// VARIABLE DE RETORNO (BINDED TO THE ARG BY REFERENCE)
 		reg_digs_t& numero_ret{arg};
 		/// ESTADO ACTUAL
@@ -1841,7 +1830,7 @@ public :
 		is >> sds;
 		/// MAQUINA DE ESTADOS FINITOS QUE HACE EL PARSE() DE LA ENTRADA
 		do {
-			c = sds[indice];
+		c = sds[indice];
 			switch(est_act) {
 				case e0ini :
 					{
@@ -1947,8 +1936,8 @@ public :
 						const bool dig_c {(c >= '0') && (c <= '9')};
 						const bool dig_lt_Base{digito<Base};
 						const bool c_es_dig_B {dig_c && dig_lt_Base};
-						const bool dig_B_cdl {c_es_dig_B && (longitud < Length-1)};
-						const bool tt_dig_B_cdl {(c==':')&&dig_lt_Base&&(longitud < Length-1)};
+						const bool dig_B_cdl {c_es_dig_B && (longitud <= Length-1)};
+						const bool tt_dig_B_cdl {(c==':')&&dig_lt_Base&&(longitud <= Length-1)};
 						const bool tf_dig_B_cdl {(c=='#')&&dig_lt_Base&&(longitud == Length-1)};
 						if (dig_B_cdl) {
 							digito *= 10;

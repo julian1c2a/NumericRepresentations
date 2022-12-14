@@ -38,7 +38,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include <fmt/format.h>
+//#include <fmt/format.h>
 
 #include <array>
 #include <vector>
@@ -559,7 +559,14 @@ unsigned long long atoull(char* text) noexcept {
 		constexpr SIG_UINT_T maximo{maxbase<UINT_T>()};
 		constexpr SIG_UINT_T uno{1};
 		constexpr SIG_UINT_T base{maximo+uno};
-		constexpr long double raiz_real{std::sqrt(base)};
+		constexpr
+			long double raiz_real{
+				std::sqrt(
+					static_cast<long double>(
+						static_cast<SIG_UINT_T>(base)
+					)
+				)
+			};
 		return	static_cast<UINT_T>(std::floor(raiz_real));
 	}
 

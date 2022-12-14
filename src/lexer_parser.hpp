@@ -114,7 +114,7 @@ namespace lex {
     return ((in == '+')||(in == '-'));
   }
 
-  NumRepr::sign_e sign_value(char in) {
+  typename NumRepr::sign_e sign_value(char in) {
     if (in == '+')
       return NumRepr::sign_e::vplus;
     else

@@ -6,7 +6,8 @@
 
 namespace NumRepr {
 
-template<type_traits::allowable_base_type_c UINT_T,UINT_T B,std::size_t LE,std::size_t LF>
+template<	type_traits::uint_type_for_radix_c UINT_T,
+					UINT_T B,std::size_t LE,std::size_t LF		>
 	requires (type_traits::suitable_base<UINT_T,B>() && (LE>0))
 struct nat_rat_fixed_reg_t {
 	using dig_t = dig_t<UINT_T,B>;

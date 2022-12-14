@@ -4,14 +4,50 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>14-12-2022 at 10:48.56</u><br />
-Build ended on: <u>14-12-2022 at 10:48.58</u><p />
+Build started on: <u>14-12-2022 at 15:26.30</u><br />
+Build ended on: <u>14-12-2022 at 15:26.32</u><p />
 <b>-------------- Build: Debug in NumericRepresentations (compiler: GNU GCC Compiler)---------------</b><br />
-g++.exe -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -m64 -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -IC:\msys64\mingw64\include\c++ -c C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp -o obj\Debug\src\pruebas_dig_t.o<br />
-g++.exe  -o bin\Debug\NumericRepresentations.exe obj\Debug\src\pruebas_dig_t.o  -static-libstdc++ -static-libgcc -static -m64 -static-libstdc++ -static-libgcc -static -m64 -fopenmp<br />
-Output file is bin\Debug\NumericRepresentations.exe with size 2,77 MB<br />
+g++.exe -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -Winline -Wunreachable-code -Wmissing-declarations -Wmain -pedantic -Wall -fPIC -m64 -std=c++20 -march=corei7-avx -Wmissing-include-dirs -Wzero-as-null-pointer-constant -IC:\msys64\mingw64\bin -Ic:\msys64\mingw64\ -IC:\msys64 -IC:\msys64\clang64 -IC:\msys64\clang64\bin -IC:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src -IC:\Users\Julian\Dropbox\GitHub\NumericRepresentations -c C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp -o obj\Debug\src\pruebas_dig_t.o<br />
+In file included from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\dig_t.hpp:6,<br />
+                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:4,<br />
+                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:1:<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:72:8: warning: no previous declaration for 'bool NumRepr::lex::is_digit(char)' [-Wmissing-declarations]</font><br />
+   72 |   bool is_digit(char in) {<br />
+      |        ^~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:76:10: warning: no previous declaration for 'NumRepr::size_t NumRepr::lex::digit_value(char)' [-Wmissing-declarations]</font><br />
+   76 |   size_t digit_value(char in) {<br />
+      |          ^~~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:80:8: warning: no previous declaration for 'bool NumRepr::lex::is_valid_char(char)' [-Wmissing-declarations]</font><br />
+   80 |   bool is_valid_char(char in) {<br />
+      |        ^~~~~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:84:8: warning: no previous declaration for 'bool NumRepr::lex::char_value(char)' [-Wmissing-declarations]</font><br />
+   84 |   bool char_value(char in) {<br />
+      |        ^~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:93:8: warning: no previous declaration for 'bool NumRepr::lex::is_separator(char)' [-Wmissing-declarations]</font><br />
+   93 |   bool is_separator(char in) {<br />
+      |        ^~~~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:97:8: warning: no previous declaration for 'bool NumRepr::lex::is_end_of_number(char)' [-Wmissing-declarations]</font><br />
+   97 |   bool is_end_of_number(char in) {<br />
+      |        ^~~~~~~~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:101:8: warning: no previous declaration for 'bool NumRepr::lex::is_whitespace(char)' [-Wmissing-declarations]</font><br />
+  101 |   bool is_whitespace(char in) {<br />
+      |        ^~~~~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:105:8: warning: no previous declaration for 'bool NumRepr::lex::is_end_descriptor(char)' [-Wmissing-declarations]</font><br />
+  105 |   bool is_end_descriptor(char in) {<br />
+      |        ^~~~~~~~~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:109:8: warning: no previous declaration for 'bool NumRepr::lex::is_radix_descriptor(char)' [-Wmissing-declarations]</font><br />
+  109 |   bool is_radix_descriptor(char in) {<br />
+      |        ^~~~~~~~~~~~~~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:113:8: warning: no previous declaration for 'bool NumRepr::lex::is_sign(char)' [-Wmissing-declarations]</font><br />
+  113 |   bool is_sign(char in) {<br />
+      |        ^~~~~~~<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:117:28: warning: no previous declaration for 'NumRepr::sign_e NumRepr::lex::sign_value(char)' [-Wmissing-declarations]</font><br />
+  117 |   typename NumRepr::sign_e sign_value(char in) {<br />
+      |                            ^~~~~~~~~~<br />
+g++.exe -LC:\msys64\mingw64\lib -o bin\Debug\NumericRepresentations.exe obj\Debug\src\pruebas_dig_t.o  -static-libstdc++ -static-libgcc -static -m64 -static-libstdc++ -static-libgcc -static -m64<br />
+Output file is bin\Debug\NumericRepresentations.exe with size 2,76 MB<br />
 <font color="#0000ff">Process terminated with status 0 (0 minute(s), 2 second(s))</font><br />
-<font color="#0000ff">0 error(s), 0 warning(s) (0 minute(s), 2 second(s))</font><br />
+<font color="#0000ff">0 error(s), 11 warning(s) (0 minute(s), 2 second(s))</font><br />
 </tt>
 </body>
 </html>

@@ -6,12 +6,13 @@
 using namespace std;
 
 using par_dir_t 						= std::pair< uchint , uchint >;
-using func_refn2digs_prim_t 	= std::map< std::string , par_dir_t >;
-using func_refdig_prim_t 		    = std::map< std::string , par_dir_t >;
+using func_refn2digs_prim_t = std::map< std::string , par_dir_t >;
+using func_refdig_prim_t 		= std::map< std::string , par_dir_t >;
 
 namespace details {
 
-template<typename aT , template<uchint> class T , usint num_vars , uchint B>
+template<	typename aT , template<uchint> class T ,
+					usint num_vars , uchint B								>
 struct cp_new {
 private:
 	static aT* contruye_lista_de_variables(aT* var_list) {
