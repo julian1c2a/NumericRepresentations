@@ -5,81 +5,65 @@
 
 namespace NumRepr{
 
-template<type_traits::allowable_base_type_c UINT_T,UINT_T B>
+template<type_traits::uint_type_for_radix_c UINT_T,UINT_T B>
 	requires (type_traits::suitable_base<UINT_T,B>())
-struct base_num_t {
+struct base_num_t : public basic_string<dig_t<UINT_T,B>> {
 public:
-	basic_string<dig_t<UINT_T,B>> m_dstr;
+	using 	dig_t 					= dig_t<UINT_T,B>;
+	using 	base_t 					= basic_string<dig_t>;
+	using 	str_iterator 		= typename base_t::iterator;
+	using 	c_str_iterator 	= typename base_t::const_iterator;
+	using 	r_str_iterator 	= typename base_t::reverse_iterator;
+	using 	cr_str_iterator	= typename base_t::const_reverse_iterator;
 public:
-	using 						dig_t = dig_t<UINT_T,B>;
-	using 						nbstr = basic_string<dig_t>;
-	using 						striterator 	= typename nbstr::iterator;
-	using 						cstriterator 	= typename nbstr::const_iterator;
-	using 						rstriterator 	= typename nbstr::reverse_iterator rstriterator;
-	using 						crstriterator	= typename nbstr::const_reverse_iterator crstriterator;
-public:
-	inline constexpr size_t size() const noexcept {
-		return m_dstr.size();
-	}
+	inline constexpr size_t size() const noexcept
+	{ return (static_cast<const base_t*const>(this)->size()); }
 
-	inline constexpr void resize(size_t arg) noexcept {
-		m_dstr.resize(arg); return;
-	}
+	inline constexpr void resize(size_t arg) noexcept
+	{	(static_cast<base_t*const>(this)->resize()); }
 
 	inline constexpr dig_t operator[](ullint arg) const noexcept {
-		dig_t ret = m_dstr[arg];
-		return m_dstr[arg];
+		return (static_cast<const base_t* const>(this)->operator[](arg));
 	}
 
 	inline constexpr dig_t & operator[](ullint arg) noexcept {
-		dig_t ret = m_dstr[arg];
-		return (m_dstr[arg]);
+		return (static_cast<base_t* const>(this)->operator[](arg));
 	}
 
-	inline constexpr void clear() noexcept {
-		m_dstr.clear();
-		return;
-	}
+	inline constexpr void clear() noexcept
+	{ static_cast<base_t* const>(this)->clear(); }
 
-	inline constexpr void push_back(dig_t arg) noexcept {
-		m_dstr.push_back(arg);
-		return;
-	}
+	inline constexpr void push_back(dig_t arg) noexcept
+	{ static_cast<base_t* const>(this)->push_back(arg);	}
 
-	inline constexpr void insert(size_t pos,size_t tam,dig_t parg) noexcept {
-		m_dstr.insert(pos,tam,parg);
-		return;
-	}
+	inline constexpr void insert(size_t pos,size_t tam,dig_t parg) noexcept
+	{	static_cast<base_t* const>(this)->insert(pos,tam,parg); }
 
-	inline constexpr num_basic_t substr ( size_t pos , size_t n ) const noexcept {
-		m_dstr.substr(pos,n);
-		return (*this);
-	}
+	inline constexpr num_basic_t substr ( size_t pos , size_t n ) const noexcept
+	{	static_cast<const base_t* const>(this)->substr(pos,n);
+		return (*this);																													}
 
-	inline constexpr void push_front(dig_t parg) noexcept {
-		m_dstr.insert(0,1,parg);
-		return;
-	}
+	inline constexpr void push_front(dig_t parg) noexcept
+	{	static_cast<const base_t* const>(this)->insert(0,1,parg);}
 
-	inline constexpr striterator begin() noexcept {
-		return m_dstr.begin();
-	}
-	inline constexpr cstriterator end() const noexcept {
-		return m_dstr.end();
-	}
-	inline constexpr rstriterator rbegin() noexcept {
-		return m_dstr.rbegin();
-	}
-	inline constexpr crstriterator rend() const noexcept {
-		return m_dstr.rend();
-	}
-	inline constexpr void erase(size_t pos,size_t tam) noexcept {
-		m_dstr.erase(pos,tam);
-		return;
-	}
+	inline constexpr str_iterator begin() noexcept
+	{	return static_cast<base_t* const>(this)->begin(); }
 
+	inline constexpr c_str_iterator end() const noexcept
+	{	return static_cast<const base_t* const>(this)->end(); }
+
+	inline constexpr r_str_iterator rbegin() noexcept
+	{	return static_cast<base_t* const>(this)->rbegin(); }
+
+	inline constexpr cr_str_iterator rend() const noexcept
+	{	return static_cast<const base_t* const>(this)->rbegin(); }
+
+	inline constexpr void erase(size_t pos,size_t tam) noexcept
+	{	return static_cast<base_t* const>(this)->erase(pos,tam); }
+
+	// OPERADOR DE CONCATENACION
 	inline constexpr const num_basic_t & operator &= (const num_basic_t & arg) noexcept {
-		m_dstr += arg.m_dstr;
+		(*(static_cast<base_t* const>(this))) += arg;
 		return (*this);
 	}
 };
