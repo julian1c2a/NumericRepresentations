@@ -1568,50 +1568,204 @@ public :
 };
 
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
-  requires ((suitable_base<UINT_T,B>())&&(L > 0))
-using base_N_t = reg_digs_t<dig_t<UINT_T,B>,N>
-
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-base_t operator << (const base_t& larg, size_t n) noexcept
+reg_digs_t<UINT_T,B,N> operator << (const reg_digs_t<UINT_T,B,N>& larg, size_t n) noexcept
 {
-	base_t cparg{larg};
-	for(std::int32_t ix{L-1-n} ; ix > -1 ; --ix) {
+	reg_digs_t<UINT_T,B,N> cparg{larg};
+	for(std::int32_t ix{N-1-n} ; ix > -1 ; --ix) {
 		cparg[ix+n]	= larg[ix];
 	}
 	for(std::int32_t ix{0} ; ix < n ; ++ix) {
-		cparg[ix]		= dig_0();
+		cparg[ix]		= dig_t<UINT_T,B>::dig_0();
 	}
-	return std::move(cparg);
+	return cparg;
 }
 
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-const base_t & operator <<= (base_t& larg, size_t n) noexcept
+const reg_digs_t<UINT_T,B,N> & operator <<= (reg_digs_t<UINT_T,B,N>& larg, size_t n) noexcept
 {
-	for(std::int32_t ix{L-1-n} ; ix > -1 ; --ix) {
+	for(std::int32_t ix{N-1-n} ; ix > -1 ; --ix) {
 		larg[ix+n]	= larg[ix];
 	}
 	for(std::int32_t ix{0} ; ix < n ; ++ix) {
-		larg[ix]	= dig_0();
+		larg[ix]	= dig_t<UINT_T,B>::dig_0();
 	}
 	return (larg);
 }
 
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-const base_t & operator >>= (base_t& larg, size_t n) noexcept
+const reg_digs_t<UINT_T,B,N> & operator >>= (reg_digs_t<UINT_T,B,N>& larg, size_t n) noexcept
 {
-	for(std::int32_t ix{0} ; ix < L-n ; ++ix) {
+	for(std::int32_t ix{0} ; ix < N-n ; ++ix) {
 		larg[ix] 		= larg[ix+n];
 	}
-	for(std::int32_t ix{L-n} ; ix < L ; ++ix) {
-		larg[ix]		=	dig_0();
+	for(std::int32_t ix{N-n} ; ix < N ; ++ix) {
+		larg[ix]		=	dig_t<UINT_T,B>::dig_0();
 	}
 	return (larg);
 }
 
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-base_t operator >> (const base_t & larg, size_t n) noexcept
+reg_digs_t<UINT_T,B,N> operator >> (const reg_digs_t<UINT_T,B,N> & larg, size_t n) noexcept
 {
-	return std::move(base_t{larg}.ref_data() >>= n);
+	return (reg_digs_t<UINT_T,B,N>{larg}.ref_data() >>= n);
+}
+
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
+constexpr inline
+const reg_digs_t<UINT_T,B,N> & operator |= (
+						reg_digs_t<UINT_T,B,N> & larg,
+						const reg_digs_t<UINT_T,B,N> & rarg
+) noexcept {
+	for(size_t ix{0} ; ix < N ; ++ix) {
+		larg[ix] |= rarg[ix];
+	}
+	return (larg);
+}
+
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
+constexpr inline
+reg_digs_t<UINT_T,B,N> operator | (
+			const reg_digs_t<UINT_T,B,N> & larg,
+			const reg_digs_t<UINT_T,B,N> & rarg
+) noexcept {
+	reg_digs_t ret{larg};
+	ret |= rarg;
+	return (ret);
+}
+
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
+constexpr inline
+const reg_digs_t<UINT_T,B,N> & operator &= (
+	reg_digs_t<UINT_T,B,N> & larg,
+	const reg_digs_t<UINT_T,B,N> & rarg
+) noexcept {
+	for(size_t ix{0} ; ix < N ; ++ix) {
+		larg[ix] &= rarg[ix];
+	}
+	return (larg);
+}
+
+template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+  requires ((suitable_base<UINT_T,B>())&&(N > 0))
+constexpr inline
+reg_digs_t<UINT_T,B,N> operator & (
+		reg_digs_t<UINT_T,B,N> & larg,
+		const reg_digs_t<UINT_T,B,N> & rarg
+) noexcept {
+	reg_digs_t<UINT_T,B,N> ret{larg};
+	ret &= rarg;
+	return (ret);
+}
+
+
+
+/// PARA LA DIVISION
+
+template<typename UINT_T,UINT_T B,size_t N,size_t M>
+	requires (N > 0)&&(M > 0)
+constexpr inline
+std::array<reg_digs_t<UINT_T,B,std::max(N,M)>,2>
+fediv(
+	const reg_digs_t<UINT_T,B,N> & larg,
+	const reg_digs_t<UINT_T,B,M> & rarg
+) noexcept {
+
+	constexpr size_t MaxParam = std::max(N,M);
+	using base_t = reg_digs_t<UINT_T,B,MaxParam>;
+	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+
+	using ret_type = std::array<base_t,2>;
+	using ret_aprox_type = std::array<SIG_UINT_T,2>;
+
+	base_t dndo{larg};
+	base_t dsor{rarg};
+
+	const int32_t dsor_MSDig{index_of_MSDig(larg)};
+		/// MOST SIGNIFICANT DIGIT DEL DIVISOR [DEL NUMERO NO DEL TIPO]
+	const int32_t dndo_MSDig{index_of_MSDig(rarg)};
+		/// MOST SIGNIFICANT DIGIT DEL DIVIDENDO [DEL NUMERO NO DEL TIPO]
+	const size_t  dist_dndo_dsor{std::abs(dndo_MSDig-dndo_MSDig)};
+
+	base_t rem{base_t::regd_0()};
+	base_t coc{base_t::regd_0()};
+
+	if (is_0(dsor)) {
+		ret_type ret;
+		ret[0] = std::move(coc);
+		ret[1] = std::move(rem);
+		return ret;
+	}
+	else if (is_1(dsor)) {
+		ret_type ret;
+		ret[0] = dndo;
+		ret[1].set_0();
+		return ret;
+	}
+	else if (dndo < dsor) {
+		ret_type ret;
+		ret[0].set_0();
+		ret[1] = dndo;
+		return ret;
+	}
+	else if (dndo == dsor) {
+		ret_type ret;
+		ret[0].set_1();
+		ret[1].set_0();
+		return ret;
+	}
+	else {
+		int32_t pl_dndo{dndo_MSDig-dsor_MSDig+1};
+		for(int32_t ix{dsor_MSDig},iy{dndo_MSDig} ; ix > -1 ; --ix,--iy) {
+			rem[ix] = dndo[iy];
+		}
+
+		for(size_t numloops{0} ; numloops < dist_dndo_dsor ; ++numloops)
+		{
+			if (rem == dsor) {
+				coc <<= 1;
+				coc[0] = base_t::dig_1();
+				rem = base_t::regd_0();
+				--pl_dndo;
+				rem[0] = dndo[pl_dndo];
+			}
+			else if (rem < dsor) {
+				coc <<= 1;
+				coc[0] = base_t::dig_0();
+				rem <= 1;
+				--pl_dndo;
+				rem[0] = dndo[pl_dndo];
+			}
+			///	else if (rem >= dsor*dig_B()) {
+			///		este caso no se deberia de dar nunca
+			///	}
+			else {
+				auto ret{aprox_coc_rem<N>(rem,dsor)};
+				SIG_UINT_T coc_dig{ret[0]};
+				SIG_UINT_T rem_dig{ret[1]};
+
+				coc <<= 1; 	// coc = coc * B
+				coc[0] = dig_t(coc_dig); // coc = coc + D  ; B-1 >= D > 1
+				--pl_dndo;
+				rem <<= 1;
+				rem[0] = dndo[pl_dndo];
+			}
+		}
+		std::array<reg_digs_t<UINT_T,B,std::max(N,M)>,2> ret;
+		ret[0] = coc;
+		ret[1] = rem;
+		return ret;
+	}
 }
 
 

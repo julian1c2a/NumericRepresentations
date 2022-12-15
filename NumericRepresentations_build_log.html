@@ -4,16 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>15-12-2022 at 10:51.35</u><br />
-Build ended on: <u>15-12-2022 at 10:51.37</u><p />
+Build started on: <u>15-12-2022 at 13:22.03</u><br />
+Build ended on: <u>15-12-2022 at 13:22.05</u><p />
 <b>-------------- Build: Debug in NumericRepresentations (compiler: GNU GCC Compiler)---------------</b><br />
 g++.exe -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -Winline -Wunreachable-code -Wmissing-declarations -Wmain -pedantic -Wall -fPIC -m64 -std=c++20 -march=corei7-avx -Wmissing-include-dirs -Wzero-as-null-pointer-constant -IC:\msys64\mingw64\bin -Ic:\msys64\mingw64\ -IC:\msys64 -IC:\msys64\clang64 -IC:\msys64\clang64\bin -IC:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src -IC:\Users\Julian\Dropbox\GitHub\NumericRepresentations -c C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp -o obj\Debug\src\pruebas_dig_t.o<br />
 In file included from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:1:<br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2192:25: warning: multi-line comment [-Wcomment]</font><br />
- 2192 |                         ///&lt; PRECONDITIONS : ARG != 0 AND ARG != 1 &gt;\\\<br />
-      |                         ^<br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2222:19: warning: multi-line comment [-Wcomment]</font><br />
- 2222 |                 } ///&lt; POSTCONDICION RET[N-1] == (DIG_1() | DIG_0())                                                                    &gt;\\\<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2180:19: warning: multi-line comment [-Wcomment]</font><br />
+ 2180 |                 } ///&lt; POSTCONDICION RET[N-1] == (DIG_1() | DIG_0())                                                                    &gt;\\\<br />
       |                   ^<br />
 In file included from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\dig_t.hpp:6,<br />
                  from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:4,<br />
@@ -51,915 +48,298 @@ In file included from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\
 <font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\lexer_parser.hpp:117:28: warning: no previous declaration for 'NumRepr::sign_e NumRepr::lex::sign_value(char)' [-Wmissing-declarations]</font><br />
   117 |   typename NumRepr::sign_e sign_value(char in) {<br />
       |                            ^~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1571:1: error: 'base_t' does not name a type</font><br />
- 1571 | base_t operator &lt;&lt; (const base_t&amp; larg, size_t n) noexcept<br />
-      | ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1584:7: error: 'base_t' does not name a type</font><br />
- 1584 | const base_t &amp; operator &lt;&lt;= (base_t&amp; larg, size_t n) noexcept<br />
-      |       ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1596:7: error: 'base_t' does not name a type</font><br />
- 1596 | const base_t &amp; operator &gt;&gt;= (base_t&amp; larg, size_t n) noexcept<br />
-      |       ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1608:1: error: 'base_t' does not name a type</font><br />
- 1608 | base_t operator &gt;&gt; (const base_t &amp; larg, size_t n) noexcept<br />
-      | ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1823:24: error: 'static constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator|=(base_t&amp;, const base_t&amp;)' must be either a non-static member function or a non-member function</font><br />
- 1823 |         const base_t &amp; operator |= (base_t &amp; larg,const base_t &amp; rarg) noexcept<br />
-      |                        ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1832:16: error: 'static constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator|(const base_t&amp;, const base_t&amp;)' must be either a non-static member function or a non-member function</font><br />
- 1832 |         base_t operator | (const base_t &amp; larg,const base_t &amp; rarg) noexcept<br />
-      |                ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1840:24: error: 'static constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator&amp;=(base_t&amp;, const base_t&amp;)' must be either a non-static member function or a non-member function</font><br />
- 1840 |         const base_t &amp; operator &amp;= (base_t &amp; larg,const base_t &amp; rarg) noexcept<br />
-      |                        ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1849:16: error: 'static constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator&amp;(base_t&amp;, const base_t&amp;)' must be either a non-static member function or a non-member function</font><br />
- 1849 |         base_t operator &amp; (base_t &amp; larg,const base_t &amp; rarg) noexcept<br />
-      |                ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1917:61: error: expected initializer before 'noexcept'</font><br />
- 1917 |                 &gt;                                           noexcept<br />
-      |                                                             ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2079:50: error: expected initializer before 'noexcept'</font><br />
- 2079 |                 &gt;                                noexcept<br />
-      |                                                  ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2198:25: error: expected initializer before 'base_N_t'</font><br />
- 2198 |                         base_N_t&lt;N&gt; cparg{arg};<br />
-      |                         ^~~~~~~~<br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2198:47: warning: extra ';' [-Wpedantic]</font><br />
- 2198 |                         base_N_t&lt;N&gt; cparg{arg};<br />
-      |                                               ^<br />
-      |                                               -<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2199:25: error: expected unqualified-id before 'if'</font><br />
- 2199 |                         if ((cparg[0]&lt;= dig_t{B/2})||(is_any_B_pow(cparg))) {<br />
-      |                         ^~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2199:51: error: expected unqualified-id before ')' token</font><br />
- 2199 |                         if ((cparg[0]&lt;= dig_t{B/2})||(is_any_B_pow(cparg))) {<br />
-      |                                                   ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2203:25: error: expected unqualified-id before 'else'</font><br />
- 2203 |                         else if (cparg[N-1].is_not_Bm1()) {<br />
-      |                         ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2208:25: error: expected unqualified-id before 'else'</font><br />
- 2208 |                         else {<br />
-      |                         ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2222:18: error: expected ';' after struct definition</font><br />
- 2222 |                 } ///&lt; POSTCONDICION RET[N-1] == (DIG_1() | DIG_0())                                                                    &gt;\\\<br />
-      |                  ^<br />
-      |                  ;<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t* const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::data()':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:308:48: error: there are no arguments to 'base_cthis' that depend on a template parameter, so a declaration of 'base_cthis' must be available [-fpermissive]</font><br />
-  308 |         base_t* const data() noexcept {return (base_cthis());}<br />
-      |                                                ^~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:308:48: note: (if you use '-fpermissive', G++ will accept your code, but allowing the use of an undeclared name is deprecated)<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::normalize(Ints_type ...)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:408:52: error: 'utility' has not been declared</font><br />
-  408 |                 using pack_type         = typename utility::pack2array&lt;Ints_type...&gt;;<br />
-      |                                                    ^~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:411:46: error: 'pack_type' has not been declared</font><br />
-  411 |                 using unique_type = typename pack_type::elem_type;<br />
-      |                                              ^~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:413:34: error: a variable cannot be declared 'consteval'</font><br />
-  413 |                 consteval size_t pack_sz{pack_type::pack_size()};<br />
-      |                                  ^~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:413:42: error: 'pack_type' has not been declared</font><br />
-  413 |                 consteval size_t pack_sz{pack_type::pack_size()};<br />
-      |                                          ^~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:427:32: error: using-declaration may not name namespace 'NumRepr::type_traits'</font><br />
-  427 |                 using NumRepr::type_traits;<br />
-      |                                ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:431:61: error: 'unique_type' was not declared in this scope</font><br />
-  431 |                                         unsigned_integral_c&lt;unique_type&gt;<br />
-      |                                                             ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:431:41: error: template argument 1 is invalid</font><br />
-  431 |                                         unsigned_integral_c&lt;unique_type&gt;<br />
-      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:431:41: error: template argument 1 is invalid</font><br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:433:49: error: 'is_unsigned_sz_gt_v' was not declared in this scope</font><br />
-  433 |                                                 is_unsigned_sz_gt_v&lt;UINT_T,unique_type&gt;,<br />
-      |                                                 ^~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:433:87: error: wrong number of template arguments (2, should be 3)</font><br />
-  433 |                                                 is_unsigned_sz_gt_v&lt;UINT_T,unique_type&gt;,<br />
-      |                                                                                       ^<br />
-In file included from C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:57,<br />
-                 from C:/msys64/mingw64/include/c++/12.2.0/bits/exception_ptr.h:43,<br />
-                 from C:/msys64/mingw64/include/c++/12.2.0/exception:168,<br />
-                 from C:/msys64/mingw64/include/c++/12.2.0/ios:39,<br />
-                 from C:/msys64/mingw64/include/c++/12.2.0/istream:38,<br />
-                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\basic_types.hpp:2,<br />
-                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\auxiliary_types.hpp:4,<br />
-                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\auxiliary_functions.hpp:4,<br />
-                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\dig_t.hpp:4:<br />
-C:/msys64/mingw64/include/c++/12.2.0/type_traits:2618:11: note: provided for 'template&lt;bool _Cond, class _Iftrue, class _Iffalse&gt; using conditional_t = typename std::conditional::type'<br />
- 2618 |     using conditional_t = typename conditional&lt;_Cond, _Iftrue, _Iffalse&gt;::type;<br />
-      |           ^~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:436:41: error: wrong number of template arguments (4, should be 3)</font><br />
-  436 |                                         &gt;<br />
-      |                                         ^<br />
-C:/msys64/mingw64/include/c++/12.2.0/type_traits:2618:11: note: provided for 'template&lt;bool _Cond, class _Iftrue, class _Iffalse&gt; using conditional_t = typename std::conditional::type'<br />
- 2618 |     using conditional_t = typename conditional&lt;_Cond, _Iftrue, _Iffalse&gt;::type;<br />
-      |           ^~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:437:41: error: expected identifier before ',' token</font><br />
-  437 |                                         ,typename std::conditional_t&lt;<br />
-      |                                         ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:443:28: error: 'SUInt_type' was not declared in this scope; did you mean 'Ints_type'?</font><br />
-  443 |                 std::array&lt;SUInt_type,L&gt; ret_array{digits_pow_i...};<br />
-      |                            ^~~~~~~~~~<br />
-      |                            Ints_type<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:443:40: error: template argument 1 is invalid</font><br />
-  443 |                 std::array&lt;SUInt_type,L&gt; ret_array{digits_pow_i...};<br />
-      |                                        ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:446:50: error: invalid types 'int[NumRepr::size_t {aka long long unsigned int}]' for array subscript</font><br />
-  446 |                         ret[ix] = dig_t(ret_array[ix]);<br />
-      |                                                  ^<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In constructor 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::nat_reg_digs_t(nat_reg_N_digs_t&lt;N&gt;&amp;&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:471:47: error: there are no arguments to 'argbase_this' that depend on a template parameter, so a declaration of 'argbase_this' must be available [-fpermissive]</font><br />
-  471 |                 base_t{move_arg_N(std::move(*(argbase_this())))} {}<br />
-      |                                               ^~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::assign(base_t&amp;, Int_Type)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:733:43: error: expected ';' before '(' token</font><br />
-  733 |                 using type_traits::maxbase();<br />
-      |                                           ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:733:44: error: expected primary-expression before ')' token</font><br />
-  733 |                 using type_traits::maxbase();<br />
-      |                                            ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:734:27: error: 'int128_t' does not name a type; did you mean 'uint128_t'?</font><br />
-  734 |                 constexpr int128_t B_128t_v{static_cast&lt;int128_t&gt;(B)};<br />
-      |                           ^~~~~~~~<br />
-      |                           uint128_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:736:42: error: 'int128_t' was not declared in this scope; did you mean 'uint128_t'?</font><br />
-  736 |                                 (maxbase&lt;int128_t&gt;()/B_128t_v) &gt; 0<br />
-      |                                          ^~~~~~~~<br />
-      |                                          uint128_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:736:54: error: 'B_128t_v' was not declared in this scope</font><br />
-  736 |                                 (maxbase&lt;int128_t&gt;()/B_128t_v) &gt; 0<br />
-      |                                                      ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:739:34: error: expected ';' before 'creg_g'</font><br />
-  739 |                         int128_t creg_g{static_cast&lt;int128_t&gt;(arg)};<br />
-      |                                  ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:740:34: error: expected ';' before 'BasePowIx'</font><br />
-  740 |                         int128_t BasePowIx{B_128t_v};<br />
-      |                                  ^~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:743:41: error: 'BasePowIx' was not declared in this scope</font><br />
-  743 |                                         BasePowIx *= B_128t_v;<br />
-      |                                         ^~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:747:32: error: 'creg_g' was not declared in this scope</font><br />
-  747 |                         while (creg_g &lt; 0) {<br />
-      |                                ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:748:43: error: 'BasePowIx' was not declared in this scope</font><br />
-  748 |                                 creg_g += BasePowIx;<br />
-      |                                           ^~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:751:49: error: 'creg_g' was not declared in this scope</font><br />
-  751 |                                 larg[k] = dig_t(creg_g%B_128t_v);<br />
-      |                                                 ^~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator=(Int_Type)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:764:110: error: 'conditional_v' is not a member of 'std'; did you mean 'conditional_t'?</font><br />
-  764 |                                                                                                         std::conditional_v&lt;<br />
-      |                                                                                                              ^~~~~~~~~~~~~<br />
-      |                                                                                                              conditional_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:767:129: error: 'type_trait' was not declared in this scope; did you mean 'type_traits'?</font><br />
-  767 |                                                                                                                                 type_trait::sig_UInt_for_Sint&lt;Int_Type&gt;<br />
-      |                                                                                                                                 ^~~~~~~~~~<br />
-      |                                                                                                                                 type_traits<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:765:126: error: parse error in template argument list</font><br />
-  765 |                                                                                                                 type_traits::ge_sz_v&lt;<br />
-      |                                                                                                                              ^~~~~~~~<br />
-  766 |                                                                                                                                 UINT_T,<br />
-      |                                                                                                                                 ~~~~~~~<br />
-  767 |                                                                                                                                 type_trait::sig_UInt_for_Sint&lt;Int_Type&gt;<br />
-      |                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
-  768 |                                                                                                                 &gt;,<br />
-      |                                                                                                                 ~             <br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:771:105: error: wrong number of template arguments (4, should be 3)</font><br />
-  771 |                                                                                                         &gt;,<br />
-      |                                                                                                         ^<br />
-C:/msys64/mingw64/include/c++/12.2.0/type_traits:2618:11: note: provided for 'template&lt;bool _Cond, class _Iftrue, class _Iffalse&gt; using conditional_t = typename std::conditional::type'<br />
- 2618 |     using conditional_t = typename conditional&lt;_Cond, _Iftrue, _Iffalse&gt;::type;<br />
-      |           ^~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:762:40: error: '&lt;expression error&gt;' in namespace 'std' does not name a type</font><br />
-  762 |                 using UInt_Type = std::conditional_t&lt;<br />
-      |                                        ^~~~~~~~~~~~~~<br />
-  763 |                                                                                                 std::is_signed_v&lt;Int_Type&gt;,<br />
-      |                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
-  764 |                                                                                                         std::conditional_v&lt;<br />
-      |                                                                                                         ~~~~~~~~~~~~~~~~~~~<br />
-  765 |                                                                                                                 type_traits::ge_sz_v&lt;<br />
-      |                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~<br />
-  766 |                                                                                                                                 UINT_T,<br />
-      |                                                                                                                                 ~~~~~~~<br />
-  767 |                                                                                                                                 type_trait::sig_UInt_for_Sint&lt;Int_Type&gt;<br />
-      |                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
-  768 |                                                                                                                 &gt;,<br />
-      |                                                                                                                 ~~<br />
-  769 |                                                                                                                         UINT_T,<br />
-      |                                                                                                                         ~~~~~~~<br />
-  770 |                                                                                                                         type_trait::sig_UInt_for_Sint&lt;Int_Type&gt;<br />
-      |                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
-  771 |                                                                                                         &gt;,<br />
-      |                                                                                                         ~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:781:17: error: 'UInt_Type' was not declared in this scope; did you mean 'Int_Type'?</font><br />
-  781 |                 UInt_Type argc = static_cast&lt;UInt_Type&gt;((arg&lt;0)?-arg:arg);<br />
-      |                 ^~~~~~~~~<br />
-      |                 Int_Type<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:782:27: error: 'UInt_Type' does not name a type; did you mean 'Int_Type'?</font><br />
-  782 |                 constexpr UInt_Type Bc = static_cast&lt;UInt_Type&gt;(B);<br />
-      |                           ^~~~~~~~~<br />
-      |                           Int_Type<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:785:27: error: expected ';' before 'quotient'</font><br />
-  785 |                 UInt_Type quotient = argc / Bc;<br />
-      |                           ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:786:27: error: expected ';' before 'remainder'</font><br />
-  786 |                 UInt_Type remainder = argc % Bc;<br />
-      |                           ^~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:790:25: error: 'argc' was not declared in this scope; did you mean 'arg'?</font><br />
-  790 |                         argc = quotient;<br />
-      |                         ^~~~<br />
-      |                         arg<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:790:32: error: 'quotient' was not declared in this scope</font><br />
-  790 |                         argc = quotient;<br />
-      |                                ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:791:43: error: 'Bc' was not declared in this scope; did you mean 'B'?</font><br />
-  791 |                         quotient = argc / Bc;<br />
-      |                                           ^~<br />
-      |                                           B<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:795:26: error: 'argc' was not declared in this scope; did you mean 'arg'?</font><br />
-  795 |                 } while( argc != 0 );<br />
-      |                          ^~~~<br />
-      |                          arg<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_N_t&lt;(1 + M)&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::concat(dig_t, base_N_t&lt;N&gt;&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:857:41: error: 'N' was not declared in this scope</font><br />
-  857 |                 for(size_t ix{1} ; ix &lt; N+1 ; ++ix)<br />
-      |                                         ^<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator Int_Type() const':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:990:43: error: expected ';' before '(' token</font><br />
-  990 |                 using type_traits::maxbase();<br />
-      |                                           ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:990:44: error: expected primary-expression before ')' token</font><br />
-  990 |                 using type_traits::maxbase();<br />
-      |                                            ^<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr bool NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::is_0(base_N_t&lt;N&gt;&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1017:26: error: found ':' in nested-name-specifier, expected '::'</font><br />
- 1017 |                 for(elem : arg) {<br />
-      |                          ^<br />
-      |                          ::<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1017:21: error: 'elem' has not been declared</font><br />
- 1017 |                 for(elem : arg) {<br />
-      |                     ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1021:17: error: expected primary-expression before 'return'</font><br />
- 1021 |                 return true;<br />
-      |                 ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1021:17: error: expected ';' before 'return'</font><br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1021:17: error: expected primary-expression before 'return'</font><br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1021:17: error: expected ')' before 'return'</font><br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1017:20: note: to match this '('<br />
- 1017 |                 for(elem : arg) {<br />
-      |                    ^<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr std::conditional_t&lt;with_result_type, NumRepr::auxiliary_types::result_operation_t&lt;std::array&lt;NumRepr::dig_t&lt;UINT_T, B&gt;, L&gt;, NumRepr::binop_e::add, L&gt;, const std::array&lt;NumRepr::dig_t&lt;UINT_T, B&gt;, L&gt;&amp;&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::preincrement(base_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1451:39: error: 'ix' was not declared in this scope</font><br />
- 1451 |                                 ++arg[ix];<br />
-      |                                       ^~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator++()':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1477:37: error: 'm_dc' was not declared in this scope</font><br />
- 1477 |                 preincrement&lt;false&gt;(m_dc);<br />
-      |                                     ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator++(int)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1509:38: error: 'm_dc' was not declared in this scope</font><br />
- 1509 |                 postincrement&lt;false&gt;(m_dc);<br />
-      |                                      ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator--()':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1600:37: error: 'm_dc' was not declared in this scope</font><br />
- 1600 |                 predecrement&lt;false&gt;(m_dc);<br />
-      |                                     ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator--(int)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1632:38: error: 'm_dc' was not declared in this scope</font><br />
- 1632 |                 postdecrement&lt;false&gt;(m_dc);<br />
-      |                                      ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::mC_Bm1(base_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1653:26: error: 'this' is unavailable for static member functions</font><br />
- 1653 |                 return (*this);<br />
-      |                          ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::mC_B(base_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1659:24: error: 'm_dc' was not declared in this scope</font><br />
- 1659 |                 mC_Bm1(m_dc);<br />
-      |                        ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1660:21: error: 'this' is unavailable for static member functions</font><br />
- 1660 |                 ++(*this);<br />
-      |                     ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1661:26: error: 'this' is unavailable for static member functions</font><br />
- 1661 |                 return (*this);<br />
-      |                          ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::mC_B()':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1681:22: error: 'm_dc' was not declared in this scope</font><br />
- 1681 |                 mC_B(m_dc);<br />
-      |                      ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::mC_Bm1()':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1688:24: error: 'm_dc' was not declared in this scope</font><br />
- 1688 |                 mC_Bm1(m_dc);<br />
-      |                        ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::C_Bm1() const':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1695:45: error: 'm_dc' was not declared in this scope</font><br />
- 1695 |                 return nat_reg_digs_t{C_Bm1(m_dc)};<br />
-      |                                             ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::C_B() const':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1701:43: error: 'm_dc' was not declared in this scope</font><br />
- 1701 |                 return nat_reg_digs_t{C_B(m_dc)};<br />
-      |                                           ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator&lt;&lt;=(NumRepr::size_t)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1771:17: error: 'm_dc' was not declared in this scope</font><br />
- 1771 |                 m_dc &lt;&lt;= n;<br />
-      |                 ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator&gt;&gt;=(NumRepr::size_t)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1784:17: error: 'm_dc' was not declared in this scope</font><br />
- 1784 |                 m_dc &gt;&gt;= n;<br />
-      |                 ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::rem_B(NumRepr::size_t) const':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1791:42: error: 'm_dc' was not declared in this scope</font><br />
- 1791 |                 nat_reg_digs_t ret{rem_B(m_dc,n)};<br />
-      |                                          ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::m_rem_B(NumRepr::size_t)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1798:25: error: 'm_dc' was not declared in this scope</font><br />
- 1798 |                 m_rem_B(m_dc,n);<br />
-      |                         ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::mer_B(NumRepr::size_t) const':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1805:42: error: 'm_dc' was not declared in this scope</font><br />
- 1805 |                 nat_reg_digs_t ret{mer_B(m_dc,n)};<br />
-      |                                          ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::m_mer_B(NumRepr::size_t)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1812:25: error: 'm_dc' was not declared in this scope</font><br />
- 1812 |                 m_mer_B(m_dc,n);<br />
-      |                         ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator|=(const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1861:17: error: 'm_dc' was not declared in this scope</font><br />
- 1861 |                 m_dc |= arg.base_const_ref_cthis();<br />
-      |                 ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator&amp;=(const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1876:17: error: 'm_dc' was not declared in this scope</font><br />
- 1876 |                 m_dc &amp;= arg.base_const_ref_cthis();<br />
-      |                 ^~~~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp: In function 'constexpr std::array&lt;NumRepr::reg_digs_t&lt;UINT_T, B, std::max&lt;long long unsigned int&gt;(N, M)&gt;, 2&gt; NumRepr::fediv(const reg_digs_t&lt;UINT_T, B, N&gt;&amp;, const reg_digs_t&lt;UINT_T, B, M&gt;&amp;)':<br />
+<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1689:15: warning: typedef 'using ret_aprox_type = struct std::array&lt;typename NumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t&lt;UInt_t&gt;::type, 2&gt;' locally defined but not used [-Wunused-local-typedefs]</font><br />
+ 1689 |         using ret_aprox_type = std::array&lt;SIG_UINT_T,2&gt;;<br />
+      |               ^~~~~~~~~~~~~~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr std::conditional_t&lt;with_result_type, NumRepr::auxiliary_types::result_operation_t&lt;std::array&lt;NumRepr::dig_t&lt;UINT_T, B&gt;, L&gt;, NumRepr::binop_e::add, L&gt;, const std::array&lt;NumRepr::dig_t&lt;UINT_T, B&gt;, L&gt;&amp;&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::m_add(base_t&amp;, const dig_t&amp;)':<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1877:39: error: expected initializer before 'middle_max'</font><br />
+ 1877 |                 constexpr auto UINT_T middle_max{std::numeric_limits&lt;UINT_T&gt;::max()/2};<br />
+      |                                       ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1879:31: error: 'NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::dig_t' is not a template</font><br />
+ 1879 |                 using dig_t = dig_t&lt;uint_type,B&gt;;<br />
+      |                               ^~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1927:61: error: there are no arguments to 'dig_B' that depend on a template parameter, so a declaration of 'dig_B' must be available [-fpermissive]</font><br />
+ 1927 |                                 ret.result_content[0]   -= (dig_B()-rarg);<br />
+      |                                                             ^~~~~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1927:61: note: (if you use '-fpermissive', G++ will accept your code, but allowing the use of an undeclared name is deprecated)<br />
 C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_t&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::m_sub(base_t&amp;, const dig_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2013:37: error: 'arg' was not declared in this scope; did you mean 'larg'?</font><br />
- 2013 |                                 if (arg[ix].is_0()) {<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1971:37: error: 'arg' was not declared in this scope; did you mean 'larg'?</font><br />
+ 1971 |                                 if (arg[ix].is_0()) {<br />
       |                                     ^~~<br />
       |                                     larg<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2025:25: error: 'arg' was not declared in this scope; did you mean 'larg'?</font><br />
- 2025 |                 return (arg);<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:1983:25: error: 'arg' was not declared in this scope; did you mean 'larg'?</font><br />
+ 1983 |                 return (arg);<br />
       |                         ^~~<br />
       |                         larg<br />
 C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator+=(const dig_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2045:30: error: 'm_dc' was not declared in this scope</font><br />
- 2045 |                 m_add&lt;false&gt;(m_dc,rarg);<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2003:30: error: 'm_dc' was not declared in this scope</font><br />
+ 2003 |                 m_add&lt;false&gt;(m_dc,rarg);<br />
       |                              ^~~~<br />
 C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr const NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;&amp; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator-=(const dig_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2052:30: error: 'm_dc' was not declared in this scope</font><br />
- 2052 |                 m_sub&lt;false&gt;(m_dc,rarg);<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2010:30: error: 'm_dc' was not declared in this scope</font><br />
+ 2010 |                 m_sub&lt;false&gt;(m_dc,rarg);<br />
       |                              ^~~~<br />
 C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator+(const dig_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2059:43: error: 'm_dc' was not declared in this scope</font><br />
- 2059 |                 return nat_reg_digs_t{add(m_dc,rarg)};<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2017:43: error: 'm_dc' was not declared in this scope</font><br />
+ 2017 |                 return nat_reg_digs_t{add(m_dc,rarg)};<br />
       |                                           ^~~~<br />
 C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::operator-(const dig_t&amp;)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2065:43: error: 'm_dc' was not declared in this scope</font><br />
- 2065 |                 return nat_reg_digs_t{sub(m_dc,rarg)};<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2023:43: error: 'm_dc' was not declared in this scope</font><br />
+ 2023 |                 return nat_reg_digs_t{sub(m_dc,rarg)};<br />
       |                                           ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: At global scope:<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2229:17: error: 'base_N_t' does not name a type</font><br />
- 2229 |                 base_N_t&lt;N&gt; aprox_units_divB_n(const base_N_t&lt;N&gt;&amp; arg) noexcept<br />
-      |                 ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2250:16: error: 'SIG_UINT_T' was not declared in this scope; did you mean 'SIGINT'?</font><br />
- 2250 |     std::array&lt;SIG_UINT_T,2&gt; aprox_coc_rem(<br />
-      |                ^~~~~~~~~~<br />
-      |                SIGINT<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2250:28: error: template argument 1 is invalid</font><br />
- 2250 |     std::array&lt;SIG_UINT_T,2&gt; aprox_coc_rem(<br />
-      |                            ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2250:10: error: '&lt;expression error&gt;' in namespace 'std' does not name a type</font><br />
- 2250 |     std::array&lt;SIG_UINT_T,2&gt; aprox_coc_rem(<br />
-      |          ^~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2315:16: error: 'SIG_UINT_T' was not declared in this scope; did you mean 'SIGINT'?</font><br />
- 2315 |     std::array&lt;SIG_UINT_T,2&gt; aprox_coc_rem(<br />
-      |                ^~~~~~~~~~<br />
-      |                SIGINT<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2315:28: error: template argument 1 is invalid</font><br />
- 2315 |     std::array&lt;SIG_UINT_T,2&gt; aprox_coc_rem(<br />
-      |                            ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2315:10: error: '&lt;expression error&gt;' in namespace 'std' does not name a type</font><br />
- 2315 |     std::array&lt;SIG_UINT_T,2&gt; aprox_coc_rem(<br />
-      |          ^~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2397:20: error: 'base_N_t' was not declared in this scope</font><br />
- 2397 |         std::array&lt;base_N_t&lt;N&gt;,2&gt; fediv(const base_N_t&lt;N&gt; &amp; larg,const base_N_t&lt;N&gt; &amp; rarg)<br />
-      |                    ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2397:30: error: wrong number of template arguments (1, should be 2)</font><br />
- 2397 |         std::array&lt;base_N_t&lt;N&gt;,2&gt; fediv(const base_N_t&lt;N&gt; &amp; larg,const base_N_t&lt;N&gt; &amp; rarg)<br />
-      |                              ^<br />
-In file included from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\basic_types.hpp:43:<br />
-C:/msys64/mingw64/include/c++/12.2.0/array:99:12: note: provided for 'template&lt;class _Tp, long long unsigned int _Nm&gt; struct std::array'<br />
-   99 |     struct array<br />
-      |            ^~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2397:14: error: '&lt;expression error&gt;' in namespace 'std' does not name a type</font><br />
- 2397 |         std::array&lt;base_N_t&lt;N&gt;,2&gt; fediv(const base_N_t&lt;N&gt; &amp; larg,const base_N_t&lt;N&gt; &amp; rarg)<br />
-      |              ^~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2535:1: error: expected unqualified-id before 'public'</font><br />
- 2535 | public :<br />
-      | ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2546:34: error: class template placeholder 'NumRepr::dig_t' not permitted in this context</font><br />
- 2546 |                 auto operator - (dig_t arg) const noexcept<br />
-      |                                  ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2546:34: note: use 'auto' for an abbreviated function template<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2546:51: error: non-member function 'constexpr auto NumRepr::operator-(...)' cannot have cv-qualifier</font><br />
- 2546 |                 auto operator - (dig_t arg) const noexcept<br />
-      |                                                   ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2546:22: error: 'constexpr auto NumRepr::operator-(...)' must have an argument of class or enumerated type</font><br />
- 2546 |                 auto operator - (dig_t arg) const noexcept<br />
-      |                      ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2554:34: error: class template placeholder 'NumRepr::dig_t' not permitted in this context</font><br />
- 2554 |                 auto operator * (dig_t arg) const noexcept<br />
-      |                                  ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2554:34: note: use 'auto' for an abbreviated function template<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2554:51: error: non-member function 'constexpr auto NumRepr::operator*(...)' cannot have cv-qualifier</font><br />
- 2554 |                 auto operator * (dig_t arg) const noexcept<br />
-      |                                                   ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2554:22: error: 'constexpr auto NumRepr::operator*(...)' must have an argument of class or enumerated type</font><br />
- 2554 |                 auto operator * (dig_t arg) const noexcept<br />
-      |                      ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2563:39: error: 'base_N_t' does not name a type</font><br />
- 2563 |                 auto fediv&lt;N,1&gt;(const base_N_t&lt;N&gt;&amp; larg,const base_N_t&lt;1&gt;&amp; rarg)<br />
-      |                                       ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2563:47: error: expected ',' or '...' before '&lt;' token</font><br />
- 2563 |                 auto fediv&lt;N,1&gt;(const base_N_t&lt;N&gt;&amp; larg,const base_N_t&lt;1&gt;&amp; rarg)<br />
-      |                                               ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2564:21: error: 'res_base_N_op_t' does not name a type</font><br />
- 2564 |                  -&gt; res_base_N_op_t&lt;binop_e::fediv&gt;<br />
-      |                     ^~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2564:36: error: expected initializer before '&lt;' token</font><br />
- 2564 |                  -&gt; res_base_N_op_t&lt;binop_e::fediv&gt;<br />
-      |                                    ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2572:44: error: class template placeholder 'NumRepr::dig_t' not permitted in this context</font><br />
- 2572 |                 nat_reg_digs_t operator / (dig_t arg) const noexcept<br />
-      |                                            ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2572:44: note: use 'auto' for an abbreviated function template<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2572:17: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2572 |                 nat_reg_digs_t operator / (dig_t arg) const noexcept<br />
-      |                 ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2579:44: error: class template placeholder 'NumRepr::dig_t' not permitted in this context</font><br />
- 2579 |                 nat_reg_digs_t operator % (dig_t arg) const noexcept<br />
-      |                                            ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2579:44: note: use 'auto' for an abbreviated function template<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2579:17: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2579 |                 nat_reg_digs_t operator % (dig_t arg) const noexcept<br />
-      |                 ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2594:51: error: 'base_N_t' does not name a type</font><br />
- 2594 |         const nat_reg_digs_t &amp; operator += (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                   ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2594:59: error: expected ',' or '...' before '&lt;' token</font><br />
- 2594 |         const nat_reg_digs_t &amp; operator += (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                           ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2594:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2594 |         const nat_reg_digs_t &amp; operator += (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |         ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2633:51: error: 'nat_reg_N_digs_t' does not name a type; did you mean 'nat_reg_digs_t'?</font><br />
- 2633 |         const nat_reg_digs_t &amp; operator += (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                   ^~~~~~~~~~~~~~~~<br />
-      |                                                   nat_reg_digs_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2633:67: error: expected ',' or '...' before '&lt;' token</font><br />
- 2633 |         const nat_reg_digs_t &amp; operator += (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                                   ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2633:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2633 |         const nat_reg_digs_t &amp; operator += (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |         ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2642:51: error: 'base_N_t' does not name a type</font><br />
- 2642 |         const nat_reg_digs_t &amp; operator -= (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                   ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2642:59: error: expected ',' or '...' before '&lt;' token</font><br />
- 2642 |         const nat_reg_digs_t &amp; operator -= (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                           ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2642:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2642 |         const nat_reg_digs_t &amp; operator -= (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |         ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2667:51: error: 'nat_reg_N_digs_t' does not name a type; did you mean 'nat_reg_digs_t'?</font><br />
- 2667 |         const nat_reg_digs_t &amp; operator -= (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                   ^~~~~~~~~~~~~~~~<br />
-      |                                                   nat_reg_digs_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2667:67: error: expected ',' or '...' before '&lt;' token</font><br />
- 2667 |         const nat_reg_digs_t &amp; operator -= (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                                   ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2667:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2667 |         const nat_reg_digs_t &amp; operator -= (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |         ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2676:51: error: 'base_N_t' does not name a type</font><br />
- 2676 |         const nat_reg_digs_t &amp; operator *= (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                   ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2676:59: error: expected ',' or '...' before '&lt;' token</font><br />
- 2676 |         const nat_reg_digs_t &amp; operator *= (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                           ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2676:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2676 |         const nat_reg_digs_t &amp; operator *= (const base_N_t&lt;N&gt; &amp; arg) noexcept<br />
-      |         ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2690:51: error: 'nat_reg_N_digs_t' does not name a type; did you mean 'nat_reg_digs_t'?</font><br />
- 2690 |         const nat_reg_digs_t &amp; operator *= (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                   ^~~~~~~~~~~~~~~~<br />
-      |                                                   nat_reg_digs_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2690:67: error: expected ',' or '...' before '&lt;' token</font><br />
- 2690 |         const nat_reg_digs_t &amp; operator *= (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |                                                                   ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2690:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2690 |         const nat_reg_digs_t &amp; operator *= (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) noexcept<br />
-      |         ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2715:42: error: 'base_N_t' does not name a type</font><br />
- 2715 |         nat_reg_digs_t operator + (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                          ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2715:50: error: expected ',' or '...' before '&lt;' token</font><br />
- 2715 |         nat_reg_digs_t operator + (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                                  ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2715:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2715 |         nat_reg_digs_t operator + (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |         ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2724:42: error: 'base_N_t' does not name a type</font><br />
- 2724 |         nat_reg_digs_t operator - (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                          ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2724:50: error: expected ',' or '...' before '&lt;' token</font><br />
- 2724 |         nat_reg_digs_t operator - (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                                  ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2724:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2724 |         nat_reg_digs_t operator - (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |         ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2733:42: error: 'base_N_t' does not name a type</font><br />
- 2733 |         nat_reg_digs_t operator * (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                          ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2733:50: error: expected ',' or '...' before '&lt;' token</font><br />
- 2733 |         nat_reg_digs_t operator * (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                                  ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2733:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2733 |         nat_reg_digs_t operator * (const base_N_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |         ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2742:42: error: 'nat_reg_N_digs_t' does not name a type; did you mean 'nat_reg_digs_t'?</font><br />
- 2742 |         nat_reg_digs_t operator + (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                          ^~~~~~~~~~~~~~~~<br />
-      |                                          nat_reg_digs_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2742:58: error: expected ',' or '...' before '&lt;' token</font><br />
- 2742 |         nat_reg_digs_t operator + (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                                          ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2742:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2742 |         nat_reg_digs_t operator + (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |         ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2751:42: error: 'nat_reg_N_digs_t' does not name a type; did you mean 'nat_reg_digs_t'?</font><br />
- 2751 |         nat_reg_digs_t operator - (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                          ^~~~~~~~~~~~~~~~<br />
-      |                                          nat_reg_digs_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2751:58: error: expected ',' or '...' before '&lt;' token</font><br />
- 2751 |         nat_reg_digs_t operator - (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                                          ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2751:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2751 |         nat_reg_digs_t operator - (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |         ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2760:42: error: 'nat_reg_N_digs_t' does not name a type; did you mean 'nat_reg_digs_t'?</font><br />
- 2760 |         nat_reg_digs_t operator * (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                          ^~~~~~~~~~~~~~~~<br />
-      |                                          nat_reg_digs_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2760:58: error: expected ',' or '...' before '&lt;' token</font><br />
- 2760 |         nat_reg_digs_t operator * (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |                                                          ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2760:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2760 |         nat_reg_digs_t operator * (const nat_reg_N_digs_t&lt;N&gt; &amp; arg) const noexcept<br />
-      |         ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2768:36: error: template placeholder type 'const nat_reg_digs_t&lt;...auto...&gt;' must be followed by a simple declarator-id</font><br />
- 2768 |         nat_reg_digs_t operator % (const nat_reg_digs_t &amp; arg) const noexcept<br />
-      |                                    ^~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2768:9: error: deduced class type 'nat_reg_digs_t' in function return type</font><br />
- 2768 |         nat_reg_digs_t operator % (const nat_reg_digs_t &amp; arg) const noexcept<br />
-      |         ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
-   14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
-      |        ^~~~~~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In function 'size_t size_of_nat_reg_digs_type_string_idT()':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2821:54: error: 'LE' was not declared in this scope</font><br />
- 2821 |   {     return (to_nat_reg_digs_type_string&lt;UInt_t,B,LE&gt;()).size();     }<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In member function 'constexpr std::conditional_t&lt;with_result_type, NumRepr::auxiliary_types::result_operation_t&lt;std::array&lt;NumRepr::dig_t&lt;UINT_T, B&gt;, L&gt;, NumRepr::binop_e::mult, L&gt;, const std::array&lt;NumRepr::dig_t&lt;UINT_T, B&gt;, L&gt;&amp;&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::mult(dig_t) const':<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2042:59: error: 'm_dc' was not declared in this scope</font><br />
+ 2042 |                                 .result_content_low     = m_dc,<br />
+      |                                                           ^~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2065:80: error: no matching function for call to 'sqrt_max()'</font><br />
+ 2065 |                                 constexpr UINT_T sqrt_max{type_traits::sqrt_max()};<br />
+      |                                                           ~~~~~~~~~~~~~~~~~~~~~^~<br />
+In file included from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\auxiliary_types.hpp:4,<br />
+                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\auxiliary_functions.hpp:4,<br />
+                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\dig_t.hpp:4:<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\basic_types.hpp:557:26: note: candidate: 'template&lt;class UINT_T&gt; consteval UINT_T NumRepr::type_traits::sqrt_max()'<br />
+  557 |         consteval UINT_T sqrt_max() {<br />
+      |                          ^~~~~~~~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\basic_types.hpp:557:26: note:   template argument deduction/substitution failed:<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2065:80: note:   couldn't deduce template parameter 'UINT_T'<br />
+ 2065 |                                 constexpr UINT_T sqrt_max{type_traits::sqrt_max()};<br />
+      |                                                           ~~~~~~~~~~~~~~~~~~~~~^~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2099:56: error: 'm_dc' was not declared in this scope</font><br />
+ 2099 |                         base_t ret{static_cast&lt;base_t&gt;(m_dc)};<br />
+      |                                                        ^~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2115:80: error: no matching function for call to 'sqrt_max()'</font><br />
+ 2115 |                                 constexpr UINT_T sqrt_max{type_traits::sqrt_max()};<br />
+      |                                                           ~~~~~~~~~~~~~~~~~~~~~^~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\basic_types.hpp:557:26: note: candidate: 'template&lt;class UINT_T&gt; consteval UINT_T NumRepr::type_traits::sqrt_max()'<br />
+  557 |         consteval UINT_T sqrt_max() {<br />
+      |                          ^~~~~~~~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\basic_types.hpp:557:26: note:   template argument deduction/substitution failed:<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2115:80: note:   couldn't deduce template parameter 'UINT_T'<br />
+ 2115 |                                 constexpr UINT_T sqrt_max{type_traits::sqrt_max()};<br />
+      |                                                           ~~~~~~~~~~~~~~~~~~~~~^~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr std::array&lt;typename NumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t&lt;UInt_t&gt;::type, 2&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::aprox_coc_rem(base_N_t&lt;N&gt;&amp;, base_N_t&lt;N&gt;&amp;)':<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2242:73: error: 'coc_calculado' was not declared in this scope</font><br />
+ 2242 |                                 const base_N_t&lt;N&gt; rem_aprox {dsor*dig_t{coc_calculado}+dig_t{rem_calculado}};<br />
+      |                                                                         ^~~~~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2242:94: error: 'rem_calculado' was not declared in this scope</font><br />
+ 2242 |                                 const base_N_t&lt;N&gt; rem_aprox {dsor*dig_t{coc_calculado}+dig_t{rem_calculado}};<br />
+      |                                                                                              ^~~~~~~~~~~~~<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In static member function 'static constexpr std::array&lt;NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::base_N_t&lt;N&gt;, 2&gt; NumRepr::nat_reg_digs_t&lt;UINT_T, B, L&gt;::fediv(base_N_t&lt;N&gt;&amp;, base_N_t&lt;N&gt;&amp;)':<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2370:33: error: there are no arguments to 'regd_N_0' that depend on a template parameter, so a declaration of 'regd_N_0' must be available [-fpermissive]</font><br />
+ 2370 |                 base_N_t&lt;N&gt; rem{regd_N_0&lt;N&gt;()};<br />
+      |                                 ^~~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2371:33: error: there are no arguments to 'regd_N_0' that depend on a template parameter, so a declaration of 'regd_N_0' must be available [-fpermissive]</font><br />
+ 2371 |                 base_N_t&lt;N&gt; coc{regd_N_0&lt;N&gt;()};<br />
+      |                                 ^~~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2373:26: error: 'dvsor' was not declared in this scope; did you mean 'dsor'?</font><br />
+ 2373 |                 if (is_0(dvsor)) {<br />
+      |                          ^~~~~<br />
+      |                          dsor<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2434:25: error: 'ret' was not declared in this scope; did you mean 'get'?</font><br />
+ 2434 |                         ret[0] = coc;<br />
+      |                         ^~~<br />
+      |                         get<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In function 'NumRepr::size_t NumRepr::size_of_nat_reg_digs_type_string_idT()':<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2778:54: error: 'LE' was not declared in this scope</font><br />
+ 2778 |   {     return (to_nat_reg_digs_type_string&lt;UInt_t,B,LE&gt;()).size();     }<br />
       |                                                      ^~<br />
 C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: At global scope:<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2826:18: error: 'type_traits' has not been declared</font><br />
- 2826 |         template&lt;type_traits::allowable_base_type_c Int_Type,<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2783:18: error: 'NumRepr::type_traits::allowable_base_type_c' has not been declared</font><br />
+ 2783 |         template&lt;type_traits::allowable_base_type_c Int_Type,<br />
       |                  ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2826:53: error: expected '&gt;' before 'Int_Type'</font><br />
- 2826 |         template&lt;type_traits::allowable_base_type_c Int_Type,<br />
-      |                                                     ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2829:27: error: 'type_traits' has not been declared</font><br />
- 2829 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))<br />
-      |                           ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2829:54: error: 'Int_Type' was not declared in this scope</font><br />
- 2829 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2784:41: error: 'Int_Type' has not been declared</font><br />
+ 2784 |                                         Int_Type Base,<br />
+      |                                         ^~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2786:54: error: 'Int_Type' was not declared in this scope</font><br />
+ 2786 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))<br />
       |                                                      ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2829:63: error: 'Base' was not declared in this scope</font><br />
- 2829 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2786:63: error: 'Base' was not declared in this scope</font><br />
+ 2786 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))<br />
       |                                                               ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2829:69: error: expected primary-expression before ')' token</font><br />
- 2829 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))<br />
-      |                                                                     ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2829:73: error: 'Length' was not declared in this scope</font><br />
- 2829 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))<br />
-      |                                                                         ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:55: error: 'Int_Type' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2788:55: error: 'Int_Type' was not declared in this scope</font><br />
+ 2788 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
       |                                                       ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:64: error: 'Base' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2788:64: error: 'Base' was not declared in this scope</font><br />
+ 2788 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
       |                                                                ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:69: error: 'Length' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                                     ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:55: error: 'Int_Type' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                       ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:64: error: 'Base' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                                ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:69: error: 'Length' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                                     ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:55: error: 'Int_Type' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                       ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:64: error: 'Base' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                                ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:69: error: 'Length' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                                     ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:55: error: 'Int_Type' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                       ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:64: error: 'Base' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                                ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:69: error: 'Length' was not declared in this scope</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                                     ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:40: error: 'nat_reg_digs_t' has not been declared</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2831:54: error: expected ',' or '...' before '&lt;' token</font><br />
- 2831 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
-      |                                                      ^<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In function 'std::istream&amp; operator&gt;&gt;(std::istream&amp;, int)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2840:42: error: 'type_traits' has not been declared</font><br />
- 2840 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
-      |                                          ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2841:37: error: 'Int_Type' was not declared in this scope</font><br />
- 2841 |                 using dig_t = dig_t&lt;Int_Type,Base&gt;;<br />
-      |                                     ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2841:46: error: 'Base' was not declared in this scope</font><br />
- 2841 |                 using dig_t = dig_t&lt;Int_Type,Base&gt;;<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2788:75: error: template argument 1 is invalid</font><br />
+ 2788 |         operator &gt;&gt; (std::istream &amp; is,nat_reg_digs_t&lt;Int_Type,Base,Length&gt; &amp; arg) {<br />
+      |                                                                           ^<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2788:75: error: template argument 2 is invalid</font><br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In function 'std::istream&amp; NumRepr::operator&gt;&gt;(std::istream&amp;, int&amp;)':<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2797:75: error: 'Int_Type' was not declared in this scope</font><br />
+ 2797 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
+      |                                                                           ^~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2797:83: error: template argument 1 is invalid</font><br />
+ 2797 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
+      |                                                                                   ^<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2797:84: error: expected identifier before ';' token</font><br />
+ 2797 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
+      |                                                                                    ^<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2798:46: error: 'Base' was not declared in this scope</font><br />
+ 2798 |                 using dig_t = dig_t&lt;Int_Type,Base&gt;;<br />
       |                                              ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2841:31: error: 'dig_t' does not name a type; did you mean 'div_t'?</font><br />
- 2841 |                 using dig_t = dig_t&lt;Int_Type,Base&gt;;<br />
-      |                               ^~~~~<br />
-      |                               div_t<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2842:69: error: 'Length' was not declared in this scope</font><br />
- 2842 |                 using nat_reg_digs_t = nat_reg_digs_t&lt;Int_Type,Base,Length&gt;;<br />
-      |                                                                     ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2842:40: error: 'nat_reg_digs_t' does not name a type</font><br />
- 2842 |                 using nat_reg_digs_t = nat_reg_digs_t&lt;Int_Type,Base,Length&gt;;<br />
-      |                                        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2846:25: error: expected ';' before 'digito'</font><br />
- 2846 |                 Int_Type                digito{0};<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2798:50: error: template argument 2 is invalid</font><br />
+ 2798 |                 using dig_t = dig_t&lt;Int_Type,Base&gt;;<br />
+      |                                                  ^<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2803:25: error: expected ';' before 'digito'</font><br />
+ 2803 |                 Int_Type                digito{0};<br />
       |                         ^               ~~~~~~<br />
       |                         ;<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2848:17: error: 'inttype' was not declared in this scope</font><br />
- 2848 |                 inttype                 numero_base_recogido{0};<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2805:17: error: 'inttype' was not declared in this scope</font><br />
+ 2805 |                 inttype                 numero_base_recogido{0};<br />
       |                 ^~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2850:17: error: 'nat_reg_digs_t' was not declared in this scope; did you mean 'NumRepr::nat_reg_digs_t'?</font><br />
- 2850 |                 nat_reg_digs_t&amp; numero_ret{arg};<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2807:17: error: template placeholder type 'nat_reg_digs_t&lt;...auto...&gt;' must be followed by a simple declarator-id</font><br />
+ 2807 |                 nat_reg_digs_t&amp; numero_ret{arg};<br />
       |                 ^~~~~~~~~~~~~~<br />
-      |                 NumRepr::nat_reg_digs_t<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'NumRepr::nat_reg_digs_t' declared here<br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:14:8: note: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' declared here<br />
    14 | struct nat_reg_digs_t : public reg_digs_t&lt;UINT_T,B,L&gt; {<br />
       |        ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2850:33: error: 'numero_ret' was not declared in this scope</font><br />
- 2850 |                 nat_reg_digs_t&amp; numero_ret{arg};<br />
-      |                                 ^~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2946:57: error: 'digito' was not declared in this scope</font><br />
- 2946 |                                                         digito = (c-'0');<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2903:57: error: 'digito' was not declared in this scope; did you mean 'digit_t'?</font><br />
+ 2903 |                                                         digito = (c-'0');<br />
       |                                                         ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2948:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
- 2948 |                                                         numero_base_recogido = 0;<br />
+      |                                                         digit_t<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2905:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
+ 2905 |                                                         numero_base_recogido = 0;<br />
       |                                                         ^~~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2949:70: error: 'nat_reg_digs_t' is not a class, namespace, or enumeration</font><br />
- 2949 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2906:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 2906 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2906:70: error: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' used without template arguments</font><br />
+ 2906 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
       |                                                                      ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2953:57: error: 'digito' was not declared in this scope</font><br />
- 2953 |                                                         digito = 0;<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2910:57: error: 'digito' was not declared in this scope; did you mean 'digit_t'?</font><br />
+ 2910 |                                                         digito = 0;<br />
       |                                                         ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2955:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
- 2955 |                                                         numero_base_recogido = 0;<br />
+      |                                                         digit_t<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2912:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
+ 2912 |                                                         numero_base_recogido = 0;<br />
       |                                                         ^~~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2956:70: error: 'nat_reg_digs_t' is not a class, namespace, or enumeration</font><br />
- 2956 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2913:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 2913 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2913:70: error: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' used without template arguments</font><br />
+ 2913 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
       |                                                                      ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2963:72: error: 'digito' was not declared in this scope</font><br />
- 2963 |                                                 const bool dig_lt_Base{digito&lt;Base};<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2920:72: error: 'digito' was not declared in this scope; did you mean 'digit_t'?</font><br />
+ 2920 |                                                 const bool dig_lt_Base{digito&lt;Base};<br />
       |                                                                        ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2983:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
- 2983 |                                                         numero_base_recogido = 0;<br />
+      |                                                                        digit_t<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2940:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
+ 2940 |                                                         numero_base_recogido = 0;<br />
       |                                                         ^~~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2984:70: error: 'nat_reg_digs_t' is not a class, namespace, or enumeration</font><br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2941:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 2941 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2941:70: error: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' used without template arguments</font><br />
+ 2941 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                                      ^~~~~~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2948:99: error: 'digito' was not declared in this scope; did you mean 'digit_t'?</font><br />
+ 2948 |                                                 const bool c_es_dig_B {(std::abs(c-'0')&lt;Base) &amp;&amp; (digito&lt;Base)};<br />
+      |                                                                                                   ^~~~~~<br />
+      |                                                                                                   digit_t<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2953:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 2953 |                                                         numero_ret[Length-1-longitud] = dig_t(digito);<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2961:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
+ 2961 |                                                         numero_base_recogido = 0;<br />
+      |                                                         ^~~~~~~~~~~~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2963:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 2963 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2963:70: error: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' used without template arguments</font><br />
+ 2963 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                                      ^~~~~~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2970:71: error: 'digito' was not declared in this scope; did you mean 'digit_t'?</font><br />
+ 2970 |                                                 const bool d_es_digB {digito &lt; Base};<br />
+      |                                                                       ^~~~~~<br />
+      |                                                                       digit_t<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2975:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 2975 |                                                         numero_ret[Length-1-longitud] = dig_t(digito);<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2984:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 2984 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2984:70: error: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' used without template arguments</font><br />
  2984 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
       |                                                                      ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2991:99: error: 'digito' was not declared in this scope</font><br />
- 2991 |                                                 const bool c_es_dig_B {(std::abs(c-'0')&lt;Base) &amp;&amp; (digito&lt;Base)};<br />
-      |                                                                                                   ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2996:89: error: there are no arguments to 'dig_t' that depend on a template parameter, so a declaration of 'dig_t' must be available [-fpermissive]</font><br />
- 2996 |                                                         numero_ret[Length-1-longitud] = dig_t(digito);<br />
-      |                                                                                         ^~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3004:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
- 3004 |                                                         numero_base_recogido = 0;<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2992:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
+ 2992 |                                                         numero_base_recogido = c-'0';<br />
       |                                                         ^~~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3006:70: error: 'nat_reg_digs_t' is not a class, namespace, or enumeration</font><br />
- 3006 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
-      |                                                                      ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3013:71: error: 'digito' was not declared in this scope</font><br />
- 3013 |                                                 const bool d_es_digB {digito &lt; Base};<br />
-      |                                                                       ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3018:89: error: there are no arguments to 'dig_t' that depend on a template parameter, so a declaration of 'dig_t' must be available [-fpermissive]</font><br />
- 3018 |                                                         numero_ret[Length-1-longitud] = dig_t(digito);<br />
-      |                                                                                         ^~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3027:70: error: 'nat_reg_digs_t' is not a class, namespace, or enumeration</font><br />
- 3027 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
-      |                                                                      ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3035:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
- 3035 |                                                         numero_base_recogido = c-'0';<br />
-      |                                                         ^~~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3036:57: error: 'digito' was not declared in this scope</font><br />
- 3036 |                                                         digito = 0;<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2993:57: error: 'digito' was not declared in this scope; did you mean 'digit_t'?</font><br />
+ 2993 |                                                         digito = 0;<br />
       |                                                         ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3040:57: error: 'digito' was not declared in this scope</font><br />
- 3040 |                                                         digito = 0;<br />
+      |                                                         digit_t<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2997:57: error: 'digito' was not declared in this scope; did you mean 'digit_t'?</font><br />
+ 2997 |                                                         digito = 0;<br />
       |                                                         ^~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3042:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
- 3042 |                                                         numero_base_recogido = 0;<br />
+      |                                                         digit_t<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:2999:57: error: 'numero_base_recogido' was not declared in this scope</font><br />
+ 2999 |                                                         numero_base_recogido = 0;<br />
       |                                                         ^~~~~~~~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3043:70: error: 'nat_reg_digs_t' is not a class, namespace, or enumeration</font><br />
- 3043 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3000:57: error: 'numero_ret' was not declared in this scope</font><br />
+ 3000 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
+      |                                                         ^~~~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3000:70: error: 'template&lt;class UINT_T, UINT_T B, long long unsigned int L&gt;  requires (uint_type_for_radix_c&lt;UINT_T&gt;) &amp;&amp; ((suitable_base&lt;UINT_T, B&gt;)() &amp;&amp; L &gt; 0) struct NumRepr::nat_reg_digs_t' used without template arguments</font><br />
+ 3000 |                                                         numero_ret = nat_reg_digs_t::regd_0();<br />
       |                                                                      ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3051:78: error: 'numero_base_recogido' was not declared in this scope</font><br />
- 3051 |                                                 const bool num_base_lt_Base {numero_base_recogido &lt; Base};<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3008:78: error: 'numero_base_recogido' was not declared in this scope</font><br />
+ 3008 |                                                 const bool num_base_lt_Base {numero_base_recogido &lt; Base};<br />
       |                                                                              ^~~~~~~~~~~~~~~~~~~~<br />
 C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: At global scope:<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3081:18: error: 'type_traits' has not been declared</font><br />
- 3081 |         template&lt;type_traits::allowable_base_type_c Int_Type,Int_Type Base,size_t Long&gt;<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3038:18: error: 'NumRepr::type_traits::allowable_base_type_c' has not been declared</font><br />
+ 3038 |         template&lt;type_traits::allowable_base_type_c Int_Type,Int_Type Base,size_t Long&gt;<br />
       |                  ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3081:53: error: expected '&gt;' before 'Int_Type'</font><br />
- 3081 |         template&lt;type_traits::allowable_base_type_c Int_Type,Int_Type Base,size_t Long&gt;<br />
-      |                                                     ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3082:27: error: 'type_traits' has not been declared</font><br />
- 3082 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())<br />
-      |                           ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3082:54: error: 'Int_Type' was not declared in this scope</font><br />
- 3082 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3038:62: error: 'Int_Type' has not been declared</font><br />
+ 3038 |         template&lt;type_traits::allowable_base_type_c Int_Type,Int_Type Base,size_t Long&gt;<br />
+      |                                                              ^~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3039:54: error: 'Int_Type' was not declared in this scope</font><br />
+ 3039 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())<br />
       |                                                      ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3082:63: error: 'Base' was not declared in this scope</font><br />
- 3082 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3039:63: error: 'Base' was not declared in this scope</font><br />
+ 3039 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())<br />
       |                                                               ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3082:69: error: expected primary-expression before ')' token</font><br />
- 3082 |                 requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())<br />
-      |                                                                     ^<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:61: error: 'Int_Type' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3041:61: error: 'Int_Type' was not declared in this scope</font><br />
+ 3041 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
       |                                                             ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:70: error: 'Base' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3041:70: error: 'Base' was not declared in this scope</font><br />
+ 3041 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
       |                                                                      ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:75: error: 'Long' was not declared in this scope; did you mean 'long'?</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                           ^~~~<br />
-      |                                                                           long<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:61: error: 'Int_Type' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                             ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:70: error: 'Base' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                      ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:75: error: 'Long' was not declared in this scope; did you mean 'long'?</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                           ^~~~<br />
-      |                                                                           long<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:61: error: 'Int_Type' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                             ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:70: error: 'Base' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                      ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:75: error: 'Long' was not declared in this scope; did you mean 'long'?</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                           ^~~~<br />
-      |                                                                           long<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:61: error: 'Int_Type' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                             ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:70: error: 'Base' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                      ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:75: error: 'Long' was not declared in this scope; did you mean 'long'?</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                           ^~~~<br />
-      |                                                                           long<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:61: error: 'Int_Type' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                             ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:70: error: 'Base' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                      ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:75: error: 'Long' was not declared in this scope; did you mean 'long'?</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                           ^~~~<br />
-      |                                                                           long<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:61: error: 'Int_Type' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                             ^~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:70: error: 'Base' was not declared in this scope</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                      ^~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:75: error: 'Long' was not declared in this scope; did you mean 'long'?</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                                           ^~~~<br />
-      |                                                                           long<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:46: error: 'nat_reg_digs_t' does not name a type</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                              ^~~~~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3084:60: error: expected ',' or '...' before '&lt;' token</font><br />
- 3084 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
-      |                                                            ^<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In function 'std::ostream&amp; operator&lt;&lt;(std::ostream&amp;, int)':<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3085:42: error: 'type_traits' has not been declared</font><br />
- 3085 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
-      |                                          ^~~~~~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3087:32: error: 'Long' was not declared in this scope; did you mean 'long'?</font><br />
- 3087 |                 for(int32_t ix{Long-1} ; ix &gt; 0 ; --ix) {<br />
-      |                                ^~~~<br />
-      |                                long<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3088:51: error: 'inttype' does not name a type</font><br />
- 3088 |                                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(ix));<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3041:79: error: template argument 1 is invalid</font><br />
+ 3041 |         operator &lt;&lt; (std::ostream &amp; os,const nat_reg_digs_t&lt;Int_Type,Base,Long&gt; &amp; arg) {<br />
+      |                                                                               ^<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3041:79: error: template argument 2 is invalid</font><br />
+C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: In function 'std::ostream&amp; NumRepr::operator&lt;&lt;(std::ostream&amp;, const int&amp;)':<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3042:75: error: 'Int_Type' was not declared in this scope</font><br />
+ 3042 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
+      |                                                                           ^~~~~~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3042:83: error: template argument 1 is invalid</font><br />
+ 3042 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
+      |                                                                                   ^<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3042:84: error: expected identifier before ';' token</font><br />
+ 3042 |                 using inttype = typename type_traits::sig_UInt_for_UInt_t&lt;Int_Type&gt;;<br />
+      |                                                                                    ^<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3045:51: error: 'inttype' does not name a type</font><br />
+ 3045 |                                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(ix));<br />
       |                                                   ^~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3088:60: error: there are no arguments to 'arg' that depend on a template parameter, so a declaration of 'arg' must be available [-fpermissive]</font><br />
- 3088 |                                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(ix));<br />
-      |                                                            ^~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3091:35: error: 'inttype' does not name a type</font><br />
- 3091 |                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(0));<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3045:63: error: expression cannot be used as a function</font><br />
+ 3045 |                                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(ix));<br />
+      |                                                            ~~~^~~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3048:35: error: 'inttype' does not name a type</font><br />
+ 3048 |                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(0));<br />
       |                                   ^~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3091:44: error: there are no arguments to 'arg' that depend on a template parameter, so a declaration of 'arg' must be available [-fpermissive]</font><br />
- 3091 |                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(0));<br />
-      |                                            ^~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3093:35: error: 'inttype' does not name a type</font><br />
- 3093 |                 os &lt;&lt; static_cast&lt;inttype&gt;(Base);<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3048:47: error: expression cannot be used as a function</font><br />
+ 3048 |                 os &lt;&lt; static_cast&lt;inttype&gt;(arg(0));<br />
+      |                                            ~~~^~~<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3050:35: error: 'inttype' does not name a type</font><br />
+ 3050 |                 os &lt;&lt; static_cast&lt;inttype&gt;(Base);<br />
       |                                   ^~~~~~~<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3093:44: error: 'Base' was not declared in this scope</font><br />
- 3093 |                 os &lt;&lt; static_cast&lt;inttype&gt;(Base);<br />
+<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3050:44: error: 'Base' was not declared in this scope</font><br />
+ 3050 |                 os &lt;&lt; static_cast&lt;inttype&gt;(Base);<br />
       |                                            ^~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp: At global scope:<br />
-<font color="#ff0000">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:3097:1: error: expected declaration before '}' token</font><br />
- 3097 | }<br />
-      | ^<br />
-<font color="#a00000">Process terminated with status 1 (0 minute(s), 2 second(s))</font><br />
-<font color="#a00000">50 error(s), 14 warning(s) (0 minute(s), 2 second(s))</font><br />
+<font color="#a00000">Process terminated with status 1 (0 minute(s), 1 second(s))</font><br />
+<font color="#a00000">50 error(s), 13 warning(s) (0 minute(s), 1 second(s))</font><br />
 </tt>
 </body>
 </html>
