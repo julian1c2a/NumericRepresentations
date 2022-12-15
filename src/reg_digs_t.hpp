@@ -1567,6 +1567,141 @@ public :
   }
 };
 
+/// STATIC BASE_N_T<N> 		CONCAT(BASE_N_T<N>)
+/// STATIC BASE_N_T<N+M> 	CONCAT(BASE_N_T<N>,BASE_N_T<M>)
+/// STATIC BASE_N_T<N+1> 	CONCAT(BASE_N_T<N>,DIG_T)
+/// STATIC BASE_N_T<1+M> 	CONCAT(DIG_T,BASE_N_T<M>)
+/// STATIC BASE_N_T<1> 		CONCAT(DIG_T)
+/// STATIC BASE_N_T<1+1> 	CONCAT(DIG_T,DIG_T)
+/// STATIC BASE_N_T<SIZEOF...(DIG_PACK)> CONCAT(DIG_T ... DIG_PACK) VARIADIC PACK
+
+/// STATIC BASE_N_T<N> CONCAT(BASE_N_T<N>)
+template<typename UInt_t, UInt_t B, size_t N>
+	requires (N>0)
+constexpr inline
+reg_digs_t<UInt_t,B,N> concat(const reg_digs_t<UInt_t,B,N>& larg) noexcept
+{
+	return reg_digs_t<UInt_t,B,N>{larg};
+}
+
+/// STATIC BASE_N_T<N+M> CONCAT(BASE_N_T<N>,BASE_N_T<M>)
+template<typename UInt_t, UInt_t B, size_t N,size_t M>
+	requires (N>0)&&(M>0)
+constexpr inline
+reg_digs_t<UInt_t,B,N+M> concat(const reg_digs_t<UInt_t,B,N>& larg,const reg_digs_t<UInt_t,B,M>& rarg) noexcept
+{
+	reg_digs_t<UInt_t,B,N+M> ret;
+	for(size_t ix{0} ; ix < N ; ++ix)
+		ret[ix] = larg[ix];
+	for(size_t ix{N} ; ix < M ; ++ix)
+		ret[ix] = rarg[ix];
+	return ret;
+}
+
+/// STATIC BASE_N_T<N+1> CONCAT(BASE_N_T<N>,DIG_T)
+template<typename UInt_t, UInt_t B, size_t N>
+	requires (N > 0)
+constexpr inline
+reg_digs_t<UInt_t,B,N+1> concat(const reg_digs_t<UInt_t,B,N>& larg,dig_t<UInt_t,B> rarg) noexcept
+{
+	reg_digs_t<UInt_t,B,N+1> ret;
+	for(size_t ix{0} ; ix < N ; ++ix)
+		ret[ix] = larg[ix];
+	ret[N] = rarg;
+	return ret;
+}
+
+/// STATIC BASE_N_T<1+M> CONCAT(DIG_T,BASE_N_T<M>)
+template<typename UInt_t, UInt_t B, size_t M>
+	requires (M > 0)
+constexpr inline
+reg_digs_t<UInt_t,B,1+M> concat(dig_t<UInt_t,B> larg, const reg_digs_t<UInt_t,B,M>& rarg) noexcept
+{
+	reg_digs_t<UInt_t,B,1+M> ret;
+	ret[0] = larg;
+	for(size_t ix{1} ; ix < M+1 ; ++ix)
+		ret[ix] = rarg[ix-1];
+	return ret;
+}
+
+/// STATIC BASE_N_T<1> CONCAT(DIG_T)
+template<typename UInt_t, UInt_t B>
+constexpr inline
+reg_digs_t<UInt_t,B,1> concat(dig_t<UInt_t,B> larg) noexcept
+{	return reg_digs_t<UInt_t,B,1>{larg};	}
+
+/// STATIC BASE_N_T<1+1> CONCAT(DIG_T,DIG_T)
+template<typename UInt_t, UInt_t B>
+constexpr inline
+reg_digs_t<UInt_t,B,2> concat(dig_t<UInt_t,B> larg,dig_t<UInt_t,B> rarg) noexcept
+{
+	reg_digs_t<UInt_t,B,2> ret;
+	ret[0] = larg;
+	ret[1] = rarg;
+	return ret;
+}
+
+/// STATIC BASE_N_T<SIZEOF...(DIG_PACK)>
+///		CONCAT(DIG_T,DIG_T ... DIG_PACK)
+///	VARIADIC
+template<typename UInt_t,UInt_t B,typename T0,typename ... Ts>
+	requires (((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)&&(std::is_same_v<T0,dig_t<UInt_t,B>>))
+constexpr inline
+reg_digs_t<UInt_t,B,1+(sizeof ... (Ts))> concat(T0 dig0,Ts ... dig_pack) noexcept {
+	return concat(dig0,dig_pack...);
+}
+
+/// STATIC BASE_N_T<N+1+(SIZEOF...(DIG_PACK))>
+///		CONCAT(BASE_N_T<N>,DIG_T,DIG_T ... DIG_PACK)
+///	VARIADIC
+template<typename UInt_t,UInt_t B,size_t N,typename T,typename ... Ts>
+	requires (((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)&&(std::is_same_v<T,dig_t<UInt_t,B>>)&&(N>0))
+constexpr inline
+reg_digs_t<UInt_t,B,N+1+(sizeof ... (Ts))> concat(reg_digs_t<UInt_t,B,N> larg,T dig,Ts ... dig_pack)
+noexcept { return concat(larg,concat(dig,dig_pack...));	}
+
+/// STATIC BASE_N_T<M+1+(SIZEOF...(DIG_PACK))>
+///			CONCAT(DIG_T,DIG_T ... DIG_PACK,BASE_N_T<M>)
+///	VARIADIC
+template<typename UInt_t,UInt_t B,size_t M,typename T,typename ... Ts>
+	requires ((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)&&(std::is_same_v<T,dig_t<UInt_t,B>>)&&(M>0)
+constexpr inline
+reg_digs_t<UInt_t,B,M+1+(sizeof ... (Ts))> concat(T dig,Ts ... dig_pack,reg_digs_t<UInt_t,B,M> rarg)
+noexcept { return concat(concat(dig,dig_pack...),rarg);	}
+
+/// STATIC BASE_N_T<SIZE_T N,SIZE_T ... N_PACK>
+///	CONCAT(BASE_N_T<N> LARG,BASE_N_T<N_PACK> ... RARG_PACK)
+///	VARIADIC
+template<typename UInt_t,UInt_t B,size_t N,size_t ... N_pack>
+	requires ((N>0)&&((N_pack>0)&&...))
+constexpr inline
+reg_digs_t<UInt_t,B,N+(...+(N_pack))>
+		concat(reg_digs_t<UInt_t,B,N> larg,reg_digs_t<UInt_t,B,N_pack> ... rarg_pack) noexcept
+{	return concat(larg,rarg_pack...); }
+
+/// TAKE A SUBREGISTER OF A REGISTER OF DIGITS
+template<typename UInt_t,UInt_t B,size_t N,int64_t ibegin,int64_t iend>
+	requires ((N>0)&&(iend <= N)&&(ibegin < N)&&(ibegin != iend))
+constexpr inline
+reg_digs_t<UInt_t,B,int64_t ((iend-ibegin)<0) ? (ibegin-iend) : (iend-ibegin)>
+	subregister(const reg_digs_t<UInt_t,B,N> & arg)
+noexcept {
+	if constexpr (ibegin < iend) {
+		reg_digs_t<UInt_t,B,iend-ibegin> ret;
+		for(size_t ix{ibegin} ; ix < iend ; ++ix) {
+			ret[ix-ibegin] = arg[ix];
+		}
+		return ret;
+	}
+	else {
+		reg_digs_t<UInt_t,B,ibegin-iend> ret;
+		for(int32_t ix{iend} ; ix > ibegin-1 ; --ix) {
+			ret[ix-ibegin] = arg[N-1-ix];
+		}
+		return ret;
+	}
+}
+
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
   requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
@@ -1671,6 +1806,18 @@ reg_digs_t<UINT_T,B,N> operator & (
 
 
 /// PARA LA DIVISION
+
+template<typename UInt_t,UInt_t B,size_t N>
+	requires (N>0)
+inline constexpr /// MSDig = Most Significant Digit
+int64_t index_of_MSDig(const reg_digs_t<UInt_t,B,N> & arg) noexcept
+{
+	for(int64_t ix{N-1} ; ix > -1 ; --ix) {
+		if (arg[ix].is_not_0())
+			return ix;
+	}
+	return (-1);/// In this case the value is 0, then there don't exist MSDig
+}
 
 template<typename UINT_T,UINT_T B,size_t N,size_t M>
 	requires (N > 0)&&(M > 0)
