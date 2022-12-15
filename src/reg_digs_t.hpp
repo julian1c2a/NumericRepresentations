@@ -1686,7 +1686,7 @@ fediv(
 	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
 
 	using ret_type = std::array<base_t,2>;
-	using ret_aprox_type = std::array<SIG_UINT_T,2>;
+	//using ret_aprox_type = std::array<SIG_UINT_T,2>;
 
 	base_t dndo{larg};
 	base_t dsor{rarg};

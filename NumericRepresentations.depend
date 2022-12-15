@@ -38,8 +38,8 @@
 1668675582 c:\users\julian\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1671039963 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
-	"reg_digs_t.hpp"
+1671095636 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+	"nat_reg_digs_t.hpp"
 	<typeinfo>
 
 1670611752 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
@@ -135,7 +135,7 @@
 	<iterator>
 	<functional>
 
-1671041279 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1671128658 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 	"lexer_parser.hpp"
@@ -160,4 +160,8 @@
 	<tuple>
 	<array>
 	"basic_types.hpp"
+
+1671129751 c:\users\julia\dropbox\github\numericrepresentations\src\nat_reg_digs_t.hpp
+	"reg_digs_t.hpp"
+	"utilities.hpp"
 

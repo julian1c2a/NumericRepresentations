@@ -1871,12 +1871,14 @@ public :
 		typename std::conditional_t<
 			with_result_type,
 				res_base_op_t<binop_e::add>,
-				base_t const&
+				base_t
 		>
 	{
-		constexpr auto UINT_T middle_max{std::numeric_limits<UINT_T>::max()/2};
+		using namespace type_traits;
+		constexpr UINT_T middle_max{std::numeric_limits<UINT_T>::max()/2};
+		using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
 		using uint_type = std::conditional_t<B<=middle_max,UINT_T,SIG_UINT_T>;
-		using dig_t = dig_t<uint_type,B>;
+		using dig_t = typename NumRepr::dig_t<uint_type,B>::dig_t;
 		if constexpr (! with_result_type) {
 			/// CARRY INICIAL POR DEFECTO
 			dig_t carry{dig_0()};
@@ -1924,7 +1926,7 @@ public :
 				return std::move(ret);
 			}
 			else {
-				ret.result_content[0]   -= (dig_B()-rarg);
+				ret.result_content[0]   -= (dig_Bm1()+dig_1()-rarg);
 				carry                    = dig_1();
 			}
 			/// BUCLE FOR QUE SUMA ARG Y 1 DESDE IDX=1 A IDX=L-1
@@ -1968,19 +1970,19 @@ public :
 		/// BUCLE FOR QUE RESTA RARG A LARG DESDE IDX=1 A IDX=L-1
 		for(size_t ix{1} ; ix < L ; ++ix) {
 			if (borrow.is_1()) {
-				if (arg[ix].is_0()) {
-					arg[ix] = dig_Bm1();
+				if (larg[ix].is_0()) {
+					larg[ix] = dig_Bm1();
 					borrow  = dig_1();
 					continue;
 				}
 				else {
-					--arg[ix];
+					--larg[ix];
 					borrow = dig_0();
-					return (arg);
+					return (larg);
 				}
 			}
 		}
-		return (arg);
+		return (larg);
 	}
 
 	static constexpr inline
@@ -2000,27 +2002,27 @@ public :
 	constexpr inline
 	const nat_reg_digs_t & operator += (const dig_t& rarg) noexcept
 	{
-		m_add<false>(m_dc,rarg);
+		m_add<false>(base_ref_cthis(),rarg);
 		return (*this);
 	}
 
 	constexpr inline
 	const nat_reg_digs_t & operator -= (const dig_t& rarg) noexcept
 	{
-		m_sub<false>(m_dc,rarg);
+		m_sub<false>(base_ref_cthis(),rarg);
 		return (*this);
 	}
 
 	constexpr inline
 	nat_reg_digs_t operator + (const dig_t& rarg) noexcept
 	{
-		return nat_reg_digs_t{add(m_dc,rarg)};
+		return nat_reg_digs_t{add(base_const_ref_cthis(),rarg)};
 	}
 
 	constexpr inline
 	nat_reg_digs_t operator - (const dig_t& rarg) noexcept
 	{
-		return nat_reg_digs_t{sub(m_dc,rarg)};
+		return nat_reg_digs_t{sub(base_const_ref_cthis(),rarg)};
 	}
 
 private :
@@ -2039,7 +2041,7 @@ private :
 		nat_reg_digs_t cpthis(*this);
 		if constexpr (with_result_type) {
 			res_base_op_t<binop_e::mult> ret{
-				.result_content_low 	= m_dc,
+				.result_content_low 	= base_const_ref_cthis(),
 				.result_content_high 	= regd_0(),
 				.good_result 					= true
 			};
@@ -2062,7 +2064,7 @@ private :
 				return std::move(ret);
 			}
 			else {
-				constexpr UINT_T sqrt_max{type_traits::sqrt_max()};
+				constexpr UINT_T sqrt_max{type_traits::sqrt_max<UINT_T>()};
 				using uint_type = std::conditional_t<
 					B <= sqrt_max ,
 						UINT_T,
@@ -2072,7 +2074,7 @@ private :
 				uint_type carry{0};
 				uint_type cparg{arg()};
 				for(size_t ix{0} ; ix < L ; ++ix){
-					uint_type digint{m_dc(ix)};
+					uint_type digint{const_by_index(ix)};
 					digint *= cparg;
 					uint_type unds{digint % Bc};
 					uint_type decs{digint / Bc};
@@ -2096,7 +2098,7 @@ private :
 			}
 		}
 		else {
-			base_t ret{static_cast<base_t>(m_dc)};
+			base_t ret{base_const_ref_cthis()};
 			if (arg.is_0()) {
 				return std::move(regd_0());
 			}
@@ -2112,7 +2114,7 @@ private :
 				return std::move(ret);
 			}
 			else {
-				constexpr UINT_T sqrt_max{type_traits::sqrt_max()};
+				constexpr UINT_T sqrt_max{type_traits::sqrt_max<UINT_T>()};
 				using uint_type = std::conditional_t<
 					B <= sqrt_max ,
 						UINT_T,
@@ -2122,7 +2124,7 @@ private :
 				uint_type carry{0};
 				uint_type cparg{arg()};
 				for(size_t ix{0} ; ix < L ; ++ix){
-					uint_type digint{m_dc(ix)};
+					uint_type digint{const_by_index(ix)};
 					digint *= cparg;
 					uint_type unds{digint % B};
 					uint_type decs{digint / B};
@@ -2177,8 +2179,8 @@ private :
 					return std::move(cparg);
 				}
 			}
-		} ///< POSTCONDICION RET[N-1] == (DIG_1() | DIG_0())									>\\\
-			///< POSTCONDICION RET[N-1] == DIG_1() => RET[N-2,0] == REGD_N_0()	>\\\
+		} ///< POSTCONDICION RET[N-1] == (DIG_1() | DIG_0())
+			///< POSTCONDICION RET[N-1] == DIG_1() => RET[N-2,0] == REGD_N_0()
 
 		///< HAY QUE VER SI ES POTENCIA DE B : is_any_B_pow
 		template<size_t N,size_t n>
@@ -2199,6 +2201,7 @@ private :
 		}
 
 		///< FUNCION DE RECURSION PARA LA DIVISION
+		///< APROX_COC_REM APROXIMA REMAINDER A 2 DIGITOS Y DIVISOR A 1 DIGITO
     template<size_t N>
 			requires (N > 0)
     static constexpr inline
@@ -2206,21 +2209,27 @@ private :
     /// std::array<SIG_UINT_T,2>{}[1] == REM
     /// PRECONDICION DSOR != 0 Y DSOR != 1
     std::array<SIG_UINT_T,2> aprox_coc_rem(
-				const base_N_t<N>& rem	  , const base_N_t<N>& dsor	) noexcept
-		{
+				const base_N_t<N>& rem,
+				const base_N_t<N>& dsor
+		) noexcept {
 			std::array<SIG_UINT_T,2> ret;
 			const size_t dsor_msb{static_cast<size_t>(index_of_MSDig(dsor))};
-			if (dsor_msb==0) {
+			const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
+			const SIG_UINT_T dsor_uint {dsor[dsor_msb]()};
+			SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
+			SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
+
+			if (dsor_msb==0) {/// CASO EXACTO
 				/// SIZE(DIVISOR) == 1 DIGITO !=0 !=1
-				const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-				const SIG_UINT_T dsor_uint {dsor[0]()};
-				SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
-				SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
+				//const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
+				//const SIG_UINT_T dsor_uint {dsor[0]()};
+				//SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
+				//SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
 				const SIG_UINT_T rem_aprox {SIG_UINT_T(dsor)*coc_calculado+rem_calculado};
 
 				ret[1] = rem_calculado;
 				ret[0] = coc_calculado;
-				return std::move(ret);
+				return ret;
 			}
 			else {
 				/// SIZE(DIVISOR) >= 2
@@ -2239,13 +2248,15 @@ private :
 
 				const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
 				const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
-				const base_N_t<N> rem_aprox {dsor*dig_t{coc_calculado}+dig_t{rem_calculado}};
+				const base_N_t<N> rem_aprox {
+					dsor*dig_t{coc_calculado}+dig_t{rem_calculado}
+				};
 
 				if ((rem_aprox <= rem)&&(rem_aprox + dsor > rem)) {
 					/// CORRECTO EN COC
 					ret[1] = rem_calculado;
 					ret[0] = coc_calculado;
-					return std::move(ret);
+					return ret;
 				}
 				else if (rem_aprox > rem) {
 					/// NOS HEMOS PASADO EN EL COC
@@ -2356,7 +2367,7 @@ private :
 	noexcept {
 
 		using ret_type = std::array<base_N_t<N>,2>;
-		using ret_aprox_type = std::array<SIG_UINT_T,2>;
+		//using ret_aprox_type = std::array<SIG_UINT_T,2>;
 
 		base_N_t<N> dndo{larg};
 		base_N_t<N> dsor{rarg};
@@ -2367,32 +2378,32 @@ private :
 			/// MOST SIGNIFICANT DIGIT DEL DIVIDENDO [DEL NUMERO NO DEL TIPO]
 		const size_t  dist_dndo_dsor{std::abs(dndo_MSDig-dndo_MSDig)};
 
-		base_N_t<N> rem{regd_N_0<N>()};
-		base_N_t<N> coc{regd_N_0<N>()};
+		base_N_t<N> rem{base_N_t<N>::regd_N_0()};
+		base_N_t<N> coc{base_N_t<N>::regd_N_0()};
 
-		if (is_0(dvsor)) {
+		if (is_0(dsor)) {
 			ret_type ret;
 			ret[0] = std::move(coc);
 			ret[1] = std::move(rem);
-			return std::move(ret);
+			return (ret);
 		}
-		else if (is_1(dvsor)) {
+		else if (is_1(dsor)) {
 			ret_type ret;
 			ret[0] = dndo;
 			set_0<N>(ret[1]);
-			return std::move(ret);
+			return (ret);
 		}
 		else if (dndo < dsor) {
 			ret_type ret;
 			set_0<N>(ret[0]);
 			ret[1] = dndo;
-			return std::move(ret);
+			return (ret);
 		}
 		else if (dndo == dsor) {
 			ret_type ret;
 			set_1<N>(ret[0]);
 			set_0<N>(ret[1]);
-			return std::move(ret);
+			return (ret);
 		}
 		else {
 			int32_t pl_dndo{dndo_MSDig-dsor_MSDig+1};
@@ -2431,9 +2442,10 @@ private :
 					rem[0] = dndo[pl_dndo];
 				}
 			}
+			std::array<base_N_t<N>,2> ret;
 			ret[0] = coc;
 			ret[1] = rem;
-			return std::move(ret);
+			return ret;
 		}
 	}
 
@@ -2773,14 +2785,14 @@ public :
   std::string to_nat_reg_digs_type_string()
   {   return std::string{"nat_reg_digs"};		}
 
-  template<typename UInt_t,UInt_t B>
+  template<typename UInt_t,UInt_t B,size_t LE>
   size_t size_of_nat_reg_digs_type_string_idT()
   {	return (to_nat_reg_digs_type_string<UInt_t,B,LE>()).size();	}
 
 	///	TODO
 	/// ESTA VERSION +
 	/// VERSION CON TRATAMIENTO DE ERRORES EN RUNTIME
-	template<type_traits::allowable_base_type_c Int_Type,
+	template<type_traits::uint_type_for_radix_c Int_Type,
 					Int_Type Base,
 					size_t Length>
 		requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))
@@ -3035,7 +3047,7 @@ public :
 		return (is);
 	}
 
-	template<type_traits::allowable_base_type_c Int_Type,Int_Type Base,size_t Long>
+	template<type_traits::uint_type_for_radix_c Int_Type,Int_Type Base,size_t Long>
 		requires (type_traits::suitable_base<Int_Type,Base>())
 	std::ostream &
 	operator << (std::ostream & os,const nat_reg_digs_t<Int_Type,Base,Long> & arg) {
