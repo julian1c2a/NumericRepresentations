@@ -1,4 +1,4 @@
-#include "reg_digs_t.hpp"
+#include "nat_reg_digs_t.hpp"
 #include <typeinfo>
 
 int main() {

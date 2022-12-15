@@ -1567,6 +1567,335 @@ public :
   }
 };
 
+//template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
+//  requires ((suitable_base<UINT_T,B>())&&(L > 0))
+//using base_N_t = reg_digs_t<dig_t<UINT_T,B>,N>
+
+constexpr inline
+base_t operator << (const base_t& larg, size_t n) noexcept
+{
+	base_t cparg{larg};
+	for(std::int32_t ix{L-1-n} ; ix > -1 ; --ix) {
+		cparg[ix+n]	= larg[ix];
+	}
+	for(std::int32_t ix{0} ; ix < n ; ++ix) {
+		cparg[ix]		= dig_0();
+	}
+	return std::move(cparg);
+}
+
+constexpr inline
+const base_t & operator <<= (base_t& larg, size_t n) noexcept
+{
+	for(std::int32_t ix{L-1-n} ; ix > -1 ; --ix) {
+		larg[ix+n]	= larg[ix];
+	}
+	for(std::int32_t ix{0} ; ix < n ; ++ix) {
+		larg[ix]	= dig_0();
+	}
+	return (larg);
+}
+
+constexpr inline
+const base_t & operator >>= (base_t& larg, size_t n) noexcept
+{
+	for(std::int32_t ix{0} ; ix < L-n ; ++ix) {
+		larg[ix] 		= larg[ix+n];
+	}
+	for(std::int32_t ix{L-n} ; ix < L ; ++ix) {
+		larg[ix]		=	dig_0();
+	}
+	return (larg);
+}
+
+constexpr inline
+base_t operator >> (const base_t & larg, size_t n) noexcept
+{
+	return std::move(base_t{larg}.ref_data() >>= n);
+}
+
+
+//	/// COMPARACIONES ENTRE BASE_N_T Y DIG_T EN FORMA BASE_N_T<N> @ DIG_T
+//	/// STATIC
+//	template<size_t N>
+//		requires (N>0)
+//	static constexpr inline
+//	bool operator == (const base_N_t<N>& larg, const dig_t& rarg) {
+//		if (larg[0] != rarg)
+//			return false;
+//		for(size_t ix{1} ; ix < N ; ++ix)
+//			if (larg[ix].is_not_0())
+//				return false;
+//		return true;
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	static constexpr inline
+//	bool operator != (const base_N_t<N>& larg, const dig_t& rarg) {
+//		for(size_t ix{1} ; ix < N ; ++ix)
+//			if (larg[ix].is_not_0())
+//				return true;
+//		if (larg[0] != rarg)
+//			return true;
+//		return false;
+//
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	static constexpr inline
+//	bool operator > (const base_N_t<N>& larg, const dig_t& rarg) {
+//		for(size_t ix{1} ; ix < N ; ++ix)
+//			if (larg[ix].is_not_0())
+//				return true;
+//		if (larg[0] > rarg)
+//			return true;
+//		return false;
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	static constexpr inline
+//	bool operator < (const base_N_t<N>& larg, const dig_t& rarg)  {
+//		for(size_t ix{1} ; ix < N ; ++ix)
+//			if (larg[ix].is_not_0())
+//				return false;
+//		if (larg[0] >= rarg)
+//			return false;
+//		return true;
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	static constexpr inline
+//	bool operator >= (const base_N_t<N>& larg, const dig_t& rarg)  {
+//		for(size_t ix{1} ; ix < N ; ++ix)
+//			if (larg[ix].is_not_0())
+//				return true;
+//		if (larg[0] >= rarg)
+//			return true;
+//		return false;
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	static constexpr inline
+//	bool operator <= (const base_N_t<N>& larg, const dig_t& rarg)   {
+//		for(size_t ix{1} ; ix < N ; ++ix)
+//			if (larg[ix].is_not_0())
+//				return false;
+//		if (larg[0] > rarg)
+//			return false;
+//		else
+//			return true;
+//	}
+//
+//	/// COMPARACIONES ENTRE BASE_N_T Y BASE_N_T HETEROGENEOS EN GENERAL
+//	///	EN FORMA BASE_N_T<N> @ BASE_N_T<M>
+//	/// STATIC
+//	template<size_t N,size_t M>
+//		requires ((N>0)&&(M>0))
+//	static constexpr inline
+//	bool operator == (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
+//	{
+//		constexpr size_t P{std::min(N,M)};
+//		constexpr size_t Q{std::max(N,M)};
+//		constexpr bool N_gt_M{N>M};
+//
+//		if constexpr (N!=M) {
+//			for (size_t ix{P} ix < Q ; ++ix) {
+//				if constexpr (N_gt_M) {
+//					if (larg[ix].is_not_0())
+//						return false;
+//				}
+//				else {
+//					if (rarg[ix].is_not_0())
+//						return false;
+//				}
+//			}
+//		}
+//		for(size_t ix{0} ; ix < P ; ++ix)
+//			if (larg[ix] != rarg[ix])
+//				return false;
+//		return true;
+//	}
+//
+//	template<size_t N,size_t M>
+//		requires ((N>0)&&(M>0))
+//	static constexpr inline
+//	bool operator != (const base_N_t<N>& larg, const base_N_t<M>& rarg) {
+//		return (!(larg == rarg));
+//	}
+//
+//	template<size_t N,size_t M>
+//		requires ((N>0)&&(M>0))
+//	static constexpr inline
+//	bool operator > (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
+//	{
+//		constexpr size_t P{std::min(N,M)};
+//		constexpr size_t Q{std::max(N,M)};
+//		constexpr bool N_gt_M{N>M};
+//
+//		if constexpr (N != M) {
+//			for(size_t ix{P} ; ix < Q ; ++ix) {
+//				if constexpr (N>M) {
+//					if (larg[ix].is_not_0())
+//						return true;
+//				}
+//				else {
+//					if (rarg[ix].is_not_0())
+//						return false;
+//				}
+//			}
+//		}
+//
+//		for(int32_t ix{N} ; ix > -1 ; --ix)
+//			if (larg[ix] > rarg[ix])
+//				return true;
+//		return false;
+//	}
+//
+//	template<size_t N,size_t M>
+//		requires ((N>0)&&(M>0))
+//	static constexpr inline
+//	bool operator < (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
+//	{
+//		constexpr size_t P{std::min(N,M)};
+//		constexpr size_t Q{std::max(N,M)};
+//		constexpr bool N_gt_M{N>M};
+//
+//		if constexpr (N != M) {
+//			for(size_t ix{P} ; ix < Q ; ++ix) {
+//				if constexpr (N>M) {
+//					if (larg[ix].is_not_0())
+//						return false;
+//				}
+//				else {
+//					if (rarg[ix].is_not_0())
+//						return true;
+//				}
+//			}
+//		}
+//
+//		for(int32_t ix{N} ; ix > -1 ; --ix)
+//			if (larg[ix] < rarg[ix])
+//				return true;
+//		return false;
+//	}
+//
+//	template<size_t N,size_t M>
+//		requires ((N>0)&&(M>0))
+//	static constexpr inline
+//	bool operator >= (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
+//	{
+//		return (!(larg < rarg));
+//	}
+//
+//	template<size_t N,size_t M>
+//		requires ((N>0)&&(M>0))
+//	static constexpr inline
+//	bool operator <= (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
+//	{
+//		return (!(larg > rarg));
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator == (const base_N_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() == arg);
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator == (const nat_reg_N_digs_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() == arg.base_const_ref_cthis());
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator != (const base_N_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() != arg);
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator != (const nat_reg_N_digs_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() != arg.base_const_ref_cthis());
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator <= (const base_N_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() <= arg);
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator <= (const nat_reg_N_digs_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() <= arg.base_const_ref_cthis());
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator >= (const base_N_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() >= arg);
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator >= (const nat_reg_N_digs_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() >= arg.base_const_ref_cthis());
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator < (const base_N_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() < arg);
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator < (const nat_reg_N_digs_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() < arg.base_const_ref_cthis());
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator > (const base_N_t<N>& arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() > arg);
+//	}
+//
+//	template<size_t N>
+//		requires (N>0)
+//	constexpr inline
+//	bool operator > (const nat_reg_N_digs_t<N> & arg) const noexcept
+//	{
+//		return (base_const_ref_cthis() > arg.base_const_ref_cthis());
+//	}
+
 //  /// FUNCION QUE CONSIGUE EL TOKEN PUNTO FIJO
 //  bool get_fixed_point_token(std::istream& is,std::ostream& errs)
 //  {

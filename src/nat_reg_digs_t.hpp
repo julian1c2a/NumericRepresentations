@@ -6,7 +6,7 @@
 
 namespace NumRepr {
 
-using type_traits::uint_type_for_radix_c
+using type_traits::uint_type_for_radix_c;
 using type_traits::suitable_base;
 
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t L>
@@ -539,7 +539,7 @@ private:
 	template<size_t N>
 		requires (N>0)
 	static constexpr inline
-	void set_0(base_N_t& arg) noexcept
+	void set_0(base_N_t<N>& arg) noexcept
 	{
 		for (dig_t& dig : arg)
 			dig = dig_0();
@@ -548,7 +548,7 @@ private:
 	template<size_t N>
 		requires (N>0)
 	static constexpr inline
-	void set_1(base_N_t& arg) noexcept
+	void set_1(base_N_t<N>& arg) noexcept
 	{
 		arg[0].set_1();
 		for (size_t ix{1} ; ix < N ; ++ix )
@@ -558,7 +558,7 @@ private:
 	template<size_t N>
 		requires (N>0)
 	static constexpr inline
-	void set_Bm1(base_N_t& arg) noexcept
+	void set_Bm1(base_N_t<N>& arg) noexcept
 	{
 		arg[0].set_Bm1();
 		for (size_t ix{1} ; ix < N ; ++ix )
@@ -568,7 +568,7 @@ private:
 	template<size_t N>
 		requires (N>0)
 	static constexpr inline
-	void set_dig(base_N_t& larg,dig_t d) noexcept
+	void set_dig(base_N_t<N>& larg,dig_t d) noexcept
 	{
 		larg[0] = d;
 		for (size_t ix{1} ; ix < N ; ++ix )
@@ -578,7 +578,7 @@ private:
 	template<size_t N>
 		requires (N>0)
 	static constexpr inline
-	void set_fill_dig(base_N_t& larg,dig_t d) noexcept
+	void set_fill_dig(base_N_t<N>& larg,dig_t d) noexcept
 	{
 		for (auto & elem : larg)
 			elem = d;
@@ -587,7 +587,7 @@ private:
 	template<size_t N>
 		requires (N>0)
 	static constexpr inline
-	void set_fill_1(base_N_t& larg) noexcept
+	void set_fill_1(base_N_t<N>& larg) noexcept
 	{
 		for (auto & elem : larg)
 			elem.set_1();
@@ -596,7 +596,7 @@ private:
 	template<size_t N>
 		requires (N>0)
 	static constexpr inline
-	void set_fill_Bm1(base_N_t& larg) noexcept
+	void set_fill_Bm1(base_N_t<N>& larg) noexcept
 	{
 		for (auto & elem : larg)
 			elem.set_Bm1();
@@ -909,28 +909,29 @@ private:
 		requires ((N>0)&&((N_pack>0)&&...))
 	static constexpr inline
 	base_N_t<N+(...+(N_pack))>
-			concat(base_N_t<N> larg,base_N_t<N_pack...> ... rarg_pack) noexcept
+			concat(base_N_t<N> larg,base_N_t<N_pack> ... rarg_pack) noexcept
 	{	return concat(larg,rarg_pack...); }
 
 	/// TAKE A SUBREGISTER OF A REGISTER OF DIGITS
-	template<size_t N,size_t ibegin,size_t iend>
+	template<size_t N,int64_t ibegin,int64_t iend>
 		requires ((N>0)&&(iend <= N)&&(ibegin < N)&&(ibegin != iend))
 	static constexpr inline
-	base_N_t<std::abs<size_t>(iend-ibegin)> subregister(const base_N_t<N> & arg)
+	base_N_t<int64_t ((iend-ibegin)<0) ? (ibegin-iend) : (iend-ibegin)>
+		subregister(const base_N_t<N> & arg)
 	noexcept {
 		if constexpr (ibegin < iend) {
 			base_N_t<iend-ibegin> ret;
 			for(size_t ix{ibegin} ; ix < iend ; ++ix) {
 				ret[ix-ibegin] = arg[ix];
 			}
-			return std::move(ret);
+			return ret;
 		}
 		else {
 			nat_reg_N_digs_t<iend-ibegin> ret;
 			for(int32_t ix{iend} ; ix > ibegin-1 ; --ix) {
 				ret[ix-ibegin] = arg[L-1-ix];
 			}
-			return std::move(ret);
+			return ret;
 		}
 	}
 
@@ -1279,287 +1280,6 @@ public:
 				/*							    																*/
 				/****************************************************/
 
-	/// COMPARACIONES ENTRE BASE_N_T Y DIG_T EN FORMA BASE_N_T<N> @ DIG_T
-	/// STATIC
-	template<size_t N>
-		requires (N>0)
-	static constexpr inline
-	bool operator == (const base_N_t<N>& larg, const dig_t& rarg) {
-		if (larg[0] != rarg)
-			return false;
-		for(size_t ix{1} ; ix < N ; ++ix)
-			if (larg[ix].is_not_0())
-				return false;
-		return true;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static constexpr inline
-	bool operator != (const base_N_t<N>& larg, const dig_t& rarg) {
-		for(size_t ix{1} ; ix < N ; ++ix)
-			if (larg[ix].is_not_0())
-				return true;
-		if (larg[0] != rarg)
-			return true;
-		return false;
-
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static constexpr inline
-	bool operator > (const base_N_t<N>& larg, const dig_t& rarg) {
-		for(size_t ix{1} ; ix < N ; ++ix)
-			if (larg[ix].is_not_0())
-				return true;
-		if (larg[0] > rarg)
-			return true;
-		return false;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static constexpr inline
-	bool operator < (const base_N_t<N>& larg, const dig_t& rarg)  {
-		for(size_t ix{1} ; ix < N ; ++ix)
-			if (larg[ix].is_not_0())
-				return false;
-		if (larg[0] >= rarg)
-			return false;
-		return true;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static constexpr inline
-	bool operator >= (const base_N_t<N>& larg, const dig_t& rarg)  {
-		for(size_t ix{1} ; ix < N ; ++ix)
-			if (larg[ix].is_not_0())
-				return true;
-		if (larg[0] >= rarg)
-			return true;
-		return false;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static constexpr inline
-	bool operator <= (const base_N_t<N>& larg, const dig_t& rarg)   {
-		for(size_t ix{1} ; ix < N ; ++ix)
-			if (larg[ix].is_not_0())
-				return false;
-		if (larg[0] > rarg)
-			return false;
-		else
-			return true;
-	}
-
-	/// COMPARACIONES ENTRE BASE_N_T Y BASE_N_T HETEROGENEOS EN GENERAL
-	///	EN FORMA BASE_N_T<N> @ BASE_N_T<M>
-	/// STATIC
-	template<size_t N,size_t M>
-		requires ((N>0)&&(M>0))
-	static constexpr inline
-	bool operator == (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
-	{
-		constexpr size_t P{std::min(N,M)};
-		constexpr size_t Q{std::max(N,M)};
-		constexpr bool N_gt_M{N>M};
-
-		if constexpr (N!=M) {
-			for (size_t ix{P} ix < Q ; ++ix) {
-				if constexpr (N_gt_M) {
-					if (larg[ix].is_not_0())
-						return false;
-				}
-				else {
-					if (rarg[ix].is_not_0())
-						return false;
-				}
-			}
-		}
-		for(size_t ix{0} ; ix < P ; ++ix)
-			if (larg[ix] != rarg[ix])
-				return false;
-		return true;
-	}
-
-	template<size_t N,size_t M>
-		requires ((N>0)&&(M>0))
-	static constexpr inline
-	bool operator != (const base_N_t<N>& larg, const base_N_t<M>& rarg) {
-		return (!(larg == rarg));
-	}
-
-	template<size_t N,size_t M>
-		requires ((N>0)&&(M>0))
-	static constexpr inline
-	bool operator > (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
-	{
-		constexpr size_t P{std::min(N,M)};
-		constexpr size_t Q{std::max(N,M)};
-		constexpr bool N_gt_M{N>M};
-
-		if constexpr (N != M) {
-			for(size_t ix{P} ; ix < Q ; ++ix) {
-				if constexpr (N>M) {
-					if (larg[ix].is_not_0())
-						return true;
-				}
-				else {
-					if (rarg[ix].is_not_0())
-						return false;
-				}
-			}
-		}
-
-		for(int32_t ix{N} ; ix > -1 ; --ix)
-			if (larg[ix] > rarg[ix])
-				return true;
-		return false;
-	}
-
-	template<size_t N,size_t M>
-		requires ((N>0)&&(M>0))
-	static constexpr inline
-	bool operator < (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
-	{
-		constexpr size_t P{std::min(N,M)};
-		constexpr size_t Q{std::max(N,M)};
-		constexpr bool N_gt_M{N>M};
-
-		if constexpr (N != M) {
-			for(size_t ix{P} ; ix < Q ; ++ix) {
-				if constexpr (N>M) {
-					if (larg[ix].is_not_0())
-						return false;
-				}
-				else {
-					if (rarg[ix].is_not_0())
-						return true;
-				}
-			}
-		}
-
-		for(int32_t ix{N} ; ix > -1 ; --ix)
-			if (larg[ix] < rarg[ix])
-				return true;
-		return false;
-	}
-
-	template<size_t N,size_t M>
-		requires ((N>0)&&(M>0))
-	static constexpr inline
-	bool operator >= (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
-	{
-		return (!(larg < rarg));
-	}
-
-	template<size_t N,size_t M>
-		requires ((N>0)&&(M>0))
-	static constexpr inline
-	bool operator <= (const base_N_t<N>& larg, const base_N_t<M>& rarg) noexcept
-	{
-		return (!(larg > rarg));
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator == (const base_N_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() == arg);
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator == (const nat_reg_N_digs_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() == arg.base_const_ref_cthis());
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator != (const base_N_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() != arg);
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator != (const nat_reg_N_digs_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() != arg.base_const_ref_cthis());
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator <= (const base_N_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() <= arg);
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator <= (const nat_reg_N_digs_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() <= arg.base_const_ref_cthis());
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator >= (const base_N_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() >= arg);
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator >= (const nat_reg_N_digs_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() >= arg.base_const_ref_cthis());
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator < (const base_N_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() < arg);
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator < (const nat_reg_N_digs_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() < arg.base_const_ref_cthis());
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator > (const base_N_t<N>& arg) const noexcept
-	{
-		return (base_const_ref_cthis() > arg);
-	}
-
-	template<size_t N>
-		requires (N>0)
-	constexpr inline
-	bool operator > (const nat_reg_N_digs_t<N> & arg) const noexcept
-	{
-		return (base_const_ref_cthis() > arg.base_const_ref_cthis());
-	}
-
 	/// OPERADOR COMPARACION SPACESHIP C++20
 	template<size_t N>
 		requires (N>0)
@@ -1667,12 +1387,12 @@ private:
 
 	template<bool with_result_type>
 	static constexpr inline
-	auto	preincrement (base_t& arg)  ->
+	auto	preincrement (base_t& arg)  noexcept ->
 			std::conditional_t<
 					with_result_type,
 						res_base_op_t<binop_e::add>,
 						const base_t &
-			>		noexcept
+			>
 	{
 		if constexpr (with_result_type) { /// true == tipo resultado
 			/// CREAMOS EL RETORNO RET DE TIPO RESULTADO
@@ -1762,12 +1482,12 @@ private:
 
 	template<bool with_result_type>
 	static constexpr inline
-	auto postincrement (base_t& arg) ->
+	auto postincrement (base_t& arg) noexcept ->
 			std::conditional<
 					with_result_type,
 							res_base_op_t<binop_e::add>,
 							const base_t &
-			>																		noexcept
+			>
 	{
 		base_t cparg{static_cast<base_t>(arg)};
 		if constexpr (with_result_type) {
@@ -1794,12 +1514,12 @@ private :
 
 	template<bool with_result_type>
 	constexpr inline
-	auto predecrement (base_t& arg) ->
+	auto predecrement (base_t& arg) noexcept ->
 		std::conditional<
 				with_result_type,
 						res_base_op_t<binop_e::sub>,
 						const base_t&
-				>                               noexcept
+				>
 	{
 		if constexpr (!with_result_type) {
 			/// BORROW INICIAL POR DEFECTO
@@ -1885,12 +1605,12 @@ private :
 
 	template<bool with_result_type>
 	constexpr inline
-	auto postdecrement(base_t& arg) ->
+	auto postdecrement(base_t& arg) noexcept ->
 		std::conditional<
 				with_result_type,
 						res_base_op_t<binop_e::sub>,
 						const base_t&
-				>                               noexcept
+				>
 	{
 		base_t cparg{static_cast<base_t>(arg)};
 		if constexpr (with_result_type) {
@@ -2002,49 +1722,6 @@ public :
 	/// MULTIPLICATIVE CARRY BY THE BASE B (10) MER_B_N M_MER_B_N
 
 private :
-
-	static constexpr inline
-	base_t operator << (const base_t& larg, size_t n) noexcept
-	{
-		base_t cparg{larg};
-		for(std::int32_t ix{L-1-n} ; ix > -1 ; --ix) {
-			cparg[ix+n]	= larg[ix];
-		}
-		for(std::int32_t ix{0} ; ix < n ; ++ix) {
-			cparg[ix]		= dig_0();
-		}
-		return std::move(cparg);
-	}
-
-	static constexpr inline
-	const base_t & operator <<= (base_t& larg, size_t n) noexcept
-	{
-		for(std::int32_t ix{L-1-n} ; ix > -1 ; --ix) {
-			larg[ix+n]	= larg[ix];
-		}
-		for(std::int32_t ix{0} ; ix < n ; ++ix) {
-			larg[ix]	= dig_0();
-		}
-		return (larg);
-	}
-
-	static constexpr inline
-	const base_t & operator >>= (base_t& larg, size_t n) noexcept
-	{
-		for(std::int32_t ix{0} ; ix < L-n ; ++ix) {
-			larg[ix] 		= larg[ix+n];
-		}
-		for(std::int32_t ix{L-n} ; ix < L ; ++ix) {
-			larg[ix]		=	dig_0();
-		}
-		return (larg);
-	}
-
-	static constexpr inline
-	base_t operator >> (const base_t & larg, size_t n) noexcept
-	{
-		return std::move(base_t{larg}.ref_data() >>= n);
-	}
 
 	static constexpr inline
 	base_t rem_B(const base_t & larg,size_t n) noexcept
