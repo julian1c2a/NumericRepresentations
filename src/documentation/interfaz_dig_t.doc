@@ -220,9 +220,6 @@ using digit_t =
 
 /// ISTREAM Y OSTREAM
 
-/// TODO :
-/// 			ESTA VERSION +
-///				VERSION CON TRATAMIENTO DE ERRORES RUNTIME
 template<type_traits::allowable_base_type_c UINT_T,UINT_T Base>
 	requires (type_traits::suitable_base<UINT_T,Base>())
 std::istream & operator >> (std::istream &,dig_t<UINT_T,Base> &);

@@ -36,12 +36,14 @@ public:
 	inline constexpr void push_back(dig_t arg) noexcept
 	{ static_cast<base_t* const>(this)->push_back(arg);	}
 
-	inline constexpr void insert(size_t pos,size_t tam,dig_t parg) noexcept
-	{	static_cast<base_t* const>(this)->insert(pos,tam,parg); }
+	inline constexpr void insert(size_t pos,size_t tam,dig_t parg)
+	noexcept {
+		static_cast<base_t* const>(this)->insert(pos,tam,parg); }
 
-	inline constexpr num_basic_t substr ( size_t pos , size_t n ) const noexcept
-	{	static_cast<const base_t* const>(this)->substr(pos,n);
-		return (*this);																													}
+	inline constexpr num_basic_t substr ( size_t pos , size_t n ) const
+	noexcept {
+		static_cast<const base_t* const>(this)->substr(pos,n);
+		return (*this);																									}
 
 	inline constexpr void push_front(dig_t parg) noexcept
 	{	static_cast<const base_t* const>(this)->insert(0,1,parg);}
@@ -62,7 +64,9 @@ public:
 	{	return static_cast<base_t* const>(this)->erase(pos,tam); }
 
 	// OPERADOR DE CONCATENACION
-	inline constexpr const num_basic_t & operator &= (const num_basic_t & arg) noexcept {
+	inline constexpr const num_basic_t & operator &=
+		(const num_basic_t & arg) noexcept
+	{
 		(*(static_cast<base_t* const>(this))) += arg;
 		return (*this);
 	}

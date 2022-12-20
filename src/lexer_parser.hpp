@@ -69,18 +69,22 @@ namespace lex {
     sem_13 = 4109
   };
 
+  bool is_digit(char);
   bool is_digit(char in) {
     return ((in >= '0')&&(in <= '9'));
   }
 
+  size_t digit_value(char);
   size_t digit_value(char in) {
     return static_cast<size_t>(in-'0');
   }
 
+  bool is_valid_char(char);
   bool is_valid_char(char in) {
     return (in>='a' && in <='z')||(in>='A' && in<='Z');
   }
 
+  bool char_value(char);
   bool char_value(char in) {
     if ((in>='a')&&(in <='z')){
       return in;
@@ -90,35 +94,42 @@ namespace lex {
     }
   }
 
+  bool is_separator(char);
   bool is_separator(char in) {
     return (in == '#');
   }
 
+  bool is_end_of_number(char);
   bool is_end_of_number(char in) {
     return (in == '_');
   }
 
+  bool is_whitespace(char);
   bool is_whitespace(char in) {
     return ((in == ' ')||(in == '\t'));
   }
 
+  bool is_end_descriptor(char);
   bool is_end_descriptor(char in) {
     return (in == '\n')||(in == std::char_traits<char>::eof());
   }
 
+  bool is_radix_descriptor(char);
   bool is_radix_descriptor(char in) {
     return ((in == 'b')||(in == 'B'));
   }
 
+  bool is_sign(char);
   bool is_sign(char in) {
     return ((in == '+')||(in == '-'));
   }
 
-  typename NumRepr::sign_e sign_value(char in) {
+  sign_e sign_value(char);
+  sign_e sign_value(char in) {
     if (in == '+')
-      return NumRepr::sign_e::vplus;
+      return sign_e::vplus;
     else
-      return NumRepr::sign_e::vminus;
+      return sign_e::vminus;
   }
 }
 }

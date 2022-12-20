@@ -135,6 +135,18 @@ public:
 	/// dig_t<uchint,10> digito{4};
 	/// digito() devuelve un 4 de tipo uchint
 
+	constexpr void set_0() noexcept {
+		m_d = 0;
+	}
+	constexpr void set_1() noexcept {
+		m_d = 1;
+	}
+	constexpr void set_Bm1() noexcept {
+		m_d = B-1;
+	}
+	constexpr void set_Bm2() noexcept {
+		m_d = B-2;
+	}
 public:
 	////////////////////////////////////////////////////////////////////////////
 	inline static consteval bool is_prime() noexcept {
@@ -375,9 +387,9 @@ public:
 			dig_t& cthis{*this};
 			if (is_1()) {
 				return dig_1();
-			} else if (is_max()) return dig_max();
+			} else if (is_Bm1()) return dig_max();
 			else {
-				for (dig_t index(2); !is_max(); ++index) {
+				for (dig_t index(2); !is_Bm1(); ++index) {
 					if (index.is_unit()) {
 						if ((cthis * index).is_1()) {
 							return index;
@@ -1034,39 +1046,15 @@ public:
 	}
 
 	constexpr inline
-	bool is_max () const
-	noexcept {
-		return (m_d == ui_max);
-	}
-
-	constexpr inline
-	bool is_not_max () const
-	noexcept {
-		return (m_d != ui_max);
-	}
-
-	constexpr inline
 	bool is_Bm1 () const
 	noexcept {
-		return (m_d == ui_Bm1);
+		return (m_d == ui_Bm1());
 	}
 
 	constexpr inline
 	bool is_not_Bm1 () const
 	noexcept {
-		return (m_d != ui_Bm1);
-	}
-
-	constexpr inline
-	bool is_submax() const
-	noexcept {
-		return (m_d == ui_submax);
-	}
-
-	constexpr inline
-	bool is_maxorsubmax() const
-	noexcept {
-		return (is_max() || is_submax());
+		return (m_d != ui_Bm1());
 	}
 
 	constexpr inline
@@ -1076,33 +1064,21 @@ public:
 	}
 
 	constexpr inline
-	bool is_not_maxorsubmax() const
-	noexcept {
-		return (is_not_max() && is_not_submax());
-	}
-
-	constexpr inline
 	bool is_not_Bm1orBm2() const
 	noexcept {
 		return (is_not_Bm1() && is_not_Bm2());
 	}
 
 	constexpr inline
-	bool is_not_submax() const
-	noexcept {
-		return (m_d != ui_submax);
-	}
-
-	constexpr inline
 	bool is_Bm2() const
 	noexcept {
-		return (m_d == ui_Bm2);
+		return (m_d == ui_Bm2());
 	}
 
 	constexpr inline
 	bool is_not_Bm2() const
 	noexcept {
-		return (m_d != ui_Bm2);
+		return (m_d != ui_Bm2());
 	}
 
 	constexpr inline

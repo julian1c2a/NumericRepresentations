@@ -20,7 +20,7 @@ struct nat_reg_digs_t : public reg_digs_t<UINT_T,B,L> {
 
 	template<size_t N>
 		requires (N>0)
-	using base_N_t      	= std::array<dig_t,N>;
+	using base_N_t      	= reg_digs_t<UINT_T,B,N>;
 	using base_t					= base_N_t<L>;
 
 	template<binop_e op,size_t N>
@@ -41,221 +41,45 @@ struct nat_reg_digs_t : public reg_digs_t<UINT_T,B,L> {
 	using res_op_t 				=
 		typename auxiliary_types::result_operation_t<nat_reg_digs_t,op,L>;
 
-	template<size_t N>
-		requires (N>0)
-	using reg_ints_t		= typename std::array<UINT_T,N>;
-	template<size_t N>
-		requires (N>0)
-	using reg_suints_t	= typename std::array<SIG_UINT_T,N>;
-	template<size_t N>
-		requires (N>0)
-	using reg_ssints_t	= typename std::array<SIG_SINT_T,N>;
-
 public :
 
-	static consteval dig_t 				dig_0()			noexcept
-	{return dig_t::dig_0();}
-	static consteval dig_t 				dig_1()			noexcept
-	{return dig_t::dig_1();}
-	static consteval dig_t 				dig_Bm1()		noexcept
-	{return dig_t::dig_Bm1();}
-	static consteval dig_t 				dig_max()		noexcept
-	{return dig_t::dig_max();}
-	static consteval dig_t 				dig_Bm2()		noexcept
-	{return dig_t::dig_Bm2();}
-	static consteval dig_t 				dig_submax()noexcept
-	{return dig_t::dig_submax();}
-	static consteval UINT_T 			ui_0()			noexcept
-	{return dig_t::ui_0();}
-	static consteval UINT_T 			ui_1() 			noexcept
-	{return dig_t::ui_1();}
-	static consteval UINT_T 			ui_Bm1() 		noexcept
-	{return B-1;}
-	static consteval UINT_T 			ui_B() 		  noexcept
-	{return B;}
-	static consteval UINT_T 			ui_submax()	noexcept
-	{return dig_t::ui_submax();}
-	static consteval UINT_T 			ui_max() 		noexcept
-	{return dig_t::ui_max();}
-	static consteval SIG_UINT_T		sui_0()			noexcept
-	{return dig_t::sui_0();}
-	static consteval SIG_UINT_T		sui_1() 		noexcept
-	{return dig_t::sui_1();}
-	static consteval SIG_UINT_T 	sui_Bm1() 	noexcept
-	{return dig_t::sui_B()-1;}
-	static consteval SIG_UINT_T		sui_B() 		noexcept
-	{return dig_t::sui_B();}
-	static consteval SIG_UINT_T 	sui_Bp1() 	noexcept
-	{return dig_t::sui_B()+1;}
-
-	/// PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS
-	/// TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL
-	template<size_t N>
-		requires (N>=0)
-	static consteval
-	base_N_t<N> 	regd_base_N_0()    noexcept {
-		base_N_t<N> ret;
-		for(auto& dig : ret) {
-			dig = dig_0();
-		}
-		return ret;
-	}
-	template<size_t N>
-		requires (N>=0)
-	static consteval
-	base_N_t<N>		regd_base_N_1()    noexcept {
-		base_N_t<N> ret{regd_base_N_0<N>()};
-		ret[0] = dig_1();
-		return ret;
-	}
-	template<size_t N>
-		requires (N>=0)
-	static consteval
-	base_N_t<N>		regd_base_N_Bm1()  noexcept {
-		base_N_t<N> ret{regd_base_N_0<N>()};
-		ret[0] = dig_Bm1();
-		return ret;
-	}
-	template<size_t N>
-		requires (N>=0)
-	static consteval
-	base_N_t<N>		regd_base_N_B() 	noexcept {
-		base_N_t<N> ret{regd_base_N_0<N>()};
-		ret[1] = dig_1();
-		return ret;
-	}
-	template<size_t N,size_t n>
-		requires ((n>=0)&&(n < N))
-	static consteval
-	base_N_t<N>	regd_base_N_pow_n_B()	noexcept {
-		base_N_t<N> ret{regd_base_N_0<N>()};
-		ret[n] = dig_1();
-		return ret;
-	}
-	template<size_t N,size_t n>
-		requires ((n>=0)&&(n < N))
-	static consteval
-	base_N_t<N>	regd_base_N_pow_n_B_m1() noexcept	{
-		base_N_t<N> ret{};
-		for(size_t ix{0} ; ix < n ; ++ix) {
-			ret[ix] = dig_Bm1();
-		}
-		for(size_t ix{n} ; ix < N ; ++ix) {
-			ret[ix] = dig_0();
-		}
-		return ret;
-	}
-	/// IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L>
-	/// DONDE BASE_T == BASE_N_T<L>
-	/// TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL
-	static consteval
-	base_t regd_base_0() noexcept {
-		return base_t{regd_base_N_0<L>()};
-	}
-	static consteval
-	base_t	regd_base_1() noexcept {
-		return base_t{regd_base_N_1<L>()};
-	}
-	static consteval
-	base_t	regd_base_Bm1() noexcept {
-		return base_t{regd_base_N_Bm1<L>()};
-	}
-	static consteval
-	base_t	regd_base_B() noexcept {
-		return base_t{regd_base_N_B<L>()};
-	}
-	static consteval
-	base_t	regd_base_pow_n_B()	noexcept {
-		return base_t{regd_base_N_pow_n_B<L>()};
-	}
-	static consteval
-	base_t	regd_base_pow_n_B_m1() noexcept	{
-		return base_t{regd_base_N_pow_n_B_m1<L>()};
-	}
 	/// FUNCIONES INMEDIATAS QUE NOS DAN CONSTANTES DEL TIPO DE LA ACTUAL CLASE
 	/// SE HACE CREANDO UNA VARIABLE RVALUE TEMPORAL CON LA FUNCION HOMOLOGA PARA
 	/// BASE_T
 	static consteval
 	nat_reg_digs_t 	regd_0()    noexcept {
-		return nat_reg_digs_t{regd_base_0()};
+		return nat_reg_digs_t{base_t::regd_0()};
 	}
+
 	static consteval
 	nat_reg_digs_t		regd_1()    noexcept {
-		return nat_reg_digs_t{regd_base_1()};
+		return nat_reg_digs_t{base_t::regd_1()};
 	}
+
 	static consteval
 	nat_reg_digs_t		regd_Bm1()  noexcept {
-		return nat_reg_digs_t{regd_base_Bm1()};
+		return nat_reg_digs_t{base_t::regd_Bm1()};
 	}
+
 	static consteval
 	nat_reg_digs_t		regd_B() 	noexcept {
-		return nat_reg_digs_t{regd_base_B()};
+		return nat_reg_digs_t{base_t::regd_B()};
 	}
+
 	template<size_t n>
 		requires ((n>=0)&&(n < L))
 	static consteval
 	nat_reg_digs_t		regd_pow_n_B()	noexcept {
-		return nat_reg_digs_t{regd_base_pow_n_B()};
+		return nat_reg_digs_t{base_t::regd_pow_n_B()};
 	}
+
 	template<size_t n>
 		requires ((n>=0)&&(n < L))
 	static consteval
 	nat_reg_digs_t		regd_pow_n_B_m1() noexcept	{
-		return nat_reg_digs_t{regd_base_pow_n_B_m1()};
-	}
-	/// ARRAYS DE ENTEROS (CONSTANTES EN TIEMPO DE COMPILACION INMEDIATAS)
-	static consteval
-	reg_ints_t<L> 	regi_0() 					noexcept	{
-		reg_ints_t<L> ret{};
-		for(auto& digint : ret) {
-			digint = dig_0()();
-		}
-		return ret;
+		return nat_reg_digs_t{base_t::regd_pow_n_B_m1()};
 	}
 
-	static consteval
-	reg_ints_t<L>		regi_1() 					noexcept	{
-		reg_ints_t<L> ret{regi_0()};
-		ret[0] = dig_1()();
-		return ret;
-	}
-
-	static consteval
-	reg_ints_t<L>		regi_Bm1() 				noexcept	{
-		reg_ints_t<L> ret{regi_0()};
-		ret[0] = dig_Bm1()();
-		return ret;
-	}
-
-	static consteval
-	reg_ints_t<L>		regi_B() 					noexcept  {
-		reg_ints_t<L> ret{regi_0()};
-		ret[1] = dig_1()();
-		return ret;
-	}
-
-	template<size_t n>
-		requires ((n>=0)&&(n < L))
-	static consteval
-	reg_ints_t<L>		regi_pow_n_B()		noexcept	{
-		reg_ints_t<L> ret{regi_0()};
-		ret[n] = dig_1()();
-		return ret;
-	}
-
-	template<size_t n>
-		requires ((n>=0)&&(n < L))
-	static consteval
-	reg_ints_t<L>	regi_pow_n_B_m1()		noexcept	{
-		reg_ints_t<L> ret{};
-		for(size_t ix{0} ; ix < n ; ++ix) {
-			ret[ix] = dig_t(B-1)();
-		}
-		for(size_t ix{n} ; ix < L ; ++ix) {
-			ret[ix] = dig_t(0)();
-		}
-		return ret;
-	}
 
 				/************************************/
 				/*																	*/
@@ -268,7 +92,7 @@ public:
 	/// CONSTRUCTOR POR DEFECTO
 	consteval inline
 	nat_reg_digs_t()
-	noexcept : base_t{dig_0()} {}
+	noexcept : base_t{dig_t::dig_0()} {}
 	/// CONSTRUCTOR POR LISTA DE DIGITOS
 	constexpr inline
 	nat_reg_digs_t(const std::initializer_list<dig_t> & arg)
@@ -320,7 +144,7 @@ public:
 			for(size_t ix{0} ; ix < Z ; ++ix)
 				by_index(ix)=arg[ix];
 			for(size_t ix{Z} ; ix < W ; ++ix)
-				by_index(ix)=dig_0();
+				by_index(ix)=dig_t::dig_0();
 		}
 		else {
 			base_ref_cthis() = arg;
@@ -344,7 +168,7 @@ public:
 			for(size_t ix{0} ; ix < Z ; ++ix)
 				by_index(ix)=std::move(arg[ix]);
 			for(size_t ix{Z} ; ix < W ; ++ix)
-				by_index(ix)=std::move(dig_0());
+				by_index(ix)=std::move(dig_t::dig_0());
 		}
 		else {
       base_ref_cthis()=std::move(arg);
@@ -385,65 +209,6 @@ public:
 	nat_reg_digs_t(const base_N_t<N> && arg)
 	noexcept : base_t{move_arg_N<N>(std::move(arg))} {}
 	/// END   : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS
-
-private :
-
-	/// FUNCION DE NORMALIZACION A LA BASE B DE UN ARGUMENTOS
-	/// EN UN PACK DE ENTEROS CUALQUIERA
-	template<type_traits::integral_c ... Ints_type>
-		requires ((sizeof...(Ints_type)) <= L)
-	static constexpr inline
-	base_t normalize(Ints_type ... digits_pow_i)
-	noexcept {
-		///< CREA UN STD_ARRAY DEL TIPO INT PASADO POR ARGUMENTOS
-		///< DE TAMANO EL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
-		using pack_type 	= typename utilities::pack2array<Ints_type...>;
-		///< DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR
-		///< [UN TIPO ENTERO]
-		using unique_type = typename pack_type::elem_type;
-		///< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO <= L)
-		constexpr size_t pack_sz{ pack_type::pack_size() };
-		///< ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO Y SU TAMANO
-		///< SEA MAYOR O MENOR QUE EL PROPIO DE LA BASE UINT_T
-		///< 		TIPO PROPIO ES : 									UINT_T
-		///< 		TIPO PASADO COMO ARGUMENTO ES :  	UNIQUE_TYPE
-		///< 		LOS TIPOS PASADOS EN LOS ARGUMENTOS HAN DE SER IGUALES ENTRE SI
-		///< PARA EL INTERROGANTE CONDICIONAL UTILIZAMOS
-		///< 		UNSIGNED_INTEGRAL_C<S>		PRIMERA PREGUNTA O MAS EXTERIOR
-		///< 		IS_UNISGNED_SZ_GT_V<T,S>	PREGUNTAS SEGUNDAS O MAS INTERIORES
-		///< PARA ELEGIR EL TIPO APROPIADO EN CADA CASO USAMOS
-		///<		SIG_UINT_FOR_UINT_T<UINT_T>
-		///<		SIG_UINT_FOR_UINT_T<UNIQUE_TYPE>
-		///<		SIG_UINT_FOR_UINT_T<UINT_T>
-		///<		SIG_UINT_FOR_SINT_T<UNIQUE_TYPE>
-		using namespace type_traits;
-
-		using SUInt_type =
-			typename std::conditional_t
-			<
-					unsigned_integral_c<unique_type>
-					,typename std::conditional_t<
-						type_traits::
-						gt_sz_v<UINT_T,unique_type>,
-							sig_UInt_for_UInt_t<UINT_T>,
-							sig_UInt_for_UInt_t<unique_type>
-					>
-					,typename std::conditional_t<
-						gt_sz_v<UINT_T,sig_UInt_for_SInt_t<unique_type>>,
-							sig_UInt_for_UInt_t<UINT_T>,
-							sig_UInt_for_SInt_t<unique_type>
-					>
-			>;
-		std::array<SUInt_type,L> ret_array{digits_pow_i...};
-		base_t ret;
-		for(size_t ix{0} ; ix < pack_sz ; ++ix) {
-			ret[ix] = dig_t(ret_array[ix]);
-		}
-		for(size_t ix{pack_sz} ; ix < L ; ++ix) {
-			ret[ix] = dig_t(0);
-		}
-		return ret;
-	}
 
 public:
 
@@ -536,7 +301,7 @@ private:
 	void set_0(base_N_t<N>& arg) noexcept
 	{
 		for (dig_t& dig : arg)
-			dig = dig_0();
+			dig = dig_t::dig_0();
 	}
 
 	template<size_t N>
@@ -546,7 +311,7 @@ private:
 	{
 		arg[0].set_1();
 		for (size_t ix{1} ; ix < N ; ++ix )
-			arg[ix] = dig_0();
+			arg[ix] = dig_t::dig_0();
 	}
 
 	template<size_t N>
@@ -556,7 +321,7 @@ private:
 	{
 		arg[0].set_Bm1();
 		for (size_t ix{1} ; ix < N ; ++ix )
-			arg[ix] = dig_0();
+			arg[ix] = dig_t::dig_0();
 	}
 
 	template<size_t N>
@@ -566,7 +331,7 @@ private:
 	{
 		larg[0] = d;
 		for (size_t ix{1} ; ix < N ; ++ix )
-			larg[ix] = dig_0();
+			larg[ix] = dig_t::dig_0();
 	}
 
 	template<size_t N>
@@ -604,7 +369,7 @@ private:
 	static constexpr inline
 	void set_interval_0(base_N_t<N>& larg) noexcept {
 		for (size_t ix{N_i} ; ix < N_pf ; ++ix)
-			larg[ix] = dig_0();
+			larg[ix] = dig_t::dig_0();
 	}
 
 	/// OPERACION DE PONER A VALOR DIG_Bm1 DEL ARRAY
@@ -615,7 +380,7 @@ private:
 	static constexpr inline
 	void set_interval_Bm1(base_N_t<N>& larg) noexcept {
 		for (size_t ix{N_i} ; ix < N_pf ; ++ix)
-			larg[ix] = dig_Bm1();
+			larg[ix] = dig_t::dig_Bm1();
 	}
 
 	/// OPERACION DE PONER A VALOR DIG DEL ARRAY
@@ -638,7 +403,7 @@ private:
 	static constexpr inline
 	void set_interval_0(base_t& larg) noexcept {
 		for (size_t ix{N_i} ; ix < N_pf ; ++ix)
-			larg[ix] = dig_0();
+			larg[ix] = dig_t::dig_0();
 	}
 
 	/// OPERACION DE PONER A VALOR DIG_Bm1 DEL ARRAY
@@ -650,7 +415,7 @@ private:
 	static constexpr inline
 	void set_interval_Bm1(base_t& larg) noexcept {
 		for (size_t ix{N_i} ; ix < N_pf ; ++ix)
-			larg[ix] = dig_Bm1();
+			larg[ix] = dig_t::dig_Bm1();
 	}
 
 	/// OPERACION DE PONER A VALOR DIG DEL ARRAY
@@ -790,20 +555,12 @@ public:
 
 		if (ix < L-1)
 			for( ; ix < L ; ++ix)
-				by_index(ix) = dig_0();
+				by_index(ix) = dig_t::dig_0();
 
 		return (*this);
 	}
 
 public:
-
-	/// FORMACION DE UN REG_M_DIGS_T<M> DESDE EL THIS REG_DIGS_T (L)
-	/// Y REG_N_DIGS_T<N> EN SUS DOS FORMAS: (*THIS)SEGUIDO(ARG) Y
-	/// (ARG)SEGUIDO(*THIS) : OPERACIONES DE CONCATENACION
-
-	/// FORMACION DE UN REG_M_DIGS_T<M> DESDE EL THIS REG_DIGS_T (L)
-	/// Y REG_N_DIGS_T<N> EN SUS DOS FORMAS: (*THIS)SEGUIDO(ARG) Y
-	/// (ARG)SEGUIDO(*THIS) : OPERACIONES DE CONCATENACION
 
 	/// NAT_REG_N_T<L+M> NAT_REG_T::CAT(NAT_REG_N_T<M>)
 	/// NAT_REG_N_T<L+M> NAT_REG_T::CAT_INV(NAT_REG_N_T<M>)
@@ -860,266 +617,7 @@ public:
 		return retInt;
 	}
 
-				/****************************************************/
-				/*							    																*/
-				/* FUNCIONES COMPARATIVAS BASICAS										*/
-				/*							    																*/
-				/****************************************************/
-
-private:
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_0(const base_N_t<N> & arg) noexcept
-	{
-		for(auto elem : arg) {
-			if(elem.is_not_0())
-				return false;
-		}
-		return true;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_1(const base_N_t<N> & arg) noexcept
-	{
-		if (arg[0].is_not_1())
-			return false;
-		for(size_t ix{1} ; ix<N ; ++ix) {
-			if(arg[ix].is_not_0())
-				return false;
-		}
-		return true;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_Bm1(const base_N_t<N> & arg) noexcept
-	{
-		if (arg[0].is_not_Bm1())
-			return false;
-		for(size_t ix{1} ; ix<N ; ++ix) {
-			if(arg[ix].is_not_0())
-				return false;
-		}
-		return true;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_B(const base_N_t<N> & arg) noexcept
-	{
-		if (arg[0].is_not_0())
-			return false;
-		if (arg[1].is_not_1())
-			return false;
-		for(size_t ix{2} ; ix<N ; ++ix) {
-			if(arg[ix].is_not_0())
-				return false;
-		}
-		return true;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_Bp1(const base_N_t<N> & arg) noexcept
-	{
-		if (arg[0].is_not_1())
-			return false;
-		if (arg[1].is_not_1())
-			return false;
-		for(size_t ix{2} ; ix<N ; ++ix) {
-			if(arg[ix].is_not_0())
-				return false;
-		}
-		return true;
-	}
-
-	template<size_t N,size_t n>
-		requires ((n<N) && (N>0))
-	static inline constexpr
-	bool is_B_pow_m1(const base_N_t<N> & arg) noexcept
-	{
-		if constexpr (n == 0) {
-			return is_0(arg);
-		}
-		else if constexpr (n == 1) {
-			return is_Bm1(arg);
-		}
-		else if constexpr (n == 2) {
-			if (arg[1].is_not_Bm1() || arg[0].is_not_Bm1())
-				return false;
-			for(size_t ix{2} ; ix < N ; ++ix)
-				if (arg[ix].is_not_0())
-					return false;
-			return true;
-		}
-		else {
-			for(size_t ix{0} ; ix < n ; ++ix)
-				if (arg[ix].is_not_Bm1())
-					return false;
-			for(size_t ix{n} ; ix < N ; ++ix)
-				if (arg[ix].is_not_0())
-					return false;
-			return true;
-		}
-	}
-
-	template<size_t N,size_t n>
-		requires ((n<N) && (N>0))
-	static inline constexpr
-	bool is_B_pow(const base_N_t<N> & arg) noexcept
-	{
-		if constexpr (n == 0) {
-			if (arg[0].is_not_1())
-				return false;
-			for (size_t ix{1} ; ix < N ; ++ix)
-				if (arg[ix].is_not_0())
-					return false;
-			return true;
-		}
-		else if constexpr (n == 1) {
-			if (arg[0].is_not_0())
-				return false;
-			if (arg[1].is_not_1())
-				return false;
-			for (size_t ix{2} ; ix < N ; ++ix)
-				if (arg[ix].is_not_0())
-					return false;
-			return true;
-		}
-		else if constexpr (n == 2) {
-			if (arg[0].is_not_0() || arg[1].is_not_0())
-				return false;
-			if (arg[2].is_not_1())
-				return false;
-			for (size_t ix{3} ; ix < N ; ++ix)
-				if (arg[ix].is_not_0())
-					return false;
-			return true;
-		}
-		else {
-			for (size_t ix{0} ; ix < n ; ++ix)
-				if (arg[ix].is_not_0())
-					return false;
-			if (arg[n].is_not_1())
-				return false;
-			for (size_t ix{n+1} ; ix < N ; ++ix)
-				if (arg[ix].is_not_0())
-					return false;
-			return true;
-		}
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_any_B_pow(const base_N_t<N> & arg) noexcept
-	{
-		const auto pred_not_0 = [](dig_t d){return (d.is_not_0());};
-		const auto it{std::find_if(arg.begin(),arg.end(),pred_not_0)};
-		if (it != arg.end()) {
-			const size_t card{std::count_if(arg.begin(),arg.end(),pred_not_0)};
-			if (card != 1)
-				return false;
-			else
-				return (is_0(*it));
-		}
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_filled_of_1(const base_N_t<N> & arg) {
-		for (size_t ix{0} ; ix < N ; ++ix)
-			if (arg[ix].is_not_1())
-				return false;
-		return true;
-	}
-
-	template<size_t N>
-		requires (N>0)
-	static inline constexpr
-	bool is_filled_of_Bm1(const base_N_t<N> & arg) {
-		for (size_t ix{0} ; ix < N ; ++ix)
-			if (arg[ix].is_not_Bm1())
-				return false;
-		return true;
-	}
-
-	template<size_t N,size_t n,dig_t d>
-		requires ((n>0) && (n<L) && (N>0))
-	static inline constexpr
-	bool is_filled_of(const base_N_t<N> & arg) {
-		for (size_t ix{0} ; ix < N ; ++ix)
-			if (arg[ix] != d)
-				return false;
-		return true;
-	}
-
 public:
-
-	inline constexpr
-	bool is_0() const {
-		return is_0(base_const_ref_cthis());
-	}
-
-	inline constexpr
-	bool is_1() const {
-		return is_1(base_const_ref_cthis());
-	}
-
-	inline constexpr
-	bool is_Bm1() const {
-		return is_Bm1(base_const_ref_cthis());
-	}
-
-	inline constexpr
-	bool is_B() const {
-		return is_B(base_const_ref_cthis());
-	}
-
-	inline constexpr
-	bool is_Bp1() const {
-		return is_Bp1(base_const_ref_cthis());
-	}
-
-	template<size_t n>
-		requires ((n>0) && (n<L))
-	inline constexpr
-	bool is_B_pow_m1() const {
-		return is_B_pow_m1<L,n>(base_const_ref_cthis());
-	}
-
-	template<size_t n>
-		requires ((n>0) && (n<L))
-	inline constexpr
-	bool is_B_pow() const {
-		return is_B_pow<L,n>(base_const_ref_cthis());
-	}
-
-	inline constexpr
-	bool is_filled_of_1() const {
-		return is_filled_of_1<L>(base_const_ref_cthis());
-	}
-
-	inline constexpr
-	bool is_filled_of_Bm1() const {
-		return is_filled_of_Bm1<L>(base_const_ref_cthis());
-	}
-
-	template<size_t n,dig_t d>
-		requires ((n>0) && (n<L))
-	inline constexpr
-	bool is_filled_of() const {
-		return is_filled_of<L,n,d>(base_const_ref_cthis());
-	}
-
 
 				/****************************************************/
 				/*							    																*/
@@ -1131,41 +629,24 @@ public:
 	template<size_t N>
 		requires (N>0)
 	constexpr inline
-	std::strong_ordering operator <=> (const nat_reg_N_digs_t<N>& arg) const noexcept
-	{
-		if (base_const_ref_cthis() == arg.base_const_ref_cthis())
-			return std::strong_ordering::equal;
-		else if (base_const_ref_cthis() < arg.base_const_ref_cthis())
-			return std::strong_ordering::less;
-		else
-			return std::strong_ordering::greater;
+	std::strong_ordering operator <=> (const nat_reg_N_digs_t<N>& arg)
+	const noexcept {
+		return (base_const_ref_cthis() <=> arg.base_const_ref_cthis());
 	}
 
 	/// OPERADOR COMPARACION SPACESHIP C++20
 	template<size_t N>
 		requires (N>0)
 	constexpr inline
-	std::weak_ordering operator <=> (const base_N_t<N>& arg) const noexcept
-	{
-		if (base_const_ref_cthis() == arg)
-			return std::weak_ordering::equivalent;
-		else if (base_const_ref_cthis() < arg)
-			return std::weak_ordering::less;
-		else
-			return std::weak_ordering::greater;
+	std::weak_ordering operator <=> (const base_N_t<N>& arg) const
+	noexcept {
+		return (base_const_ref_cthis() <=> arg);
 	}
 
 	/// OPERADOR COMPARACION SPACESHIP C++20
 	constexpr inline
 	std::weak_ordering operator <=> (const dig_t & arg) const noexcept
-	{
-		if (base_const_ref_cthis() > arg)
-			return std::weak_ordering::greater;
-		else if (base_const_ref_cthis() < arg)
-			return std::weak_ordering::less;
-		else
-			return std::weak_ordering::equivalent;
-	}
+	{	return (base_const_ref_cthis() <=> arg); }
 
 				/********************************/
 				/*							  							*/
@@ -1173,23 +654,6 @@ public:
 				/*		  SEGUNDO DIGITO					*/
 				/*							   							*/
 				/********************************/
-
-	template<size_t I>
-		requires ((I<L)&&(I>=0))
-	inline constexpr
-	dig_t get() const noexcept
-	{
-		return (cpy_by_index(I));
-	}
-
-	template<size_t I>
-		requires ((I<L)&&(I>=0))
-	inline constexpr
-	dig_t put(dig_t arg) noexcept
-	{
-		by_index(I) = arg;
-		return (cpy_by_index(I));
-	}
 
 	inline constexpr
 	dig_t operator[](size_t idx) const noexcept
@@ -1245,7 +709,7 @@ private:
 			/// CREAMOS EL RETORNO RET DE TIPO RESULTADO
 			res_base_op_t<binop_e::add> ret{
 				.result_content_low = static_cast<base_t>(arg),
-				.carry							=	dig_0(),
+				.carry							=	dig_t::dig_0(),
 				.good_result				=	true
 			};
 			/// NOMBRE CORTO PARA RET.CARRY
@@ -1256,26 +720,26 @@ private:
 			bool&  good{ret.good_result};
 			/// INCREMENTO DEL PRIMER DIGITO
 			if (arg[0].is_Bm1()) {
-				result[0] = dig_0();
-				carry 		= dig_1();
+				result[0] = dig_t::dig_0();
+				carry 		= dig_t::dig_1();
 			}
 			else {
 				++result[0];
-				carry 	= dig_0();
+				carry 	= dig_t::dig_0();
 				return ret;
 			}
 			/// BUCLE FOR QUE SUMA ARG Y 1 DESDE IDX=1 A IDX=L-1
 			if (carry.is_not_0()) {
 				for(size_t ix{1} ; ix < L ; ++ix) {
 					if (carry.is_not_0()) {
-						if (arg[ix] == dig_Bm1()) {
-							result[ix] = dig_0();
-							carry = dig_1();
+						if (arg[ix] == dig_t::dig_Bm1()) {
+							result[ix] = dig_t::dig_0();
+							carry = dig_t::dig_1();
 							continue;
 						}
 						else {
 							++result[ix];
-							carry = dig_0();
+							carry = dig_t::dig_0();
 							return ret;
 						}
 					}
@@ -1288,11 +752,11 @@ private:
 		}
 		else {
 			/// CARRY INICIAL POR DEFECTO
-			dig_t carry{dig_0()};
+			dig_t carry{dig_t::dig_0()};
 			/// INCREMENTO DEL PRIMER DIGITO
 			if (arg[0].is_Bm1()) {
-				arg[0] = dig_0();
-				carry = dig_1();
+				arg[0] = dig_t::dig_0();
+				carry = dig_t::dig_1();
 			}
 			else {
 				++arg[0];
@@ -1302,8 +766,8 @@ private:
 			for(size_t ix{1} ; ix < L ; ++ix) {
 				if (carry.is_1()) {
 					if (arg[ix].is_Bm1()) {
-						arg[ix] 	= dig_0();
-						carry 		= dig_1();
+						arg[ix] 	= dig_t::dig_0();
+						carry 		= dig_t::dig_1();
 						continue;
 					}
 					else {
@@ -1370,14 +834,14 @@ private :
 	{
 		if constexpr (!with_result_type) {
 			/// BORROW INICIAL POR DEFECTO
-			dig_t borrow{dig_0()};
+			dig_t borrow{dig_t::dig_0()};
 			/// RESTA 1 A ARG EN IDX == 0
 			if (arg[0].is_not_0()) {
 				--arg[0];
 				return (arg);
 			} else {
-				arg[0] = dig_Bm1();
-				borrow = dig_1();
+				arg[0] = dig_t::dig_Bm1();
+				borrow = dig_t::dig_1();
 			}
 			/// BUCLE FOR QUE RESTA A ARG UN 1 DESDE IDX=1 A IDX=L-1
 			for(size_t ix{1} ; ix < L ; ++ix) {
@@ -1387,8 +851,8 @@ private :
 						return (arg);
 					}
 					else if (arg[ix].is_0()) {
-						arg[ix] = dig_Bm1();
-						borrow = dig_1();
+						arg[ix] = dig_t::dig_Bm1();
+						borrow = dig_t::dig_1();
 					}
 				}
 			}
@@ -1398,7 +862,7 @@ private :
 			/// CREAMOS EL RETORNO RET
 			res_base_op_t<binop_e::sub> ret{
 				.result_content_low	=	arg,
-				.borrow							=	dig_0(),
+				.borrow							=	dig_t::dig_0(),
 				.good_result				=	true
 			};
 			/// NOMBRE CORTO PARA RET.RESULT_CONTENT_LOW
@@ -1410,11 +874,11 @@ private :
 			/// RESTA 1 A ARG EN IDX == 0
 			if (arg[0].is_not_0()) {
 				--result[0];
-				borrow 		= dig_0();
+				borrow 		= dig_t::dig_0();
 				return std::move(ret);
 			} else {
-				result[0] = dig_Bm1();
-				borrow 		= dig_1();
+				result[0] = dig_t::dig_Bm1();
+				borrow 		= dig_t::dig_1();
 			}
 			/// BUCLE FOR QUE RESTA BORROW A ARG
 			/// [DESDE 1 EN IDX=0] DESDE IDX=1 A IDX=L-1
@@ -1422,12 +886,12 @@ private :
 				if (borrow.is_not_0()) {
 					if (arg[ix].is_not_0()) {
 						--result[ix];
-						borrow = dig_0();
+						borrow = dig_t::dig_0();
 						return std::move(ret);
 					}
 					else {
-						result[ix] = dig_Bm1();
-						borrow = dig_1();
+						result[ix] = dig_t::dig_Bm1();
+						borrow = dig_t::dig_1();
 						continue;
 					}
 				}
@@ -1489,76 +953,46 @@ public :
 								/*                          */
 								/****************************/
 
-private :
-
-	static constexpr inline
-	const base_t & mC_Bm1(base_t & arg) noexcept
-	{
-		for(size_t ix{0} ; ix < L ; ++ix) {
-				arg[ix].mC_Bm1();
-		}
-		return (arg);
-	}
-
-	static constexpr inline
-	const base_t & mC_B(base_t & arg) noexcept
-	{
-		mC_Bm1(arg);
-		++arg;
-		return (arg);
-	}
-
-	static constexpr inline
-	base_t C_Bm1(const base_t & arg) noexcept
-	{
-		return (arg.mC_Bm1());
-	}
-
-	static constexpr inline
-	base_t C_B(const base_t & arg) noexcept
-	{
-		return (arg.mC_B());
-	}
-
-public :
-
-	constexpr inline
-	const nat_reg_digs_t & mC_B() noexcept
-	{
-		mC_B(base_ref_cthis);
-		return (*this);
-	}
-
-	constexpr inline
-	const nat_reg_digs_t & mC_Bm1() noexcept
-	{
-		mC_Bm1(base_ref_cthis);
-		return (*this);
-	}
-
-	constexpr inline
-	nat_reg_digs_t C_Bm1() const noexcept
-	{
-		return nat_reg_digs_t{C_Bm1(base_ref_cthis())};
-	}
-
-	constexpr inline
-	nat_reg_digs_t C_B() const noexcept
-	{
-		return nat_reg_digs_t{C_B(base_const_ref_cthis())};
-	}
-
-	constexpr inline
-	nat_reg_digs_t operator !() const noexcept
-	{
-		return C_Bm1();
-	}
-
-	constexpr inline
-	nat_reg_digs_t operator -() const noexcept
-	{
-		return C_B();
-	}
+//
+//public :
+//
+//	constexpr inline
+//	const nat_reg_digs_t & mC_B() noexcept
+//	{
+//		mC_B(base_ref_cthis);
+//		return (*this);
+//	}
+//
+//	constexpr inline
+//	const nat_reg_digs_t & mC_Bm1() noexcept
+//	{
+//		mC_Bm1(base_ref_cthis);
+//		return (*this);
+//	}
+//
+//	constexpr inline
+//	nat_reg_digs_t C_Bm1() const noexcept
+//	{
+//		return nat_reg_digs_t{C_Bm1(base_ref_cthis())};
+//	}
+//
+//	constexpr inline
+//	nat_reg_digs_t C_B() const noexcept
+//	{
+//		return nat_reg_digs_t{C_B(base_const_ref_cthis())};
+//	}
+//
+//	constexpr inline
+//	nat_reg_digs_t operator !() const noexcept
+//	{
+//		return C_Bm1();
+//	}
+//
+//	constexpr inline
+//	nat_reg_digs_t operator -() const noexcept
+//	{
+//		return C_B();
+//	}
 
 
 	/// BEGIN : OPERATORS >> >>= << <<= REM_B^n M_REM_B^n MER_B_N M_MER_B_N
@@ -1734,22 +1168,22 @@ public :
 		using dig_t = typename NumRepr::dig_t<uint_type,B>::dig_t;
 		if constexpr (! with_result_type) {
 			/// CARRY INICIAL POR DEFECTO
-			dig_t carry{dig_0()};
+			dig_t carry{dig_t::dig_0()};
 			/// SUMA DEL PRIMER DIGITO DE LARG[0] Y RARG
-			if (larg[0] <= dig_Bm1()-rarg) {
+			if (larg[0] <= dig_t::dig_Bm1()-rarg) {
 				larg[0] += rarg;
 				return (larg);
 			}
 			else {
-				larg[0] -= (dig_Bm1()-rarg+1);
-				carry = dig_1();
+				larg[0] -= (dig_t::dig_Bm1()-rarg+1);
+				carry = dig_t::dig_1();
 			}
 			/// BUCLE FOR QUE SUMA ARG Y 1 DESDE IDX=1 A IDX=L-1
 			for(size_t ix{1} ; ix < L ; ++ix) {
 				if (carry.is_1()) {
 					if (larg[ix].is_Bm1()) {
-						larg[ix] = dig_0();
-						carry = dig_1();
+						larg[ix] = dig_t::dig_0();
+						carry = dig_t::dig_1();
 					}
 					else {
 						++larg[ix];
@@ -1763,7 +1197,7 @@ public :
 			/// INICIALIZACION
 			res_base_op_t<binop_e::add> ret{
 				.result_content_low		=		larg,
-				.carry								=		dig_0(),
+				.carry								=		dig_t::dig_0(),
 				.good_result					=		true
 			};
 			/// NOMBRE CORTO PARA RET.RESULT_CONTENT_LOW
@@ -1773,25 +1207,25 @@ public :
 			/// NOMBRE CORTO PARA RET.GOOD_RESULT
 			bool&		good{ret.good_result};
 			/// SUMA DEL PRIMER DIGITO DE LARG[0] Y RARG
-			if (larg[0] <= dig_Bm1()-rarg) {
+			if (larg[0] <= dig_t::dig_Bm1()-rarg) {
 				result[0]       +=	rarg;
-				carry						 =	dig_0();
+				carry						 =	dig_t::dig_0();
 				return std::move(ret);
 			}
 			else {
-				ret.result_content[0]   -= (dig_Bm1()+dig_1()-rarg);
-				carry                    = dig_1();
+				ret.result_content[0]   -= (dig_t::dig_Bm1()+dig_t::dig_1()-rarg);
+				carry                    = dig_t::dig_1();
 			}
 			/// BUCLE FOR QUE SUMA ARG Y 1 DESDE IDX=1 A IDX=L-1
 			for(size_t ix{1} ; ix < L ; ++ix) {
 				if (carry.is_not_0()) {
 					if (result[ix].is_Bm1()) {
-						result[ix]  = dig_0();
-						carry       = dig_1();
+						result[ix]  = dig_t::dig_0();
+						carry       = dig_t::dig_1();
 					}
 					else {
 						++result[ix];
-						carry = dig_0();
+						carry = dig_t::dig_0();
 					}
 				}
 			}
@@ -1808,29 +1242,29 @@ public :
 		/// COPIA DE RARG
 		dig_t cprarg{rarg};
 		/// CARRY INICIAL POR DEFECTO: NULO
-		dig_t borrow{dig_0()};
+		dig_t borrow{dig_t::dig_0()};
 		/// SUMA DEL PRIMER DIGITO DE LARG[0] Y RARG
 		if (larg[0] >= rarg) {
 			larg[0] -= rarg;
-			borrow = dig_0();
+			borrow = dig_t::dig_0();
 			return (larg);
 		}
 		else {
 			cprarg -= larg[0];
 			larg[0] = cprarg.C_B();
-			borrow 	= dig_1();
+			borrow 	= dig_t::dig_1();
 		}
 		/// BUCLE FOR QUE RESTA RARG A LARG DESDE IDX=1 A IDX=L-1
 		for(size_t ix{1} ; ix < L ; ++ix) {
 			if (borrow.is_1()) {
 				if (larg[ix].is_0()) {
-					larg[ix] = dig_Bm1();
-					borrow  = dig_1();
+					larg[ix] = dig_t::dig_Bm1();
+					borrow  = dig_t::dig_1();
 					continue;
 				}
 				else {
 					--larg[ix];
-					borrow = dig_0();
+					borrow = dig_t::dig_0();
 					return (larg);
 				}
 			}
@@ -1905,13 +1339,13 @@ private :
 				res_low 	= regd_0();
 				return std::move(ret);
 			}
-			else if (is_0()) {
+			else if (nat_reg_digs_t::is_0()) {
 				return std::move(ret);
 			}
 			else if (arg.is_1()) {
 				return std::move(ret);
 			}
-			else if (is_1()) {
+			else if (nat_reg_digs_t::is_1()) {
 				res_low.set_0();
 				res_low[0] = arg;
 				return std::move(ret);
@@ -1952,16 +1386,16 @@ private :
 		}
 		else {
 			base_t ret{base_const_ref_cthis()};
-			if (arg.is_0()) {
+			if (arg.is_0()) {                   // ????
 				return std::move(regd_0());
 			}
-			else if (is_0()) {
+			else if (nat_reg_digs_t::is_0()) {  // ????
 				return std::move(regd_0());
 			}
 			else if (arg.is_1()) {
 				return std::move(ret);
 			}
-			else if (is_1()) {
+			else if (nat_reg_digs_t::is_1()) { //?????
 				ret.set_0();
 				ret[0] = arg;
 				return std::move(ret);
@@ -1996,320 +1430,14 @@ private :
 		}
 	}
 
-	/// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
-	/// BEGIN
-		template<size_t N>
-			requires (N>1)
-		static constexpr inline
-		base_N_t<N> aprox_units_divB(const base_N_t<N>& arg) noexcept
-		///< PRECONDITIONS : ARG != 0 AND ARG != 1 >
-		{
-			/// CASO EN QUE LA LONGITUD PERMANECE
-			///  999 		; 998 	; 997 	; 996
-			///  099,9 	; 099,8 ; 099,7 ; 099,6
-			///  100		; 100		;	100		;	100
-			base_N_t<N> cparg{arg};
-			if ((cparg[0]<= dig_t{B/2})||(is_any_B_pow(cparg))) {
-				cparg >>= 1;
-				return std::move(cparg);
-			}
-			else if (cparg[N-1].is_not_Bm1()) {
-				cparg >>= 1;
-				preincrement<false>(cparg);
-				return std::move(cparg);
-			}
-			else {
-				if (subregister<N,1,N>(arg).is_fill_of_Bm1()){
-					/// CPARG == Bm1 Bm1 Bm1 ... Bm1 Bm1 Bm1 d0<B/2
-					cparg.set_0();
-					cparg[N-1].set_1();
-					return std::move(cparg);
-				}
-				else {
-					/// CPARG == Bm1 dnm2 dnm3 ... d3 d2 d1 d0
-					cparg >>= 1;
-					preincrement<false>(cparg);
-					return std::move(cparg);
-				}
-			}
-		} ///< POSTCONDICION RET[N-1] == (DIG_1() | DIG_0())
-			///< POSTCONDICION RET[N-1] == DIG_1() => RET[N-2,0] == REGD_N_0()
-
-		///< HAY QUE VER SI ES POTENCIA DE B : is_any_B_pow
-		template<size_t N,size_t n>
-			requires ((n > 0) && (n < N) && (N > 1)) /// N == SIZE_FROM n == SIZE_TO
-		static constexpr inline
-		base_N_t<N> aprox_units_divB_n(const base_N_t<N>& arg) noexcept
-		{
-			if constexpr (n == N-1){
-				return std::move(aprox_units_divB<N>(arg));
-			}
-			else {
-				base_N_t<N> cparg{arg}; // n = N-x => x = N-n
-				for(size_t ix{0} ; ix < N-n ; ++ix) {
-					cparg = std::move(aprox_units_divB<N>(cparg));
-				}
-				return std::move(cparg);
-			}
-		}
-
-		///< FUNCION DE RECURSION PARA LA DIVISION
-		///< APROX_COC_REM APROXIMA REMAINDER A 2 DIGITOS Y DIVISOR A 1 DIGITO
-    template<size_t N>
-			requires (N > 0)
-    static constexpr inline
-    /// std::array<SIG_UINT_T,2>{}[0] == COC
-    /// std::array<SIG_UINT_T,2>{}[1] == REM
-    /// PRECONDICION DSOR != 0 Y DSOR != 1
-    std::array<SIG_UINT_T,2> aprox_coc_rem(
-				const base_N_t<N>& rem,
-				const base_N_t<N>& dsor
-		) noexcept {
-			std::array<SIG_UINT_T,2> ret;
-			const size_t dsor_msb{static_cast<size_t>(index_of_MSDig(dsor))};
-			const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-			const SIG_UINT_T dsor_uint {dsor[dsor_msb]()};
-			SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
-			SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
-
-			if (dsor_msb==0) {/// CASO EXACTO
-				/// SIZE(DIVISOR) == 1 DIGITO !=0 !=1
-				//const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-				//const SIG_UINT_T dsor_uint {dsor[0]()};
-				//SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
-				//SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
-				const SIG_UINT_T rem_aprox {SIG_UINT_T(dsor)*coc_calculado+rem_calculado};
-
-				ret[1] = rem_calculado;
-				ret[0] = coc_calculado;
-				return ret;
-			}
-			else {
-				/// SIZE(DIVISOR) >= 2
-				/// 2545/278 o mayores
-				base_N_t<N> dsor_red{dsor};
-				int32_t ix{0};
-				for( ; ix < N ; ++ix) {
-					dsor_red = aprox_units_divB<N>(dsor_red);
-					if (index_of_MSDig<N>(dsor_red) == 1)
-						break;
-				}
-				base_N_t<N> rem_red{rem};
-				for( ; ix > -1 ; --ix) {
-					rem_red = aprox_units_divB<N>(rem_red);
-				}
-
-				const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
-				const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
-				const base_N_t<N> rem_aprox {
-					dsor*dig_t{coc_calculado}+dig_t{rem_calculado}
-				};
-
-				if ((rem_aprox <= rem)&&(rem_aprox + dsor > rem)) {
-					/// CORRECTO EN COC
-					ret[1] = rem_calculado;
-					ret[0] = coc_calculado;
-					return ret;
-				}
-				else if (rem_aprox > rem) {
-					/// NOS HEMOS PASADO EN EL COC
-					--coc_calculado;
-					rem_calculado += dsor_uint;
-					return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
-				}
-				else {
-					/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
-					++coc_calculado;
-					rem_calculado -= dsor_uint;
-					return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
-				}
-			}
-    }
-
-		///< FUNCION DE RECURSION PARA LA DIVISION
-		///< SOBRECARGA DE LA ANTERIOR PARA LA RECURSION QUE NO SEA EL PRIMER CASO
-    template<size_t N>
-			requires (N > 0)
-    static constexpr inline
-    /// std::array<SIG_UINT_T,2>{}[0] == COC
-    /// std::array<SIG_UINT_T,2>{}[1] == REM
-    /// PRECONDICION DSOR != 0 Y DSOR != 1
-    std::array<SIG_UINT_T,2> aprox_coc_rem(
-				const base_N_t<N>& rem	  , const base_N_t<N>& dsor	,
-				SIG_UINT_T coc_calculado 	, SIG_UINT_T rem_calculado
-			) noexcept
-		{ /// SUPONEMOS QUE REM TIENE TAMANO 1 o 2
-			/// DSOR YA REDUCIDO TIENE TAMANO 1
-			std::array<SIG_UINT_T,2> ret;
-			const size_t dsor_msb{static_cast<size_t>(index_of_MSDig(dsor))};
-			if (dsor_msb==0) {
-				/// SIZE(DIVISOR) == 1 DIGITO !=0 !=1
-				const SIG_UINT_T rem_aprox {SIG_UINT_T(dsor)*coc_calculado+rem_calculado};
-				const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-				const SIG_UINT_T dsor_uint {dsor[0]()};
-				if ((rem_aprox <= rem_uint)&&(rem_aprox + dsor_uint > rem_uint)) {
-					/// CORRECTO EN COC
-					ret[1] = rem_calculado;
-					ret[0] = coc_calculado;
-					return std::move(ret);
-				}
-				else if (rem_aprox > rem) {
-					/// NOS HEMOS PASADO EN EL COC
-					--coc_calculado;
-					rem_calculado += dsor_uint;
-					return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
-				}
-				else {
-					/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
-					++coc_calculado;
-					rem_calculado -= dsor_uint;
-					return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
-				}
-				/// 24/7
-			}
-			else {
-				/// SIZE(DIVISOR) >= 2
-				/// 2545/278 o mayores
-				base_N_t<N> dsor_red{dsor};
-				int32_t ix{0};
-				for( ; ix < N ; ++ix) {
-					dsor_red = aprox_units_divB<N>(dsor_red);
-					if (index_of_MSDig<N>(dsor_red) == 1)
-						break;
-				}
-				base_N_t<N> rem_red{rem};
-				for( ; ix > -1 ; --ix) {
-					rem_red = aprox_units_divB<N>(rem_red);
-				}
-
-				const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
-				const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
-				const base_N_t<N> rem_aprox {dsor*dig_t{coc_calculado}+dig_t{rem_calculado}};
-
-				if ((rem_aprox <= rem)&&(rem_aprox + dsor > rem)) {
-					/// CORRECTO EN COC
-					ret[1] = rem_calculado;
-					ret[0] = coc_calculado;
-					return std::move(ret);
-				}
-				else if (rem_aprox > rem) {
-					/// NOS HEMOS PASADO EN EL COC
-					--coc_calculado;
-					rem_calculado += dsor_uint;
-					return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
-				}
-				else {
-					/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
-					++coc_calculado;
-					rem_calculado -= dsor_uint;
-					return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
-				}
-			}
-    }
-	/// END
-	/// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
-
-	///	TODO TO	DO 36 : 20 : 25 : 11 : 2022
-	/// TODO TO	DO	repasar que el tipo de vuelta cambie y sea :
-	/// 	std::array<base_N_t<N>,2> -> res_base_N_op_t<N,binop_e::fediv>
-	/// '@' = FULL_EUCLID_DIV(BASE_T,DIG_T) -> (REM,COC,GOOD)
-	template<size_t N>
-		requires (N > 0)
-	static constexpr inline
-	std::array<base_N_t<N>,2> fediv(const base_N_t<N> & larg,const base_N_t<N> & rarg)
-	noexcept {
-
-		using ret_type = std::array<base_N_t<N>,2>;
-		//using ret_aprox_type = std::array<SIG_UINT_T,2>;
-
-		base_N_t<N> dndo{larg};
-		base_N_t<N> dsor{rarg};
-
-		const int32_t dsor_MSDig{index_of_MSDig(larg)};
-			/// MOST SIGNIFICANT DIGIT DEL DIVISOR [DEL NUMERO NO DEL TIPO]
-		const int32_t dndo_MSDig{index_of_MSDig(rarg)};
-			/// MOST SIGNIFICANT DIGIT DEL DIVIDENDO [DEL NUMERO NO DEL TIPO]
-		const size_t  dist_dndo_dsor{std::abs(dndo_MSDig-dndo_MSDig)};
-
-		base_N_t<N> rem{base_N_t<N>::regd_N_0()};
-		base_N_t<N> coc{base_N_t<N>::regd_N_0()};
-
-		if (is_0(dsor)) {
-			ret_type ret;
-			ret[0] = std::move(coc);
-			ret[1] = std::move(rem);
-			return (ret);
-		}
-		else if (is_1(dsor)) {
-			ret_type ret;
-			ret[0] = dndo;
-			set_0<N>(ret[1]);
-			return (ret);
-		}
-		else if (dndo < dsor) {
-			ret_type ret;
-			set_0<N>(ret[0]);
-			ret[1] = dndo;
-			return (ret);
-		}
-		else if (dndo == dsor) {
-			ret_type ret;
-			set_1<N>(ret[0]);
-			set_0<N>(ret[1]);
-			return (ret);
-		}
-		else {
-			int32_t pl_dndo{dndo_MSDig-dsor_MSDig+1};
-			for(int32_t ix{dsor_MSDig},iy{dndo_MSDig} ; ix > -1 ; --ix,--iy) {
-				rem[ix] = dndo[iy];
-			}
-
-			for(size_t num_loops{0} ; num_loops < dist_dndo_dsor ; ++num_loops)
-			{
-				if (rem == dsor) {
-					coc <<= 1;
-					coc[0] = dig_1();
-					rem = regd_base_N_0<N>();
-					--pl_dndo;
-					rem[0] = dndo[pl_dndo];
-				}
-				else if (rem < dsor) {
-					coc <<= 1;
-					coc[0] = dig_0();
-					rem <= 1;
-					--pl_dndo;
-					rem[0] = dndo[pl_dndo];
-				}
-				///	else if (rem >= dsor*dig_B()) {
-				///		este caso no se deberia de dar nunca
-				///	}
-				else {
-					auto ret{aprox_coc_rem<N>(rem,dsor)};
-					SIG_UINT_T coc_dig{ret[0]};
-					SIG_UINT_T rem_dig{ret[1]};
-
-					coc <<= 1; 	// coc = coc * B
-					coc[0] = dig_t(coc_dig); // coc = coc + D  ; B-1 >= D > 1
-					--pl_dndo;
-					rem <<= 1;
-					rem[0] = dndo[pl_dndo];
-				}
-			}
-			std::array<base_N_t<N>,2> ret;
-			ret[0] = coc;
-			ret[1] = rem;
-			return ret;
-		}
-	}
-
 //  /// TO DO REPASAR
 //	/// '@' = '+'
 //	constexpr inline
 //	std::array<nat_reg_digs_t,2> add(dig_t arg) const
 //	noexcept {
 //		const nat_reg_digs_t& cthis{*this};
-//		std::array<nat_reg_digs_t,2> result{dig_0(),cthis};
-//		dig_t carry{dig_0()};
+//		std::array<nat_reg_digs_t,2> result{dig_t::dig_0(),cthis};
+//		dig_t carry{dig_t::dig_0()};
 //		for(size_t ix{0} ; ix < L ; ++ix) {
 //			auto 	temp_result   =      result[0][ix].add(arg);
 //			auto  temp_result_2 = temp_result[0][ix].add(carry);
@@ -2318,7 +1446,7 @@ private :
 //			carry = result[1][0];
 //		}
 //		for(size_t ix{1} ; ix < L ; ++ix) {
-//			result[1][ix] = dig_0();
+//			result[1][ix] = dig_t::dig_0();
 //		}
 //		return result;
 //	}
@@ -2329,14 +1457,14 @@ private :
 //	std::array<nat_reg_digs_t,2> sub(dig_t arg) const
 //	noexcept {
 //		const nat_reg_digs_t& cthis{*this};
-//		std::array<nat_reg_digs_t,2> result{dig_0(),cthis};
+//		std::array<nat_reg_digs_t,2> result{dig_t::dig_0(),cthis};
 //		nat_reg_digs_t cb_arg{-arg};
 //		if (!(arg.is_0())) {
 //			for(size_t ix{1} ; ix < L ; ++ix) {
-//				cb_arg[ix] = dig_Bm1();
+//				cb_arg[ix] = dig_t::dig_Bm1();
 //			}
 //		}
-//		dig_t carry{dig_0()};
+//		dig_t carry{dig_t::dig_0()};
 //		for(size_t ix{0} ; ix < L ; ++ix) {
 //			auto 	temp_result   =      result[0][ix].add(cb_arg[ix]);
 //			auto  temp_result_2 =     temp_result[0].add(carry);
@@ -2425,14 +1553,14 @@ public :
 				cthis += cparg;
 				cthis += carry;
 				if ((cthis < cpthis) || (cparg < cpthis))
-					carry = dig_1();
+					carry = dig_t::dig_1();
 			}
 			for (size_t ix{N} ; ix < L ; ++ix) {
 				dig_t& 				cthis{cthis.m_dc[ix]};
 				const dig_t  	cpthis{cthis.m_dc[ix]};
 				cthis += carry;
 				if (cthis < cpthis)
-					carry = dig_1();
+					carry = dig_t::dig_1();
 			}
 		}
 		else {
@@ -2443,7 +1571,7 @@ public :
 				cthis += cparg;
 				cthis += carry;
 				if ((cthis < cpthis) || (cparg < cpthis))
-					carry = dig_1();
+					carry = dig_t::dig_1();
 			}
 		}
 		return (cthis);
@@ -2476,7 +1604,7 @@ public :
 				const dig_t  	cpthis{cthis.m_dc[ix]};
 				cthis += carry;
 				if (cthis < cpthis)
-					carry = dig_1();
+					carry = dig_t::dig_1();
 			}
 			// end
 		cthis += cparg;

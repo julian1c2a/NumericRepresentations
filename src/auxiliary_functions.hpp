@@ -26,7 +26,7 @@ sign_e Int2Sign (IntT nu) noexcept
 
 template<type_traits::arith_integral_c IntT>
 constexpr inline
-sign_funct_e Int2SignFunct (IntT nu) noexcept
+sign_funct_e Int2SignFunct(IntT nu) noexcept
 {
 	if (nu < 0)
 		return sign_funct_e::vminus;
@@ -38,7 +38,7 @@ sign_funct_e Int2SignFunct (IntT nu) noexcept
 
 template<type_traits::arith_natural_c NatIntT>
 constexpr inline
-sign_funct_e Nat2SignFunct (NatIntT nu) noexcept
+sign_funct_e Nat2SignFunct(NatIntT nu) noexcept
 {
 	if (nu==0)
 		return sign_funct_e::vzero;
