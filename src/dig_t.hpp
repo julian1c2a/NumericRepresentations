@@ -292,7 +292,7 @@ public:
 	{}
 
 	/// CONSTRUCTOR COPIA POR REFERENCIA
-	constexpr inline dig_t(const dig_t&) noexcept = default;
+	constexpr inline dig_t(const dig_t &) noexcept = default;
 	/// CONSTRUCTOR POR MOVIMIENTO
 	constexpr inline dig_t(dig_t &&) noexcept = default;
 

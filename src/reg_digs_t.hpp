@@ -56,11 +56,11 @@ public :
 	}
 	/// devolucion de copia de la clase actual
 	inline reg_digs_t cp_cthis() const noexcept {
-		return std::move(reg_digs_t{*this});
+		return reg_digs_t{*this};
 	}
 	/// devoluciones por referencias y por copia de los elementos
 	inline dig_t cp_cthis_at(size_t k) const noexcept {
-		return std::move(cp_base_cthis()[k]);
+		return cp_base_cthis()[k];
 	}
 
 	inline dig_t & r_cthis_at(size_t k) noexcept {
@@ -646,11 +646,11 @@ public:
 		uint64_t retInt{0};
 		uint64_t BasePowIx{1};
 		for(size_t k{0} ; k < L ; ++k) {
-			retInt += cr_cthis(k)*BasePowIx;
+			retInt += cr_cthis_at(k)*BasePowIx;
 			BasePowIx *= B;
 			if(	(k+1 < L)
 						&&
-					(maxbase<Int_Type>() < (retInt+((cr_cthis(k+1)*BasePowIx)))
+					(maxbase<Int_Type>() < (retInt+((cr_cthis_at(k+1)*BasePowIx)))
 				))
 			{	return retInt; }
 		}
@@ -1201,14 +1201,14 @@ public :
 	reg_digs_t operator >> (size_t n) const noexcept {
 		reg_digs_t ret{*this};
 		ret >>= n;
-		return std::move(ret);
+		return ret;
 	}
 
 	constexpr inline
 	reg_digs_t rem_B(size_t n) const noexcept {
 		reg_digs_t ret{*this};
 		ret <<= L-n;
-		return std::move(ret);
+		return ret;
 	}
 
 	constexpr inline
@@ -1872,6 +1872,60 @@ reg_digs_t<UINT_T,B,N> m_incr(reg_digs_t<UINT_T,B,N>& rarg) noexcept {
 	return (rarg);
 }
 
+template<typename UINT_T,UINT_T B,size_t N>
+	constexpr inline
+	const reg_digs_t<UINT_T,B,N>&
+	m_sum(
+		reg_digs_t<UINT_T,B,N>& larg,
+		const reg_digs_t<UINT_T,B,N>& rarg
+	) noexcept
+{
+	//using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
+	using dig_t			 = dig_t<UINT_T,B>;
+	//using reg_digs_t = reg_digs_t<UINT_T,B,N>;
+
+	dig_t carry{dig_t::dig_0()};
+	for(size_t i=0 ; i < N ; ++i) {
+		dig_t& left{larg[i]};
+		const dig_t left_Bm1{left.C_Bm1()};
+		const dig_t& right{rarg[i]};
+
+		if constexpr (B > static_cast<UINT_T>(2u))
+			if (carry.is_0())
+				if (left_Bm1 >= right)
+					carry.set_0();
+				else
+					carry.set_1();
+			else {
+				if(	left_Bm1.is_not_0() && right.is_not_Bm1()	)
+					if  (--left_Bm1 > right)
+						carry.set_0();
+					else
+						carry.set_1();
+				else
+					carry.set_1();
+				++left;
+			}
+		else
+			if (carry.is_0())
+				if (left.is_0() || right.is_0())
+					carry.set_0();
+				else {
+					carry.set_1();
+					++left;
+				}
+			else
+				if (left.is_1() || right.is_1()) {
+					carry.set_1();
+					++left;
+				}
+				else
+					carry.set_0();
+		left += right;
+	}
+	return (larg);
+}
+
 /// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
 /// BEGIN
 template<typename UINT_T, UINT_T B, size_t N>
@@ -1948,10 +2002,13 @@ aprox_coc_rem(
 		const reg_digs_t<UINT_T,B,N>& dsor
 ) noexcept {
 	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+
 	std::array<SIG_UINT_T,2> ret;
-	const size_t dsor_msb{static_cast<size_t>(index_of_MSDig(dsor))};
+
+	const size_t dsor_msb{static_cast<size_t>(dsor.index_of_MSDig())};
 	const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
 	const SIG_UINT_T dsor_uint {dsor[dsor_msb]()};
+
 	SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
 	SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
 
@@ -1971,15 +2028,16 @@ aprox_coc_rem(
 		/// SIZE(DIVISOR) >= 2
 		/// 2545/278 o mayores
 		reg_digs_t<UINT_T,B,N> dsor_red{dsor};
-		int32_t ix{0};
+		uint64_t ix{0};
 		for( ; ix < N ; ++ix) {
-			dsor_red = aprox_units_divB<N>(dsor_red);
-			if (index_of_MSDig<N>(dsor_red) == 1)
+			dsor_red = aprox_units_divB<UINT_T,B,N>(dsor_red);
+			if (dsor_red.template index_of_MSDig<UINT_T,B,N>() == 1)
 				break;
 		}
 		reg_digs_t<UINT_T,B,N> rem_red{rem};
-		for( ; ix > -1 ; --ix) {
-			rem_red = aprox_units_divB<N>(rem_red);
+
+		for(int64_t iy{ix} ; iy > -1 ; --iy) {
+			rem_red = aprox_units_divB<UINT_T,B,N>(rem_red);
 		}
 
 		const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
@@ -1998,13 +2056,13 @@ aprox_coc_rem(
 			/// NOS HEMOS PASADO EN EL COC
 			--coc_calculado;
 			rem_calculado += dsor_uint;
-			return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
+			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
 		}
 		else {
 			/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
 			++coc_calculado;
 			rem_calculado -= dsor_uint;
-			return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
+			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
 		}
 	}
 }
@@ -2028,7 +2086,7 @@ aprox_coc_rem(
 	/// DSOR YA REDUCIDO TIENE TAMANO 1
 	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
 	std::array<SIG_UINT_T,2> ret;
-	const size_t dsor_msb{static_cast<size_t>(index_of_MSDig(dsor))};
+	const size_t dsor_msb{static_cast<size_t>(dsor.index_of_MSDig())};
 	if (dsor_msb==0) {
 		/// SIZE(DIVISOR) == 1 DIGITO !=0 !=1
 		const SIG_UINT_T rem_aprox {SIG_UINT_T(dsor)*coc_calculado+rem_calculado};
@@ -2044,13 +2102,13 @@ aprox_coc_rem(
 			/// NOS HEMOS PASADO EN EL COC
 			--coc_calculado;
 			rem_calculado += dsor_uint;
-			return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
+			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
 		}
 		else {
 			/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
 			++coc_calculado;
 			rem_calculado -= dsor_uint;
-			return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
+			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
 		}
 		/// 24/7
 	}
@@ -2060,13 +2118,13 @@ aprox_coc_rem(
 		reg_digs_t<UINT_T,B,N> dsor_red{dsor};
 		int32_t ix{0};
 		for( ; ix < N ; ++ix) {
-			dsor_red = aprox_units_divB<N>(dsor_red);
-			if (index_of_MSDig<N>(dsor_red) == 1)
+			dsor_red = aprox_units_divB<UINT_T,B,N>(dsor_red);
+			if (dsor_red.template index_of_MSDig<UINT_T,B,N>() == 1)
 				break;
 		}
 		reg_digs_t<UINT_T,B,N> rem_red{rem};
 		for( ; ix > -1 ; --ix) {
-			rem_red = aprox_units_divB<N>(rem_red);
+			rem_red = aprox_units_divB<UINT_T,B,N>(rem_red);
 		}
 
 		const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
@@ -2083,13 +2141,13 @@ aprox_coc_rem(
 			/// NOS HEMOS PASADO EN EL COC
 			--coc_calculado;
 			rem_calculado += dsor_uint;
-			return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
+			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
 		}
 		else {
 			/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
 			++coc_calculado;
 			rem_calculado -= dsor_uint;
-			return aprox_coc_rem(rem,dsor,coc_calculado,rem_calculado);
+			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
 		}
 	}
 }
@@ -2148,8 +2206,8 @@ fediv(
 		return ret;
 	}
 	else {
-		int32_t pl_dndo{dndo_MSDig-dsor_MSDig+1};
-		for(int32_t ix{dsor_MSDig},iy{dndo_MSDig} ; ix>-1 ; --ix,--iy) {
+		int64_t pl_dndo{dndo_MSDig-dsor_MSDig+1};
+		for(int64_t ix{dsor_MSDig},iy{dndo_MSDig} ; ix>-1 ; --ix,--iy) {
 			rem[ix] = dndo[iy];
 		}
 
