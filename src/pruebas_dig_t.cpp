@@ -30,8 +30,15 @@ int main() {
 	opndo >>= 1;
 	std::cout << opndo << std::endl;
 	std::cout << opndo.index_of_MSDig() << std::endl;
-	opndo = rd_t{6,1,3,2,5};
-	std::cout << "aprox to units of " << opndo << " is " << aprox_units_divB(opndo) << std::endl;
+	opndo = rd_t{6,6,7,9,5};
+	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+	rd_t lopndo{9,9,8,2,5};
+	rd_t ropndo{0,0,5,8,7};
+	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,4>(lopndo) << std::endl;
 
 
 	return 0;

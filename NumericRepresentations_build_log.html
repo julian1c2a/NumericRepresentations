@@ -4,33 +4,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>20-12-2022 at 14:30.54</u><br />
-Build ended on: <u>20-12-2022 at 14:30.56</u><p />
+Build started on: <u>20-12-2022 at 20:54.21</u><br />
+Build ended on: <u>20-12-2022 at 20:54.23</u><p />
 <b>-------------- Build: Debug in NumericRepresentations (compiler: GNU GCC Compiler)---------------</b><br />
-g++.exe -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -Wnon-virtual-dtor -Winit-self -Wredundant-decls -Winline -Wunreachable-code -Wmissing-declarations -Wmain -pedantic -Wall -fPIC -m64 -std=c++20 -march=corei7-avx -Wmissing-include-dirs -Wzero-as-null-pointer-constant -IC:\msys64\mingw64\bin -Ic:\msys64\mingw64\ -IC:\msys64 -IC:\msys64\clang64 -IC:\msys64\clang64\bin -IC:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src -IC:\Users\Julian\Dropbox\GitHub\NumericRepresentations -c C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp -o obj\Debug\src\pruebas_dig_t.o<br />
-In file included from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:4,<br />
-                 from C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:1:<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp: In function 'constexpr NumRepr::reg_digs_t&lt;UInt_t, B, N&gt; NumRepr::m_incr(reg_digs_t&lt;UInt_t, B, N&gt;&amp;)':<br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1835:15: warning: typedef 'using SIG_UINT_T = NumRepr::type_traits::sig_UInt_for_UInt_t&lt;UINT_T&gt;' locally defined but not used [-Wunused-local-typedefs]</font><br />
- 1835 |         using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t&lt;UINT_T&gt;;<br />
-      |               ^~~~~~~~~~<br />
-C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp: In function 'int main()':<br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:9:28: warning: unused variable 'Bm1' [-Wunused-variable]</font><br />
+g++.exe -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -m64 -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -IC:\msys64\mingw64\include\c++ -c C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp -o obj\Debug\src\pruebas_dig_t.o<br />
+C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:9:28: warning: unused variable 'Bm1' [-Wunused-variable]</font><br />
     9 |         constexpr ullint_t Bm1{B-1};<br />
       |                            ^~~<br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:12:15: warning: typedef 'using d_t = NumRepr::digit_t&lt;10&gt;' locally defined but not used [-Wunused-local-typedefs]</font><br />
+<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:12:15: warning: typedef 'using d_t = NumRepr::digit_t&lt;10&gt;' locally defined but not used [-Wunused-local-typedefs]</font><br />
    12 |         using d_t = digit_t&lt;B&gt;;<br />
       |               ^~~<br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp: In instantiation of 'constexpr bool NumRepr::reg_digs_t&lt;UINT_T, B, L&gt;::is_any_B_pow() const [with UINT_T = unsigned char; UINT_T B = 10; long long unsigned int L = 5]':</font><br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1886:50:   required from 'constexpr NumRepr::reg_digs_t&lt;UInt_t, B, N&gt; NumRepr::aprox_units_divB(const reg_digs_t&lt;UInt_t, B, N&gt;&amp;) [with UINT_T = unsigned char; UINT_T B = 10; long long unsigned int N = 5]'</font><br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:34:74:   required from here</font><br />
-<font color="#0000ff">C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:929:56: warning: narrowing conversion of 'std::count_if&lt;const NumRepr::dig_t&lt;unsigned char, 10&gt;*, NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::is_any_B_pow() const::&lt;lambda(NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::dig_t)&gt; &gt;((&amp;((const NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;*)this)-&gt;NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::cr_cthis())-&gt;NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::cbegin(), (&amp;((const NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;*)this)-&gt;NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::cr_cthis())-&gt;NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::cend(), (pred_not_0, const NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::is_any_B_pow() const::&lt;lambda(NumRepr::reg_digs_t&lt;unsigned char, 10, 5&gt;::dig_t)&gt;()))' from 'std::iterator_traits&lt;const NumRepr::dig_t&lt;unsigned char, 10&gt;*&gt;::difference_type' {aka 'long long int'} to 'NumRepr::size_t' {aka 'long long unsigned int'} [-Wnarrowing]</font><br />
-  929 |                         const size_t card{std::count_if(cr_cthis().cbegin(),cr_cthis().cend(),pred_not_0)};<br />
-      |                                           ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
-g++.exe -LC:\msys64\mingw64\lib -o bin\Debug\NumericRepresentations.exe obj\Debug\src\pruebas_dig_t.o  -static-libstdc++ -static-libgcc -static -m64 -static-libstdc++ -static-libgcc -static -m64<br />
-Output file is bin\Debug\NumericRepresentations.exe with size 2,76 MB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minute(s), 2 second(s))</font><br />
-<font color="#0000ff">0 error(s), 7 warning(s) (0 minute(s), 2 second(s))</font><br />
+In file included from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:4,<br />
+                 from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:1:<br />
+<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp: In instantiation of 'constexpr NumRepr::reg_digs_t&lt;UINT_T, B, L&gt; NumRepr::reg_digs_t&lt;UINT_T, B, L&gt;::operator&gt;&gt;(NumRepr::size_t) const [with UINT_T = unsigned char; UINT_T B = 10; long long unsigned int L = 5; NumRepr::size_t = long long unsigned int]':</font><br />
+<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1889:13:   required from 'constexpr NumRepr::reg_digs_t&lt;UInt_t, B, N&gt; NumRepr::aprox_units_divB(const reg_digs_t&lt;UInt_t, B, N&gt;&amp;) [with UINT_T = unsigned char; UINT_T B = 10; long long unsigned int N = 5]'</font><br />
+<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\pruebas_dig_t.cpp:34:81:   required from here</font><br />
+<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1204:37: warning: moving a local object in a return statement prevents copy elision [-Wpessimizing-move]</font><br />
+ 1204 |                 return std::move(ret);<br />
+      |                                     ^<br />
+C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:1204:37: note: remove 'std::move' call<br />
+g++.exe  -o bin\Debug\NumericRepresentations.exe obj\Debug\src\pruebas_dig_t.o  -static-libstdc++ -static-libgcc -static -m64 -static-libstdc++ -static-libgcc -static -m64 -fopenmp<br />
+Output file is bin\Debug\NumericRepresentations.exe with size 2,77 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minute(s), 1 second(s))</font><br />
+<font color="#0000ff">0 error(s), 6 warning(s) (0 minute(s), 1 second(s))</font><br />
 </tt>
 </body>
 </html>

@@ -782,9 +782,12 @@ public :
 	inline constexpr
 	bool is_0() const noexcept
 	{
-		for(const auto& elem : cr_cthis()) {
-			if(elem.is_not_0())
+		auto it{this->cbegin()};
+		const auto itend{this->cend()};
+		while(it != itend) {
+			if(it->is_not_0())
 				return false;
+			++it;
 		}
 		return true;
 	}
@@ -926,7 +929,7 @@ public :
 		const auto pred_not_0 = [](dig_t d){return (d.is_not_0());};
 		const auto it{std::find_if(cr_cthis().cbegin(),cr_cthis().cend(),pred_not_0)};
 		if (it != cr_cthis().cend()) {
-			const size_t card{std::count_if(cr_cthis().cbegin(),cr_cthis().cend(),pred_not_0)};
+			const int64_t card{std::count_if(cr_cthis().cbegin(),cr_cthis().cend(),pred_not_0)};
 			if (card != 1)
 				return false;
 			else
@@ -1832,7 +1835,7 @@ reg_digs_t<UINT_T,B,N> operator & (
 template<typename UINT_T,UINT_T B,size_t N>
 constexpr inline
 reg_digs_t<UINT_T,B,N> m_incr(reg_digs_t<UINT_T,B,N>& rarg) noexcept {
-	using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
+	//using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
 	using dig_t			 = dig_t<UINT_T,B>;
 
 	dig_t carry{dig_t::dig_0()};
@@ -1883,7 +1886,10 @@ reg_digs_t<UINT_T,B,N> aprox_units_divB(const reg_digs_t<UINT_T,B,N>& arg) noexc
 	///  100		; 100		;	100		;	100
 	using dig_t = dig_t<UINT_T,B>;
 	reg_digs_t<UINT_T,B,N> cparg{arg};
-	if ((cparg[0]<= dig_t{B/2})||(cparg.is_any_B_pow())) {
+	if ((cparg >> 1).is_0()) {
+		return cparg;
+	}
+	else if ((cparg[0]<= dig_t{B/2})||(cparg.is_any_B_pow())) {
 		cparg >>= 1;
 		return cparg;
 	}
@@ -1917,12 +1923,12 @@ constexpr inline
 reg_digs_t<UINT_T,B,N> aprox_units_divB_n(const reg_digs_t<UINT_T,B,N>& arg) noexcept
 {
 	if constexpr (n == N-1){
-		return aprox_units_divB<N>(arg);
+		return aprox_units_divB<UINT_T,B,N>(arg);
 	}
 	else {
 		reg_digs_t<UINT_T,B,N> cparg{arg}; // n = N-x => x = N-n
 		for(size_t ix{0} ; ix < N-n ; ++ix) {
-			cparg = std::move(aprox_units_divB<N>(cparg));
+			cparg = aprox_units_divB<UINT_T,B,N>(cparg);
 		}
 		return cparg;
 	}
