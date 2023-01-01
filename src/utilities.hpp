@@ -111,9 +111,9 @@ struct pack2array {
 		return (sizeof...(Ts));
 	}
 
-	constexpr array_type&& operator()(Ts&& ...args) const noexcept {
+	constexpr array_type operator()(Ts&& ...args) const noexcept {
 		constexpr array_type  content = array_type{std::forward(args...)};
-		return  std::move(content);
+		return  content;
 	}
 
 	using elem_type =  typename pack2tuple<Ts...>::elem_type<0>;
@@ -122,7 +122,7 @@ struct pack2array {
 	static constexpr elem_type get(Ts&& ...args) noexcept {
 		constexpr array_type  content = {std::forward(args...)};
 		constexpr elem_type ret{std::get<J>(std::forward(content))};
-		return std::move(ret);
+		return ret;
 	}
 
 	/// ESTA FUNCION AUXILIAR ES NECESARIA
@@ -132,7 +132,7 @@ struct pack2array {
 	template <std::size_t... I>
 	static constexpr void for_each_impl(
 		array_type& iarray,
-		const Ts&...args,
+		const Ts...args,
 		std::index_sequence<I...>
 	) noexcept
 	{
@@ -141,7 +141,7 @@ struct pack2array {
 	}
 
 	static constexpr
-	void for_each(array_type& iarray,const Ts&...args) noexcept {
+	void for_each(array_type& iarray,const Ts...args) noexcept {
 		constexpr unsigned size_of_pack{sizeof...(args)};
 		for_each_impl(
 			iarray,
@@ -170,6 +170,231 @@ void assign_with_order(
 ///			assign_with_order(dest,args...);
 ///
 /// donde los "args" son de tipo "Ts" (que es uno solo, todos iguales entre si)
+
+namespace special {
+
+/// FORMA SENCILLA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME
+template<NumRepr::usint_t B,NumRepr::usint_t L>
+consteval inline
+NumRepr::uint128_t Base_pow_to_Size() noexcept {
+	constexpr NumRepr::uint128_t Bc{B};
+	if constexpr (L==0)
+		return static_cast<NumRepr::uint128_t>(1);
+	else if constexpr (L==1)
+		return static_cast<NumRepr::uint128_t>(Bc);
+	else if constexpr (L==2)
+		return static_cast<NumRepr::uint128_t>(Bc*Bc);
+	else
+		return static_cast<NumRepr::uint128_t>(Bc*Base_pow_to_Size<B,L-1>());
 }
+
+/// FORMA ANTIGUA PERO SEGURA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME
+template<NumRepr::usint_t Base,NumRepr::usint_t Exp>
+struct pow_B_to_E_t {
+	static constexpr NumRepr::uint128_t base 			= static_cast<NumRepr::uint128_t>(Base);
+	static constexpr NumRepr::uint128_t exponent	= static_cast<NumRepr::uint128_t>(Exp);
+	static constexpr NumRepr::uint128_t value			= base*(pow_B_to_E_t<base,exponent-1>::value);
+};
+template<NumRepr::usint_t Base>
+struct pow_B_to_E_t<Base,2> {
+	static constexpr NumRepr::uint128_t base 			= static_cast<NumRepr::uint128_t>(Base);
+	static constexpr NumRepr::uint128_t exponent	= static_cast<NumRepr::uint128_t>(2);
+	static constexpr NumRepr::uint128_t value			= base*base;
+};
+template<NumRepr::usint_t Base>
+struct pow_B_to_E_t<Base,1> {
+	static constexpr NumRepr::uint128_t base 			= static_cast<NumRepr::uint128_t>(Base);
+	static constexpr NumRepr::uint128_t exponent	= static_cast<NumRepr::uint128_t>(1);
+	static constexpr NumRepr::uint128_t value			= base;
+};
+template<NumRepr::usint_t Base>
+struct pow_B_to_E_t<Base,0> {
+	static constexpr NumRepr::uint128_t base 			= static_cast<NumRepr::uint128_t>(Base);
+	static constexpr NumRepr::uint128_t exponent	= static_cast<NumRepr::uint128_t>(0);
+	static constexpr NumRepr::uint128_t value			= static_cast<NumRepr::uint128_t>(1);
+};
+
+template<NumRepr::usint_t Base,NumRepr::usint_t Exp>
+constexpr NumRepr::uint128_t Pow_B2L_v = pow_B_to_E_t<Base,Exp>::value;
+
+/// OBTENER UNA TUPLA EN TIEMPO DE COMPILACION DONDE CADA POSICION ESTA
+/// INICIALIZADA PERO CON UNA LLAMADA DISTINTA A FUNCION POR CADA INDICE
+
+/// TEMPLATE GENERAL
+template<
+		std::int64_t IntObj_ct,
+		std::int64_t BeginIntObj_ct,
+		std::int64_t EndIntObj_ct,
+		std::int64_t Base,
+		template<std::int64_t,std::int64_t> class Funct_tt
+	>
+	requires ((BeginIntObj_ct >= EndIntObj_ct)&&(IntObj_ct >= BeginIntObj_ct))
+struct tuple_builder_t {
+
+	using type = std::int64_t;
+
+	static constexpr std::int64_t  	unit  = static_cast<std::int64_t>(1);
+
+	static constexpr std::int64_t 	value{IntObj_ct};
+	static constexpr std::int64_t 	begin_value{BeginIntObj_ct};
+	static constexpr std::int64_t 	end_value{EndIntObj_ct};
+
+	static consteval
+	decltype(auto) build()
+	noexcept {
+		return
+			std::tuple_cat(
+				std::make_tuple(std::make_tuple(value,Funct_tt<Base,value>{}())),
+				tuple_builder_t<value+unit,begin_value,end_value,Base,Funct_tt>::build()
+			);
+	}
+
+};
+
+/// ESPECIALIZACION DONDE INTOBJ_CT == ENDINTOBJ_CT-1
+template<
+		std::int64_t BeginIntObj_ct,
+		std::int64_t EndIntObj_ct,
+		std::int64_t Base,
+		template<std::int64_t,std::int64_t> class Funct_tt
+	>
+struct tuple_builder_t<EndIntObj_ct-1,BeginIntObj_ct,EndIntObj_ct,Base,Funct_tt> {
+
+	using type = std::int64_t;
+
+	static constexpr std::int64_t  	unit  = static_cast<std::int64_t>(1);
+
+	static constexpr std::int64_t 	value{EndIntObj_ct-unit};
+	static constexpr std::int64_t 	begin_value{BeginIntObj_ct};
+	static constexpr std::int64_t 	end_value{EndIntObj_ct};
+
+	static consteval
+	decltype(auto) build()
+	noexcept {
+		return std::make_tuple(std::make_tuple(value,Funct_tt<Base,value>{}()));
+	}
+
+};
+
+/// ESPECIALIZACION DONDE INTOBJ_CT == BEGININTOBJ_CT
+template<
+		std::int64_t BeginIntObj_ct,
+		std::int64_t EndIntObj_ct,
+		std::int64_t Base,
+		template<std::int64_t,std::int64_t> class Funct_tt
+	>
+	requires (BeginIntObj_ct <= EndIntObj_ct)
+struct tuple_builder_t<BeginIntObj_ct,BeginIntObj_ct,EndIntObj_ct,Base,Funct_tt> {
+
+	using type = std::int64_t;
+
+	static constexpr type  	unit  = 1;
+
+	static constexpr type 	value{BeginIntObj_ct};
+	static constexpr type 	begin_value{BeginIntObj_ct};
+	static constexpr type 	end_value{EndIntObj_ct};
+
+	static consteval
+	decltype(auto) build()
+	noexcept {
+		return
+			std::tuple_cat(
+				std::make_tuple(
+					std::make_tuple(value,Funct_tt<Base,value>{}())
+				),
+				tuple_builder_t<begin_value+unit,begin_value,end_value,Base,Funct_tt>::build()
+			);
+	}
+
+};
+
+template<
+	std::int64_t BeginIntObj_ct,
+	std::int64_t EndIntObj_ct,
+	std::int64_t Base,
+	template<std::int64_t,std::int64_t> class Funct_tt
+>
+	requires (BeginIntObj_ct < EndIntObj_ct)
+struct tuple_user_constructor_t {
+	static constexpr auto value =
+		tuple_builder_t<
+				BeginIntObj_ct,
+				BeginIntObj_ct,
+				EndIntObj_ct,
+				Base,
+				Funct_tt
+		>::build();
+};
+
+template<
+	std::int64_t BeginIntObj_ct,
+	std::int64_t EndIntObj_ct,
+	std::int64_t Base,
+	template<std::int64_t,std::int64_t> class Funct_tt
+>
+	requires (BeginIntObj_ct < EndIntObj_ct)
+constexpr auto tuple_constr_v =
+	tuple_user_constructor_t<
+			BeginIntObj_ct,
+			EndIntObj_ct,
+			Base,
+			Funct_tt
+	>::build();
+
+template <
+	std::size_t start,
+	std::size_t Base,
+	std::size_t ... Is,
+	template<
+		std::size_t,
+		std::size_t
+	> typename Funct_tt,
+	typename ... Ts
+>
+constexpr
+void ctf_helper (
+	std::index_sequence<Is...>,
+	std::tuple<Ts...> const & t
+) noexcept {
+	(Funct_tt<Base,Is>{}(std::get<start + Is>(t)), ...);
+}
+
+template <
+	std::size_t start,
+	std::size_t end,
+	std::size_t Base,
+	template<
+		typename,
+		std::size_t,
+		std::size_t
+	> typename Funct_tt,
+	typename ... Ts
+>
+constexpr
+void ct_for (std::tuple<Ts...> const & t) noexcept {
+	ctf_helper<start,Base,Funct_tt>(std::make_index_sequence<end-start>{}, t);
+}
+
+/// CONVERSION DE REGISTRO DE DIGITOS A ENTERO EN TIEMPO DE COMPILACION
+template<auto B,auto L,typename A>
+constexpr inline
+NumRepr::uint128_t
+conversion_to_int(const A& arg) noexcept {
+	using NumRepr::uint128_t;
+	using NumRepr::sint128_t;
+	constexpr uint128_t base{static_cast<uint128_t>(B)};
+	uint128_t acc{arg[L-1]()};
+	for(sint128_t ix{L-2} ; ix > -1 ; --ix) {
+		acc *= base;
+		acc += static_cast<uint128_t>(arg[ix]());
+	};
+	return acc;
+}
+
+
+
+}/// CIERRA ESPACIO DE NOMBRES SPECIAL
+
+}/// CIERRA ESPACIO DE NOMBRES UTILITIES
 
 #endif // UTILITIES_HPP_INCLUDED

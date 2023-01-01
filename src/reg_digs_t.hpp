@@ -12,7 +12,7 @@ using type_traits::suitable_base;
 
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t L>
   requires ((suitable_base<UINT_T,B>())&&(L > 0))
-struct reg_digs_t : protected std::array<dig_t<UINT_T,B>,L> {
+struct reg_digs_t : public std::array<dig_t<UINT_T,B>,L> {
 public :
 
 	using dig_t 				= dig_t<UINT_T,B>;
@@ -676,17 +676,19 @@ public :
 	}
 
 	inline constexpr
-	decltype(auto) cpy_data() const {
+	decltype(auto) cpy_data() const noexcept {
 		return (*(this->base_t::data()));
 	}
 
 	///	<summary="Sobrecarga del const dig_t & operator[](size_t) const"></summary>
-	const dig_t& operator[](size_t ix) const {
+	inline constexpr
+	const dig_t& operator[](size_t ix) const noexcept {
 		return (cr_cthis_at(ix));
 	}
 
 	/// <summary="Sobrecarga del dig_t & operator[](size_t)"></summary>
-	dig_t& operator[](size_t ix) {
+	inline constexpr
+	dig_t& operator[](size_t ix) noexcept {
 		return (r_cthis_at(ix));
 	}
 
@@ -1166,7 +1168,7 @@ public :
 		for(int32_t ix{0} ; ix < n ; ++ix) {
 			cp_cthis(ix+n)	=	dig_0();
 		}
-		return std::move(cp_cthis());
+		return (cp_cthis());
 	}
 
 	/// TODO TO DO VOY POR AQUI CON EL TEMA DE LOS CTHIS
@@ -1223,7 +1225,7 @@ public :
 	reg_digs_t mer_B(size_t n) const noexcept {
 		reg_digs_t ret{*this};
 		ret >>= L-n;
-		return std::move(ret);
+		return (ret);
 	}
 
 	constexpr inline
@@ -1246,7 +1248,7 @@ public :
 	reg_digs_t operator | (const reg_digs_t & rarg) const noexcept {
 		reg_digs_t ret{*this};
 		ret |= rarg;
-		return std::move(ret);
+		return (ret);
 	}
 
 	constexpr inline
@@ -1262,7 +1264,7 @@ public :
 	reg_digs_t operator & (const reg_digs_t & rarg) noexcept {
 		reg_digs_t ret{*this};
 		ret &= rarg;
-		return std::move(ret);
+		return (ret);
 	}
 
 	/// NOS DEVUELVE EL ÍNDICE DEL DÍGITO NO 0 DE POTENCIA DE B MAS GRANDE
@@ -1564,7 +1566,7 @@ public :
   }
 };
 
-///< DEFINCION DE template<uint128_t Radix> digito_t{};
+///< DEFINCION DE template<uint128_t Radix> register_of_digits_t{};
 template<uint128_t B,size_t L>
 using register_of_digits_t =
 	reg_digs_t<
@@ -1573,13 +1575,13 @@ using register_of_digits_t =
 		L
 	>;
 
-/// STATIC BASE_N_T<N> 		CONCAT(BASE_N_T<N>)
-/// STATIC BASE_N_T<N+M> 	CONCAT(BASE_N_T<N>,BASE_N_T<M>)
-/// STATIC BASE_N_T<N+1> 	CONCAT(BASE_N_T<N>,DIG_T)
-/// STATIC BASE_N_T<1+M> 	CONCAT(DIG_T,BASE_N_T<M>)
-/// STATIC BASE_N_T<1> 		CONCAT(DIG_T)
-/// STATIC BASE_N_T<1+1> 	CONCAT(DIG_T,DIG_T)
-/// STATIC BASE_N_T<SIZEOF...(DIG_PACK)> CONCAT(DIG_T ... DIG_PACK) VARIADIC PACK
+/// STATIC BASE_N_T<N> 									 CONCAT(BASE_N_T<N>)
+/// STATIC BASE_N_T<N+M> 								 CONCAT(BASE_N_T<N>,BASE_N_T<M>)
+/// STATIC BASE_N_T<N+1> 								 CONCAT(BASE_N_T<N>,DIG_T)
+/// STATIC BASE_N_T<1+M> 								 CONCAT(DIG_T,BASE_N_T<M>)
+/// STATIC BASE_N_T<1> 									 CONCAT(DIG_T)
+/// STATIC BASE_N_T<1+1> 								 CONCAT(DIG_T,DIG_T)
+/// STATIC BASE_N_T<SIZEOF...(DIG_PACK)> CONCAT(DIG_T...DIG_PACK) VARIADIC PACK
 
 /// STATIC BASE_N_T<N> CONCAT(BASE_N_T<N>)
 template<typename UInt_t, UInt_t B, size_t N>
@@ -1592,10 +1594,12 @@ reg_digs_t<UInt_t,B,N> concat(const reg_digs_t<UInt_t,B,N>& larg) noexcept
 
 /// STATIC BASE_N_T<N+M> CONCAT(BASE_N_T<N>,BASE_N_T<M>)
 template<typename UInt_t, UInt_t B, size_t N,size_t M>
-	requires (N>0)&&(M>0)
+	requires ((N>0)&&(M>0))
 constexpr inline
-reg_digs_t<UInt_t,B,N+M> concat(const reg_digs_t<UInt_t,B,N>& larg,const reg_digs_t<UInt_t,B,M>& rarg) noexcept
-{
+reg_digs_t<UInt_t,B,N+M> concat(
+		const reg_digs_t<UInt_t,B,N>& larg,
+		const reg_digs_t<UInt_t,B,M>& rarg
+	) noexcept {
 	reg_digs_t<UInt_t,B,N+M> ret;
 	for(size_t ix{0} ; ix < N ; ++ix)
 		ret[ix] = larg[ix];
@@ -1608,8 +1612,10 @@ reg_digs_t<UInt_t,B,N+M> concat(const reg_digs_t<UInt_t,B,N>& larg,const reg_dig
 template<typename UInt_t, UInt_t B, size_t N>
 	requires (N > 0)
 constexpr inline
-reg_digs_t<UInt_t,B,N+1> concat(const reg_digs_t<UInt_t,B,N>& larg,dig_t<UInt_t,B> rarg) noexcept
-{
+reg_digs_t<UInt_t,B,N+1> concat(
+		const reg_digs_t<UInt_t,B,N>& larg,
+		dig_t<UInt_t,B> rarg
+	) noexcept {
 	reg_digs_t<UInt_t,B,N+1> ret;
 	for(size_t ix{0} ; ix < N ; ++ix)
 		ret[ix] = larg[ix];
@@ -1621,8 +1627,10 @@ reg_digs_t<UInt_t,B,N+1> concat(const reg_digs_t<UInt_t,B,N>& larg,dig_t<UInt_t,
 template<typename UInt_t, UInt_t B, size_t M>
 	requires (M > 0)
 constexpr inline
-reg_digs_t<UInt_t,B,1+M> concat(dig_t<UInt_t,B> larg, const reg_digs_t<UInt_t,B,M>& rarg) noexcept
-{
+reg_digs_t<UInt_t,B,1+M> concat(
+		dig_t<UInt_t,B> larg,
+		const reg_digs_t<UInt_t,B,M>& rarg
+	) noexcept {
 	reg_digs_t<UInt_t,B,1+M> ret;
 	ret[0] = larg;
 	for(size_t ix{1} ; ix < M+1 ; ++ix)
@@ -1640,20 +1648,23 @@ reg_digs_t<UInt_t,B,1> concat(dig_t<UInt_t,B> larg) noexcept
 template<typename UInt_t, UInt_t B>
 constexpr inline
 reg_digs_t<UInt_t,B,2> concat(dig_t<UInt_t,B> larg,dig_t<UInt_t,B> rarg) noexcept
-{
-	reg_digs_t<UInt_t,B,2> ret;
+{	reg_digs_t<UInt_t,B,2> ret;
 	ret[0] = larg;
 	ret[1] = rarg;
-	return ret;
-}
+	return ret;		}
 
 /// STATIC BASE_N_T<SIZEOF...(DIG_PACK)>
 ///		CONCAT(DIG_T,DIG_T ... DIG_PACK)
 ///	VARIADIC
 template<typename UInt_t,UInt_t B,typename T0,typename ... Ts>
-	requires (((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)&&(std::is_same_v<T0,dig_t<UInt_t,B>>))
+	requires (
+						((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)
+						&&
+						(std::is_same_v<T0,dig_t<UInt_t,B>>)
+	)
 constexpr inline
-reg_digs_t<UInt_t,B,1+(sizeof ... (Ts))> concat(T0 dig0,Ts ... dig_pack) noexcept {
+reg_digs_t<UInt_t,B,1+(sizeof ... (Ts))> concat(T0 dig0,Ts ... dig_pack)
+noexcept {
 	return concat(dig0,dig_pack...);
 }
 
@@ -1663,16 +1674,28 @@ reg_digs_t<UInt_t,B,1+(sizeof ... (Ts))> concat(T0 dig0,Ts ... dig_pack) noexcep
 template<typename UInt_t,UInt_t B,size_t N,typename T,typename ... Ts>
 	requires (((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)&&(std::is_same_v<T,dig_t<UInt_t,B>>)&&(N>0))
 constexpr inline
-reg_digs_t<UInt_t,B,N+1+(sizeof ... (Ts))> concat(reg_digs_t<UInt_t,B,N> larg,T dig,Ts ... dig_pack)
-noexcept { return concat(larg,concat(dig,dig_pack...));	}
+reg_digs_t<UInt_t,B,N+1+(sizeof ... (Ts))> concat(
+											reg_digs_t<UInt_t,B,N> larg,
+											T dig,
+											Ts ... dig_pack
+	) noexcept { return concat(larg,concat(dig,dig_pack...));	}
 
 /// STATIC BASE_N_T<M+1+(SIZEOF...(DIG_PACK))>
 ///			CONCAT(DIG_T,DIG_T ... DIG_PACK,BASE_N_T<M>)
 ///	VARIADIC
 template<typename UInt_t,UInt_t B,size_t M,typename T,typename ... Ts>
-	requires ((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)&&(std::is_same_v<T,dig_t<UInt_t,B>>)&&(M>0)
+	requires 	(
+		((std::is_same_v<Ts,dig_t<UInt_t,B>>)&&...)
+		&&
+		(std::is_same_v<T,dig_t<UInt_t,B>>)
+		&&
+		(M>0)		)
 constexpr inline
-reg_digs_t<UInt_t,B,M+1+(sizeof ... (Ts))> concat(T dig,Ts ... dig_pack,reg_digs_t<UInt_t,B,M> rarg)
+reg_digs_t<UInt_t,B,M+1+(sizeof ... (Ts))> concat(
+														T dig,
+														Ts ... dig_pack,
+														reg_digs_t<UInt_t,B,M> rarg
+	)
 noexcept { return concat(concat(dig,dig_pack...),rarg);	}
 
 /// STATIC BASE_N_T<SIZE_T N,SIZE_T ... N_PACK>
@@ -1682,8 +1705,8 @@ template<typename UInt_t,UInt_t B,size_t N,size_t ... N_pack>
 	requires ((N>0)&&((N_pack>0)&&...))
 constexpr inline
 reg_digs_t<UInt_t,B,N+(...+(N_pack))>
-		concat(reg_digs_t<UInt_t,B,N> larg,reg_digs_t<UInt_t,B,N_pack> ... rarg_pack) noexcept
-{	return concat(larg,rarg_pack...); }
+	concat(reg_digs_t<UInt_t,B,N> larg,reg_digs_t<UInt_t,B,N_pack> ... rarg_pack)
+	noexcept {	return concat(larg,rarg_pack...); }
 
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
   requires ((suitable_base<UINT_T,B>())&&(N > 0))
@@ -1747,8 +1770,8 @@ reg_digs_t<UINT_T,B,N> operator >> (
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
 requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-reg_digs_t<UINT_T,B,N> rem_B(const reg_digs_t<UINT_T,B,N> & larg,size_t n) noexcept
-{
+reg_digs_t<UINT_T,B,N> rem_B(const reg_digs_t<UINT_T,B,N> & larg,size_t n)
+noexcept {
 	reg_digs_t<UINT_T,B,N> ret{larg};
 	ret <<= N-n;
 	return ret;
@@ -1757,8 +1780,8 @@ reg_digs_t<UINT_T,B,N> rem_B(const reg_digs_t<UINT_T,B,N> & larg,size_t n) noexc
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
 requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-const reg_digs_t<UINT_T,B,N> & m_rem_B(reg_digs_t<UINT_T,B,N>& larg,size_t n) noexcept
-{
+const reg_digs_t<UINT_T,B,N> & m_rem_B(reg_digs_t<UINT_T,B,N>& larg,size_t n)
+noexcept {
 	larg <<= N-n;
 	return (larg);
 }
@@ -1766,8 +1789,8 @@ const reg_digs_t<UINT_T,B,N> & m_rem_B(reg_digs_t<UINT_T,B,N>& larg,size_t n) no
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
 requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-reg_digs_t<UINT_T,B,N> mer_B(const reg_digs_t<UINT_T,B,N> & larg,size_t n) noexcept
-{
+reg_digs_t<UINT_T,B,N> mer_B(const reg_digs_t<UINT_T,B,N> & larg,size_t n)
+noexcept {
 	reg_digs_t<UINT_T,B,N> ret{larg};
 	ret >>= N-n;
 	return ret;
@@ -1776,8 +1799,8 @@ reg_digs_t<UINT_T,B,N> mer_B(const reg_digs_t<UINT_T,B,N> & larg,size_t n) noexc
 template<uint_type_for_radix_c UINT_T,UINT_T B,size_t N>
 requires ((suitable_base<UINT_T,B>())&&(N > 0))
 constexpr inline
-const reg_digs_t<UINT_T,B,N> & m_mer_B(reg_digs_t<UINT_T,B,N>& larg,size_t n) noexcept
-{
+const reg_digs_t<UINT_T,B,N> & m_mer_B(reg_digs_t<UINT_T,B,N>& larg,size_t n)
+noexcept {
 	larg >>= N-n;
 	return (larg);
 }
@@ -1831,7 +1854,7 @@ reg_digs_t<UINT_T,B,N> operator & (
 	ret &= rarg;
 	return (ret);
 }
-
+/// TODO 31/12/2022
 template<typename UINT_T,UINT_T B,size_t N>
 constexpr inline
 reg_digs_t<UINT_T,B,N> m_incr(reg_digs_t<UINT_T,B,N>& rarg) noexcept {
@@ -1872,58 +1895,77 @@ reg_digs_t<UINT_T,B,N> m_incr(reg_digs_t<UINT_T,B,N>& rarg) noexcept {
 	return (rarg);
 }
 
+template<typename UINT_T,UINT_T B>
+constexpr inline
+dig_t<UINT_T,B>
+m_sum_digs_carryin1(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right) noexcept {
+
+	using 		dig_t			= dig_t<UINT_T,B>;
+	constexpr dig_t d_0 = dig_t::dig_0();
+	constexpr dig_t d_1 = dig_t::dig_1();
+
+	const dig_t left_CBm1{left.C_Bm1()};
+	if(left.is_Bm1()) {
+		left = right;
+		return d_1;
+	}
+	else if (right.is_Bm1()) {
+		return d_1;
+	}
+	else if (left_CBm1 < right+d_1) {
+		left = right-left_CBm1;
+		return d_1;
+	}
+	else {
+		left += right;
+		++left;
+		return d_0;
+	}
+}
+
+template<typename UINT_T,UINT_T B>
+constexpr inline
+dig_t<UINT_T,B>
+m_sum_digs_carryin0(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right) noexcept {
+
+	using dig_t			 = dig_t<UINT_T,B>;
+	constexpr dig_t d_0 = dig_t::dig_0();
+	constexpr dig_t d_1 = dig_t::dig_1();
+
+	const dig_t left_CBm1{left.C_Bm1()};
+	if (left_CBm1 >= right){
+		left += right;
+		return d_0;
+	}
+	else {
+		left = right-left_CBm1;
+		--left;
+		return d_1;
+	}
+}
+
 template<typename UINT_T,UINT_T B,size_t N>
 	constexpr inline
-	const reg_digs_t<UINT_T,B,N>&
+	dig_t<UINT_T,B>
 	m_sum(
 		reg_digs_t<UINT_T,B,N>& larg,
 		const reg_digs_t<UINT_T,B,N>& rarg
 	) noexcept
 {
-	//using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
 	using dig_t			 = dig_t<UINT_T,B>;
-	//using reg_digs_t = reg_digs_t<UINT_T,B,N>;
+	constexpr dig_t d_0 = dig_t::dig_0();
 
-	dig_t carry{dig_t::dig_0()};
+	dig_t carry{d_0};
 	for(size_t i=0 ; i < N ; ++i) {
-		dig_t& left{larg[i]};
-		const dig_t left_Bm1{left.C_Bm1()};
-		const dig_t& right{rarg[i]};
-
-		if constexpr (B > static_cast<UINT_T>(2u))
-			if (carry.is_0())
-				if (left_Bm1 >= right)
-					carry.set_0();
-				else
-					carry.set_1();
-			else {
-				if(	left_Bm1.is_not_0() && right.is_not_Bm1()	)
-					if  (--left_Bm1 > right)
-						carry.set_0();
-					else
-						carry.set_1();
-				else
-					carry.set_1();
-				++left;
-			}
-		else
-			if (carry.is_0())
-				if (left.is_0() || right.is_0())
-					carry.set_0();
-				else {
-					carry.set_1();
-					++left;
-				}
-			else
-				if (left.is_1() || right.is_1()) {
-					carry.set_1();
-					++left;
-				}
-				else
-					carry.set_0();
-		left += right;
+		const dig_t left_CBm1{larg[i].C_Bm1()};
+		if (carry.is_0()) {
+			carry = m_sum_digs_carryin0(larg[i],rarg[i]);
+		}
+		else {
+			carry = m_sum_digs_carryin1(larg[i],rarg[i]);
+		}
 	}
-	return (larg);
+	return carry;
 }
 
 /// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
@@ -2353,7 +2395,6 @@ fediv(
 		}
 	}
 
-	///< SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o ...
 	template<type_traits::unsigned_integral_c T,T B,size_t L>
 	bool read (std::istream& is,reg_digs_t<T,B,L>& value)
 	noexcept {
@@ -2380,6 +2421,7 @@ fediv(
 		}
 	}
 
+	///< SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o ...
   ///< DEFINCION DE template<uint128_t Radix> digito_t{};
   using namespace type_traits;
 	template<uint128_t B>
@@ -2405,7 +2447,19 @@ fediv(
 			e2dp	, e2end	, e2B		, e3dig		, e0fin
 		};
 		/// STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
-		constexpr size_t longitud_cadena{(Length+1)*static_cast<size_t>(std::ceil(std::log2(static_cast<long double>(Base))+1))+16};
+		constexpr size_t longitud_cadena
+			{
+				(
+					(Length+1)*
+					static_cast<size_t>(
+						std::ceil(
+							(
+								std::log2(static_cast<long double>(Base)) + 1
+							)
+						)
+					)
+				)	+16
+			};
 		std::string sds{};
 		sds.resize(longitud_cadena);
 		sds.assign(longitud_cadena,'\0');
@@ -2670,6 +2724,6 @@ fediv(
 		return (os);
 	}
 
-} // END NAMESPACE NUMREPR
+} // CLOSE NAMESPACE NUMREPR
 
 #endif // REG_DIGS_T_HPP_INCLUDED
