@@ -1,4 +1,10 @@
 <map id="NumRepr::nat_reg_digs_t::operator=" name="NumRepr::nat_reg_digs_t::operator=">
-<area shape="rect" id="node1" title="OPERACION COPIA DESDE UN DIGITO (CONVERSION)" alt="" coords="5,29,165,69"/>
-<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#ac4f2f52679334d058322e2537881b5fc" title="OPERACION DE LIMPIEZA A CERO DEL NAT_REG_DIGS_T." alt="" coords="213,29,373,69"/>
+<area shape="rect" id="node1" title="OPERACION COPIA DESDE UN DIGITO (CONVERSION)" alt="" coords="5,93,165,133"/>
+<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#abd8cc521e9af8cfb63a845d6295dfc70" title=" " alt="" coords="213,5,373,45"/>
+<area shape="rect" id="node5" href="$struct_num_repr_1_1nat__reg__digs__t.html#aa32760e590ee36be179c1fa86566ae2a" title=" " alt="" coords="213,157,373,197"/>
+<area shape="rect" id="node8" href="$struct_num_repr_1_1nat__reg__digs__t.html#ac4f2f52679334d058322e2537881b5fc" title="OPERACION DE LIMPIEZA A CERO DEL NAT_REG_DIGS_T." alt="" coords="213,93,373,133"/>
+<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__reg__digs__t.html#ab28b12d87b4ba5e5f65beb35d278e51b" title=" " alt="" coords="424,49,584,89"/>
+<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__reg__digs__t.html#aeec8fdeac36f8e4f67ca475100f83ffd" title=" " alt="" coords="635,49,795,89"/>
+<area shape="rect" id="node6" href="$struct_num_repr_1_1nat__reg__digs__t.html#a41f2c182cf6b668b25a17364f7a32ba6" title=" " alt="" coords="421,157,587,197"/>
+<area shape="rect" id="node7" href="$struct_num_repr_1_1nat__reg__digs__t.html#a658eb866c878e5c8fa312d190fca084b" title=" " alt="" coords="635,157,795,197"/>
 </map>

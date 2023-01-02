@@ -5,15 +5,6 @@
 <para>
 <computeroutput>#include &lt;auxiliary_types.hpp&gt;</computeroutput>
 </para>
-Diagrama de colaboración para NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1rem_00_01_n_01_4__coll__graph.png"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Atributos públicos    </title>
         <itemizedlist>
@@ -25,7 +16,9 @@ Diagrama de colaboración para NumRepr::auxiliary_types::result_operation_t&lt; 
 </simplesect>
 <section>
 <title>Descripción detallada</title>
-<simplesect><title>template&lt;typename T, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt;<?linebreak?>requires (N &gt; 0)<?linebreak?>struct NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;</title></simplesect>
+<simplesect><title>template&lt;typename T, <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> N&gt;<?linebreak?>requires (N &gt; 0)<?linebreak?>struct NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;</title></simplesect>
+<para>
+Definición en la línea <link linkend="_auxiliary__types_8hpp_source_1l00121">121</link> del archivo <link linkend="_auxiliary__types_8hpp_source">auxiliary_types.hpp</link>.</para>
 </section>
 <section>
 <title>Documentación de los datos miembro</title>
@@ -33,12 +26,16 @@ Diagrama de colaboración para NumRepr::auxiliary_types::result_operation_t&lt; 
     <title>good_result</title>
 <indexterm><primary>good_result</primary><secondary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;</primary><secondary>good_result</secondary></indexterm>
-<computeroutput>template&lt;typename T , <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t">NumRepr::auxiliary_types::result_operation_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a5cadb523cb6909f92350f70f124adfb8">binop_e::rem</link>, N &gt;::good_result</computeroutput></para></section>
+<computeroutput>template&lt;typename T , <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> N&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t">NumRepr::auxiliary_types::result_operation_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a5cadb523cb6909f92350f70f124adfb8">binop_e::rem</link>, N &gt;::good_result</computeroutput></para><para>
+Definición en la línea <link linkend="_auxiliary__types_8hpp_source_1l00123">123</link> del archivo <link linkend="_auxiliary__types_8hpp_source">auxiliary_types.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1rem_00_01_n_01_4_1a392b3860880f1a339f40c5e9af876ead"/><section>
     <title>result_content_remainder</title>
 <indexterm><primary>result_content_remainder</primary><secondary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;</primary><secondary>result_content_remainder</secondary></indexterm>
-<computeroutput>template&lt;typename T , <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> N&gt; </computeroutput><para><computeroutput>std::array&lt;T,N&gt; <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t">NumRepr::auxiliary_types::result_operation_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a5cadb523cb6909f92350f70f124adfb8">binop_e::rem</link>, N &gt;::result_content_remainder</computeroutput></para></section>
+<computeroutput>template&lt;typename T , <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> N&gt; </computeroutput><para><computeroutput>std::array&lt;T,N&gt; <link linkend="_struct_num_repr_1_1auxiliary__types_1_1result__operation__t">NumRepr::auxiliary_types::result_operation_t</link>&lt; T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a5cadb523cb6909f92350f70f124adfb8">binop_e::rem</link>, N &gt;::result_content_remainder</computeroutput></para><para>
+Definición en la línea <link linkend="_auxiliary__types_8hpp_source_1l00122">122</link> del archivo <link linkend="_auxiliary__types_8hpp_source">auxiliary_types.hpp</link>.</para>
+</section>
 <para>
 La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
 <link linkend="_auxiliary__types_8hpp">auxiliary_types.hpp</link></section>

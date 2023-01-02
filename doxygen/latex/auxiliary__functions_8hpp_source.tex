@@ -1,0 +1,130 @@
+\hypertarget{auxiliary__functions_8hpp_source}{}\doxysection{auxiliary\+\_\+functions.\+hpp}
+\label{auxiliary__functions_8hpp_source}\index{auxiliary\_functions.hpp@{auxiliary\_functions.hpp}}
+\mbox{\hyperlink{auxiliary__functions_8hpp}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ AUXILIARY\_FUNCTIONS\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ AUXILIARY\_FUNCTIONS\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{auxiliary__types_8hpp}{auxiliary\_types.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00006}\mbox{\hyperlink{namespace_num_repr}{00006}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_num_repr}{NumRepr}}\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00008}00008\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00009}\mbox{\hyperlink{namespace_num_repr_a267abda3e78b6a487e39c4de923838bf}{00009}}\ \mbox{\hyperlink{namespace_num_repr_a192603e40b54371f4bebf61a4afa17e8}{sign\_e}}\ \mbox{\hyperlink{namespace_num_repr_a267abda3e78b6a487e39c4de923838bf}{Char2Sign}}(\textcolor{keywordtype}{char}\ ch)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ch\ <=\ \textcolor{charliteral}{','})}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a192603e40b54371f4bebf61a4afa17e8aedd99b9b4a181ec16ae4194c9b065e8b}{sign\_e::vplus}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a192603e40b54371f4bebf61a4afa17e8a664d33ce0500d45dc2e44770723ba7d1}{sign\_e::vminus}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00017}00017\ \textcolor{keyword}{template}<type\_traits::arith\_\textcolor{keywordtype}{int}egral\_c\ IntT>}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00018}00018\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00019}\mbox{\hyperlink{namespace_num_repr_ae6e314ed88507b46a8155893a823049c}{00019}}\ \mbox{\hyperlink{namespace_num_repr_a192603e40b54371f4bebf61a4afa17e8}{sign\_e}}\ \mbox{\hyperlink{namespace_num_repr_ae6e314ed88507b46a8155893a823049c}{Int2Sign}}\ (IntT\ nu)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nu\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a192603e40b54371f4bebf61a4afa17e8a664d33ce0500d45dc2e44770723ba7d1}{sign\_e::vminus}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a192603e40b54371f4bebf61a4afa17e8aedd99b9b4a181ec16ae4194c9b065e8b}{sign\_e::vplus}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00027}00027\ \textcolor{keyword}{template}<type\_traits::arith\_\textcolor{keywordtype}{int}egral\_c\ IntT>}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00028}00028\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00029}\mbox{\hyperlink{namespace_num_repr_a396b4de02e34550acddc2664931975d8}{00029}}\ \mbox{\hyperlink{namespace_num_repr_a53ea65055c089ed2caa1aa7a885e8eb0}{sign\_funct\_e}}\ \mbox{\hyperlink{namespace_num_repr_a396b4de02e34550acddc2664931975d8}{Int2SignFunct}}(IntT\ nu)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nu\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a53ea65055c089ed2caa1aa7a885e8eb0a664d33ce0500d45dc2e44770723ba7d1}{sign\_funct\_e::vminus}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (nu\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a53ea65055c089ed2caa1aa7a885e8eb0aedd99b9b4a181ec16ae4194c9b065e8b}{sign\_funct\_e::vplus}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a53ea65055c089ed2caa1aa7a885e8eb0ad50833e13d94478df7669d0bfd94e859}{sign\_funct\_e::vzero}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00039}00039\ \textcolor{keyword}{template}<type\_traits::arith\_natural\_c\ NatIntT>}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00040}00040\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00041}\mbox{\hyperlink{namespace_num_repr_af38005a1c9fb23a68d4651abc72ddf25}{00041}}\ \mbox{\hyperlink{namespace_num_repr_a53ea65055c089ed2caa1aa7a885e8eb0}{sign\_funct\_e}}\ \mbox{\hyperlink{namespace_num_repr_af38005a1c9fb23a68d4651abc72ddf25}{Nat2SignFunct}}(NatIntT\ nu)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nu==0)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a53ea65055c089ed2caa1aa7a885e8eb0ad50833e13d94478df7669d0bfd94e859}{sign\_funct\_e::vzero}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_a53ea65055c089ed2caa1aa7a885e8eb0aedd99b9b4a181ec16ae4194c9b065e8b}{sign\_funct\_e::vplus}};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00049}\mbox{\hyperlink{namespace_num_repr_1_1detail}{00049}}\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00050}00050\ \textcolor{comment}{//\ precondition:\ low*low\ <=\ n,\ high*high\ >\ n.}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00051}00051\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00052}\mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{00052}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{ceilsqrt}}(\textcolor{keywordtype}{size\_t}\ n,\textcolor{keywordtype}{size\_t}\ low,\textcolor{keywordtype}{size\_t}\ high)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00053}00053\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00054}00054\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ mid\{std::midpoint(low,\ high)\};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00055}00055\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ sqmid\{mid*mid\};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00056}00056\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (low\ +\ 1\ >=\ high)\ \ \ \ \ \ \ ?}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ high\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (sqmid\ ==\ n)\ \ \ \ \ \ \ \ \ \ \ \ ?}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mid\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (sqmid\ <\ \ n)\ \ \ \ \ \ \ \ \ \ \ \ ?}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{ceilsqrt}}(n,\ mid,\ high)\ \ :}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{ceilsqrt}}(n,\ low,\ mid)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00068}00068\ \textcolor{comment}{//\ returns\ ceiling(sqrt(n))}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00069}00069\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00070}\mbox{\hyperlink{namespace_num_repr_1_1detail_ad76e295a8cfd29f1f6e2a02983e4717a}{00070}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{ceilsqrt}}(\textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00072}00072\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ num\_max\_dig\{std::numeric\_limits<std::size\_t>::digits\};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00073}00073\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (n\ <\ 3)\ ?}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\ \ \ \ \ \ \ :}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{ceilsqrt}}(}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n,}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t(1)\ <<\ (num\_max\_dig\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00085}00085\ \textcolor{comment}{//\ returns\ true\ if\ n\ divisible\ by\ an\ odd\ integer\ in}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00086}00086\ \textcolor{comment}{//\ [2\ *\ low\ +\ 1,\ 2\ *\ high\ +\ 1).}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00087}00087\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00088}\mbox{\hyperlink{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}{00088}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}{find\_factor}}(\textcolor{keywordtype}{size\_t}\ n,\textcolor{keywordtype}{size\_t}\ low,\textcolor{keywordtype}{size\_t}\ high)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00089}00089\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00090}00090\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ mid\{std::midpoint(low,\ high)\};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00091}00091\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (low\ +\ 1\ >=\ high)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (n\ \%\ (2\ *\ low\ +\ 1))\ ==\ 0\ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}{find\_factor}}(n,\ low,\ mid)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}{find\_factor}}(n,\ mid,\ high)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00103}\mbox{\hyperlink{namespace_num_repr_1_1auxiliary__functions}{00103}}\ \textcolor{keyword}{namespace\ }auxiliary\_functions\ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00105}\mbox{\hyperlink{namespace_num_repr_1_1auxiliary__functions_a6a368b190a18264af00c59b164dc1096}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_num_repr_1_1auxiliary__functions_a6a368b190a18264af00c59b164dc1096}{is\_prime}}(\textcolor{keywordtype}{size\_t}\ n)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <\ 2)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((n==2)||(n==3))}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (!\mbox{\hyperlink{namespace_num_repr_1_1detail_a098c7fa0c984b9aa1e6c5e6033affc88}{detail::find\_factor}}(n,\ 1,\ (\mbox{\hyperlink{namespace_num_repr_1_1detail_aa138a7304b06ab664d7208956b3c0dbe}{detail::ceilsqrt}}(n)\ +\ 1)\ /\ 2));}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00115}\mbox{\hyperlink{namespace_num_repr_1_1auxiliary__functions_a3ea0c809df1b14220a5fc969a28d7a8d}{00115}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_num_repr_1_1auxiliary__functions_a3ea0c809df1b14220a5fc969a28d7a8d}{is\_power\_of\_2}}(\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{uint128\_t}}\ num)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((num\ \%\ 2)\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_num_repr_1_1auxiliary__functions_a3ea0c809df1b14220a5fc969a28d7a8d}{is\_power\_of\_2}}(num\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{auxiliary__functions_8hpp_source_l00124}00124\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AUXILIARY\_FUNCTIONS\_HPP\_INCLUDED}}
+
+\end{DoxyCode}

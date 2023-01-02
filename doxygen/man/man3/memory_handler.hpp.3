@@ -1,4 +1,4 @@
-.TH "memory_handler.hpp" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "memory_handler.hpp" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -57,7 +57,7 @@ memory_handler.hpp
 
 .in +1c
 .ti -1c
-.RI "using \fBpar_dir_t\fP = std::pair< \fBuchint\fP, \fBuchint\fP >"
+.RI "using \fBpar_dir_t\fP = std::pair< uchint, uchint >"
 .br
 .ti -1c
 .RI "using \fBfunc_refn2digs_prim_t\fP = std::map< std::string, \fBpar_dir_t\fP >"
@@ -76,15 +76,15 @@ memory_handler.hpp
 
 .in +1c
 .ti -1c
-.RI "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars> 
+.RI "template<typename aT , template< uchint > class T, usint num_vars> 
 .br
 requires (num_vars>0)aT ** \fBconstruye_matriz_de_variables\fP (aT **matd)"
 .br
 .ti -1c
-.RI "template<typename aT , template< \fBuchint\fP > class T> void \fBdestruye_matriz_de_variables\fP (aT **matd)"
+.RI "template<typename aT , template< uchint > class T> void \fBdestruye_matriz_de_variables\fP (aT **matd)"
 .br
 .ti -1c
-.RI "template<\fBusint\fP num_vars> 
+.RI "template<usint num_vars> 
 .br
 requires (num_vars>0)\fBINT\fP ** \fBconstruye_matriz_de_variables< INT, INT >\fP (\fBINT\fP **matd)"
 .br
@@ -92,7 +92,7 @@ requires (num_vars>0)\fBINT\fP ** \fBconstruye_matriz_de_variables< INT, INT >\f
 .RI "template<> void \fBdestruye_matriz_de_variables< INT, INT >\fP (\fBINT\fP **matd)"
 .br
 .ti -1c
-.RI "template<\fBusint\fP num_vars> \fBUINT\fP ** \fBconstruye_matriz_de_variables< UINT, UINT >\fP (\fBUINT\fP **matd)"
+.RI "template<usint num_vars> \fBUINT\fP ** \fBconstruye_matriz_de_variables< UINT, UINT >\fP (\fBUINT\fP **matd)"
 .br
 .ti -1c
 .RI "template<> void \fBdestruye_matriz_de_variables< UINT, UINT >\fP (\fBUINT\fP **matd)"
@@ -102,75 +102,54 @@ requires (num_vars>0)\fBINT\fP ** \fBconstruye_matriz_de_variables< INT, INT >\f
 .PP 
 .SS "using \fBfunc_refdig_prim_t\fP =  std::map< std::string , \fBpar_dir_t\fP >"
 
+.PP
+Definición en la línea \fB10\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "using \fBfunc_refn2digs_prim_t\fP =  std::map< std::string , \fBpar_dir_t\fP >"
 
+.PP
+Definición en la línea \fB9\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "using \fBINT\fP =  long long int"
 
-.SS "using \fBpar_dir_t\fP =  std::pair< \fBuchint\fP , \fBuchint\fP >"
+.PP
+Definición en la línea \fB147\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "using \fBpar_dir_t\fP =  std::pair< uchint , uchint >"
 
+.PP
+Definición en la línea \fB8\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "using \fBUINT\fP =  unsigned long long int"
 
+.PP
+Definición en la línea \fB165\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación de las funciones"
 .PP 
-.SS "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars> 
+.SS "template<typename aT , template< uchint > class T, usint num_vars> 
 .br
 requires (num_vars>0)aT ** construye_matriz_de_variables (aT ** matd)"
 
 .PP
-.nf
-136                                               {
-137                 details::cp_new<aT,T,num_vars,std::numeric_limits<uchint>::max()>(matd);
-138                 return matd;
-139 }
-.fi
-.SS "template<\fBusint\fP num_vars> 
+Definición en la línea \fB137\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<usint num_vars> 
 .br
 requires (num_vars>0)\fBINT\fP ** \fBconstruye_matriz_de_variables\fP< \fBINT\fP, \fBINT\fP > (\fBINT\fP ** matd)"
 
 .PP
-.nf
-151 {
-152         matd = new (INT*);
-153         *matd = new INT[num_vars];
-154         return matd;
-155 }
-.fi
-.SS "template<\fBusint\fP num_vars> \fBUINT\fP ** \fBconstruye_matriz_de_variables\fP< \fBUINT\fP, \fBUINT\fP > (\fBUINT\fP ** matd)"
+Definición en la línea \fB151\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<usint num_vars> \fBUINT\fP ** \fBconstruye_matriz_de_variables\fP< \fBUINT\fP, \fBUINT\fP > (\fBUINT\fP ** matd)"
 
 .PP
-.nf
-168 {
-169         matd = new (UINT*);
-170         *matd = new UINT[num_vars];
-171         return matd;
-172 }
-.fi
-.SS "template<typename aT , template< \fBuchint\fP > class T> void destruye_matriz_de_variables (aT ** matd)"
+Definición en la línea \fB168\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> void destruye_matriz_de_variables (aT ** matd)"
 
 .PP
-.nf
-142                                              {
-143                 details::cp_delete<aT,T,std::numeric_limits<uchint>::max()>(matd);
-144 }
-.fi
+Definición en la línea \fB143\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "template<> void \fBdestruye_matriz_de_variables\fP< \fBINT\fP, \fBINT\fP > (\fBINT\fP ** matd)"
 
 .PP
-.nf
-159 {
-160         delete *matd;
-161         delete [] matd;
-162 }
-.fi
+Definición en la línea \fB159\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "template<> void \fBdestruye_matriz_de_variables\fP< \fBUINT\fP, \fBUINT\fP > (\fBUINT\fP ** matd)"
 
 .PP
-.nf
-175 {
-176         delete *matd;
-177         delete [] matd;
-178 }
-.fi
+Definición en la línea \fB175\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Autor"
 .PP 
 Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

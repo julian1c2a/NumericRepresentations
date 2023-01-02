@@ -1,0 +1,351 @@
+\hypertarget{utilities_8hpp_source}{}\doxysection{utilities.\+hpp}
+\label{utilities_8hpp_source}\index{utilities.hpp@{utilities.hpp}}
+\mbox{\hyperlink{utilities_8hpp}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ UTILITIES\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ UTILITIES\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{basic__types_8hpp}{basic\_types.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00008}\mbox{\hyperlink{namespaceutilities}{00008}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutilities}{utilities}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00009}00009\ \textcolor{keyword}{template}<NumRepr::type\_traits::\textcolor{keywordtype}{unsigned}\_\textcolor{keywordtype}{int}egral\_c\ UINT\_T>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00010}\mbox{\hyperlink{namespaceutilities_a42ed6a49f4270d2ecd4103689b1e16ee}{00010}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceutilities_a42ed6a49f4270d2ecd4103689b1e16ee}{uintspair}}\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{typename}\ std::array<UINT\_T,2>;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00011}00011\ \textcolor{keyword}{template}<NumRepr::type\_traits::\textcolor{keywordtype}{unsigned}\_\textcolor{keywordtype}{int}egral\_c\ UINT\_T,UINT\_T\ B>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00012}\mbox{\hyperlink{namespaceutilities_a19b04f837f493034c4612e5bcb58da22}{00012}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceutilities_a19b04f837f493034c4612e5bcb58da22}{uintspairlist}}\ =\ \textcolor{keyword}{typename}\ std::array<uintspair<UINT\_T>,B>;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00013}00013\ \textcolor{keyword}{template}<NumRepr::type\_traits::\textcolor{keywordtype}{unsigned}\_\textcolor{keywordtype}{int}egral\_c\ UINT\_T,UINT\_T\ B>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00014}\mbox{\hyperlink{namespaceutilities_ab05788cb7517fec011dd7e174edcd6a9}{00014}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceutilities_ab05788cb7517fec011dd7e174edcd6a9}{uintspairtbl}}\ \ =\ \textcolor{keyword}{typename}\ std::array<uintspairlist<UINT\_T,B>,B>;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00039}00039\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...Ts>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00040}\mbox{\hyperlink{structutilities_1_1pack2tuple}{00040}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1pack2tuple}{pack2tuple}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00041}\mbox{\hyperlink{structutilities_1_1pack2tuple_afd663d6d4e140735452241ee6bf13fd9}{00041}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1pack2tuple_afd663d6d4e140735452241ee6bf13fd9}{tuple\_type}}\ =\ std::tuple<Ts...>;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00042}\mbox{\hyperlink{structutilities_1_1pack2tuple_a76afbd16c998332eb4de2986d8ec9cf5}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structutilities_1_1pack2tuple_a76afbd16c998332eb4de2986d8ec9cf5}{pack\_size}}()\ noexcept\ \{\textcolor{keywordflow}{return}\ (\textcolor{keyword}{sizeof}...(Ts));\}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00043}\mbox{\hyperlink{structutilities_1_1pack2tuple_a98950abc107a937f1f2aa37871955957}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1pack2tuple_afd663d6d4e140735452241ee6bf13fd9}{tuple\_type}}\ \mbox{\hyperlink{structutilities_1_1pack2tuple_a98950abc107a937f1f2aa37871955957}{operator()}}(Ts\&\&\ ...args)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1pack2tuple_afd663d6d4e140735452241ee6bf13fd9}{tuple\_type}}\ \ content\ =\ std::make\_tuple(std::forward(args...));}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ std::move(content);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{unsigned}\ K>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00048}\mbox{\hyperlink{structutilities_1_1pack2tuple_a2e0d115ff8a9f1cededeed910472aa38}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1pack2tuple_a2e0d115ff8a9f1cededeed910472aa38}{elem\_type}}\ =\ \ \textcolor{keyword}{typename}\ std::tuple\_element<K,tuple\_type>::type;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{unsigned}\ J>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00050}\mbox{\hyperlink{structutilities_1_1pack2tuple_a21099506ee203993b708bd6f4894c82b}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1pack2tuple_a2e0d115ff8a9f1cededeed910472aa38}{elem\_type<J>::type}}\ \mbox{\hyperlink{structutilities_1_1pack2tuple_a21099506ee203993b708bd6f4894c82b}{get}}(Ts\&\&\ ...args)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1pack2tuple_afd663d6d4e140735452241ee6bf13fd9}{tuple\_type}}\ \ content\ =\ std::make\_tuple(std::forward(args...));}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1pack2tuple_a2e0d115ff8a9f1cededeed910472aa38}{elem\_type<J>}}\ ret\{std::get<J>(std::forward(content))\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00055}00055\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00074}\mbox{\hyperlink{structutilities_1_1local__void__t}{00074}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1local__void__t}{local\_void\_t}}\ \{\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00076}00076\ \textcolor{keyword}{template}<\textcolor{keyword}{class\ }Head\_t,\textcolor{keyword}{class}...Tail\_t>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00077}\mbox{\hyperlink{structutilities_1_1for__each__same__type}{00077}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1for__each__same__type}{for\_each\_same\_type}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00078}\mbox{\hyperlink{structutilities_1_1for__each__same__type_acf16b98533524aefda115e880faa2baf}{00078}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1for__each__same__type_acf16b98533524aefda115e880faa2baf}{second\_t}}\ =\ std::tuple\_element<0,std::tuple<Tail\_t...>>::type;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00080}\mbox{\hyperlink{structutilities_1_1for__each__same__type_a10069179aea7ad89090b1e1db8926772}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structutilities_1_1for__each__same__type_a10069179aea7ad89090b1e1db8926772}{are\_same\_type\_v}}\ =\ (}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ (std::is\_same\_v<Head\_t,second\_t>)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \ \ \ \ \ (\mbox{\hyperlink{structutilities_1_1for__each__same__type}{for\_each\_same\_type<Tail\_t...>::are\_same\_type\_v}})}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00084}00084\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00086}00086\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Head\_t>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00087}\mbox{\hyperlink{structutilities_1_1for__each__same__type_3_01_head__t_01_4}{00087}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1for__each__same__type}{for\_each\_same\_type}}<Head\_t>\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00088}\mbox{\hyperlink{structutilities_1_1for__each__same__type_3_01_head__t_01_4_a628ba9e0ff78e1d0115e23aa8ad22121}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structutilities_1_1for__each__same__type_a10069179aea7ad89090b1e1db8926772}{are\_same\_type\_v}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00089}00089\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00091}00091\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...Ts>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00092}\mbox{\hyperlink{conceptutilities_1_1all__are__the__same__type__c}{00092}}\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutilities_1_1all__are__the__same__type__c}{all\_are\_the\_same\_type\_c}}\ =\ \textcolor{keyword}{requires}(Ts...)\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ for\_each\_same\_type<Ts...>::are\_same\_type\_v;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00094}00094\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00096}00096\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...Ts>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00097}\mbox{\hyperlink{conceptutilities_1_1there__is__one__or__more__c}{00097}}\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutilities_1_1there__is__one__or__more__c}{there\_is\_one\_or\_more\_c}}\ =\ \textcolor{keyword}{requires}(Ts...)\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ ((\textcolor{keyword}{sizeof}...(Ts))>0);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00099}00099\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00103}00103\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...Ts>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \ (\mbox{\hyperlink{conceptutilities_1_1all__are__the__same__type__c}{all\_are\_the\_same\_type\_c}}<Ts...>\&\&\mbox{\hyperlink{conceptutilities_1_1there__is__one__or__more__c}{there\_is\_one\_or\_more\_c}}<Ts...>)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00105}\mbox{\hyperlink{structutilities_1_1pack2array}{00105}}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structutilities_1_1pack2array}{pack2array}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00106}\mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{00106}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{array\_type}}\ =\ std::array<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structutilities_1_1pack2tuple}{pack2tuple}}<Ts...>::elem\_type<0>,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{sizeof}...(Ts))}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ >;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00110}\mbox{\hyperlink{structutilities_1_1pack2array_aa3f4d803238e78c1edb296d5ddc753ca}{00110}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::size\_t\ \mbox{\hyperlink{structutilities_1_1pack2array_aa3f4d803238e78c1edb296d5ddc753ca}{pack\_size}}()\ noexcept\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{sizeof}...(Ts));}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00114}\mbox{\hyperlink{structutilities_1_1pack2array_aff5f3e688a6d88206663fac8959e5254}{00114}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{array\_type}}\ \mbox{\hyperlink{structutilities_1_1pack2array_aff5f3e688a6d88206663fac8959e5254}{operator()}}(Ts\&\&\ ...args)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{array\_type}}\ \ content\ =\ \mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{array\_type}}\{std::forward(args...)\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ content;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00119}\mbox{\hyperlink{structutilities_1_1pack2array_acfb6243c111b766f9ce1bbfc19e0e819}{00119}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1pack2array_acfb6243c111b766f9ce1bbfc19e0e819}{elem\_type}}\ =\ \ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structutilities_1_1pack2tuple}{pack2tuple}}<Ts...>::elem\_type<0>;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{size\_t}\ J>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00122}\mbox{\hyperlink{structutilities_1_1pack2array_a771595ff4aaf2523a89c4aed11e5c16c}{00122}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1pack2array_acfb6243c111b766f9ce1bbfc19e0e819}{elem\_type}}\ \mbox{\hyperlink{structutilities_1_1pack2array_a771595ff4aaf2523a89c4aed11e5c16c}{get}}(Ts\&\&\ ...args)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{array\_type}}\ \ content\ =\ \{std::forward(args...)\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1pack2array_acfb6243c111b766f9ce1bbfc19e0e819}{elem\_type}}\ ret\{std::get<J>(std::forward(content))\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <std::size\_t...\ I>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00133}\mbox{\hyperlink{structutilities_1_1pack2array_af8e2f179474b34f00d87b1f670abda42}{00133}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structutilities_1_1pack2array_af8e2f179474b34f00d87b1f670abda42}{for\_each\_impl}}(}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{array\_type}}\&\ iarray,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Ts...args,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::index\_sequence<I...>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ )\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ (\ iarray[I]\ =\ std::get<I>(\ std::make\_tuple(args...)\ )\ )\ ,\ ...);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00144}\mbox{\hyperlink{structutilities_1_1pack2array_ac0a1c575813515e6ab144a2652e65832}{00144}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structutilities_1_1pack2array_ac0a1c575813515e6ab144a2652e65832}{for\_each}}(\mbox{\hyperlink{structutilities_1_1pack2array_a9324c2c8ca1e1161fbbb0c5936d2e671}{array\_type}}\&\ iarray,\textcolor{keyword}{const}\ Ts...args)\ noexcept\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ size\_of\_pack\{\textcolor{keyword}{sizeof}...(args)\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\_each\_impl(}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iarray,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ args...,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_index\_sequence<size\_of\_pack>\{\}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00153}00153\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00155}00155\ \textcolor{keyword}{template}<\textcolor{keyword}{class}...\ Ts>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ all\_are\_the\_same\_type\_c<Ts...>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \ \ \ \ \ there\_is\_one\_or\_more\_c<Ts...>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00160}\mbox{\hyperlink{namespaceutilities_a0f549ca7e224442069f979e4beaaab88}{00160}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceutilities_a0f549ca7e224442069f979e4beaaab88}{assign\_with\_order}}(}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ dest\ ,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Ts\&...\ args}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ )\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00164}00164\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1pack2array_ac0a1c575813515e6ab144a2652e65832}{pack2array<Ts...>::for\_each}}(dest,args...);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00167}00167\ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00174}\mbox{\hyperlink{namespaceutilities_1_1special}{00174}}\ \textcolor{keyword}{namespace\ }special\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00177}00177\ \textcolor{keyword}{template}<NumRepr::us\textcolor{keywordtype}{int}\_t\ B,NumRepr::us\textcolor{keywordtype}{int}\_t\ L>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00178}00178\ \textcolor{keyword}{consteval}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00179}\mbox{\hyperlink{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17}{00179}}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17}{Base\_pow\_to\_Size}}()\ noexcept\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ Bc\{B\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (L==0)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (L==1)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Bc);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (L==2)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Bc*Bc);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Bc*\mbox{\hyperlink{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17}{Base\_pow\_to\_Size}}<B,L-\/1>());}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00192}00192\ \textcolor{keyword}{template}<NumRepr::us\textcolor{keywordtype}{int}\_t\ Base,NumRepr::us\textcolor{keywordtype}{int}\_t\ Exp>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00193}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{00193}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\_B\_to\_E\_t}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00194}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{00194}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Base);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00195}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a18389207e612ede874167dc399c02826}{00195}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a18389207e612ede874167dc399c02826}{exponent}}\ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Exp);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00196}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a17f0d1b4cf62a74554413151bfc6629d}{00196}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a17f0d1b4cf62a74554413151bfc6629d}{value}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}}*(\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\_B\_to\_E\_t}}<\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}},\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a18389207e612ede874167dc399c02826}{exponent}}-\/1>\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a17f0d1b4cf62a74554413151bfc6629d}{::value}});}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00197}00197\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00198}00198\ \textcolor{keyword}{template}<NumRepr::us\textcolor{keywordtype}{int}\_t\ Base>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00199}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4}{00199}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\_B\_to\_E\_t}}<Base,2>\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00200}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_aadf9e01f5cc05bf5c34656e09b1370d2}{00200}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Base);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00201}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_a7813bfd67f20e5a35a0615fb59da5ded}{00201}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a18389207e612ede874167dc399c02826}{exponent}}\ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(2);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00202}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_aac25bd7fe869f2df3657077012ac2b0d}{00202}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a17f0d1b4cf62a74554413151bfc6629d}{value}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}}*\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00203}00203\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00204}00204\ \textcolor{keyword}{template}<NumRepr::us\textcolor{keywordtype}{int}\_t\ Base>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00205}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4}{00205}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\_B\_to\_E\_t}}<Base,1>\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00206}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4_ae275de86799ac539564d4df469f77830}{00206}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Base);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00207}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4_af70ce68d6a77de9d50120e24a22003b8}{00207}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a18389207e612ede874167dc399c02826}{exponent}}\ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00208}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4_a8a2588d336127ed170c7433f25030ab8}{00208}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a17f0d1b4cf62a74554413151bfc6629d}{value}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00209}00209\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00210}00210\ \textcolor{keyword}{template}<NumRepr::us\textcolor{keywordtype}{int}\_t\ Base>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00211}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4}{00211}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\_B\_to\_E\_t}}<Base,0>\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00212}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4_a1d7328f79e3d83c4b936c3b5a55d7f8d}{00212}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a03e94eee98295a1f25fd3fd449e6e4b7}{base}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(Base);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00213}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4_aa89fa4d1d3caf25c460be700a292070c}{00213}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a18389207e612ede874167dc399c02826}{exponent}}\ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(0);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00214}\mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4_a586db44bff1accd46725d000c7db247e}{00214}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_a17f0d1b4cf62a74554413151bfc6629d}{value}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00215}00215\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00217}00217\ \textcolor{keyword}{template}<NumRepr::us\textcolor{keywordtype}{int}\_t\ Base,NumRepr::us\textcolor{keywordtype}{int}\_t\ Exp>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00218}\mbox{\hyperlink{namespaceutilities_1_1special_a0c24705b4d3cfd27689f38201488c087}{00218}}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}\ \mbox{\hyperlink{namespaceutilities_1_1special_a0c24705b4d3cfd27689f38201488c087}{Pow\_B2L\_v}}\ =\ \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\_B\_to\_E\_t<Base,Exp>::value}};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00224}00224\ \textcolor{keyword}{template}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ IntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ EndIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{int}64\_t,std::\textcolor{keywordtype}{int}64\_t>\ \textcolor{keyword}{class\ }Funct\_tt}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00230}00230\ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ ((BeginIntObj\_ct\ >=\ EndIntObj\_ct)\&\&(IntObj\_ct\ >=\ BeginIntObj\_ct))}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00232}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t}{00232}}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t}{tuple\_builder\_t}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00234}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_aaa43bea40f3950c7306dec764af33e3a}{00234}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_aaa43bea40f3950c7306dec764af33e3a}{type}}\ =\ std::int64\_t;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00236}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a5b618e051095d223d94c0b5ee22078ce}{00236}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ unit\ \ =\ \textcolor{keyword}{static\_cast<}std::int64\_t\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00238}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a7f4fcc4e63e19549e07ef49da9f04398}{00238}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ value\{IntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00239}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_aa5fd05539d987050763c55b8d0ca8aac}{00239}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ begin\_value\{BeginIntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00240}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_ade677d56bc43f6930b30b97deab2928b}{00240}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ end\_value\{EndIntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{consteval}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00243}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a8e1ed3d327091c5f21f835adea83ec3f}{00243}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a8e1ed3d327091c5f21f835adea83ec3f}{build}}()}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::tuple\_cat(}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_tuple(std::make\_tuple(value,Funct\_tt<Base,value>\{\}())),}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a8e1ed3d327091c5f21f835adea83ec3f}{tuple\_builder\_t<value+unit,begin\_value,end\_value,Base,Funct\_tt>::build}}()}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00252}00252\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00255}00255\ \textcolor{keyword}{template}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ EndIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{int}64\_t,std::\textcolor{keywordtype}{int}64\_t>\ \textcolor{keyword}{class\ }Funct\_tt}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00260}00260\ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00261}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802}{00261}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t}{tuple\_builder\_t}}<EndIntObj\_ct-\/1,BeginIntObj\_ct,EndIntObj\_ct,Base,Funct\_tt>\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00263}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_ac530c0ab3a98a57fa2014b41f22b8676}{00263}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_ac530c0ab3a98a57fa2014b41f22b8676}{type}}\ =\ std::int64\_t;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00265}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_a5e639670b0914aa4dd40496a12a2e84c}{00265}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a5b618e051095d223d94c0b5ee22078ce}{unit}}\ \ =\ \textcolor{keyword}{static\_cast<}std::int64\_t\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00267}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_adf90b0c747ad6d5fcbe51e4965ad713f}{00267}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a7f4fcc4e63e19549e07ef49da9f04398}{value}}\{EndIntObj\_ct-\/\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a5b618e051095d223d94c0b5ee22078ce}{unit}}\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00268}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_a9e97fc5b1ca3232b40629aaa5187b884}{00268}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_aa5fd05539d987050763c55b8d0ca8aac}{begin\_value}}\{BeginIntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00269}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_a4e46a15f03b4f6125e48d0fc2287a6b3}{00269}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::int64\_t\ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_ade677d56bc43f6930b30b97deab2928b}{end\_value}}\{EndIntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{consteval}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00272}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_a55aa2fc522a7eafb0bc8fc5384c199cc}{00272}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_a55aa2fc522a7eafb0bc8fc5384c199cc}{build}}()}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_tuple(std::make\_tuple(\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a7f4fcc4e63e19549e07ef49da9f04398}{value}},Funct\_tt<Base,value>\{\}()));}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00277}00277\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00280}00280\ \textcolor{keyword}{template}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ EndIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::int64\_t\ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{int}64\_t,std::\textcolor{keywordtype}{int}64\_t>\ \textcolor{keyword}{class\ }Funct\_tt}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00285}00285\ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (BeginIntObj\_ct\ <=\ EndIntObj\_ct)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00287}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21}{00287}}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t}{tuple\_builder\_t<BeginIntObj\_ct,BeginIntObj\_ct,EndIntObj\_ct,Base,Funct\_tt>}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00289}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_af658a886eb733fd518d8d3b0920641dd}{00289}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_af658a886eb733fd518d8d3b0920641dd}{type}}\ =\ std::int64\_t;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00291}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_aa55281dc2747c4ef8f2d6711cbb7ba7e}{00291}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_af658a886eb733fd518d8d3b0920641dd}{type}}\ \ \ \ \ \ \ unit\ \ =\ 1;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00293}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_afd02e57d9beaa8e3094fa06a47b1abee}{00293}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_af658a886eb733fd518d8d3b0920641dd}{type}}\ \ \ \ \ \ \ value\{BeginIntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00294}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_ab979913cde5632c13b1b1baa5498ad82}{00294}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_af658a886eb733fd518d8d3b0920641dd}{type}}\ \ \ \ \ \ \ begin\_value\{BeginIntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00295}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_add38b4094dd55a686f2a0fbdd1092466}{00295}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_af658a886eb733fd518d8d3b0920641dd}{type}}\ \ \ \ \ \ \ end\_value\{EndIntObj\_ct\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{consteval}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00298}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_a86b75b979de0c5767a791bb4b0731793}{00298}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_a86b75b979de0c5767a791bb4b0731793}{build}}()}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::tuple\_cat(}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_tuple(}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_tuple(value,Funct\_tt<Base,value>\{\}())}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_a8e1ed3d327091c5f21f835adea83ec3f}{tuple\_builder\_t<begin\_value+unit,begin\_value,end\_value,Base,Funct\_tt>::build}}()}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00309}00309\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00311}00311\ \textcolor{keyword}{template}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00312}00312\ \ \ \ \ \ \ \ \ std::int64\_t\ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00313}00313\ \ \ \ \ \ \ \ \ std::int64\_t\ EndIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00314}00314\ \ \ \ \ \ \ \ \ std::int64\_t\ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{int}64\_t,std::\textcolor{keywordtype}{int}64\_t>\ \textcolor{keyword}{class\ }Funct\_tt}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00316}00316\ >}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (BeginIntObj\_ct\ <\ EndIntObj\_ct)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00318}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__user__constructor__t}{00318}}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__user__constructor__t}{tuple\_user\_constructor\_t}}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00319}\mbox{\hyperlink{structutilities_1_1special_1_1tuple__user__constructor__t_a815b9f98f9de37d096dbb4453c1fbd6b}{00319}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ value\ =}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t}{tuple\_builder\_t}}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Funct\_tt}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ >::build();}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00327}00327\ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00329}00329\ \textcolor{keyword}{template}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00330}00330\ \ \ \ \ \ \ \ \ std::int64\_t\ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00331}00331\ \ \ \ \ \ \ \ \ std::int64\_t\ EndIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00332}00332\ \ \ \ \ \ \ \ \ std::int64\_t\ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<std::\textcolor{keywordtype}{int}64\_t,std::\textcolor{keywordtype}{int}64\_t>\ \textcolor{keyword}{class\ }Funct\_tt}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00334}00334\ >}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (BeginIntObj\_ct\ <\ EndIntObj\_ct)}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00336}\mbox{\hyperlink{namespaceutilities_1_1special_ada5efac888ec6774ade3b0ff5911cb89}{00336}}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespaceutilities_1_1special_ada5efac888ec6774ade3b0ff5911cb89}{tuple\_constr\_v}}\ =}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutilities_1_1special_1_1tuple__user__constructor__t}{tuple\_user\_constructor\_t}}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BeginIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndIntObj\_ct,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Funct\_tt}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00342}00342\ \ \ \ \ \ \ \ \ >::build();}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00344}00344\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00345}00345\ \ \ \ \ \ \ \ \ std::size\_t\ start,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00346}00346\ \ \ \ \ \ \ \ \ std::size\_t\ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00347}00347\ \ \ \ \ \ \ \ \ std::size\_t\ ...\ Is,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00351}00351\ \ \ \ \ \ \ \ \ >\ \textcolor{keyword}{typename}\ Funct\_tt,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ...\ Ts}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00353}00353\ >}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00354}00354\ \textcolor{keyword}{constexpr}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00355}\mbox{\hyperlink{namespaceutilities_1_1special_a600ef880527fb943066e81d144a572d4}{00355}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceutilities_1_1special_a600ef880527fb943066e81d144a572d4}{ctf\_helper}}\ (}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00356}00356\ \ \ \ \ \ \ \ \ std::index\_sequence<Is...>,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00357}00357\ \ \ \ \ \ \ \ \ std::tuple<Ts...>\ \textcolor{keyword}{const}\ \&\ t}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00358}00358\ )\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00359}00359\ \ \ \ \ \ \ \ \ (Funct\_tt<Base,Is>\{\}(std::get<start\ +\ Is>(t)),\ ...);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00360}00360\ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00362}00362\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00363}00363\ \ \ \ \ \ \ \ \ std::size\_t\ start,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00364}00364\ \ \ \ \ \ \ \ \ std::size\_t\ end,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00365}00365\ \ \ \ \ \ \ \ \ std::size\_t\ Base,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename},}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00370}00370\ \ \ \ \ \ \ \ \ >\ \textcolor{keyword}{typename}\ Funct\_tt,}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ...\ Ts}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00372}00372\ >}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00373}00373\ \textcolor{keyword}{constexpr}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00374}\mbox{\hyperlink{namespaceutilities_1_1special_a450a92504b01e717cfe785076cf97b93}{00374}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceutilities_1_1special_a450a92504b01e717cfe785076cf97b93}{ct\_for}}\ (std::tuple<Ts...>\ \textcolor{keyword}{const}\ \&\ t)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00375}00375\ \ \ \ \ \ \ \ \ ctf\_helper<start,Base,Funct\_tt>(std::make\_index\_sequence<end-\/start>\{\},\ t);}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00376}00376\ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00379}00379\ \textcolor{keyword}{template}<auto\ B,auto\ L,\textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00380}00380\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00381}00381\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00382}\mbox{\hyperlink{namespaceutilities_1_1special_a92614fb496f783431fe229a771f40a00}{00382}}\ \mbox{\hyperlink{namespaceutilities_1_1special_a92614fb496f783431fe229a771f40a00}{conversion\_to\_int}}(\textcolor{keyword}{const}\ A\&\ arg)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_num_repr_a7673a3c7d88f28a54277d1d03bca2502}{NumRepr::sint128\_t}};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint128\_t\ base\{\textcolor{keyword}{static\_cast<}uint128\_t\textcolor{keyword}{>}(B)\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00386}00386\ \ \ \ \ \ \ \ \ uint128\_t\ acc\{arg[L-\/1]()\};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(sint128\_t\ ix\{L-\/2\}\ ;\ ix\ >\ -\/1\ ;\ -\/-\/ix)\ \{}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acc\ *=\ base;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acc\ +=\ \textcolor{keyword}{static\_cast<}uint128\_t\textcolor{keyword}{>}(arg[ix]());}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ acc;}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00392}00392\ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00396}00396\ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00398}00398\ \}}
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{utilities_8hpp_source_l00400}00400\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITIES\_HPP\_INCLUDED}}
+
+\end{DoxyCode}

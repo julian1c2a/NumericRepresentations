@@ -1,96 +1,89 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="namespace_num_repr_1_1type__traits" kind="namespace" language="C++">
     <compoundname>NumRepr::type_traits</compoundname>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1empty__type" prot="public">NumRepr::type_traits::empty_type</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1is__signed__sz__gt" prot="public">NumRepr::type_traits::is_signed_sz_gt</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt" prot="public">NumRepr::type_traits::is_unsigned_sz_gt</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix" prot="public">NumRepr::type_traits::UIntTypeForRadix</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01int64__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; int64_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint16__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; sint16_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint32__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; sint32_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01sint8__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; sint8_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint128__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; uint128_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint16__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; uint16_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint32__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; uint32_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint64__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; uint64_t, Radix &gt;</innerclass>
-    <innerclass refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix_3_01uint8__t_00_01_radix_01_4" prot="public">NumRepr::type_traits::UIntTypeForRadix&lt; uint8_t, Radix &gt;</innerclass>
-    <innernamespace refid="namespace_num_repr_1_1type__traits_1_1detail">NumRepr::type_traits::detail</innernamespace>
+    <innerconcept refid="concept_num_repr_1_1type__traits_1_1arith__integral__c">NumRepr::type_traits::arith_integral_c</innerconcept>
+    <innerconcept refid="concept_num_repr_1_1type__traits_1_1arith__natural__c">NumRepr::type_traits::arith_natural_c</innerconcept>
+    <innerconcept refid="concept_num_repr_1_1type__traits_1_1char__type__c">NumRepr::type_traits::char_type_c</innerconcept>
+    <innerconcept refid="concept_num_repr_1_1type__traits_1_1uint__type__for__radix__c">NumRepr::type_traits::uint_type_for_radix_c</innerconcept>
+    <innerconcept refid="concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</innerconcept>
+    <innerconcept refid="concept_num_repr_1_1type__traits_1_1signed__integral__c">NumRepr::type_traits::signed_integral_c</innerconcept>
+    <innerconcept refid="concept_num_repr_1_1type__traits_1_1integral__c">NumRepr::type_traits::integral_c</innerconcept>
+    <innernamespace refid="namespace_num_repr_1_1type__traits_1_1ugly__details__for__greater__suitable__type__deduction">NumRepr::type_traits::ugly_details_for_greater_suitable_type_deduction</innernamespace>
+    <innernamespace refid="namespace_num_repr_1_1type__traits_1_1ugly__details__for__suitable__type__deduction">NumRepr::type_traits::ugly_details_for_suitable_type_deduction</innernamespace>
+    <innernamespace refid="namespace_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int">NumRepr::type_traits::ugly_details_sig_SInt_for_UInt</innernamespace>
+    <innernamespace refid="namespace_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int">NumRepr::type_traits::ugly_details_SInt_for_SInt</innernamespace>
+    <innernamespace refid="namespace_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int">NumRepr::type_traits::ugly_details_UInt_for_SInt</innernamespace>
+    <innernamespace refid="namespace_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int">NumRepr::type_traits::ugly_details_UInt_for_UInt</innernamespace>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1aceacfae33a2bdedd9b890f2766f9b5a9" prot="public" static="no">
+      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1a9a526e626a27cfc6e05712d8b138604b" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>unsigned_integral_c</type>
-            <declname>UInt_t</declname>
-            <defname>UInt_t</defname>
+            <type>typename UInt_t</type>
           </param>
         </templateparamlist>
-        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___u_int__t" kindref="compound">detail::__sig_UInt_for_UInt_t</ref>&lt; UInt_t &gt;::type</type>
-        <definition>using NumRepr::type_traits::sig_UInt_for_UInt_t = typedef typename detail::__sig_UInt_for_UInt_t&lt;UInt_t&gt;::type</definition>
+        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int_1_1____sig___u_int__for___u_int__t" kindref="compound">ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t</ref>&lt; UInt_t &gt;::type</type>
+        <definition>using NumRepr::type_traits::sig_UInt_for_UInt_t = typedef typename ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t&lt;UInt_t&gt;::type</definition>
         <argsstring></argsstring>
         <name>sig_UInt_for_UInt_t</name>
         <qualifiedname>NumRepr::type_traits::sig_UInt_for_UInt_t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO NATURAL POR ESPECIALIZACION EXPLICITA </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="258" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="258" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="288" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="292" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1a9b443da6cd532ae6d0d5482d8f610737" prot="public" static="no">
+      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1a814fee89586c4dec3ac2c985af201649" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>unsigned_integral_c</type>
-            <declname>UInt_t</declname>
-            <defname>UInt_t</defname>
+            <type>typename UInt_t</type>
           </param>
         </templateparamlist>
-        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___u_int__t" kindref="compound">detail::__sig_SInt_for_UInt_t</ref>&lt; UInt_t &gt;::type</type>
-        <definition>using NumRepr::type_traits::sig_SInt_for_UInt_t = typedef typename detail::__sig_SInt_for_UInt_t&lt;UInt_t&gt;::type</definition>
+        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t" kindref="compound">ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t</ref>&lt; UInt_t &gt;::type</type>
+        <definition>using NumRepr::type_traits::sig_SInt_for_UInt_t = typedef typename ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t&lt;UInt_t&gt;::type</definition>
         <argsstring></argsstring>
         <name>sig_SInt_for_UInt_t</name>
         <qualifiedname>NumRepr::type_traits::sig_SInt_for_UInt_t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO ENTERO POR ESPECIALIZACION EXPLICITA </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="294" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="294" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="363" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="367" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1a78161f55798c2f15126db200161b7cda" prot="public" static="no">
+      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1a226e1d44325e03fdc352423b88728bbb" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>signed_integral_c</type>
-            <declname>SInt_t</declname>
-            <defname>SInt_t</defname>
+            <type>typename Int_t</type>
           </param>
         </templateparamlist>
-        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___u_int__for___s_int__t" kindref="compound">detail::__sig_UInt_for_SInt_t</ref>&lt; SInt_t &gt;::type</type>
-        <definition>using NumRepr::type_traits::sig_UInt_for_SInt_t = typedef typename detail::__sig_UInt_for_SInt_t&lt;SInt_t&gt;::type</definition>
+        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t" kindref="compound">ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t</ref>&lt; Int_t &gt;::type</type>
+        <definition>using NumRepr::type_traits::sig_UInt_for_SInt_t = typedef typename ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t&lt;Int_t&gt;::type</definition>
         <argsstring></argsstring>
         <name>sig_UInt_for_SInt_t</name>
         <qualifiedname>NumRepr::type_traits::sig_UInt_for_SInt_t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO ENTERO POR ESPCECIALIZACION EXPLICITA </para>
+<para>METAFUNCION : DA EL SIGUIENTE TIPO ENTERO PARA EL ACTUAL TIPO ENTERO POR ESPECIALIZACION EXPLICITA </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="338" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="341" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="401" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="405" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1ad43c24c639cf0910d71316896a9f39c2" prot="public" static="no">
+      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1ae5b5b95ff51b595abc85525d9ce48150" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>signed_integral_c</type>
-            <declname>SInt_t</declname>
-            <defname>SInt_t</defname>
+            <type>typename SInt_t</type>
           </param>
         </templateparamlist>
-        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1detail_1_1____sig___s_int__for___s_int__t" kindref="compound">detail::__sig_SInt_for_SInt_t</ref>&lt; SInt_t &gt;::type</type>
-        <definition>using NumRepr::type_traits::sig_SInt_for_SInt_t = typedef typename detail::__sig_SInt_for_SInt_t&lt;SInt_t&gt;::type</definition>
+        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int_1_1____sig___s_int__for___s_int__t" kindref="compound">ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t</ref>&lt; SInt_t &gt;::type</type>
+        <definition>using NumRepr::type_traits::sig_SInt_for_SInt_t = typedef typename ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t&lt;SInt_t&gt;::type</definition>
         <argsstring></argsstring>
         <name>sig_SInt_for_SInt_t</name>
         <qualifiedname>NumRepr::type_traits::sig_SInt_for_SInt_t</qualifiedname>
@@ -101,59 +94,166 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="373" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="376" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="472" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="476" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6" prot="public" static="no">
+      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1a4bda2ea1083d135a865f451a7968fe7b" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>integral_c</type>
-            <declname>Type</declname>
-            <defname>Type</defname>
-          </param>
-          <param>
-            <type>Type</type>
+            <type>ullint_t</type>
             <declname>Radix</declname>
             <defname>Radix</defname>
           </param>
         </templateparamlist>
-        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1_u_int_type_for_radix" kindref="compound">UIntTypeForRadix</ref>&lt; Type, Radix &gt;::UIntType</type>
-        <definition>using NumRepr::type_traits::UIntTypeForRadix_t = typedef typename UIntTypeForRadix&lt;Type,Radix&gt;::UIntType</definition>
-        <argsstring></argsstring>
-        <name>UIntTypeForRadix_t</name>
-        <qualifiedname>NumRepr::type_traits::UIntTypeForRadix_t</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>DEFINICION PARA ESPECIALIZACION TYPE_TRAITS::UINTTYPEFORRADIX UNSIGNED POSIBLY RADIX NON VALID </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="497" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="499" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1af319111801e531a4ba8fee6e00e5b0f3" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type><ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref></type>
-            <declname>Radix</declname>
-            <defname>Radix</defname>
-          </param>
-        </templateparamlist>
-        <type><ref refid="namespace_num_repr_1_1type__traits_1a351a7a8b4e624e101708c6d24ffeefb6" kindref="member">UIntTypeForRadix_t</ref>&lt; decltype(Radix), Radix &gt;</type>
-        <definition>using NumRepr::type_traits::TypeFromIntNumber_t = typedef UIntTypeForRadix_t&lt;decltype(Radix),Radix&gt;</definition>
+        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1ugly__details__for__suitable__type__deduction_1_1_u_int_type_for_radix" kindref="compound">UIntTypeForRadix</ref>&lt; decltype(Radix), Radix &gt;::UIntType</type>
+        <definition>using NumRepr::type_traits::TypeFromIntNumber_t = typedef typename UIntTypeForRadix&lt;decltype(Radix),Radix&gt;::UIntType</definition>
         <argsstring></argsstring>
         <name>TypeFromIntNumber_t</name>
         <qualifiedname>NumRepr::type_traits::TypeFromIntNumber_t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>QUEREMOS FABRICAR LA METAFUNCION TypeFromIntNumberLTSqrtMaxOfType_t&lt;numero&gt; QUE DEVUELVA EL TIPO ENTERO SIN SIGNO MAS PEQUENO PARA EL NUMERO numero TAL QUE SQRT(TYPE::MAX())&gt;=B-1 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="715" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="715" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="620" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="626" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespace_num_repr_1_1type__traits_1ab19d1b291fb456e9c4d734340c99152e" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>integral_c</type>
+            <declname>IntType</declname>
+            <defname>IntType</defname>
+          </param>
+          <param>
+            <type>IntType</type>
+            <declname>Radix</declname>
+            <defname>Radix</defname>
+          </param>
+        </templateparamlist>
+        <type>typename <ref refid="struct_num_repr_1_1type__traits_1_1ugly__details__for__greater__suitable__type__deduction_1_1_u_e73c7ba18a323e7d8eda21299da56319" kindref="compound">UIntTypeForRadixContainsMultResult</ref>&lt; decltype(Radix), Radix &gt;::UIntType</type>
+        <definition>using NumRepr::type_traits::GreaterTypeFromIntNumber_t = typedef typename UIntTypeForRadixContainsMultResult&lt;decltype(Radix),Radix&gt;::UIntType</definition>
+        <argsstring></argsstring>
+        <name>GreaterTypeFromIntNumber_t</name>
+        <qualifiedname>NumRepr::type_traits::GreaterTypeFromIntNumber_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="671" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="672" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1abdd3c894685f7a3c5a75a1e11030be9f" prot="public" static="no" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a3c2cd8d77157f93388df22fc683352c6" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>char_type_c</type>
+            <declname>CharT</declname>
+            <defname>CharT</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr CharT</type>
+        <definition>constexpr CharT NumRepr::type_traits::nullchar</definition>
+        <argsstring></argsstring>
+        <name>nullchar</name>
+        <qualifiedname>NumRepr::type_traits::nullchar</qualifiedname>
+        <initializer>{CharT(&apos;\0&apos;)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="126" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a25a6c0b36e21a705612679155c625fea" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename UINT_T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::type_traits::is_uint_type_for_radix_v</definition>
+        <argsstring></argsstring>
+        <name>is_uint_type_for_radix_v</name>
+        <qualifiedname>NumRepr::type_traits::is_uint_type_for_radix_v</qualifiedname>
+        <initializer>= std::is_unsigned_v&lt;UINT_T&gt; &amp;&amp; (! std::is_same_v&lt;UINT_T,<ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">uint128_t</ref>&gt;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&quot;CLASS&quot; TYPE TYPE DEFINITION template&lt;typename              int_type,int_type base&gt; class digito&lt;int_type,base&gt; {}; CONCEPT TYPE TYPE DEFINITION template&lt;allowable_base_type_c int_type,int_type base&gt; class digito&lt;int_type,base&gt; {}; METAOPERADOR QUE NOS DA LA ADECUACION DE UN TIPO PARA SER BASE DE UN SISTEMA DE NUMERACION VALE CUALQUIER TIPO UNSIGNED INTEGRAL QUE NO SEA EL MAYOR CONSIDERADO AQUI EL MAYOR CONSIDERADO ES UINT128_T </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="175" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a14ca6c2ae135eb7b3434518245aa6e32" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename UINT_T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::type_traits::is_unsigned_type_v</definition>
+        <argsstring></argsstring>
+        <name>is_unsigned_type_v</name>
+        <qualifiedname>NumRepr::type_traits::is_unsigned_type_v</qualifiedname>
+        <initializer>=
+			<ref refid="namespace_num_repr_1_1type__traits_1a25a6c0b36e21a705612679155c625fea" kindref="member">is_uint_type_for_radix_v</ref>&lt;UINT_T&gt;	|| std::is_same_v&lt;UINT_T,<ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">uint128_t</ref>&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>METAOPERADOR QUE NOS DA SI UN TIPO INTEGRAL ES UNSIGNED VALEN LOS QUE VALEN PARA RADIX MAS LOS TIPO MAS GRANDES POR LO TANTO UINT128_T SE CONSIDERA UN UNSIGNED INTEGRAL TYPE </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="184" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1ac835cd50de7fc16126659350e707d90b" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename SINT_T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::type_traits::is_signed_type_v</definition>
+        <argsstring></argsstring>
+        <name>is_signed_type_v</name>
+        <qualifiedname>NumRepr::type_traits::is_signed_type_v</qualifiedname>
+        <initializer>= std::is_signed_v&lt;SINT_T&gt;</initializer>
+        <briefdescription>
+<para>METAOPERADOR QUE NOS DA SI UN TIPO INTEGRAL ES SIGNED. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="192" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a70c8833df04d2280e43efc6c786255d5" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename INT_TYPE</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::type_traits::is_integral_type_v</definition>
+        <argsstring></argsstring>
+        <name>is_integral_type_v</name>
+        <qualifiedname>NumRepr::type_traits::is_integral_type_v</qualifiedname>
+        <initializer>= std::is_integral_v&lt;INT_TYPE&gt;</initializer>
+        <briefdescription>
+<para>METAOPERADOR QUE NOS DA SI UN TIPO ES INTEGRAL. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="199" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a630fe884d2ee01fc50ace1a6caada422" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -163,179 +263,105 @@
           </param>
         </templateparamlist>
         <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::type_traits::has_the_same_size</definition>
+        <definition>constexpr bool NumRepr::type_traits::eq_sz_v</definition>
         <argsstring></argsstring>
-        <name>has_the_same_size</name>
-        <qualifiedname>NumRepr::type_traits::has_the_same_size</qualifiedname>
-        <initializer>= (sizeof(T)==sizeof(S))</initializer>
+        <name>eq_sz_v</name>
+        <qualifiedname>NumRepr::type_traits::eq_sz_v</qualifiedname>
+        <initializer>= (sizeof(T) == sizeof(S))</initializer>
+        <briefdescription>
+<para>METAOPERADORES DE COMPARACION DE CAPACIDAD DE INTEGERS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="206" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1ac18e09ed303195401d9c8761d19c445d" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename S</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool NumRepr::type_traits::gt_sz_v</definition>
+        <argsstring></argsstring>
+        <name>gt_sz_v</name>
+        <qualifiedname>NumRepr::type_traits::gt_sz_v</qualifiedname>
+        <initializer>= (sizeof(T) &gt; sizeof(S))</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="196" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="196" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="208" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="208" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750" prot="public" static="no" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a8f400870614660673c711d0901466df9" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
-            <type>unsigned_integral_c</type>
-            <declname>T</declname>
-            <defname>T</defname>
+            <type>typename T</type>
           </param>
           <param>
-            <type>unsigned_integral_c</type>
-            <declname>S</declname>
-            <defname>S</defname>
+            <type>typename S</type>
           </param>
         </templateparamlist>
         <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::type_traits::is_unsigned_sz_gt_v</definition>
+        <definition>constexpr bool NumRepr::type_traits::lt_sz_v</definition>
         <argsstring></argsstring>
-        <name>is_unsigned_sz_gt_v</name>
-        <qualifiedname>NumRepr::type_traits::is_unsigned_sz_gt_v</qualifiedname>
-        <initializer>= <ref refid="struct_num_repr_1_1type__traits_1_1is__unsigned__sz__gt" kindref="compound">is_unsigned_sz_gt</ref>&lt;T,S&gt;::value</initializer>
+        <name>lt_sz_v</name>
+        <qualifiedname>NumRepr::type_traits::lt_sz_v</qualifiedname>
+        <initializer>= (sizeof(T) &lt; sizeof(S))</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="204" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="204" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="210" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="210" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a789b3b413126236b864ee49857240dc9" prot="public" static="no" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a960a0fb19a2a30ba524a3d5243973f4f" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
-            <type>unsigned_integral_c</type>
-            <declname>T</declname>
-            <defname>T</defname>
+            <type>typename T</type>
           </param>
           <param>
-            <type>unsigned_integral_c</type>
-            <declname>S</declname>
-            <defname>S</defname>
+            <type>typename S</type>
           </param>
         </templateparamlist>
         <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::type_traits::is_unsigned_sz_geqt_v</definition>
+        <definition>constexpr bool NumRepr::type_traits::ge_sz_v</definition>
         <argsstring></argsstring>
-        <name>is_unsigned_sz_geqt_v</name>
-        <qualifiedname>NumRepr::type_traits::is_unsigned_sz_geqt_v</qualifiedname>
-        <initializer>=	(<ref refid="namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750" kindref="member">is_unsigned_sz_gt_v</ref>&lt;T,S&gt; || std::is_same_v&lt;T,S&gt;)</initializer>
+        <name>ge_sz_v</name>
+        <qualifiedname>NumRepr::type_traits::ge_sz_v</qualifiedname>
+        <initializer>= <ref refid="namespace_num_repr_1_1type__traits_1ac18e09ed303195401d9c8761d19c445d" kindref="member">gt_sz_v</ref>&lt;T,S&gt;||<ref refid="namespace_num_repr_1_1type__traits_1a630fe884d2ee01fc50ace1a6caada422" kindref="member">eq_sz_v</ref>&lt;T,S&gt;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="207" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="207" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="212" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="212" bodyend="-1"/>
+        <referencedby refid="struct_num_repr_1_1nat__reg__digs__t_1ab1a63d715621ca9fea2c4d765155a23b" compoundref="nat__reg__digs__t_8hpp" startline="520" endline="561">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::operator=</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a7c29ce492dab6daf5c494a845385d0b2" prot="public" static="no" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a26bf1fb2c8481ad4420be9bd6e46f474" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
-            <type>signed_integral_c</type>
-            <declname>T</declname>
-            <defname>T</defname>
+            <type>typename T</type>
           </param>
           <param>
-            <type>signed_integral_c</type>
-            <declname>S</declname>
-            <defname>S</defname>
+            <type>typename S</type>
           </param>
         </templateparamlist>
         <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::type_traits::is_signed_sz_gt_v</definition>
+        <definition>constexpr bool NumRepr::type_traits::le_sz_v</definition>
         <argsstring></argsstring>
-        <name>is_signed_sz_gt_v</name>
-        <qualifiedname>NumRepr::type_traits::is_signed_sz_gt_v</qualifiedname>
-        <initializer>= <ref refid="struct_num_repr_1_1type__traits_1_1is__signed__sz__gt" kindref="compound">is_signed_sz_gt</ref>&lt;T,S&gt;::value</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="215" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="215" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1a20b53f5a6dfecf867091ecfc36246c2a" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-          <param>
-            <type>signed_integral_c</type>
-            <declname>T</declname>
-            <defname>T</defname>
-          </param>
-          <param>
-            <type>unsigned_integral_c</type>
-            <declname>S</declname>
-            <defname>S</defname>
-          </param>
-        </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::type_traits::is_signed_sz_geqt_v</definition>
-        <argsstring></argsstring>
-        <name>is_signed_sz_geqt_v</name>
-        <qualifiedname>NumRepr::type_traits::is_signed_sz_geqt_v</qualifiedname>
-        <initializer>=	<ref refid="namespace_num_repr_1_1type__traits_1a7c29ce492dab6daf5c494a845385d0b2" kindref="member">is_signed_sz_gt_v</ref>&lt;T,S&gt;
-											||
-											std::is_same_v&lt;T,S&gt;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="218" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="218" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1abc08a96a36443cef681ab6550813015e" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-          <param>
-            <type>integral_c</type>
-            <declname>T</declname>
-            <defname>T</defname>
-          </param>
-          <param>
-            <type>unsigned_integral_c</type>
-            <declname>S</declname>
-            <defname>S</defname>
-          </param>
-        </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::type_traits::is_sz_gt_v</definition>
-        <argsstring></argsstring>
-        <name>is_sz_gt_v</name>
-        <qualifiedname>NumRepr::type_traits::is_sz_gt_v</qualifiedname>
-        <initializer>=   <ref refid="namespace_num_repr_1_1type__traits_1a7c29ce492dab6daf5c494a845385d0b2" kindref="member">is_signed_sz_gt_v</ref>&lt;T,S&gt;
-										||
-										<ref refid="namespace_num_repr_1_1type__traits_1a6fbb9b711f734a52551166219e61a750" kindref="member">is_unsigned_sz_gt_v</ref>&lt;T,S&gt;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="223" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="223" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespace_num_repr_1_1type__traits_1af1b7c5a6fa97bd83aab53761c28f2ece" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-          <param>
-            <type>integral_c</type>
-            <declname>T</declname>
-            <defname>T</defname>
-          </param>
-          <param>
-            <type>unsigned_integral_c</type>
-            <declname>S</declname>
-            <defname>S</defname>
-          </param>
-        </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::type_traits::is_sz_geqt_v</definition>
-        <argsstring></argsstring>
-        <name>is_sz_geqt_v</name>
-        <qualifiedname>NumRepr::type_traits::is_sz_geqt_v</qualifiedname>
-        <initializer>=	<ref refid="namespace_num_repr_1_1type__traits_1a20b53f5a6dfecf867091ecfc36246c2a" kindref="member">is_signed_sz_geqt_v</ref>&lt;T,S&gt;
-										||
-										<ref refid="namespace_num_repr_1_1type__traits_1a789b3b413126236b864ee49857240dc9" kindref="member">is_unsigned_sz_geqt_v</ref>&lt;T,S&gt;</initializer>
+        <name>le_sz_v</name>
+        <qualifiedname>NumRepr::type_traits::le_sz_v</qualifiedname>
+        <initializer>= <ref refid="namespace_num_repr_1_1type__traits_1a8f400870614660673c711d0901466df9" kindref="member">lt_sz_v</ref>&lt;T,S&gt;||<ref refid="namespace_num_repr_1_1type__traits_1a630fe884d2ee01fc50ace1a6caada422" kindref="member">eq_sz_v</ref>&lt;T,S&gt;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -343,10 +369,107 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="227" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="227" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="214" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="214" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a167f2f4507b6f1cbc6fd15d365570c1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * NumRepr::type_traits::clear_ccad</definition>
+        <argsstring>(char *, usint_t)</argsstring>
+        <name>clear_ccad</name>
+        <qualifiedname>NumRepr::type_traits::clear_ccad</qualifiedname>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type><ref refid="namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a" kindref="member">usint_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="128" column="6" declfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" declline="128" declcolumn="6"/>
+        <referencedby refid="namespace_num_repr_1_1type__traits_1a88d9d80805fd8fe7d5662340a7e92344" compoundref="basic__types_8hpp" startline="132" endline="146">devCadenaC</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a88d9d80805fd8fe7d5662340a7e92344" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>template&lt; uchint_t B &gt; class</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+          <param>
+            <type>uchint_t</type>
+            <declname>B</declname>
+            <defname>B</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr const char *</type>
+        <definition>constexpr const char * NumRepr::type_traits::devCadenaC</definition>
+        <argsstring>(T&lt; B &gt; arg, std::size_t long_ccad=64) noexcept</argsstring>
+        <name>devCadenaC</name>
+        <qualifiedname>NumRepr::type_traits::devCadenaC</qualifiedname>
+        <param>
+          <type>T&lt; B &gt;</type>
+          <declname>arg</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>long_ccad</declname>
+          <defval>64</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="132" column="12" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="132" bodyend="146"/>
+        <references refid="namespace_num_repr_1_1type__traits_1a167f2f4507b6f1cbc6fd15d365570c1f">clear_ccad</references>
+      </memberdef>
+      <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a234b3a7127ab242615f060f6d137995e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr char *</type>
+        <definition>constexpr char * NumRepr::type_traits::clear_ccad</definition>
+        <argsstring>(char *cad_c, std::size_t long_de_cad_c) noexcept</argsstring>
+        <name>clear_ccad</name>
+        <qualifiedname>NumRepr::type_traits::clear_ccad</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>cad_c</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>long_de_cad_c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="149" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="149" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a195d25ead4c5c820f8a04e30205ed306" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr unsigned long long</type>
+        <definition>constexpr unsigned long long NumRepr::type_traits::atoull</definition>
+        <argsstring>(char *text) noexcept</argsstring>
+        <name>atoull</name>
+        <qualifiedname>NumRepr::type_traits::atoull</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="156" column="20" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="156" bodyend="164"/>
+      </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a4f0f4b9cd9964b406c8299bcbd74f506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -364,9 +487,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="378" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="378" bodyend="380"/>
-        <referencedby refid="struct_num_repr_1_1nat__reg__digs__t_1a02c8ea238d4e8921ae5e92d330f5bfba" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="707" endline="731">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::assign</referencedby>
-        <referencedby refid="struct_num_repr_1_1nat__reg__digs__t_1a314ac41efce60c862c67a3939c8e6c5e" compoundref="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp" startline="931" endline="944">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::operator Int_Type</referencedby>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="478" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="478" bodyend="480"/>
+        <referencedby refid="struct_num_repr_1_1nat__reg__digs__t_1a02c8ea238d4e8921ae5e92d330f5bfba" compoundref="nat__reg__digs__t_8hpp" startline="491" endline="515">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::assign</referencedby>
+        <referencedby refid="struct_num_repr_1_1nat__reg__digs__t_1a314ac41efce60c862c67a3939c8e6c5e" compoundref="nat__reg__digs__t_8hpp" startline="605" endline="618">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::operator Int_Type</referencedby>
+        <referencedby refid="struct_num_repr_1_1reg__digs__t_1a3ff2a749d367851189bc05a1687a0b22" compoundref="reg__digs__t_8hpp" startline="649" endline="663">NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator Int_Type</referencedby>
+        <referencedby refid="struct_num_repr_1_1reg__digs__t_1ada84ccdb7769b08b7b91b1dae6452c09" compoundref="reg__digs__t_8hpp" startline="617" endline="641">NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;::operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1ae6c52c70d58ecbc58b9ce8ddeff3c42e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -385,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="383" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="383" bodyend="385"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="483" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="483" bodyend="485"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a1a5c6f8a01fa8a777470dd479b3ae87a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -404,7 +529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="388" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="388" bodyend="390"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="488" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="488" bodyend="490"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1ae6d7996db2b7cdee98b72342bc0f976b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -423,7 +548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="393" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="393" bodyend="395"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="493" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="493" bodyend="495"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a3265677e1277882355b102f90ce5fc69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -442,7 +567,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="398" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="398" bodyend="400"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="498" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="498" bodyend="500"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a1d046b3da7103b9ca5a7dacb674f49f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -461,7 +586,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="403" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="403" bodyend="405"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="503" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="503" bodyend="505"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1addc313fbab4434c736167b0510d95a97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -480,7 +605,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="408" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="408" bodyend="410"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="508" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="508" bodyend="510"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a7197bd8a89fcc647c18b49f63a1b49f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -499,7 +624,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="413" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="413" bodyend="415"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="513" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="513" bodyend="515"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a8c8928703a18d48613b88d4eee0e967a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -518,7 +643,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="418" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="418" bodyend="420"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="518" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="518" bodyend="520"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1ad0267c5c18b47ea7d823e17e735d1e42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -537,7 +662,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="423" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="423" bodyend="425"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="523" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="523" bodyend="525"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1ad3c536f8264351b7aa3d9bd8e648d2e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -556,7 +681,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="428" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="428" bodyend="430"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="528" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="528" bodyend="530"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a7fe2595394f638eb83fc857ba0076f09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -580,7 +705,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="433" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="433" bodyend="435"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="533" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="533" bodyend="535"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a10f4b5abfc1e0a202341bf4481596e66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -604,7 +729,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="438" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="438" bodyend="440"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="538" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="538" bodyend="540"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1ae7b0da6237614a2d93ed8d40ee5596a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -628,7 +753,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="443" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="443" bodyend="445"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="543" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="543" bodyend="545"/>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1ab7aafe6bcb405d5c200145181755984f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -647,7 +772,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="448" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="448" bodyend="454"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="548" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="548" bodyend="554"/>
+        <referencedby refid="struct_num_repr_1_1nat__reg__digs__t_1a36d07cae3bf81e5a9b43c1cffd201d38" compoundref="nat__reg__digs__t_8hpp" startline="1157" endline="1236">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::m_add</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespace_num_repr_1_1type__traits_1a9c68ad4f3469998252d88633edf8e908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -661,20 +787,20 @@
         <name>sqrt_max</name>
         <qualifiedname>NumRepr::type_traits::sqrt_max</qualifiedname>
         <briefdescription>
-<para>DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS. </para>
         </briefdescription>
         <detaileddescription>
 <para>QUEREMOS FABRICAR LA METAFUNCION TypeFromIntNumber_t&lt;numero_sin_signo&gt; QUE DEVUELVA EL TIPO ENTERO SIN SIGNO MAS PEQUENO PARA EL NUMERO numero_sin_signo </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="457" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="457" bodyend="-1"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="557" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" bodystart="557" bodyend="-1"/>
+        <referencedby refid="struct_num_repr_1_1nat__reg__digs__t_1a652e69b8eb929e7d43f3e1098ea4a093" compoundref="nat__reg__digs__t_8hpp" startline="1321" endline="1431">NumRepr::nat_reg_digs_t&lt; UINT_T, B, L &gt;::mult</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="141" column="1"/>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="107" column="1"/>
   </compounddef>
 </doxygen>

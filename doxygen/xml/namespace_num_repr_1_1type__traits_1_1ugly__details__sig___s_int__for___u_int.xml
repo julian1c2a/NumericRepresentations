@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
+  <compounddef id="namespace_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int" kind="namespace" language="C++">
+    <compoundname>NumRepr::type_traits::ugly_details_sig_SInt_for_UInt</compoundname>
+    <innerclass refid="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t" prot="public">NumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t</innerclass>
+    <innerclass refid="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__f5c7e6520cd5a6a0cbb51fbfe418cdc8c" prot="public">NumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t&lt; uchint_t &gt;</innerclass>
+    <innerclass refid="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01uint__t_01_4" prot="public">NumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t&lt; uint_t &gt;</innerclass>
+    <innerclass refid="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01ulint__t_01_4" prot="public">NumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t&lt; ulint_t &gt;</innerclass>
+    <innerclass refid="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__ff1416f88b005f06eae8d4695658d20cf" prot="public">NumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t&lt; ullint_t &gt;</innerclass>
+    <innerclass refid="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01usint__t_01_4" prot="public">NumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t&lt; usint_t &gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/basic_types.hpp" line="293" column="1"/>
+  </compounddef>
+</doxygen>

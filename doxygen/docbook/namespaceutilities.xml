@@ -3,6 +3,13 @@
 <title>Referencia del Namespace utilities</title>
 <indexterm><primary>utilities</primary></indexterm>
 <simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceutilities_1_1special">special</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
     <title>Clases    </title>
         <itemizedlist>
             <listitem><para>struct <link linkend="_structutilities_1_1for__each__same__type">for_each_same_type</link></para>
@@ -22,9 +29,9 @@
 <simplesect>
     <title>Concepts    </title>
         <itemizedlist>
-            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__the__same__type">all_are_the_same_type</link></para>
+            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__the__same__type__c">all_are_the_same_type_c</link></para>
 </listitem>
-            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__more__than__zero">all_are_more_than_zero</link></para>
+            <listitem><para>concept <link linkend="_conceptutilities_1_1there__is__one__or__more__c">there_is_one_or_more_c</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -42,7 +49,7 @@
 <simplesect>
     <title>Funciones    </title>
         <itemizedlist>
-            <listitem><para>template&lt;class... Ts&gt; <?linebreak?>requires ( all_are_the_same_type&lt;Ts...&gt; &amp;&amp; all_are_more_than_zero&lt;Ts...&gt; )</para><para>void <link linkend="_namespaceutilities_1a2ab88d0a656f1609a891e9ea35ce185e">assign_with_order</link> (auto &amp;dest, const Ts &amp;... args) noexcept</para>
+            <listitem><para>template&lt;class... Ts&gt; <?linebreak?>requires ( all_are_the_same_type_c&lt;Ts...&gt; &amp;&amp; there_is_one_or_more_c&lt;Ts...&gt; )</para><para>void <link linkend="_namespaceutilities_1a0f549ca7e224442069f979e4beaaab88">assign_with_order</link> (auto &amp;dest, const Ts &amp;... args) noexcept</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -52,35 +59,37 @@
     <title>uintspair</title>
 <indexterm><primary>uintspair</primary><secondary>utilities</secondary></indexterm>
 <indexterm><primary>utilities</primary><secondary>uintspair</secondary></indexterm>
-<computeroutput>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T&gt; </computeroutput><para><computeroutput>using <link linkend="_namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee">utilities::uintspair</link> = typedef typename std::array&lt;UINT_T,2&gt;</computeroutput></para></section>
+<computeroutput>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T&gt; </computeroutput><para><computeroutput>using <link linkend="_namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee">utilities::uintspair</link> = typedef typename std::array&lt;UINT_T,2&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00010">10</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
 <anchor xml:id="_namespaceutilities_1a19b04f837f493034c4612e5bcb58da22"/><section>
     <title>uintspairlist</title>
 <indexterm><primary>uintspairlist</primary><secondary>utilities</secondary></indexterm>
 <indexterm><primary>utilities</primary><secondary>uintspairlist</secondary></indexterm>
-<computeroutput>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_namespaceutilities_1a19b04f837f493034c4612e5bcb58da22">utilities::uintspairlist</link> = typedef typename std::array&lt;<link linkend="_namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee">uintspair</link>&lt;UINT_T&gt;,B&gt;</computeroutput></para></section>
+<computeroutput>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_namespaceutilities_1a19b04f837f493034c4612e5bcb58da22">utilities::uintspairlist</link> = typedef typename std::array&lt;<link linkend="_namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee">uintspair</link>&lt;UINT_T&gt;,B&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00012">12</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
 <anchor xml:id="_namespaceutilities_1ab05788cb7517fec011dd7e174edcd6a9"/><section>
     <title>uintspairtbl</title>
 <indexterm><primary>uintspairtbl</primary><secondary>utilities</secondary></indexterm>
 <indexterm><primary>utilities</primary><secondary>uintspairtbl</secondary></indexterm>
-<computeroutput>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_namespaceutilities_1ab05788cb7517fec011dd7e174edcd6a9">utilities::uintspairtbl</link> = typedef typename std::array&lt;<link linkend="_namespaceutilities_1a19b04f837f493034c4612e5bcb58da22">uintspairlist</link>&lt;UINT_T,B&gt;,B&gt;</computeroutput></para></section>
+<computeroutput>template&lt;<link linkend="_concept_num_repr_1_1type__traits_1_1unsigned__integral__c">NumRepr::type_traits::unsigned_integral_c</link> UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_namespaceutilities_1ab05788cb7517fec011dd7e174edcd6a9">utilities::uintspairtbl</link> = typedef typename std::array&lt;<link linkend="_namespaceutilities_1a19b04f837f493034c4612e5bcb58da22">uintspairlist</link>&lt;UINT_T,B&gt;,B&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00014">14</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
 </section>
 <section>
 <title>Documentación de las funciones</title>
-<anchor xml:id="_namespaceutilities_1a2ab88d0a656f1609a891e9ea35ce185e"/><section>
+<anchor xml:id="_namespaceutilities_1a0f549ca7e224442069f979e4beaaab88"/><section>
     <title>assign_with_order()</title>
 <indexterm><primary>assign_with_order</primary><secondary>utilities</secondary></indexterm>
 <indexterm><primary>utilities</primary><secondary>assign_with_order</secondary></indexterm>
-<computeroutput>template&lt;class... Ts&gt; <?linebreak?>requires ( all_are_the_same_type&lt;Ts...&gt; &amp;&amp; all_are_more_than_zero&lt;Ts...&gt; )</computeroutput><para><computeroutput>void utilities::assign_with_order (auto &amp; dest, const Ts &amp;... args)<computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00158 {
-00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structutilities_1_1pack2array">pack2array&lt;Ts...&gt;::for_each</link>(dest,args...);
-00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
-00161 }
-</programlisting><para>
-Hace referencia a <link linkend="_l00138">utilities::pack2array&lt; Ts &gt;::for_each()</link>.</para>
+<computeroutput>template&lt;class... Ts&gt; <?linebreak?>requires ( all_are_the_same_type_c&lt;Ts...&gt; &amp;&amp; there_is_one_or_more_c&lt;Ts...&gt; )</computeroutput><para><computeroutput>void utilities::assign_with_order (auto &amp; dest, const Ts &amp;... args)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00160">160</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
 Gráfico de llamadas para esta función:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespaceutilities_a2ab88d0a656f1609a891e9ea35ce185e_cgraph.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespaceutilities_a0f549ca7e224442069f979e4beaaab88_cgraph.png"></imagedata>
             </imageobject>
         </mediaobject>
     </informalfigure>

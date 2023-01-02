@@ -1,0 +1,25 @@
+.TH "utilities::there_is_one_or_more_c" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+utilities::there_is_one_or_more_c
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <utilities\&.hpp>\fP
+.SH "Concept definition"
+.PP 
+.PP
+.nf
+template<typename\&.\&.\&. Ts>
+concept utilities::there_is_one_or_more_c =  requires(Ts\&.\&.\&.) {
+        ((sizeof\&.\&.\&.(Ts))>0);
+}
+.fi
+.SH "Descripción detallada"
+.PP 
+Definición en la línea \fB97\fP del archivo \fButilities\&.hpp\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

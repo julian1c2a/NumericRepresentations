@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="structutilities_1_1pack2tuple" kind="struct" language="C++" prot="public">
     <compoundname>utilities::pack2tuple</compoundname>
     <includes refid="utilities_8hpp" local="no">utilities.hpp</includes>
@@ -113,12 +113,6 @@
     <detaileddescription>
 <para>template&lt;class type_0, class type_1, ... , class type_Nm1&gt; struct apilamiento_de_tipos_t { type_0 obj_0; type_1 obj_1; ...... ..... type_Nm1 obj_Nm1; }; example: apilamiento_de_tipos&lt;int,std::string,double&gt; objeto{1,&quot;abc&quot;,2.98105}; objeto.obj_0 == 1; objeto.obj_1 == &quot;abc&quot;; objeto.obj_Nm1 == 2.98105; A partir del estandar de C++11 template&lt;class ...type_i&gt; struct apilamiento_de_tipos_t { type_0 obj_0; // sabemos type_i pero no type_0 type_1 obj_1; // sabemos type_i pero no type_1 ...... ..... type_Nm1 obj_Nm1;// sabemos type_i pero no type_Nm1 }; type_i es un PACK tipo std::tupla&lt;class ... Ts&gt;; </para>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>utilities::pack2tuple&lt; Ts &gt;</label>
-        <link refid="structutilities_1_1pack2tuple"/>
-      </node>
-    </collaborationgraph>
     <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="40" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="40" bodyend="55"/>
     <listofallmembers>
       <member refid="structutilities_1_1pack2tuple_1a2e0d115ff8a9f1cededeed910472aa38" prot="public" virt="non-virtual"><scope>utilities::pack2tuple</scope><name>elem_type</name></member>

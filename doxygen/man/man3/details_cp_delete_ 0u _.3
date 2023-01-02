@@ -1,4 +1,4 @@
-.TH "details::cp_delete< 0u >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "details::cp_delete< 0u >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,22 +18,17 @@ details::cp_delete< 0u >
 .SH "Descripción detallada"
 .PP 
 
-.SS "template<typename aT, template< \fBuchint\fP > class T, \fBusint\fP num_vars>
+.SS "template<typename aT, template< uchint > class T, usint num_vars>
 .br
 struct details::cp_delete< 0u >"
+.PP
+Definición en la línea \fB126\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars> void \fBdetails::cp_delete\fP< 0u >::operator() (aT ** var_list_list)\fC [inline]\fP"
+.SS "template<typename aT , template< uchint > class T, usint num_vars> void \fBdetails::cp_delete\fP< 0u >::operator() (aT ** var_list_list)\fC [inline]\fP"
 
 .PP
-.nf
-126                                             {
-127                 if (var_list_list[0u] != nullptr)
-128                         delete var_list_list[0u];
-129                 delete [] var_list_list;
-130         }
-.fi
-
+Definición en la línea \fB127\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

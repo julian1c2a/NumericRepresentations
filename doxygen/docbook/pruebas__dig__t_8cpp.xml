@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pruebas__dig__t_8cpp" xml:lang="es">
 <title>Referencia del Archivo pruebas_dig_t.cpp</title>
 <indexterm><primary>pruebas_dig_t.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;dig_t.hpp&quot;<?linebreak?>#include &lt;typeinfo&gt;<?linebreak?></programlisting>Dependencia gráfica adjunta para pruebas_dig_t.cpp:<para>
+<programlisting linenumbering="unnumbered">#include &quot;utilities.hpp&quot;<?linebreak?>#include &quot;nat_reg_digs_t.hpp&quot;<?linebreak?>#include &lt;typeinfo&gt;<?linebreak?></programlisting>Dependencia gráfica adjunta para pruebas_dig_t.cpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -12,71 +12,79 @@
     </informalfigure>
 </para>
 <simplesect>
+    <title>typedefs    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_pruebas__dig__t_8cpp_1a13ad836519e767648b12d2910466d79a">trisums_t</link> = std::tuple&lt; std::int64_t, std::int64_t, std::int64_t &gt;</para>
+</listitem>
+            <listitem><para>using <link linkend="_pruebas__dig__t_8cpp_1ade7291f8ff5bdbc6caa1c4b79da8004c">result_test_binop_con_asignacion</link> = std::vector&lt; <link linkend="_pruebas__dig__t_8cpp_1a13ad836519e767648b12d2910466d79a">trisums_t</link> &gt;</para>
+</listitem>
+            <listitem><para>using <link linkend="_pruebas__dig__t_8cpp_1a9c9843b98bf8f42ee03c7d9a5f051d44">retorno_de_test_t</link> = std::tuple&lt; bool, <link linkend="_pruebas__dig__t_8cpp_1ade7291f8ff5bdbc6caa1c4b79da8004c">result_test_binop_con_asignacion</link>, <link linkend="_pruebas__dig__t_8cpp_1ade7291f8ff5bdbc6caa1c4b79da8004c">result_test_binop_con_asignacion</link> &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
     <title>Funciones    </title>
         <itemizedlist>
+            <listitem><para>template&lt;size_t B, size_t L&gt; </para><para>constexpr <link linkend="_namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3">NumRepr::uint128_t</link> <link linkend="_pruebas__dig__t_8cpp_1a6061ebc60c8900e8bd20afe55a04eaa9">conversion_to_int</link> (<link linkend="_namespace_num_repr_1a162b6953f603031db66e18e2b8240bc2">NumRepr::register_of_digits_t</link>&lt; B, L &gt; &amp;arg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_namespace_num_repr_1ad76647f24e00f176e977848784fb7826">NumRepr::ullint_t</link> Base, <link linkend="_namespace_num_repr_1ad76647f24e00f176e977848784fb7826">NumRepr::ullint_t</link> Longitud&gt; </para><para><link linkend="_pruebas__dig__t_8cpp_1a9c9843b98bf8f42ee03c7d9a5f051d44">retorno_de_test_t</link> <link linkend="_pruebas__dig__t_8cpp_1ab0db6da550ea974c5b97a28313d89163">test_suma_con_asignacion</link> ()</para>
+</listitem>
             <listitem><para>int <link linkend="_pruebas__dig__t_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
+<title>Documentación de los &apos;typedefs&apos;</title>
+<anchor xml:id="_pruebas__dig__t_8cpp_1ade7291f8ff5bdbc6caa1c4b79da8004c"/><section>
+    <title>result_test_binop_con_asignacion</title>
+<indexterm><primary>result_test_binop_con_asignacion</primary><secondary>pruebas_dig_t.cpp</secondary></indexterm>
+<indexterm><primary>pruebas_dig_t.cpp</primary><secondary>result_test_binop_con_asignacion</secondary></indexterm>
+<para><computeroutput>using <link linkend="_pruebas__dig__t_8cpp_1ade7291f8ff5bdbc6caa1c4b79da8004c">result_test_binop_con_asignacion</link> =  std::vector&lt;<link linkend="_pruebas__dig__t_8cpp_1a13ad836519e767648b12d2910466d79a">trisums_t</link>&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_pruebas__dig__t_8cpp_source_1l00029">29</link> del archivo <link linkend="_pruebas__dig__t_8cpp_source">pruebas_dig_t.cpp</link>.</para>
+</section>
+<anchor xml:id="_pruebas__dig__t_8cpp_1a9c9843b98bf8f42ee03c7d9a5f051d44"/><section>
+    <title>retorno_de_test_t</title>
+<indexterm><primary>retorno_de_test_t</primary><secondary>pruebas_dig_t.cpp</secondary></indexterm>
+<indexterm><primary>pruebas_dig_t.cpp</primary><secondary>retorno_de_test_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_pruebas__dig__t_8cpp_1a9c9843b98bf8f42ee03c7d9a5f051d44">retorno_de_test_t</link> =  std::tuple&lt; bool, <link linkend="_pruebas__dig__t_8cpp_1ade7291f8ff5bdbc6caa1c4b79da8004c">result_test_binop_con_asignacion</link>, <link linkend="_pruebas__dig__t_8cpp_1ade7291f8ff5bdbc6caa1c4b79da8004c">result_test_binop_con_asignacion</link>&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_pruebas__dig__t_8cpp_source_1l00031">31</link> del archivo <link linkend="_pruebas__dig__t_8cpp_source">pruebas_dig_t.cpp</link>.</para>
+</section>
+<anchor xml:id="_pruebas__dig__t_8cpp_1a13ad836519e767648b12d2910466d79a"/><section>
+    <title>trisums_t</title>
+<indexterm><primary>trisums_t</primary><secondary>pruebas_dig_t.cpp</secondary></indexterm>
+<indexterm><primary>pruebas_dig_t.cpp</primary><secondary>trisums_t</secondary></indexterm>
+<para><computeroutput>using <link linkend="_pruebas__dig__t_8cpp_1a13ad836519e767648b12d2910466d79a">trisums_t</link> =  std::tuple&lt;std::int64_t,std::int64_t,std::int64_t&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_pruebas__dig__t_8cpp_source_1l00027">27</link> del archivo <link linkend="_pruebas__dig__t_8cpp_source">pruebas_dig_t.cpp</link>.</para>
+</section>
+</section>
+<section>
 <title>Documentación de las funciones</title>
+<anchor xml:id="_pruebas__dig__t_8cpp_1a6061ebc60c8900e8bd20afe55a04eaa9"/><section>
+    <title>conversion_to_int()</title>
+<indexterm><primary>conversion_to_int</primary><secondary>pruebas_dig_t.cpp</secondary></indexterm>
+<indexterm><primary>pruebas_dig_t.cpp</primary><secondary>conversion_to_int</secondary></indexterm>
+<computeroutput>template&lt;size_t B, size_t L&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3">NumRepr::uint128_t</link> conversion_to_int (<link linkend="_namespace_num_repr_1a162b6953f603031db66e18e2b8240bc2">NumRepr::register_of_digits_t</link>&lt; B, L &gt; &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_pruebas__dig__t_8cpp_source_1l00021">21</link> del archivo <link linkend="_pruebas__dig__t_8cpp_source">pruebas_dig_t.cpp</link>.</para>
+</section>
 <anchor xml:id="_pruebas__dig__t_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4"/><section>
     <title>main()</title>
 <indexterm><primary>main</primary><secondary>pruebas_dig_t.cpp</secondary></indexterm>
 <indexterm><primary>pruebas_dig_t.cpp</primary><secondary>main</secondary></indexterm>
-<para><computeroutput>int main ( )</computeroutput></para><programlisting linenumbering="unnumbered">00004 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00005 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//template&lt;uchint&#32;B,std::size_t&#32;L&gt;</emphasis>
-00006 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//using&#32;reg_digs_t&#32;=&#32;typename&#32;NumRepr::reg_digs_t&lt;uchint,B,L&gt;;</emphasis>
-00007 <emphasis role="comment">/*</emphasis>
-00008 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uchint&#32;a=&apos;a&apos;;</emphasis>
-00009 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;sizeof(a=&quot;&#32;&lt;&lt;&#32;a&#32;&lt;&lt;&#32;&quot;)=&quot;&#32;&lt;&lt;&#32;sizeof(a)&#32;&lt;&lt;&#32;&quot;\n&quot;;</emphasis>
-00010 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;usint&#32;b=&apos;b&apos;;</emphasis>
-00011 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;sizeof(b=&quot;&#32;&lt;&lt;&#32;b&#32;&lt;&lt;&#32;&quot;)=&quot;&#32;&lt;&lt;&#32;sizeof(b)&#32;&lt;&lt;&#32;&quot;\n&quot;;</emphasis>
-00012 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ulint&#32;c=&apos;c&apos;;</emphasis>
-00013 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;sizeof(c=&quot;&#32;&lt;&lt;&#32;c&#32;&lt;&lt;&#32;&quot;)=&quot;&#32;&lt;&lt;&#32;sizeof(c)&#32;&lt;&lt;&#32;&quot;\n&quot;;</emphasis>
-00014 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ullint&#32;d=&apos;d&apos;;</emphasis>
-00015 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;sizeof(d=&quot;&#32;&lt;&lt;&#32;d&#32;&lt;&lt;&#32;&quot;)=&quot;&#32;&lt;&lt;&#32;sizeof(d)&#32;&lt;&lt;&#32;&quot;\n&quot;;</emphasis>
-00016 <emphasis role="comment">*/</emphasis>
-00017 <emphasis role="comment">/*</emphasis>
-00018 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;constexpr&#32;char&#32;fdl{&apos;\n&apos;};</emphasis>
-00019 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;v0{dig_t::dig_0()};</emphasis>
-00020 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;v1{dig_t::dig_1()};</emphasis>
-00021 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;vBm1{dig_t::dig_max()};</emphasis>
-00022 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;vBm2{dig_t::dig_submax()};</emphasis>
-00023 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;v0&#32;&#32;&#32;&#32;=&#32;&#32;&quot;&#32;&lt;&lt;&#32;v0.to_string()&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;fdl</emphasis>
-00024 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;&quot;v1&#32;&#32;&#32;&#32;=&#32;&#32;&quot;&#32;&lt;&lt;&#32;v1.to_string()&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;fdl</emphasis>
-00025 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;&quot;vBm1&#32;&#32;=&#32;&#32;&quot;&#32;&lt;&lt;&#32;vBm1.to_string()&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;fdl</emphasis>
-00026 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;&quot;vBm2&#32;&#32;=&#32;&#32;&quot;&#32;&lt;&lt;&#32;vBm2.to_string()&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;fdl;</emphasis>
-00027 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;Size&#32;of&#32;type&#32;dig_t&#32;=&#32;&quot;&#32;&lt;&lt;&#32;sizeof(dig_t)&#32;&lt;&lt;&#32;fdl;</emphasis>
-00028 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;for(std::size_t&#32;ix{0}&#32;;&#32;ix&#32;&lt;&#32;23&#32;;&#32;++ix)&#32;{</emphasis>
-00029 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;TABLAS&#32;DE&#32;MULTIPLICAR&#32;PARA&#32;BASE&#32;&quot;&#32;&lt;&lt;&#32;dig_t::radix_str()&#32;&lt;&lt;&#32;fdl;</emphasis>
-00030 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;TABLAS&#32;DEL&#32;:&#32;&quot;&#32;&lt;&lt;&#32;ix&#32;&lt;&lt;&#32;fdl;</emphasis>
-00031 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;for(std::size_t&#32;iy{ix}&#32;;&#32;iy&#32;&lt;&#32;23&#32;;&#32;++iy)&#32;{</emphasis>
-00032 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;dx{ix};</emphasis>
-00033 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;dy{iy};</emphasis>
-00034 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;dx&#32;&lt;&lt;&#32;&quot;&#32;*&#32;&quot;&#32;&lt;&lt;&#32;dy&#32;&lt;&lt;&#32;&quot;&#32;=&#32;&quot;&#32;&lt;&lt;&#32;dx.multcarry(dy)</emphasis>
-00035 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;&apos;&#32;&apos;&#32;&lt;&lt;&#32;dx.multresult(dy)&#32;&lt;&lt;&#32;fdl;</emphasis>
-00036 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
-00037 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
-00038 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;a{22};</emphasis>
-00039 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;b{22};</emphasis>
-00040 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;c&#32;=&#32;a*b;</emphasis>
-00041 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dig_t&#32;d&#32;=&#32;a.multresult(b);</emphasis>
-00042 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;c&#32;&lt;&lt;&#32;fdl;</emphasis>
-00043 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;d&#32;&lt;&lt;&#32;fdl;</emphasis>
-00044 <emphasis role="comment">*/</emphasis>
-00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>&#32;B{111114444444444444};
-00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link>&#32;Bm1{B-1};
-00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis><link linkend="_namespace_num_repr_1a10e7466eb7ce2646e7f8502d665e61f0">digit_t</link>&#32;=&#32;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_struct_num_repr_1_1dig__t">NumRepr::digit_t&lt;B&gt;</link>;
-00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<link linkend="_namespace_num_repr_1a10e7466eb7ce2646e7f8502d665e61f0">digit_t</link>&#32;A{Bm1};
-00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::type_info&amp;&#32;type_of_A&#32;=&#32;<emphasis role="keyword">typeid</emphasis>(<emphasis role="keyword">decltype</emphasis>(A()));
-00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;type_of_A.name()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_namespace_num_repr_1a10e7466eb7ce2646e7f8502d665e61f0">digit_t</link>{A()}&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&lt;&#32;&quot;</emphasis>;
-00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis>tipo_de_A&#32;=&#32;<emphasis role="keyword">decltype</emphasis>(A());
-00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;</emphasis>limites_de_A&#32;=&#32;std::numeric_limits&lt;tipo_de_A&gt;;
-00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;limites_de_A::max()&#32;&lt;&lt;&#32;std::endl;
-00054 
-00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
-00056 }
-</programlisting></section>
+<para><computeroutput>int main ( )</computeroutput></para>
+<para>digit_t<emphasis role="bold"> reg_digs_t&lt;B,L&gt;</emphasis></para>
+
+<para><emphasis role="bold">PRUEBAS SOBRE LA DIVISION FUNCION AUXILIAR aprox_units_divB</emphasis></para>
+
+<para><emphasis role="bold"></emphasis></para>
+<para>
+Definición en la línea <link linkend="_pruebas__dig__t_8cpp_source_1l00078">78</link> del archivo <link linkend="_pruebas__dig__t_8cpp_source">pruebas_dig_t.cpp</link>.</para>
+</section>
+<anchor xml:id="_pruebas__dig__t_8cpp_1ab0db6da550ea974c5b97a28313d89163"/><section>
+    <title>test_suma_con_asignacion()</title>
+<indexterm><primary>test_suma_con_asignacion</primary><secondary>pruebas_dig_t.cpp</secondary></indexterm>
+<indexterm><primary>pruebas_dig_t.cpp</primary><secondary>test_suma_con_asignacion</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_namespace_num_repr_1ad76647f24e00f176e977848784fb7826">NumRepr::ullint_t</link> Base, <link linkend="_namespace_num_repr_1ad76647f24e00f176e977848784fb7826">NumRepr::ullint_t</link> Longitud&gt; </computeroutput><para><computeroutput><link linkend="_pruebas__dig__t_8cpp_1a9c9843b98bf8f42ee03c7d9a5f051d44">retorno_de_test_t</link> test_suma_con_asignacion ( )</computeroutput></para><para>
+Definición en la línea <link linkend="_pruebas__dig__t_8cpp_source_1l00036">36</link> del archivo <link linkend="_pruebas__dig__t_8cpp_source">pruebas_dig_t.cpp</link>.</para>
+</section>
 </section>
 </section>

@@ -5,15 +5,6 @@
 <para>
 <computeroutput>#include &lt;memory_handler.hpp&gt;</computeroutput>
 </para>
-Diagrama de colaboración para details::cp_new&lt; aT, T, num_vars, B &gt;:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdetails_1_1cp__new__coll__graph.png"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Métodos públicos    </title>
         <itemizedlist>
@@ -21,21 +12,53 @@ Diagrama de colaboración para details::cp_new&lt; aT, T, num_vars, B &gt;:<para
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Métodos privados estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static aT * <link linkend="_structdetails_1_1cp__new_1a479edf9fda80c05ef9a9be9eec8e5c3a">contruye_lista_de_variables</link> (aT *var_list)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <section>
 <title>Descripción detallada</title>
-<simplesect><title>template&lt;typename aT, template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars, <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt;<?linebreak?>struct details::cp_new&lt; aT, T, num_vars, B &gt;</title></simplesect>
+<simplesect><title>template&lt;typename aT, template&lt; uchint &gt; class T, usint num_vars, uchint B&gt;<?linebreak?>struct details::cp_new&lt; aT, T, num_vars, B &gt;</title></simplesect>
+<para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00016">16</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
 </section>
 <section>
 <title>Documentación de las funciones miembro</title>
+<anchor xml:id="_structdetails_1_1cp__new_1a479edf9fda80c05ef9a9be9eec8e5c3a"/><section>
+    <title>contruye_lista_de_variables()</title>
+<indexterm><primary>contruye_lista_de_variables</primary><secondary>details::cp_new&lt; aT, T, num_vars, B &gt;</secondary></indexterm>
+<indexterm><primary>details::cp_new&lt; aT, T, num_vars, B &gt;</primary><secondary>contruye_lista_de_variables</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; uchint &gt; class T, usint num_vars, uchint B&gt; </computeroutput><para><computeroutput>static aT * <link linkend="_structdetails_1_1cp__new">details::cp_new</link>&lt; aT, T, num_vars, B &gt;::contruye_lista_de_variables (aT * var_list)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00018">18</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+Gráfico de llamadas a esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdetails_1_1cp__new_a479edf9fda80c05ef9a9be9eec8e5c3a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_structdetails_1_1cp__new_1a674103f596ac614f876144d95625fa23"/><section>
     <title>operator()()</title>
 <indexterm><primary>operator()</primary><secondary>details::cp_new&lt; aT, T, num_vars, B &gt;</secondary></indexterm>
 <indexterm><primary>details::cp_new&lt; aT, T, num_vars, B &gt;</primary><secondary>operator()</secondary></indexterm>
-<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars, <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt; </computeroutput><para><computeroutput>void <link linkend="_structdetails_1_1cp__new">details::cp_new</link>&lt; aT, T, num_vars, B &gt;::operator() (aT ** var_list_list)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T&lt;B&gt;*<emphasis role="keyword">&gt;</emphasis>(contruye_lista_de_variables(var_list_list[B]));
-00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cp_new&lt;aT,T,num_vars,B-1u&gt;(var_list_list);
-00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;typename aT , template&lt; uchint &gt; class T, usint num_vars, uchint B&gt; </computeroutput><para><computeroutput>void <link linkend="_structdetails_1_1cp__new">details::cp_new</link>&lt; aT, T, num_vars, B &gt;::operator() (aT ** var_list_list)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00023">23</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdetails_1_1cp__new_a674103f596ac614f876144d95625fa23_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <para>
 La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
 <link linkend="_memory__handler_8hpp">memory_handler.hpp</link></section>

@@ -1,4 +1,4 @@
-.TH "NumRepr::base_num_t< UINT_T, B >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "NumRepr::base_num_t< UINT_T, B >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,6 +8,8 @@ NumRepr::base_num_t< UINT_T, B >
 .PP
 .PP
 \fC#include <base_num_t\&.hpp>\fP
+.PP
+Herencias basic_string< dig_t< UINT_T, B > >\&.
 .SS "Tipos públicos"
 
 .in +1c
@@ -15,19 +17,19 @@ NumRepr::base_num_t< UINT_T, B >
 .RI "using \fBdig_t\fP = \fBdig_t\fP< UINT_T, B >"
 .br
 .ti -1c
-.RI "using \fBnbstr\fP = basic_string< \fBdig_t\fP >"
+.RI "using \fBbase_t\fP = basic_string< \fBdig_t\fP >"
 .br
 .ti -1c
-.RI "using \fBstriterator\fP = typename nbstr::iterator"
+.RI "using \fBstr_iterator\fP = typename base_t::iterator"
 .br
 .ti -1c
-.RI "using \fBcstriterator\fP = typename nbstr::const_iterator"
+.RI "using \fBc_str_iterator\fP = typename base_t::const_iterator"
 .br
 .ti -1c
-.RI "using \fBrstriterator\fP = typename nbstr::reverse_iterator \fBrstriterator\fP"
+.RI "using \fBr_str_iterator\fP = typename base_t::reverse_iterator"
 .br
 .ti -1c
-.RI "using \fBcrstriterator\fP = typename nbstr::const_reverse_iterator \fBcrstriterator\fP"
+.RI "using \fBcr_str_iterator\fP = typename base_t::const_reverse_iterator"
 .br
 .in -1c
 .SS "Métodos públicos"
@@ -40,10 +42,10 @@ NumRepr::base_num_t< UINT_T, B >
 .RI "constexpr void \fBresize\fP (\fBsize_t\fP arg) noexcept"
 .br
 .ti -1c
-.RI "constexpr \fBdig_t\fP \fBoperator[]\fP (\fBullint\fP arg) const noexcept"
+.RI "constexpr \fBdig_t\fP \fBoperator[]\fP (ullint arg) const noexcept"
 .br
 .ti -1c
-.RI "constexpr \fBdig_t\fP & \fBoperator[]\fP (\fBullint\fP arg) noexcept"
+.RI "constexpr \fBdig_t\fP & \fBoperator[]\fP (ullint arg) noexcept"
 .br
 .ti -1c
 .RI "constexpr void \fBclear\fP () noexcept"
@@ -61,16 +63,16 @@ NumRepr::base_num_t< UINT_T, B >
 .RI "constexpr void \fBpush_front\fP (\fBdig_t\fP parg) noexcept"
 .br
 .ti -1c
-.RI "constexpr \fBstriterator\fP \fBbegin\fP () noexcept"
+.RI "constexpr \fBstr_iterator\fP \fBbegin\fP () noexcept"
 .br
 .ti -1c
-.RI "constexpr \fBcstriterator\fP \fBend\fP () const noexcept"
+.RI "constexpr \fBc_str_iterator\fP \fBend\fP () const noexcept"
 .br
 .ti -1c
-.RI "constexpr \fBrstriterator\fP \fBrbegin\fP () noexcept"
+.RI "constexpr \fBr_str_iterator\fP \fBrbegin\fP () noexcept"
 .br
 .ti -1c
-.RI "constexpr \fBcrstriterator\fP \fBrend\fP () const noexcept"
+.RI "constexpr \fBcr_str_iterator\fP \fBrend\fP () const noexcept"
 .br
 .ti -1c
 .RI "constexpr void \fBerase\fP (\fBsize_t\fP pos, \fBsize_t\fP tam) noexcept"
@@ -79,170 +81,104 @@ NumRepr::base_num_t< UINT_T, B >
 .RI "constexpr const num_basic_t & \fBoperator&=\fP (const num_basic_t &arg) noexcept"
 .br
 .in -1c
-.SS "Atributos públicos"
-
-.in +1c
-.ti -1c
-.RI "basic_string< \fBdig_t\fP< UINT_T, B > > \fBm_dstr\fP"
-.br
-.in -1c
 .SH "Descripción detallada"
 .PP 
 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B>
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B>
 .br
 requires (\fBtype_traits::suitable_base\fP<UINT_T,B>())
 .br
 struct NumRepr::base_num_t< UINT_T, B >"
+.PP
+Definición en la línea \fB10\fP del archivo \fBbase_num_t\&.hpp\fP\&.
 .SH "Documentación de los 'Typedef' miembros de la clase"
 .PP 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::crstriterator =  typename nbstr::const_reverse_iterator \fBcrstriterator\fP"
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::base_t =  basic_string<\fBdig_t\fP>"
 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::cstriterator =  typename nbstr::const_iterator"
+.PP
+Definición en la línea \fB13\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::c_str_iterator =  typename base_t::const_iterator"
 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >\fB::dig_t\fP =  \fBdig_t\fP<UINT_T,B>"
+.PP
+Definición en la línea \fB15\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::cr_str_iterator =  typename base_t::const_reverse_iterator"
 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::nbstr =  basic_string<\fBdig_t\fP>"
+.PP
+Definición en la línea \fB17\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::dig_t =  \fBdig_t\fP<UINT_T,B>"
 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::rstriterator =  typename nbstr::reverse_iterator \fBrstriterator\fP"
+.PP
+Definición en la línea \fB12\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::r_str_iterator =  typename base_t::reverse_iterator"
 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::striterator =  typename nbstr::iterator"
+.PP
+Definición en la línea \fB16\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> using \fBNumRepr::base_num_t\fP< UINT_T, B >::str_iterator =  typename base_t::iterator"
 
+.PP
+Definición en la línea \fB14\fP del archivo \fBbase_num_t\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr \fBstriterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::begin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr \fBstr_iterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::begin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-64                                                       {
-65                 return m_dstr\&.begin();
-66         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::clear ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB51\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::clear ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-39                                                {
-40                 m_dstr\&.clear();
-41                 return;
-42         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr \fBcstriterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::end () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB33\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr \fBc_str_iterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::end () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-67                                                            {
-68                 return m_dstr\&.end();
-69         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::erase (\fBsize_t\fP pos, \fBsize_t\fP tam)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB54\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::erase (\fBsize_t\fP pos, \fBsize_t\fP tam)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-76                                                                     {
-77                 m_dstr\&.erase(pos,tam);
-78                 return;
-79         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::insert (\fBsize_t\fP pos, \fBsize_t\fP tam, \fBdig_t\fP parg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB63\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::insert (\fBsize_t\fP pos, \fBsize_t\fP tam, \fBdig_t\fP parg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-49                                                                                 {
-50                 m_dstr\&.insert(pos,tam,parg);
-51                 return;
-52         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr const num_basic_t & \fBNumRepr::base_num_t\fP< UINT_T, B >\fB::operator\fP&= (const num_basic_t & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB39\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr const num_basic_t & \fBNumRepr::base_num_t\fP< UINT_T, B >::operator&= (const num_basic_t & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-81                                                                                             {
-82                 m_dstr += arg\&.m_dstr;
-83                 return (*this);
-84         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::base_num_t\fP< UINT_T, B >\fB::operator\fP[] (\fBullint\fP arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB67\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr \fBdig_t\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::operator[] (ullint arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-29                                                                      {
-30                 dig_t ret = m_dstr[arg];
-31                 return m_dstr[arg];
-32         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr \fBdig_t\fP & \fBNumRepr::base_num_t\fP< UINT_T, B >\fB::operator\fP[] (\fBullint\fP arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB25\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr \fBdig_t\fP & \fBNumRepr::base_num_t\fP< UINT_T, B >::operator[] (ullint arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-34                                                                  {
-35                 dig_t ret = m_dstr[arg];
-36                 return (m_dstr[arg]);
-37         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::push_back (\fBdig_t\fP arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB29\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::push_back (\fBdig_t\fP arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-44                                                             {
-45                 m_dstr\&.push_back(arg);
-46                 return;
-47         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::push_front (\fBdig_t\fP parg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB36\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::push_front (\fBdig_t\fP parg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-59                                                               {
-60                 m_dstr\&.insert(0,1,parg);
-61                 return;
-62         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr \fBrstriterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::rbegin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB48\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr \fBr_str_iterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::rbegin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-70                                                         {
-71                 return m_dstr\&.rbegin();
-72         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr \fBcrstriterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::rend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB57\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr \fBcr_str_iterator\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::rend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-73                                                              {
-74                 return m_dstr\&.rend();
-75         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::resize (\fBsize_t\fP arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB60\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr void \fBNumRepr::base_num_t\fP< UINT_T, B >::resize (\fBsize_t\fP arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-25                                                           {
-26                 m_dstr\&.resize(arg); return;
-27         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr \fBsize_t\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB22\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr \fBsize_t\fP \fBNumRepr::base_num_t\fP< UINT_T, B >::size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-21                                                       {
-22                 return m_dstr\&.size();
-23         }
-.fi
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> constexpr num_basic_t \fBNumRepr::base_num_t\fP< UINT_T, B >::substr (\fBsize_t\fP pos, \fBsize_t\fP n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB19\fP del archivo \fBbase_num_t\&.hpp\fP\&.
+.SS "template<type_traits::uint_type_for_radix_c UINT_T, UINT_T B> constexpr num_basic_t \fBNumRepr::base_num_t\fP< UINT_T, B >::substr (\fBsize_t\fP pos, \fBsize_t\fP n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-54                                                                                      {
-55                 m_dstr\&.substr(pos,n);
-56                 return (*this);
-57         }
-.fi
-.SH "Documentación de los datos miembro"
-.PP 
-.SS "template<type_traits::allowable_base_type_c UINT_T, UINT_T B> basic_string<\fBdig_t\fP<UINT_T,B> > \fBNumRepr::base_num_t\fP< UINT_T, B >::m_dstr"
-
+Definición en la línea \fB43\fP del archivo \fBbase_num_t\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

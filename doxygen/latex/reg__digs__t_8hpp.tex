@@ -1,0 +1,140 @@
+\hypertarget{reg__digs__t_8hpp}{}\doxysection{Referencia del Archivo reg\+\_\+digs\+\_\+t.\+hpp}
+\label{reg__digs__t_8hpp}\index{reg\_digs\_t.hpp@{reg\_digs\_t.hpp}}
+{\ttfamily \#include \char`\"{}dig\+\_\+t.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utilities.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lexer\+\_\+parser.\+hpp\char`\"{}}\newline
+Dependencia gráfica adjunta para reg\+\_\+digs\+\_\+t.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{reg__digs__t_8hpp__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{reg__digs__t_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_num_repr_1_1reg__digs__t}{Num\+Repr\+::reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+\+T, B, L $>$}}
+\begin{DoxyCompactList}\small\item\em DEFINCION DE template$<$uint128\+\_\+t Radix$>$ register\+\_\+of\+\_\+digits\+\_\+t\{\};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_num_repr}{Num\+Repr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$uint128\+\_\+t B, size\+\_\+t L$>$ }\\using \mbox{\hyperlink{namespace_num_repr_a162b6953f603031db66e18e2b8240bc2}{Num\+Repr\+::register\+\_\+of\+\_\+digits\+\_\+t}} = reg\+\_\+digs\+\_\+t$<$ type\+\_\+traits\+::\+Type\+From\+Int\+Number\+\_\+t$<$ B $>$, static\+\_\+cast$<$ type\+\_\+traits\+::\+Type\+From\+Int\+Number\+\_\+t$<$ B $>$ $>$(B), L $>$
+\item 
+{\footnotesize template$<$uint128\+\_\+t B, size\+\_\+t L$>$ }\\using \mbox{\hyperlink{namespace_num_repr_adee56f6cb05bebc237af032f75d2c03b}{Num\+Repr\+::register\+\_\+digs\+\_\+t}} = reg\+\_\+digs\+\_\+t$<$ Type\+From\+Int\+Number\+\_\+t$<$ static\+\_\+cast$<$ uint128\+\_\+t $>$(B)$>$, static\+\_\+cast$<$ Type\+From\+Int\+Number\+\_\+t$<$ static\+\_\+cast$<$ uint128\+\_\+t $>$(B)$>$ $>$(static\+\_\+cast$<$ uint128\+\_\+t $>$(B)), L $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, size\+\_\+t N$>$ \newline
+requires (N$>$0)}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a6f762ec285d399a1aba905239740d424}{Num\+Repr\+::concat}} (const reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N $>$ \&larg) noexcept
+\begin{DoxyCompactList}\small\item\em STATIC BASE\+\_\+\+N\+\_\+\+T$<$\+N$>$ CONCAT(\+BASE\+\_\+\+N\+\_\+\+T$<$\+N$>$) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, size\+\_\+t N, size\+\_\+t M$>$ \newline
+requires ((N$>$0)\&\&(M$>$0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N+M $>$ \mbox{\hyperlink{namespace_num_repr_a164d8860f3a0813504ee30c88c7bcab0}{Num\+Repr\+::concat}} (const reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N $>$ \&larg, const reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, M $>$ \&rarg) noexcept
+\begin{DoxyCompactList}\small\item\em STATIC BASE\+\_\+\+N\+\_\+T\texorpdfstring{$<$}{<}N+M\texorpdfstring{$>$}{>} CONCAT(\+BASE\+\_\+\+N\+\_\+\+T$<$\+N$>$,\+BASE\+\_\+\+N\+\_\+\+T$<$\+M$>$) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, size\+\_\+t N$>$ \newline
+requires (N $>$ 0)}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N+1 $>$ \mbox{\hyperlink{namespace_num_repr_afb9644c35a4bfb14155cb38894940e10}{Num\+Repr\+::concat}} (const reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N $>$ \&larg, dig\+\_\+t$<$ UInt\+\_\+t, B $>$ rarg) noexcept
+\begin{DoxyCompactList}\small\item\em STATIC BASE\+\_\+\+N\+\_\+T\texorpdfstring{$<$}{<}N+1\texorpdfstring{$>$}{>} CONCAT(\+BASE\+\_\+\+N\+\_\+\+T$<$\+N$>$,\+DIG\+\_\+\+T) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, size\+\_\+t M$>$ \newline
+requires (M $>$ 0)}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, 1+M $>$ \mbox{\hyperlink{namespace_num_repr_a991ca8bb9c18feb0b5e776550b7ad703}{Num\+Repr\+::concat}} (dig\+\_\+t$<$ UInt\+\_\+t, B $>$ larg, const reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, M $>$ \&rarg) noexcept
+\begin{DoxyCompactList}\small\item\em STATIC BASE\+\_\+\+N\+\_\+T\texorpdfstring{$<$}{<}1+M\texorpdfstring{$>$}{>} CONCAT(\+DIG\+\_\+\+T,\+BASE\+\_\+\+N\+\_\+\+T$<$\+M$>$) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B$>$ }\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, 1 $>$ \mbox{\hyperlink{namespace_num_repr_a90dce0ccc34796d52120a70c0abe2fb3}{Num\+Repr\+::concat}} (dig\+\_\+t$<$ UInt\+\_\+t, B $>$ larg) noexcept
+\begin{DoxyCompactList}\small\item\em STATIC BASE\+\_\+\+N\+\_\+\+T$<$1$>$ CONCAT(\+DIG\+\_\+\+T) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B$>$ }\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, 2 $>$ \mbox{\hyperlink{namespace_num_repr_a064a18e22bc1be2b2a8b4bd9b8bfcafb}{Num\+Repr\+::concat}} (dig\+\_\+t$<$ UInt\+\_\+t, B $>$ larg, dig\+\_\+t$<$ UInt\+\_\+t, B $>$ rarg) noexcept
+\begin{DoxyCompactList}\small\item\em STATIC BASE\+\_\+\+N\+\_\+T\texorpdfstring{$<$}{<}1+1\texorpdfstring{$>$}{>} CONCAT(\+DIG\+\_\+\+T,\+DIG\+\_\+\+T) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, typename T0 , typename ... Ts$>$ \newline
+requires ( ((std\+::is\+\_\+same\+\_\+v$<$Ts,dig\+\_\+t$<$UInt\+\_\+t,B$>$$>$)\&\&...) \&\& (std\+::is\+\_\+same\+\_\+v$<$T0,dig\+\_\+t$<$UInt\+\_\+t,B$>$$>$) )}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, 1+(sizeof ...(Ts))$>$ \mbox{\hyperlink{namespace_num_repr_ad235de59c6fb0e337d7d1974999b7c90}{Num\+Repr\+::concat}} (T0 dig0, Ts ... dig\+\_\+pack) noexcept
+\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, size\+\_\+t N, typename T , typename ... Ts$>$ \newline
+requires (((std\+::is\+\_\+same\+\_\+v$<$Ts,dig\+\_\+t$<$UInt\+\_\+t,B$>$$>$)\&\&...)\&\&(std\+::is\+\_\+same\+\_\+v$<$T,dig\+\_\+t$<$UInt\+\_\+t,B$>$$>$)\&\&(N$>$0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N+1+(sizeof ...(Ts))$>$ \mbox{\hyperlink{namespace_num_repr_a0706a8207d9326e70eb68286a809eac0}{Num\+Repr\+::concat}} (reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N $>$ larg, T dig, Ts ... dig\+\_\+pack) noexcept
+\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, size\+\_\+t M, typename T , typename ... Ts$>$ \newline
+requires ( ((std\+::is\+\_\+same\+\_\+v$<$Ts,dig\+\_\+t$<$UInt\+\_\+t,B$>$$>$)\&\&...) \&\& (std\+::is\+\_\+same\+\_\+v$<$T,dig\+\_\+t$<$UInt\+\_\+t,B$>$$>$) \&\& (M$>$0) )}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, M+1+(sizeof ...(Ts))$>$ \mbox{\hyperlink{namespace_num_repr_a4725158490aa07256f8ba8b9bb7179e4}{Num\+Repr\+::concat}} (T dig, Ts ... dig\+\_\+pack, reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, M $>$ rarg) noexcept
+\item 
+{\footnotesize template$<$typename UInt\+\_\+t , UInt\+\_\+t B, size\+\_\+t N, size\+\_\+t ... N\+\_\+pack$>$ \newline
+requires ((N$>$0)\&\&((N\+\_\+pack$>$0)\&\&...))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N+(...+(N\+\_\+pack))$>$ \mbox{\hyperlink{namespace_num_repr_af76d4c574256a8ae2913dd960c035d9a}{Num\+Repr\+::concat}} (reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N $>$ larg, reg\+\_\+digs\+\_\+t$<$ UInt\+\_\+t, B, N\+\_\+pack $>$ ... rarg\+\_\+pack) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a3e02d589f6de47a7861f7d11e76d4d73}{Num\+Repr\+::operator$<$$<$}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \& \mbox{\hyperlink{namespace_num_repr_aa578c0c4c9f69c8a6949ae841ab20a14}{Num\+Repr\+::operator$<$$<$=}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \& \mbox{\hyperlink{namespace_num_repr_a9da1c60e9a0710e6940735e5aa6471e2}{Num\+Repr\+::operator$>$$>$=}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a02cf5374fb604e0ac92479795f57be45}{Num\+Repr\+::operator$>$$>$}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_aabd0c98823a42f27c17a1392d05111ee}{Num\+Repr\+::rem\+\_\+B}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \& \mbox{\hyperlink{namespace_num_repr_a76d56b1ce8fdf8fe9f2dad696d0793ad}{Num\+Repr\+::m\+\_\+rem\+\_\+B}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a791ee564df192b445483d0088d163710}{Num\+Repr\+::mer\+\_\+B}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \& \mbox{\hyperlink{namespace_num_repr_a24e1622d28f1fc5b86dac826d719cccb}{Num\+Repr\+::m\+\_\+mer\+\_\+B}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, size\+\_\+t n) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \& \mbox{\hyperlink{namespace_num_repr_af300f03bc135c81afa3965c905feda49}{Num\+Repr\+::operator$\vert$=}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rarg) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a688d5f9678ad6dca21557cc629c46c8e}{Num\+Repr\+::operator$\vert$}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rarg) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \& \mbox{\hyperlink{namespace_num_repr_a0a2d2cfc3bfc462709ba6cc17b5cd0d4}{Num\+Repr\+::operator\&=}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rarg) noexcept
+\item 
+{\footnotesize template$<$uint\+\_\+type\+\_\+for\+\_\+radix\+\_\+c UINT\+\_\+T, UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires ((suitable\+\_\+base$<$UINT\+\_\+T,B$>$())\&\&(N $>$ 0))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a342a2a8c42d37ee5900c73815b5f289b}{Num\+Repr\+::operator\&}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rarg) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B, size\+\_\+t N$>$ }\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a47075bda02da4f0bcb6a4d3fd0f5b254}{Num\+Repr\+::m\+\_\+incr}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rarg) noexcept
+\begin{DoxyCompactList}\small\item\em TODO 31/12/2022. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B$>$ }\\constexpr dig\+\_\+t$<$ UINT\+\_\+T, B $>$ \mbox{\hyperlink{namespace_num_repr_a7a96dff18dd75c2309445fcf46a84be6}{Num\+Repr\+::m\+\_\+sum\+\_\+digs\+\_\+carryin1}} (dig\+\_\+t$<$ UINT\+\_\+T, B $>$ \&left, dig\+\_\+t$<$ UINT\+\_\+T, B $>$ right) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B$>$ }\\constexpr dig\+\_\+t$<$ UINT\+\_\+T, B $>$ \mbox{\hyperlink{namespace_num_repr_ad08658a7e95e0914597309c1243ea7f0}{Num\+Repr\+::m\+\_\+sum\+\_\+digs\+\_\+carryin0}} (dig\+\_\+t$<$ UINT\+\_\+T, B $>$ \&left, dig\+\_\+t$<$ UINT\+\_\+T, B $>$ right) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B, size\+\_\+t N$>$ }\\constexpr dig\+\_\+t$<$ UINT\+\_\+T, B $>$ \mbox{\hyperlink{namespace_num_repr_a259867ff7627eb58b940d354ed1f87e3}{Num\+Repr\+::m\+\_\+sum}} (reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rarg) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires (N$>$1)}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_a59c4987f35abcca7f49e248841dbdda7}{Num\+Repr\+::aprox\+\_\+units\+\_\+divB}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&arg) noexcept
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} PRECONDITIONS \+: ARG != 0 AND ARG != 1 \texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B, size\+\_\+t N, size\+\_\+t n$>$ \newline
+requires ((n $>$ 0) \&\& (n $<$ N) \&\& (N $>$ 1))}\\constexpr reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \mbox{\hyperlink{namespace_num_repr_ae65c8d3561b59553ca3379f80f42af08}{Num\+Repr\+::aprox\+\_\+units\+\_\+div\+B\+\_\+n}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&arg) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires (N $>$ 0)}\\constexpr std\+::array$<$ type\+\_\+traits\+::sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UINT\+\_\+T $>$, 2 $>$ \mbox{\hyperlink{namespace_num_repr_a42cc99f9e1a6096b619df7c44eb7b33e}{Num\+Repr\+::aprox\+\_\+coc\+\_\+rem}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rem, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&dsor) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B, size\+\_\+t N$>$ \newline
+requires (N $>$ 0)}\\constexpr std\+::array$<$ type\+\_\+traits\+::sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UINT\+\_\+T $>$, 2 $>$ \mbox{\hyperlink{namespace_num_repr_a3e8c6b3fe06161bb9befa0f2cc00c57d}{Num\+Repr\+::aprox\+\_\+coc\+\_\+rem}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&rem, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&dsor, type\+\_\+traits\+::sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UINT\+\_\+T $>$ coc\+\_\+calculado, type\+\_\+traits\+::sig\+\_\+\+UInt\+\_\+for\+\_\+\+UInt\+\_\+t$<$ UINT\+\_\+T $>$ rem\+\_\+calculado) noexcept
+\item 
+{\footnotesize template$<$typename UINT\+\_\+T , UINT\+\_\+T B, size\+\_\+t N, size\+\_\+t M$>$ \newline
+requires (N $>$ 0)\&\&(M $>$ 0)}\\constexpr std\+::array$<$ reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, std\+::max(N, M)$>$, 2 $>$ \mbox{\hyperlink{namespace_num_repr_a1924720464e58ae5372de9b39a45d496}{Num\+Repr\+::fediv}} (const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, N $>$ \&larg, const reg\+\_\+digs\+\_\+t$<$ UINT\+\_\+T, B, M $>$ \&rarg) noexcept
+\begin{DoxyCompactList}\small\item\em END. \end{DoxyCompactList}\item 
+{\footnotesize template$<$type\+\_\+traits\+::unsigned\+\_\+integral\+\_\+c UINT\+\_\+T, UINT\+\_\+T B$>$ }\\bool \mbox{\hyperlink{namespace_num_repr_a85361eaf407fae0ec70f013c1eec25ad}{Num\+Repr\+::get\+\_\+digit\+\_\+token}} (std\+::istream \&is, dig\+\_\+t$<$ UINT\+\_\+T, B $>$ \&dig\+\_\+value)
+\begin{DoxyCompactList}\small\item\em FUNCION QUE CONSIGUE EL TOKEN DIGITO. \end{DoxyCompactList}\item 
+{\footnotesize template$<$type\+\_\+traits\+::unsigned\+\_\+integral\+\_\+c T, T B$>$ }\\bool \mbox{\hyperlink{namespace_num_repr_a4a43d171097231b9c153662a4d96d170}{Num\+Repr\+::get\+\_\+radix\+\_\+token}} (std\+::istream \&is)
+\begin{DoxyCompactList}\small\item\em FUNCION QUE CONSIGUE EL TOKEN BASE. \end{DoxyCompactList}\item 
+{\footnotesize template$<$type\+\_\+traits\+::unsigned\+\_\+integral\+\_\+c T, T B, size\+\_\+t L$>$ }\\bool \mbox{\hyperlink{namespace_num_repr_a6fdae534a76a017d02140a70aa7dc8a3}{Num\+Repr\+::get\+\_\+digit\+\_\+loop\+\_\+token}} (std\+::istream \&is, reg\+\_\+digs\+\_\+t$<$ T, B, L $>$ \&value) noexcept
+\item 
+{\footnotesize template$<$type\+\_\+traits\+::unsigned\+\_\+integral\+\_\+c T, T B, size\+\_\+t L$>$ }\\bool \mbox{\hyperlink{namespace_num_repr_a1cdc1a9d45497ce154566f6f15abdc32}{Num\+Repr\+::read}} (std\+::istream \&is, reg\+\_\+digs\+\_\+t$<$ T, B, L $>$ \&value) noexcept
+\begin{DoxyCompactList}\small\item\em DEFINCION DE template$<$uint128\+\_\+t Radix$>$ digito\+\_\+t\{\};. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Int\+\_\+\+Type , Int\+\_\+\+Type Base, size\+\_\+t Length$>$ \newline
+requires (type\+\_\+traits\+::suitable\+\_\+base$<$Int\+\_\+\+Type,Base$>$()\&\&(Length $>$ 0))}\\std\+::istream \& \mbox{\hyperlink{namespace_num_repr_a8f0cf6e39391a7fdc66a01db667b98de}{Num\+Repr\+::operator$>$$>$}} (std\+::istream \&is, reg\+\_\+digs\+\_\+t$<$ Int\+\_\+\+Type, Base, Length $>$ \&arg)
+\begin{DoxyCompactList}\small\item\em SOBRECARGA DE ISTREAM Y OSTREAM CON LOS OPERADORES DE DESPLAZAMEINTO. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Int\+\_\+\+Type , Int\+\_\+\+Type Base, size\+\_\+t Long$>$ \newline
+requires (type\+\_\+traits\+::suitable\+\_\+base$<$Int\+\_\+\+Type,Base$>$())}\\std\+::ostream \& \mbox{\hyperlink{namespace_num_repr_aef762c1b9785e93fffd3336262a8e096}{Num\+Repr\+::operator$<$$<$}} (std\+::ostream \&os, const reg\+\_\+digs\+\_\+t$<$ Int\+\_\+\+Type, Base, Long $>$ \&arg)
+\end{DoxyCompactItemize}

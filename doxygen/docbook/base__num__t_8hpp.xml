@@ -37,11 +37,11 @@ Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<p
 <simplesect>
     <title>Funciones    </title>
         <itemizedlist>
-            <listitem><para>template&lt;typename Int_T , <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> B&gt; </para><para>constexpr <link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> <link linkend="_namespace_num_repr_1a518d83628ca3a414ac5e12e47bd7bd5b">NumRepr::pot_max_base_B_en_Int_T</link> () noexcept</para>
+            <listitem><para>template&lt;typename Int_T , usint B&gt; </para><para>constexpr ullint <link linkend="_namespace_num_repr_1a518d83628ca3a414ac5e12e47bd7bd5b">NumRepr::pot_max_base_B_en_Int_T</link> () noexcept</para>
 </listitem>
-            <listitem><para>template&lt;typename Int_T , <link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> B&gt; </para><para>constexpr <link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> <link linkend="_namespace_num_repr_1a0c4ce13b175150d7a33d5c7b515f9dfa">NumRepr::num_digs_max_base_B_en_Int_T</link> () noexcept</para>
+            <listitem><para>template&lt;typename Int_T , ullint B&gt; </para><para>constexpr ullint <link linkend="_namespace_num_repr_1a0c4ce13b175150d7a33d5c7b515f9dfa">NumRepr::num_digs_max_base_B_en_Int_T</link> () noexcept</para>
 </listitem>
-            <listitem><para>template&lt;typename Int_T , <link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> B&gt; </para><para>constexpr <link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> <link linkend="_namespace_num_repr_1aeced1290d3d28bee5b4a0e22840a72db">NumRepr::max_base_B_en_Int_T</link> () noexcept</para>
+            <listitem><para>template&lt;typename Int_T , ullint B&gt; </para><para>constexpr ullint <link linkend="_namespace_num_repr_1aeced1290d3d28bee5b4a0e22840a72db">NumRepr::max_base_B_en_Int_T</link> () noexcept</para>
 </listitem>
         </itemizedlist>
 </simplesect>

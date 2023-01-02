@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
+  <compounddef id="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;</compoundname>
+    <includes refid="utilities_8hpp" local="no">utilities.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a" kindref="member">NumRepr::usint_t</ref></type>
+        <declname>Base</declname>
+        <defname>Base</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1aadf9e01f5cc05bf5c34656e09b1370d2" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref></type>
+        <definition>constexpr NumRepr::uint128_t utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;::base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <qualifiedname>utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;::base</qualifiedname>
+        <initializer>= static_cast&lt;<ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref>&gt;(Base)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="200" column="37" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1a7813bfd67f20e5a35a0615fb59da5ded" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref></type>
+        <definition>constexpr NumRepr::uint128_t utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;::exponent</definition>
+        <argsstring></argsstring>
+        <name>exponent</name>
+        <qualifiedname>utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;::exponent</qualifiedname>
+        <initializer>= static_cast&lt;<ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref>&gt;(2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="201" column="37" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1aac25bd7fe869f2df3657077012ac2b0d" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref></type>
+        <definition>constexpr NumRepr::uint128_t utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;::value</qualifiedname>
+        <initializer>= <ref refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1aadf9e01f5cc05bf5c34656e09b1370d2" kindref="member">base</ref>*<ref refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1aadf9e01f5cc05bf5c34656e09b1370d2" kindref="member">base</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="202" column="37" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="199" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="199" bodyend="203"/>
+    <listofallmembers>
+      <member refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1aadf9e01f5cc05bf5c34656e09b1370d2" prot="public" virt="non-virtual"><scope>utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;</scope><name>base</name></member>
+      <member refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1a7813bfd67f20e5a35a0615fb59da5ded" prot="public" virt="non-virtual"><scope>utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;</scope><name>exponent</name></member>
+      <member refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4_1aac25bd7fe869f2df3657077012ac2b0d" prot="public" virt="non-virtual"><scope>utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

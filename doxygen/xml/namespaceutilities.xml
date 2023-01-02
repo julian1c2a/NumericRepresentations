@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="namespaceutilities" kind="namespace" language="C++">
     <compoundname>utilities</compoundname>
     <innerclass refid="structutilities_1_1for__each__same__type" prot="public">utilities::for_each_same_type</innerclass>
@@ -7,6 +7,9 @@
     <innerclass refid="structutilities_1_1local__void__t" prot="public">utilities::local_void_t</innerclass>
     <innerclass refid="structutilities_1_1pack2array" prot="public">utilities::pack2array</innerclass>
     <innerclass refid="structutilities_1_1pack2tuple" prot="public">utilities::pack2tuple</innerclass>
+    <innerconcept refid="conceptutilities_1_1all__are__the__same__type__c">utilities::all_are_the_same_type_c</innerconcept>
+    <innerconcept refid="conceptutilities_1_1there__is__one__or__more__c">utilities::there_is_one_or_more_c</innerconcept>
+    <innernamespace refid="namespaceutilities_1_1special">utilities::special</innernamespace>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="namespaceutilities_1a42ed6a49f4270d2ecd4103689b1e16ee" prot="public" static="no">
         <templateparamlist>
@@ -83,7 +86,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceutilities_1a2ab88d0a656f1609a891e9ea35ce185e" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceutilities_1a0f549ca7e224442069f979e4beaaab88" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class...</type>
@@ -104,15 +107,15 @@
           <type>const Ts &amp;...</type>
           <declname>args</declname>
         </param>
-    <requiresclause>( all_are_the_same_type&lt;Ts...&gt; &amp;&amp; all_are_more_than_zero&lt;Ts...&gt; )    </requiresclause>
+    <requiresclause>( all_are_the_same_type_c&lt;Ts...&gt; &amp;&amp; there_is_one_or_more_c&lt;Ts...&gt; )    </requiresclause>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="154" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="154" bodyend="161"/>
-        <references refid="structutilities_1_1pack2array_1acb47f65fafd84139fa3eef8d3a6baedd" compoundref="utilities_8hpp" startline="138" endline="146">utilities::pack2array&lt; Ts &gt;::for_each</references>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="160" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="160" bodyend="167"/>
+        <references refid="structutilities_1_1pack2array_1ac0a1c575813515e6ab144a2652e65832" compoundref="utilities_8hpp" startline="144" endline="152">utilities::pack2array&lt; Ts &gt;::for_each</references>
       </memberdef>
       </sectiondef>
     <briefdescription>

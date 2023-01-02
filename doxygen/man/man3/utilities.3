@@ -1,4 +1,4 @@
-.TH "utilities" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "utilities" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,6 +6,13 @@ utilities
 .SH SYNOPSIS
 .br
 .PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBspecial\fP"
+.br
+.in -1c
 .SS "Clases"
 
 .in +1c
@@ -30,10 +37,10 @@ utilities
 
 .in +1c
 .ti -1c
-.RI "concept \fBall_are_the_same_type\fP"
+.RI "concept \fBall_are_the_same_type_c\fP"
 .br
 .ti -1c
-.RI "concept \fBall_are_more_than_zero\fP"
+.RI "concept \fBthere_is_one_or_more_c\fP"
 .br
 .in -1c
 .SS "typedefs"
@@ -55,32 +62,31 @@ utilities
 .ti -1c
 .RI "template<class\&.\&.\&. Ts> 
 .br
-requires ( all_are_the_same_type<Ts\&.\&.\&.> && all_are_more_than_zero<Ts\&.\&.\&.> )void \fBassign_with_order\fP (auto &dest, const Ts &\&.\&.\&. args) noexcept"
+requires ( all_are_the_same_type_c<Ts\&.\&.\&.> && there_is_one_or_more_c<Ts\&.\&.\&.> )void \fBassign_with_order\fP (auto &dest, const Ts &\&.\&.\&. args) noexcept"
 .br
 .in -1c
 .SH "Documentación de los 'typedefs'"
 .PP 
 .SS "template<\fBNumRepr::type_traits::unsigned_integral_c\fP UINT_T> using \fButilities::uintspair\fP = typedef typename std::array<UINT_T,2>"
 
+.PP
+Definición en la línea \fB10\fP del archivo \fButilities\&.hpp\fP\&.
 .SS "template<\fBNumRepr::type_traits::unsigned_integral_c\fP UINT_T, UINT_T B> using \fButilities::uintspairlist\fP = typedef typename std::array<\fBuintspair\fP<UINT_T>,B>"
 
+.PP
+Definición en la línea \fB12\fP del archivo \fButilities\&.hpp\fP\&.
 .SS "template<\fBNumRepr::type_traits::unsigned_integral_c\fP UINT_T, UINT_T B> using \fButilities::uintspairtbl\fP = typedef typename std::array<\fBuintspairlist\fP<UINT_T,B>,B>"
 
+.PP
+Definición en la línea \fB14\fP del archivo \fButilities\&.hpp\fP\&.
 .SH "Documentación de las funciones"
 .PP 
 .SS "template<class\&.\&.\&. Ts> 
 .br
-requires ( all_are_the_same_type<Ts\&.\&.\&.> && all_are_more_than_zero<Ts\&.\&.\&.> )void utilities::assign_with_order (auto & dest, const Ts &\&.\&.\&. args)\fC [noexcept]\fP"
+requires ( all_are_the_same_type_c<Ts\&.\&.\&.> && there_is_one_or_more_c<Ts\&.\&.\&.> )void utilities::assign_with_order (auto & dest, const Ts &\&.\&.\&. args)\fC [noexcept]\fP"
 
 .PP
-.nf
-158 {
-159         pack2array<Ts\&.\&.\&.>::for_each(dest,args\&.\&.\&.);
-160         return;
-161 }
-.fi
-.PP
-Hace referencia a \fButilities::pack2array< Ts >::for_each()\fP\&.
+Definición en la línea \fB160\fP del archivo \fButilities\&.hpp\fP\&.
 .SH "Autor"
 .PP 
 Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

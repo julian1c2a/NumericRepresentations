@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1mult_00_01_n_01_4" kind="struct" language="C++" prot="public">
     <compoundname>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::mult, N &gt;</compoundname>
     <includes refid="auxiliary__types_8hpp" local="no">auxiliary_types.hpp</includes>
@@ -8,7 +8,7 @@
         <type>typename T</type>
       </param>
       <param>
-        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
         <declname>N</declname>
         <defname>N</defname>
       </param>
@@ -62,12 +62,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::mult, N &gt;</label>
-        <link refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1mult_00_01_n_01_4"/>
-      </node>
-    </collaborationgraph>
     <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="98" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="98" bodyend="102"/>
     <listofallmembers>
       <member refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1mult_00_01_n_01_4_1abddfe55e819c14c2ba4c49b1377eceb7" prot="public" virt="non-virtual"><scope>NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::mult, N &gt;</scope><name>good_result</name></member>

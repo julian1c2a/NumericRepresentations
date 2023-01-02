@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_reg__digs__t_8hpp" xml:lang="es">
 <title>Referencia del Archivo reg_digs_t.hpp</title>
 <indexterm><primary>reg_digs_t.hpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;dig_t.hpp&quot;<?linebreak?>#include &quot;utilities.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para reg_digs_t.hpp:<para>
+<programlisting linenumbering="unnumbered">#include &quot;dig_t.hpp&quot;<?linebreak?>#include &quot;utilities.hpp&quot;<?linebreak?>#include &quot;lexer_parser.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para reg_digs_t.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -11,10 +11,21 @@
         </mediaobject>
     </informalfigure>
 </para>
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="reg__digs__t_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Clases    </title>
         <itemizedlist>
             <listitem><para>struct <link linkend="_struct_num_repr_1_1reg__digs__t">NumRepr::reg_digs_t&lt; UINT_T, B, L &gt;</link></para>
+
+<para>DEFINCION DE template&lt;uint128_t Radix&gt; register_of_digits_t{};. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -22,6 +33,120 @@
     <title>Namespaces    </title>
         <itemizedlist>
             <listitem><para>namespace <link linkend="_namespace_num_repr">NumRepr</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>typedefs    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;uint128_t B, size_t L&gt; </para><para>using <link linkend="_namespace_num_repr_1a162b6953f603031db66e18e2b8240bc2">NumRepr::register_of_digits_t</link> = reg_digs_t&lt; type_traits::TypeFromIntNumber_t&lt; B &gt;, static_cast&lt; type_traits::TypeFromIntNumber_t&lt; B &gt; &gt;(B), L &gt;</para>
+</listitem>
+            <listitem><para>template&lt;uint128_t B, size_t L&gt; </para><para>using <link linkend="_namespace_num_repr_1adee56f6cb05bebc237af032f75d2c03b">NumRepr::register_digs_t</link> = reg_digs_t&lt; TypeFromIntNumber_t&lt; static_cast&lt; uint128_t &gt;(B)&gt;, static_cast&lt; TypeFromIntNumber_t&lt; static_cast&lt; uint128_t &gt;(B)&gt; &gt;(static_cast&lt; uint128_t &gt;(B)), L &gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Funciones    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t N&gt; <?linebreak?>requires (N&gt;0)</para><para>constexpr reg_digs_t&lt; UInt_t, B, N &gt; <link linkend="_namespace_num_repr_1a6f762ec285d399a1aba905239740d424">NumRepr::concat</link> (const reg_digs_t&lt; UInt_t, B, N &gt; &amp;larg) noexcept</para>
+
+<para>STATIC BASE_N_T&lt;N&gt; CONCAT(BASE_N_T&lt;N&gt;) </para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t N, size_t M&gt; <?linebreak?>requires ((N&gt;0)&amp;&amp;(M&gt;0))</para><para>constexpr reg_digs_t&lt; UInt_t, B, N+M &gt; <link linkend="_namespace_num_repr_1a164d8860f3a0813504ee30c88c7bcab0">NumRepr::concat</link> (const reg_digs_t&lt; UInt_t, B, N &gt; &amp;larg, const reg_digs_t&lt; UInt_t, B, M &gt; &amp;rarg) noexcept</para>
+
+<para>STATIC BASE_N_T&lt;N+M&gt; CONCAT(BASE_N_T&lt;N&gt;,BASE_N_T&lt;M&gt;) </para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t N&gt; <?linebreak?>requires (N &gt; 0)</para><para>constexpr reg_digs_t&lt; UInt_t, B, N+1 &gt; <link linkend="_namespace_num_repr_1afb9644c35a4bfb14155cb38894940e10">NumRepr::concat</link> (const reg_digs_t&lt; UInt_t, B, N &gt; &amp;larg, dig_t&lt; UInt_t, B &gt; rarg) noexcept</para>
+
+<para>STATIC BASE_N_T&lt;N+1&gt; CONCAT(BASE_N_T&lt;N&gt;,DIG_T) </para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t M&gt; <?linebreak?>requires (M &gt; 0)</para><para>constexpr reg_digs_t&lt; UInt_t, B, 1+M &gt; <link linkend="_namespace_num_repr_1a991ca8bb9c18feb0b5e776550b7ad703">NumRepr::concat</link> (dig_t&lt; UInt_t, B &gt; larg, const reg_digs_t&lt; UInt_t, B, M &gt; &amp;rarg) noexcept</para>
+
+<para>STATIC BASE_N_T&lt;1+M&gt; CONCAT(DIG_T,BASE_N_T&lt;M&gt;) </para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B&gt; </para><para>constexpr reg_digs_t&lt; UInt_t, B, 1 &gt; <link linkend="_namespace_num_repr_1a90dce0ccc34796d52120a70c0abe2fb3">NumRepr::concat</link> (dig_t&lt; UInt_t, B &gt; larg) noexcept</para>
+
+<para>STATIC BASE_N_T&lt;1&gt; CONCAT(DIG_T) </para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B&gt; </para><para>constexpr reg_digs_t&lt; UInt_t, B, 2 &gt; <link linkend="_namespace_num_repr_1a064a18e22bc1be2b2a8b4bd9b8bfcafb">NumRepr::concat</link> (dig_t&lt; UInt_t, B &gt; larg, dig_t&lt; UInt_t, B &gt; rarg) noexcept</para>
+
+<para>STATIC BASE_N_T&lt;1+1&gt; CONCAT(DIG_T,DIG_T) </para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, typename T0 , typename ... Ts&gt; <?linebreak?>requires ( ((std::is_same_v&lt;Ts,dig_t&lt;UInt_t,B&gt;&gt;)&amp;&amp;...) &amp;&amp; (std::is_same_v&lt;T0,dig_t&lt;UInt_t,B&gt;&gt;) )</para><para>constexpr reg_digs_t&lt; UInt_t, B, 1+(sizeof ...(Ts))&gt; <link linkend="_namespace_num_repr_1ad235de59c6fb0e337d7d1974999b7c90">NumRepr::concat</link> (T0 dig0, Ts ... dig_pack) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t N, typename T , typename ... Ts&gt; <?linebreak?>requires (((std::is_same_v&lt;Ts,dig_t&lt;UInt_t,B&gt;&gt;)&amp;&amp;...)&amp;&amp;(std::is_same_v&lt;T,dig_t&lt;UInt_t,B&gt;&gt;)&amp;&amp;(N&gt;0))</para><para>constexpr reg_digs_t&lt; UInt_t, B, N+1+(sizeof ...(Ts))&gt; <link linkend="_namespace_num_repr_1a0706a8207d9326e70eb68286a809eac0">NumRepr::concat</link> (reg_digs_t&lt; UInt_t, B, N &gt; larg, T dig, Ts ... dig_pack) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t M, typename T , typename ... Ts&gt; <?linebreak?>requires ( ((std::is_same_v&lt;Ts,dig_t&lt;UInt_t,B&gt;&gt;)&amp;&amp;...) &amp;&amp; (std::is_same_v&lt;T,dig_t&lt;UInt_t,B&gt;&gt;) &amp;&amp; (M&gt;0) )</para><para>constexpr reg_digs_t&lt; UInt_t, B, M+1+(sizeof ...(Ts))&gt; <link linkend="_namespace_num_repr_1a4725158490aa07256f8ba8b9bb7179e4">NumRepr::concat</link> (T dig, Ts ... dig_pack, reg_digs_t&lt; UInt_t, B, M &gt; rarg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t N, size_t ... N_pack&gt; <?linebreak?>requires ((N&gt;0)&amp;&amp;((N_pack&gt;0)&amp;&amp;...))</para><para>constexpr reg_digs_t&lt; UInt_t, B, N+(...+(N_pack))&gt; <link linkend="_namespace_num_repr_1af76d4c574256a8ae2913dd960c035d9a">NumRepr::concat</link> (reg_digs_t&lt; UInt_t, B, N &gt; larg, reg_digs_t&lt; UInt_t, B, N_pack &gt; ... rarg_pack) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1a3e02d589f6de47a7861f7d11e76d4d73">NumRepr::operator&lt;&lt;</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr const reg_digs_t&lt; UINT_T, B, N &gt; &amp; <link linkend="_namespace_num_repr_1aa578c0c4c9f69c8a6949ae841ab20a14">NumRepr::operator&lt;&lt;=</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr const reg_digs_t&lt; UINT_T, B, N &gt; &amp; <link linkend="_namespace_num_repr_1a9da1c60e9a0710e6940735e5aa6471e2">NumRepr::operator&gt;&gt;=</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1a02cf5374fb604e0ac92479795f57be45">NumRepr::operator&gt;&gt;</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1aabd0c98823a42f27c17a1392d05111ee">NumRepr::rem_B</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr const reg_digs_t&lt; UINT_T, B, N &gt; &amp; <link linkend="_namespace_num_repr_1a76d56b1ce8fdf8fe9f2dad696d0793ad">NumRepr::m_rem_B</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1a791ee564df192b445483d0088d163710">NumRepr::mer_B</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr const reg_digs_t&lt; UINT_T, B, N &gt; &amp; <link linkend="_namespace_num_repr_1a24e1622d28f1fc5b86dac826d719cccb">NumRepr::m_mer_B</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, size_t n) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr const reg_digs_t&lt; UINT_T, B, N &gt; &amp; <link linkend="_namespace_num_repr_1af300f03bc135c81afa3965c905feda49">NumRepr::operator|=</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, const reg_digs_t&lt; UINT_T, B, N &gt; &amp;rarg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1a688d5f9678ad6dca21557cc629c46c8e">NumRepr::operator|</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, const reg_digs_t&lt; UINT_T, B, N &gt; &amp;rarg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr const reg_digs_t&lt; UINT_T, B, N &gt; &amp; <link linkend="_namespace_num_repr_1a0a2d2cfc3bfc462709ba6cc17b5cd0d4">NumRepr::operator&amp;=</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, const reg_digs_t&lt; UINT_T, B, N &gt; &amp;rarg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;uint_type_for_radix_c UINT_T, UINT_T B, size_t N&gt; <?linebreak?>requires ((suitable_base&lt;UINT_T,B&gt;())&amp;&amp;(N &gt; 0))</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1a342a2a8c42d37ee5900c73815b5f289b">NumRepr::operator&amp;</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, const reg_digs_t&lt; UINT_T, B, N &gt; &amp;rarg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B, size_t N&gt; </para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1a47075bda02da4f0bcb6a4d3fd0f5b254">NumRepr::m_incr</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;rarg) noexcept</para>
+
+<para>TODO 31/12/2022. </para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>constexpr dig_t&lt; UINT_T, B &gt; <link linkend="_namespace_num_repr_1a7a96dff18dd75c2309445fcf46a84be6">NumRepr::m_sum_digs_carryin1</link> (dig_t&lt; UINT_T, B &gt; &amp;left, dig_t&lt; UINT_T, B &gt; right) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B&gt; </para><para>constexpr dig_t&lt; UINT_T, B &gt; <link linkend="_namespace_num_repr_1ad08658a7e95e0914597309c1243ea7f0">NumRepr::m_sum_digs_carryin0</link> (dig_t&lt; UINT_T, B &gt; &amp;left, dig_t&lt; UINT_T, B &gt; right) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B, size_t N&gt; </para><para>constexpr dig_t&lt; UINT_T, B &gt; <link linkend="_namespace_num_repr_1a259867ff7627eb58b940d354ed1f87e3">NumRepr::m_sum</link> (reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, const reg_digs_t&lt; UINT_T, B, N &gt; &amp;rarg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B, size_t N&gt; <?linebreak?>requires (N&gt;1)</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1a59c4987f35abcca7f49e248841dbdda7">NumRepr::aprox_units_divB</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;arg) noexcept</para>
+
+<para>&lt; PRECONDITIONS : ARG != 0 AND ARG != 1 &gt; </para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B, size_t N, size_t n&gt; <?linebreak?>requires ((n &gt; 0) &amp;&amp; (n &lt; N) &amp;&amp; (N &gt; 1))</para><para>constexpr reg_digs_t&lt; UINT_T, B, N &gt; <link linkend="_namespace_num_repr_1ae65c8d3561b59553ca3379f80f42af08">NumRepr::aprox_units_divB_n</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;arg) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B, size_t N&gt; <?linebreak?>requires (N &gt; 0)</para><para>constexpr std::array&lt; type_traits::sig_UInt_for_UInt_t&lt; UINT_T &gt;, 2 &gt; <link linkend="_namespace_num_repr_1a42cc99f9e1a6096b619df7c44eb7b33e">NumRepr::aprox_coc_rem</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;rem, const reg_digs_t&lt; UINT_T, B, N &gt; &amp;dsor) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B, size_t N&gt; <?linebreak?>requires (N &gt; 0)</para><para>constexpr std::array&lt; type_traits::sig_UInt_for_UInt_t&lt; UINT_T &gt;, 2 &gt; <link linkend="_namespace_num_repr_1a3e8c6b3fe06161bb9befa0f2cc00c57d">NumRepr::aprox_coc_rem</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;rem, const reg_digs_t&lt; UINT_T, B, N &gt; &amp;dsor, type_traits::sig_UInt_for_UInt_t&lt; UINT_T &gt; coc_calculado, type_traits::sig_UInt_for_UInt_t&lt; UINT_T &gt; rem_calculado) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;typename UINT_T , UINT_T B, size_t N, size_t M&gt; <?linebreak?>requires (N &gt; 0)&amp;&amp;(M &gt; 0)</para><para>constexpr std::array&lt; reg_digs_t&lt; UINT_T, B, std::max(N, M)&gt;, 2 &gt; <link linkend="_namespace_num_repr_1a1924720464e58ae5372de9b39a45d496">NumRepr::fediv</link> (const reg_digs_t&lt; UINT_T, B, N &gt; &amp;larg, const reg_digs_t&lt; UINT_T, B, M &gt; &amp;rarg) noexcept</para>
+
+<para>END. </para>
+</listitem>
+            <listitem><para>template&lt;type_traits::unsigned_integral_c UINT_T, UINT_T B&gt; </para><para>bool <link linkend="_namespace_num_repr_1a85361eaf407fae0ec70f013c1eec25ad">NumRepr::get_digit_token</link> (std::istream &amp;is, dig_t&lt; UINT_T, B &gt; &amp;dig_value)</para>
+
+<para>FUNCION QUE CONSIGUE EL TOKEN DIGITO. </para>
+</listitem>
+            <listitem><para>template&lt;type_traits::unsigned_integral_c T, T B&gt; </para><para>bool <link linkend="_namespace_num_repr_1a4a43d171097231b9c153662a4d96d170">NumRepr::get_radix_token</link> (std::istream &amp;is)</para>
+
+<para>FUNCION QUE CONSIGUE EL TOKEN BASE. </para>
+</listitem>
+            <listitem><para>template&lt;type_traits::unsigned_integral_c T, T B, size_t L&gt; </para><para>bool <link linkend="_namespace_num_repr_1a6fdae534a76a017d02140a70aa7dc8a3">NumRepr::get_digit_loop_token</link> (std::istream &amp;is, reg_digs_t&lt; T, B, L &gt; &amp;value) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;type_traits::unsigned_integral_c T, T B, size_t L&gt; </para><para>bool <link linkend="_namespace_num_repr_1a1cdc1a9d45497ce154566f6f15abdc32">NumRepr::read</link> (std::istream &amp;is, reg_digs_t&lt; T, B, L &gt; &amp;value) noexcept</para>
+
+<para>DEFINCION DE template&lt;uint128_t Radix&gt; digito_t{};. </para>
+</listitem>
+            <listitem><para>template&lt;typename Int_Type , Int_Type Base, size_t Length&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))</para><para>std::istream &amp; <link linkend="_namespace_num_repr_1a8f0cf6e39391a7fdc66a01db667b98de">NumRepr::operator&gt;&gt;</link> (std::istream &amp;is, reg_digs_t&lt; Int_Type, Base, Length &gt; &amp;arg)</para>
+
+<para>SOBRECARGA DE ISTREAM Y OSTREAM CON LOS OPERADORES DE DESPLAZAMEINTO. </para>
+</listitem>
+            <listitem><para>template&lt;typename Int_Type , Int_Type Base, size_t Long&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())</para><para>std::ostream &amp; <link linkend="_namespace_num_repr_1aef762c1b9785e93fffd3336262a8e096">NumRepr::operator&lt;&lt;</link> (std::ostream &amp;os, const reg_digs_t&lt; Int_Type, Base, Long &gt; &amp;arg)</para>
 </listitem>
         </itemizedlist>
 </simplesect>

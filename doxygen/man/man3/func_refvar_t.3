@@ -1,4 +1,4 @@
-.TH "func_refvar_t< aT, T >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "func_refvar_t< aT, T >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,123 +21,115 @@ func_refvar_t< aT, T >
 .RI "void \fBborra_var\fP (string nombre)"
 .br
 .ti -1c
-.RI "bool \fBexiste_lugar_de_base\fP (\fBuchint\fP Base)"
+.RI "bool \fBexiste_lugar_de_base\fP (uchint Base)"
 .br
 .ti -1c
 .RI "bool \fBeste_nombre_ya_ha_sido_declarado\fP (string nombre)"
 .br
 .ti -1c
-.RI "template<const \fBuchint\fP B> T< B > \fBget\fP (string nombre)"
+.RI "template<const uchint B> T< B > \fBget\fP (string nombre)"
 .br
 .ti -1c
-.RI "template<const \fBuchint\fP B> bool \fBoperator()\fP (string nombre, string lhs)"
+.RI "template<const uchint B> bool \fBoperator()\fP (string nombre, string lhs)"
+.br
+.in -1c
+.SS "Métodos privados"
+
+.in +1c
+.ti -1c
+.RI "bool \fBinsert\fP (string nombre, uchint base, uchint var_base)"
+.br
+.ti -1c
+.RI "\fBfunc_refvar_t\fP (const \fBfunc_refvar_t\fP &)"
+.br
+.ti -1c
+.RI "bool \fBescribe_var\fP (string nombre, uchint base, uchint var_base)"
+.br
+.in -1c
+.SS "Atributos privados"
+
+.in +1c
+.ti -1c
+.RI "vector< vector< bool > > \fBmapmem\fP"
+.br
+.ti -1c
+.RI "map< string, \fBpar_dir_t\fP > \fBmapvd\fP"
+.br
+.ti -1c
+.RI "aT ** \fBmatd\fP"
+.br
+.ti -1c
+.RI "vector< uint > \fBcuentavars\fP"
 .br
 .in -1c
 .SH "Descripción detallada"
 .PP 
 
-.SS "template<typename aT, template< \fBuchint\fP > class T>
+.SS "template<typename aT, template< uchint > class T>
 .br
 class func_refvar_t< aT, T >"
+.PP
+Definición en la línea \fB182\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación del constructor y destructor"
 .PP 
-.SS "template<typename aT , template< \fBuchint\fP > class T> \fBfunc_refvar_t\fP< aT, T >\fB::func_refvar_t\fP ()\fC [inline]\fP"
+.SS "template<typename aT , template< uchint > class T> \fBfunc_refvar_t\fP< aT, T >\fB::func_refvar_t\fP (const \fBfunc_refvar_t\fP< aT, T > &)\fC [private]\fP"
+
+.SS "template<typename aT , template< uchint > class T> \fBfunc_refvar_t\fP< aT, T >\fB::func_refvar_t\fP ()\fC [inline]\fP"
 
 .PP
-.nf
-218         {
-219                 //inicia_matriz_digs_y_pp(matd,256u,256u);
-220                 matd = construye_matriz_de_variables<ppT,pT,T>(matd);
-221                 mapmem\&.resize(256);
-222                 cuentavars\&.resize(256);
-223                 for(uint I=0 ; I < 256 ; ++I){
-224                         mapmem[I]\&.resize(256);
-225                         cuentavars[I]=0;
-226                         for(uint J=0 ; J < 256 ; ++J){
-227                                 mapmem[I][J]=false;
-228                         }
-229                 }
-230         }
-.fi
-.SS "template<typename aT , template< \fBuchint\fP > class T> \fBfunc_refvar_t\fP< aT, T >::~\fBfunc_refvar_t\fP ()\fC [inline]\fP"
+Definición en la línea \fB218\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> \fBfunc_refvar_t\fP< aT, T >::~\fBfunc_refvar_t\fP ()\fC [inline]\fP"
 
 .PP
-.nf
-233         {
-234                 destruye_matriz_de_variables<T,T>(matd);
-235         }
-.fi
+Definición en la línea \fB233\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "template<typename aT , template< \fBuchint\fP > class T> void \fBfunc_refvar_t\fP< aT, T >::borra_var (string nombre)\fC [inline]\fP"
+.SS "template<typename aT , template< uchint > class T> void \fBfunc_refvar_t\fP< aT, T >::borra_var (string nombre)\fC [inline]\fP"
 
 .PP
-.nf
-254                                         {
-255                 map< string , par_dir_t >::iterator it = mapvd\&.begin();
-256                 map< string , par_dir_t >::const_iterator itend = mapvd\&.end();
-257                 for( ; it != itend ; ++it) {
-258                         if ((*it)\&.first==nombre) {
-259                                 mapmem[(*it)\&.second\&.first][(*it)\&.second\&.second]=false;
-260                                 --cuentavars[(*it)\&.second\&.first];
-261                                 mapvd\&.erase(it);// ponerlo a 0
-262                                 return;
-263                         }
-264                 }
-265                 return;
-266         }
-.fi
-.SS "template<typename aT , template< \fBuchint\fP > class T> bool \fBfunc_refvar_t\fP< aT, T >::este_nombre_ya_ha_sido_declarado (string nombre)\fC [inline]\fP"
+Definición en la línea \fB255\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> bool \fBfunc_refvar_t\fP< aT, T >::escribe_var (string nombre, uchint base, uchint var_base)\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-.nf
-277                                                             {
-278                 map< string , par_dir_t >::iterator it = mapvd\&.begin();
-279                 map< string , par_dir_t >::const_iterator itend = mapvd\&.end();
-280                 for( ; it != itend ; ++it) {
-281                         if ((*it)\&.first==nombre) {
-282                                 return true;
-283                         }
-284                 }
-285                 return false;
-286         }
-.fi
-.PP
-Referenciado por \fBfunc_refvar_t< aT, T >::operator()()\fP, \fBfunc_refvar_t< INT **, INT *, INT >::operator()()\fP y \fBfunc_refvar_t< UINT **, UINT *, UINT >::operator()()\fP\&.
-.SS "template<typename aT , template< \fBuchint\fP > class T> bool \fBfunc_refvar_t\fP< aT, T >::existe_lugar_de_base (\fBuchint\fP Base)\fC [inline]\fP"
+Definición en la línea \fB241\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> bool \fBfunc_refvar_t\fP< aT, T >::este_nombre_ya_ha_sido_declarado (string nombre)\fC [inline]\fP"
 
 .PP
-.nf
-268                                                  {
-269                 bool ret = true;
-270                 for(uint I=0; I < 256 ; ++I){
-271                         ret = ret and mapmem[Base][I];
-272                         if (!ret) return true;
-273                 }
-274                 return false;
-275         }
-.fi
-.SS "template<typename aT , template< \fBuchint\fP > class T> template<const \fBuchint\fP B> T< B > \fBfunc_refvar_t\fP< aT, T >::get (string nombre)\fC [inline]\fP"
+Definición en la línea \fB278\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> bool \fBfunc_refvar_t\fP< aT, T >::existe_lugar_de_base (uchint Base)\fC [inline]\fP"
 
 .PP
-.nf
-290         {
-291                 return (reinterpret_cast< T<B>* >(matd[B]))[mapvd[nombre]\&.second];
-292         }
-.fi
-.SS "template<typename aT , template< \fBuchint\fP > class T> template<const \fBuchint\fP B> bool \fBfunc_refvar_t\fP< aT, T >::operator() (string nombre, string lhs)\fC [inline]\fP"
+Definición en la línea \fB269\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> template<const uchint B> T< B > \fBfunc_refvar_t\fP< aT, T >::get (string nombre)\fC [inline]\fP"
 
 .PP
-.nf
-296         {
-297                 T<B> temp(lhs);
-298                 bool se_puede_hacer = este_nombre_ya_ha_sido_declarado(nombre);
-299                 if (se_puede_hacer) (reinterpret_cast< T<B>* >(matd[B]))[mapvd[nombre]\&.second]=temp;
-300                 return se_puede_hacer;
-301         }
-.fi
+Definición en la línea \fB290\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> bool \fBfunc_refvar_t\fP< aT, T >::insert (string nombre, uchint base, uchint var_base)\fC [inline]\fP, \fC [private]\fP"
+
 .PP
-Hace referencia a \fBfunc_refvar_t< aT, T >::este_nombre_ya_ha_sido_declarado()\fP\&.
+Definición en la línea \fB193\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> template<const uchint B> bool \fBfunc_refvar_t\fP< aT, T >::operator() (string nombre, string lhs)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB296\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "template<typename aT , template< uchint > class T> vector<uint> \fBfunc_refvar_t\fP< aT, T >::cuentavars\fC [private]\fP"
+
+.PP
+Definición en la línea \fB188\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> vector< vector<bool> > \fBfunc_refvar_t\fP< aT, T >::mapmem\fC [private]\fP"
+
+.PP
+Definición en la línea \fB185\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> map< string , \fBpar_dir_t\fP > \fBfunc_refvar_t\fP< aT, T >::mapvd\fC [private]\fP"
+
+.PP
+Definición en la línea \fB186\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T> aT** \fBfunc_refvar_t\fP< aT, T >::matd\fC [private]\fP"
+
+.PP
+Definición en la línea \fB187\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

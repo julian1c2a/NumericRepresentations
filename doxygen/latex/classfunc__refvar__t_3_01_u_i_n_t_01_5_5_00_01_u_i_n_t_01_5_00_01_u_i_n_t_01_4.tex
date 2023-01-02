@@ -1,0 +1,215 @@
+\hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4}{}\doxysection{Referencia de la Clase func\+\_\+refvar\+\_\+t\texorpdfstring{$<$}{<} UINT $\ast$$\ast$, UINT $\ast$, UINT \texorpdfstring{$>$}{>}}
+\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4}\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+
+
+{\ttfamily \#include $<$memory\+\_\+handler.\+hpp$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a96c10b6ad2564de100e956b27a6287f9}{func\+\_\+refvar\+\_\+t}} ()
+\item 
+\mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a17a780771564ae6bf646913bbe7aac4e}{$\sim$func\+\_\+refvar\+\_\+t}} ()
+\item 
+void \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_af9ab19479d6f0313c43090f5477f2836}{borra\+\_\+var}} (string nombre)
+\item 
+bool \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a640e844a830c1df1e15964d73597897c}{existe\+\_\+lugar\+\_\+de\+\_\+base}} (uchint Base)
+\item 
+bool \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a190c8722356199f9f0367df2093e67bf}{este\+\_\+nombre\+\_\+ya\+\_\+ha\+\_\+sido\+\_\+declarado}} (string nombre)
+\item 
+{\footnotesize template$<$const uchint B$>$ }\\\mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab3567151a6bf6c9274121ec1c8a3928c}{get}} (string nombre)
+\item 
+bool \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab11b5bb2dc5a6f6bc98d43c9bac6e7df}{operator()}} (string nombre, string lhs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2fb277764c6b8f54422992f7550d401d}{insert}} (string nombre, uchint base, uchint var\+\_\+base)
+\item 
+\mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2255362c530edf0aa832d64ffd1becc4}{func\+\_\+refvar\+\_\+t}} (const \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}} \&)
+\item 
+bool \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab30717bd4db90f33fb095fff35ccc851}{escribe\+\_\+var}} (string nombre, uchint base, uchint var\+\_\+base)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ vector$<$ bool $>$ $>$ \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ad5e803f48eac8dc8f394e55edb764b31}{mapmem}}
+\item 
+map$<$ string, \mbox{\hyperlink{memory__handler_8hpp_a60c1e28a922223c20df67006f36b968a}{par\+\_\+dir\+\_\+t}} $>$ \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_af58f420aee670ec8408d87f5f3a88dad}{mapvd}}
+\item 
+\mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$ \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2752e4e1b8f47ab5a8e08829bb95e01e}{matd}}
+\item 
+vector$<$ uint $>$ \mbox{\hyperlink{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_aec0f639e329a7a01521028440ae8e3f5}{cuentavars}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00426}{426}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2255362c530edf0aa832d64ffd1becc4}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2255362c530edf0aa832d64ffd1becc4}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!func\_refvar\_t@{func\_refvar\_t}}
+\index{func\_refvar\_t@{func\_refvar\_t}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{func\_refvar\_t()}{func\_refvar\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\mbox{\hyperlink{classfunc__refvar__t}{\+::func\+\_\+refvar\+\_\+t}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a96c10b6ad2564de100e956b27a6287f9}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a96c10b6ad2564de100e956b27a6287f9}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!func\_refvar\_t@{func\_refvar\_t}}
+\index{func\_refvar\_t@{func\_refvar\_t}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{func\_refvar\_t()}{func\_refvar\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\mbox{\hyperlink{classfunc__refvar__t}{\+::func\+\_\+refvar\+\_\+t}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00462}{462}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a17a780771564ae6bf646913bbe7aac4e}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a17a780771564ae6bf646913bbe7aac4e}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!````~func\_refvar\_t@{$\sim$func\_refvar\_t}}
+\index{````~func\_refvar\_t@{$\sim$func\_refvar\_t}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$func\_refvar\_t()}{~func\_refvar\_t()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::$\sim$\mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00477}{477}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_af9ab19479d6f0313c43090f5477f2836}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_af9ab19479d6f0313c43090f5477f2836}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!borra\_var@{borra\_var}}
+\index{borra\_var@{borra\_var}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{borra\_var()}{borra\_var()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::borra\+\_\+var (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00499}{499}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab30717bd4db90f33fb095fff35ccc851}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab30717bd4db90f33fb095fff35ccc851}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!escribe\_var@{escribe\_var}}
+\index{escribe\_var@{escribe\_var}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{escribe\_var()}{escribe\_var()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::escribe\+\_\+var (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{uchint}]{base,  }\item[{uchint}]{var\+\_\+base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00485}{485}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab30717bd4db90f33fb095fff35ccc851_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a190c8722356199f9f0367df2093e67bf}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a190c8722356199f9f0367df2093e67bf}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!este\_nombre\_ya\_ha\_sido\_declarado@{este\_nombre\_ya\_ha\_sido\_declarado}}
+\index{este\_nombre\_ya\_ha\_sido\_declarado@{este\_nombre\_ya\_ha\_sido\_declarado}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{este\_nombre\_ya\_ha\_sido\_declarado()}{este\_nombre\_ya\_ha\_sido\_declarado()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::este\+\_\+nombre\+\_\+ya\+\_\+ha\+\_\+sido\+\_\+declarado (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00522}{522}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a640e844a830c1df1e15964d73597897c}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a640e844a830c1df1e15964d73597897c}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!existe\_lugar\_de\_base@{existe\_lugar\_de\_base}}
+\index{existe\_lugar\_de\_base@{existe\_lugar\_de\_base}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{existe\_lugar\_de\_base()}{existe\_lugar\_de\_base()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::existe\+\_\+lugar\+\_\+de\+\_\+base (\begin{DoxyParamCaption}\item[{uchint}]{Base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00513}{513}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab3567151a6bf6c9274121ec1c8a3928c}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab3567151a6bf6c9274121ec1c8a3928c}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!get@{get}}
+\index{get@{get}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$const uchint B$>$ \\
+\mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::get (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00534}{534}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2fb277764c6b8f54422992f7550d401d}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2fb277764c6b8f54422992f7550d401d}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!insert@{insert}}
+\index{insert@{insert}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::insert (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{uchint}]{base,  }\item[{uchint}]{var\+\_\+base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00437}{437}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab11b5bb2dc5a6f6bc98d43c9bac6e7df}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab11b5bb2dc5a6f6bc98d43c9bac6e7df}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::operator() (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{string}]{lhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00540}{540}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ab11b5bb2dc5a6f6bc98d43c9bac6e7df_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_aec0f639e329a7a01521028440ae8e3f5}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_aec0f639e329a7a01521028440ae8e3f5}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!cuentavars@{cuentavars}}
+\index{cuentavars@{cuentavars}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{cuentavars}{cuentavars}}
+{\footnotesize\ttfamily vector$<$uint$>$ \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::cuentavars\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00432}{432}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ad5e803f48eac8dc8f394e55edb764b31}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_ad5e803f48eac8dc8f394e55edb764b31}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!mapmem@{mapmem}}
+\index{mapmem@{mapmem}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{mapmem}{mapmem}}
+{\footnotesize\ttfamily vector$<$ vector$<$bool$>$ $>$ \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::mapmem\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00429}{429}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_af58f420aee670ec8408d87f5f3a88dad}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_af58f420aee670ec8408d87f5f3a88dad}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!mapvd@{mapvd}}
+\index{mapvd@{mapvd}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{mapvd}{mapvd}}
+{\footnotesize\ttfamily map$<$ string , \mbox{\hyperlink{memory__handler_8hpp_a60c1e28a922223c20df67006f36b968a}{par\+\_\+dir\+\_\+t}} $>$ \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::mapvd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00430}{430}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+\mbox{\Hypertarget{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2752e4e1b8f47ab5a8e08829bb95e01e}\label{classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4_a2752e4e1b8f47ab5a8e08829bb95e01e}} 
+\index{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}!matd@{matd}}
+\index{matd@{matd}!func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$@{func\_refvar\_t$<$ UINT $\ast$$\ast$, UINT $\ast$, UINT $>$}}
+\doxysubsubsection{\texorpdfstring{matd}{matd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}}$\ast$$\ast$ \mbox{\hyperlink{classfunc__refvar__t}{func\+\_\+refvar\+\_\+t}}$<$ \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$$\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $\ast$, \mbox{\hyperlink{memory__handler_8hpp_a2d51603be6f983fbbf8f23be7087badd}{UINT}} $>$\+::matd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{memory__handler_8hpp_source_l00431}{431}} del archivo \mbox{\hyperlink{memory__handler_8hpp_source}{memory\+\_\+handler.\+hpp}}.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{memory__handler_8hpp}{memory\+\_\+handler.\+hpp}}\end{DoxyCompactItemize}

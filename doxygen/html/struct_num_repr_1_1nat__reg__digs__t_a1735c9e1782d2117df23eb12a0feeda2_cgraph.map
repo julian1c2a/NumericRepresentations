@@ -1,4 +1,4 @@
 <map id="NumRepr::nat_reg_digs_t::regd_0" name="NumRepr::nat_reg_digs_t::regd_0">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,165,45"/>
-<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#a9e76fca3636eb9c56b09cda38d61e2bc" title=" " alt="" coords="213,5,373,45"/>
+<area shape="rect" id="node2" href="$struct_num_repr_1_1reg__digs__t.html#ad04bdf9bcccd5c68c414b2cca9e9bc75" title="IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL." alt="" coords="213,5,360,45"/>
 </map>

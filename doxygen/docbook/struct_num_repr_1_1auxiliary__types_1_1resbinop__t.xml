@@ -7,20 +7,13 @@
 <para>auxiliary types for digit type and its operations </para>
  
 </para>
-Diagrama de colaboración para NumRepr::auxiliary_types::resbinop_t&lt; T, oper &gt;:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1auxiliary__types_1_1resbinop__t__coll__graph.png"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <section>
 <title>Descripción detallada</title>
 <simplesect><title>template&lt;typename T, <link linkend="_namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8">binop_e</link> oper&gt;<?linebreak?>struct NumRepr::auxiliary_types::resbinop_t&lt; T, oper &gt;</title></simplesect>
 
 <para>auxiliary types for digit type and its operations </para>
+<para>
+Definición en la línea <link linkend="_auxiliary__types_8hpp_source_1l00037">37</link> del archivo <link linkend="_auxiliary__types_8hpp_source">auxiliary_types.hpp</link>.</para>
 <para>
 La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
 <link linkend="_auxiliary__types_8hpp">auxiliary_types.hpp</link></section>

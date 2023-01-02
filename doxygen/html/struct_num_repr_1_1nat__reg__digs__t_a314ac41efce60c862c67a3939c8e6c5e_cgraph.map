@@ -1,4 +1,7 @@
 <map id="NumRepr::nat_reg_digs_t::operator Int_Type" name="NumRepr::nat_reg_digs_t::operator Int_Type">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,165,45"/>
-<area shape="rect" id="node2" href="$namespace_num_repr_1_1type__traits.html#a4f0f4b9cd9964b406c8299bcbd74f506" title=" " alt="" coords="213,5,360,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,37,165,77"/>
+<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#aa32760e590ee36be179c1fa86566ae2a" title=" " alt="" coords="213,5,373,45"/>
+<area shape="rect" id="node5" href="$namespace_num_repr_1_1type__traits.html#a4f0f4b9cd9964b406c8299bcbd74f506" title=" " alt="" coords="220,69,367,109"/>
+<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__reg__digs__t.html#a41f2c182cf6b668b25a17364f7a32ba6" title=" " alt="" coords="421,5,587,45"/>
+<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__reg__digs__t.html#a658eb866c878e5c8fa312d190fca084b" title=" " alt="" coords="635,5,795,45"/>
 </map>

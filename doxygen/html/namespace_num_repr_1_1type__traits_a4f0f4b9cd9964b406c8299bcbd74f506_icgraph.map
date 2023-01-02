@@ -1,6 +1,7 @@
 <map id="NumRepr::type_traits::maxbase" name="NumRepr::type_traits::maxbase">
-<area shape="rect" id="node1" title=" " alt="" coords="421,37,568,77"/>
-<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#a02c8ea238d4e8921ae5e92d330f5bfba" title="OPERACION COPIA DESDE UN ENTERO (CONVERSION A LA BASE B) A UN BASE_T." alt="" coords="213,5,373,45"/>
-<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__reg__digs__t.html#a314ac41efce60c862c67a3939c8e6c5e" title=" " alt="" coords="213,69,373,109"/>
-<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__reg__digs__t.html#ab1a63d715621ca9fea2c4d765155a23b" title="OPERACION COPIA DESDE UN ENTERO (CONVERSION A LA BASE B)" alt="" coords="5,5,165,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="213,101,360,141"/>
+<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#a02c8ea238d4e8921ae5e92d330f5bfba" title="OPERACION COPIA DESDE UN ENTERO (CONVERSION A LA BASE B) A UN BASE_T." alt="" coords="5,5,165,45"/>
+<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__reg__digs__t.html#a314ac41efce60c862c67a3939c8e6c5e" title=" " alt="" coords="5,69,165,109"/>
+<area shape="rect" id="node4" href="$struct_num_repr_1_1reg__digs__t.html#a3ff2a749d367851189bc05a1687a0b22" title="SE PODRÍA HACER PARA UINT128_T." alt="" coords="12,133,159,173"/>
+<area shape="rect" id="node5" href="$struct_num_repr_1_1reg__digs__t.html#ada84ccdb7769b08b7b91b1dae6452c09" title=" " alt="" coords="12,197,159,237"/>
 </map>

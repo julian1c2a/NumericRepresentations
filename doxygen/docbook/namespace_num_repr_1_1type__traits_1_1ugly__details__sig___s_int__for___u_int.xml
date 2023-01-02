@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int" xml:lang="es">
+<title>Referencia del Namespace NumRepr::type_traits::ugly_details_sig_SInt_for_UInt</title>
+<indexterm><primary>NumRepr::type_traits::ugly_details_sig_SInt_for_UInt</primary></indexterm>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t">__sig_SInt_for_UInt_t</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__f5c7e6520cd5a6a0cbb51fbfe418cdc8c">__sig_SInt_for_UInt_t&lt; uchint_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01uint__t_01_4">__sig_SInt_for_UInt_t&lt; uint_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01ulint__t_01_4">__sig_SInt_for_UInt_t&lt; ulint_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__ff1416f88b005f06eae8d4695658d20cf">__sig_SInt_for_UInt_t&lt; ullint_t &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01usint__t_01_4">__sig_SInt_for_UInt_t&lt; usint_t &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

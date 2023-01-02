@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="structdetails_1_1cp__delete_3_011u_01_4" kind="struct" language="C++" prot="public">
     <compoundname>details::cp_delete&lt; 1u &gt;</compoundname>
     <includes refid="memory__handler_8hpp" local="no">memory_handler.hpp</includes>
@@ -8,7 +8,7 @@
         <type>typename aT</type>
       </param>
       <param>
-        <type>template&lt; <ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref> &gt; class</type>
+        <type>template&lt; uchint &gt; class</type>
         <declname>T</declname>
         <defname>T</defname>
       </param>
@@ -30,20 +30,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="117" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="117" bodyend="121"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="118" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="118" bodyend="122"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>details::cp_delete&lt; 1u &gt;</label>
-        <link refid="structdetails_1_1cp__delete_3_011u_01_4"/>
-      </node>
-    </collaborationgraph>
-    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="116" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="116" bodyend="122"/>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="117" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="117" bodyend="123"/>
     <listofallmembers>
       <member refid="structdetails_1_1cp__delete_3_011u_01_4_1a714971e4ac0479f48133c755274886ed" prot="public" virt="non-virtual"><scope>details::cp_delete&lt; 1u &gt;</scope><name>operator()</name></member>
     </listofallmembers>

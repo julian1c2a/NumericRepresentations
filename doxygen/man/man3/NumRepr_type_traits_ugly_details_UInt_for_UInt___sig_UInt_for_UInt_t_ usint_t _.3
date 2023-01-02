@@ -1,0 +1,43 @@
+.TH "NumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< usint_t >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< usint_t >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <basic_types\&.hpp>\fP
+.SS "Tipos públicos"
+
+.in +1c
+.ti -1c
+.RI "using \fBtype\fP = std::conditional_t< \fBuint_type_gt_this_type_v\fP< \fBuint_t\fP >, \fBuint_t\fP, typename \fB__sig_UInt_for_UInt_t\fP< \fBuint_t\fP >::type >"
+.br
+.in -1c
+.SS "Atributos públicos estáticos"
+
+.in +1c
+.ti -1c
+.RI "template<unsigned_integral_c uint_type> static constexpr bool \fBuint_type_gt_this_type_v\fP = \fBgt_sz_v\fP<uint_type,\fBusint_t\fP>"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Definición en la línea \fB256\fP del archivo \fBbasic_types\&.hpp\fP\&.
+.SH "Documentación de los 'Typedef' miembros de la clase"
+.PP 
+.SS "using \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t\fP< \fBusint_t\fP >::type =  std::conditional_t< \fBuint_type_gt_this_type_v\fP<\fBuint_t\fP>, \fBuint_t\fP, typename \fB__sig_UInt_for_UInt_t\fP<\fBuint_t\fP>::type >"
+
+.PP
+Definición en la línea \fB261\fP del archivo \fBbasic_types\&.hpp\fP\&.
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "template<unsigned_integral_c uint_type> constexpr bool \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t\fP< \fBusint_t\fP >::uint_type_gt_this_type_v = \fBgt_sz_v\fP<uint_type,\fBusint_t\fP>\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP"
+
+.PP
+Definición en la línea \fB259\fP del archivo \fBbasic_types\&.hpp\fP\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

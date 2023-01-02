@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structutilities_1_1special_1_1tuple__user__constructor__t" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura utilities::special::tuple_user_constructor_t&lt; BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</title>
+<indexterm><primary>utilities::special::tuple_user_constructor_t&lt; BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;utilities.hpp&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Atributos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static constexpr auto <link linkend="_structutilities_1_1special_1_1tuple__user__constructor__t_1a815b9f98f9de37d096dbb4453c1fbd6b">value</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt;<?linebreak?>requires (BeginIntObj_ct &lt; EndIntObj_ct)<?linebreak?>struct utilities::special::tuple_user_constructor_t&lt; BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</title></simplesect>
+<para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00318">318</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_structutilities_1_1special_1_1tuple__user__constructor__t_1a815b9f98f9de37d096dbb4453c1fbd6b"/><section>
+    <title>value</title>
+<indexterm><primary>value</primary><secondary>utilities::special::tuple_user_constructor_t&lt; BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</secondary></indexterm>
+<indexterm><primary>utilities::special::tuple_user_constructor_t&lt; BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary><secondary>value</secondary></indexterm>
+<computeroutput>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </computeroutput><para><computeroutput>constexpr auto <link linkend="_structutilities_1_1special_1_1tuple__user__constructor__t">utilities::special::tuple_user_constructor_t</link>&lt; BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::value<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><emphasis role="strong">Valor inicial:</emphasis><programlisting linenumbering="unnumbered">=
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tuple_builder_t&lt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;BeginIntObj_ct,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;BeginIntObj_ct,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;EndIntObj_ct,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Base,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Funct_tt
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&gt;::build()
+</programlisting><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00319">319</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_utilities_8hpp">utilities.hpp</link></section>
+</section>

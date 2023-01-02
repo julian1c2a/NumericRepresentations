@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="structdetails_1_1cp__new" kind="struct" language="C++" prot="public">
     <compoundname>details::cp_new</compoundname>
     <includes refid="memory__handler_8hpp" local="no">memory_handler.hpp</includes>
@@ -8,17 +8,17 @@
         <type>typename aT</type>
       </param>
       <param>
-        <type>template&lt; <ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref> &gt; class</type>
+        <type>template&lt; uchint &gt; class</type>
         <declname>T</declname>
         <defname>T</defname>
       </param>
       <param>
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <declname>num_vars</declname>
         <defname>num_vars</defname>
       </param>
       <param>
-        <type><ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref></type>
+        <type>uchint</type>
         <declname>B</declname>
         <defname>B</defname>
       </param>
@@ -40,7 +40,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="17" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="17" bodyend="20"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="18" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="18" bodyend="21"/>
+        <referencedby refid="structdetails_1_1cp__new_1a674103f596ac614f876144d95625fa23" compoundref="memory__handler_8hpp" startline="23" endline="26">details::cp_new&lt; aT, T, num_vars, B &gt;::operator()</referencedby>
+        <referencedby refid="structdetails_1_1cp__new_3_01a_t_00_01_t_00_01std_1_1numeric__limits_3_01uchint_01_4_1_1max_07_08_4_1a364f5a172ed5a1d98e1847df4caade8f" compoundref="memory__handler_8hpp" startline="41" endline="45">details::cp_new&lt; aT, T, std::numeric_limits&lt; uchint &gt;::max()&gt;::operator()</referencedby>
+        <referencedby refid="structdetails_1_1cp__new_3_012_01_4_1a4145679ff55c1f6202e6afb9cde4cddf" compoundref="memory__handler_8hpp" startline="56" endline="59">details::cp_new&lt; 2 &gt;::operator()</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -60,20 +63,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="22" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="22" bodyend="25"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="23" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="23" bodyend="26"/>
+        <references refid="structdetails_1_1cp__new_1a479edf9fda80c05ef9a9be9eec8e5c3a" compoundref="memory__handler_8hpp" startline="18" endline="21">details::cp_new&lt; aT, T, num_vars, B &gt;::contruye_lista_de_variables</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>details::cp_new&lt; aT, T, num_vars, B &gt;</label>
-        <link refid="structdetails_1_1cp__new"/>
-      </node>
-    </collaborationgraph>
-    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="15" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="15" bodyend="26"/>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" line="16" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/memory_handler.hpp" bodystart="16" bodyend="27"/>
     <listofallmembers>
       <member refid="structdetails_1_1cp__new_1a479edf9fda80c05ef9a9be9eec8e5c3a" prot="private" virt="non-virtual"><scope>details::cp_new</scope><name>contruye_lista_de_variables</name></member>
       <member refid="structdetails_1_1cp__new_1a674103f596ac614f876144d95625fa23" prot="public" virt="non-virtual"><scope>details::cp_new</scope><name>operator()</name></member>

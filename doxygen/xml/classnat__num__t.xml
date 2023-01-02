@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="classnat__num__t" kind="class" language="C++" prot="public">
     <compoundname>nat_num_t</compoundname>
     <basecompoundref prot="public" virt="non-virtual">base_num_t&lt; UINT_T, B &gt;</basecompoundref>
@@ -18,7 +18,7 @@
     </templateparamlist>
       <sectiondef kind="private-type">
       <memberdef kind="typedef" id="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" prot="private" static="no">
-        <type>dig_t&lt; UINT_T, B &gt;</type>
+        <type><ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref>&lt; UINT_T, B &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::dig_t =  dig_t&lt;UINT_T,B&gt;</definition>
         <argsstring></argsstring>
         <name>dig_t</name>
@@ -32,7 +32,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="11" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classnat__num__t_1adb2aaeb7a333103d79e3b63bb6e5c3e7" prot="private" static="no">
-        <type>base_num_t&lt; UINT_T, B &gt;</type>
+        <type><ref refid="classnat__num__t_1adb2aaeb7a333103d79e3b63bb6e5c3e7" kindref="member">base_num_t</ref>&lt; UINT_T, B &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::base_num_t =  base_num_t&lt;UINT_T,B&gt;</definition>
         <argsstring></argsstring>
         <name>base_num_t</name>
@@ -116,7 +116,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="17" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classnat__num__t_1af778de9e2e7b5f9ae5d3c1ad5e5cf209" prot="private" static="no">
-        <type>typename base_num_t&lt; UINT_T, B &gt;::iterator</type>
+        <type>typename <ref refid="classnat__num__t_1adb2aaeb7a333103d79e3b63bb6e5c3e7" kindref="member">base_num_t</ref>&lt; UINT_T, B &gt;<ref refid="classnat__num__t_1a82f4119697ef1ea0c1c9ea6034d1edc0" kindref="member">::iterator</ref></type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::b_iterator =  typename base_num_t&lt;UINT_T,B&gt;::iterator</definition>
         <argsstring></argsstring>
         <name>b_iterator</name>
@@ -130,7 +130,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="18" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classnat__num__t_1a072d013d3d30712133d7dd2b0058bb10" prot="private" static="no">
-        <type>typename base_num_t&lt; UINT_T, B &gt;::reverse_iterator</type>
+        <type>typename <ref refid="classnat__num__t_1adb2aaeb7a333103d79e3b63bb6e5c3e7" kindref="member">base_num_t</ref>&lt; UINT_T, B &gt;::reverse_iterator</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::b_riterator =  typename base_num_t&lt;UINT_T,B&gt;::reverse_iterator</definition>
         <argsstring></argsstring>
         <name>b_riterator</name>
@@ -144,7 +144,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="19" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classnat__num__t_1a5170ad307fda3723791ae4fabcaa665d" prot="private" static="no">
-        <type>typename base_num_t&lt; UINT_T, B &gt;::const_iterator</type>
+        <type>typename <ref refid="classnat__num__t_1adb2aaeb7a333103d79e3b63bb6e5c3e7" kindref="member">base_num_t</ref>&lt; UINT_T, B &gt;::const_iterator</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::b_citerator =  typename base_num_t&lt;UINT_T,B&gt;::const_iterator</definition>
         <argsstring></argsstring>
         <name>b_citerator</name>
@@ -158,7 +158,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="20" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classnat__num__t_1a0ccd5c0e50363b55955a4d55838412bf" prot="private" static="no">
-        <type>typename base_num_t&lt; UINT_T, B &gt;::const_reverse_iterator</type>
+        <type>typename <ref refid="classnat__num__t_1adb2aaeb7a333103d79e3b63bb6e5c3e7" kindref="member">base_num_t</ref>&lt; UINT_T, B &gt;::const_reverse_iterator</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::b_criterator =  typename base_num_t&lt;UINT_T,B&gt;::const_reverse_iterator</definition>
         <argsstring></argsstring>
         <name>b_criterator</name>
@@ -240,12 +240,12 @@
             <defname>B</defname>
           </param>
           <param>
-            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <type>size_t</type>
             <declname>N</declname>
             <defname>N</defname>
           </param>
         </templateparamlist>
-        <type>std::array&lt; dig_t&lt; UINT_T, B &gt;, N &gt;</type>
+        <type>std::array&lt; <ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref>&lt; UINT_T, B &gt;, N &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::base_N_t =  std::array&lt;dig_t&lt;UINT_T,B&gt;,N&gt;</definition>
         <argsstring></argsstring>
         <name>base_N_t</name>
@@ -271,7 +271,7 @@
             <defname>B</defname>
           </param>
         </templateparamlist>
-        <type>nat_reg_N_digs_t&lt; UINT_T, B, 2 &gt;</type>
+        <type><ref refid="classnat__num__t_1ae142fb209b4d9c340243c149dff8e647" kindref="member">nat_reg_N_digs_t</ref>&lt; UINT_T, B, 2 &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::base_t =  nat_reg_N_digs_t&lt;UINT_T,B,2&gt;</definition>
         <argsstring></argsstring>
         <name>base_t</name>
@@ -297,12 +297,12 @@
             <defname>B</defname>
           </param>
           <param>
-            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <type>size_t</type>
             <declname>N</declname>
             <defname>N</defname>
           </param>
         </templateparamlist>
-        <type>nat_reg_N_digs_t&lt; UINT_T, B, N &gt;</type>
+        <type><ref refid="classnat__num__t_1ae142fb209b4d9c340243c149dff8e647" kindref="member">nat_reg_N_digs_t</ref>&lt; UINT_T, B, N &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::nat_reg_N_digs_t =  nat_reg_N_digs_t&lt;UINT_T,B,N&gt;</definition>
         <argsstring></argsstring>
         <name>nat_reg_N_digs_t</name>
@@ -328,7 +328,7 @@
             <defname>B</defname>
           </param>
         </templateparamlist>
-        <type>nat_reg_N_digs_t&lt; UINT_T, B, 2 &gt;</type>
+        <type><ref refid="classnat__num__t_1ae142fb209b4d9c340243c149dff8e647" kindref="member">nat_reg_N_digs_t</ref>&lt; UINT_T, B, 2 &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::nat_reg_digs_t =  nat_reg_N_digs_t&lt;UINT_T,B,2&gt;</definition>
         <argsstring></argsstring>
         <name>nat_reg_digs_t</name>
@@ -354,12 +354,12 @@
             <defname>B</defname>
           </param>
           <param>
-            <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+            <type>size_t</type>
             <declname>N</declname>
             <defname>N</defname>
           </param>
         </templateparamlist>
-        <type>int_reg_N_digs_t&lt; UINT_T, B, N &gt;</type>
+        <type><ref refid="classnat__num__t_1aebd693c48c3aa1edc0ad7acc67850f4c" kindref="member">int_reg_N_digs_t</ref>&lt; UINT_T, B, N &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::int_reg_N_digs_t =  int_reg_N_digs_t&lt;UINT_T,B,N&gt;</definition>
         <argsstring></argsstring>
         <name>int_reg_N_digs_t</name>
@@ -385,7 +385,7 @@
             <defname>B</defname>
           </param>
         </templateparamlist>
-        <type>int_reg_N_digs_t&lt; UINT_T, B, 2 &gt;</type>
+        <type><ref refid="classnat__num__t_1aebd693c48c3aa1edc0ad7acc67850f4c" kindref="member">int_reg_N_digs_t</ref>&lt; UINT_T, B, 2 &gt;</type>
         <definition>using nat_num_t&lt; UINT_T, B &gt;::int_reg_digs_t =  int_reg_N_digs_t&lt;UINT_T,B,2&gt;</definition>
         <argsstring></argsstring>
         <name>int_reg_digs_t</name>
@@ -413,11 +413,22 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="41" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classnat__num__t_1aa042059e50f3008d12e430fdebcc323f" compoundref="nat__num__t_8hpp" startline="1343" endline="1374">nat_num_t&lt; UINT_T, B &gt;::mC_B</referencedby>
+        <referencedby refid="classnat__num__t_1ac276fad3a3947175a55b2b9e990ae231" compoundref="nat__num__t_8hpp" startline="1376" endline="1385">nat_num_t&lt; UINT_T, B &gt;::mC_Bm1</referencedby>
+        <referencedby refid="classnat__num__t_1a07b25245f1119449ee9171ab2ea85de6" compoundref="nat__num__t_8hpp" startline="1273" endline="1321">nat_num_t&lt; UINT_T, B &gt;::minus</referencedby>
+        <referencedby refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</referencedby>
+        <referencedby refid="classnat__num__t_1a2a5a33dec1079928b211d2dc47e6d85f" compoundref="nat__num__t_8hpp" startline="1324" endline="1333">nat_num_t&lt; UINT_T, B &gt;::operator!</referencedby>
+        <referencedby refid="classnat__num__t_1ab1087d198842dd2e00e8f2961421fd50" compoundref="nat__num__t_8hpp" startline="712" endline="752">nat_num_t&lt; UINT_T, B &gt;::operator+</referencedby>
+        <referencedby refid="classnat__num__t_1a61807871c9e8e701d61e7573acd35055" compoundref="nat__num__t_8hpp" startline="984" endline="1029">nat_num_t&lt; UINT_T, B &gt;::operator+=</referencedby>
+        <referencedby refid="classnat__num__t_1a6c10bdb02ef2fdb24147eeaded22dac7" compoundref="nat__num__t_8hpp" startline="927" endline="955">nat_num_t&lt; UINT_T, B &gt;::operator-</referencedby>
+        <referencedby refid="classnat__num__t_1ace3973d5269ca6fca23d993806084378" compoundref="nat__num__t_8hpp" startline="1184" endline="1212">nat_num_t&lt; UINT_T, B &gt;::operator-=</referencedby>
+        <referencedby refid="classnat__num__t_1a2f2bc5932044b67b90f5fba65c0fbb36" compoundref="nat__num__t_8hpp" startline="144" endline="155">nat_num_t&lt; UINT_T, B &gt;::operator=</referencedby>
+        <referencedby refid="classnat__num__t_1a05f88959b68523c08a10f864e73a6fc6" compoundref="nat__num__t_8hpp" startline="1594" endline="1597">nat_num_t&lt; UINT_T, B &gt;::p_aux</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <type>size_t</type>
         <definition>size_t nat_num_t&lt; UINT_T, B &gt;::size</definition>
         <argsstring>() const</argsstring>
         <name>size</name>
@@ -432,6 +443,9 @@
         <referencedby refid="classnat__num__t_1a386e6f8d5f8b23ea4ac327c3f3a33d61" compoundref="nat__num__t_8hpp" startline="579" endline="592">nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</referencedby>
         <referencedby refid="classnat__num__t_1a2a7eae79a48f9b29a40c9103cfac72d7" compoundref="nat__num__t_8hpp" startline="566" endline="577">nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_izqda</referencedby>
         <referencedby refid="classnat__num__t_1a3a404549ae4f05cafef5d6ceec3a6646" compoundref="nat__num__t_8hpp" startline="1437" endline="1477">nat_num_t&lt; UINT_T, B &gt;::div2</referencedby>
+        <referencedby refid="classnat__num__t_1acc621fe7875d86c5f40aff5d56d832be" compoundref="nat__num__t_8hpp" startline="1608" endline="1658">nat_num_t&lt; UINT_T, B &gt;::div_gen_step</referencedby>
+        <referencedby refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
+        <referencedby refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</referencedby>
         <referencedby refid="classnat__num__t_1ab713b283652383fab4623d66b4fef0fa" compoundref="nat__num__t_8hpp" startline="1666" endline="1672">nat_num_t&lt; UINT_T, B &gt;::es_cero</referencedby>
         <referencedby refid="classnat__num__t_1a86fb8e79d86da172cc7adff7632ac725" compoundref="nat__num__t_8hpp" startline="1745" endline="1787">nat_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
         <referencedby refid="classnat__num__t_1affad1b46b9de15da174a01644271785f" compoundref="nat__num__t_8hpp" startline="1499" endline="1539">nat_num_t&lt; UINT_T, B &gt;::m_div2</referencedby>
@@ -474,7 +488,7 @@
         <name>push_front</name>
         <qualifiedname>nat_num_t::push_front</qualifiedname>
         <param>
-          <type>dig_t</type>
+          <type><ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref></type>
           <declname>parg</declname>
         </param>
         <briefdescription>
@@ -484,6 +498,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="60" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="60" bodyend="64"/>
+        <referencedby refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
         <referencedby refid="classnat__num__t_1aa042059e50f3008d12e430fdebcc323f" compoundref="nat__num__t_8hpp" startline="1343" endline="1374">nat_num_t&lt; UINT_T, B &gt;::mC_B</referencedby>
         <referencedby refid="classnat__num__t_1a07b25245f1119449ee9171ab2ea85de6" compoundref="nat__num__t_8hpp" startline="1273" endline="1321">nat_num_t&lt; UINT_T, B &gt;::minus</referencedby>
         <referencedby refid="classnat__num__t_1a61184e641a296ac9d663239efde22c51" compoundref="nat__num__t_8hpp" startline="353" endline="367">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</referencedby>
@@ -495,13 +510,13 @@
         <referencedby refid="classnat__num__t_1aa68a5e36a62a4682136e992ebc6f7e83" compoundref="nat__num__t_8hpp" startline="369" endline="384">nat_num_t&lt; UINT_T, B &gt;::operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a7a67b73e05ec602a2fd57d34201ad36c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>dig_t</type>
+        <type><ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref></type>
         <definition>dig_t nat_num_t&lt; UINT_T, B &gt;::operator[]</definition>
         <argsstring>(uint arg) const</argsstring>
         <name>operator[]</name>
         <qualifiedname>nat_num_t::operator[]</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d" kindref="member">uint</ref></type>
+          <type>uint</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -511,15 +526,16 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="107" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="107" bodyend="110"/>
+        <referencedby refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a7dc03c62eb11dcb1eadd93436e1a8d82" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>dig_t &amp;</type>
+        <type><ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref> &amp;</type>
         <definition>dig_t &amp; nat_num_t&lt; UINT_T, B &gt;::operator[]</definition>
         <argsstring>(uint arg)</argsstring>
         <name>operator[]</name>
         <qualifiedname>nat_num_t::operator[]</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d" kindref="member">uint</ref></type>
+          <type>uint</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -543,6 +559,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="116" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="116" bodyend="119"/>
+        <referencedby refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
         <referencedby refid="classnat__num__t_1a37024fe6aa82e7f7632fa2f119d91982" compoundref="nat__num__t_8hpp" startline="170" endline="178">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</referencedby>
         <referencedby refid="classnat__num__t_1a2f2bc5932044b67b90f5fba65c0fbb36" compoundref="nat__num__t_8hpp" startline="144" endline="155">nat_num_t&lt; UINT_T, B &gt;::operator=</referencedby>
         <referencedby refid="nat__num__t_8hpp_1abb536e9b1b1447052db560972a06adbe" compoundref="nat__num__t_8hpp" startline="1965" endline="2100">operator&gt;&gt;</referencedby>
@@ -554,7 +571,7 @@
         <name>push_back</name>
         <qualifiedname>nat_num_t::push_back</qualifiedname>
         <param>
-          <type>dig_t</type>
+          <type><ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref></type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -564,6 +581,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="121" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="121" bodyend="124"/>
+        <referencedby refid="classnat__num__t_1acc621fe7875d86c5f40aff5d56d832be" compoundref="nat__num__t_8hpp" startline="1608" endline="1658">nat_num_t&lt; UINT_T, B &gt;::div_gen_step</referencedby>
         <referencedby refid="classnat__num__t_1a573146d0cf8ab1ee7be2b8f89c809bc3" compoundref="nat__num__t_8hpp" startline="248" endline="255">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</referencedby>
         <referencedby refid="classnat__num__t_1a0f5643bd0b8c549e71abd522d58c7e7e" compoundref="nat__num__t_8hpp" startline="768" endline="789">nat_num_t&lt; UINT_T, B &gt;::operator*</referencedby>
         <referencedby refid="classnat__num__t_1ae0bbc32c65935b4cf54a154ec950fc18" compoundref="nat__num__t_8hpp" startline="1045" endline="1066">nat_num_t&lt; UINT_T, B &gt;::operator*=</referencedby>
@@ -571,7 +589,7 @@
         <referencedby refid="nat__num__t_8hpp_1abb536e9b1b1447052db560972a06adbe" compoundref="nat__num__t_8hpp" startline="1965" endline="2100">operator&gt;&gt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1ad6d4ad46b1d326930b2e635c8c0df004" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>striterator</type>
+        <type><ref refid="classnat__num__t_1a2db5c9691f7e204ed92897d10687e5ea" kindref="member">striterator</ref></type>
         <definition>striterator nat_num_t&lt; UINT_T, B &gt;::begin</definition>
         <argsstring>()</argsstring>
         <name>begin</name>
@@ -587,7 +605,7 @@
         <referencedby refid="classnat__num__t_1a2a5a33dec1079928b211d2dc47e6d85f" compoundref="nat__num__t_8hpp" startline="1324" endline="1333">nat_num_t&lt; UINT_T, B &gt;::operator!</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1ac8a00bffa131db2a558d6131214bc481" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>cstriterator</type>
+        <type><ref refid="classnat__num__t_1a064734441d26b9a1fc92fb56da0c4497" kindref="member">cstriterator</ref></type>
         <definition>cstriterator nat_num_t&lt; UINT_T, B &gt;::end</definition>
         <argsstring>() const</argsstring>
         <name>end</name>
@@ -615,6 +633,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="137" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="137" bodyend="142"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
         <referencedby refid="classnat__num__t_1a6c10bdb02ef2fdb24147eeaded22dac7" compoundref="nat__num__t_8hpp" startline="927" endline="955">nat_num_t&lt; UINT_T, B &gt;::operator-</referencedby>
         <referencedby refid="classnat__num__t_1ace3973d5269ca6fca23d993806084378" compoundref="nat__num__t_8hpp" startline="1184" endline="1212">nat_num_t&lt; UINT_T, B &gt;::operator-=</referencedby>
         <referencedby refid="classnat__num__t_1aa1a1fa2bc567648fb5fd76d2a73e911e" compoundref="nat__num__t_8hpp" startline="791" endline="847">nat_num_t&lt; UINT_T, B &gt;::operator/</referencedby>
@@ -639,8 +659,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="144" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="144" bodyend="155"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a1c39c1e59f7e530334e37c2945c3dfbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -660,8 +682,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="157" column="12" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="157" bodyend="168"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a37024fe6aa82e7f7632fa2f119d91982" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -681,8 +705,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="170" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="170" bodyend="178"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a737bea5377c0328d03ed2f2c04846728" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -754,7 +780,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="210" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="210" bodyend="216"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1affeba8ecf20f9c786e672429f62708dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="classnat__num__t" kindref="compound">nat_num_t</ref> &amp;</type>
@@ -773,7 +801,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="218" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="218" bodyend="225"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a20f6fcd2f30abb396511bb70ba9c35b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -796,8 +826,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="227" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="227" bodyend="235"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a2c25534d9a33ac153f49e32c0149966a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -824,8 +856,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="237" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="237" bodyend="246"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a573146d0cf8ab1ee7be2b8f89c809bc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -844,6 +878,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="248" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="248" bodyend="255"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aef1019272164e14682dc667e158afa53" compoundref="nat__num__t_8hpp" startline="121" endline="124">nat_num_t&lt; UINT_T, B &gt;::push_back</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
@@ -865,6 +900,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="257" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="257" bodyend="265"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aef1019272164e14682dc667e158afa53" compoundref="nat__num__t_8hpp" startline="121" endline="124">nat_num_t&lt; UINT_T, B &gt;::push_back</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
@@ -902,8 +938,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="277" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="277" bodyend="285"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a1a3617402f9efc65e7981876b1b31f4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="classnat__num__t" kindref="compound">nat_num_t</ref> &amp;</type>
@@ -922,8 +960,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="287" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="287" bodyend="296"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1af381f51d860dcc728349d4d9f26156e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -942,8 +982,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="298" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="298" bodyend="306"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1ac436862f45dd30ae542a6b05856b6aa0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="classnat__num__t" kindref="compound">nat_num_t</ref> &amp;</type>
@@ -962,8 +1004,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="308" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="308" bodyend="317"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1ae368fad784e2833106b9aedc5d495f43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -982,7 +1026,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="319" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="319" bodyend="325"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1ac6a83dbfc376fdc3e0b377493fdc03b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="classnat__num__t" kindref="compound">nat_num_t</ref> &amp;</type>
@@ -1001,7 +1047,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="327" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="327" bodyend="334"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1aaf28ada68877888aff9f4ba5d6ea8bb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -1010,7 +1058,7 @@
         <name>nat_num_t</name>
         <qualifiedname>nat_num_t::nat_num_t</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref></type>
+          <type>uchint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1020,7 +1068,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="336" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="336" bodyend="342"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1ae07d6b446d53565941f4c6b5a9bba621" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="classnat__num__t" kindref="compound">nat_num_t</ref> &amp;</type>
@@ -1029,7 +1079,7 @@
         <name>operator=</name>
         <qualifiedname>nat_num_t::operator=</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref></type>
+          <type>uchint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1039,7 +1089,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="344" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="344" bodyend="351"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a61184e641a296ac9d663239efde22c51" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -1048,7 +1100,7 @@
         <name>nat_num_t</name>
         <qualifiedname>nat_num_t::nat_num_t</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+          <type>usint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1058,6 +1110,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="353" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="353" bodyend="367"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1068,7 +1121,7 @@
         <name>operator=</name>
         <qualifiedname>nat_num_t::operator=</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+          <type>usint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1078,6 +1131,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="369" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="369" bodyend="384"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1088,7 +1142,7 @@
         <name>nat_num_t</name>
         <qualifiedname>nat_num_t::nat_num_t</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d" kindref="member">uint</ref></type>
+          <type>uint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1098,6 +1152,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="386" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="386" bodyend="401"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1108,7 +1163,7 @@
         <name>operator=</name>
         <qualifiedname>nat_num_t::operator=</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a69aa29b598b851b0640aa225a9e5d61d" kindref="member">uint</ref></type>
+          <type>uint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1118,6 +1173,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="403" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="403" bodyend="417"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1128,7 +1184,7 @@
         <name>nat_num_t</name>
         <qualifiedname>nat_num_t::nat_num_t</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1accbad71b3b2a0c00b93b3b065d660140" kindref="member">ulint</ref></type>
+          <type>ulint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1138,6 +1194,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="419" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="419" bodyend="432"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1148,7 +1205,7 @@
         <name>operator=</name>
         <qualifiedname>nat_num_t::operator=</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1accbad71b3b2a0c00b93b3b065d660140" kindref="member">ulint</ref></type>
+          <type>ulint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1158,6 +1215,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="434" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="434" bodyend="448"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1168,7 +1226,7 @@
         <name>nat_num_t</name>
         <qualifiedname>nat_num_t::nat_num_t</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542" kindref="member">ullint</ref></type>
+          <type>ullint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1178,6 +1236,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="450" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="450" bodyend="463"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1188,7 +1247,7 @@
         <name>operator=</name>
         <qualifiedname>nat_num_t::operator=</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542" kindref="member">ullint</ref></type>
+          <type>ullint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1198,6 +1257,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="465" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="465" bodyend="479"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
       </memberdef>
@@ -1298,10 +1358,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="551" column="12" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="551" bodyend="558"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1ae1fc4c5d1d054bd60ef55126814268cd" compoundref="nat__num__t_8hpp" startline="54" endline="58">nat_num_t&lt; UINT_T, B &gt;::resize</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a2a7eae79a48f9b29a40c9103cfac72d7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_izqda</definition>
         <argsstring>() const</argsstring>
         <name>ceros_a_la_izqda</name>
@@ -1323,7 +1385,7 @@
         <referencedby refid="classnat__num__t_1aa7250f4e5c2c12501bb86b2845ddf633" compoundref="nat__num__t_8hpp" startline="642" endline="657">nat_num_t&lt; UINT_T, B &gt;::operator&gt;=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a386e6f8d5f8b23ea4ac327c3f3a33d61" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <type>size_t</type>
         <definition>size_t nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</definition>
         <argsstring>() const</argsstring>
         <name>ceros_a_la_drcha</name>
@@ -1343,7 +1405,7 @@
         <referencedby refid="classnat__num__t_1aeecab0dc9b304ff23fb08008db79fcc1" compoundref="nat__num__t_8hpp" startline="1074" endline="1132">nat_num_t&lt; UINT_T, B &gt;::operator/=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a14b63725918fba3ba1f731c3cda4b6ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint nat_num_t&lt; UINT_T, B &gt;::digs_no_significativos</definition>
         <argsstring>() const</argsstring>
         <name>digs_no_significativos</name>
@@ -1359,7 +1421,7 @@
         <referencedby refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a5a50025c599c9230b0ad18badc673e37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint nat_num_t&lt; UINT_T, B &gt;::digs_fracc_no_significativos</definition>
         <argsstring>() const</argsstring>
         <name>digs_fracc_no_significativos</name>
@@ -1511,6 +1573,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="712" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="712" bodyend="752"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1532,6 +1595,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="754" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="754" bodyend="765"/>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a07b25245f1119449ee9171ab2ea85de6" compoundref="nat__num__t_8hpp" startline="1273" endline="1321">nat_num_t&lt; UINT_T, B &gt;::minus</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1575,6 +1639,8 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="791" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="791" bodyend="847"/>
         <references refid="classnat__num__t_1a386e6f8d5f8b23ea4ac327c3f3a33d61" compoundref="nat__num__t_8hpp" startline="579" endline="592">nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</references>
+        <references refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1615,6 +1681,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="863" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="863" bodyend="892"/>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
+        <references refid="classnat__num__t_1a6eaaba593cfaccac8940e3dafada5dda" compoundref="nat__num__t_8hpp" startline="66" endline="70">nat_num_t&lt; UINT_T, B &gt;::insert</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
@@ -1635,6 +1703,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="897" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="897" bodyend="925"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1656,6 +1725,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="927" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="927" bodyend="955"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a07b25245f1119449ee9171ab2ea85de6" compoundref="nat__num__t_8hpp" startline="1273" endline="1321">nat_num_t&lt; UINT_T, B &gt;::minus</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
@@ -1699,6 +1769,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="984" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="984" bodyend="1029"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1720,6 +1791,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1031" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1031" bodyend="1043"/>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a07b25245f1119449ee9171ab2ea85de6" compoundref="nat__num__t_8hpp" startline="1273" endline="1321">nat_num_t&lt; UINT_T, B &gt;::minus</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1752,11 +1824,11 @@
         <name>substr</name>
         <qualifiedname>nat_num_t::substr</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>pos</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -1789,6 +1861,8 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1074" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1074" bodyend="1132"/>
         <references refid="classnat__num__t_1a386e6f8d5f8b23ea4ac327c3f3a33d61" compoundref="nat__num__t_8hpp" startline="579" endline="592">nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</references>
+        <references refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1870,6 +1944,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1184" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1184" bodyend="1212"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1a07b25245f1119449ee9171ab2ea85de6" compoundref="nat__num__t_8hpp" startline="1273" endline="1321">nat_num_t&lt; UINT_T, B &gt;::minus</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
@@ -1909,6 +1984,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1239" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1239" bodyend="1270"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
@@ -1919,7 +1995,7 @@
         <name>minus</name>
         <qualifiedname>nat_num_t::minus</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>sz</declname>
         </param>
         <briefdescription>
@@ -1929,6 +2005,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1273" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1273" bodyend="1321"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -1948,6 +2026,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1324" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1324" bodyend="1333"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1ad6d4ad46b1d326930b2e635c8c0df004" compoundref="nat__num__t_8hpp" startline="126" endline="129">nat_num_t&lt; UINT_T, B &gt;::begin</references>
         <references refid="classnat__num__t_1ac8a00bffa131db2a558d6131214bc481" compoundref="nat__num__t_8hpp" startline="131" endline="134">nat_num_t&lt; UINT_T, B &gt;::end</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
@@ -1965,6 +2044,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1343" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1343" bodyend="1374"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
@@ -1981,6 +2061,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1376" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1376" bodyend="1385"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="classnat__num__t_1ad6d4ad46b1d326930b2e635c8c0df004" compoundref="nat__num__t_8hpp" startline="126" endline="129">nat_num_t&lt; UINT_T, B &gt;::begin</references>
         <references refid="classnat__num__t_1ac8a00bffa131db2a558d6131214bc481" compoundref="nat__num__t_8hpp" startline="131" endline="134">nat_num_t&lt; UINT_T, B &gt;::end</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
@@ -2031,6 +2112,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1408" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1408" bodyend="1415"/>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1ae76e097322e6374c6aa5cb54b3ce7d3b" compoundref="nat__num__t_8hpp" startline="1397" endline="1400">nat_num_t&lt; UINT_T, B &gt;::m_abs</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
@@ -2062,6 +2144,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1423" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1423" bodyend="1429"/>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a7f59276202f957a0027f1784f88bc617" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -2093,6 +2176,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1437" column="11" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1437" bodyend="1477"/>
         <references refid="classnat__num__t_1a5884ef039a920a6cd34409885551d33a" compoundref="nat__num__t_8hpp" startline="1393" endline="1395">nat_num_t&lt; UINT_T, B &gt;::abs</references>
+        <references refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
         <references refid="classnat__num__t_1a04b3864005da7d30b79ebdb0b4529bcc" compoundref="nat__num__t_8hpp" startline="1068" endline="1072">nat_num_t&lt; UINT_T, B &gt;::substr</references>
@@ -2126,6 +2210,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1499" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1499" bodyend="1539"/>
+        <references refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
         <references refid="classnat__num__t_1a04b3864005da7d30b79ebdb0b4529bcc" compoundref="nat__num__t_8hpp" startline="1068" endline="1072">nat_num_t&lt; UINT_T, B &gt;::substr</references>
@@ -2160,6 +2245,8 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1561" column="4" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1561" bodyend="1577"/>
         <references refid="classnat__num__t_1a5884ef039a920a6cd34409885551d33a" compoundref="nat__num__t_8hpp" startline="1393" endline="1395">nat_num_t&lt; UINT_T, B &gt;::abs</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
+        <references refid="classnat__num__t_1a6eaaba593cfaccac8940e3dafada5dda" compoundref="nat__num__t_8hpp" startline="66" endline="70">nat_num_t&lt; UINT_T, B &gt;::insert</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
@@ -2194,6 +2281,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1594" column="12" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1594" bodyend="1597"/>
+        <references refid="classnat__num__t_1a1b4a8d75abb982ec660130abee27a08e" compoundref="nat__num__t_8hpp" startline="41">nat_num_t&lt; UINT_T, B &gt;::aux</references>
         <referencedby refid="nat__num__t_8hpp_1abb536e9b1b1447052db560972a06adbe" compoundref="nat__num__t_8hpp" startline="1965" endline="2100">operator&gt;&gt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1ab713b283652383fab4623d66b4fef0fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -2210,6 +2298,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1666" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1666" bodyend="1672"/>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
+        <referencedby refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a455685c25d4a39e136784fddf68b9a51" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2245,6 +2334,8 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1745" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1745" bodyend="1787"/>
         <references refid="classnat__num__t_1a5884ef039a920a6cd34409885551d33a" compoundref="nat__num__t_8hpp" startline="1393" endline="1395">nat_num_t&lt; UINT_T, B &gt;::abs</references>
         <references refid="classnat__num__t_1a386e6f8d5f8b23ea4ac327c3f3a33d61" compoundref="nat__num__t_8hpp" startline="579" endline="592">nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</references>
+        <references refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a52b809b6182fe1ae3ceb43114ce7a0dc" compoundref="nat__num__t_8hpp" startline="1914" endline="1930">nat_num_t&lt; UINT_T, B &gt;::reduce_fracc</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -2269,6 +2360,8 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1789" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1789" bodyend="1834"/>
         <references refid="classnat__num__t_1a5884ef039a920a6cd34409885551d33a" compoundref="nat__num__t_8hpp" startline="1393" endline="1395">nat_num_t&lt; UINT_T, B &gt;::abs</references>
         <references refid="classnat__num__t_1a386e6f8d5f8b23ea4ac327c3f3a33d61" compoundref="nat__num__t_8hpp" startline="579" endline="592">nat_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</references>
+        <references refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
         <references refid="classnat__num__t_1a52b809b6182fe1ae3ceb43114ce7a0dc" compoundref="nat__num__t_8hpp" startline="1914" endline="1930">nat_num_t&lt; UINT_T, B &gt;::reduce_fracc</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
@@ -2350,9 +2443,11 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1877" column="25" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1877" bodyend="1893"/>
         <references refid="classnat__num__t_1a14b63725918fba3ba1f731c3cda4b6ca" compoundref="nat__num__t_8hpp" startline="594" endline="598">nat_num_t&lt; UINT_T, B &gt;::digs_no_significativos</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
         <referencedby refid="classnat__num__t_1a3a404549ae4f05cafef5d6ceec3a6646" compoundref="nat__num__t_8hpp" startline="1437" endline="1477">nat_num_t&lt; UINT_T, B &gt;::div2</referencedby>
+        <referencedby refid="classnat__num__t_1acc621fe7875d86c5f40aff5d56d832be" compoundref="nat__num__t_8hpp" startline="1608" endline="1658">nat_num_t&lt; UINT_T, B &gt;::div_gen_step</referencedby>
         <referencedby refid="classnat__num__t_1aad12fc5939f569965b9694292906194c" compoundref="nat__num__t_8hpp" startline="1408" endline="1415">nat_num_t&lt; UINT_T, B &gt;::divB</referencedby>
         <referencedby refid="classnat__num__t_1a86fb8e79d86da172cc7adff7632ac725" compoundref="nat__num__t_8hpp" startline="1745" endline="1787">nat_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
         <referencedby refid="classnat__num__t_1affad1b46b9de15da174a01644271785f" compoundref="nat__num__t_8hpp" startline="1499" endline="1539">nat_num_t&lt; UINT_T, B &gt;::m_div2</referencedby>
@@ -2400,6 +2495,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1895" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1895" bodyend="1912"/>
         <references refid="classnat__num__t_1a14b63725918fba3ba1f731c3cda4b6ca" compoundref="nat__num__t_8hpp" startline="594" endline="598">nat_num_t&lt; UINT_T, B &gt;::digs_no_significativos</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
@@ -2417,6 +2513,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1914" column="25" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1914" bodyend="1930"/>
         <references refid="classnat__num__t_1a5a50025c599c9230b0ad18badc673e37" compoundref="nat__num__t_8hpp" startline="599" endline="603">nat_num_t&lt; UINT_T, B &gt;::digs_fracc_no_significativos</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
         <referencedby refid="classnat__num__t_1a86fb8e79d86da172cc7adff7632ac725" compoundref="nat__num__t_8hpp" startline="1745" endline="1787">nat_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
@@ -2436,6 +2533,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1932" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1932" bodyend="1949"/>
         <references refid="classnat__num__t_1a5a50025c599c9230b0ad18badc673e37" compoundref="nat__num__t_8hpp" startline="599" endline="603">nat_num_t&lt; UINT_T, B &gt;::digs_fracc_no_significativos</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
         <references refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</references>
         <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
@@ -2448,7 +2546,7 @@
         <name>resize</name>
         <qualifiedname>nat_num_t::resize</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -2458,6 +2556,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="54" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="54" bodyend="58"/>
+        <referencedby refid="classnat__num__t_1a8f8bdd2355aab6b9b24f4c87cd68f5b7" compoundref="nat__num__t_8hpp" startline="137" endline="142">nat_num_t&lt; UINT_T, B &gt;::nat_num_t</referencedby>
+        <referencedby refid="classnat__num__t_1a2f2bc5932044b67b90f5fba65c0fbb36" compoundref="nat__num__t_8hpp" startline="144" endline="155">nat_num_t&lt; UINT_T, B &gt;::operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a6eaaba593cfaccac8940e3dafada5dda" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnat__num__t" kindref="compound">nat_num_t</ref> &amp;</type>
@@ -2466,11 +2566,11 @@
         <name>insert</name>
         <qualifiedname>nat_num_t::insert</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>pos1</declname>
         </param>
         <param>
-          <type>const dig_t</type>
+          <type>const <ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref></type>
           <declname>chardig</declname>
         </param>
         <briefdescription>
@@ -2480,6 +2580,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="66" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="66" bodyend="70"/>
+        <referencedby refid="classnat__num__t_1ac1c32096ec68d63711d60bcc4f519349" compoundref="nat__num__t_8hpp" startline="863" endline="892">nat_num_t&lt; UINT_T, B &gt;::operator*</referencedby>
+        <referencedby refid="classnat__num__t_1ab352e91cb85a60cc2ec06082f59dca99" compoundref="nat__num__t_8hpp" startline="1561" endline="1577">nat_num_t&lt; UINT_T, B &gt;::remBm1</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a587a7f6eed165039c71180810e904bb1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnat__num__t" kindref="compound">nat_num_t</ref> &amp;</type>
@@ -2488,15 +2590,15 @@
         <name>insert</name>
         <qualifiedname>nat_num_t::insert</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>pos1</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>n</declname>
         </param>
         <param>
-          <type>dig_t</type>
+          <type><ref refid="classnat__num__t_1a82f26ef82ea7ae5a174256c8c46e257d" kindref="member">dig_t</ref></type>
           <declname>c</declname>
         </param>
         <briefdescription>
@@ -2532,11 +2634,11 @@
         <name>erase</name>
         <qualifiedname>nat_num_t::erase</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>pos</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>npos</declname>
         </param>
         <briefdescription>
@@ -2546,19 +2648,35 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="85" column="18" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="85" bodyend="95"/>
+        <references refid="classnat__num__t_1a7a67b73e05ec602a2fd57d34201ad36c" compoundref="nat__num__t_8hpp" startline="107" endline="110">nat_num_t&lt; UINT_T, B &gt;::operator[]</references>
+        <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
+        <referencedby refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
+        <referencedby refid="classnat__num__t_1aad12fc5939f569965b9694292906194c" compoundref="nat__num__t_8hpp" startline="1408" endline="1415">nat_num_t&lt; UINT_T, B &gt;::divB</referencedby>
+        <referencedby refid="classnat__num__t_1a86fb8e79d86da172cc7adff7632ac725" compoundref="nat__num__t_8hpp" startline="1745" endline="1787">nat_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
+        <referencedby refid="classnat__num__t_1af92fae6d437e61b258bb0fa3987b91b6" compoundref="nat__num__t_8hpp" startline="1423" endline="1429">nat_num_t&lt; UINT_T, B &gt;::m_divB</referencedby>
+        <referencedby refid="classnat__num__t_1a33fdda0e7d67cc2f9a9c90ea001e8c2b" compoundref="nat__num__t_8hpp" startline="1789" endline="1834">nat_num_t&lt; UINT_T, B &gt;::m_EuclidDiv</referencedby>
+        <referencedby refid="classnat__num__t_1a07b25245f1119449ee9171ab2ea85de6" compoundref="nat__num__t_8hpp" startline="1273" endline="1321">nat_num_t&lt; UINT_T, B &gt;::minus</referencedby>
+        <referencedby refid="classnat__num__t_1ac1c32096ec68d63711d60bcc4f519349" compoundref="nat__num__t_8hpp" startline="863" endline="892">nat_num_t&lt; UINT_T, B &gt;::operator*</referencedby>
+        <referencedby refid="classnat__num__t_1aa7de2415a6824b4af279ec90aac74dd3" compoundref="nat__num__t_8hpp" startline="754" endline="765">nat_num_t&lt; UINT_T, B &gt;::operator-</referencedby>
+        <referencedby refid="classnat__num__t_1a0951fd96d0bf5389fd1a30aa2c19ef6a" compoundref="nat__num__t_8hpp" startline="1031" endline="1043">nat_num_t&lt; UINT_T, B &gt;::operator-=</referencedby>
+        <referencedby refid="classnat__num__t_1aa1a1fa2bc567648fb5fd76d2a73e911e" compoundref="nat__num__t_8hpp" startline="791" endline="847">nat_num_t&lt; UINT_T, B &gt;::operator/</referencedby>
+        <referencedby refid="classnat__num__t_1aeecab0dc9b304ff23fb08008db79fcc1" compoundref="nat__num__t_8hpp" startline="1074" endline="1132">nat_num_t&lt; UINT_T, B &gt;::operator/=</referencedby>
+        <referencedby refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</referencedby>
+        <referencedby refid="classnat__num__t_1a52b809b6182fe1ae3ceb43114ce7a0dc" compoundref="nat__num__t_8hpp" startline="1914" endline="1930">nat_num_t&lt; UINT_T, B &gt;::reduce_fracc</referencedby>
+        <referencedby refid="classnat__num__t_1ab352e91cb85a60cc2ec06082f59dca99" compoundref="nat__num__t_8hpp" startline="1561" endline="1577">nat_num_t&lt; UINT_T, B &gt;::remBm1</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1abc3e8d570ef7c084de22f1976d146b21" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>iterator</type>
+        <type><ref refid="classnat__num__t_1a82f4119697ef1ea0c1c9ea6034d1edc0" kindref="member">iterator</ref></type>
         <definition>iterator nat_num_t&lt; UINT_T, B &gt;::erase</definition>
         <argsstring>(iterator first, iterator last)</argsstring>
         <name>erase</name>
         <qualifiedname>nat_num_t::erase</qualifiedname>
         <param>
-          <type>iterator</type>
+          <type><ref refid="classnat__num__t_1a82f4119697ef1ea0c1c9ea6034d1edc0" kindref="member">iterator</ref></type>
           <declname>first</declname>
         </param>
         <param>
-          <type>iterator</type>
+          <type><ref refid="classnat__num__t_1a82f4119697ef1ea0c1c9ea6034d1edc0" kindref="member">iterator</ref></type>
           <declname>last</declname>
         </param>
         <briefdescription>
@@ -2568,6 +2686,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="97" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="97" bodyend="105"/>
+        <references refid="classnat__num__t_1a7a67b73e05ec602a2fd57d34201ad36c" compoundref="nat__num__t_8hpp" startline="107" endline="110">nat_num_t&lt; UINT_T, B &gt;::operator[]</references>
+        <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1acc621fe7875d86c5f40aff5d56d832be" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2588,7 +2708,7 @@
           <declname>coc</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref> &amp;</type>
+          <type>usint &amp;</type>
           <declname>ndig</declname>
         </param>
         <briefdescription>
@@ -2598,6 +2718,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1608" column="12" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1608" bodyend="1658"/>
+        <references refid="classnat__num__t_1aef1019272164e14682dc667e158afa53" compoundref="nat__num__t_8hpp" startline="121" endline="124">nat_num_t&lt; UINT_T, B &gt;::push_back</references>
+        <references refid="classnat__num__t_1a5a1e29dfd320bf08016a2f0227621f0d" compoundref="nat__num__t_8hpp" startline="1877" endline="1893">nat_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
+        <referencedby refid="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" compoundref="nat__num__t_8hpp" startline="1682" endline="1733">nat_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
       </memberdef>
       <memberdef kind="function" id="classnat__num__t_1a04fa0b36ad6a16241746cb207c649b52" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2618,11 +2742,11 @@
           <declname>dvsor</declname>
         </param>
         <param>
-          <type>const <ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+          <type>const usint</type>
           <declname>szndo</declname>
         </param>
         <param>
-          <type>const <ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+          <type>const usint</type>
           <declname>szsor</declname>
         </param>
         <briefdescription>
@@ -2632,6 +2756,18 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" line="1682" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/nat_num_t.hpp" bodystart="1682" bodyend="1733"/>
+        <references refid="classnat__num__t_1a296e66bafb159169f28cab2ef1357f14" compoundref="nat__num__t_8hpp" startline="116" endline="119">nat_num_t&lt; UINT_T, B &gt;::clear</references>
+        <references refid="classnat__num__t_1acc621fe7875d86c5f40aff5d56d832be" compoundref="nat__num__t_8hpp" startline="1608" endline="1658">nat_num_t&lt; UINT_T, B &gt;::div_gen_step</references>
+        <references refid="classnat__num__t_1aee94eee48b8f2ca712b2f5b08d1b75ad" compoundref="nat__num__t_8hpp" startline="85" endline="95">nat_num_t&lt; UINT_T, B &gt;::erase</references>
+        <references refid="classnat__num__t_1ab713b283652383fab4623d66b4fef0fa" compoundref="nat__num__t_8hpp" startline="1666" endline="1672">nat_num_t&lt; UINT_T, B &gt;::es_cero</references>
+        <references refid="classnat__num__t_1aa0ced0babafe7e7e98b393c63d0c06d9" compoundref="nat__num__t_8hpp" startline="60" endline="64">nat_num_t&lt; UINT_T, B &gt;::push_front</references>
+        <references refid="classnat__num__t_1a3f420ff49cf6b55ef38936b2035a4071" compoundref="nat__num__t_8hpp" startline="49" endline="52">nat_num_t&lt; UINT_T, B &gt;::size</references>
+        <referencedby refid="classnat__num__t_1a3a404549ae4f05cafef5d6ceec3a6646" compoundref="nat__num__t_8hpp" startline="1437" endline="1477">nat_num_t&lt; UINT_T, B &gt;::div2</referencedby>
+        <referencedby refid="classnat__num__t_1a86fb8e79d86da172cc7adff7632ac725" compoundref="nat__num__t_8hpp" startline="1745" endline="1787">nat_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
+        <referencedby refid="classnat__num__t_1affad1b46b9de15da174a01644271785f" compoundref="nat__num__t_8hpp" startline="1499" endline="1539">nat_num_t&lt; UINT_T, B &gt;::m_div2</referencedby>
+        <referencedby refid="classnat__num__t_1a33fdda0e7d67cc2f9a9c90ea001e8c2b" compoundref="nat__num__t_8hpp" startline="1789" endline="1834">nat_num_t&lt; UINT_T, B &gt;::m_EuclidDiv</referencedby>
+        <referencedby refid="classnat__num__t_1aa1a1fa2bc567648fb5fd76d2a73e911e" compoundref="nat__num__t_8hpp" startline="791" endline="847">nat_num_t&lt; UINT_T, B &gt;::operator/</referencedby>
+        <referencedby refid="classnat__num__t_1aeecab0dc9b304ff23fb08008db79fcc1" compoundref="nat__num__t_8hpp" startline="1074" endline="1132">nat_num_t&lt; UINT_T, B &gt;::operator/=</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

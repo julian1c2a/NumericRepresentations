@@ -28,9 +28,9 @@
 <simplesect>
     <title>Funciones    </title>
         <itemizedlist>
-            <listitem><para>template&lt;type_traits::allowable_base_type_c Int_Type, Int_Type Base, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">std::size_t</link> Length&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))</para><para>std::istream &amp; <link linkend="_namespace_num_repr_1ab9f98f4d0eefbee0c13e52061d4a5c2d">NumRepr::operator&gt;&gt;</link> (std::istream &amp;is, pfx_rat_reg_digs_t&lt; Int_Type, Base, Length &gt; &amp;arg)</para>
+            <listitem><para>template&lt;type_traits::allowable_base_type_c Int_Type, Int_Type Base, std::size_t Length&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))</para><para>std::istream &amp; <link linkend="_namespace_num_repr_1ab9f98f4d0eefbee0c13e52061d4a5c2d">NumRepr::operator&gt;&gt;</link> (std::istream &amp;is, pfx_rat_reg_digs_t&lt; Int_Type, Base, Length &gt; &amp;arg)</para>
 </listitem>
-            <listitem><para>template&lt;type_traits::allowable_base_type_c Int_Type, Int_Type Base, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">std::size_t</link> Long&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())</para><para>std::ostream &amp; <link linkend="_namespace_num_repr_1aa425b3bf3dd35e9867de22ac45a46616">NumRepr::operator&lt;&lt;</link> (std::ostream &amp;os, const pfx_rat_reg_digs_t&lt; Int_Type, Base, Long &gt; &amp;arg)</para>
+            <listitem><para>template&lt;type_traits::allowable_base_type_c Int_Type, Int_Type Base, std::size_t Long&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())</para><para>std::ostream &amp; <link linkend="_namespace_num_repr_1aa425b3bf3dd35e9867de22ac45a46616">NumRepr::operator&lt;&lt;</link> (std::ostream &amp;os, const pfx_rat_reg_digs_t&lt; Int_Type, Base, Long &gt; &amp;arg)</para>
 </listitem>
         </itemizedlist>
 </simplesect>

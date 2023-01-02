@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
+  <compounddef id="namespaceutilities_1_1special" kind="namespace" language="C++">
+    <compoundname>utilities::special</compoundname>
+    <innerclass refid="structutilities_1_1special_1_1pow___b__to___e__t" prot="public">utilities::special::pow_B_to_E_t</innerclass>
+    <innerclass refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4" prot="public">utilities::special::pow_B_to_E_t&lt; Base, 0 &gt;</innerclass>
+    <innerclass refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4" prot="public">utilities::special::pow_B_to_E_t&lt; Base, 1 &gt;</innerclass>
+    <innerclass refid="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4" prot="public">utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;</innerclass>
+    <innerclass refid="structutilities_1_1special_1_1tuple__builder__t" prot="public">utilities::special::tuple_builder_t</innerclass>
+    <innerclass refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21" prot="public">utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</innerclass>
+    <innerclass refid="structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802" prot="public">utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</innerclass>
+    <innerclass refid="structutilities_1_1special_1_1tuple__user__constructor__t" prot="public">utilities::special::tuple_user_constructor_t</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceutilities_1_1special_1a0c24705b4d3cfd27689f38201488c087" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a" kindref="member">NumRepr::usint_t</ref></type>
+            <declname>Base</declname>
+            <defname>Base</defname>
+          </param>
+          <param>
+            <type><ref refid="namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a" kindref="member">NumRepr::usint_t</ref></type>
+            <declname>Exp</declname>
+            <defname>Exp</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref></type>
+        <definition>constexpr NumRepr::uint128_t utilities::special::Pow_B2L_v</definition>
+        <argsstring></argsstring>
+        <name>Pow_B2L_v</name>
+        <qualifiedname>utilities::special::Pow_B2L_v</qualifiedname>
+        <initializer>= <ref refid="structutilities_1_1special_1_1pow___b__to___e__t" kindref="compound">pow_B_to_E_t</ref>&lt;Base,Exp&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="218" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceutilities_1_1special_1ada5efac888ec6774ade3b0ff5911cb89" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>std::int64_t</type>
+            <declname>BeginIntObj_ct</declname>
+            <defname>BeginIntObj_ct</defname>
+          </param>
+          <param>
+            <type>std::int64_t</type>
+            <declname>EndIntObj_ct</declname>
+            <defname>EndIntObj_ct</defname>
+          </param>
+          <param>
+            <type>std::int64_t</type>
+            <declname>Base</declname>
+            <defname>Base</defname>
+          </param>
+          <param>
+            <type>template&lt; std::int64_t, std::int64_t &gt; class</type>
+            <declname>Funct_tt</declname>
+            <defname>Funct_tt</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr auto</type>
+        <definition>constexpr auto utilities::special::tuple_constr_v</definition>
+        <argsstring></argsstring>
+        <name>tuple_constr_v</name>
+        <qualifiedname>utilities::special::tuple_constr_v</qualifiedname>
+        <initializer>=
+	<ref refid="structutilities_1_1special_1_1tuple__user__constructor__t" kindref="compound">tuple_user_constructor_t</ref>&lt;
+			BeginIntObj_ct,
+			EndIntObj_ct,
+			Base,
+			Funct_tt
+	&gt;::build()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="336" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceutilities_1_1special_1a3645f9215c31596f25430e9c722eef17" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a" kindref="member">NumRepr::usint_t</ref></type>
+            <declname>B</declname>
+            <defname>B</defname>
+          </param>
+          <param>
+            <type><ref refid="namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a" kindref="member">NumRepr::usint_t</ref></type>
+            <declname>L</declname>
+            <defname>L</defname>
+          </param>
+        </templateparamlist>
+        <type>consteval <ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref></type>
+        <definition>consteval NumRepr::uint128_t utilities::special::Base_pow_to_Size</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>Base_pow_to_Size</name>
+        <qualifiedname>utilities::special::Base_pow_to_Size</qualifiedname>
+        <briefdescription>
+<para>FORMA SENCILLA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="179" column="20" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="179" bodyend="189"/>
+        <references refid="namespaceutilities_1_1special_1a3645f9215c31596f25430e9c722eef17" compoundref="utilities_8hpp" startline="179" endline="189">Base_pow_to_Size</references>
+        <referencedby refid="namespaceutilities_1_1special_1a3645f9215c31596f25430e9c722eef17" compoundref="utilities_8hpp" startline="179" endline="189">Base_pow_to_Size</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceutilities_1_1special_1a600ef880527fb943066e81d144a572d4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>start</declname>
+            <defname>start</defname>
+          </param>
+          <param>
+            <type>std::size_t</type>
+            <declname>Base</declname>
+            <defname>Base</defname>
+          </param>
+          <param>
+            <type>std::size_t ...</type>
+            <declname>Is</declname>
+            <defname>Is</defname>
+          </param>
+          <param>
+            <type>template&lt; std::size_t, std::size_t &gt; typename</type>
+            <declname>Funct_tt</declname>
+            <defname>Funct_tt</defname>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr void</type>
+        <definition>constexpr void utilities::special::ctf_helper</definition>
+        <argsstring>(std::index_sequence&lt; Is... &gt;, std::tuple&lt; Ts... &gt; const &amp;t) noexcept</argsstring>
+        <name>ctf_helper</name>
+        <qualifiedname>utilities::special::ctf_helper</qualifiedname>
+        <param>
+          <type>std::index_sequence&lt; Is... &gt;</type>
+        </param>
+        <param>
+          <type>std::tuple&lt; Ts... &gt; const &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="355" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="355" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceutilities_1_1special_1a450a92504b01e717cfe785076cf97b93" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>start</declname>
+            <defname>start</defname>
+          </param>
+          <param>
+            <type>std::size_t</type>
+            <declname>end</declname>
+            <defname>end</defname>
+          </param>
+          <param>
+            <type>std::size_t</type>
+            <declname>Base</declname>
+            <defname>Base</defname>
+          </param>
+          <param>
+            <type>template&lt; typename, std::size_t, std::size_t &gt; typename</type>
+            <declname>Funct_tt</declname>
+            <defname>Funct_tt</defname>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr void</type>
+        <definition>constexpr void utilities::special::ct_for</definition>
+        <argsstring>(std::tuple&lt; Ts... &gt; const &amp;t) noexcept</argsstring>
+        <name>ct_for</name>
+        <qualifiedname>utilities::special::ct_for</qualifiedname>
+        <param>
+          <type>std::tuple&lt; Ts... &gt; const &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="374" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="374" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceutilities_1_1special_1a92614fb496f783431fe229a771f40a00" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>auto</type>
+            <declname>B</declname>
+            <defname>B</defname>
+          </param>
+          <param>
+            <type>auto</type>
+            <declname>L</declname>
+            <defname>L</defname>
+          </param>
+          <param>
+            <type>typename A</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">NumRepr::uint128_t</ref></type>
+        <definition>constexpr NumRepr::uint128_t utilities::special::conversion_to_int</definition>
+        <argsstring>(const A &amp;arg) noexcept</argsstring>
+        <name>conversion_to_int</name>
+        <qualifiedname>utilities::special::conversion_to_int</qualifiedname>
+        <param>
+          <type>const A &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>CONVERSION DE REGISTRO DE DIGITOS A ENTERO EN TIEMPO DE COMPILACION. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="382" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="382" bodyend="392"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>LA LLAMADA &quot;REAL&quot; ES <verbatim>            assign_with_order(dest,args...);
+</verbatim> donde los &quot;args&quot; son de tipo &quot;Ts&quot; (que es uno solo, todos iguales entre si) </para>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="174" column="1"/>
+  </compounddef>
+</doxygen>

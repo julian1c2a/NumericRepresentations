@@ -1,0 +1,153 @@
+\hypertarget{pruebas__dig__t_8cpp_source}{}\doxysection{pruebas\+\_\+dig\+\_\+t.\+cpp}
+\label{pruebas__dig__t_8cpp_source}\index{pruebas\_dig\_t.cpp@{pruebas\_dig\_t.cpp}}
+\mbox{\hyperlink{pruebas__dig__t_8cpp}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utilities_8hpp}{utilities.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{nat__reg__digs__t_8hpp}{nat\_reg\_digs\_t.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <typeinfo>}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00005}00005\ \textcolor{comment}{//template<NumRepr::uint128\_t\ B,NumRepr::uint128\_t\ L>}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00006}00006\ \textcolor{comment}{//consteval\ inline}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00007}00007\ \textcolor{comment}{//NumRepr::uint128\_t\ Base\_pow\_to\_Size()\ noexcept\ \{}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00008}00008\ \textcolor{comment}{//\ \ \ \ \ \ if\ constexpr\ (L==0)}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00009}00009\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ static\_cast<NumRepr::uint128\_t>(1);}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00010}00010\ \textcolor{comment}{//\ \ \ \ \ \ else\ if\ constexpr\ (L==1)}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00011}00011\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ static\_cast<NumRepr::uint128\_t>(B);}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00012}00012\ \textcolor{comment}{//\ \ \ \ \ \ else\ if\ constexpr\ (L==2)}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00013}00013\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ static\_cast<NumRepr::uint128\_t>(B)*static\_cast<NumRepr::uint128\_t>(B);}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00014}00014\ \textcolor{comment}{//\ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00015}00015\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ (static\_cast<NumRepr::uint128\_t>(B)*Base\_pow\_to\_Size<B,L-\/1>());}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00016}00016\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00018}00018\ \textcolor{keyword}{template}<\textcolor{keywordtype}{size\_t}\ B,\textcolor{keywordtype}{size\_t}\ L>}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00019}00019\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00020}00020\ \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{NumRepr::uint128\_t}}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00021}\mbox{\hyperlink{pruebas__dig__t_8cpp_a6061ebc60c8900e8bd20afe55a04eaa9}{00021}}\ \mbox{\hyperlink{pruebas__dig__t_8cpp_a6061ebc60c8900e8bd20afe55a04eaa9}{conversion\_to\_int}}(\mbox{\hyperlink{struct_num_repr_1_1reg__digs__t}{NumRepr::register\_of\_digits\_t<B,L>}}\ \&\ arg)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }NR\ =\ \mbox{\hyperlink{namespace_num_repr}{NumRepr}};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }us\ =\ \mbox{\hyperlink{namespaceutilities_1_1special}{utilities::special}};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ us::conversion\_to\_int<B,L,NR::register\_of\_digits\_t<B,L>>(arg);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00027}\mbox{\hyperlink{pruebas__dig__t_8cpp_a13ad836519e767648b12d2910466d79a}{00027}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{pruebas__dig__t_8cpp_a13ad836519e767648b12d2910466d79a}{trisums\_t}}\ =\ std::tuple<std::int64\_t,std::int64\_t,std::int64\_t>;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00029}\mbox{\hyperlink{pruebas__dig__t_8cpp_ade7291f8ff5bdbc6caa1c4b79da8004c}{00029}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{pruebas__dig__t_8cpp_ade7291f8ff5bdbc6caa1c4b79da8004c}{result\_test\_binop\_con\_asignacion}}\ =\ std::vector<trisums\_t>;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00031}\mbox{\hyperlink{pruebas__dig__t_8cpp_a9c9843b98bf8f42ee03c7d9a5f051d44}{00031}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{pruebas__dig__t_8cpp_a9c9843b98bf8f42ee03c7d9a5f051d44}{retorno\_de\_test\_t}}\ =\ std::tuple<\ \ bool,}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pruebas__dig__t_8cpp_ade7291f8ff5bdbc6caa1c4b79da8004c}{result\_test\_binop\_con\_asignacion}},}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pruebas__dig__t_8cpp_ade7291f8ff5bdbc6caa1c4b79da8004c}{result\_test\_binop\_con\_asignacion}}>;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00035}00035\ \textcolor{keyword}{template}<NumRepr::ull\textcolor{keywordtype}{int}\_t\ Base,NumRepr::ull\textcolor{keywordtype}{int}\_t\ Longitud>}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00036}\mbox{\hyperlink{pruebas__dig__t_8cpp_ab0db6da550ea974c5b97a28313d89163}{00036}}\ \mbox{\hyperlink{pruebas__dig__t_8cpp_a9c9843b98bf8f42ee03c7d9a5f051d44}{retorno\_de\_test\_t}}\ \mbox{\hyperlink{pruebas__dig__t_8cpp_ab0db6da550ea974c5b97a28313d89163}{test\_suma\_con\_asignacion}}()\ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }rd\_t\ =\ \mbox{\hyperlink{struct_num_repr_1_1reg__digs__t}{NumRepr::register\_of\_digits\_t<Base,Longitud>}};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }d\_t\ \ =\ \mbox{\hyperlink{struct_num_repr_1_1dig__t}{NumRepr::digit\_t<Base>}};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }us\ =\ \mbox{\hyperlink{namespaceutilities_1_1special}{utilities::special}};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }NR\ =\ \mbox{\hyperlink{namespace_num_repr}{NumRepr}};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ todo\_correcto\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ NR::uint128\_t\ B2L\{us::Base\_pow\_to\_Size<Base,Longitud>()\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ std::vector<trisums\_t>\ correctos\{\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ correctos.reserve(B2L*B2L);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ std::vector<trisums\_t>\ errores\{\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ errores.reserve(B2L*B2L);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ rd\_t\ rd\_x\{\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ rd\_x.fill(d\_t\{0\});}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ rd\_t\ rd\_y\{\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ rd\_y.fill(d\_t\{0\});}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(std::uint64\_t\ ix\{0\}\ ;\ ix\ <\ B2L\ ;\ ++ix)\ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(std::uint64\_t\ iy\{0\}\ ;\ iy\ <\ B2L\ ;\ ++iy)\ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rd\_t\ rd\_z\{rd\_x\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NR::m\_sum(rd\_z,rd\_y);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ iz\ =\ conversion\_to\_int<Base,Longitud>(rd\_z);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ iw\ =\ (ix+iy)\%B2L;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ bien\ \{iz==iw\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{pruebas__dig__t_8cpp_a13ad836519e767648b12d2910466d79a}{trisums\_t}}\ trio\{ix,iy,iz\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!bien)\ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rd\_t\ rd\_w\{rd\_x\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NR::m\_sum(rd\_w,rd\_y);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errores.push\_back(trio);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correctos.push\_back(trio);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ todo\_correcto\ =\ todo\_correcto\ \&\&\ bien;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_incr(rd\_y);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_incr(rd\_x);}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{pruebas__dig__t_8cpp_a9c9843b98bf8f42ee03c7d9a5f051d44}{retorno\_de\_test\_t}}\{todo\_correcto,correctos,errores\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00078}\mbox{\hyperlink{pruebas__dig__t_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00078}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pruebas__dig__t_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespace_num_repr}{NumRepr}};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00082}00082\ \textcolor{comment}{//\ \ \ \ \ \ constexpr\ ullint\_t\ B\{10u\};}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00083}00083\ \textcolor{comment}{//\ \ \ \ \ \ //constexpr\ ullint\_t\ Bm1\{B-\/1\};}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00084}00084\ \textcolor{comment}{//\ \ \ \ \ \ constexpr\ size\_t\ L\{5\};}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00085}00085\ \textcolor{comment}{//\ \ \ \ \ \ using\ rd\_t\ =\ register\_of\_digits\_t<B,L>;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//using\ d\_t\ =\ digit\_t<B>;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00089}00089\ \textcolor{comment}{}\textcolor{comment}{//\ \ \ \ \ \ rd\_t\ opndo\{1,3,5,2,6\};}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00090}00090\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00091}00091\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo.index\_of\_MSDig()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00092}00092\ \textcolor{comment}{//\ \ \ \ \ \ opndo\ >>=\ 1;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00093}00093\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00094}00094\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo.index\_of\_MSDig()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00095}00095\ \textcolor{comment}{//\ \ \ \ \ \ opndo\ >>=\ 1;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00096}00096\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00097}00097\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo.index\_of\_MSDig()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00098}00098\ \textcolor{comment}{//\ \ \ \ \ \ opndo\ >>=\ 1;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00099}00099\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00100}00100\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo.index\_of\_MSDig()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00101}00101\ \textcolor{comment}{//\ \ \ \ \ \ opndo\ >>=\ 1;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00102}00102\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00103}00103\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo.index\_of\_MSDig()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00104}00104\ \textcolor{comment}{//\ \ \ \ \ \ opndo\ >>=\ 1;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00105}00105\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00106}00106\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ opndo.index\_of\_MSDig()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00107}00107\ \textcolor{comment}{//\ \ \ \ \ \ opndo\ =\ rd\_t\{6,6,7,9,5\};}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00108}00108\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}aprox\ to\ units\ of\ "{}\ <<\ opndo\ <<\ "{}\ is\ "{}\ <<\ (opndo=aprox\_units\_divB(opndo))\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00109}00109\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}aprox\ to\ units\ of\ "{}\ <<\ opndo\ <<\ "{}\ is\ "{}\ <<\ (opndo=aprox\_units\_divB(opndo))\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00110}00110\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}aprox\ to\ units\ of\ "{}\ <<\ opndo\ <<\ "{}\ is\ "{}\ <<\ (opndo=aprox\_units\_divB(opndo))\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00111}00111\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}aprox\ to\ units\ of\ "{}\ <<\ opndo\ <<\ "{}\ is\ "{}\ <<\ (opndo=aprox\_units\_divB(opndo))\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00112}00112\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}aprox\ to\ units\ of\ "{}\ <<\ opndo\ <<\ "{}\ is\ "{}\ <<\ (opndo=aprox\_units\_divB(opndo))\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00113}00113\ \textcolor{comment}{//\ \ \ \ \ \ rd\_t\ lopndo\{9,9,8,2,5\};}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00114}00114\ \textcolor{comment}{//\ \ \ \ \ \ rd\_t\ ropndo\{0,0,5,8,7\};}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00115}00115\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}\ aprox\ of\ "{}\ <<\ lopndo\ \ <<\ \ "{}\ is\ "{}\ <<\ aprox\_units\_divB\_n<uchint\_t,10,5,4>(lopndo)\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00116}00116\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}\ aprox\ of\ "{}\ <<\ lopndo\ \ <<\ \ "{}\ is\ "{}\ <<\ aprox\_units\_divB\_n<uchint\_t,10,5,3>(lopndo)\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00117}00117\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}\ aprox\ of\ "{}\ <<\ lopndo\ \ <<\ \ "{}\ is\ "{}\ <<\ aprox\_units\_divB\_n<uchint\_t,10,5,2>(lopndo)\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00118}00118\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}\ aprox\ of\ "{}\ <<\ lopndo\ \ <<\ \ "{}\ is\ "{}\ <<\ aprox\_units\_divB\_n<uchint\_t,10,5,1>(lopndo)\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_ad76647f24e00f176e977848784fb7826}{ullint\_t}}\ B2\{2u\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ L2\{10\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::boolalpha;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ resultado\{test\_suma\_con\_asignacion<B2,L2>()\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ todo\_correcto\{std::get<0>(resultado)\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ correctos\{std::get<1>(resultado)\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ errores\{std::get<2>(resultado)\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}TEST\ para\ la\ suma\ y\ asignacion\ sobre\ el\ tipo\ register\_of\_digits\_t<"{}}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ int(B2)\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ int(L2)\ <<\ \textcolor{stringliteral}{"{}>"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}El\ vector\ \(\backslash\)"{}correctos\(\backslash\)"{}\ tiene\ "{}}\ <<\ correctos.size()\ <<\ \textcolor{stringliteral}{"{}\ elementos\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}El\ vector\ \(\backslash\)"{}errores\ \ \(\backslash\)"{}\ tiene\ "{}}\ <<\ errores.size()\ <<\ \textcolor{stringliteral}{"{}\ elementos\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Todo\ ha\ ido\ bien\ :\ "{}}\ <<\ todo\_correcto\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespace_num_repr_ad76647f24e00f176e977848784fb7826}{ullint\_t}}\ B1\{10u\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ L1\{3\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::boolalpha;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ resultado\{test\_suma\_con\_asignacion<B1,L1>()\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ todo\_correcto\{std::get<0>(resultado)\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ correctos\{std::get<1>(resultado)\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ errores\{std::get<2>(resultado)\};}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}TEST\ para\ la\ suma\ y\ asignacion\ sobre\ el\ tipo\ register\_of\_digits\_t<"{}}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ int(B1)\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ int(L1)\ <<\ \textcolor{stringliteral}{"{}>"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}El\ vector\ \(\backslash\)"{}correctos\(\backslash\)"{}\ tiene\ "{}}\ <<\ correctos.size()\ <<\ \textcolor{stringliteral}{"{}\ elementos\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}El\ vector\ \(\backslash\)"{}errores\ \ \(\backslash\)"{}\ tiene\ "{}}\ <<\ errores.size()\ <<\ \textcolor{stringliteral}{"{}\ elementos\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Todo\ ha\ ido\ bien\ :\ "{}}\ <<\ todo\_correcto\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{pruebas__dig__t_8cpp_source_l00151}00151\ }
+
+\end{DoxyCode}

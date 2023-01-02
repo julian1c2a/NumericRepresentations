@@ -1,4 +1,4 @@
-.TH "details::cp_delete< aT, T, B >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "details::cp_delete< aT, T, B >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,24 +15,31 @@ details::cp_delete< aT, T, B >
 .RI "void \fBoperator()\fP (aT **var_list_list)"
 .br
 .in -1c
+.SS "Métodos privados estáticos"
+
+.in +1c
+.ti -1c
+.RI "static void \fBdestruye_lista_de_variables\fP (aT *var_list)"
+.br
+.in -1c
 .SH "Descripción detallada"
 .PP 
 
-.SS "template<typename aT, template< \fBuchint\fP > class T, \fBuchint\fP B>
+.SS "template<typename aT, template< uchint > class T, uchint B>
 .br
 struct details::cp_delete< aT, T, B >"
+.PP
+Definición en la línea \fB78\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "template<typename aT , template< \fBuchint\fP > class T, \fBuchint\fP B> void \fBdetails::cp_delete\fP< aT, T, B >::operator() (aT ** var_list_list)\fC [inline]\fP"
+.SS "template<typename aT , template< uchint > class T, uchint B> static void \fBdetails::cp_delete\fP< aT, T, B >::destruye_lista_de_variables (aT * var_list)\fC [inline]\fP, \fC [static]\fP, \fC [private]\fP"
 
 .PP
-.nf
-83                                             {
-84                         destruye_lista_de_variables(var_list_list[B]);
-85                         cp_delete<aT,T,B-1>(var_list_list);
-86         }
-.fi
+Definición en la línea \fB80\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T, uchint B> void \fBdetails::cp_delete\fP< aT, T, B >::operator() (aT ** var_list_list)\fC [inline]\fP"
 
+.PP
+Definición en la línea \fB84\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

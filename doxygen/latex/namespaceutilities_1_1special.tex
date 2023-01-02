@@ -1,0 +1,150 @@
+\hypertarget{namespaceutilities_1_1special}{}\doxysection{Referencia del Namespace utilities\+::special}
+\label{namespaceutilities_1_1special}\index{utilities::special@{utilities::special}}
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\+\_\+\+B\+\_\+to\+\_\+\+E\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em FORMA ANTIGUA PERO SEGURA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4}{pow\+\_\+\+B\+\_\+to\+\_\+\+E\+\_\+t$<$ Base, 0 $>$}}
+\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4}{pow\+\_\+\+B\+\_\+to\+\_\+\+E\+\_\+t$<$ Base, 1 $>$}}
+\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4}{pow\+\_\+\+B\+\_\+to\+\_\+\+E\+\_\+t$<$ Base, 2 $>$}}
+\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t}{tuple\+\_\+builder\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em TEMPLATE GENERAL. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21}{tuple\+\_\+builder\+\_\+t$<$ Begin\+Int\+Obj\+\_\+ct, Begin\+Int\+Obj\+\_\+ct, End\+Int\+Obj\+\_\+ct, Base, Funct\+\_\+tt $>$}}
+\begin{DoxyCompactList}\small\item\em ESPECIALIZACION DONDE INTOBJ\+\_\+\+CT == BEGININTOBJ\+\_\+\+CT. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802}{tuple\+\_\+builder\+\_\+t$<$ End\+Int\+Obj\+\_\+ct-\/1, Begin\+Int\+Obj\+\_\+ct, End\+Int\+Obj\+\_\+ct, Base, Funct\+\_\+tt $>$}}
+\begin{DoxyCompactList}\small\item\em ESPECIALIZACION DONDE INTOBJ\+\_\+\+CT == ENDINTOBJ\+\_\+\+CT-\/1. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutilities_1_1special_1_1tuple__user__constructor__t}{tuple\+\_\+user\+\_\+constructor\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} B, \mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} L$>$ }\\consteval \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{Num\+Repr\+::uint128\+\_\+t}} \mbox{\hyperlink{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17}{Base\+\_\+pow\+\_\+to\+\_\+\+Size}} () noexcept
+\begin{DoxyCompactList}\small\item\em FORMA SENCILLA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME. \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t start, std\+::size\+\_\+t Base, std\+::size\+\_\+t ... Is, template$<$ std\+::size\+\_\+t, std\+::size\+\_\+t $>$ typename Funct\+\_\+tt, typename ... Ts$>$ }\\constexpr void \mbox{\hyperlink{namespaceutilities_1_1special_a600ef880527fb943066e81d144a572d4}{ctf\+\_\+helper}} (std\+::index\+\_\+sequence$<$ Is... $>$, std\+::tuple$<$ Ts... $>$ const \&t) noexcept
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t start, std\+::size\+\_\+t end, std\+::size\+\_\+t Base, template$<$ typename, std\+::size\+\_\+t, std\+::size\+\_\+t $>$ typename Funct\+\_\+tt, typename ... Ts$>$ }\\constexpr void \mbox{\hyperlink{namespaceutilities_1_1special_a450a92504b01e717cfe785076cf97b93}{ct\+\_\+for}} (std\+::tuple$<$ Ts... $>$ const \&t) noexcept
+\item 
+{\footnotesize template$<$auto B, auto L, typename A $>$ }\\constexpr \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{Num\+Repr\+::uint128\+\_\+t}} \mbox{\hyperlink{namespaceutilities_1_1special_a92614fb496f783431fe229a771f40a00}{conversion\+\_\+to\+\_\+int}} (const A \&arg) noexcept
+\begin{DoxyCompactList}\small\item\em CONVERSION DE REGISTRO DE DIGITOS A ENTERO EN TIEMPO DE COMPILACION. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} Base, \mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} Exp$>$ }\\constexpr \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{Num\+Repr\+::uint128\+\_\+t}} \mbox{\hyperlink{namespaceutilities_1_1special_a0c24705b4d3cfd27689f38201488c087}{Pow\+\_\+\+B2\+L\+\_\+v}} = \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\+\_\+\+B\+\_\+to\+\_\+\+E\+\_\+t}}$<$Base,Exp$>$\+::value
+\item 
+{\footnotesize template$<$std\+::int64\+\_\+t Begin\+Int\+Obj\+\_\+ct, std\+::int64\+\_\+t End\+Int\+Obj\+\_\+ct, std\+::int64\+\_\+t Base, template$<$ std\+::int64\+\_\+t, std\+::int64\+\_\+t $>$ class Funct\+\_\+tt$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutilities_1_1special_ada5efac888ec6774ade3b0ff5911cb89}{tuple\+\_\+constr\+\_\+v}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+LA LLAMADA \char`\"{}\+REAL\char`\"{} ES \begin{DoxyVerb}            assign_with_order(dest,args...);
+\end{DoxyVerb}
+ donde los \char`\"{}args\char`\"{} son de tipo \char`\"{}\+Ts\char`\"{} (que es uno solo, todos iguales entre si) 
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17}\label{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17}} 
+\index{utilities::special@{utilities::special}!Base\_pow\_to\_Size@{Base\_pow\_to\_Size}}
+\index{Base\_pow\_to\_Size@{Base\_pow\_to\_Size}!utilities::special@{utilities::special}}
+\doxysubsubsection{\texorpdfstring{Base\_pow\_to\_Size()}{Base\_pow\_to\_Size()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} B, \mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} L$>$ \\
+consteval \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{Num\+Repr\+::uint128\+\_\+t}} utilities\+::special\+::\+Base\+\_\+pow\+\_\+to\+\_\+\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+FORMA SENCILLA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME. 
+
+
+
+Definición en la línea \mbox{\hyperlink{utilities_8hpp_source_l00179}{179}} del archivo \mbox{\hyperlink{utilities_8hpp_source}{utilities.\+hpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{namespaceutilities_1_1special_a3645f9215c31596f25430e9c722eef17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceutilities_1_1special_a92614fb496f783431fe229a771f40a00}\label{namespaceutilities_1_1special_a92614fb496f783431fe229a771f40a00}} 
+\index{utilities::special@{utilities::special}!conversion\_to\_int@{conversion\_to\_int}}
+\index{conversion\_to\_int@{conversion\_to\_int}!utilities::special@{utilities::special}}
+\doxysubsubsection{\texorpdfstring{conversion\_to\_int()}{conversion\_to\_int()}}
+{\footnotesize\ttfamily template$<$auto B, auto L, typename A $>$ \\
+constexpr \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{Num\+Repr\+::uint128\+\_\+t}} utilities\+::special\+::conversion\+\_\+to\+\_\+int (\begin{DoxyParamCaption}\item[{const A \&}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+CONVERSION DE REGISTRO DE DIGITOS A ENTERO EN TIEMPO DE COMPILACION. 
+
+
+
+Definición en la línea \mbox{\hyperlink{utilities_8hpp_source_l00382}{382}} del archivo \mbox{\hyperlink{utilities_8hpp_source}{utilities.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutilities_1_1special_a450a92504b01e717cfe785076cf97b93}\label{namespaceutilities_1_1special_a450a92504b01e717cfe785076cf97b93}} 
+\index{utilities::special@{utilities::special}!ct\_for@{ct\_for}}
+\index{ct\_for@{ct\_for}!utilities::special@{utilities::special}}
+\doxysubsubsection{\texorpdfstring{ct\_for()}{ct\_for()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t start, std\+::size\+\_\+t end, std\+::size\+\_\+t Base, template$<$ typename, std\+::size\+\_\+t, std\+::size\+\_\+t $>$ typename Funct\+\_\+tt, typename ... Ts$>$ \\
+constexpr void utilities\+::special\+::ct\+\_\+for (\begin{DoxyParamCaption}\item[{std\+::tuple$<$ Ts... $>$ const \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{utilities_8hpp_source_l00374}{374}} del archivo \mbox{\hyperlink{utilities_8hpp_source}{utilities.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutilities_1_1special_a600ef880527fb943066e81d144a572d4}\label{namespaceutilities_1_1special_a600ef880527fb943066e81d144a572d4}} 
+\index{utilities::special@{utilities::special}!ctf\_helper@{ctf\_helper}}
+\index{ctf\_helper@{ctf\_helper}!utilities::special@{utilities::special}}
+\doxysubsubsection{\texorpdfstring{ctf\_helper()}{ctf\_helper()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t start, std\+::size\+\_\+t Base, std\+::size\+\_\+t ... Is, template$<$ std\+::size\+\_\+t, std\+::size\+\_\+t $>$ typename Funct\+\_\+tt, typename ... Ts$>$ \\
+constexpr void utilities\+::special\+::ctf\+\_\+helper (\begin{DoxyParamCaption}\item[{std\+::index\+\_\+sequence$<$ Is... $>$}]{,  }\item[{std\+::tuple$<$ Ts... $>$ const \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{utilities_8hpp_source_l00355}{355}} del archivo \mbox{\hyperlink{utilities_8hpp_source}{utilities.\+hpp}}.
+
+
+
+\doxysubsection{Documentación de las variables}
+\mbox{\Hypertarget{namespaceutilities_1_1special_a0c24705b4d3cfd27689f38201488c087}\label{namespaceutilities_1_1special_a0c24705b4d3cfd27689f38201488c087}} 
+\index{utilities::special@{utilities::special}!Pow\_B2L\_v@{Pow\_B2L\_v}}
+\index{Pow\_B2L\_v@{Pow\_B2L\_v}!utilities::special@{utilities::special}}
+\doxysubsubsection{\texorpdfstring{Pow\_B2L\_v}{Pow\_B2L\_v}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} Base, \mbox{\hyperlink{namespace_num_repr_ac6c7f4dbb7298c676dd9f9b94e887f2a}{Num\+Repr\+::usint\+\_\+t}} Exp$>$ \\
+constexpr \mbox{\hyperlink{namespace_num_repr_a412296ccfc8e357e166ab1365f2777f3}{Num\+Repr\+::uint128\+\_\+t}} utilities\+::special\+::\+Pow\+\_\+\+B2\+L\+\_\+v = \mbox{\hyperlink{structutilities_1_1special_1_1pow___b__to___e__t}{pow\+\_\+\+B\+\_\+to\+\_\+\+E\+\_\+t}}$<$Base,Exp$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{utilities_8hpp_source_l00218}{218}} del archivo \mbox{\hyperlink{utilities_8hpp_source}{utilities.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutilities_1_1special_ada5efac888ec6774ade3b0ff5911cb89}\label{namespaceutilities_1_1special_ada5efac888ec6774ade3b0ff5911cb89}} 
+\index{utilities::special@{utilities::special}!tuple\_constr\_v@{tuple\_constr\_v}}
+\index{tuple\_constr\_v@{tuple\_constr\_v}!utilities::special@{utilities::special}}
+\doxysubsubsection{\texorpdfstring{tuple\_constr\_v}{tuple\_constr\_v}}
+{\footnotesize\ttfamily template$<$std\+::int64\+\_\+t Begin\+Int\+Obj\+\_\+ct, std\+::int64\+\_\+t End\+Int\+Obj\+\_\+ct, std\+::int64\+\_\+t Base, template$<$ std\+::int64\+\_\+t, std\+::int64\+\_\+t $>$ class Funct\+\_\+tt$>$ \\
+constexpr auto utilities\+::special\+::tuple\+\_\+constr\+\_\+v\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ tuple\_user\_constructor\_t<}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BeginIntObj\_ct,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndIntObj\_ct,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Base,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Funct\_tt}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ >::build()}
+
+\end{DoxyCode}
+
+
+Definición en la línea \mbox{\hyperlink{utilities_8hpp_source_l00336}{336}} del archivo \mbox{\hyperlink{utilities_8hpp_source}{utilities.\+hpp}}.
+

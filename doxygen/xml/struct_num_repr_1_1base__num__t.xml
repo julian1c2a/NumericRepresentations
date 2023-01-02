@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="struct_num_repr_1_1base__num__t" kind="struct" language="C++" prot="public">
     <compoundname>NumRepr::base_num_t</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">basic_string&lt; dig_t&lt; UINT_T, B &gt; &gt;</basecompoundref>
     <includes refid="base__num__t_8hpp" local="no">base_num_t.hpp</includes>
     <templateparamlist>
       <param>
-        <type>type_traits::allowable_base_type_c</type>
+        <type>type_traits::uint_type_for_radix_c</type>
         <declname>UINT_T</declname>
         <defname>UINT_T</defname>
       </param>
@@ -28,14 +29,42 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="12" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1a07bb043524bd17f239096c966cd657bd" prot="public" static="no">
+        <type>basic_string&lt; <ref refid="struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9" kindref="member">dig_t</ref> &gt;</type>
+        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::base_t =  basic_string&lt;dig_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>base_t</name>
+        <qualifiedname>NumRepr::base_num_t::base_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="13" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1a2b79d742a555f9688163b35ffd8a82e0" prot="public" static="no">
+        <type>typename base_t::iterator</type>
+        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::str_iterator =  typename base_t::iterator</definition>
+        <argsstring></argsstring>
+        <name>str_iterator</name>
+        <qualifiedname>NumRepr::base_num_t::str_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="14" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="14" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1a21e924224be346831465d62658048e8d" prot="public" static="no">
-        <type>basic_string&lt; <ref refid="struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9" kindref="member">dig_t</ref> &gt;</type>
-        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::nbstr =  basic_string&lt;dig_t&gt;</definition>
+      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1ac7eba12b51ee0bc2d80aa37a51b30f52" prot="public" static="no">
+        <type>typename base_t::const_iterator</type>
+        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::c_str_iterator =  typename base_t::const_iterator</definition>
         <argsstring></argsstring>
-        <name>nbstr</name>
-        <qualifiedname>NumRepr::base_num_t::nbstr</qualifiedname>
+        <name>c_str_iterator</name>
+        <qualifiedname>NumRepr::base_num_t::c_str_iterator</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -44,12 +73,12 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="15" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="15" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1aa9bc0366bf9701cb6a9e1a376ad1d72c" prot="public" static="no">
-        <type>typename nbstr::iterator</type>
-        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::striterator =  typename nbstr::iterator</definition>
+      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1adf77fead0babc21e854c33121fbb2f10" prot="public" static="no">
+        <type>typename base_t::reverse_iterator</type>
+        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::r_str_iterator =  typename base_t::reverse_iterator</definition>
         <argsstring></argsstring>
-        <name>striterator</name>
-        <qualifiedname>NumRepr::base_num_t::striterator</qualifiedname>
+        <name>r_str_iterator</name>
+        <qualifiedname>NumRepr::base_num_t::r_str_iterator</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -58,12 +87,12 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="16" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="16" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1a191af9d669240a254ae0baf13b42e4eb" prot="public" static="no">
-        <type>typename nbstr::const_iterator</type>
-        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::cstriterator =  typename nbstr::const_iterator</definition>
+      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1a89047e263bf4c5881da7024e18bdd72a" prot="public" static="no">
+        <type>typename base_t::const_reverse_iterator</type>
+        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::cr_str_iterator =  typename base_t::const_reverse_iterator</definition>
         <argsstring></argsstring>
-        <name>cstriterator</name>
-        <qualifiedname>NumRepr::base_num_t::cstriterator</qualifiedname>
+        <name>cr_str_iterator</name>
+        <qualifiedname>NumRepr::base_num_t::cr_str_iterator</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -72,54 +101,10 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="17" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b" prot="public" static="no">
-        <type>typename nbstr::reverse_iterator <ref refid="struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b" kindref="member">rstriterator</ref></type>
-        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::rstriterator =  typename nbstr::reverse_iterator rstriterator</definition>
-        <argsstring></argsstring>
-        <name>rstriterator</name>
-        <qualifiedname>NumRepr::base_num_t::rstriterator</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="18" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="18" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8" prot="public" static="no">
-        <type>typename nbstr::const_reverse_iterator <ref refid="struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8" kindref="member">crstriterator</ref></type>
-        <definition>using NumRepr::base_num_t&lt; UINT_T, B &gt;::crstriterator =  typename nbstr::const_reverse_iterator crstriterator</definition>
-        <argsstring></argsstring>
-        <name>crstriterator</name>
-        <qualifiedname>NumRepr::base_num_t::crstriterator</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="19" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="19" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0" prot="public" static="no" mutable="no">
-        <type>basic_string&lt; <ref refid="struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9" kindref="member">dig_t</ref>&lt; UINT_T, B &gt; &gt;</type>
-        <definition>basic_string&lt;dig_t&lt;UINT_T,B&gt; &gt; NumRepr::base_num_t&lt; UINT_T, B &gt;::m_dstr</definition>
-        <argsstring></argsstring>
-        <name>m_dstr</name>
-        <qualifiedname>NumRepr::base_num_t::m_dstr</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="12" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="12" bodyend="-1"/>
-      </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1ae9342a10ee981b65001a2b4ac9531c2a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <type>constexpr <ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
         <definition>constexpr size_t NumRepr::base_num_t&lt; UINT_T, B &gt;::size</definition>
         <argsstring>() const noexcept</argsstring>
         <name>size</name>
@@ -130,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="21" column="25" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="21" bodyend="23"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="19" column="25" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="19" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a787fd6e3da2fc99d82cafb0c019d3a6e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -139,7 +124,7 @@
         <name>resize</name>
         <qualifiedname>NumRepr::base_num_t::resize</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -148,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="25" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="25" bodyend="27"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="22" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="22" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1aa87935430034d037a47f77d48129d396" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9" kindref="member">dig_t</ref></type>
@@ -157,7 +142,7 @@
         <name>operator[]</name>
         <qualifiedname>NumRepr::base_num_t::operator[]</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542" kindref="member">ullint</ref></type>
+          <type>ullint</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -166,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="29" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="29" bodyend="32"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="25" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="25" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1ab45f89faa50972e77b570e23000d880b" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9" kindref="member">dig_t</ref> &amp;</type>
@@ -175,7 +160,7 @@
         <name>operator[]</name>
         <qualifiedname>NumRepr::base_num_t::operator[]</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542" kindref="member">ullint</ref></type>
+          <type>ullint</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -184,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="34" column="25" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="34" bodyend="37"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="29" column="25" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="29" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a2228b2ea1c8eb9e62cab5195997ba27c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -198,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="39" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="39" bodyend="42"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="33" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="33" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1ac3b9a3016627cc57cd83994fb1cff928" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -216,7 +201,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="44" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="44" bodyend="47"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="36" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="36" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a6f5da3393f245c55d9d5bd9b60f84605" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -225,11 +210,11 @@
         <name>insert</name>
         <qualifiedname>NumRepr::base_num_t::insert</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
           <declname>pos</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
           <declname>tam</declname>
         </param>
         <param>
@@ -242,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="49" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="49" bodyend="52"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="39" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="39" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a840806eac58252d667191b46398cc2bf" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr num_basic_t</type>
@@ -251,11 +236,11 @@
         <name>substr</name>
         <qualifiedname>NumRepr::base_num_t::substr</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
           <declname>pos</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -264,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="54" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="54" bodyend="57"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="43" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a3cadf0a0ed7ae17bedd45c9679ea0471" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -282,11 +267,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="59" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="59" bodyend="62"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="48" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="48" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1aa62e4f311f8a54460324fbe74ba8ca55" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1aa9bc0366bf9701cb6a9e1a376ad1d72c" kindref="member">striterator</ref></type>
-        <definition>constexpr striterator NumRepr::base_num_t&lt; UINT_T, B &gt;::begin</definition>
+      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a71ac9b65847cc53e17b8f51c828a9063" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1a2b79d742a555f9688163b35ffd8a82e0" kindref="member">str_iterator</ref></type>
+        <definition>constexpr str_iterator NumRepr::base_num_t&lt; UINT_T, B &gt;::begin</definition>
         <argsstring>() noexcept</argsstring>
         <name>begin</name>
         <qualifiedname>NumRepr::base_num_t::begin</qualifiedname>
@@ -296,11 +281,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="64" column="30" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="64" bodyend="66"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="51" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="51" bodyend="52"/>
       </memberdef>
-      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a950b55fad9a60d1f6de766ea81bd5c1d" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1a191af9d669240a254ae0baf13b42e4eb" kindref="member">cstriterator</ref></type>
-        <definition>constexpr cstriterator NumRepr::base_num_t&lt; UINT_T, B &gt;::end</definition>
+      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a224f4e6e79d9956275db559135f3da38" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1ac7eba12b51ee0bc2d80aa37a51b30f52" kindref="member">c_str_iterator</ref></type>
+        <definition>constexpr c_str_iterator NumRepr::base_num_t&lt; UINT_T, B &gt;::end</definition>
         <argsstring>() const noexcept</argsstring>
         <name>end</name>
         <qualifiedname>NumRepr::base_num_t::end</qualifiedname>
@@ -310,11 +295,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="67" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="67" bodyend="69"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="54" column="33" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="54" bodyend="55"/>
       </memberdef>
-      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a34beb03b3bf13ab17bbe0c09be0b4c1f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b" kindref="member">rstriterator</ref></type>
-        <definition>constexpr rstriterator NumRepr::base_num_t&lt; UINT_T, B &gt;::rbegin</definition>
+      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a875d4f1b0d61c6cb3931d1e87e9aeb0d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1adf77fead0babc21e854c33121fbb2f10" kindref="member">r_str_iterator</ref></type>
+        <definition>constexpr r_str_iterator NumRepr::base_num_t&lt; UINT_T, B &gt;::rbegin</definition>
         <argsstring>() noexcept</argsstring>
         <name>rbegin</name>
         <qualifiedname>NumRepr::base_num_t::rbegin</qualifiedname>
@@ -324,11 +309,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="70" column="31" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="70" bodyend="72"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="57" column="33" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="57" bodyend="58"/>
       </memberdef>
-      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1ac2c79936cb8ae389665174a2d26cb1a5" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8" kindref="member">crstriterator</ref></type>
-        <definition>constexpr crstriterator NumRepr::base_num_t&lt; UINT_T, B &gt;::rend</definition>
+      <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a965c670bbbced1ed61f43a5ee39f2d0f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="struct_num_repr_1_1base__num__t_1a89047e263bf4c5881da7024e18bdd72a" kindref="member">cr_str_iterator</ref></type>
+        <definition>constexpr cr_str_iterator NumRepr::base_num_t&lt; UINT_T, B &gt;::rend</definition>
         <argsstring>() const noexcept</argsstring>
         <name>rend</name>
         <qualifiedname>NumRepr::base_num_t::rend</qualifiedname>
@@ -338,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="73" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="73" bodyend="75"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="60" column="34" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="60" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a6ae3c24171fa8af240327437913ac659" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr void</type>
@@ -347,11 +332,11 @@
         <name>erase</name>
         <qualifiedname>NumRepr::base_num_t::erase</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
           <declname>pos</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type><ref refid="namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf" kindref="member">size_t</ref></type>
           <declname>tam</declname>
         </param>
         <briefdescription>
@@ -360,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="76" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="76" bodyend="79"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="63" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="63" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="struct_num_repr_1_1base__num__t_1a6e6eeda172a8ae2ded447ce44a2718dc" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr const num_basic_t &amp;</type>
@@ -378,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="81" column="37" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="81" bodyend="84"/>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="67" column="37" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="68" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <requiresclause>(<ref refid="namespace_num_repr_1_1type__traits_1ae7b0da6237614a2d93ed8d40ee5596a5" kindref="member">type_traits::suitable_base</ref>&lt;UINT_T,B&gt;())    </requiresclause>
@@ -386,35 +371,50 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>NumRepr::base_num_t&lt; UINT_T, B &gt;</label>
+        <link refid="struct_num_repr_1_1base__num__t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>basic_string&lt; dig_t&lt; UINT_T, B &gt; &gt;</label>
+      </node>
+    </inheritancegraph>
     <collaborationgraph>
       <node id="1">
         <label>NumRepr::base_num_t&lt; UINT_T, B &gt;</label>
         <link refid="struct_num_repr_1_1base__num__t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>basic_string&lt; dig_t&lt; UINT_T, B &gt; &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="10" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="10" bodyend="85"/>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" line="10" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/base_num_t.hpp" bodystart="10" bodyend="73"/>
     <listofallmembers>
-      <member refid="struct_num_repr_1_1base__num__t_1aa62e4f311f8a54460324fbe74ba8ca55" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>begin</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1a07bb043524bd17f239096c966cd657bd" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>base_t</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1a71ac9b65847cc53e17b8f51c828a9063" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>begin</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1ac7eba12b51ee0bc2d80aa37a51b30f52" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>c_str_iterator</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a2228b2ea1c8eb9e62cab5195997ba27c" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>clear</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>crstriterator</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1a191af9d669240a254ae0baf13b42e4eb" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>cstriterator</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1a89047e263bf4c5881da7024e18bdd72a" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>cr_str_iterator</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>dig_t</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1a950b55fad9a60d1f6de766ea81bd5c1d" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>end</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1a224f4e6e79d9956275db559135f3da38" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>end</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a6ae3c24171fa8af240327437913ac659" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>erase</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a6f5da3393f245c55d9d5bd9b60f84605" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>insert</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>m_dstr</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1a21e924224be346831465d62658048e8d" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>nbstr</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a6e6eeda172a8ae2ded447ce44a2718dc" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>operator&amp;=</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1aa87935430034d037a47f77d48129d396" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>operator[]</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1ab45f89faa50972e77b570e23000d880b" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>operator[]</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1ac3b9a3016627cc57cd83994fb1cff928" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>push_back</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a3cadf0a0ed7ae17bedd45c9679ea0471" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>push_front</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1a34beb03b3bf13ab17bbe0c09be0b4c1f" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>rbegin</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1ac2c79936cb8ae389665174a2d26cb1a5" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>rend</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1adf77fead0babc21e854c33121fbb2f10" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>r_str_iterator</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1a875d4f1b0d61c6cb3931d1e87e9aeb0d" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>rbegin</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1a965c670bbbced1ed61f43a5ee39f2d0f" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>rend</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a787fd6e3da2fc99d82cafb0c019d3a6e" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>resize</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>rstriterator</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1ae9342a10ee981b65001a2b4ac9531c2a" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>size</name></member>
-      <member refid="struct_num_repr_1_1base__num__t_1aa9bc0366bf9701cb6a9e1a376ad1d72c" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>striterator</name></member>
+      <member refid="struct_num_repr_1_1base__num__t_1a2b79d742a555f9688163b35ffd8a82e0" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>str_iterator</name></member>
       <member refid="struct_num_repr_1_1base__num__t_1a840806eac58252d667191b46398cc2bf" prot="public" virt="non-virtual"><scope>NumRepr::base_num_t</scope><name>substr</name></member>
     </listofallmembers>
   </compounddef>

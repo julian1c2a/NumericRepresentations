@@ -1,0 +1,308 @@
+.TH "NumRepr::lex" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::lex
+.SH SYNOPSIS
+.br
+.PP
+.SS "Enumeraciones"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBreglexst_e\fP : uint16_t { \fBst_00\fP = 0, \fBst_01\fP = 1, \fBst_02\fP =2, \fBst_03\fP =3, \fBst_04\fP = 4, \fBst_05\fP = 5, \fBst_06\fP = 6, \fBst_07\fP = 7, \fBst_08\fP =8, \fBst_09\fP =9, \fBst_10\fP =10, \fBst_11\fP =11, \fBst_12\fP =12, \fBst_13\fP =13 }"
+.br
+.ti -1c
+.RI "enum class \fBsintaxerrlexst_e\fP : uint16_t { \fBst_err_00\fP = 256, \fBst_err_01\fP = 257, \fBst_err_02\fP = 258, \fBst_err_03\fP = 259, \fBst_err_04\fP = 260, \fBst_err_05\fP = 261, \fBst_err_06\fP = 262, \fBst_err_07\fP = 263, \fBst_err_08\fP = 264, \fBst_err_09\fP = 265, \fBst_err_10\fP = 266, \fBst_err_11\fP = 267, \fBst_err_12\fP = 268, \fBst_err_13\fP = 269 }"
+.br
+.ti -1c
+.RI "enum class \fBsemerrlexst_e\fP : uint16_t { \fBst_sem_00\fP = 4096, \fBst_sem_01\fP = 4097, \fBst_sem_02\fP = 4098, \fBst_sem_03\fP = 4099, \fBst_sem_04\fP = 4100, \fBst_sem_05\fP = 4101, \fBst_sem_06\fP = 4102, \fBst_sem_07\fP = 4103, \fBst_sem_08\fP = 4104, \fBst_sem_09\fP = 4105, \fBst_sem_10\fP = 4106, \fBst_sem_11\fP = 4107, \fBst_sem_12\fP = 4108, \fBst_sem_13\fP = 4109 }"
+.br
+.ti -1c
+.RI "enum class \fBlexst_e\fP : uint16_t { \fBreg_00\fP = 0, \fBreg_01\fP = 1, \fBreg_02\fP = 2, \fBreg_03\fP = 3, \fBreg_04\fP = 4, \fBreg_05\fP = 5, \fBreg_06\fP = 6, \fBreg_07\fP = 7, \fBreg_08\fP = 8, \fBreg_09\fP = 9, \fBreg_10\fP = 10, \fBreg_11\fP = 11, \fBreg_12\fP = 12, \fBreg_13\fP = 13, \fBerr_00\fP = 256, \fBerr_01\fP = 257, \fBerr_02\fP = 258, \fBerr_03\fP = 259, \fBerr_04\fP = 260, \fBerr_05\fP = 261, \fBerr_06\fP = 262, \fBerr_07\fP = 263, \fBerr_08\fP = 264, \fBerr_09\fP = 265, \fBerr_10\fP = 266, \fBerr_11\fP = 267, \fBerr_12\fP = 268, \fBerr_13\fP = 269, \fBsem_00\fP = 4096, \fBsem_01\fP = 4097, \fBsem_02\fP = 4098, \fBsem_03\fP = 4099, \fBsem_04\fP = 4100, \fBsem_05\fP = 4101, \fBsem_06\fP = 4102, \fBsem_07\fP = 4103, \fBsem_08\fP = 4104, \fBsem_09\fP = 4105, \fBsem_10\fP = 4106, \fBsem_11\fP = 4107, \fBsem_12\fP = 4108, \fBsem_13\fP = 4109 }"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_digit\fP (char)"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBdigit_value\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBis_valid_char\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBchar_value\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBis_separator\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBis_end_of_number\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBis_whitespace\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBis_end_descriptor\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBis_radix_descriptor\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBis_sign\fP (char)"
+.br
+.ti -1c
+.RI "\fBsign_e\fP \fBsign_value\fP (char)"
+.br
+.in -1c
+.SH "Documentación de las enumeraciones"
+.PP 
+.SS "enum class \fBNumRepr::lex::lexst_e\fP : \fBuint16_t\fP\fC [strong]\fP"
+
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIreg_00 \fP\fP
+.TP
+\fB\fIreg_01 \fP\fP
+.TP
+\fB\fIreg_02 \fP\fP
+.TP
+\fB\fIreg_03 \fP\fP
+.TP
+\fB\fIreg_04 \fP\fP
+.TP
+\fB\fIreg_05 \fP\fP
+.TP
+\fB\fIreg_06 \fP\fP
+.TP
+\fB\fIreg_07 \fP\fP
+.TP
+\fB\fIreg_08 \fP\fP
+.TP
+\fB\fIreg_09 \fP\fP
+.TP
+\fB\fIreg_10 \fP\fP
+.TP
+\fB\fIreg_11 \fP\fP
+.TP
+\fB\fIreg_12 \fP\fP
+.TP
+\fB\fIreg_13 \fP\fP
+.TP
+\fB\fIerr_00 \fP\fP
+.TP
+\fB\fIerr_01 \fP\fP
+.TP
+\fB\fIerr_02 \fP\fP
+.TP
+\fB\fIerr_03 \fP\fP
+.TP
+\fB\fIerr_04 \fP\fP
+.TP
+\fB\fIerr_05 \fP\fP
+.TP
+\fB\fIerr_06 \fP\fP
+.TP
+\fB\fIerr_07 \fP\fP
+.TP
+\fB\fIerr_08 \fP\fP
+.TP
+\fB\fIerr_09 \fP\fP
+.TP
+\fB\fIerr_10 \fP\fP
+.TP
+\fB\fIerr_11 \fP\fP
+.TP
+\fB\fIerr_12 \fP\fP
+.TP
+\fB\fIerr_13 \fP\fP
+.TP
+\fB\fIsem_00 \fP\fP
+.TP
+\fB\fIsem_01 \fP\fP
+.TP
+\fB\fIsem_02 \fP\fP
+.TP
+\fB\fIsem_03 \fP\fP
+.TP
+\fB\fIsem_04 \fP\fP
+.TP
+\fB\fIsem_05 \fP\fP
+.TP
+\fB\fIsem_06 \fP\fP
+.TP
+\fB\fIsem_07 \fP\fP
+.TP
+\fB\fIsem_08 \fP\fP
+.TP
+\fB\fIsem_09 \fP\fP
+.TP
+\fB\fIsem_10 \fP\fP
+.TP
+\fB\fIsem_11 \fP\fP
+.TP
+\fB\fIsem_12 \fP\fP
+.TP
+\fB\fIsem_13 \fP\fP
+.PP
+Definición en la línea \fB27\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "enum class \fBNumRepr::lex::reglexst_e\fP : \fBuint16_t\fP\fC [strong]\fP"
+
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIst_00 \fP\fP
+.TP
+\fB\fIst_01 \fP\fP
+.TP
+\fB\fIst_02 \fP\fP
+.TP
+\fB\fIst_03 \fP\fP
+.TP
+\fB\fIst_04 \fP\fP
+.TP
+\fB\fIst_05 \fP\fP
+.TP
+\fB\fIst_06 \fP\fP
+.TP
+\fB\fIst_07 \fP\fP
+.TP
+\fB\fIst_08 \fP\fP
+.TP
+\fB\fIst_09 \fP\fP
+.TP
+\fB\fIst_10 \fP\fP
+.TP
+\fB\fIst_11 \fP\fP
+.TP
+\fB\fIst_12 \fP\fP
+.TP
+\fB\fIst_13 \fP\fP
+.PP
+Definición en la línea \fB8\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "enum class \fBNumRepr::lex::semerrlexst_e\fP : \fBuint16_t\fP\fC [strong]\fP"
+
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIst_sem_00 \fP\fP
+.TP
+\fB\fIst_sem_01 \fP\fP
+.TP
+\fB\fIst_sem_02 \fP\fP
+.TP
+\fB\fIst_sem_03 \fP\fP
+.TP
+\fB\fIst_sem_04 \fP\fP
+.TP
+\fB\fIst_sem_05 \fP\fP
+.TP
+\fB\fIst_sem_06 \fP\fP
+.TP
+\fB\fIst_sem_07 \fP\fP
+.TP
+\fB\fIst_sem_08 \fP\fP
+.TP
+\fB\fIst_sem_09 \fP\fP
+.TP
+\fB\fIst_sem_10 \fP\fP
+.TP
+\fB\fIst_sem_11 \fP\fP
+.TP
+\fB\fIst_sem_12 \fP\fP
+.TP
+\fB\fIst_sem_13 \fP\fP
+.PP
+Definición en la línea \fB20\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "enum class \fBNumRepr::lex::sintaxerrlexst_e\fP : \fBuint16_t\fP\fC [strong]\fP"
+
+.PP
+\fBValores de enumeraciones\fP
+.in +1c
+.TP
+\fB\fIst_err_00 \fP\fP
+.TP
+\fB\fIst_err_01 \fP\fP
+.TP
+\fB\fIst_err_02 \fP\fP
+.TP
+\fB\fIst_err_03 \fP\fP
+.TP
+\fB\fIst_err_04 \fP\fP
+.TP
+\fB\fIst_err_05 \fP\fP
+.TP
+\fB\fIst_err_06 \fP\fP
+.TP
+\fB\fIst_err_07 \fP\fP
+.TP
+\fB\fIst_err_08 \fP\fP
+.TP
+\fB\fIst_err_09 \fP\fP
+.TP
+\fB\fIst_err_10 \fP\fP
+.TP
+\fB\fIst_err_11 \fP\fP
+.TP
+\fB\fIst_err_12 \fP\fP
+.TP
+\fB\fIst_err_13 \fP\fP
+.PP
+Definición en la línea \fB13\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "bool NumRepr::lex::char_value (char in)"
+
+.PP
+Definición en la línea \fB88\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "\fBsize_t\fP NumRepr::lex::digit_value (char in)"
+
+.PP
+Definición en la línea \fB78\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_digit (char in)"
+
+.PP
+Definición en la línea \fB73\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_end_descriptor (char in)"
+
+.PP
+Definición en la línea \fB113\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_end_of_number (char in)"
+
+.PP
+Definición en la línea \fB103\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_radix_descriptor (char in)"
+
+.PP
+Definición en la línea \fB118\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_separator (char in)"
+
+.PP
+Definición en la línea \fB98\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_sign (char in)"
+
+.PP
+Definición en la línea \fB123\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_valid_char (char in)"
+
+.PP
+Definición en la línea \fB83\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "bool NumRepr::lex::is_whitespace (char in)"
+
+.PP
+Definición en la línea \fB108\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SS "\fBsign_e\fP NumRepr::lex::sign_value (char in)"
+
+.PP
+Definición en la línea \fB128\fP del archivo \fBlexer_parser\&.hpp\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

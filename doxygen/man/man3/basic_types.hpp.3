@@ -1,4 +1,4 @@
-.TH "basic_types.hpp" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "basic_types.hpp" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,7 +6,9 @@ basic_types.hpp
 .SH SYNOPSIS
 .br
 .PP
-\fC#include <cstdint>\fP
+\fC#include 'istream'\fP
+.br
+\fC#include <cinttypes>\fP
 .br
 \fC#include <type_traits>\fP
 .br
@@ -51,126 +53,85 @@ basic_types.hpp
 
 .in +1c
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::is_unsigned_sz_gt< T, S >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< UInt_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::is_signed_sz_gt< T, S >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< ullint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_UInt_t< UInt_t >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< ulint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned char >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< uint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned short int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< usint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< uchint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned long int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t< UInt >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_UInt_t< unsigned long long int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t< ullint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_UInt_t< UInt >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t< ulint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_UInt_t< unsigned char >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t< uint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_UInt_t< unsigned short int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t< usint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_UInt_t< unsigned int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t< uchint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_UInt_t< unsigned long int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< SInt >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_UInt_t< unsigned long long int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< sint128_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< SInt >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< schint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< signed char >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< ssint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< char >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< sint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< signed short int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< slint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< signed int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< sllint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< signed long int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t< SInt >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< signed long long int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t< sllint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_UInt_for_SInt_t< sint128_t >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t< slint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_SInt_t< SInt >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t< sint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_SInt_t< signed char >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t< ssint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_SInt_t< char >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t< schint_t >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_SInt_t< signed short int >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_for_suitable_type_deduction::UIntTypeForRadix< T, Radix >\fP"
 .br
 .ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_SInt_t< signed int >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_SInt_t< signed long int >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::detail::__sig_SInt_for_SInt_t< signed long long int >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::empty_type\fP"
-.br
-.RI "DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES SIN DEFINCION\&. "
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< Type, Radix >\fP"
-.br
-.RI "FUNCION TYPE_TRAITS DE AYUDA PARA TYPE_TRAITS::UINTTYPEFORRADIX\&. "
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< uint128_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< uint64_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< int64_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< uint32_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< sint32_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< uint16_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< sint16_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< uint8_t, Radix >\fP"
-.br
-.ti -1c
-.RI "struct \fBNumRepr::type_traits::UIntTypeForRadix< sint8_t, Radix >\fP"
+.RI "struct \fBNumRepr::type_traits::ugly_details_for_greater_suitable_type_deduction::UIntTypeForRadixContainsMultResult< T, Radix >\fP"
 .br
 .in -1c
 .SS "Namespaces"
@@ -183,37 +144,49 @@ basic_types.hpp
 .RI "namespace \fBNumRepr::type_traits\fP"
 .br
 .ti -1c
-.RI "namespace \fBNumRepr::type_traits::detail\fP"
+.RI "namespace \fBNumRepr::type_traits::ugly_details_UInt_for_UInt\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::type_traits::ugly_details_sig_SInt_for_UInt\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::type_traits::ugly_details_UInt_for_SInt\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::type_traits::ugly_details_SInt_for_SInt\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::type_traits::ugly_details_for_suitable_type_deduction\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::type_traits::ugly_details_for_greater_suitable_type_deduction\fP"
 .br
 .in -1c
 .SS "Concepts"
 
 .in +1c
 .ti -1c
-.RI "concept \fBNumRepr::arith_integral_c\fP"
+.RI "concept \fBNumRepr::type_traits::arith_integral_c\fP"
 .br
 .RI "TYPE_TRAITS AND CONCEPTS\&. "
 .ti -1c
-.RI "concept \fBNumRepr::arith_natural_c\fP"
+.RI "concept \fBNumRepr::type_traits::arith_natural_c\fP"
 .br
 .ti -1c
-.RI "concept \fBNumRepr::char_type\fP"
+.RI "concept \fBNumRepr::type_traits::char_type_c\fP"
 .br
 .ti -1c
-.RI "concept \fBNumRepr::type_traits::allowable_base_type_c\fP"
+.RI "concept \fBNumRepr::type_traits::uint_type_for_radix_c\fP"
 .br
-.ti -1c
-.RI "concept \fBNumRepr::type_traits::allowable_unsigned_type_c\fP"
-.br
+.RI "CONCEPT FOR UNSIGNED INTEGRAL TYPES VALID FOR THE RADIX\&. "
 .ti -1c
 .RI "concept \fBNumRepr::type_traits::unsigned_integral_c\fP"
 .br
-.ti -1c
-.RI "concept \fBNumRepr::type_traits::allowable_signed_type_c\fP"
-.br
+.RI "CONCEPT FOR UNSIGNED INTEGRAL TYPES\&. "
 .ti -1c
 .RI "concept \fBNumRepr::type_traits::signed_integral_c\fP"
 .br
+.RI "CONCEPT FOR SIGNED INTEGRAL TYPES\&. "
 .ti -1c
 .RI "concept \fBNumRepr::type_traits::integral_c\fP"
 .br
@@ -222,105 +195,171 @@ basic_types.hpp
 
 .in +1c
 .ti -1c
-.RI "using \fBchint\fP = char"
+.RI "using \fBNumRepr::chint_t\fP = char"
 .br
 .RI "NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS\&. "
 .ti -1c
-.RI "using \fBschint\fP = signed char"
+.RI "using \fBNumRepr::schint_t\fP = signed char"
 .br
 .ti -1c
-.RI "using \fBssint\fP = signed short int"
+.RI "using \fBNumRepr::ssint_t\fP = signed short int"
 .br
 .ti -1c
-.RI "using \fBsint\fP = signed int"
+.RI "using \fBNumRepr::sint_t\fP = signed int"
 .br
 .ti -1c
-.RI "using \fBslint\fP = signed long int"
+.RI "using \fBNumRepr::slint_t\fP = signed long int"
 .br
 .ti -1c
-.RI "using \fBsllint\fP = signed long long int"
+.RI "using \fBNumRepr::sllint_t\fP = signed long long int"
 .br
 .ti -1c
-.RI "using \fBuchint\fP = unsigned char"
+.RI "using \fBNumRepr::uchint_t\fP = unsigned char"
 .br
 .ti -1c
-.RI "using \fBusint\fP = unsigned short int"
+.RI "using \fBNumRepr::usint_t\fP = unsigned short int"
 .br
 .ti -1c
-.RI "using \fBuint\fP = unsigned int"
+.RI "using \fBNumRepr::uint_t\fP = unsigned int"
 .br
 .ti -1c
-.RI "using \fBulint\fP = unsigned long int"
+.RI "using \fBNumRepr::ulint_t\fP = unsigned long int"
 .br
 .ti -1c
-.RI "using \fBullint\fP = unsigned long long int"
+.RI "using \fBNumRepr::ullint_t\fP = unsigned long long int"
 .br
 .ti -1c
-.RI "using \fBuint128_t\fP = __uint128_t"
+.RI "using \fBNumRepr::uint128_t\fP = __uint128_t"
 .br
 .ti -1c
-.RI "using \fBsint128_t\fP = __int128_t"
+.RI "using \fBNumRepr::sint128_t\fP = __int128_t"
 .br
 .ti -1c
-.RI "using \fBsize_t\fP = std::size_t"
+.RI "using \fBNumRepr::size_t\fP = std::size_t"
 .br
 .ti -1c
-.RI "using \fBsint8_t\fP = std::int8_t"
+.RI "using \fBNumRepr::sint8_t\fP = std::int8_t"
 .br
 .ti -1c
-.RI "using \fBsint16_t\fP = std::int16_t"
+.RI "using \fBNumRepr::sint16_t\fP = std::int16_t"
 .br
 .ti -1c
-.RI "using \fBsint32_t\fP = std::int32_t"
+.RI "using \fBNumRepr::sint32_t\fP = std::int32_t"
 .br
 .ti -1c
-.RI "using \fBsint64_t\fP = std::int64_t"
+.RI "using \fBNumRepr::sint64_t\fP = std::int64_t"
 .br
 .ti -1c
-.RI "using \fBuint8_t\fP = std::uint8_t"
+.RI "using \fBNumRepr::int8_t\fP = std::int8_t"
 .br
 .ti -1c
-.RI "using \fBuint16_t\fP = std::uint16_t"
+.RI "using \fBNumRepr::int16_t\fP = std::int16_t"
 .br
 .ti -1c
-.RI "using \fBuint32_t\fP = std::uint32_t"
+.RI "using \fBNumRepr::int32_t\fP = std::int32_t"
 .br
 .ti -1c
-.RI "using \fBuint64_t\fP = std::uint64_t"
+.RI "using \fBNumRepr::int64_t\fP = std::int64_t"
 .br
 .ti -1c
-.RI "template<unsigned_integral_c UInt_t> using \fBNumRepr::type_traits::sig_UInt_for_UInt_t\fP = typename detail::__sig_UInt_for_UInt_t< UInt_t >::type"
+.RI "using \fBNumRepr::fast8_t\fP = std::int_fast8_t"
 .br
 .ti -1c
-.RI "template<unsigned_integral_c UInt_t> using \fBNumRepr::type_traits::sig_SInt_for_UInt_t\fP = typename detail::__sig_SInt_for_UInt_t< UInt_t >::type"
+.RI "using \fBNumRepr::fast16_t\fP = std::int_fast16_t"
 .br
 .ti -1c
-.RI "template<signed_integral_c SInt_t> using \fBNumRepr::type_traits::sig_UInt_for_SInt_t\fP = typename detail::__sig_UInt_for_SInt_t< SInt_t >::type"
+.RI "using \fBNumRepr::fast32_t\fP = std::int_fast32_t"
 .br
 .ti -1c
-.RI "template<signed_integral_c SInt_t> using \fBNumRepr::type_traits::sig_SInt_for_SInt_t\fP = typename detail::__sig_SInt_for_SInt_t< SInt_t >::type"
+.RI "using \fBNumRepr::fast64_t\fP = std::int_fast64_t"
 .br
 .ti -1c
-.RI "template<integral_c Type, Type Radix> using \fBNumRepr::type_traits::UIntTypeForRadix_t\fP = typename UIntTypeForRadix< Type, Radix >::UIntType"
+.RI "using \fBNumRepr::least8_t\fP = std::int_least8_t"
 .br
 .ti -1c
-.RI "template<\fBuint128_t\fP Radix> using \fBNumRepr::type_traits::TypeFromIntNumber_t\fP = UIntTypeForRadix_t< decltype(Radix), Radix >"
+.RI "using \fBNumRepr::least16_t\fP = std::int_least16_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::least32_t\fP = std::int_least32_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::least64_t\fP = std::int_least64_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uint8_t\fP = std::uint8_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uint16_t\fP = std::uint16_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uint32_t\fP = std::uint32_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uint64_t\fP = std::uint64_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::ufast8_t\fP = std::uint_fast8_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::ufast16_t\fP = std::uint_fast16_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::ufast32_t\fP = std::uint_fast32_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::ufast64_t\fP = std::uint_fast64_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uleast8_t\fP = std::uint_least8_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uleast16_t\fP = std::uint_least16_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uleast32_t\fP = std::uint_least32_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uleast64_t\fP = std::uint_least64_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::intmax_t\fP = std::intmax_t"
+.br
+.ti -1c
+.RI "using \fBNumRepr::uintmax_t\fP = std::uintmax_t"
+.br
+.ti -1c
+.RI "template<typename UInt_t > using \fBNumRepr::type_traits::sig_UInt_for_UInt_t\fP = typename ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t< UInt_t >::type"
+.br
+.ti -1c
+.RI "template<typename UInt_t > using \fBNumRepr::type_traits::sig_SInt_for_UInt_t\fP = typename ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t< UInt_t >::type"
+.br
+.ti -1c
+.RI "template<typename Int_t > using \fBNumRepr::type_traits::sig_UInt_for_SInt_t\fP = typename ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t< Int_t >::type"
+.br
+.ti -1c
+.RI "template<typename SInt_t > using \fBNumRepr::type_traits::sig_SInt_for_SInt_t\fP = typename ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t< SInt_t >::type"
+.br
+.ti -1c
+.RI "template<ullint_t Radix> using \fBNumRepr::type_traits::TypeFromIntNumber_t\fP = typename UIntTypeForRadix< decltype(Radix), Radix >::UIntType"
+.br
+.ti -1c
+.RI "template<integral_c IntType, IntType Radix> using \fBNumRepr::type_traits::GreaterTypeFromIntNumber_t\fP = typename UIntTypeForRadixContainsMultResult< decltype(Radix), Radix >::UIntType"
 .br
 .in -1c
 .SS "Funciones"
 
 .in +1c
 .ti -1c
-.RI "char * \fBNumRepr::clear_ccad\fP (char *, \fBusint\fP)"
+.RI "char * \fBNumRepr::type_traits::clear_ccad\fP (char *, usint_t)"
 .br
 .ti -1c
-.RI "template<template< \fBuchint\fP B > class T, \fBuchint\fP B> constexpr const char * \fBNumRepr::devCadenaC\fP (T< B > arg, \fBstd::size_t\fP long_ccad=64) noexcept"
+.RI "template<template< uchint_t B > class T, uchint_t B> constexpr const char * \fBNumRepr::type_traits::devCadenaC\fP (T< B > arg, std::size_t long_ccad=64) noexcept"
 .br
 .ti -1c
-.RI "constexpr char * \fBNumRepr::clear_ccad\fP (char *cad_c, \fBstd::size_t\fP long_de_cad_c) noexcept"
+.RI "constexpr char * \fBNumRepr::type_traits::clear_ccad\fP (char *cad_c, std::size_t long_de_cad_c) noexcept"
 .br
 .ti -1c
-.RI "constexpr unsigned long long \fBNumRepr::atoull\fP (char *text) noexcept"
+.RI "constexpr unsigned long long \fBNumRepr::type_traits::atoull\fP (char *text) noexcept"
 .br
 .ti -1c
 .RI "template<typename UINT_T > consteval UINT_T \fBNumRepr::type_traits::maxbase\fP ()"
@@ -370,84 +409,44 @@ basic_types.hpp
 .ti -1c
 .RI "template<typename UINT_T > consteval UINT_T \fBNumRepr::type_traits::sqrt_max\fP ()"
 .br
-.RI "DECLARACION DE UN TYPE_TRAITS PARA LITERALES INTEGRALES NOVALIDOS\&. "
 .in -1c
 .SS "Variables"
 
 .in +1c
 .ti -1c
-.RI "template<typename CharT > constexpr CharT \fBNumRepr::nullchar\fP {CharT('\\0')}"
+.RI "template<char_type_c CharT> constexpr CharT \fBNumRepr::type_traits::nullchar\fP {CharT('\\0')}"
 .br
 .ti -1c
-.RI "template<typename T , typename S > constexpr bool \fBNumRepr::type_traits::has_the_same_size\fP = (sizeof(T)==sizeof(S))"
+.RI "template<typename UINT_T > constexpr bool \fBNumRepr::type_traits::is_uint_type_for_radix_v\fP = std::is_unsigned_v<UINT_T> && (! std::is_same_v<UINT_T,uint128_t>)"
 .br
 .ti -1c
-.RI "template<unsigned_integral_c T, unsigned_integral_c S> constexpr bool \fBNumRepr::type_traits::is_unsigned_sz_gt_v\fP = is_unsigned_sz_gt<T,S>::value"
+.RI "template<typename UINT_T > constexpr bool \fBNumRepr::type_traits::is_unsigned_type_v\fP"
 .br
 .ti -1c
-.RI "template<unsigned_integral_c T, unsigned_integral_c S> constexpr bool \fBNumRepr::type_traits::is_unsigned_sz_geqt_v\fP = (is_unsigned_sz_gt_v<T,S> || std::is_same_v<T,S>)"
+.RI "template<typename SINT_T > constexpr bool \fBNumRepr::type_traits::is_signed_type_v\fP = std::is_signed_v<SINT_T>"
+.br
+.RI "METAOPERADOR QUE NOS DA SI UN TIPO INTEGRAL ES SIGNED\&. "
+.ti -1c
+.RI "template<typename INT_TYPE > constexpr bool \fBNumRepr::type_traits::is_integral_type_v\fP = std::is_integral_v<INT_TYPE>"
+.br
+.RI "METAOPERADOR QUE NOS DA SI UN TIPO ES INTEGRAL\&. "
+.ti -1c
+.RI "template<typename T , typename S > constexpr bool \fBNumRepr::type_traits::eq_sz_v\fP = (sizeof(T) == sizeof(S))"
+.br
+.RI "METAOPERADORES DE COMPARACION DE CAPACIDAD DE INTEGERS\&. "
+.ti -1c
+.RI "template<typename T , typename S > constexpr bool \fBNumRepr::type_traits::gt_sz_v\fP = (sizeof(T) > sizeof(S))"
 .br
 .ti -1c
-.RI "template<signed_integral_c T, signed_integral_c S> constexpr bool \fBNumRepr::type_traits::is_signed_sz_gt_v\fP = is_signed_sz_gt<T,S>::value"
+.RI "template<typename T , typename S > constexpr bool \fBNumRepr::type_traits::lt_sz_v\fP = (sizeof(T) < sizeof(S))"
 .br
 .ti -1c
-.RI "template<signed_integral_c T, unsigned_integral_c S> constexpr bool \fBNumRepr::type_traits::is_signed_sz_geqt_v\fP"
+.RI "template<typename T , typename S > constexpr bool \fBNumRepr::type_traits::ge_sz_v\fP = gt_sz_v<T,S>||eq_sz_v<T,S>"
 .br
 .ti -1c
-.RI "template<integral_c T, unsigned_integral_c S> constexpr bool \fBNumRepr::type_traits::is_sz_gt_v\fP"
-.br
-.ti -1c
-.RI "template<integral_c T, unsigned_integral_c S> constexpr bool \fBNumRepr::type_traits::is_sz_geqt_v\fP"
+.RI "template<typename T , typename S > constexpr bool \fBNumRepr::type_traits::le_sz_v\fP = lt_sz_v<T,S>||eq_sz_v<T,S>"
 .br
 .in -1c
-.SH "Documentación de los 'typedefs'"
-.PP 
-.SS "using \fBchint\fP =  char"
-
-.PP
-NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS\&. 
-.SS "using \fBschint\fP =  signed char"
-
-.SS "using \fBsint\fP =  signed int"
-
-.SS "using \fBsint128_t\fP =  __int128_t"
-
-.SS "using \fBsint16_t\fP =  std::int16_t"
-
-.SS "using \fBsint32_t\fP =  std::int32_t"
-
-.SS "using \fBsint64_t\fP =  std::int64_t"
-
-.SS "using \fBsint8_t\fP =  std::int8_t"
-
-.SS "using \fBsize_t\fP =  std::size_t"
-
-.SS "using \fBslint\fP =  signed long int"
-
-.SS "using \fBsllint\fP =  signed long long int"
-
-.SS "using \fBssint\fP =  signed short int"
-
-.SS "using \fBuchint\fP =  unsigned char"
-
-.SS "using \fBuint\fP =  unsigned int"
-
-.SS "using \fBuint128_t\fP =  __uint128_t"
-
-.SS "using \fBuint16_t\fP =  std::uint16_t"
-
-.SS "using \fBuint32_t\fP =  std::uint32_t"
-
-.SS "using \fBuint64_t\fP =  std::uint64_t"
-
-.SS "using \fBuint8_t\fP =  std::uint8_t"
-
-.SS "using \fBulint\fP =  unsigned long int"
-
-.SS "using \fBullint\fP =  unsigned long long int"
-
-.SS "using \fBusint\fP =  unsigned short int"
-
 .SH "Autor"
 .PP 
 Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

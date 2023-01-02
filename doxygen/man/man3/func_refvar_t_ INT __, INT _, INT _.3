@@ -1,4 +1,4 @@
-.TH "func_refvar_t< INT **, INT *, INT >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "func_refvar_t< INT **, INT *, INT >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,7 +21,7 @@ func_refvar_t< INT **, INT *, INT >
 .RI "void \fBborra_var\fP (string nombre)"
 .br
 .ti -1c
-.RI "bool \fBexiste_lugar_de_base\fP (\fBuchint\fP Base)"
+.RI "bool \fBexiste_lugar_de_base\fP (uchint Base)"
 .br
 .ti -1c
 .RI "bool \fBeste_nombre_ya_ha_sido_declarado\fP (string nombre)"
@@ -33,105 +33,98 @@ func_refvar_t< INT **, INT *, INT >
 .RI "bool \fBoperator()\fP (string nombre, string lhs)"
 .br
 .in -1c
+.SS "Métodos privados"
+
+.in +1c
+.ti -1c
+.RI "bool \fBinsert\fP (string nombre, uchint base, uchint var_base)"
+.br
+.ti -1c
+.RI "\fBfunc_refvar_t\fP (const \fBfunc_refvar_t\fP &)=delete"
+.br
+.ti -1c
+.RI "bool \fBescribe_var\fP (string nombre, uchint base, uchint var_base)"
+.br
+.in -1c
+.SS "Atributos privados"
+
+.in +1c
+.ti -1c
+.RI "vector< vector< bool > > \fBmapmem\fP"
+.br
+.ti -1c
+.RI "map< string, \fBpar_dir_t\fP > \fBmapvd\fP"
+.br
+.ti -1c
+.RI "\fBINT\fP ** \fBmatd\fP"
+.br
+.ti -1c
+.RI "vector< uint > \fBcuentavars\fP"
+.br
+.in -1c
 .SH "Descripción detallada"
 .PP 
+Definición en la línea \fB305\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación del constructor y destructor"
 .PP 
+.SS "\fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >\fB::func_refvar_t\fP (const \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP > &)\fC [private]\fP, \fC [delete]\fP"
+
 .SS "\fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >\fB::func_refvar_t\fP ()\fC [inline]\fP"
 
 .PP
-.nf
-341         {
-342                 //inicia_matriz_digs_y_pp(matd,256u,256u);
-343                 matd = construye_matriz_de_variables<INT**,INT*,INT>(matd);
-344                 mapmem\&.resize(256);
-345                 cuentavars\&.resize(256);
-346                 for(uint I=0 ; I < 256 ; ++I){
-347                         mapmem[I]\&.resize(256);
-348                         cuentavars[I]=0;
-349                         for(uint J=0 ; J < 256 ; ++J){
-350                                 mapmem[I][J]=false;
-351                         }
-352                 }
-353         }
-.fi
+Definición en la línea \fB341\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "\fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::~\fBfunc_refvar_t\fP ()\fC [inline]\fP"
 
 .PP
-.nf
-356         {
-357                 destruye_matriz_de_variables<INT**,INT*,INT>(matd);
-358         }
-.fi
+Definición en la línea \fB356\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
 .SS "void \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::borra_var (string nombre)\fC [inline]\fP"
 
 .PP
-.nf
-377                                         {
-378                 map< string , par_dir_t >::iterator it = mapvd\&.begin();
-379                 map< string , par_dir_t >::const_iterator itend = mapvd\&.end();
-380                 for( ; it != itend ; ++it) {
-381                         if ((*it)\&.first==nombre) {
-382                                 mapmem[(*it)\&.second\&.first][(*it)\&.second\&.second]=false;
-383                                 --cuentavars[(*it)\&.second\&.first];
-384                                 mapvd\&.erase(it);// ponerlo a 0
-385                                 return;
-386                         }
-387                 }
-388                 return;
-389         }
-.fi
+Definición en la línea \fB378\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "bool \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::escribe_var (string nombre, uchint base, uchint var_base)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definición en la línea \fB364\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "bool \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::este_nombre_ya_ha_sido_declarado (string nombre)\fC [inline]\fP"
 
 .PP
-.nf
-400                                                             {
-401                 map< string , par_dir_t >::iterator it = mapvd\&.begin();
-402                 map< string , par_dir_t >::const_iterator itend = mapvd\&.end();
-403                 for( ; it != itend ; ++it) {
-404                         if ((*it)\&.first==nombre) {
-405                                 return true;
-406                         }
-407                 }
-408                 return false;
-409         }
-.fi
-.SS "bool \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::existe_lugar_de_base (\fBuchint\fP Base)\fC [inline]\fP"
+Definición en la línea \fB401\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "bool \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::existe_lugar_de_base (uchint Base)\fC [inline]\fP"
 
 .PP
-.nf
-391                                                  {
-392                 bool ret = true;
-393                 for(uint I=0; I < 256 ; ++I){
-394                         ret = ret and mapmem[Base][I];
-395                         if (!ret) return true;
-396                 }
-397                 return false;
-398         }
-.fi
+Definición en la línea \fB392\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "\fBINT\fP \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::get (string nombre)\fC [inline]\fP"
 
 .PP
-.nf
-412         {
-413                 return (*matd[B])[mapvd[nombre]\&.second];
-414         }
-.fi
+Definición en la línea \fB412\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "bool \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::insert (string nombre, uchint base, uchint var_base)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definición en la línea \fB316\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SS "bool \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::operator() (string nombre, string lhs)\fC [inline]\fP"
 
 .PP
-.nf
-417         {
-418                 INT temp(lhs);
-419                 bool se_puede_hacer = este_nombre_ya_ha_sido_declarado(nombre);
-420                 if (se_puede_hacer) (*matd)[mapvd[nombre]\&.second]=temp;
-421                 return se_puede_hacer;
-422         }
-.fi
+Definición en la línea \fB417\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "vector<uint> \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::cuentavars\fC [private]\fP"
+
 .PP
-Hace referencia a \fBfunc_refvar_t< aT, T >::este_nombre_ya_ha_sido_declarado()\fP\&.
+Definición en la línea \fB311\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "vector< vector<bool> > \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::mapmem\fC [private]\fP"
+
+.PP
+Definición en la línea \fB308\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "map< string , \fBpar_dir_t\fP > \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::mapvd\fC [private]\fP"
+
+.PP
+Definición en la línea \fB309\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "\fBINT\fP** \fBfunc_refvar_t\fP< \fBINT\fP **, \fBINT\fP *, \fBINT\fP >::matd\fC [private]\fP"
+
+.PP
+Definición en la línea \fB310\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

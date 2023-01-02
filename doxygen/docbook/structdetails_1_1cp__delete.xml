@@ -5,15 +5,6 @@
 <para>
 <computeroutput>#include &lt;memory_handler.hpp&gt;</computeroutput>
 </para>
-Diagrama de colaboración para details::cp_delete&lt; aT, T, B &gt;:<para>
-    <informalfigure>
-        <mediaobject>
-            <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdetails_1_1cp__delete__coll__graph.png"></imagedata>
-            </imageobject>
-        </mediaobject>
-    </informalfigure>
-</para>
 <simplesect>
     <title>Métodos públicos    </title>
         <itemizedlist>
@@ -21,21 +12,53 @@ Diagrama de colaboración para details::cp_delete&lt; aT, T, B &gt;:<para>
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Métodos privados estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_structdetails_1_1cp__delete_1ae7256e3961b6516f37d144d7f2f521ff">destruye_lista_de_variables</link> (aT *var_list)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <section>
 <title>Descripción detallada</title>
-<simplesect><title>template&lt;typename aT, template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt;<?linebreak?>struct details::cp_delete&lt; aT, T, B &gt;</title></simplesect>
+<simplesect><title>template&lt;typename aT, template&lt; uchint &gt; class T, uchint B&gt;<?linebreak?>struct details::cp_delete&lt; aT, T, B &gt;</title></simplesect>
+<para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00078">78</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
 </section>
 <section>
 <title>Documentación de las funciones miembro</title>
+<anchor xml:id="_structdetails_1_1cp__delete_1ae7256e3961b6516f37d144d7f2f521ff"/><section>
+    <title>destruye_lista_de_variables()</title>
+<indexterm><primary>destruye_lista_de_variables</primary><secondary>details::cp_delete&lt; aT, T, B &gt;</secondary></indexterm>
+<indexterm><primary>details::cp_delete&lt; aT, T, B &gt;</primary><secondary>destruye_lista_de_variables</secondary></indexterm>
+<computeroutput>template&lt;typename aT , template&lt; uchint &gt; class T, uchint B&gt; </computeroutput><para><computeroutput>static void <link linkend="_structdetails_1_1cp__delete">details::cp_delete</link>&lt; aT, T, B &gt;::destruye_lista_de_variables (aT * var_list)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00080">80</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+Gráfico de llamadas a esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdetails_1_1cp__delete_ae7256e3961b6516f37d144d7f2f521ff_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_structdetails_1_1cp__delete_1abd0cf2f40295b124e6ecbb55ca06948c"/><section>
     <title>operator()()</title>
 <indexterm><primary>operator()</primary><secondary>details::cp_delete&lt; aT, T, B &gt;</secondary></indexterm>
 <indexterm><primary>details::cp_delete&lt; aT, T, B &gt;</primary><secondary>operator()</secondary></indexterm>
-<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> B&gt; </computeroutput><para><computeroutput>void <link linkend="_structdetails_1_1cp__delete">details::cp_delete</link>&lt; aT, T, B &gt;::operator() (aT ** var_list_list)<computeroutput>[inline]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;destruye_lista_de_variables(var_list_list[B]);
-00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cp_delete&lt;aT,T,B-1&gt;(var_list_list);
-00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;typename aT , template&lt; uchint &gt; class T, uchint B&gt; </computeroutput><para><computeroutput>void <link linkend="_structdetails_1_1cp__delete">details::cp_delete</link>&lt; aT, T, B &gt;::operator() (aT ** var_list_list)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00084">84</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdetails_1_1cp__delete_abd0cf2f40295b124e6ecbb55ca06948c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <para>
 La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
 <link linkend="_memory__handler_8hpp">memory_handler.hpp</link></section>

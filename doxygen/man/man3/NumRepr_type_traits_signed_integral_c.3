@@ -1,8 +1,9 @@
-.TH "NumRepr::type_traits::signed_integral_c" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "NumRepr::type_traits::signed_integral_c" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-NumRepr::type_traits::signed_integral_c
+NumRepr::type_traits::signed_integral_c \- CONCEPT FOR SIGNED INTEGRAL TYPES\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -10,12 +11,16 @@ NumRepr::type_traits::signed_integral_c
 \fC#include <basic_types\&.hpp>\fP
 .SH "Concept definition"
 .PP 
+.PP
 .nf
 template<typename SINT_T>
-concept NumRepr::type_traits::signed_integral_c =  allowable_signed_type_c<SINT_T>
+concept NumRepr::type_traits::signed_integral_c =  is_signed_type_v<SINT_T>
 .fi
 .SH "Descripción detallada"
 .PP 
+CONCEPT FOR SIGNED INTEGRAL TYPES\&. 
+.PP
+Definición en la línea \fB195\fP del archivo \fBbasic_types\&.hpp\fP\&.
 .SH "Autor"
 .PP 
 Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

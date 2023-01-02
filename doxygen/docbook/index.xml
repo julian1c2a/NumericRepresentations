@@ -3,5 +3,155 @@
     <info>
     <title>NumericRepresentations</title>
     </info>
+<chapter>
+    <title>Documentación de namespaces</title>
+<xi:include href="namespacedetails.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1auxiliary__functions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1auxiliary__types.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1detail.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1lex.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1type__traits.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1type__traits_1_1ugly__details__for__greater__suitable__type__deduction.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1type__traits_1_1ugly__details__for__suitable__type__deduction.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceutilities.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceutilities_1_1special.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Concept Documentation</title>
+<xi:include href="concept_num_repr_1_1type__traits_1_1arith__integral__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="concept_num_repr_1_1type__traits_1_1arith__natural__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="concept_num_repr_1_1type__traits_1_1char__type__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="concept_num_repr_1_1type__traits_1_1integral__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="concept_num_repr_1_1type__traits_1_1signed__integral__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="concept_num_repr_1_1type__traits_1_1uint__type__for__radix__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="concept_num_repr_1_1type__traits_1_1unsigned__integral__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="conceptutilities_1_1all__are__the__same__type__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="conceptutilities_1_1there__is__one__or__more__c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Documentación de las clases</title>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int_1_1____sig___s_int__for___s_int__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int_1_1____sig___s_int__for___s_int__t_3_01schint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int_1_1____sig___s_int__for___s_int__t_3_01sint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int_1_1____sig___s_int__for___s_int__t_3_01slint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int_1_1____sig___s_int__for___s_int__t_3_01sllint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___s_int__for___s_int_1_1____sig___s_int__for___s_int__t_3_01ssint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__f5c7e6520cd5a6a0cbb51fbfe418cdc8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01uint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01ulint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__ff1416f88b005f06eae8d4695658d20cf.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__sig___s_int__for___u_int_1_1____sig___s_int__for___u_int__t_3_01usint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_3_01schint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_3_01sint128__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_3_01sint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_3_01slint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_3_01sllint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_3_01ssint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int_1_1____sig___u_int__for___u_int__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int_1_1____sig___u_int__for___u_int__t_3_01uchint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int_1_1____sig___u_int__for___u_int__t_3_01uint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int_1_1____sig___u_int__for___u_int__t_3_01ulint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int_1_1____sig___u_int__for___u_int__t_3_01ullint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___u_int_1_1____sig___u_int__for___u_int__t_3_01usint__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1base__num__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__delete.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__delete_3_010u_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__delete_3_011u_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__delete_3_012u_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__delete_3_01a_t_00_01_t_00_01std_1_1numeric__limits_3_01uchint_01_4_1_1max_07_08_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__new.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__new_3_010u_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__new_3_011u_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__new_3_012_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structdetails_1_1cp__new_3_01a_t_00_01_t_00_01std_1_1numeric__limits_3_01uchint_01_4_1_1max_07_08_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1dig__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1for__each__same__type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1for__each__same__type_3_01_head__t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classfunc__refvar__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classfunc__refvar__t_3_01_i_n_t_01_5_5_00_01_i_n_t_01_5_00_01_i_n_t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classfunc__refvar__t_3_01_u_i_n_t_01_5_5_00_01_u_i_n_t_01_5_00_01_u_i_n_t_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structint__num__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1local__void__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classnat__num__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1nat__rat__fixed__reg__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1nat__reg__digs__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1pack2array.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1pack2tuple.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1pow___b__to___e__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1reg__digs__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1resbinop__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1add_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1div_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1fediv_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1mult_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1rem_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1sub_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1result__operation__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1add_00_01_n_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1div_00_01_n_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1fediv_00_01_n_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1mult_00_01_n_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1rem_00_01_n_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1sub_00_01_n_01_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1tuple__builder__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structutilities_1_1special_1_1tuple__user__constructor__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__for__suitable__type__deduction_1_1_u_int_type_for_radix.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__for__suitable__type__deduction_1_1_u_int_type_3b69b34bf7723119f9a319c535d4b0ed.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__for__greater__suitable__type__deduction_1_1_u_e73c7ba18a323e7d8eda21299da56319.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_num_repr_1_1type__traits_1_1ugly__details__for__greater__suitable__type__deduction_1_1_u_e88b3502a0fe8dbb9cc27393bb43baef.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Documentación de archivos</title>
+    <xi:include href="auxiliary__functions_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="auxiliary__functions_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="auxiliary__types_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="auxiliary__types_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="base__num__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="base__num__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="basic__types_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="basic__types_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dig__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dig__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="int__num__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="int__num__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="int__reg__digs__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="int__reg__digs__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="lexer__parser_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="lexer__parser_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="memory__handler_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="memory__handler_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__num__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__num__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__rat__fixed__reg__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__rat__fixed__reg__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__rat__num__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__rat__num__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__reg__digs__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="nat__reg__digs__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="pruebas__dig__t_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="pruebas__dig__t_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="rat__fixed__reg__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="rat__fixed__reg__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="rat__num__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="rat__num__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="reg__digs__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="reg__digs__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="test__dig__t_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="test__dig__t_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="utilities_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="utilities_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
 <index/>
 </book>

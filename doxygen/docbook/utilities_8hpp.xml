@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_utilities_8hpp" xml:lang="es">
 <title>Referencia del Archivo utilities.hpp</title>
 <indexterm><primary>utilities.hpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &lt;tuple&gt;<?linebreak?>#include &lt;array&gt;<?linebreak?>#include &quot;src/basic_types.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para utilities.hpp:<para>
+<programlisting linenumbering="unnumbered">#include &lt;tuple&gt;<?linebreak?>#include &lt;array&gt;<?linebreak?>#include &quot;basic_types.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para utilities.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -35,6 +35,30 @@ Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<p
 
 <para>END: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES. </para>
 </listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1pow___b__to___e__t">utilities::special::pow_B_to_E_t&lt; Base, Exp &gt;</link></para>
+
+<para>FORMA ANTIGUA PERO SEGURA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_012_01_4">utilities::special::pow_B_to_E_t&lt; Base, 2 &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_011_01_4">utilities::special::pow_B_to_E_t&lt; Base, 1 &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1pow___b__to___e__t_3_01_base_00_010_01_4">utilities::special::pow_B_to_E_t&lt; Base, 0 &gt;</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1tuple__builder__t">utilities::special::tuple_builder_t&lt; IntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</link></para>
+
+<para>TEMPLATE GENERAL. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802">utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</link></para>
+
+<para>ESPECIALIZACION DONDE INTOBJ_CT == ENDINTOBJ_CT-1. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21">utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</link></para>
+
+<para>ESPECIALIZACION DONDE INTOBJ_CT == BEGININTOBJ_CT. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structutilities_1_1special_1_1tuple__user__constructor__t">utilities::special::tuple_user_constructor_t&lt; BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</link></para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
@@ -42,14 +66,16 @@ Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<p
         <itemizedlist>
             <listitem><para>namespace <link linkend="_namespaceutilities">utilities</link></para>
 </listitem>
+            <listitem><para>namespace <link linkend="_namespaceutilities_1_1special">utilities::special</link></para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Concepts    </title>
         <itemizedlist>
-            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__the__same__type">utilities::all_are_the_same_type</link></para>
+            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__the__same__type__c">utilities::all_are_the_same_type_c</link></para>
 </listitem>
-            <listitem><para>concept <link linkend="_conceptutilities_1_1all__are__more__than__zero">utilities::all_are_more_than_zero</link></para>
+            <listitem><para>concept <link linkend="_conceptutilities_1_1there__is__one__or__more__c">utilities::there_is_one_or_more_c</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -67,7 +93,28 @@ Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<p
 <simplesect>
     <title>Funciones    </title>
         <itemizedlist>
-            <listitem><para>template&lt;class... Ts&gt; <?linebreak?>requires ( all_are_the_same_type&lt;Ts...&gt; &amp;&amp; all_are_more_than_zero&lt;Ts...&gt; )</para><para>void <link linkend="_namespaceutilities_1a2ab88d0a656f1609a891e9ea35ce185e">utilities::assign_with_order</link> (auto &amp;dest, const Ts &amp;... args) noexcept</para>
+            <listitem><para>template&lt;class... Ts&gt; <?linebreak?>requires ( all_are_the_same_type_c&lt;Ts...&gt; &amp;&amp; there_is_one_or_more_c&lt;Ts...&gt; )</para><para>void <link linkend="_namespaceutilities_1a0f549ca7e224442069f979e4beaaab88">utilities::assign_with_order</link> (auto &amp;dest, const Ts &amp;... args) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a">NumRepr::usint_t</link> B, <link linkend="_namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a">NumRepr::usint_t</link> L&gt; </para><para>consteval <link linkend="_namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3">NumRepr::uint128_t</link> <link linkend="_namespaceutilities_1_1special_1a3645f9215c31596f25430e9c722eef17">utilities::special::Base_pow_to_Size</link> () noexcept</para>
+
+<para>FORMA SENCILLA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME. </para>
+</listitem>
+            <listitem><para>template&lt;std::size_t start, std::size_t Base, std::size_t ... Is, template&lt; std::size_t, std::size_t &gt; typename Funct_tt, typename ... Ts&gt; </para><para>constexpr void <link linkend="_namespaceutilities_1_1special_1a600ef880527fb943066e81d144a572d4">utilities::special::ctf_helper</link> (std::index_sequence&lt; Is... &gt;, std::tuple&lt; Ts... &gt; const &amp;t) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;std::size_t start, std::size_t end, std::size_t Base, template&lt; typename, std::size_t, std::size_t &gt; typename Funct_tt, typename ... Ts&gt; </para><para>constexpr void <link linkend="_namespaceutilities_1_1special_1a450a92504b01e717cfe785076cf97b93">utilities::special::ct_for</link> (std::tuple&lt; Ts... &gt; const &amp;t) noexcept</para>
+</listitem>
+            <listitem><para>template&lt;auto B, auto L, typename A &gt; </para><para>constexpr <link linkend="_namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3">NumRepr::uint128_t</link> <link linkend="_namespaceutilities_1_1special_1a92614fb496f783431fe229a771f40a00">utilities::special::conversion_to_int</link> (const A &amp;arg) noexcept</para>
+
+<para>CONVERSION DE REGISTRO DE DIGITOS A ENTERO EN TIEMPO DE COMPILACION. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;<link linkend="_namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a">NumRepr::usint_t</link> Base, <link linkend="_namespace_num_repr_1ac6c7f4dbb7298c676dd9f9b94e887f2a">NumRepr::usint_t</link> Exp&gt; </para><para>constexpr <link linkend="_namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3">NumRepr::uint128_t</link> <link linkend="_namespaceutilities_1_1special_1a0c24705b4d3cfd27689f38201488c087">utilities::special::Pow_B2L_v</link> = pow_B_to_E_t&lt;Base,Exp&gt;::value</para>
+</listitem>
+            <listitem><para>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </para><para>constexpr auto <link linkend="_namespaceutilities_1_1special_1ada5efac888ec6774ade3b0ff5911cb89">utilities::special::tuple_constr_v</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

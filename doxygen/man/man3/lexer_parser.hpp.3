@@ -1,0 +1,77 @@
+.TH "lexer_parser.hpp" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lexer_parser.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'auxiliary_types\&.hpp'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBNumRepr\fP"
+.br
+.ti -1c
+.RI "namespace \fBNumRepr::lex\fP"
+.br
+.in -1c
+.SS "Enumeraciones"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBNumRepr::lex::reglexst_e\fP : uint16_t { \fBNumRepr::lex::st_00\fP = 0, \fBNumRepr::lex::st_01\fP = 1, \fBNumRepr::lex::st_02\fP =2, \fBNumRepr::lex::st_03\fP =3, \fBNumRepr::lex::st_04\fP = 4, \fBNumRepr::lex::st_05\fP = 5, \fBNumRepr::lex::st_06\fP = 6, \fBNumRepr::lex::st_07\fP = 7, \fBNumRepr::lex::st_08\fP =8, \fBNumRepr::lex::st_09\fP =9, \fBNumRepr::lex::st_10\fP =10, \fBNumRepr::lex::st_11\fP =11, \fBNumRepr::lex::st_12\fP =12, \fBNumRepr::lex::st_13\fP =13 }"
+.br
+.ti -1c
+.RI "enum class \fBNumRepr::lex::sintaxerrlexst_e\fP : uint16_t { \fBNumRepr::lex::st_err_00\fP = 256, \fBNumRepr::lex::st_err_01\fP = 257, \fBNumRepr::lex::st_err_02\fP = 258, \fBNumRepr::lex::st_err_03\fP = 259, \fBNumRepr::lex::st_err_04\fP = 260, \fBNumRepr::lex::st_err_05\fP = 261, \fBNumRepr::lex::st_err_06\fP = 262, \fBNumRepr::lex::st_err_07\fP = 263, \fBNumRepr::lex::st_err_08\fP = 264, \fBNumRepr::lex::st_err_09\fP = 265, \fBNumRepr::lex::st_err_10\fP = 266, \fBNumRepr::lex::st_err_11\fP = 267, \fBNumRepr::lex::st_err_12\fP = 268, \fBNumRepr::lex::st_err_13\fP = 269 }"
+.br
+.ti -1c
+.RI "enum class \fBNumRepr::lex::semerrlexst_e\fP : uint16_t { \fBNumRepr::lex::st_sem_00\fP = 4096, \fBNumRepr::lex::st_sem_01\fP = 4097, \fBNumRepr::lex::st_sem_02\fP = 4098, \fBNumRepr::lex::st_sem_03\fP = 4099, \fBNumRepr::lex::st_sem_04\fP = 4100, \fBNumRepr::lex::st_sem_05\fP = 4101, \fBNumRepr::lex::st_sem_06\fP = 4102, \fBNumRepr::lex::st_sem_07\fP = 4103, \fBNumRepr::lex::st_sem_08\fP = 4104, \fBNumRepr::lex::st_sem_09\fP = 4105, \fBNumRepr::lex::st_sem_10\fP = 4106, \fBNumRepr::lex::st_sem_11\fP = 4107, \fBNumRepr::lex::st_sem_12\fP = 4108, \fBNumRepr::lex::st_sem_13\fP = 4109 }"
+.br
+.ti -1c
+.RI "enum class \fBNumRepr::lex::lexst_e\fP : uint16_t { \fBNumRepr::lex::reg_00\fP = 0, \fBNumRepr::lex::reg_01\fP = 1, \fBNumRepr::lex::reg_02\fP = 2, \fBNumRepr::lex::reg_03\fP = 3, \fBNumRepr::lex::reg_04\fP = 4, \fBNumRepr::lex::reg_05\fP = 5, \fBNumRepr::lex::reg_06\fP = 6, \fBNumRepr::lex::reg_07\fP = 7, \fBNumRepr::lex::reg_08\fP = 8, \fBNumRepr::lex::reg_09\fP = 9, \fBNumRepr::lex::reg_10\fP = 10, \fBNumRepr::lex::reg_11\fP = 11, \fBNumRepr::lex::reg_12\fP = 12, \fBNumRepr::lex::reg_13\fP = 13, \fBNumRepr::lex::err_00\fP = 256, \fBNumRepr::lex::err_01\fP = 257, \fBNumRepr::lex::err_02\fP = 258, \fBNumRepr::lex::err_03\fP = 259, \fBNumRepr::lex::err_04\fP = 260, \fBNumRepr::lex::err_05\fP = 261, \fBNumRepr::lex::err_06\fP = 262, \fBNumRepr::lex::err_07\fP = 263, \fBNumRepr::lex::err_08\fP = 264, \fBNumRepr::lex::err_09\fP = 265, \fBNumRepr::lex::err_10\fP = 266, \fBNumRepr::lex::err_11\fP = 267, \fBNumRepr::lex::err_12\fP = 268, \fBNumRepr::lex::err_13\fP = 269, \fBNumRepr::lex::sem_00\fP = 4096, \fBNumRepr::lex::sem_01\fP = 4097, \fBNumRepr::lex::sem_02\fP = 4098, \fBNumRepr::lex::sem_03\fP = 4099, \fBNumRepr::lex::sem_04\fP = 4100, \fBNumRepr::lex::sem_05\fP = 4101, \fBNumRepr::lex::sem_06\fP = 4102, \fBNumRepr::lex::sem_07\fP = 4103, \fBNumRepr::lex::sem_08\fP = 4104, \fBNumRepr::lex::sem_09\fP = 4105, \fBNumRepr::lex::sem_10\fP = 4106, \fBNumRepr::lex::sem_11\fP = 4107, \fBNumRepr::lex::sem_12\fP = 4108, \fBNumRepr::lex::sem_13\fP = 4109 }"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_digit\fP (char)"
+.br
+.ti -1c
+.RI "size_t \fBNumRepr::lex::digit_value\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_valid_char\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::char_value\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_separator\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_end_of_number\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_whitespace\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_end_descriptor\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_radix_descriptor\fP (char)"
+.br
+.ti -1c
+.RI "bool \fBNumRepr::lex::is_sign\fP (char)"
+.br
+.ti -1c
+.RI "sign_e \fBNumRepr::lex::sign_value\fP (char)"
+.br
+.in -1c
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

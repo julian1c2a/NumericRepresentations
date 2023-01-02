@@ -1,4 +1,4 @@
-.TH "utilities.hpp" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "utilities.hpp" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,7 +10,7 @@ utilities.hpp
 .br
 \fC#include <array>\fP
 .br
-\fC#include 'src/basic_types\&.hpp'\fP
+\fC#include 'basic_types\&.hpp'\fP
 .br
 
 .SS "Clases"
@@ -32,6 +32,34 @@ utilities.hpp
 .RI "struct \fButilities::pack2array< Ts >\fP"
 .br
 .RI "END: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES\&. "
+.ti -1c
+.RI "struct \fButilities::special::pow_B_to_E_t< Base, Exp >\fP"
+.br
+.RI "FORMA ANTIGUA PERO SEGURA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME\&. "
+.ti -1c
+.RI "struct \fButilities::special::pow_B_to_E_t< Base, 2 >\fP"
+.br
+.ti -1c
+.RI "struct \fButilities::special::pow_B_to_E_t< Base, 1 >\fP"
+.br
+.ti -1c
+.RI "struct \fButilities::special::pow_B_to_E_t< Base, 0 >\fP"
+.br
+.ti -1c
+.RI "struct \fButilities::special::tuple_builder_t< IntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt >\fP"
+.br
+.RI "TEMPLATE GENERAL\&. "
+.ti -1c
+.RI "struct \fButilities::special::tuple_builder_t< EndIntObj_ct\-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt >\fP"
+.br
+.RI "ESPECIALIZACION DONDE INTOBJ_CT == ENDINTOBJ_CT-1\&. "
+.ti -1c
+.RI "struct \fButilities::special::tuple_builder_t< BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt >\fP"
+.br
+.RI "ESPECIALIZACION DONDE INTOBJ_CT == BEGININTOBJ_CT\&. "
+.ti -1c
+.RI "struct \fButilities::special::tuple_user_constructor_t< BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt >\fP"
+.br
 .in -1c
 .SS "Namespaces"
 
@@ -39,15 +67,18 @@ utilities.hpp
 .ti -1c
 .RI "namespace \fButilities\fP"
 .br
+.ti -1c
+.RI "namespace \fButilities::special\fP"
+.br
 .in -1c
 .SS "Concepts"
 
 .in +1c
 .ti -1c
-.RI "concept \fButilities::all_are_the_same_type\fP"
+.RI "concept \fButilities::all_are_the_same_type_c\fP"
 .br
 .ti -1c
-.RI "concept \fButilities::all_are_more_than_zero\fP"
+.RI "concept \fButilities::there_is_one_or_more_c\fP"
 .br
 .in -1c
 .SS "typedefs"
@@ -69,7 +100,31 @@ utilities.hpp
 .ti -1c
 .RI "template<class\&.\&.\&. Ts> 
 .br
-requires ( all_are_the_same_type<Ts\&.\&.\&.> && all_are_more_than_zero<Ts\&.\&.\&.> )void \fButilities::assign_with_order\fP (auto &dest, const Ts &\&.\&.\&. args) noexcept"
+requires ( all_are_the_same_type_c<Ts\&.\&.\&.> && there_is_one_or_more_c<Ts\&.\&.\&.> )void \fButilities::assign_with_order\fP (auto &dest, const Ts &\&.\&.\&. args) noexcept"
+.br
+.ti -1c
+.RI "template<\fBNumRepr::usint_t\fP B, \fBNumRepr::usint_t\fP L> consteval \fBNumRepr::uint128_t\fP \fButilities::special::Base_pow_to_Size\fP () noexcept"
+.br
+.RI "FORMA SENCILLA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME\&. "
+.ti -1c
+.RI "template<std::size_t start, std::size_t Base, std::size_t \&.\&.\&. Is, template< std::size_t, std::size_t > typename Funct_tt, typename \&.\&.\&. Ts> constexpr void \fButilities::special::ctf_helper\fP (std::index_sequence< Is\&.\&.\&. >, std::tuple< Ts\&.\&.\&. > const &t) noexcept"
+.br
+.ti -1c
+.RI "template<std::size_t start, std::size_t end, std::size_t Base, template< typename, std::size_t, std::size_t > typename Funct_tt, typename \&.\&.\&. Ts> constexpr void \fButilities::special::ct_for\fP (std::tuple< Ts\&.\&.\&. > const &t) noexcept"
+.br
+.ti -1c
+.RI "template<auto B, auto L, typename A > constexpr \fBNumRepr::uint128_t\fP \fButilities::special::conversion_to_int\fP (const A &arg) noexcept"
+.br
+.RI "CONVERSION DE REGISTRO DE DIGITOS A ENTERO EN TIEMPO DE COMPILACION\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "template<\fBNumRepr::usint_t\fP Base, \fBNumRepr::usint_t\fP Exp> constexpr \fBNumRepr::uint128_t\fP \fButilities::special::Pow_B2L_v\fP = pow_B_to_E_t<Base,Exp>::value"
+.br
+.ti -1c
+.RI "template<std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template< std::int64_t, std::int64_t > class Funct_tt> constexpr auto \fButilities::special::tuple_constr_v\fP"
 .br
 .in -1c
 .SH "Autor"

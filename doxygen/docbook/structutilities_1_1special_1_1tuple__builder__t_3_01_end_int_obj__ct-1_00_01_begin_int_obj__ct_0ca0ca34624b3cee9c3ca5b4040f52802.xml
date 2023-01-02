@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</title>
+<indexterm><primary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary></indexterm>
+<para>
+
+<para>ESPECIALIZACION DONDE INTOBJ_CT == ENDINTOBJ_CT-1. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;utilities.hpp&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Tipos públicos    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1ac530c0ab3a98a57fa2014b41f22b8676">type</link> = std::int64_t</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Métodos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static consteval decltype(auto) <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a55aa2fc522a7eafb0bc8fc5384c199cc">build</link> () noexcept</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Atributos públicos estáticos    </title>
+        <itemizedlist>
+            <listitem><para>static constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a5e639670b0914aa4dd40496a12a2e84c">unit</link> = static_cast&lt;std::int64_t&gt;(1)</para>
+</listitem>
+            <listitem><para>static constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1adf90b0c747ad6d5fcbe51e4965ad713f">value</link> {EndIntObj_ct-<link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a5e639670b0914aa4dd40496a12a2e84c">unit</link>}</para>
+</listitem>
+            <listitem><para>static constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a9e97fc5b1ca3232b40629aaa5187b884">begin_value</link> {BeginIntObj_ct}</para>
+</listitem>
+            <listitem><para>static constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a4e46a15f03b4f6125e48d0fc2287a6b3">end_value</link> {EndIntObj_ct}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt;<?linebreak?>struct utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</title></simplesect>
+
+<para>ESPECIALIZACION DONDE INTOBJ_CT == ENDINTOBJ_CT-1. </para>
+<para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00261">261</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+<section>
+<title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
+<anchor xml:id="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1ac530c0ab3a98a57fa2014b41f22b8676"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</secondary></indexterm>
+<indexterm><primary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary><secondary>type</secondary></indexterm>
+<computeroutput>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </computeroutput><para><computeroutput>using <link linkend="_structutilities_1_1special_1_1tuple__builder__t">utilities::special::tuple_builder_t</link>&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::type =  std::int64_t</computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00263">263</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentación de las funciones miembro</title>
+<anchor xml:id="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a55aa2fc522a7eafb0bc8fc5384c199cc"/><section>
+    <title>build()</title>
+<indexterm><primary>build</primary><secondary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</secondary></indexterm>
+<indexterm><primary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary><secondary>build</secondary></indexterm>
+<computeroutput>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </computeroutput><para><computeroutput>static consteval decltype(auto) <link linkend="_structutilities_1_1special_1_1tuple__builder__t">utilities::special::tuple_builder_t</link>&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::build ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00272">272</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentación de los datos miembro</title>
+<anchor xml:id="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a9e97fc5b1ca3232b40629aaa5187b884"/><section>
+    <title>begin_value</title>
+<indexterm><primary>begin_value</primary><secondary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</secondary></indexterm>
+<indexterm><primary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary><secondary>begin_value</secondary></indexterm>
+<computeroutput>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </computeroutput><para><computeroutput>constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t">utilities::special::tuple_builder_t</link>&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::begin_value {BeginIntObj_ct}<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00268">268</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+<anchor xml:id="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a4e46a15f03b4f6125e48d0fc2287a6b3"/><section>
+    <title>end_value</title>
+<indexterm><primary>end_value</primary><secondary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</secondary></indexterm>
+<indexterm><primary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary><secondary>end_value</secondary></indexterm>
+<computeroutput>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </computeroutput><para><computeroutput>constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t">utilities::special::tuple_builder_t</link>&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::end_value {EndIntObj_ct}<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00269">269</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+<anchor xml:id="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a5e639670b0914aa4dd40496a12a2e84c"/><section>
+    <title>unit</title>
+<indexterm><primary>unit</primary><secondary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</secondary></indexterm>
+<indexterm><primary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary><secondary>unit</secondary></indexterm>
+<computeroutput>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </computeroutput><para><computeroutput>constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t">utilities::special::tuple_builder_t</link>&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::unit = static_cast&lt;std::int64_t&gt;(1)<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00265">265</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+<anchor xml:id="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1adf90b0c747ad6d5fcbe51e4965ad713f"/><section>
+    <title>value</title>
+<indexterm><primary>value</primary><secondary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</secondary></indexterm>
+<indexterm><primary>utilities::special::tuple_builder_t&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</primary><secondary>value</secondary></indexterm>
+<computeroutput>template&lt;std::int64_t BeginIntObj_ct, std::int64_t EndIntObj_ct, std::int64_t Base, template&lt; std::int64_t, std::int64_t &gt; class Funct_tt&gt; </computeroutput><para><computeroutput>constexpr std::int64_t <link linkend="_structutilities_1_1special_1_1tuple__builder__t">utilities::special::tuple_builder_t</link>&lt; EndIntObj_ct-1, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::value {EndIntObj_ct-<link linkend="_structutilities_1_1special_1_1tuple__builder__t_3_01_end_int_obj__ct-1_00_01_begin_int_obj__ct_0ca0ca34624b3cee9c3ca5b4040f52802_1a5e639670b0914aa4dd40496a12a2e84c">unit</link>}<computeroutput>[static]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_utilities_8hpp_source_1l00267">267</link> del archivo <link linkend="_utilities_8hpp_source">utilities.hpp</link>.</para>
+</section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_utilities_8hpp">utilities.hpp</link></section>
+</section>

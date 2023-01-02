@@ -5,9 +5,9 @@
 <simplesect>
     <title>Funciones    </title>
         <itemizedlist>
-            <listitem><para>constexpr bool <link linkend="_namespace_num_repr_1_1auxiliary__functions_1a6a368b190a18264af00c59b164dc1096">is_prime</link> (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n) noexcept</para>
+            <listitem><para>constexpr bool <link linkend="_namespace_num_repr_1_1auxiliary__functions_1a6a368b190a18264af00c59b164dc1096">is_prime</link> (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> n) noexcept</para>
 </listitem>
-            <listitem><para>constexpr bool <link linkend="_namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d">is_power_of_2</link> (<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> num) noexcept</para>
+            <listitem><para>constexpr bool <link linkend="_namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d">is_power_of_2</link> (<link linkend="_namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3">uint128_t</link> num) noexcept</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -17,16 +17,8 @@
     <title>is_power_of_2()</title>
 <indexterm><primary>is_power_of_2</primary><secondary>NumRepr::auxiliary_functions</secondary></indexterm>
 <indexterm><primary>NumRepr::auxiliary_functions</primary><secondary>is_power_of_2</secondary></indexterm>
-<para><computeroutput>constexpr bool NumRepr::auxiliary_functions::is_power_of_2 (<link linkend="_basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f">uint128_t</link> num)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((num&#32;%&#32;2)&#32;!=&#32;0)
-00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
-00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
-00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d">is_power_of_2</link>(num&#32;/&#32;2);
-00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting><para>
-Hace referencia a <link linkend="_l00115">is_power_of_2()</link>.</para>
-<para>
-Referenciado por <link linkend="_l00115">is_power_of_2()</link>.</para>
+<para><computeroutput>constexpr bool NumRepr::auxiliary_functions::is_power_of_2 (<link linkend="_namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3">uint128_t</link> num)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_auxiliary__functions_8hpp_source_1l00115">115</link> del archivo <link linkend="_auxiliary__functions_8hpp_source">auxiliary_functions.hpp</link>.</para>
 Gráfico de llamadas para esta función:<para>
     <informalfigure>
         <mediaobject>
@@ -50,18 +42,8 @@ Gráfico de llamadas a esta función:<para>
     <title>is_prime()</title>
 <indexterm><primary>is_prime</primary><secondary>NumRepr::auxiliary_functions</secondary></indexterm>
 <indexterm><primary>NumRepr::auxiliary_functions</primary><secondary>is_prime</secondary></indexterm>
-<para><computeroutput>constexpr bool NumRepr::auxiliary_functions::is_prime (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(n&#32;&lt;&#32;2)
-00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
-00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;((n==2)||(n==3))
-00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
-00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
-00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(!detail::find_factor(n,&#32;1,&#32;(detail::ceilsqrt(n)&#32;+&#32;1)&#32;/&#32;2));
-00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting><para>
-Hace referencia a <link linkend="_l00052">NumRepr::detail::ceilsqrt()</link> y <link linkend="_l00088">NumRepr::detail::find_factor()</link>.</para>
-<para>
-Referenciado por <link linkend="_l00139">NumRepr::dig_t&lt; UINT_T, B &gt;::is_prime()</link>.</para>
+<para><computeroutput>constexpr bool NumRepr::auxiliary_functions::is_prime (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> n)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_auxiliary__functions_8hpp_source_1l00105">105</link> del archivo <link linkend="_auxiliary__functions_8hpp_source">auxiliary_functions.hpp</link>.</para>
 Gráfico de llamadas para esta función:<para>
     <informalfigure>
         <mediaobject>

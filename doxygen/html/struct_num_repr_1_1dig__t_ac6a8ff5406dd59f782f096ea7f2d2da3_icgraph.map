@@ -1,0 +1,52 @@
+<map id="NumRepr::dig_t::dig_0" name="NumRepr::dig_t::dig_0">
+<area shape="rect" id="node1" title=" " alt="" coords="657,1082,811,1107"/>
+<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#a3ab8e26377b4f409fe0ec67972db7de4" title=" " alt="" coords="449,627,609,667"/>
+<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a235bc4a9ae726bbf7c7d5933d9a62b2e" title=" " alt="" coords="448,691,609,731"/>
+<area shape="rect" id="node36" href="$struct_num_repr_1_1reg__digs__t.html#a9d37af8b2ce4db142cb55a932d8fd805" title=" " alt="" coords="455,755,602,795"/>
+<area shape="rect" id="node37" href="$struct_num_repr_1_1nat__reg__digs__t.html#a36d07cae3bf81e5a9b43c1cffd201d38" title="END : OPERATORS | &amp; |= &amp;=." alt="" coords="449,819,609,859"/>
+<area shape="rect" id="node38" href="$struct_num_repr_1_1nat__reg__digs__t.html#a65523219739c53202de6718061c2867d" title="OPERATOR BASE_T &#45;= DIG_T CON NOMBRE M_SUB." alt="" coords="449,883,609,923"/>
+<area shape="rect" id="node39" href="$struct_num_repr_1_1nat__reg__digs__t.html#ae8944cfac1e1fd4c1e0a6be9bd5bc9f4" title=" " alt="" coords="449,947,609,987"/>
+<area shape="rect" id="node41" href="$struct_num_repr_1_1nat__reg__digs__t.html#a48e13b837d97d5b20e16d06fdb896453" title="CONSTRUCTOR POR DEFECTO." alt="" coords="449,1011,609,1051"/>
+<area shape="rect" id="node42" href="$struct_num_repr_1_1nat__reg__digs__t.html#ab1a63d715621ca9fea2c4d765155a23b" title=" " alt="" coords="449,1075,609,1115"/>
+<area shape="rect" id="node43" href="$struct_num_repr_1_1nat__reg__digs__t.html#ac67f0700240165427c4bb850d5bb08ba" title=" " alt="" coords="449,1139,609,1179"/>
+<area shape="rect" id="node44" href="$struct_num_repr_1_1nat__reg__digs__t.html#a50aeb5c3fe8c0b4c63285056e36b4ae6" title=" " alt="" coords="449,1203,609,1243"/>
+<area shape="rect" id="node45" href="$struct_num_repr_1_1nat__reg__digs__t.html#aa340d969b6d01c15b8181e542d3a2fef" title=" " alt="" coords="449,1267,609,1307"/>
+<area shape="rect" id="node46" href="$struct_num_repr_1_1nat__reg__digs__t.html#aa06e3a55433e98a553d0204ce642f6b8" title=" " alt="" coords="449,1331,609,1371"/>
+<area shape="rect" id="node47" href="$struct_num_repr_1_1nat__reg__digs__t.html#ae15231d7a8ac742f64c352de56ad42b5" title=" " alt="" coords="449,1395,609,1435"/>
+<area shape="rect" id="node48" href="$struct_num_repr_1_1nat__reg__digs__t.html#ab5263cf1eaa919874172ed0628db64f0" title=" " alt="" coords="449,1459,609,1499"/>
+<area shape="rect" id="node50" href="$struct_num_repr_1_1nat__reg__digs__t.html#af0c7e92ac7dad132e23eebc7df96baad" title=" " alt="" coords="449,1523,609,1563"/>
+<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a747abd2210ae2c492b36f277931a8cb6" title="&#39;@&#39; = &#39;+&#39;" alt="" coords="11,69,173,109"/>
+<area shape="rect" id="node5" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#acf99b1745ac9ee699102236d1a2a79dc" title="BEGIN : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS." alt="" coords="233,1192,394,1232"/>
+<area shape="rect" id="node6" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a073f393cf63e0e2ee6c651748c35aa05" title=" " alt="" coords="233,85,394,125"/>
+<area shape="rect" id="node7" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a43181180eabb8e8ea937db4ba2d7718d" title=" " alt="" coords="11,133,173,173"/>
+<area shape="rect" id="node8" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#ace15a99d6b8f4b429bf385e32d9c58d8" title=" " alt="" coords="233,149,394,189"/>
+<area shape="rect" id="node9" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#ae46f34abf55253a3dc0f6774678f57bc" title=" " alt="" coords="11,197,173,237"/>
+<area shape="rect" id="node10" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a1d2effcd65514535a97572a28c992519" title="END : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS." alt="" coords="233,213,394,253"/>
+<area shape="rect" id="node12" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a1ad5dbda3b2a1663086f48ccddb0c07d" title=" " alt="" coords="11,261,173,301"/>
+<area shape="rect" id="node13" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#af9fbb6e036ca9bd58675e476d43e05a9" title=" " alt="" coords="11,325,173,365"/>
+<area shape="rect" id="node14" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#ae87bcfde3ae0324b373aef151db47020" title=" " alt="" coords="11,389,173,429"/>
+<area shape="rect" id="node15" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a863b4585d8f4ae407912c98c9273b6d3" title=" " alt="" coords="11,1093,173,1133"/>
+<area shape="rect" id="node16" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#ad44b35a08b59ad0418071711eeed448b" title=" " alt="" coords="11,1157,173,1197"/>
+<area shape="rect" id="node17" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a197245d11816587e8bbcc82e53a94b45" title=" " alt="" coords="11,1221,173,1261"/>
+<area shape="rect" id="node18" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#ad4655dff96fd715063231961682140a8" title=" " alt="" coords="233,277,394,317"/>
+<area shape="rect" id="node19" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a2059c242611fae3bb6b65e7313bb7ff5" title="DIVIDE BY THE BASE B (/10_B)" alt="" coords="11,1285,173,1325"/>
+<area shape="rect" id="node20" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a04e688baa386601c21f3ad4348205ed8" title=" " alt="" coords="11,1349,173,1389"/>
+<area shape="rect" id="node21" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a02410bb4d27f15f78c3b3e6bed790547" title=" " alt="" coords="233,341,394,381"/>
+<area shape="rect" id="node22" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a05f3a766ce29786655fc99812d550fa6" title=" " alt="" coords="227,773,400,813"/>
+<area shape="rect" id="node33" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a300ccd4144f9f2cdb9979897e14ded03" title=" " alt="" coords="11,1413,173,1453"/>
+<area shape="rect" id="node34" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a6551f10097dd07df063b87fc1a007fd8" title=" " alt="" coords="11,1477,173,1517"/>
+<area shape="rect" id="node35" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a2b72b79cdc0bf99d420fa9ffc812b274" title="ARRAYS DE ENTEROS QUE SON DE AYUDA." alt="" coords="233,405,394,445"/>
+<area shape="rect" id="node11" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#af205ef58ee00a8d89a5504f3638d2f06" title=" " alt="" coords="5,5,179,45"/>
+<area shape="rect" id="node23" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#adf28ede7d87f952b85ee2e6f13bddd99" title=" " alt="" coords="11,517,173,557"/>
+<area shape="rect" id="node24" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a27966e1e6701d534293e7f258e53457b" title=" " alt="" coords="11,581,173,621"/>
+<area shape="rect" id="node25" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a8c7d7fb0e6776dd78e993e5fc8fbf8e4" title=" " alt="" coords="11,645,173,685"/>
+<area shape="rect" id="node26" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a12229e5a534c8c6f2e4075031ae7ef6c" title=" " alt="" coords="11,709,173,749"/>
+<area shape="rect" id="node27" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a82fea75187699b7f253e7a0b76f84816" title=" " alt="" coords="11,773,173,813"/>
+<area shape="rect" id="node28" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a9f8d01bd90392598f683702bdff3ad45" title=" " alt="" coords="11,837,173,877"/>
+<area shape="rect" id="node29" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a44e11dd006b54a63e2fbf7242cf9f273" title=" " alt="" coords="11,901,173,941"/>
+<area shape="rect" id="node30" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#abbd54ac852f5cde9a0ec8ebe34f4ffc9" title=" " alt="" coords="11,965,173,1005"/>
+<area shape="rect" id="node31" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a7921aacc123039a503c43bb0590a3816" title=" " alt="" coords="11,1029,173,1069"/>
+<area shape="rect" id="node32" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#ad900c018f6bac8a884c30349154dea10" title=" " alt="" coords="11,453,173,493"/>
+<area shape="rect" id="node40" href="$struct_num_repr_1_1nat__reg__digs__t.html#a9487898486f71a81f5ccc6573f8709db" title="CONSTRUCTOR POR MOVIMIENTO." alt="" coords="233,1256,393,1296"/>
+<area shape="rect" id="node49" href="$struct_num_repr_1_1nat__reg__digs__t.html#a4ac89cc0daee3cbccf22a42164e99481" title="OPERACION DE LIMPIEZA A VALOR DIG_T DEL NAT_REG_DIGS_T." alt="" coords="233,1459,393,1499"/>
+</map>

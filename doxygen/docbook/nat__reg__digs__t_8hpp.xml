@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_nat__reg__digs__t_8hpp" xml:lang="es">
 <title>Referencia del Archivo nat_reg_digs_t.hpp</title>
 <indexterm><primary>nat_reg_digs_t.hpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;dig_t.hpp&quot;<?linebreak?>#include &quot;utilities.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para nat_reg_digs_t.hpp:<para>
+<programlisting linenumbering="unnumbered">#include &quot;reg_digs_t.hpp&quot;<?linebreak?>#include &quot;utilities.hpp&quot;<?linebreak?></programlisting>Dependencia gráfica adjunta para nat_reg_digs_t.hpp:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
@@ -37,9 +37,17 @@ Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<p
 <simplesect>
     <title>Funciones    </title>
         <itemizedlist>
-            <listitem><para>template&lt;type_traits::allowable_base_type_c Int_Type, Int_Type Base, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> Length&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))</para><para>std::istream &amp; <link linkend="_namespace_num_repr_1abc220e2b8550522f9cb96ecd95d172bb">NumRepr::operator&gt;&gt;</link> (std::istream &amp;is, <link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a50bc25134d38787a559eb392de83d97e">nat_reg_digs_t</link>&lt; Int_Type, Base, Length &gt; &amp;arg)</para>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t LE&gt; </para><para>bool <link linkend="_namespace_num_repr_1a89c726416380167073c3a39632cf2fa9">NumRepr::is_nat_reg_digs_type_id</link> (std::string in)</para>
+
+<para>ESPECIALIZACIONES PARA NAT_REG_DIGS. </para>
 </listitem>
-            <listitem><para>template&lt;type_traits::allowable_base_type_c Int_Type, Int_Type Base, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> Long&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())</para><para>std::ostream &amp; <link linkend="_namespace_num_repr_1aee52933f615df4b729ccc06310036b16">NumRepr::operator&lt;&lt;</link> (std::ostream &amp;os, const <link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a50bc25134d38787a559eb392de83d97e">nat_reg_digs_t</link>&lt; Int_Type, Base, Long &gt; &amp;arg)</para>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t LE&gt; </para><para>std::string <link linkend="_namespace_num_repr_1a9bda15db6ff37b4d5247ca097156679c">NumRepr::to_nat_reg_digs_type_string</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;typename UInt_t , UInt_t B, size_t LE&gt; </para><para>size_t <link linkend="_namespace_num_repr_1a0c896afd9a215a562fdc0280a545cf49">NumRepr::size_of_nat_reg_digs_type_string_idT</link> ()</para>
+</listitem>
+            <listitem><para>template&lt;type_traits::uint_type_for_radix_c Int_Type, Int_Type Base, size_t Length&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;()&amp;&amp;(Length &gt; 0))</para><para>std::istream &amp; <link linkend="_namespace_num_repr_1abc220e2b8550522f9cb96ecd95d172bb">NumRepr::operator&gt;&gt;</link> (std::istream &amp;is, nat_reg_digs_t&lt; Int_Type, Base, Length &gt; &amp;arg)</para>
+</listitem>
+            <listitem><para>template&lt;type_traits::uint_type_for_radix_c Int_Type, Int_Type Base, size_t Long&gt; <?linebreak?>requires (type_traits::suitable_base&lt;Int_Type,Base&gt;())</para><para>std::ostream &amp; <link linkend="_namespace_num_repr_1aee52933f615df4b729ccc06310036b16">NumRepr::operator&lt;&lt;</link> (std::ostream &amp;os, const nat_reg_digs_t&lt; Int_Type, Base, Long &gt; &amp;arg)</para>
 </listitem>
         </itemizedlist>
 </simplesect>

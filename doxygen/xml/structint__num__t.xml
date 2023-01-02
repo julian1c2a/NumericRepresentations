@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="structint__num__t" kind="struct" language="C++" prot="public">
     <compoundname>int_num_t</compoundname>
     <basecompoundref prot="protected" virt="non-virtual">base_num_t&lt; UINT_T, B &gt;</basecompoundref>
@@ -18,7 +18,7 @@
     </templateparamlist>
       <sectiondef kind="private-type">
       <memberdef kind="typedef" id="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" prot="private" static="no">
-        <type><ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&lt; B &gt;</type>
+        <type>dig_t&lt; B &gt;</type>
         <definition>typedef dig_t&lt;B&gt; int_num_t&lt; UINT_T, B &gt;::dig</definition>
         <argsstring></argsstring>
         <name>dig</name>
@@ -46,7 +46,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="16" column="32" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="structint__num__t_1a4bb3e3b2a9e1c4d00b1222488c3284f3" prot="private" static="no">
-        <type>basic_string&lt; <ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&lt; B &gt; &gt;</type>
+        <type>basic_string&lt; dig_t&lt; B &gt; &gt;</type>
         <definition>typedef basic_string&lt; dig_t&lt;B&gt; &gt; int_num_t&lt; UINT_T, B &gt;::nbstr</definition>
         <argsstring></argsstring>
         <name>nbstr</name>
@@ -284,9 +284,37 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="37" column="15" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="37" bodyend="-1"/>
+        <referencedby refid="structint__num__t_1a94f6a0a608614642522b2d8fff91aff0" compoundref="int__num__t_8hpp" startline="1601" endline="1608">int_num_t&lt; UINT_T, B &gt;::abs</referencedby>
+        <referencedby refid="structint__num__t_1acf8be3251610cf7365b5a7ae48dfa001" compoundref="int__num__t_8hpp" startline="1610" endline="1616">int_num_t&lt; UINT_T, B &gt;::absp</referencedby>
+        <referencedby refid="structint__num__t_1a55203f0d36573721c63de3837f8d416e" compoundref="int__num__t_8hpp" startline="592" endline="605">int_num_t&lt; UINT_T, B &gt;::digs_no_significativos</referencedby>
+        <referencedby refid="structint__num__t_1a066a49e72fc5bde03a85fdd2fa693973" compoundref="int__num__t_8hpp" startline="1660" endline="1701">int_num_t&lt; UINT_T, B &gt;::div2</referencedby>
+        <referencedby refid="structint__num__t_1a11d24d94e5768ecceb341991ab7203a9" compoundref="int__num__t_8hpp" startline="1725" endline="1767">int_num_t&lt; UINT_T, B &gt;::div2p</referencedby>
+        <referencedby refid="structint__num__t_1aecf8974d7f0c66b12d913b4861bcf810" compoundref="int__num__t_8hpp" startline="106" endline="119">int_num_t&lt; UINT_T, B &gt;::erase</referencedby>
+        <referencedby refid="structint__num__t_1a4b7bc7c10c03f0560b724614e4e4278f" compoundref="int__num__t_8hpp" startline="2079" endline="2124">int_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
+        <referencedby refid="structint__num__t_1a4e1b2b56ffe5f4d8f0cf2b31fee922fc" compoundref="int__num__t_8hpp" startline="2126" endline="2171">int_num_t&lt; UINT_T, B &gt;::EuclidDivP</referencedby>
+        <referencedby refid="structint__num__t_1a3a812ddf5e23511d20f4b40f0a1d119e" compoundref="int__num__t_8hpp" startline="1555" endline="1580">int_num_t&lt; UINT_T, B &gt;::mC_B</referencedby>
+        <referencedby refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</referencedby>
+        <referencedby refid="structint__num__t_1a0fa45dac193d9e3ccf9dcbd3a0f0a6bd" compoundref="int__num__t_8hpp" startline="663" endline="678">int_num_t&lt; UINT_T, B &gt;::operator!=</referencedby>
+        <referencedby refid="structint__num__t_1ae1144a6001a66b5fecad8debf5454bc2" compoundref="int__num__t_8hpp" startline="912" endline="929">int_num_t&lt; UINT_T, B &gt;::operator*</referencedby>
+        <referencedby refid="structint__num__t_1ab4f61bc56098580779f5fb4f8d52cf44" compoundref="int__num__t_8hpp" startline="1275" endline="1293">int_num_t&lt; UINT_T, B &gt;::operator*=</referencedby>
+        <referencedby refid="structint__num__t_1affa4d6ff03dfb310a7b6bda3ecc1eb7a" compoundref="int__num__t_8hpp" startline="2196" endline="2233">int_num_t&lt; UINT_T, B &gt;::operator++</referencedby>
+        <referencedby refid="structint__num__t_1a0f0b3db6587b441868f2cccb2f4b014c" compoundref="int__num__t_8hpp" startline="2274" endline="2328">int_num_t&lt; UINT_T, B &gt;::operator--</referencedby>
+        <referencedby refid="structint__num__t_1acc818e68d0ebebc9ee1a14c0a9506328" compoundref="int__num__t_8hpp" startline="931" endline="976">int_num_t&lt; UINT_T, B &gt;::operator/</referencedby>
+        <referencedby refid="structint__num__t_1a6087d5c5da71405c13e8e818a8cac6b0" compoundref="int__num__t_8hpp" startline="1295" endline="1341">int_num_t&lt; UINT_T, B &gt;::operator/=</referencedby>
+        <referencedby refid="structint__num__t_1a6212907f79ef713205e6d09e5e340f2c" compoundref="int__num__t_8hpp" startline="765" endline="791">int_num_t&lt; UINT_T, B &gt;::operator&lt;</referencedby>
+        <referencedby refid="structint__num__t_1a8a80c22f65c390355de7421e1ddd7d54" compoundref="int__num__t_8hpp" startline="708" endline="734">int_num_t&lt; UINT_T, B &gt;::operator&lt;=</referencedby>
+        <referencedby refid="structint__num__t_1aeeedd95e69e5f62662b060823b3bded7" compoundref="int__num__t_8hpp" startline="372" endline="382">int_num_t&lt; UINT_T, B &gt;::operator=</referencedby>
+        <referencedby refid="structint__num__t_1a3f6da26847b75caa02c9969f51702de8" compoundref="int__num__t_8hpp" startline="647" endline="661">int_num_t&lt; UINT_T, B &gt;::operator==</referencedby>
+        <referencedby refid="structint__num__t_1acb4f8554bc619a61d768b8b7467ddf46" compoundref="int__num__t_8hpp" startline="736" endline="763">int_num_t&lt; UINT_T, B &gt;::operator&gt;</referencedby>
+        <referencedby refid="structint__num__t_1acec6fb387e79e65f37e779ffb18d8730" compoundref="int__num__t_8hpp" startline="680" endline="706">int_num_t&lt; UINT_T, B &gt;::operator&gt;=</referencedby>
+        <referencedby refid="structint__num__t_1aeb24d35b97a122413d6ae886f55d59e7" compoundref="int__num__t_8hpp" startline="1703" endline="1723">int_num_t&lt; UINT_T, B &gt;::rem2</referencedby>
+        <referencedby refid="structint__num__t_1ad5ba09cfe05ae18fbcb505b0e92b1745" compoundref="int__num__t_8hpp" startline="1769" endline="1789">int_num_t&lt; UINT_T, B &gt;::rem2p</referencedby>
+        <referencedby refid="structint__num__t_1a4d4b2c2c862d358a897074e2afe9c298" compoundref="int__num__t_8hpp" startline="1635" endline="1640">int_num_t&lt; UINT_T, B &gt;::remB</referencedby>
+        <referencedby refid="structint__num__t_1a7536efd30cc24248602b3083295a782c" compoundref="int__num__t_8hpp" startline="1805" endline="1822">int_num_t&lt; UINT_T, B &gt;::remBm1</referencedby>
+        <referencedby refid="structint__num__t_1ae37121ea60fbd75600561e3bbef77194" compoundref="int__num__t_8hpp" startline="1653" endline="1658">int_num_t&lt; UINT_T, B &gt;::remBp</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" prot="private" static="no" mutable="no">
-        <type>spardigs</type>
+        <type><ref refid="structint__num__t_1ad6248361af646c0c002b7544b612acde" kindref="member">spardigs</ref></type>
         <definition>spardigs int_num_t&lt; UINT_T, B &gt;::aux</definition>
         <argsstring></argsstring>
         <name>aux</name>
@@ -298,11 +326,21 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="38" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="38" bodyend="-1"/>
+        <referencedby refid="structint__num__t_1a3a812ddf5e23511d20f4b40f0a1d119e" compoundref="int__num__t_8hpp" startline="1555" endline="1580">int_num_t&lt; UINT_T, B &gt;::mC_B</referencedby>
+        <referencedby refid="structint__num__t_1ab9f2744f11a4b917487a0ab8793d93dc" compoundref="int__num__t_8hpp" startline="51" endline="71">int_num_t&lt; UINT_T, B &gt;::mC_B_incondicionado</referencedby>
+        <referencedby refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</referencedby>
+        <referencedby refid="structint__num__t_1a1fa5a610a675322a17233b696994276a" compoundref="int__num__t_8hpp" startline="799" endline="853">int_num_t&lt; UINT_T, B &gt;::operator+</referencedby>
+        <referencedby refid="structint__num__t_1affa4d6ff03dfb310a7b6bda3ecc1eb7a" compoundref="int__num__t_8hpp" startline="2196" endline="2233">int_num_t&lt; UINT_T, B &gt;::operator++</referencedby>
+        <referencedby refid="structint__num__t_1adac8cb6ab4d43634b44059a0d7a21dc4" compoundref="int__num__t_8hpp" startline="1189" endline="1230">int_num_t&lt; UINT_T, B &gt;::operator+=</referencedby>
+        <referencedby refid="structint__num__t_1abf1ec8aeeadefe6195d33e62435eca37" compoundref="int__num__t_8hpp" startline="855" endline="909">int_num_t&lt; UINT_T, B &gt;::operator-</referencedby>
+        <referencedby refid="structint__num__t_1a0f0b3db6587b441868f2cccb2f4b014c" compoundref="int__num__t_8hpp" startline="2274" endline="2328">int_num_t&lt; UINT_T, B &gt;::operator--</referencedby>
+        <referencedby refid="structint__num__t_1adcde21a88cbb4b810259e675944e1ec8" compoundref="int__num__t_8hpp" startline="1232" endline="1273">int_num_t&lt; UINT_T, B &gt;::operator-=</referencedby>
+        <referencedby refid="structint__num__t_1aeeedd95e69e5f62662b060823b3bded7" compoundref="int__num__t_8hpp" startline="372" endline="382">int_num_t&lt; UINT_T, B &gt;::operator=</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="structint__num__t_1a489e24fd874f049d247539eb02416338" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <type>size_t</type>
         <definition>size_t int_num_t&lt; UINT_T, B &gt;::size</definition>
         <argsstring>() const</argsstring>
         <name>size</name>
@@ -316,6 +354,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="46" column="15" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="46" bodyend="49"/>
         <referencedby refid="structint__num__t_1ae09c19efabf27eb9caf36f33f0f380dd" compoundref="int__num__t_8hpp" startline="545" endline="558">int_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</referencedby>
         <referencedby refid="structint__num__t_1aae2d5fd1815a61a2aadc21c151a34e6b" compoundref="int__num__t_8hpp" startline="511" endline="525">int_num_t&lt; UINT_T, B &gt;::ceros_a_la_izqda</referencedby>
+        <referencedby refid="structint__num__t_1aecf8974d7f0c66b12d913b4861bcf810" compoundref="int__num__t_8hpp" startline="106" endline="119">int_num_t&lt; UINT_T, B &gt;::erase</referencedby>
         <referencedby refid="structint__num__t_1a9ffbfe2524e6104557827b766b800890" compoundref="int__num__t_8hpp" startline="561" endline="574">int_num_t&lt; UINT_T, B &gt;::unos_a_la_drcha</referencedby>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ab4d080e8e63685dda079d97feadfcdd6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -325,7 +364,7 @@
         <name>resize</name>
         <qualifiedname>int_num_t::resize</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -343,7 +382,7 @@
         <name>push_front</name>
         <qualifiedname>int_num_t::push_front</qualifiedname>
         <param>
-          <type><ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&lt; B &gt;</type>
+          <type>dig_t&lt; B &gt;</type>
           <declname>parg</declname>
         </param>
         <briefdescription>
@@ -361,7 +400,7 @@
         <name>push_back</name>
         <qualifiedname>int_num_t::push_back</qualifiedname>
         <param>
-          <type><ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&lt; B &gt;</type>
+          <type>dig_t&lt; B &gt;</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -404,7 +443,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="133" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="133" bodyend="139"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
         <referencedby refid="structint__num__t_1a94f6a0a608614642522b2d8fff91aff0" compoundref="int__num__t_8hpp" startline="1601" endline="1608">int_num_t&lt; UINT_T, B &gt;::abs</referencedby>
         <referencedby refid="structint__num__t_1acf8be3251610cf7365b5a7ae48dfa001" compoundref="int__num__t_8hpp" startline="1610" endline="1616">int_num_t&lt; UINT_T, B &gt;::absp</referencedby>
         <referencedby refid="structint__num__t_1aec4ca498212a838867d18a5cd246aa6f" compoundref="int__num__t_8hpp" startline="627" endline="639">int_num_t&lt; UINT_T, B &gt;::Bm1_a_la_drcha</referencedby>
@@ -413,13 +454,18 @@
         <referencedby refid="structint__num__t_1a55203f0d36573721c63de3837f8d416e" compoundref="int__num__t_8hpp" startline="592" endline="605">int_num_t&lt; UINT_T, B &gt;::digs_no_significativos</referencedby>
         <referencedby refid="structint__num__t_1a066a49e72fc5bde03a85fdd2fa693973" compoundref="int__num__t_8hpp" startline="1660" endline="1701">int_num_t&lt; UINT_T, B &gt;::div2</referencedby>
         <referencedby refid="structint__num__t_1a11d24d94e5768ecceb341991ab7203a9" compoundref="int__num__t_8hpp" startline="1725" endline="1767">int_num_t&lt; UINT_T, B &gt;::div2p</referencedby>
+        <referencedby refid="structint__num__t_1a3619197b79f1e76bb5e8d68a3589ca18" compoundref="int__num__t_8hpp" startline="1842" endline="1896">int_num_t&lt; UINT_T, B &gt;::div_gen_step</referencedby>
+        <referencedby refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
         <referencedby refid="structint__num__t_1aba3e9122269d8c60f598be8416397ba2" compoundref="int__num__t_8hpp" startline="1624" endline="1633">int_num_t&lt; UINT_T, B &gt;::divB</referencedby>
         <referencedby refid="structint__num__t_1ad1ba25e7c16f7c3bc032c36646f00f68" compoundref="int__num__t_8hpp" startline="1642" endline="1651">int_num_t&lt; UINT_T, B &gt;::divBp</referencedby>
+        <referencedby refid="structint__num__t_1a7d73047f3c1ea68966184cd4c94ea923" compoundref="int__num__t_8hpp" startline="1898" endline="1951">int_num_t&lt; UINT_T, B &gt;::divp_gen_step</referencedby>
+        <referencedby refid="structint__num__t_1aecf8974d7f0c66b12d913b4861bcf810" compoundref="int__num__t_8hpp" startline="106" endline="119">int_num_t&lt; UINT_T, B &gt;::erase</referencedby>
         <referencedby refid="structint__num__t_1a4b7bc7c10c03f0560b724614e4e4278f" compoundref="int__num__t_8hpp" startline="2079" endline="2124">int_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
         <referencedby refid="structint__num__t_1a4e1b2b56ffe5f4d8f0cf2b31fee922fc" compoundref="int__num__t_8hpp" startline="2126" endline="2171">int_num_t&lt; UINT_T, B &gt;::EuclidDivP</referencedby>
         <referencedby refid="structint__num__t_1ab074dd2e3e7b88588a25d371dc2c1636" compoundref="int__num__t_8hpp" startline="584" endline="590">int_num_t&lt; UINT_T, B &gt;::filled_of_all_digits_are_0</referencedby>
         <referencedby refid="structint__num__t_1ac789d6752f2a0d51e6e3304c66529716" compoundref="int__num__t_8hpp" startline="576" endline="582">int_num_t&lt; UINT_T, B &gt;::filled_of_all_digits_are_Bm1</referencedby>
         <referencedby refid="structint__num__t_1a3a812ddf5e23511d20f4b40f0a1d119e" compoundref="int__num__t_8hpp" startline="1555" endline="1580">int_num_t&lt; UINT_T, B &gt;::mC_B</referencedby>
+        <referencedby refid="structint__num__t_1ab9f2744f11a4b917487a0ab8793d93dc" compoundref="int__num__t_8hpp" startline="51" endline="71">int_num_t&lt; UINT_T, B &gt;::mC_B_incondicionado</referencedby>
         <referencedby refid="structint__num__t_1ac325668599524297888380a9239225cb" compoundref="int__num__t_8hpp" startline="1582" endline="1593">int_num_t&lt; UINT_T, B &gt;::mC_Bm1</referencedby>
         <referencedby refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</referencedby>
         <referencedby refid="structint__num__t_1a2f3c3db7d5472decaeb8ef735f01541e" compoundref="int__num__t_8hpp" startline="1534" endline="1545">int_num_t&lt; UINT_T, B &gt;::operator!</referencedby>
@@ -468,7 +514,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="141" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="141" bodyend="150"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1afab6608baa9f5d4cd58703aaf9a7ee32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -488,6 +536,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="152" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="152" bodyend="176"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1adbe31357255b5c039d22ff0dbe48afc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -496,7 +545,7 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a0</declname>
         </param>
         <briefdescription>
@@ -507,6 +556,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="178" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="178" bodyend="184"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1afd31333558c0bb1fac3d7a3333dc5cff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -515,11 +565,11 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a1</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a0</declname>
         </param>
         <briefdescription>
@@ -530,6 +580,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="186" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="186" bodyend="194"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a8244d16e71dd32fc028ceae5bd163ec1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -538,15 +589,15 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a2</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a1</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a0</declname>
         </param>
         <briefdescription>
@@ -557,6 +608,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="196" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="196" bodyend="205"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a486388fb8875a29054c71c3dd5f1ca06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -565,7 +617,7 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type>const std::vector&lt; dig &gt; &amp;</type>
+          <type>const std::vector&lt; <ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref> &gt; &amp;</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -576,6 +628,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="207" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="207" bodyend="215"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a7ce1c5264e0c3a3c44ab70b7c6150523" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -584,7 +637,7 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type>const std::list&lt; dig &gt; &amp;</type>
+          <type>const std::list&lt; <ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref> &gt; &amp;</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -595,6 +648,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="217" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="217" bodyend="226"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a670bc907a69ae9886a4a157616eb59ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -607,7 +661,7 @@
           <declname>s</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a0</declname>
         </param>
         <briefdescription>
@@ -617,7 +671,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="228" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="228" bodyend="237"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aaf3ce8859b4934b0f2ff857045947aa5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -630,11 +686,11 @@
           <declname>s</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a1</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a0</declname>
         </param>
         <briefdescription>
@@ -644,7 +700,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="239" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="239" bodyend="248"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a10e5e0316befc37645141fc22b769528" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -657,15 +715,15 @@
           <declname>s</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a2</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a1</declname>
         </param>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a0</declname>
         </param>
         <briefdescription>
@@ -675,7 +733,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="250" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="250" bodyend="261"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ac181f6b5e9a48b847383bd068994760f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -688,7 +748,7 @@
           <declname>s</declname>
         </param>
         <param>
-          <type>const std::vector&lt; dig &gt; &amp;</type>
+          <type>const std::vector&lt; <ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref> &gt; &amp;</type>
           <declname>arg</declname>
         </param>
         <param>
@@ -705,6 +765,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="263" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="263" bodyend="272"/>
         <references refid="int__num__t_8hpp_1a161d5c264828471eb6953fd0febc0ccfa4f005c0b220d0d145556380873d149cc" compoundref="int__num__t_8hpp" startline="10">noraw</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a658b09d4b3089d07319e898c91139994" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -717,7 +778,7 @@
           <declname>s</declname>
         </param>
         <param>
-          <type>const std::list&lt; dig &gt; &amp;</type>
+          <type>const std::list&lt; <ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref> &gt; &amp;</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -728,6 +789,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="274" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="274" bodyend="284"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ae067d8dffb3fb8963894dfca8173b4c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -736,7 +798,7 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type>spardigs</type>
+          <type><ref refid="structint__num__t_1ad6248361af646c0c002b7544b612acde" kindref="member">spardigs</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -747,6 +809,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="286" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="286" bodyend="294"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a5227f809c7e7b23f61318a82ece3ee94" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -755,7 +818,7 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type>pardigs</type>
+          <type><ref refid="structint__num__t_1a0c2a067f7a932e7e37e4111562cf78ee" kindref="member">pardigs</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -766,6 +829,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="296" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="296" bodyend="304"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a48068ebe04d7903949d4e0072ee498c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -778,7 +842,7 @@
           <declname>s</declname>
         </param>
         <param>
-          <type>pardigs</type>
+          <type><ref refid="structint__num__t_1a0c2a067f7a932e7e37e4111562cf78ee" kindref="member">pardigs</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -808,6 +872,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="316" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="316" bodyend="322"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aa4b349b6871e2d8e2b3b4bd004bc31d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -816,7 +881,7 @@
         <name>num_int</name>
         <qualifiedname>int_num_t::num_int</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref></type>
+          <type>uchint</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -827,6 +892,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="324" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="324" bodyend="330"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aa828975d8442bd5ec18f43f4f42e2b83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -851,6 +917,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="333" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="333" bodyend="370"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aeeedd95e69e5f62662b060823b3bded7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -869,7 +936,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="372" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="372" bodyend="382"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a9acb58f0efc3566801617544f7cf0f34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -888,7 +957,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="384" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="384" bodyend="394"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a88f785ba180ab05fc888f0e239edd220" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -907,7 +978,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="396" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="396" bodyend="408"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a27c84cf65ec38b837a61ba034fe4904e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -926,7 +999,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="410" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="410" bodyend="422"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a8cdc61cc457f067863755a8627f7b19b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -935,7 +1010,7 @@
         <name>operator=</name>
         <qualifiedname>int_num_t::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&lt; B &gt; &amp;</type>
+          <type>const dig_t&lt; B &gt; &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -945,7 +1020,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="424" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="424" bodyend="434"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a8d92e34d54ec97b31d037d46ee06a780" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -970,6 +1047,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="437" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="437" bodyend="475"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1adc2df3abaaff6ae0a4bc37ff90a0ad10" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -978,7 +1056,7 @@
         <name>operator=</name>
         <qualifiedname>int_num_t::operator=</qualifiedname>
         <param>
-          <type>const std::vector&lt; dig &gt; &amp;</type>
+          <type>const std::vector&lt; <ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref> &gt; &amp;</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -989,6 +1067,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="478" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="478" bodyend="488"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1acbcdc8b8891a1038bd87be6cb7a4078e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -997,7 +1076,7 @@
         <name>operator=</name>
         <qualifiedname>int_num_t::operator=</qualifiedname>
         <param>
-          <type>const std::list&lt; dig &gt; &amp;</type>
+          <type>const std::list&lt; <ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref> &gt; &amp;</type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -1008,9 +1087,10 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="490" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="490" bodyend="501"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aae2d5fd1815a61a2aadc21c151a34e6b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint int_num_t&lt; UINT_T, B &gt;::ceros_a_la_izqda</definition>
         <argsstring>() const</argsstring>
         <name>ceros_a_la_izqda</name>
@@ -1026,7 +1106,7 @@
         <references refid="structint__num__t_1a489e24fd874f049d247539eb02416338" compoundref="int__num__t_8hpp" startline="46" endline="49">int_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a0f7c7d803d12ead8126beb05485022c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint int_num_t&lt; UINT_T, B &gt;::unos_a_la_izqda</definition>
         <argsstring>() const</argsstring>
         <name>unos_a_la_izqda</name>
@@ -1041,7 +1121,7 @@
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ae09c19efabf27eb9caf36f33f0f380dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <type>size_t</type>
         <definition>size_t int_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</definition>
         <argsstring>() const</argsstring>
         <name>ceros_a_la_drcha</name>
@@ -1057,7 +1137,7 @@
         <referencedby refid="structint__num__t_1a4bf7f711400d921df1c0d05cbe3c9d3d" compoundref="int__num__t_8hpp" startline="607" endline="611">int_num_t&lt; UINT_T, B &gt;::digs_fracc_no_significativos</referencedby>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a9ffbfe2524e6104557827b766b800890" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+        <type>size_t</type>
         <definition>size_t int_num_t&lt; UINT_T, B &gt;::unos_a_la_drcha</definition>
         <argsstring>() const</argsstring>
         <name>unos_a_la_drcha</name>
@@ -1102,7 +1182,7 @@
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a55203f0d36573721c63de3837f8d416e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint int_num_t&lt; UINT_T, B &gt;::digs_no_significativos</definition>
         <argsstring>() const</argsstring>
         <name>digs_no_significativos</name>
@@ -1115,10 +1195,11 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="592" column="7" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="592" bodyend="605"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
         <referencedby refid="structint__num__t_1a0fa45dac193d9e3ccf9dcbd3a0f0a6bd" compoundref="int__num__t_8hpp" startline="663" endline="678">int_num_t&lt; UINT_T, B &gt;::operator!=</referencedby>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a4bf7f711400d921df1c0d05cbe3c9d3d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint int_num_t&lt; UINT_T, B &gt;::digs_fracc_no_significativos</definition>
         <argsstring>() const</argsstring>
         <name>digs_fracc_no_significativos</name>
@@ -1133,7 +1214,7 @@
         <references refid="structint__num__t_1ae09c19efabf27eb9caf36f33f0f380dd" compoundref="int__num__t_8hpp" startline="545" endline="558">int_num_t&lt; UINT_T, B &gt;::ceros_a_la_drcha</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1acbbb77c55849e7b5b26a162c90acf32d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint int_num_t&lt; UINT_T, B &gt;::Bm1_a_la_izqda</definition>
         <argsstring>() const</argsstring>
         <name>Bm1_a_la_izqda</name>
@@ -1148,7 +1229,7 @@
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aec4ca498212a838867d18a5cd246aa6f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+        <type>usint</type>
         <definition>usint int_num_t&lt; UINT_T, B &gt;::Bm1_a_la_drcha</definition>
         <argsstring>() const</argsstring>
         <name>Bm1_a_la_drcha</name>
@@ -1180,6 +1261,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="647" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="647" bodyend="661"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a0fa45dac193d9e3ccf9dcbd3a0f0a6bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1200,6 +1282,7 @@
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="663" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="663" bodyend="678"/>
         <references refid="structint__num__t_1a55203f0d36573721c63de3837f8d416e" compoundref="int__num__t_8hpp" startline="592" endline="605">int_num_t&lt; UINT_T, B &gt;::digs_no_significativos</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1acec6fb387e79e65f37e779ffb18d8730" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1219,6 +1302,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="680" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="680" bodyend="706"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a8a80c22f65c390355de7421e1ddd7d54" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1238,6 +1322,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="708" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="708" bodyend="734"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1acb4f8554bc619a61d768b8b7467ddf46" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1257,6 +1342,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="736" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="736" bodyend="763"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a6212907f79ef713205e6d09e5e340f2c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1276,6 +1362,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="765" column="9" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="765" bodyend="791"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a1fa5a610a675322a17233b696994276a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1294,6 +1381,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="799" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="799" bodyend="853"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1abf1ec8aeeadefe6195d33e62435eca37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -1313,6 +1401,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="855" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="855" bodyend="909"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ae1144a6001a66b5fecad8debf5454bc2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -1333,6 +1422,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="912" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="912" bodyend="929"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1acc818e68d0ebebc9ee1a14c0a9506328" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1352,7 +1442,9 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="931" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="931" bodyend="976"/>
         <references refid="structint__num__t_1a94f6a0a608614642522b2d8fff91aff0" compoundref="int__num__t_8hpp" startline="1601" endline="1608">int_num_t&lt; UINT_T, B &gt;::abs</references>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a958e81879bcf27742be664eaf019a125" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1372,6 +1464,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="978" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="978" bodyend="1019"/>
         <references refid="structint__num__t_1a94f6a0a608614642522b2d8fff91aff0" compoundref="int__num__t_8hpp" startline="1601" endline="1608">int_num_t&lt; UINT_T, B &gt;::abs</references>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a4041caab018eb58e56fb521bf68df70f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -1381,7 +1474,7 @@
         <name>operator*</name>
         <qualifiedname>int_num_t::operator*</qualifiedname>
         <param>
-          <type>pardigs</type>
+          <type><ref refid="structint__num__t_1a0c2a067f7a932e7e37e4111562cf78ee" kindref="member">pardigs</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1392,6 +1485,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1035" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1035" bodyend="1063"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a9d17a82f0441ed16b2c59ec506d66a04" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1400,7 +1494,7 @@
         <name>operator+</name>
         <qualifiedname>int_num_t::operator+</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -1410,6 +1504,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1068" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1068" bodyend="1123"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a8530f1cbf642af939f70b37e142e5f55" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -1419,7 +1514,7 @@
         <name>operator-</name>
         <qualifiedname>int_num_t::operator-</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -1429,6 +1524,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1125" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1125" bodyend="1159"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ac16f8bd1c9be289861368780674163d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -1438,7 +1534,7 @@
         <name>operator*</name>
         <qualifiedname>int_num_t::operator*</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1467,6 +1563,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1189" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1189" bodyend="1230"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
         <references refid="structint__num__t_1a399984c0c867c6e3a5b15aaed4e1d465" compoundref="int__num__t_8hpp" startline="2393" endline="2400">int_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
@@ -1487,6 +1584,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1232" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1232" bodyend="1273"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
         <references refid="structint__num__t_1a399984c0c867c6e3a5b15aaed4e1d465" compoundref="int__num__t_8hpp" startline="2393" endline="2400">int_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
@@ -1510,6 +1608,7 @@
         <references refid="structint__num__t_1acf8be3251610cf7365b5a7ae48dfa001" compoundref="int__num__t_8hpp" startline="1610" endline="1616">int_num_t&lt; UINT_T, B &gt;::absp</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
         <references refid="structint__num__t_1a399984c0c867c6e3a5b15aaed4e1d465" compoundref="int__num__t_8hpp" startline="2393" endline="2400">int_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a6087d5c5da71405c13e8e818a8cac6b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -1529,7 +1628,9 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1295" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1295" bodyend="1341"/>
         <references refid="structint__num__t_1acf8be3251610cf7365b5a7ae48dfa001" compoundref="int__num__t_8hpp" startline="1610" endline="1616">int_num_t&lt; UINT_T, B &gt;::absp</references>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aff9076398c6852dc5249e2ab6dfa5500" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -1548,6 +1649,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1343" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1343" bodyend="1384"/>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aaf1452877f71e57336b8faa91dd1e776" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -1557,7 +1659,7 @@
         <name>operator*=</name>
         <qualifiedname>int_num_t::operator*=</qualifiedname>
         <param>
-          <type>pardigs</type>
+          <type><ref refid="structint__num__t_1a0c2a067f7a932e7e37e4111562cf78ee" kindref="member">pardigs</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1568,6 +1670,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1394" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1394" bodyend="1422"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a82d829e8d83d2300d289a51744b256ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -1576,7 +1679,7 @@
         <name>operator+=</name>
         <qualifiedname>int_num_t::operator+=</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -1586,6 +1689,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1427" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1427" bodyend="1448"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
         <references refid="structint__num__t_1a399984c0c867c6e3a5b15aaed4e1d465" compoundref="int__num__t_8hpp" startline="2393" endline="2400">int_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
@@ -1596,7 +1700,7 @@
         <name>operator-=</name>
         <qualifiedname>int_num_t::operator-=</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -1606,6 +1710,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1450" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1450" bodyend="1473"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
         <references refid="structint__num__t_1a399984c0c867c6e3a5b15aaed4e1d465" compoundref="int__num__t_8hpp" startline="2393" endline="2400">int_num_t&lt; UINT_T, B &gt;::reduce</references>
       </memberdef>
@@ -1616,7 +1721,7 @@
         <name>operator*=</name>
         <qualifiedname>int_num_t::operator*=</qualifiedname>
         <param>
-          <type>dig</type>
+          <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
           <declname>arg</declname>
         </param>
         <briefdescription>
@@ -1627,9 +1732,11 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1475" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1475" bodyend="1493"/>
         <references refid="structint__num__t_1acf8be3251610cf7365b5a7ae48dfa001" compoundref="int__num__t_8hpp" startline="1610" endline="1616">int_num_t&lt; UINT_T, B &gt;::absp</references>
+        <references refid="structint__num__t_1a11b6351c5930abb31689f4daf7792e17" compoundref="int__num__t_8hpp" startline="87" endline="91">int_num_t&lt; UINT_T, B &gt;::insert</references>
         <references refid="structint__num__t_1a3a812ddf5e23511d20f4b40f0a1d119e" compoundref="int__num__t_8hpp" startline="1555" endline="1580">int_num_t&lt; UINT_T, B &gt;::mC_B</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
         <references refid="structint__num__t_1a399984c0c867c6e3a5b15aaed4e1d465" compoundref="int__num__t_8hpp" startline="2393" endline="2400">int_num_t&lt; UINT_T, B &gt;::reduce</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a8baef8b2dde5755813320416f58699df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1674,8 +1781,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1555" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1555" bodyend="1580"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
         <references refid="structint__num__t_1a6575701ad34d79f67738bdef51c92a2d" compoundref="int__num__t_8hpp" startline="83" endline="85">int_num_t&lt; UINT_T, B &gt;::push_back</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
         <referencedby refid="structint__num__t_1a15fd56ca4bfffa62e6896bb3e0c8720c" compoundref="int__num__t_8hpp" startline="1475" endline="1493">int_num_t&lt; UINT_T, B &gt;::operator*=</referencedby>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ac325668599524297888380a9239225cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -1692,6 +1801,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1582" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1582" bodyend="1593"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <referencedby refid="structint__num__t_1ab9f2744f11a4b917487a0ab8793d93dc" compoundref="int__num__t_8hpp" startline="51" endline="71">int_num_t&lt; UINT_T, B &gt;::mC_B_incondicionado</referencedby>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a94f6a0a608614642522b2d8fff91aff0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1707,6 +1817,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1601" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1601" bodyend="1608"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
         <referencedby refid="structint__num__t_1a958e81879bcf27742be664eaf019a125" compoundref="int__num__t_8hpp" startline="978" endline="1019">int_num_t&lt; UINT_T, B &gt;::operator%</referencedby>
         <referencedby refid="structint__num__t_1acc818e68d0ebebc9ee1a14c0a9506328" compoundref="int__num__t_8hpp" startline="931" endline="976">int_num_t&lt; UINT_T, B &gt;::operator/</referencedby>
       </memberdef>
@@ -1724,6 +1835,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1610" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1610" bodyend="1616"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
         <referencedby refid="structint__num__t_1ab4f61bc56098580779f5fb4f8d52cf44" compoundref="int__num__t_8hpp" startline="1275" endline="1293">int_num_t&lt; UINT_T, B &gt;::operator*=</referencedby>
         <referencedby refid="structint__num__t_1a6087d5c5da71405c13e8e818a8cac6b0" compoundref="int__num__t_8hpp" startline="1295" endline="1341">int_num_t&lt; UINT_T, B &gt;::operator/=</referencedby>
       </memberdef>
@@ -1743,7 +1855,7 @@
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a4d4b2c2c862d358a897074e2afe9c298" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>dig</type>
+        <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
         <definition>dig int_num_t&lt; UINT_T, B &gt;::remB</definition>
         <argsstring>() const</argsstring>
         <name>remB</name>
@@ -1756,6 +1868,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1635" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1635" bodyend="1640"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ad1ba25e7c16f7c3bc032c36646f00f68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -1773,7 +1886,7 @@
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ae37121ea60fbd75600561e3bbef77194" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>dig</type>
+        <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
         <definition>dig int_num_t&lt; UINT_T, B &gt;::remBp</definition>
         <argsstring>()</argsstring>
         <name>remBp</name>
@@ -1786,6 +1899,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1653" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1653" bodyend="1658"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a066a49e72fc5bde03a85fdd2fa693973" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1800,10 +1914,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1660" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1660" bodyend="1701"/>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aeb24d35b97a122413d6ae886f55d59e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>dig</type>
+        <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
         <definition>dig int_num_t&lt; UINT_T, B &gt;::rem2</definition>
         <argsstring>() const</argsstring>
         <name>rem2</name>
@@ -1816,6 +1932,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1703" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1703" bodyend="1723"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a11d24d94e5768ecceb341991ab7203a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -1830,10 +1947,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1725" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1725" bodyend="1767"/>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1ad5ba09cfe05ae18fbcb505b0e92b1745" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>dig</type>
+        <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
         <definition>dig int_num_t&lt; UINT_T, B &gt;::rem2p</definition>
         <argsstring>()</argsstring>
         <name>rem2p</name>
@@ -1846,9 +1965,10 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1769" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1769" bodyend="1789"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a7536efd30cc24248602b3083295a782c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>dig</type>
+        <type><ref refid="structint__num__t_1a799cdbfc8fa04b8fffefba6da8bd2274" kindref="member">dig</ref></type>
         <definition>dig int_num_t&lt; UINT_T, B &gt;::remBm1</definition>
         <argsstring>() const</argsstring>
         <name>remBm1</name>
@@ -1861,6 +1981,7 @@
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1805" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1805" bodyend="1822"/>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a4b7bc7c10c03f0560b724614e4e4278f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>pair&lt; <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref>, <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &gt;</type>
@@ -1879,7 +2000,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="2079" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="2079" bodyend="2124"/>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a4e1b2b56ffe5f4d8f0cf2b31fee922fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>pair&lt; <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref>, const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp; &gt;</type>
@@ -1898,7 +2021,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="2126" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="2126" bodyend="2171"/>
+        <references refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1affa4d6ff03dfb310a7b6bda3ecc1eb7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -1913,7 +2038,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="2196" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="2196" bodyend="2233"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a1edf8c750b0cc6f7494ac5ce0a88f720" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1931,7 +2058,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="2235" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="2235" bodyend="2272"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a0f0b3db6587b441868f2cccb2f4b014c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -1946,7 +2075,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="2274" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="2274" bodyend="2328"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aaaae8b092ad0edcf7bb36b11c22f81f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref></type>
@@ -1964,7 +2095,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="2330" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="2330" bodyend="2385"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
         <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a399984c0c867c6e3a5b15aaed4e1d465" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -2044,6 +2177,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="51" column="13" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="51" bodyend="71"/>
+        <references refid="structint__num__t_1a7f763b19d0a3b5797b22680c91bd92f4" compoundref="int__num__t_8hpp" startline="38">int_num_t&lt; UINT_T, B &gt;::aux</references>
+        <references refid="structint__num__t_1ac325668599524297888380a9239225cb" compoundref="int__num__t_8hpp" startline="1582" endline="1593">int_num_t&lt; UINT_T, B &gt;::mC_Bm1</references>
+        <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a11b6351c5930abb31689f4daf7792e17" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -2052,11 +2188,11 @@
         <name>insert</name>
         <qualifiedname>int_num_t::insert</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>pos1</declname>
         </param>
         <param>
-          <type>const <ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&lt; B &gt;</type>
+          <type>const dig_t&lt; B &gt;</type>
           <declname>chardig</declname>
         </param>
         <briefdescription>
@@ -2066,6 +2202,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="87" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="87" bodyend="91"/>
+        <referencedby refid="structint__num__t_1a15fd56ca4bfffa62e6896bb3e0c8720c" compoundref="int__num__t_8hpp" startline="1475" endline="1493">int_num_t&lt; UINT_T, B &gt;::operator*=</referencedby>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1aa8e913960b6a3883ce32c1c35bb3d395" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" kindref="member">num_int</ref> &amp;</type>
@@ -2074,15 +2211,15 @@
         <name>insert</name>
         <qualifiedname>int_num_t::insert</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>pos1</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>n</declname>
         </param>
         <param>
-          <type><ref refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18" kindref="member">dig_t</ref>&lt; B &gt;</type>
+          <type>dig_t&lt; B &gt;</type>
           <declname>c</declname>
         </param>
         <briefdescription>
@@ -2100,11 +2237,11 @@
         <name>erase</name>
         <qualifiedname>int_num_t::erase</qualifiedname>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>pos</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
+          <type>size_t</type>
           <declname>npos</declname>
         </param>
         <briefdescription>
@@ -2114,19 +2251,22 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="106" column="16" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="106" bodyend="119"/>
+        <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a1a5c0a9c10feb100735faa68815c58ff" compoundref="int__num__t_8hpp" startline="37">int_num_t&lt; UINT_T, B &gt;::signo</references>
+        <references refid="structint__num__t_1a489e24fd874f049d247539eb02416338" compoundref="int__num__t_8hpp" startline="46" endline="49">int_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a5f18e6ddfb5af69f7a9ce7e1ad9dd3be" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>iterator</type>
+        <type><ref refid="structint__num__t_1a43fc731a90a533518468bc7f020bb7cd" kindref="member">iterator</ref></type>
         <definition>iterator int_num_t&lt; UINT_T, B &gt;::erase</definition>
         <argsstring>(iterator first, iterator last)</argsstring>
         <name>erase</name>
         <qualifiedname>int_num_t::erase</qualifiedname>
         <param>
-          <type>iterator</type>
+          <type><ref refid="structint__num__t_1a43fc731a90a533518468bc7f020bb7cd" kindref="member">iterator</ref></type>
           <declname>first</declname>
         </param>
         <param>
-          <type>iterator</type>
+          <type><ref refid="structint__num__t_1a43fc731a90a533518468bc7f020bb7cd" kindref="member">iterator</ref></type>
           <declname>last</declname>
         </param>
         <briefdescription>
@@ -2136,6 +2276,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="121" column="17" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="121" bodyend="130"/>
+        <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <references refid="structint__num__t_1a489e24fd874f049d247539eb02416338" compoundref="int__num__t_8hpp" startline="46" endline="49">int_num_t&lt; UINT_T, B &gt;::size</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a3619197b79f1e76bb5e8d68a3589ca18" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2156,7 +2298,7 @@
           <declname>coc</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref> &amp;</type>
+          <type>usint &amp;</type>
           <declname>ndig</declname>
         </param>
         <briefdescription>
@@ -2166,6 +2308,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1842" column="20" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1842" bodyend="1896"/>
+        <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <referencedby refid="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" compoundref="int__num__t_8hpp" startline="1960" endline="2066">int_num_t&lt; UINT_T, B &gt;::div_uno</referencedby>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a7d73047f3c1ea68966184cd4c94ea923" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2186,7 +2330,7 @@
           <declname>coc</declname>
         </param>
         <param>
-          <type><ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref> &amp;</type>
+          <type>usint &amp;</type>
           <declname>ndig</declname>
         </param>
         <briefdescription>
@@ -2196,6 +2340,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1898" column="21" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1898" bodyend="1951"/>
+        <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
       </memberdef>
       <memberdef kind="function" id="structint__num__t_1a7624f41bff8f97efed07f84e8986318a" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2216,11 +2361,11 @@
           <declname>dvsor</declname>
         </param>
         <param>
-          <type>const <ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+          <type>const usint</type>
           <declname>long_dvndo</declname>
         </param>
         <param>
-          <type>const <ref refid="basic__types_8hpp_1aea9446a386112c2a90c00874130877df" kindref="member">usint</ref></type>
+          <type>const usint</type>
           <declname>long_dvsor</declname>
         </param>
         <briefdescription>
@@ -2230,13 +2375,23 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" line="1960" column="21" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/int_num_t.hpp" bodystart="1960" bodyend="2066"/>
+        <references refid="structint__num__t_1a3619197b79f1e76bb5e8d68a3589ca18" compoundref="int__num__t_8hpp" startline="1842" endline="1896">int_num_t&lt; UINT_T, B &gt;::div_gen_step</references>
+        <references refid="structint__num__t_1ae209e7a115353db1633459a602d24e0b" compoundref="int__num__t_8hpp" startline="133" endline="139">int_num_t&lt; UINT_T, B &gt;::num_int</references>
+        <referencedby refid="structint__num__t_1a066a49e72fc5bde03a85fdd2fa693973" compoundref="int__num__t_8hpp" startline="1660" endline="1701">int_num_t&lt; UINT_T, B &gt;::div2</referencedby>
+        <referencedby refid="structint__num__t_1a11d24d94e5768ecceb341991ab7203a9" compoundref="int__num__t_8hpp" startline="1725" endline="1767">int_num_t&lt; UINT_T, B &gt;::div2p</referencedby>
+        <referencedby refid="structint__num__t_1a4b7bc7c10c03f0560b724614e4e4278f" compoundref="int__num__t_8hpp" startline="2079" endline="2124">int_num_t&lt; UINT_T, B &gt;::EuclidDiv</referencedby>
+        <referencedby refid="structint__num__t_1a4e1b2b56ffe5f4d8f0cf2b31fee922fc" compoundref="int__num__t_8hpp" startline="2126" endline="2171">int_num_t&lt; UINT_T, B &gt;::EuclidDivP</referencedby>
+        <referencedby refid="structint__num__t_1a958e81879bcf27742be664eaf019a125" compoundref="int__num__t_8hpp" startline="978" endline="1019">int_num_t&lt; UINT_T, B &gt;::operator%</referencedby>
+        <referencedby refid="structint__num__t_1aff9076398c6852dc5249e2ab6dfa5500" compoundref="int__num__t_8hpp" startline="1343" endline="1384">int_num_t&lt; UINT_T, B &gt;::operator%=</referencedby>
+        <referencedby refid="structint__num__t_1acc818e68d0ebebc9ee1a14c0a9506328" compoundref="int__num__t_8hpp" startline="931" endline="976">int_num_t&lt; UINT_T, B &gt;::operator/</referencedby>
+        <referencedby refid="structint__num__t_1a6087d5c5da71405c13e8e818a8cac6b0" compoundref="int__num__t_8hpp" startline="1295" endline="1341">int_num_t&lt; UINT_T, B &gt;::operator/=</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
       <memberdef kind="friend" id="structint__num__t_1a4f6ccae9e31bfa06fed310d86da2e416" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>const <ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref></type>
+            <type>const uchint</type>
             <declname>Base</declname>
             <defname>Base</defname>
           </param>
@@ -2265,7 +2420,7 @@
       <memberdef kind="friend" id="structint__num__t_1a86f81a5b1d351d2424e16c2a6c522728" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>const <ref refid="basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2" kindref="member">uchint</ref></type>
+            <type>const uchint</type>
             <declname>Base</declname>
             <defname>Base</defname>
           </param>

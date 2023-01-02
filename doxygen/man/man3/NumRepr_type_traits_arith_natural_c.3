@@ -1,0 +1,25 @@
+.TH "NumRepr::type_traits::arith_natural_c" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NumRepr::type_traits::arith_natural_c
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <basic_types\&.hpp>\fP
+.SH "Concept definition"
+.PP 
+.PP
+.nf
+template<typename NatIntT>
+concept NumRepr::type_traits::arith_natural_c =    std::is_arithmetic_v<NatIntT>   &&
+                                                                                                                std::is_unsigned_v<NatIntT>     &&
+                                                                                                                std::is_integral_v<NatIntT>
+.fi
+.SH "Descripción detallada"
+.PP 
+Definición en la línea \fB114\fP del archivo \fBbasic_types\&.hpp\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

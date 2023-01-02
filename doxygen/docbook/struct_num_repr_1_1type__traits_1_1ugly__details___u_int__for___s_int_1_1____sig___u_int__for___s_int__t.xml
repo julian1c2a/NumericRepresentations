@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t&lt; SInt &gt;</title>
+<indexterm><primary>NumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t&lt; SInt &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;basic_types.hpp&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Tipos públicos    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_1ae9c82365041859dee1a533ef67d6ce0e">type</link> = void</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename SInt&gt;<?linebreak?>struct NumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t&lt; SInt &gt;</title></simplesect>
+<para>
+Definición en la línea <link linkend="_basic__types_8hpp_source_1l00370">370</link> del archivo <link linkend="_basic__types_8hpp_source">basic_types.hpp</link>.</para>
+</section>
+<section>
+<title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
+<anchor xml:id="_struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t_1ae9c82365041859dee1a533ef67d6ce0e"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>NumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t&lt; SInt &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t&lt; SInt &gt;</primary><secondary>type</secondary></indexterm>
+<computeroutput>template&lt;typename SInt &gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1type__traits_1_1ugly__details___u_int__for___s_int_1_1____sig___u_int__for___s_int__t">NumRepr::type_traits::ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t</link>&lt; SInt &gt;::type =  void</computeroutput></para><para>
+Definición en la línea <link linkend="_basic__types_8hpp_source_1l00371">371</link> del archivo <link linkend="_basic__types_8hpp_source">basic_types.hpp</link>.</para>
+</section>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_basic__types_8hpp">basic_types.hpp</link></section>
+</section>

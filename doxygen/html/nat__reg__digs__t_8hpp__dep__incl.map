@@ -1,6 +1,7 @@
 <map id="nat_reg_digs_t.hpp" name="nat_reg_digs_t.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="96,5,228,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="172,5,304,31"/>
 <area shape="rect" id="node2" href="$int__reg__digs__t_8hpp.html" title=" " alt="" coords="98,79,226,104"/>
+<area shape="rect" id="node7" href="$pruebas__dig__t_8cpp.html" title=" " alt="" coords="250,79,378,104"/>
 <area shape="rect" id="node3" href="$base__num__t_8hpp.html" title=" " alt="" coords="5,152,124,177"/>
 <area shape="rect" id="node5" href="$int__num__t_8hpp.html" title=" " alt="" coords="61,299,165,324"/>
 <area shape="rect" id="node6" href="$nat__rat__fixed__reg__t_8hpp.html" title=" " alt="" coords="200,152,359,177"/>

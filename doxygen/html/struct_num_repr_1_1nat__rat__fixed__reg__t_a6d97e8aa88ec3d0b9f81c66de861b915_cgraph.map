@@ -1,6 +1,8 @@
 <map id="NumRepr::nat_rat_fixed_reg_t::regi_B" name="NumRepr::nat_rat_fixed_reg_t::regi_B">
 <area shape="rect" id="node1" title=" " alt="" coords="5,37,167,77"/>
 <area shape="rect" id="node2" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a960faa8c0828a9a6680526e7a9bfbc59" title=" " alt="" coords="215,5,376,45"/>
-<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a2b72b79cdc0bf99d420fa9ffc812b274" title="ARRAYS DE ENTEROS QUE SON DE AYUDA." alt="" coords="215,69,376,109"/>
-<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a235bc4a9ae726bbf7c7d5933d9a62b2e" title=" " alt="" coords="424,69,585,109"/>
+<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a2b72b79cdc0bf99d420fa9ffc812b274" title="ARRAYS DE ENTEROS QUE SON DE AYUDA." alt="" coords="215,69,376,109"/>
+<area shape="rect" id="node3" href="$struct_num_repr_1_1dig__t.html#a1dc126ef160231a2c2a87a30fdda731c" title=" " alt="" coords="428,13,581,38"/>
+<area shape="rect" id="node5" href="$struct_num_repr_1_1nat__rat__fixed__reg__t.html#a235bc4a9ae726bbf7c7d5933d9a62b2e" title=" " alt="" coords="424,69,585,109"/>
+<area shape="rect" id="node6" href="$struct_num_repr_1_1dig__t.html#ac6a8ff5406dd59f782f096ea7f2d2da3" title=" " alt="" coords="633,77,787,102"/>
 </map>

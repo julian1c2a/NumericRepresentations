@@ -1,4 +1,4 @@
-.TH "utilities::for_each_same_type< Head_t, Tail_t >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "utilities::for_each_same_type< Head_t, Tail_t >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -28,15 +28,18 @@ utilities::for_each_same_type< Head_t, Tail_t >
 .SS "template<class Head_t, class\&.\&.\&. Tail_t>
 .br
 struct utilities::for_each_same_type< Head_t, Tail_t >"
+.PP
+Definición en la línea \fB77\fP del archivo \fButilities\&.hpp\fP\&.
 .SH "Documentación de los 'Typedef' miembros de la clase"
 .PP 
 .SS "template<class Head_t , class\&.\&.\&. Tail_t> using \fButilities::for_each_same_type\fP< Head_t, Tail_t >::second_t =  std::tuple_element<0,std::tuple<Tail_t\&.\&.\&.> >::type"
 
+.PP
+Definición en la línea \fB78\fP del archivo \fButilities\&.hpp\fP\&.
 .SH "Documentación de los datos miembro"
 .PP 
 .SS "template<class Head_t , class\&.\&.\&. Tail_t> constexpr bool \fButilities::for_each_same_type\fP< Head_t, Tail_t >::are_same_type_v\fC [static]\fP, \fC [constexpr]\fP"
-\fBValor inicial:\fP
-.PP
+\fBValor inicial:\fP.PP
 .nf
 = (
         (std::is_same_v<Head_t,second_t>)
@@ -44,6 +47,8 @@ struct utilities::for_each_same_type< Head_t, Tail_t >"
         )
 .fi
 
+.PP
+Definición en la línea \fB80\fP del archivo \fButilities\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

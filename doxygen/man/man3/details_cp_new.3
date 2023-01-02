@@ -1,4 +1,4 @@
-.TH "details::cp_new< aT, T, num_vars, B >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "details::cp_new< aT, T, num_vars, B >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,24 +15,31 @@ details::cp_new< aT, T, num_vars, B >
 .RI "void \fBoperator()\fP (aT **var_list_list)"
 .br
 .in -1c
+.SS "Métodos privados estáticos"
+
+.in +1c
+.ti -1c
+.RI "static aT * \fBcontruye_lista_de_variables\fP (aT *var_list)"
+.br
+.in -1c
 .SH "Descripción detallada"
 .PP 
 
-.SS "template<typename aT, template< \fBuchint\fP > class T, \fBusint\fP num_vars, \fBuchint\fP B>
+.SS "template<typename aT, template< uchint > class T, usint num_vars, uchint B>
 .br
 struct details::cp_new< aT, T, num_vars, B >"
+.PP
+Definición en la línea \fB16\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars, \fBuchint\fP B> void \fBdetails::cp_new\fP< aT, T, num_vars, B >::operator() (aT ** var_list_list)\fC [inline]\fP"
+.SS "template<typename aT , template< uchint > class T, usint num_vars, uchint B> static aT * \fBdetails::cp_new\fP< aT, T, num_vars, B >::contruye_lista_de_variables (aT * var_list)\fC [inline]\fP, \fC [static]\fP, \fC [private]\fP"
 
 .PP
-.nf
-22                                             {
-23                         static_cast<T<B>*>(contruye_lista_de_variables(var_list_list[B]));
-24                         cp_new<aT,T,num_vars,B-1u>(var_list_list);
-25         }
-.fi
+Definición en la línea \fB18\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T, usint num_vars, uchint B> void \fBdetails::cp_new\fP< aT, T, num_vars, B >::operator() (aT ** var_list_list)\fC [inline]\fP"
 
+.PP
+Definición en la línea \fB23\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

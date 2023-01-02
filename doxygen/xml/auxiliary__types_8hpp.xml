@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="auxiliary__types_8hpp" kind="file" language="C++">
     <compoundname>auxiliary_types.hpp</compoundname>
     <includes refid="basic__types_8hpp" local="yes">basic_types.hpp</includes>
     <includedby refid="auxiliary__functions_8hpp" local="yes">auxiliary_functions.hpp</includedby>
     <includedby refid="dig__t_8hpp" local="yes">dig_t.hpp</includedby>
+    <includedby refid="lexer__parser_8hpp" local="yes">lexer_parser.hpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>auxiliary_types.hpp</label>
@@ -55,65 +56,70 @@
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-      </node>
-      <node id="13">
-        <label>array</label>
-      </node>
-      <node id="17">
-        <label>climits</label>
-      </node>
-      <node id="20">
-        <label>cmath</label>
-      </node>
-      <node id="6">
-        <label>compare</label>
-      </node>
-      <node id="7">
-        <label>concepts</label>
-      </node>
-      <node id="3">
-        <label>cstdint</label>
-      </node>
-      <node id="9">
-        <label>cstring</label>
-      </node>
-      <node id="12">
-        <label>fstream</label>
-      </node>
-      <node id="22">
-        <label>functional</label>
-      </node>
-      <node id="8">
-        <label>iostream</label>
-      </node>
-      <node id="21">
-        <label>iterator</label>
-      </node>
-      <node id="19">
-        <label>limits</label>
-      </node>
-      <node id="15">
-        <label>list</label>
-      </node>
-      <node id="16">
-        <label>map</label>
-      </node>
-      <node id="18">
-        <label>numeric</label>
-      </node>
-      <node id="5">
-        <label>optional</label>
-      </node>
-      <node id="11">
-        <label>sstream</label>
-      </node>
-      <node id="10">
-        <label>string</label>
-      </node>
-      <node id="4">
-        <label>type_traits</label>
+        <childnode refid="23" relation="include">
+        </childnode>
       </node>
       <node id="14">
+        <label>array</label>
+      </node>
+      <node id="4">
+        <label>cinttypes</label>
+      </node>
+      <node id="18">
+        <label>climits</label>
+      </node>
+      <node id="21">
+        <label>cmath</label>
+      </node>
+      <node id="7">
+        <label>compare</label>
+      </node>
+      <node id="8">
+        <label>concepts</label>
+      </node>
+      <node id="10">
+        <label>cstring</label>
+      </node>
+      <node id="13">
+        <label>fstream</label>
+      </node>
+      <node id="23">
+        <label>functional</label>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>istream</label>
+      </node>
+      <node id="22">
+        <label>iterator</label>
+      </node>
+      <node id="20">
+        <label>limits</label>
+      </node>
+      <node id="16">
+        <label>list</label>
+      </node>
+      <node id="17">
+        <label>map</label>
+      </node>
+      <node id="19">
+        <label>numeric</label>
+      </node>
+      <node id="6">
+        <label>optional</label>
+      </node>
+      <node id="12">
+        <label>sstream</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+      <node id="15">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -131,6 +137,8 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
       <node id="9">
         <label>base_num_t.hpp</label>
@@ -147,12 +155,6 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
       </node>
       <node id="4">
         <label>int_num_t.hpp</label>
@@ -166,6 +168,14 @@
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>lexer_parser.hpp</label>
+        <link refid="lexer__parser_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -182,23 +192,23 @@
         <label>nat_rat_fixed_reg_t.hpp</label>
         <link refid="nat__rat__fixed__reg__t_8hpp"/>
       </node>
-      <node id="6">
-        <label>nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp</label>
-        <link refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp"/>
-      </node>
       <node id="7">
         <label>nat_reg_digs_t.hpp</label>
         <link refid="nat__reg__digs__t_8hpp"/>
         <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="12">
         <label>pruebas_dig_t.cpp</label>
         <link refid="pruebas__dig__t_8cpp"/>
       </node>
-      <node id="13">
+      <node id="6">
         <label>reg_digs_t.hpp</label>
         <link refid="reg__digs__t_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="struct_num_repr_1_1auxiliary__types_1_1resbinop__t_3_01_t_00_01binop__e_1_1add_01_4" prot="public">NumRepr::auxiliary_types::resbinop_t&lt; T, binop_e::add &gt;</innerclass>
@@ -215,350 +225,6 @@
     <innerclass refid="struct_num_repr_1_1auxiliary__types_1_1result__operation__t_3_01_t_00_01binop__e_1_1rem_00_01_n_01_4" prot="public">NumRepr::auxiliary_types::result_operation_t&lt; T, binop_e::rem, N &gt;</innerclass>
     <innernamespace refid="namespace_num_repr">NumRepr</innernamespace>
     <innernamespace refid="namespace_num_repr_1_1auxiliary__types">NumRepr::auxiliary_types</innernamespace>
-      <sectiondef kind="enum">
-      <memberdef kind="enum" id="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8" prot="public" static="no" strong="yes">
-        <type>bool</type>
-        <name>sign_e</name>
-        <qualifiedname>NumRepr::sign_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8a664d33ce0500d45dc2e44770723ba7d1" prot="public">
-          <name>vminus</name>
-          <initializer>= true</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8aedd99b9b4a181ec16ae4194c9b065e8b" prot="public">
-          <name>vplus</name>
-          <initializer>= false</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="15" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="15" bodyend="15"/>
-      </memberdef>
-      <memberdef kind="enum" id="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0" prot="public" static="no" strong="yes">
-        <type>char</type>
-        <name>sign_funct_e</name>
-        <qualifiedname>NumRepr::sign_funct_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0ad50833e13d94478df7669d0bfd94e859" prot="public">
-          <name>vzero</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0a664d33ce0500d45dc2e44770723ba7d1" prot="public">
-          <name>vminus</name>
-          <initializer>= -1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0aedd99b9b4a181ec16ae4194c9b065e8b" prot="public">
-          <name>vplus</name>
-          <initializer>= +1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>INTRODUCIDO. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="16" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="16" bodyend="16"/>
-      </memberdef>
-      <memberdef kind="enum" id="namespace_num_repr_1a6496cd1f1a0bb13df8bfb8f8197b6a46" prot="public" static="no" strong="yes">
-        <type>unsigned char</type>
-        <name>dig_format_e</name>
-        <qualifiedname>NumRepr::dig_format_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1a6496cd1f1a0bb13df8bfb8f8197b6a46a2a0e86af18f652069a49330979c008a6" prot="public">
-          <name>BINnat</name>
-          <initializer>=0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a6496cd1f1a0bb13df8bfb8f8197b6a46a11ed08d0994e9c768353601d9ea12741" prot="public">
-          <name>BCDnat</name>
-          <initializer>=1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a6496cd1f1a0bb13df8bfb8f8197b6a46a1459599c082addf48ba502cbd852f111" prot="public">
-          <name>BCDexc3</name>
-          <initializer>=2</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a6496cd1f1a0bb13df8bfb8f8197b6a46a45848ac572e88361fe73ae60787a780b" prot="public">
-          <name>BCDaitk</name>
-          <initializer>=3</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a6496cd1f1a0bb13df8bfb8f8197b6a46a7a5896262db09a2cd411bf1cdbb56de5" prot="public">
-          <name>johnson_n</name>
-          <initializer>=4</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a6496cd1f1a0bb13df8bfb8f8197b6a46ac9f595e6a66c4856892cd21e81c6a67d" prot="public">
-          <name>biquinario</name>
-          <initializer>=5</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="17" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="17" bodyend="18"/>
-      </memberdef>
-      <memberdef kind="enum" id="namespace_num_repr_1abb0e16a5ddc14e6b3ed63af1750922f7" prot="public" static="no" strong="yes">
-        <type>unsigned char</type>
-        <name>num_type_e</name>
-        <qualifiedname>NumRepr::num_type_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1abb0e16a5ddc14e6b3ed63af1750922f7a8f4ef05b543fb6157b374099100574b3" prot="public">
-          <name>natural</name>
-          <initializer>=0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1abb0e16a5ddc14e6b3ed63af1750922f7a0e1ffddb2cb5f112904e70bc30478dc0" prot="public">
-          <name>entero</name>
-          <initializer>=1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1abb0e16a5ddc14e6b3ed63af1750922f7a6e4fb67cd72a9935a571e3cb1110005e" prot="public">
-          <name>racional</name>
-          <initializer>=2</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1abb0e16a5ddc14e6b3ed63af1750922f7a4bca24304861acde5770fdbe3cc2503b" prot="public">
-          <name>real</name>
-          <initializer>=3</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>A INTRODUCIR. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="19" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="19" bodyend="21"/>
-      </memberdef>
-      <memberdef kind="enum" id="namespace_num_repr_1a40063be49a6ce4edc14a7416ed942b08" prot="public" static="no" strong="yes">
-        <type>bool</type>
-        <name>nat_num_format_e</name>
-        <qualifiedname>NumRepr::nat_num_format_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1a40063be49a6ce4edc14a7416ed942b08a8f4ef05b543fb6157b374099100574b3" prot="public">
-          <name>natural</name>
-          <initializer>=false</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a40063be49a6ce4edc14a7416ed942b08a28485a5b2bfa6868f834fe7f61b46f5f" prot="public">
-          <name>exc_n</name>
-          <initializer>=true</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>YA INTRODUCIDO, PERO NO EXPLICITAMENTE NI COMPLETAMENTE. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="22" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="22" bodyend="24"/>
-      </memberdef>
-      <memberdef kind="enum" id="namespace_num_repr_1afdb90f6611f73a430a615010f896f634" prot="public" static="no" strong="yes">
-        <type>unsigned char</type>
-        <name>int_num_format_e</name>
-        <qualifiedname>NumRepr::int_num_format_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1afdb90f6611f73a430a615010f896f634afc47fff21fb7613d155583803fc2949e" prot="public">
-          <name>int_CB</name>
-          <initializer>=0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1afdb90f6611f73a430a615010f896f634a23db6f34a6b9b864ba35e2ae374c6aa3" prot="public">
-          <name>int_CBm1</name>
-          <initializer>=1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1afdb90f6611f73a430a615010f896f634abfdb019232f14bf7a7519785d14a1e75" prot="public">
-          <name>int_MS</name>
-          <initializer>=2</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1afdb90f6611f73a430a615010f896f634abc6d44509ed50fd5177f78049c59c446" prot="public">
-          <name>int_EXC_n</name>
-          <initializer>=3</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>SOLO NATURAL. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="25" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="25" bodyend="27"/>
-      </memberdef>
-      <memberdef kind="enum" id="namespace_num_repr_1a2b95927d22994b45b0d6787ac46449dc" prot="public" static="no" strong="yes">
-        <type>unsigned char</type>
-        <name>rat_num_format_e</name>
-        <qualifiedname>NumRepr::rat_num_format_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1a2b95927d22994b45b0d6787ac46449dcadbb955c289fb915e797daeaa9b736e9a" prot="public">
-          <name>pair_num_den</name>
-          <initializer>=0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a2b95927d22994b45b0d6787ac46449dca12efa49e18cac717f7afe7fbc0db6ae2" prot="public">
-          <name>fxd_pt</name>
-          <initializer>=1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1a2b95927d22994b45b0d6787ac46449dcaa412206072b5acc1c9ca53f8fa8cc586" prot="public">
-          <name>flt_pt</name>
-          <initializer>=2</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>EN C_B YA QUEDA EN MS. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="28" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="28" bodyend="30"/>
-      </memberdef>
-      <memberdef kind="enum" id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>binop_e</name>
-        <qualifiedname>NumRepr::binop_e</qualifiedname>
-        <enumvalue id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a34ec78fcc91ffb1e54cd85e4a0924332" prot="public">
-          <name>add</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a8a68dc3e925eacf92633be230722a140" prot="public">
-          <name>sub</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a0f9f2d92c2583ef952556e1f382d0974" prot="public">
-          <name>mult</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a38696558dc98494c08d951c052900a2a" prot="public">
-          <name>div</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a5cadb523cb6909f92350f70f124adfb8" prot="public">
-          <name>rem</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a72d39095b29792b4a7229408d6edb5c9" prot="public">
-          <name>fediv</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespace_num_repr_1af0ffab053045d0f8f4bc9f35a0df1de8a795f3202b17cb6bc3d4b771d8c6c9eaf" prot="public">
-          <name>other</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" line="32" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_types.hpp" bodystart="32" bodyend="32"/>
-      </memberdef>
-      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

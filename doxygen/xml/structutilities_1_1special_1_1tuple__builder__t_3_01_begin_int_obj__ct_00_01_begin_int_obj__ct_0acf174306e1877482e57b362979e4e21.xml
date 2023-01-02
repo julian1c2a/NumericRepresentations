@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
+  <compounddef id="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21" kind="struct" language="C++" prot="public">
+    <compoundname>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</compoundname>
+    <includes refid="utilities_8hpp" local="no">utilities.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>std::int64_t</type>
+        <declname>BeginIntObj_ct</declname>
+        <defname>BeginIntObj_ct</defname>
+      </param>
+      <param>
+        <type>std::int64_t</type>
+        <declname>EndIntObj_ct</declname>
+        <defname>EndIntObj_ct</defname>
+      </param>
+      <param>
+        <type>std::int64_t</type>
+        <declname>Base</declname>
+        <defname>Base</defname>
+      </param>
+      <param>
+        <type>template&lt; std::int64_t, std::int64_t &gt; class</type>
+        <declname>Funct_tt</declname>
+        <defname>Funct_tt</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1af658a886eb733fd518d8d3b0920641dd" prot="public" static="no">
+        <type>std::int64_t</type>
+        <definition>using utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::type =  std::int64_t</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="289" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1aa55281dc2747c4ef8f2d6711cbb7ba7e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1af658a886eb733fd518d8d3b0920641dd" kindref="member">type</ref></type>
+        <definition>constexpr type utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::unit</definition>
+        <argsstring></argsstring>
+        <name>unit</name>
+        <qualifiedname>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::unit</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="291" column="24" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1afd02e57d9beaa8e3094fa06a47b1abee" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1af658a886eb733fd518d8d3b0920641dd" kindref="member">type</ref></type>
+        <definition>constexpr type utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::value</qualifiedname>
+        <initializer>{BeginIntObj_ct}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="293" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1ab979913cde5632c13b1b1baa5498ad82" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1af658a886eb733fd518d8d3b0920641dd" kindref="member">type</ref></type>
+        <definition>constexpr type utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::begin_value</definition>
+        <argsstring></argsstring>
+        <name>begin_value</name>
+        <qualifiedname>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::begin_value</qualifiedname>
+        <initializer>{BeginIntObj_ct}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="294" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1add38b4094dd55a686f2a0fbdd1092466" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1af658a886eb733fd518d8d3b0920641dd" kindref="member">type</ref></type>
+        <definition>constexpr type utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::end_value</definition>
+        <argsstring></argsstring>
+        <name>end_value</name>
+        <qualifiedname>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::end_value</qualifiedname>
+        <initializer>{EndIntObj_ct}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="295" column="23" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1a86b75b979de0c5767a791bb4b0731793" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>consteval decltype(auto)</type>
+        <definition>static consteval decltype(auto) utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::build</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>build</name>
+        <qualifiedname>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::build</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="298" column="10" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="298" bodyend="307"/>
+        <references refid="structutilities_1_1special_1_1tuple__builder__t_1a8e1ed3d327091c5f21f835adea83ec3f" compoundref="utilities_8hpp" startline="243" endline="250">utilities::special::tuple_builder_t&lt; IntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;::build</references>
+      </memberdef>
+      </sectiondef>
+    <requiresclause>(BeginIntObj_ct &lt;= EndIntObj_ct)    </requiresclause>
+    <briefdescription>
+<para>ESPECIALIZACION DONDE INTOBJ_CT == BEGININTOBJ_CT. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" line="287" column="1" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/utilities.hpp" bodystart="287" bodyend="309"/>
+    <listofallmembers>
+      <member refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1ab979913cde5632c13b1b1baa5498ad82" prot="public" virt="non-virtual"><scope>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</scope><name>begin_value</name></member>
+      <member refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1a86b75b979de0c5767a791bb4b0731793" prot="public" virt="non-virtual"><scope>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</scope><name>build</name></member>
+      <member refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1add38b4094dd55a686f2a0fbdd1092466" prot="public" virt="non-virtual"><scope>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</scope><name>end_value</name></member>
+      <member refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1af658a886eb733fd518d8d3b0920641dd" prot="public" virt="non-virtual"><scope>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</scope><name>type</name></member>
+      <member refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1aa55281dc2747c4ef8f2d6711cbb7ba7e" prot="public" virt="non-virtual"><scope>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</scope><name>unit</name></member>
+      <member refid="structutilities_1_1special_1_1tuple__builder__t_3_01_begin_int_obj__ct_00_01_begin_int_obj__ct_0acf174306e1877482e57b362979e4e21_1afd02e57d9beaa8e3094fa06a47b1abee" prot="public" virt="non-virtual"><scope>utilities::special::tuple_builder_t&lt; BeginIntObj_ct, BeginIntObj_ct, EndIntObj_ct, Base, Funct_tt &gt;</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

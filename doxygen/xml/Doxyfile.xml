@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxyfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="doxyfile.xsd" version="1.9.5" xml:lang="es">
+<doxyfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="doxyfile.xsd" version="1.9.6" xml:lang="es">
   <option  id='DOXYFILE_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='PROJECT_NAME' default='no' type='string'><value><![CDATA[NumericRepresentations]]></value></option>
   <option  id='PROJECT_NUMBER' default='yes' type='string'><value><![CDATA[]]></value></option>
@@ -66,10 +66,10 @@
   <option  id='LOOKUP_CACHE_SIZE' default='yes' type='int'><value>0</value></option>
   <option  id='NUM_PROC_THREADS' default='yes' type='int'><value>1</value></option>
   <option  id='EXTRACT_ALL' default='no' type='bool'><value>YES</value></option>
-  <option  id='EXTRACT_PRIVATE' default='yes' type='bool'><value>NO</value></option>
+  <option  id='EXTRACT_PRIVATE' default='no' type='bool'><value>YES</value></option>
   <option  id='EXTRACT_PRIV_VIRTUAL' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXTRACT_PACKAGE' default='yes' type='bool'><value>NO</value></option>
-  <option  id='EXTRACT_STATIC' default='yes' type='bool'><value>NO</value></option>
+  <option  id='EXTRACT_STATIC' default='no' type='bool'><value>YES</value></option>
   <option  id='EXTRACT_LOCAL_CLASSES' default='yes' type='bool'><value>YES</value></option>
   <option  id='EXTRACT_LOCAL_METHODS' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXTRACT_ANON_NSPACES' default='yes' type='bool'><value>NO</value></option>
@@ -109,16 +109,35 @@
   </option>
   <option  id='QUIET' default='yes' type='bool'><value>NO</value></option>
   <option  id='WARNINGS' default='yes' type='bool'><value>YES</value></option>
-  <option  id='WARN_IF_UNDOCUMENTED' default='no' type='bool'><value>NO</value></option>
+  <option  id='WARN_IF_UNDOCUMENTED' default='yes' type='bool'><value>YES</value></option>
   <option  id='WARN_IF_DOC_ERROR' default='yes' type='bool'><value>YES</value></option>
   <option  id='WARN_IF_INCOMPLETE_DOC' default='yes' type='bool'><value>YES</value></option>
   <option  id='WARN_NO_PARAMDOC' default='no' type='bool'><value>YES</value></option>
+  <option  id='WARN_IF_UNDOC_ENUM_VAL' default='yes' type='bool'><value>NO</value></option>
   <option  id='WARN_AS_ERROR' default='yes' type='string'><value>NO</value></option>
   <option  id='WARN_FORMAT' default='yes' type='string'><value><![CDATA["$file:$line: $text"]]></value></option>
   <option  id='WARN_LINE_FORMAT' default='yes' type='string'><value><![CDATA["at line $line of file $file"]]></value></option>
-  <option  id='WARN_LOGFILE' default='no' type='string'><value><![CDATA[C:\Users\Julian\Dropbox\GitHub\NumericRepresentations\doxygen\doxygen.log]]></value></option>
+  <option  id='WARN_LOGFILE' default='no' type='string'><value><![CDATA[C:\Users\julia\Dropbox\GitHub\NumericRepresentations\doxygen\doxygen.log]]></value></option>
   <option  id='INPUT' default='no' type='stringlist'>
-    <value><![CDATA["..\src\"                           ..\src\auxiliary_types.hpp                           ..\src\dig_t.hpp                           ..\src\pruebas_dig_t.cpp                           ..\src\utilities.hpp                           ..\src\rat_fixed_reg_t.hpp                           ..\src\basic_types.hpp                           ..\src\int_num_t.hpp                           ..\src\base_num_t.hpp                           ..\src\memory_handler.hpp                           ..\src\reg_digs_t.hpp                           ..\src\nat_rat_fixed_reg_t.hpp                           ..\src\nat_reg_digs_t.hpp                           ..\src\auxiliary_functions.hpp                           ..\src\test_dig_t.hpp                           ..\src\nat_num_t.hpp"]]></value>
+    <value><![CDATA[..\src]]></value>
+    <value><![CDATA[..\src\base_num_t.hpp]]></value>
+    <value><![CDATA[..\src\nat_num_t.hpp]]></value>
+    <value><![CDATA[..\src\rat_fixed_reg_t.hpp]]></value>
+    <value><![CDATA[..\src\nat_rat_num_t.hpp]]></value>
+    <value><![CDATA[..\src\test_dig_t.hpp]]></value>
+    <value><![CDATA[..\src\int_reg_digs_t.hpp]]></value>
+    <value><![CDATA[..\src\dig_t.hpp]]></value>
+    <value><![CDATA[..\src\int_num_t.hpp]]></value>
+    <value><![CDATA[..\src\auxiliary_functions.hpp]]></value>
+    <value><![CDATA[..\src\basic_types.hpp]]></value>
+    <value><![CDATA[..\src\utilities.hpp]]></value>
+    <value><![CDATA[..\src\nat_reg_digs_t.hpp]]></value>
+    <value><![CDATA[..\src\lexer_parser.hpp]]></value>
+    <value><![CDATA[..\src\memory_handler.hpp]]></value>
+    <value><![CDATA[..\src\reg_digs_t.hpp]]></value>
+    <value><![CDATA[..\src\pruebas_dig_t.cpp]]></value>
+    <value><![CDATA[..\src\auxiliary_types.hpp]]></value>
+    <value><![CDATA[..\src\rat_num_t.hpp]]></value>
   </option>
   <option  id='INPUT_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='INPUT_FILE_ENCODING' default='yes' type='stringlist'>
@@ -171,7 +190,7 @@
     <value><![CDATA[*.qsf]]></value>
     <value><![CDATA[*.ice]]></value>
   </option>
-  <option  id='RECURSIVE' default='yes' type='bool'><value>NO</value></option>
+  <option  id='RECURSIVE' default='no' type='bool'><value>YES</value></option>
   <option  id='EXCLUDE' default='yes' type='stringlist'>
   </option>
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>
@@ -196,13 +215,13 @@
   <option  id='USE_MDFILE_AS_MAINPAGE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='FORTRAN_COMMENT_AFTER' default='yes' type='int'><value>72</value></option>
   <option  id='SOURCE_BROWSER' default='no' type='bool'><value>YES</value></option>
-  <option  id='INLINE_SOURCES' default='no' type='bool'><value>YES</value></option>
+  <option  id='INLINE_SOURCES' default='yes' type='bool'><value>NO</value></option>
   <option  id='STRIP_CODE_COMMENTS' default='yes' type='bool'><value>YES</value></option>
-  <option  id='REFERENCED_BY_RELATION' default='no' type='bool'><value>YES</value></option>
-  <option  id='REFERENCES_RELATION' default='no' type='bool'><value>YES</value></option>
+  <option  id='REFERENCED_BY_RELATION' default='yes' type='bool'><value>NO</value></option>
+  <option  id='REFERENCES_RELATION' default='yes' type='bool'><value>NO</value></option>
   <option  id='REFERENCES_LINK_SOURCE' default='yes' type='bool'><value>YES</value></option>
   <option  id='SOURCE_TOOLTIPS' default='yes' type='bool'><value>YES</value></option>
-  <option  id='USE_HTAGS' default='no' type='bool'><value>YES</value></option>
+  <option  id='USE_HTAGS' default='yes' type='bool'><value>NO</value></option>
   <option  id='VERBATIM_HEADERS' default='yes' type='bool'><value>YES</value></option>
   <option  id='ALPHABETICAL_INDEX' default='yes' type='bool'><value>YES</value></option>
   <option  id='IGNORE_PREFIX' default='yes' type='stringlist'>
@@ -223,7 +242,7 @@
   <option  id='HTML_COLORSTYLE_GAMMA' default='yes' type='int'><value>80</value></option>
   <option  id='HTML_TIMESTAMP' default='no' type='bool'><value>YES</value></option>
   <option  id='HTML_DYNAMIC_MENUS' default='yes' type='bool'><value>YES</value></option>
-  <option  id='HTML_DYNAMIC_SECTIONS' default='no' type='bool'><value>YES</value></option>
+  <option  id='HTML_DYNAMIC_SECTIONS' default='yes' type='bool'><value>NO</value></option>
   <option  id='HTML_INDEX_NUM_ENTRIES' default='yes' type='int'><value>100</value></option>
   <option  id='GENERATE_DOCSET' default='yes' type='bool'><value>NO</value></option>
   <option  id='DOCSET_FEEDNAME' default='yes' type='string'><value><![CDATA["Doxygen generated docs"]]></value></option>
@@ -231,12 +250,12 @@
   <option  id='DOCSET_BUNDLE_ID' default='yes' type='string'><value><![CDATA[org.doxygen.Project]]></value></option>
   <option  id='DOCSET_PUBLISHER_ID' default='yes' type='string'><value><![CDATA[org.doxygen.Publisher]]></value></option>
   <option  id='DOCSET_PUBLISHER_NAME' default='yes' type='string'><value><![CDATA[Publisher]]></value></option>
-  <option  id='GENERATE_HTMLHELP' default='yes' type='bool'><value>NO</value></option>
+  <option  id='GENERATE_HTMLHELP' default='no' type='bool'><value>YES</value></option>
   <option  id='CHM_FILE' default='no' type='string'><value><![CDATA[../NumericRepresentations.chm]]></value></option>
   <option  id='HHC_LOCATION' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='GENERATE_CHI' default='yes' type='bool'><value>NO</value></option>
+  <option  id='GENERATE_CHI' default='no' type='bool'><value>YES</value></option>
   <option  id='CHM_INDEX_ENCODING' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='BINARY_TOC' default='yes' type='bool'><value>NO</value></option>
+  <option  id='BINARY_TOC' default='no' type='bool'><value>YES</value></option>
   <option  id='TOC_EXPAND' default='yes' type='bool'><value>NO</value></option>
   <option  id='GENERATE_QHP' default='yes' type='bool'><value>NO</value></option>
   <option  id='QCH_FILE' default='yes' type='string'><value><![CDATA[]]></value></option>
@@ -298,25 +317,25 @@
   <option  id='GENERATE_RTF' default='no' type='bool'><value>YES</value></option>
   <option  id='RTF_OUTPUT' default='yes' type='string'><value><![CDATA[rtf]]></value></option>
   <option  id='COMPACT_RTF' default='yes' type='bool'><value>NO</value></option>
-  <option  id='RTF_HYPERLINKS' default='no' type='bool'><value>YES</value></option>
+  <option  id='RTF_HYPERLINKS' default='yes' type='bool'><value>NO</value></option>
   <option  id='RTF_STYLESHEET_FILE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='RTF_EXTENSIONS_FILE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='GENERATE_MAN' default='no' type='bool'><value>YES</value></option>
   <option  id='MAN_OUTPUT' default='yes' type='string'><value><![CDATA[man]]></value></option>
   <option  id='MAN_EXTENSION' default='yes' type='string'><value><![CDATA[.3]]></value></option>
   <option  id='MAN_SUBDIR' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='MAN_LINKS' default='no' type='bool'><value>YES</value></option>
+  <option  id='MAN_LINKS' default='yes' type='bool'><value>NO</value></option>
   <option  id='GENERATE_XML' default='no' type='bool'><value>YES</value></option>
   <option  id='XML_OUTPUT' default='yes' type='string'><value><![CDATA[xml]]></value></option>
   <option  id='XML_PROGRAMLISTING' default='yes' type='bool'><value>YES</value></option>
-  <option  id='XML_NS_MEMB_FILE_SCOPE' default='no' type='bool'><value>YES</value></option>
+  <option  id='XML_NS_MEMB_FILE_SCOPE' default='yes' type='bool'><value>NO</value></option>
   <option  id='GENERATE_DOCBOOK' default='no' type='bool'><value>YES</value></option>
   <option  id='DOCBOOK_OUTPUT' default='yes' type='string'><value><![CDATA[docbook]]></value></option>
   <option  id='GENERATE_AUTOGEN_DEF' default='no' type='bool'><value>YES</value></option>
   <option  id='GENERATE_SQLITE3' default='yes' type='bool'><value>NO</value></option>
   <option  id='SQLITE3_OUTPUT' default='yes' type='string'><value><![CDATA[sqlite3]]></value></option>
   <option  id='SQLITE3_RECREATE_DB' default='yes' type='bool'><value>YES</value></option>
-  <option  id='GENERATE_PERLMOD' default='yes' type='bool'><value>NO</value></option>
+  <option  id='GENERATE_PERLMOD' default='no' type='bool'><value>YES</value></option>
   <option  id='PERLMOD_LATEX' default='yes' type='bool'><value>NO</value></option>
   <option  id='PERLMOD_PRETTY' default='yes' type='bool'><value>YES</value></option>
   <option  id='PERLMOD_MAKEVAR_PREFIX' default='yes' type='string'><value><![CDATA[]]></value></option>
@@ -351,11 +370,11 @@
   <option  id='CLASS_GRAPH' default='yes' type='string'><value>YES</value></option>
   <option  id='COLLABORATION_GRAPH' default='yes' type='bool'><value>YES</value></option>
   <option  id='GROUP_GRAPHS' default='yes' type='bool'><value>YES</value></option>
-  <option  id='UML_LOOK' default='no' type='bool'><value>YES</value></option>
+  <option  id='UML_LOOK' default='yes' type='bool'><value>NO</value></option>
   <option  id='UML_LIMIT_NUM_FIELDS' default='yes' type='int'><value>10</value></option>
-  <option  id='DOT_UML_DETAILS' default='no' type='string'><value>YES</value></option>
+  <option  id='DOT_UML_DETAILS' default='yes' type='string'><value>NO</value></option>
   <option  id='DOT_WRAP_THRESHOLD' default='yes' type='int'><value>17</value></option>
-  <option  id='TEMPLATE_RELATIONS' default='no' type='bool'><value>YES</value></option>
+  <option  id='TEMPLATE_RELATIONS' default='yes' type='bool'><value>NO</value></option>
   <option  id='INCLUDE_GRAPH' default='yes' type='bool'><value>YES</value></option>
   <option  id='INCLUDED_BY_GRAPH' default='yes' type='bool'><value>YES</value></option>
   <option  id='CALL_GRAPH' default='no' type='bool'><value>YES</value></option>
@@ -363,9 +382,9 @@
   <option  id='GRAPHICAL_HIERARCHY' default='yes' type='bool'><value>YES</value></option>
   <option  id='DIRECTORY_GRAPH' default='yes' type='bool'><value>YES</value></option>
   <option  id='DIR_GRAPH_MAX_DEPTH' default='yes' type='int'><value>1</value></option>
-  <option  id='DOT_IMAGE_FORMAT' default='no' type='string'><value>svg</value></option>
-  <option  id='INTERACTIVE_SVG' default='no' type='bool'><value>YES</value></option>
-  <option  id='DOT_PATH' default='yes' type='string'><value><![CDATA[]]></value></option>
+  <option  id='DOT_IMAGE_FORMAT' default='yes' type='string'><value>png</value></option>
+  <option  id='INTERACTIVE_SVG' default='yes' type='bool'><value>NO</value></option>
+  <option  id='DOT_PATH' default='no' type='string'><value><![CDATA[C:\msys64\mingw64\bin\dot.exe]]></value></option>
   <option  id='DOTFILE_DIRS' default='yes' type='stringlist'>
   </option>
   <option  id='MSCFILE_DIRS' default='yes' type='stringlist'>
@@ -378,7 +397,7 @@
   </option>
   <option  id='DOT_GRAPH_MAX_NODES' default='yes' type='int'><value>50</value></option>
   <option  id='MAX_DOT_GRAPH_DEPTH' default='yes' type='int'><value>0</value></option>
-  <option  id='DOT_MULTI_TARGETS' default='no' type='bool'><value>YES</value></option>
+  <option  id='DOT_MULTI_TARGETS' default='yes' type='bool'><value>NO</value></option>
   <option  id='GENERATE_LEGEND' default='yes' type='bool'><value>YES</value></option>
   <option  id='DOT_CLEANUP' default='yes' type='bool'><value>YES</value></option>
 </doxyfile>

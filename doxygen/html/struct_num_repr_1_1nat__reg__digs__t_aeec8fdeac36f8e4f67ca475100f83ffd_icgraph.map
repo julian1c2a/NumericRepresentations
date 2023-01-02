@@ -1,0 +1,29 @@
+<map id="NumRepr::nat_reg_digs_t::base_this" name="NumRepr::nat_reg_digs_t::base_this">
+<area shape="rect" id="node1" title=" " alt="" coords="837,666,997,706"/>
+<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#ab28b12d87b4ba5e5f65beb35d278e51b" title=" " alt="" coords="629,666,789,706"/>
+<area shape="rect" id="node6" href="$struct_num_repr_1_1nat__reg__digs__t.html#a9487898486f71a81f5ccc6573f8709db" title="CONSTRUCTOR POR MOVIMIENTO." alt="" coords="5,32,165,72"/>
+<area shape="rect" id="node27" href="$struct_num_repr_1_1nat__reg__digs__t.html#aba43c889c90dfbb661c06609e10393e4" title="OPERACION ASIGNACION POR COPIA REFERENCIA CONST NO COPIABLE DESDE BASE_N_T." alt="" coords="629,730,789,770"/>
+<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__reg__digs__t.html#abd8cc521e9af8cfb63a845d6295dfc70" title=" " alt="" coords="421,354,581,394"/>
+<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__reg__digs__t.html#a3ab8e26377b4f409fe0ec67972db7de4" title=" " alt="" coords="213,260,373,300"/>
+<area shape="rect" id="node5" href="$struct_num_repr_1_1nat__reg__digs__t.html#ae8944cfac1e1fd4c1e0a6be9bd5bc9f4" title=" " alt="" coords="213,60,373,100"/>
+<area shape="rect" id="node9" href="$struct_num_repr_1_1nat__reg__digs__t.html#ad55f50be24724cc0790b2cafb3733a69" title=" " alt="" coords="421,506,581,546"/>
+<area shape="rect" id="node10" href="$struct_num_repr_1_1nat__reg__digs__t.html#a7c50665e783bd8dd09b76af26e2d43b4" title=" " alt="" coords="421,570,581,610"/>
+<area shape="rect" id="node11" href="$struct_num_repr_1_1nat__reg__digs__t.html#a76502863356a962c922528a7e0de7c22" title=" " alt="" coords="421,634,581,674"/>
+<area shape="rect" id="node12" href="$struct_num_repr_1_1nat__reg__digs__t.html#a2700fbcaf685ccd1d8e1aebfd71e59b2" title=" " alt="" coords="421,698,581,738"/>
+<area shape="rect" id="node13" href="$struct_num_repr_1_1nat__reg__digs__t.html#a061cc41d3e0bcfca2f86c6f15eeeba7b" title=" " alt="" coords="421,762,581,802"/>
+<area shape="rect" id="node14" href="$struct_num_repr_1_1nat__reg__digs__t.html#af16da7d777f0461043ec0d7daae338b3" title=" " alt="" coords="421,826,581,866"/>
+<area shape="rect" id="node15" href="$struct_num_repr_1_1nat__reg__digs__t.html#aca9335419e9033518f40cccb436c13f5" title=" " alt="" coords="421,890,581,930"/>
+<area shape="rect" id="node16" href="$struct_num_repr_1_1nat__reg__digs__t.html#abcc6c82c4a4563ff93f43cdba0ea5a3d" title=" " alt="" coords="421,954,581,994"/>
+<area shape="rect" id="node17" href="$struct_num_repr_1_1nat__reg__digs__t.html#a258de4665d5dad190a1f431949a57e9b" title=" " alt="" coords="421,1018,581,1058"/>
+<area shape="rect" id="node18" href="$struct_num_repr_1_1nat__reg__digs__t.html#afdfd81c1577f21a78a883d78c69e661d" title=" " alt="" coords="421,1082,581,1122"/>
+<area shape="rect" id="node19" href="$struct_num_repr_1_1nat__reg__digs__t.html#ac904337e0a7ca97801a344494172e56e" title="END : OPERATORS &gt;&gt; &gt;&gt;= &lt;&lt; &lt;&lt;= REM_B^n M_REM_B^n MER_B_N M_MER_B_N." alt="" coords="421,1146,581,1186"/>
+<area shape="rect" id="node20" href="$struct_num_repr_1_1nat__reg__digs__t.html#a6647618fb6d484f4c257159dba69c370" title=" " alt="" coords="421,1210,581,1250"/>
+<area shape="rect" id="node21" href="$struct_num_repr_1_1nat__reg__digs__t.html#ac4f2f52679334d058322e2537881b5fc" title="OPERACION DE LIMPIEZA A CERO DEL NAT_REG_DIGS_T." alt="" coords="421,442,581,482"/>
+<area shape="rect" id="node22" href="$struct_num_repr_1_1nat__reg__digs__t.html#a197e63e671e4306b1d6c95cf3dddf122" title="OPERACION DE LIMPIEZA A B&#45;1 DEL NAT_REG_DIGS_T." alt="" coords="421,1298,581,1338"/>
+<area shape="rect" id="node23" href="$struct_num_repr_1_1nat__reg__digs__t.html#a4ac89cc0daee3cbccf22a42164e99481" title="OPERACION DE LIMPIEZA A VALOR DIG_T DEL NAT_REG_DIGS_T." alt="" coords="421,1362,581,1402"/>
+<area shape="rect" id="node24" href="$struct_num_repr_1_1nat__reg__digs__t.html#ad7f694c626b4b9199f0fd299a0c06f54" title="OPERACION DE PONER A VALOR DIG_0 EN [N_0 , N_1) DEL NAT_REG_DIGS_T." alt="" coords="421,111,581,151"/>
+<area shape="rect" id="node25" href="$struct_num_repr_1_1nat__reg__digs__t.html#af1e049ae99df1afdfaf216efa6877f77" title="OPERACION DE PONER A VALOR DIG_Bm1 EN [N_0 , N_1) DEL NAT_REG_DIGS_T." alt="" coords="421,175,581,215"/>
+<area shape="rect" id="node26" href="$struct_num_repr_1_1nat__reg__digs__t.html#a5755851c821c5b1a87ab04e4bd7861a0" title="OPERACION DE PONER A VALOR DIG EN [N_0 , N_1) DEL NAT_REG_DIGS_T." alt="" coords="421,290,581,330"/>
+<area shape="rect" id="node7" href="$struct_num_repr_1_1nat__reg__digs__t.html#a38fa3f288d43c0fa115e89bf9afd6da5" title="OPERACION COPIA DESDE UN DIGITO (CONVERSION)" alt="" coords="213,430,373,470"/>
+<area shape="rect" id="node8" href="$struct_num_repr_1_1nat__reg__digs__t.html#a953e903e06ac7220399e624582ddfe1f" title=" " alt="" coords="213,354,373,394"/>
+</map>

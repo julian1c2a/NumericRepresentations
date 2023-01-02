@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="es">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="es">
   <compounddef id="auxiliary__functions_8hpp" kind="file" language="C++">
     <compoundname>auxiliary_functions.hpp</compoundname>
     <includes refid="auxiliary__types_8hpp" local="yes">auxiliary_types.hpp</includes>
@@ -60,65 +60,70 @@
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-      </node>
-      <node id="14">
-        <label>array</label>
-      </node>
-      <node id="18">
-        <label>climits</label>
-      </node>
-      <node id="21">
-        <label>cmath</label>
-      </node>
-      <node id="7">
-        <label>compare</label>
-      </node>
-      <node id="8">
-        <label>concepts</label>
-      </node>
-      <node id="4">
-        <label>cstdint</label>
-      </node>
-      <node id="10">
-        <label>cstring</label>
-      </node>
-      <node id="13">
-        <label>fstream</label>
-      </node>
-      <node id="23">
-        <label>functional</label>
-      </node>
-      <node id="9">
-        <label>iostream</label>
-      </node>
-      <node id="22">
-        <label>iterator</label>
-      </node>
-      <node id="20">
-        <label>limits</label>
-      </node>
-      <node id="16">
-        <label>list</label>
-      </node>
-      <node id="17">
-        <label>map</label>
-      </node>
-      <node id="19">
-        <label>numeric</label>
-      </node>
-      <node id="6">
-        <label>optional</label>
-      </node>
-      <node id="12">
-        <label>sstream</label>
-      </node>
-      <node id="11">
-        <label>string</label>
-      </node>
-      <node id="5">
-        <label>type_traits</label>
+        <childnode refid="24" relation="include">
+        </childnode>
       </node>
       <node id="15">
+        <label>array</label>
+      </node>
+      <node id="5">
+        <label>cinttypes</label>
+      </node>
+      <node id="19">
+        <label>climits</label>
+      </node>
+      <node id="22">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>compare</label>
+      </node>
+      <node id="9">
+        <label>concepts</label>
+      </node>
+      <node id="11">
+        <label>cstring</label>
+      </node>
+      <node id="14">
+        <label>fstream</label>
+      </node>
+      <node id="24">
+        <label>functional</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>istream</label>
+      </node>
+      <node id="23">
+        <label>iterator</label>
+      </node>
+      <node id="21">
+        <label>limits</label>
+      </node>
+      <node id="17">
+        <label>list</label>
+      </node>
+      <node id="18">
+        <label>map</label>
+      </node>
+      <node id="20">
+        <label>numeric</label>
+      </node>
+      <node id="7">
+        <label>optional</label>
+      </node>
+      <node id="13">
+        <label>sstream</label>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>type_traits</label>
+      </node>
+      <node id="16">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -143,12 +148,6 @@
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -179,250 +178,28 @@
         <label>nat_rat_fixed_reg_t.hpp</label>
         <link refid="nat__rat__fixed__reg__t_8hpp"/>
       </node>
-      <node id="5">
-        <label>nat_reg_digs_t (Copia en conflicto de MSI 2022-11-24).hpp</label>
-        <link refid="nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp"/>
-      </node>
       <node id="6">
         <label>nat_reg_digs_t.hpp</label>
         <link refid="nat__reg__digs__t_8hpp"/>
         <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="11">
         <label>pruebas_dig_t.cpp</label>
         <link refid="pruebas__dig__t_8cpp"/>
       </node>
-      <node id="12">
+      <node id="5">
         <label>reg_digs_t.hpp</label>
         <link refid="reg__digs__t_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespace_num_repr">NumRepr</innernamespace>
     <innernamespace refid="namespace_num_repr_1_1detail">NumRepr::detail</innernamespace>
     <innernamespace refid="namespace_num_repr_1_1auxiliary__functions">NumRepr::auxiliary_functions</innernamespace>
-      <sectiondef kind="func">
-      <memberdef kind="function" id="namespace_num_repr_1a267abda3e78b6a487e39c4de923838bf" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr sign_e</type>
-        <definition>constexpr sign_e NumRepr::Char2Sign</definition>
-        <argsstring>(char ch) noexcept</argsstring>
-        <name>Char2Sign</name>
-        <qualifiedname>NumRepr::Char2Sign</qualifiedname>
-        <param>
-          <type>char</type>
-          <declname>ch</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="9" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="9" bodyend="15"/>
-        <references refid="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8a664d33ce0500d45dc2e44770723ba7d1">NumRepr::vminus</references>
-        <references refid="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8aedd99b9b4a181ec16ae4194c9b065e8b">NumRepr::vplus</references>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1ae6e314ed88507b46a8155893a823049c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>arith_integral_c</type>
-            <declname>IntT</declname>
-            <defname>IntT</defname>
-          </param>
-        </templateparamlist>
-        <type>constexpr sign_e</type>
-        <definition>constexpr sign_e NumRepr::Int2Sign</definition>
-        <argsstring>(IntT nu) noexcept</argsstring>
-        <name>Int2Sign</name>
-        <qualifiedname>NumRepr::Int2Sign</qualifiedname>
-        <param>
-          <type>IntT</type>
-          <declname>nu</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="19" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="19" bodyend="25"/>
-        <references refid="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8a664d33ce0500d45dc2e44770723ba7d1">NumRepr::vminus</references>
-        <references refid="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8aedd99b9b4a181ec16ae4194c9b065e8b">NumRepr::vplus</references>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1a396b4de02e34550acddc2664931975d8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>arith_integral_c</type>
-            <declname>IntT</declname>
-            <defname>IntT</defname>
-          </param>
-        </templateparamlist>
-        <type>constexpr sign_funct_e</type>
-        <definition>constexpr sign_funct_e NumRepr::Int2SignFunct</definition>
-        <argsstring>(IntT nu) noexcept</argsstring>
-        <name>Int2SignFunct</name>
-        <qualifiedname>NumRepr::Int2SignFunct</qualifiedname>
-        <param>
-          <type>IntT</type>
-          <declname>nu</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="29" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="29" bodyend="37"/>
-        <references refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0a664d33ce0500d45dc2e44770723ba7d1">NumRepr::vminus</references>
-        <references refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0aedd99b9b4a181ec16ae4194c9b065e8b">NumRepr::vplus</references>
-        <references refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0ad50833e13d94478df7669d0bfd94e859">NumRepr::vzero</references>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1af38005a1c9fb23a68d4651abc72ddf25" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>arith_natural_c</type>
-            <declname>NatIntT</declname>
-            <defname>NatIntT</defname>
-          </param>
-        </templateparamlist>
-        <type>constexpr sign_funct_e</type>
-        <definition>constexpr sign_funct_e NumRepr::Nat2SignFunct</definition>
-        <argsstring>(NatIntT nu) noexcept</argsstring>
-        <name>Nat2SignFunct</name>
-        <qualifiedname>NumRepr::Nat2SignFunct</qualifiedname>
-        <param>
-          <type>NatIntT</type>
-          <declname>nu</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="41" column="14" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="41" bodyend="47"/>
-        <references refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0aedd99b9b4a181ec16ae4194c9b065e8b">NumRepr::vplus</references>
-        <references refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0ad50833e13d94478df7669d0bfd94e859">NumRepr::vzero</references>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1_1detail_1aa138a7304b06ab664d7208956b3c0dbe" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-        <definition>constexpr size_t NumRepr::detail::ceilsqrt</definition>
-        <argsstring>(size_t n, size_t low, size_t high) noexcept</argsstring>
-        <name>ceilsqrt</name>
-        <qualifiedname>NumRepr::detail::ceilsqrt</qualifiedname>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>n</declname>
-        </param>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>low</declname>
-        </param>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>high</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="52" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="52" bodyend="66"/>
-        <references refid="namespace_num_repr_1_1detail_1aa138a7304b06ab664d7208956b3c0dbe" compoundref="auxiliary__functions_8hpp" startline="52" endline="66">NumRepr::detail::ceilsqrt</references>
-        <referencedby refid="namespace_num_repr_1_1detail_1aa138a7304b06ab664d7208956b3c0dbe" compoundref="auxiliary__functions_8hpp" startline="52" endline="66">NumRepr::detail::ceilsqrt</referencedby>
-        <referencedby refid="namespace_num_repr_1_1auxiliary__functions_1a6a368b190a18264af00c59b164dc1096" compoundref="auxiliary__functions_8hpp" startline="105" endline="113">NumRepr::auxiliary_functions::is_prime</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1_1detail_1ad76e295a8cfd29f1f6e2a02983e4717a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-        <definition>constexpr size_t NumRepr::detail::ceilsqrt</definition>
-        <argsstring>(size_t n) noexcept</argsstring>
-        <name>ceilsqrt</name>
-        <qualifiedname>NumRepr::detail::ceilsqrt</qualifiedname>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>n</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="70" column="8" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="70" bodyend="83"/>
-        <references refid="namespace_num_repr_1_1detail_1aa138a7304b06ab664d7208956b3c0dbe" compoundref="auxiliary__functions_8hpp" startline="52" endline="66">NumRepr::detail::ceilsqrt</references>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1_1detail_1a098c7fa0c984b9aa1e6c5e6033affc88" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::detail::find_factor</definition>
-        <argsstring>(size_t n, size_t low, size_t high) noexcept</argsstring>
-        <name>find_factor</name>
-        <qualifiedname>NumRepr::detail::find_factor</qualifiedname>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>n</declname>
-        </param>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>low</declname>
-        </param>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>high</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="88" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="88" bodyend="101"/>
-        <references refid="namespace_num_repr_1_1detail_1a098c7fa0c984b9aa1e6c5e6033affc88" compoundref="auxiliary__functions_8hpp" startline="88" endline="101">NumRepr::detail::find_factor</references>
-        <referencedby refid="namespace_num_repr_1_1detail_1a098c7fa0c984b9aa1e6c5e6033affc88" compoundref="auxiliary__functions_8hpp" startline="88" endline="101">NumRepr::detail::find_factor</referencedby>
-        <referencedby refid="namespace_num_repr_1_1auxiliary__functions_1a6a368b190a18264af00c59b164dc1096" compoundref="auxiliary__functions_8hpp" startline="105" endline="113">NumRepr::auxiliary_functions::is_prime</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1_1auxiliary__functions_1a6a368b190a18264af00c59b164dc1096" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::auxiliary_functions::is_prime</definition>
-        <argsstring>(size_t n) noexcept</argsstring>
-        <name>is_prime</name>
-        <qualifiedname>NumRepr::auxiliary_functions::is_prime</qualifiedname>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638" kindref="member">size_t</ref></type>
-          <declname>n</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="105" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="105" bodyend="113"/>
-        <references refid="namespace_num_repr_1_1detail_1aa138a7304b06ab664d7208956b3c0dbe" compoundref="auxiliary__functions_8hpp" startline="52" endline="66">NumRepr::detail::ceilsqrt</references>
-        <references refid="namespace_num_repr_1_1detail_1a098c7fa0c984b9aa1e6c5e6033affc88" compoundref="auxiliary__functions_8hpp" startline="88" endline="101">NumRepr::detail::find_factor</references>
-        <referencedby refid="struct_num_repr_1_1dig__t_1a2e4a2d001d8b4a6e97639da50e33d3cb" compoundref="dig__t_8hpp" startline="139" endline="141">NumRepr::dig_t&lt; UINT_T, B &gt;::is_prime</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr bool</type>
-        <definition>constexpr bool NumRepr::auxiliary_functions::is_power_of_2</definition>
-        <argsstring>(uint128_t num) noexcept</argsstring>
-        <name>is_power_of_2</name>
-        <qualifiedname>NumRepr::auxiliary_functions::is_power_of_2</qualifiedname>
-        <param>
-          <type><ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref></type>
-          <declname>num</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" line="115" column="6" bodyfile="C:/Users/julia/Dropbox/GitHub/NumericRepresentations/src/auxiliary_functions.hpp" bodystart="115" bodyend="121"/>
-        <references refid="namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d" compoundref="auxiliary__functions_8hpp" startline="115" endline="121">NumRepr::auxiliary_functions::is_power_of_2</references>
-        <referencedby refid="namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d" compoundref="auxiliary__functions_8hpp" startline="115" endline="121">NumRepr::auxiliary_functions::is_power_of_2</referencedby>
-      </memberdef>
-      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -444,7 +221,7 @@
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8a664d33ce0500d45dc2e44770723ba7d1" kindref="member">sign_e::vminus</ref>;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;arith_</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">egral_c<sp/>IntT&gt;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;type_traits::arith_</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">egral_c<sp/>IntT&gt;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19" refid="namespace_num_repr_1ae6e314ed88507b46a8155893a823049c" refkind="member"><highlight class="normal"><ref refid="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8" kindref="member">sign_e</ref><sp/><ref refid="namespace_num_repr_1ae6e314ed88507b46a8155893a823049c" kindref="member">Int2Sign</ref><sp/>(IntT<sp/>nu)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal">{</highlight></codeline>
@@ -454,9 +231,9 @@
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_num_repr_1a192603e40b54371f4bebf61a4afa17e8aedd99b9b4a181ec16ae4194c9b065e8b" kindref="member">sign_e::vplus</ref>;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;arith_</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">egral_c<sp/>IntT&gt;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;type_traits::arith_</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">egral_c<sp/>IntT&gt;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="namespace_num_repr_1a396b4de02e34550acddc2664931975d8" refkind="member"><highlight class="normal"><ref refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0" kindref="member">sign_funct_e</ref><sp/><ref refid="namespace_num_repr_1a396b4de02e34550acddc2664931975d8" kindref="member">Int2SignFunct</ref><sp/>(IntT<sp/>nu)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="namespace_num_repr_1a396b4de02e34550acddc2664931975d8" refkind="member"><highlight class="normal"><ref refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0" kindref="member">sign_funct_e</ref><sp/><ref refid="namespace_num_repr_1a396b4de02e34550acddc2664931975d8" kindref="member">Int2SignFunct</ref>(IntT<sp/>nu)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nu<sp/>&lt;<sp/>0)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0a664d33ce0500d45dc2e44770723ba7d1" kindref="member">sign_funct_e::vminus</ref>;</highlight></codeline>
@@ -466,9 +243,9 @@
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0ad50833e13d94478df7669d0bfd94e859" kindref="member">sign_funct_e::vzero</ref>;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;arith_natural_c<sp/>NatIntT&gt;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;type_traits::arith_natural_c<sp/>NatIntT&gt;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="namespace_num_repr_1af38005a1c9fb23a68d4651abc72ddf25" refkind="member"><highlight class="normal"><ref refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0" kindref="member">sign_funct_e</ref><sp/><ref refid="namespace_num_repr_1af38005a1c9fb23a68d4651abc72ddf25" kindref="member">Nat2SignFunct</ref><sp/>(NatIntT<sp/>nu)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="namespace_num_repr_1af38005a1c9fb23a68d4651abc72ddf25" refkind="member"><highlight class="normal"><ref refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0" kindref="member">sign_funct_e</ref><sp/><ref refid="namespace_num_repr_1af38005a1c9fb23a68d4651abc72ddf25" kindref="member">Nat2SignFunct</ref>(NatIntT<sp/>nu)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nu==0)</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_num_repr_1a53ea65055c089ed2caa1aa7a885e8eb0ad50833e13d94478df7669d0bfd94e859" kindref="member">sign_funct_e::vzero</ref>;</highlight></codeline>
@@ -542,7 +319,7 @@
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(!<ref refid="namespace_num_repr_1_1detail_1a098c7fa0c984b9aa1e6c5e6033affc88" kindref="member">detail::find_factor</ref>(n,<sp/>1,<sp/>(<ref refid="namespace_num_repr_1_1detail_1aa138a7304b06ab664d7208956b3c0dbe" kindref="member">detail::ceilsqrt</ref>(n)<sp/>+<sp/>1)<sp/>/<sp/>2));</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115" refid="namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d" kindref="member">is_power_of_2</ref>(<ref refid="basic__types_8hpp_1a8fe9f5218406354b79aac7a41bd4823f" kindref="member">uint128_t</ref><sp/>num)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_num_repr_1_1auxiliary__functions_1a3ea0c809df1b14220a5fc969a28d7a8d" kindref="member">is_power_of_2</ref>(<ref refid="namespace_num_repr_1a412296ccfc8e357e166ab1365f2777f3" kindref="member">uint128_t</ref><sp/>num)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((num<sp/>%<sp/>2)<sp/>!=<sp/>0)</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>

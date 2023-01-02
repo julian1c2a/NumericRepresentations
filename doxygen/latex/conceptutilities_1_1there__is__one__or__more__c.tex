@@ -1,0 +1,22 @@
+\hypertarget{conceptutilities_1_1there__is__one__or__more__c}{}\doxysection{utilities\+::there\+\_\+is\+\_\+one\+\_\+or\+\_\+more\+\_\+c Concept Reference}
+\label{conceptutilities_1_1there__is__one__or__more__c}\index{utilities::there\_is\_one\_or\_more\_c@{utilities::there\_is\_one\_or\_more\_c}}
+
+
+{\ttfamily \#include $<$utilities.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutilities_1_1there__is__one__or__more__c}{utilities::there\_is\_one\_or\_more\_c}}\ =\ \ \textcolor{keyword}{requires}(Ts...)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ((\textcolor{keyword}{sizeof}...(Ts))>0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{utilities_8hpp_source_l00097}{97}} del archivo \mbox{\hyperlink{utilities_8hpp_source}{utilities.\+hpp}}.
+

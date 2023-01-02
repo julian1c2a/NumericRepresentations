@@ -5,6 +5,15 @@
 <para>
 <computeroutput>#include &lt;base_num_t.hpp&gt;</computeroutput>
 </para>
+Diagrama de herencias de NumRepr::base_num_t&lt; UINT_T, B &gt;<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_num_repr_1_1base__num__t__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 Diagrama de colaboración para NumRepr::base_num_t&lt; UINT_T, B &gt;:<para>
     <informalfigure>
         <mediaobject>
@@ -19,236 +28,211 @@ Diagrama de colaboración para NumRepr::base_num_t&lt; UINT_T, B &gt;:<para>
         <itemizedlist>
             <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> = <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link>&lt; UINT_T, B &gt;</para>
 </listitem>
-            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1a21e924224be346831465d62658048e8d">nbstr</link> = basic_string&lt; <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> &gt;</para>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1a07bb043524bd17f239096c966cd657bd">base_t</link> = basic_string&lt; <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> &gt;</para>
 </listitem>
-            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1aa9bc0366bf9701cb6a9e1a376ad1d72c">striterator</link> = typename nbstr::iterator</para>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1a2b79d742a555f9688163b35ffd8a82e0">str_iterator</link> = typename base_t::iterator</para>
 </listitem>
-            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1a191af9d669240a254ae0baf13b42e4eb">cstriterator</link> = typename nbstr::const_iterator</para>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1ac7eba12b51ee0bc2d80aa37a51b30f52">c_str_iterator</link> = typename base_t::const_iterator</para>
 </listitem>
-            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b">rstriterator</link> = typename nbstr::reverse_iterator <link linkend="_struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b">rstriterator</link></para>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1adf77fead0babc21e854c33121fbb2f10">r_str_iterator</link> = typename base_t::reverse_iterator</para>
 </listitem>
-            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8">crstriterator</link> = typename nbstr::const_reverse_iterator <link linkend="_struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8">crstriterator</link></para>
+            <listitem><para>using <link linkend="_struct_num_repr_1_1base__num__t_1a89047e263bf4c5881da7024e18bdd72a">cr_str_iterator</link> = typename base_t::const_reverse_iterator</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Métodos públicos    </title>
         <itemizedlist>
-            <listitem><para>constexpr <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> <link linkend="_struct_num_repr_1_1base__num__t_1ae9342a10ee981b65001a2b4ac9531c2a">size</link> () const noexcept</para>
+            <listitem><para>constexpr <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> <link linkend="_struct_num_repr_1_1base__num__t_1ae9342a10ee981b65001a2b4ac9531c2a">size</link> () const noexcept</para>
 </listitem>
-            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a787fd6e3da2fc99d82cafb0c019d3a6e">resize</link> (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> arg) noexcept</para>
+            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a787fd6e3da2fc99d82cafb0c019d3a6e">resize</link> (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> arg) noexcept</para>
 </listitem>
-            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> <link linkend="_struct_num_repr_1_1base__num__t_1aa87935430034d037a47f77d48129d396">operator[]</link> (<link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> arg) const noexcept</para>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> <link linkend="_struct_num_repr_1_1base__num__t_1aa87935430034d037a47f77d48129d396">operator[]</link> (ullint arg) const noexcept</para>
 </listitem>
-            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> &amp; <link linkend="_struct_num_repr_1_1base__num__t_1ab45f89faa50972e77b570e23000d880b">operator[]</link> (<link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> arg) noexcept</para>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> &amp; <link linkend="_struct_num_repr_1_1base__num__t_1ab45f89faa50972e77b570e23000d880b">operator[]</link> (ullint arg) noexcept</para>
 </listitem>
             <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a2228b2ea1c8eb9e62cab5195997ba27c">clear</link> () noexcept</para>
 </listitem>
             <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1ac3b9a3016627cc57cd83994fb1cff928">push_back</link> (<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> arg) noexcept</para>
 </listitem>
-            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a6f5da3393f245c55d9d5bd9b60f84605">insert</link> (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> pos, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> tam, <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> parg) noexcept</para>
+            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a6f5da3393f245c55d9d5bd9b60f84605">insert</link> (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> pos, <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> tam, <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> parg) noexcept</para>
 </listitem>
-            <listitem><para>constexpr num_basic_t <link linkend="_struct_num_repr_1_1base__num__t_1a840806eac58252d667191b46398cc2bf">substr</link> (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> pos, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n) const noexcept</para>
+            <listitem><para>constexpr num_basic_t <link linkend="_struct_num_repr_1_1base__num__t_1a840806eac58252d667191b46398cc2bf">substr</link> (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> pos, <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> n) const noexcept</para>
 </listitem>
             <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a3cadf0a0ed7ae17bedd45c9679ea0471">push_front</link> (<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> parg) noexcept</para>
 </listitem>
-            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1aa9bc0366bf9701cb6a9e1a376ad1d72c">striterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1aa62e4f311f8a54460324fbe74ba8ca55">begin</link> () noexcept</para>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a2b79d742a555f9688163b35ffd8a82e0">str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1a71ac9b65847cc53e17b8f51c828a9063">begin</link> () noexcept</para>
 </listitem>
-            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a191af9d669240a254ae0baf13b42e4eb">cstriterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1a950b55fad9a60d1f6de766ea81bd5c1d">end</link> () const noexcept</para>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1ac7eba12b51ee0bc2d80aa37a51b30f52">c_str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1a224f4e6e79d9956275db559135f3da38">end</link> () const noexcept</para>
 </listitem>
-            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b">rstriterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1a34beb03b3bf13ab17bbe0c09be0b4c1f">rbegin</link> () noexcept</para>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1adf77fead0babc21e854c33121fbb2f10">r_str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1a875d4f1b0d61c6cb3931d1e87e9aeb0d">rbegin</link> () noexcept</para>
 </listitem>
-            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8">crstriterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1ac2c79936cb8ae389665174a2d26cb1a5">rend</link> () const noexcept</para>
+            <listitem><para>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a89047e263bf4c5881da7024e18bdd72a">cr_str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t_1a965c670bbbced1ed61f43a5ee39f2d0f">rend</link> () const noexcept</para>
 </listitem>
-            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a6ae3c24171fa8af240327437913ac659">erase</link> (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> pos, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> tam) noexcept</para>
+            <listitem><para>constexpr void <link linkend="_struct_num_repr_1_1base__num__t_1a6ae3c24171fa8af240327437913ac659">erase</link> (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> pos, <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> tam) noexcept</para>
 </listitem>
             <listitem><para>constexpr const num_basic_t &amp; <link linkend="_struct_num_repr_1_1base__num__t_1a6e6eeda172a8ae2ded447ce44a2718dc">operator&amp;=</link> (const num_basic_t &amp;arg) noexcept</para>
 </listitem>
         </itemizedlist>
 </simplesect>
-<simplesect>
-    <title>Atributos públicos    </title>
-        <itemizedlist>
-            <listitem><para>basic_string&lt; <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link>&lt; UINT_T, B &gt; &gt; <link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link></para>
-</listitem>
-        </itemizedlist>
-</simplesect>
 <section>
 <title>Descripción detallada</title>
-<simplesect><title>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt;<?linebreak?>requires (<link linkend="_namespace_num_repr_1_1type__traits_1ae7b0da6237614a2d93ed8d40ee5596a5">type_traits::suitable_base</link>&lt;UINT_T,B&gt;())<?linebreak?>struct NumRepr::base_num_t&lt; UINT_T, B &gt;</title></simplesect>
+<simplesect><title>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt;<?linebreak?>requires (<link linkend="_namespace_num_repr_1_1type__traits_1ae7b0da6237614a2d93ed8d40ee5596a5">type_traits::suitable_base</link>&lt;UINT_T,B&gt;())<?linebreak?>struct NumRepr::base_num_t&lt; UINT_T, B &gt;</title></simplesect>
+<para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00010">10</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
 </section>
 <section>
 <title>Documentación de los &apos;Typedef&apos; miembros de la clase</title>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8"/><section>
-    <title>crstriterator</title>
-<indexterm><primary>crstriterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
-<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>crstriterator</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::crstriterator =  typename nbstr::const_reverse_iterator <link linkend="_struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8">crstriterator</link></computeroutput></para></section>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1a191af9d669240a254ae0baf13b42e4eb"/><section>
-    <title>cstriterator</title>
-<indexterm><primary>cstriterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
-<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>cstriterator</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::cstriterator =  typename nbstr::const_iterator</computeroutput></para></section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1a07bb043524bd17f239096c966cd657bd"/><section>
+    <title>base_t</title>
+<indexterm><primary>base_t</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>base_t</secondary></indexterm>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::base_t =  basic_string&lt;<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link>&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00013">13</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1ac7eba12b51ee0bc2d80aa37a51b30f52"/><section>
+    <title>c_str_iterator</title>
+<indexterm><primary>c_str_iterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>c_str_iterator</secondary></indexterm>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::c_str_iterator =  typename base_t::const_iterator</computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00015">15</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1a89047e263bf4c5881da7024e18bdd72a"/><section>
+    <title>cr_str_iterator</title>
+<indexterm><primary>cr_str_iterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>cr_str_iterator</secondary></indexterm>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::cr_str_iterator =  typename base_t::const_reverse_iterator</computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00017">17</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9"/><section>
     <title>dig_t</title>
 <indexterm><primary>dig_t</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>dig_t</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">::dig_t</link> =  <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link>&lt;UINT_T,B&gt;</computeroutput></para></section>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1a21e924224be346831465d62658048e8d"/><section>
-    <title>nbstr</title>
-<indexterm><primary>nbstr</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
-<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>nbstr</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::nbstr =  basic_string&lt;<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link>&gt;</computeroutput></para></section>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b"/><section>
-    <title>rstriterator</title>
-<indexterm><primary>rstriterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
-<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>rstriterator</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::rstriterator =  typename nbstr::reverse_iterator <link linkend="_struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b">rstriterator</link></computeroutput></para></section>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1aa9bc0366bf9701cb6a9e1a376ad1d72c"/><section>
-    <title>striterator</title>
-<indexterm><primary>striterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
-<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>striterator</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::striterator =  typename nbstr::iterator</computeroutput></para></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::dig_t =  <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link>&lt;UINT_T,B&gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00012">12</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1adf77fead0babc21e854c33121fbb2f10"/><section>
+    <title>r_str_iterator</title>
+<indexterm><primary>r_str_iterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>r_str_iterator</secondary></indexterm>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::r_str_iterator =  typename base_t::reverse_iterator</computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00016">16</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1a2b79d742a555f9688163b35ffd8a82e0"/><section>
+    <title>str_iterator</title>
+<indexterm><primary>str_iterator</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
+<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>str_iterator</secondary></indexterm>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::str_iterator =  typename base_t::iterator</computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00014">14</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 </section>
 <section>
 <title>Documentación de las funciones miembro</title>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1aa62e4f311f8a54460324fbe74ba8ca55"/><section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1a71ac9b65847cc53e17b8f51c828a9063"/><section>
     <title>begin()</title>
 <indexterm><primary>begin</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>begin</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1aa9bc0366bf9701cb6a9e1a376ad1d72c">striterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::begin ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.begin();
-00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a2b79d742a555f9688163b35ffd8a82e0">str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::begin ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00051">51</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a2228b2ea1c8eb9e62cab5195997ba27c"/><section>
     <title>clear()</title>
 <indexterm><primary>clear</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>clear</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::clear ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.clear();
-00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
-00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1a950b55fad9a60d1f6de766ea81bd5c1d"/><section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::clear ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00033">33</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1a224f4e6e79d9956275db559135f3da38"/><section>
     <title>end()</title>
 <indexterm><primary>end</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>end</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a191af9d669240a254ae0baf13b42e4eb">cstriterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::end ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.end();
-00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1ac7eba12b51ee0bc2d80aa37a51b30f52">c_str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::end ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00054">54</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a6ae3c24171fa8af240327437913ac659"/><section>
     <title>erase()</title>
 <indexterm><primary>erase</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>erase</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::erase (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> pos, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> tam)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.erase(pos,tam);
-00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
-00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::erase (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> pos, <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> tam)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00063">63</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a6f5da3393f245c55d9d5bd9b60f84605"/><section>
     <title>insert()</title>
 <indexterm><primary>insert</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>insert</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::insert (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> pos, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> tam, <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> parg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.insert(pos,tam,parg);
-00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
-00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::insert (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> pos, <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> tam, <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> parg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00039">39</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a6e6eeda172a8ae2ded447ce44a2718dc"/><section>
     <title>operator&amp;=()</title>
 <indexterm><primary>operator&amp;=</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>operator&amp;=</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr const num_basic_t &amp; <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;<link linkend="_namespace_num_repr_1aae8203ac76946e39f03d5b06f3fb6d4e">::operator</link>&amp;= (const num_basic_t &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>&#32;+=&#32;arg.m_dstr;
-00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*<emphasis role="keyword">this</emphasis>);
-00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr const num_basic_t &amp; <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::operator&amp;= (const num_basic_t &amp; arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00067">67</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1aa87935430034d037a47f77d48129d396"/><section>
     <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>operator[]</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>operator[]</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;<link linkend="_namespace_num_repr_1aae8203ac76946e39f03d5b06f3fb6d4e">::operator</link>[] (<link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> arg) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">dig_t</link>&#32;ret&#32;=&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>[arg];
-00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>[arg];
-00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::operator[] (ullint arg) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00025">25</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1ab45f89faa50972e77b570e23000d880b"/><section>
     <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>operator[]</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>operator[]</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> &amp; <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;<link linkend="_namespace_num_repr_1aae8203ac76946e39f03d5b06f3fb6d4e">::operator</link>[] (<link linkend="_basic__types_8hpp_1a8f78164b7293cf042eec95957a96a542">ullint</link> arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_nat__reg__digs__t_01_07_copia_01en_01conflicto_01de_01_m_s_i_012022-11-24_08_8hpp_1a2f1cc69e474f8f2734aef69506857e18">dig_t</link>&#32;ret&#32;=&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>[arg];
-00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>[arg]);
-00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> &amp; <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::operator[] (ullint arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00029">29</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1ac3b9a3016627cc57cd83994fb1cff928"/><section>
     <title>push_back()</title>
 <indexterm><primary>push_back</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>push_back</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::push_back (<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.push_back(arg);
-00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
-00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::push_back (<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00036">36</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a3cadf0a0ed7ae17bedd45c9679ea0471"/><section>
     <title>push_front()</title>
 <indexterm><primary>push_front</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>push_front</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::push_front (<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> parg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.insert(0,1,parg);
-00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
-00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1a34beb03b3bf13ab17bbe0c09be0b4c1f"/><section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::push_front (<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link> parg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00048">48</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1a875d4f1b0d61c6cb3931d1e87e9aeb0d"/><section>
     <title>rbegin()</title>
 <indexterm><primary>rbegin</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>rbegin</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1ab44d302436000bf34977f77a71d8625b">rstriterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::rbegin ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.rbegin();
-00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1ac2c79936cb8ae389665174a2d26cb1a5"/><section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1adf77fead0babc21e854c33121fbb2f10">r_str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::rbegin ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00057">57</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
+<anchor xml:id="_struct_num_repr_1_1base__num__t_1a965c670bbbced1ed61f43a5ee39f2d0f"/><section>
     <title>rend()</title>
 <indexterm><primary>rend</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>rend</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1ab280333280a8a03cd74695e9dcd575f8">crstriterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::rend ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.rend();
-00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_struct_num_repr_1_1base__num__t_1a89047e263bf4c5881da7024e18bdd72a">cr_str_iterator</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::rend ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00060">60</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a787fd6e3da2fc99d82cafb0c019d3a6e"/><section>
     <title>resize()</title>
 <indexterm><primary>resize</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>resize</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::resize (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.resize(arg);&#32;<emphasis role="keywordflow">return</emphasis>;
-00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr void <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::resize (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> arg)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00022">22</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1ae9342a10ee981b65001a2b4ac9531c2a"/><section>
     <title>size()</title>
 <indexterm><primary>size</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>size</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::size ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.size();
-00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::size ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00019">19</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
+</section>
 <anchor xml:id="_struct_num_repr_1_1base__num__t_1a840806eac58252d667191b46398cc2bf"/><section>
     <title>substr()</title>
 <indexterm><primary>substr</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
 <indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>substr</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr num_basic_t <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::substr (<link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> pos, <link linkend="_basic__types_8hpp_1a801d6a451a01953ef8cbae6feb6a3638">size_t</link> n) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0">m_dstr</link>.substr(pos,n);
-00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(*<emphasis role="keyword">this</emphasis>);
-00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-</programlisting></section>
+<computeroutput>template&lt;type_traits::uint_type_for_radix_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>constexpr num_basic_t <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::substr (<link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> pos, <link linkend="_namespace_num_repr_1aec1c647ac8c5e62a49e68acde727e3bf">size_t</link> n) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definición en la línea <link linkend="_base__num__t_8hpp_source_1l00043">43</link> del archivo <link linkend="_base__num__t_8hpp_source">base_num_t.hpp</link>.</para>
 </section>
-<section>
-<title>Documentación de los datos miembro</title>
-<anchor xml:id="_struct_num_repr_1_1base__num__t_1a523deb97f871bc82d20ecbd24e08c4f0"/><section>
-    <title>m_dstr</title>
-<indexterm><primary>m_dstr</primary><secondary>NumRepr::base_num_t&lt; UINT_T, B &gt;</secondary></indexterm>
-<indexterm><primary>NumRepr::base_num_t&lt; UINT_T, B &gt;</primary><secondary>m_dstr</secondary></indexterm>
-<computeroutput>template&lt;type_traits::allowable_base_type_c UINT_T, UINT_T B&gt; </computeroutput><para><computeroutput>basic_string&lt;<link linkend="_struct_num_repr_1_1base__num__t_1a7659e7b2966d79b14fba17dbb4df50e9">dig_t</link>&lt;UINT_T,B&gt; &gt; <link linkend="_struct_num_repr_1_1base__num__t">NumRepr::base_num_t</link>&lt; UINT_T, B &gt;::m_dstr</computeroutput></para></section>
 <para>
 La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
 <link linkend="_base__num__t_8hpp">base_num_t.hpp</link></section>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_num_repr_1_1type__traits_1_1ugly__details__for__greater__suitable__type__deduction_1_1_u_e73c7ba18a323e7d8eda21299da56319" xml:lang="es">
+<title>Referencia de la plantilla de la Estructura NumRepr::type_traits::ugly_details_for_greater_suitable_type_deduction::UIntTypeForRadixContainsMultResult&lt; T, Radix &gt;</title>
+<indexterm><primary>NumRepr::type_traits::ugly_details_for_greater_suitable_type_deduction::UIntTypeForRadixContainsMultResult&lt; T, Radix &gt;</primary></indexterm>
+<section>
+<title>Descripción detallada</title>
+<simplesect><title>template&lt;typename T, T Radix&gt;<?linebreak?>struct NumRepr::type_traits::ugly_details_for_greater_suitable_type_deduction::UIntTypeForRadixContainsMultResult&lt; T, Radix &gt;</title></simplesect>
+<para>
+Definición en la línea <link linkend="_basic__types_8hpp_source_1l00629">629</link> del archivo <link linkend="_basic__types_8hpp_source">basic_types.hpp</link>.</para>
+<para>
+La documentación para esta estructura fue generada a partir del siguiente fichero:</para>
+<link linkend="_basic__types_8hpp">basic_types.hpp</link></section>
+</section>

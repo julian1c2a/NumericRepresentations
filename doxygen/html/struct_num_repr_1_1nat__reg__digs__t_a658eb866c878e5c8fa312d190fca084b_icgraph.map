@@ -1,0 +1,23 @@
+<map id="NumRepr::nat_reg_digs_t::const_base_this" name="NumRepr::nat_reg_digs_t::const_base_this">
+<area shape="rect" id="node1" title=" " alt="" coords="635,677,795,717"/>
+<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#a41f2c182cf6b668b25a17364f7a32ba6" title=" " alt="" coords="421,325,587,365"/>
+<area shape="rect" id="node17" href="$struct_num_repr_1_1nat__reg__digs__t.html#aaaef3120f842a51681f90531559efb3c" title=" " alt="" coords="424,677,584,717"/>
+<area shape="rect" id="node21" href="$struct_num_repr_1_1nat__reg__digs__t.html#aae26e3fd0c597eb576b8a73c8a6e0921" title="OPERACION ASIGNACION POR COPIA REFERENCIA DESDE BASE_N_T." alt="" coords="424,741,584,781"/>
+<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__reg__digs__t.html#aa32760e590ee36be179c1fa86566ae2a" title=" " alt="" coords="213,69,373,109"/>
+<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__reg__digs__t.html#a652e69b8eb929e7d43f3e1098ea4a093" title=" " alt="" coords="5,5,165,45"/>
+<area shape="rect" id="node7" href="$struct_num_repr_1_1nat__reg__digs__t.html#a10794eef68bb9e67cc275c843794b89a" title=" " alt="" coords="213,133,373,173"/>
+<area shape="rect" id="node8" href="$struct_num_repr_1_1nat__reg__digs__t.html#a224c57f7ae2679ea9b76fd50189efdcf" title=" " alt="" coords="213,197,373,237"/>
+<area shape="rect" id="node11" href="$struct_num_repr_1_1nat__reg__digs__t.html#a8d4656d2c0937af44d8868383da8c26d" title=" " alt="" coords="213,261,373,301"/>
+<area shape="rect" id="node12" href="$struct_num_repr_1_1nat__reg__digs__t.html#ac754667e568ecdda0033e4672fdeefd3" title="CONSTRUCTOR COPIA POR REFERENCIA CONSTANTE." alt="" coords="213,325,373,365"/>
+<area shape="rect" id="node13" href="$struct_num_repr_1_1nat__reg__digs__t.html#acff45608b5b1956e95e00d668b6f9e53" title=" " alt="" coords="213,389,373,429"/>
+<area shape="rect" id="node14" href="$struct_num_repr_1_1nat__reg__digs__t.html#a2d07be047b2627cdf0b309167372ceff" title=" " alt="" coords="213,453,373,493"/>
+<area shape="rect" id="node15" href="$struct_num_repr_1_1nat__reg__digs__t.html#a760667e522ab381ea922f79a0fe37032" title="OPERADOR COMPARACION SPACESHIP C++20." alt="" coords="213,517,373,557"/>
+<area shape="rect" id="node16" href="$struct_num_repr_1_1nat__reg__digs__t.html#a0222f0fe5e680461731101767d0d658b" title="OPERACION ASIGNACION POR COPIA REFERENCIA EN LA QUE SE PUEDE COPIAR." alt="" coords="213,581,373,621"/>
+<area shape="rect" id="node5" href="$struct_num_repr_1_1nat__reg__digs__t.html#a314ac41efce60c862c67a3939c8e6c5e" title=" " alt="" coords="5,69,165,109"/>
+<area shape="rect" id="node6" href="$struct_num_repr_1_1nat__reg__digs__t.html#a38fa3f288d43c0fa115e89bf9afd6da5" title="OPERACION COPIA DESDE UN DIGITO (CONVERSION)" alt="" coords="5,133,165,173"/>
+<area shape="rect" id="node9" href="$struct_num_repr_1_1nat__reg__digs__t.html#a8c41105ef914ccd1caec1a993bd95601" title=" " alt="" coords="5,197,165,237"/>
+<area shape="rect" id="node10" href="$struct_num_repr_1_1nat__reg__digs__t.html#a99c01e95abff85318cb5a4e6c0fba2ae" title=" " alt="" coords="5,261,165,301"/>
+<area shape="rect" id="node18" href="$struct_num_repr_1_1nat__reg__digs__t.html#acf64ab106dc1e03510434256064d85ef" title="SUBREPR =&gt; SUB REPRESENTACION." alt="" coords="213,645,373,685"/>
+<area shape="rect" id="node19" href="$struct_num_repr_1_1nat__reg__digs__t.html#a503c26355f8e7d254480e5bc3c0aca90" title=" " alt="" coords="213,709,373,749"/>
+<area shape="rect" id="node20" href="$struct_num_repr_1_1nat__reg__digs__t.html#ae0035860926f7f260553e8bce191066e" title=" " alt="" coords="213,773,373,813"/>
+</map>

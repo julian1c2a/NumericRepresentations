@@ -1,4 +1,4 @@
-.TH "details::cp_new< aT, T, std::numeric_limits< uchint >::max()>" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "details::cp_new< aT, T, std::numeric_limits< uchint >::max()>" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,25 +15,38 @@ details::cp_new< aT, T, std::numeric_limits< uchint >::max()>
 .RI "void \fBoperator()\fP (aT **var_list_list)"
 .br
 .in -1c
+.SS "Métodos privados estáticos"
+
+.in +1c
+.ti -1c
+.RI "static aT ** \fBcontruye_lista_de_listas_de_variables\fP (aT **var_list_list)"
+.br
+.ti -1c
+.RI "static aT * \fBcontruye_lista_de_variables\fP (aT *var_list)"
+.br
+.in -1c
 .SH "Descripción detallada"
 .PP 
 
-.SS "template<typename aT, template< \fBuchint\fP > class T, \fBusint\fP num_vars>
+.SS "template<typename aT, template< uchint > class T, usint num_vars>
 .br
 struct details::cp_new< aT, T, std::numeric_limits< uchint >::max()>"
+.PP
+Definición en la línea \fB30\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "template<typename aT , template< \fBuchint\fP > class T, \fBusint\fP num_vars> void \fBdetails::cp_new\fP< aT, T, std::numeric_limits< \fBuchint\fP >::max()>::operator() (aT ** var_list_list)\fC [inline]\fP"
+.SS "template<typename aT , template< uchint > class T, usint num_vars> static aT ** \fBdetails::cp_new\fP< aT, T, std::numeric_limits< uchint >::max()>::contruye_lista_de_listas_de_variables (aT ** var_list_list)\fC [inline]\fP, \fC [static]\fP, \fC [private]\fP"
 
 .PP
-.nf
-40                                             {
-41                         construye_lista_de_lista_de_variables(var_list_listlist_list);
-42                         static_cast<T<std::numeric_limits<uchint>::max()>*>(contruye_lista_de_variables(var_list_list[std::numeric_limits<uchint>::max()]));
-43                         cp_new<aT,T,num_vars,std::numeric_limits<uchint>::max()-1>(var_list_list);
-44         }
-.fi
+Definición en la línea \fB32\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T, usint num_vars> static aT * \fBdetails::cp_new\fP< aT, T, std::numeric_limits< uchint >::max()>::contruye_lista_de_variables (aT * var_list)\fC [inline]\fP, \fC [static]\fP, \fC [private]\fP"
 
+.PP
+Definición en la línea \fB36\fP del archivo \fBmemory_handler\&.hpp\fP\&.
+.SS "template<typename aT , template< uchint > class T, usint num_vars> void \fBdetails::cp_new\fP< aT, T, std::numeric_limits< uchint >::max()>::operator() (aT ** var_list_list)\fC [inline]\fP"
+
+.PP
+Definición en la línea \fB41\fP del archivo \fBmemory_handler\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 

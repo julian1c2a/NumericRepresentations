@@ -48,7 +48,7 @@
 <simplesect>
     <title>typedefs    </title>
         <itemizedlist>
-            <listitem><para>using <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> = std::pair&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link>, <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt;</para>
+            <listitem><para>using <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> = std::pair&lt; uchint, uchint &gt;</para>
 </listitem>
             <listitem><para>using <link linkend="_memory__handler_8hpp_1a7c4df9f931f63c4c5264a6997df9f98d">func_refn2digs_prim_t</link> = std::map&lt; std::string, <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> &gt;</para>
 </listitem>
@@ -63,15 +63,15 @@
 <simplesect>
     <title>Funciones    </title>
         <itemizedlist>
-            <listitem><para>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</para><para>aT ** <link linkend="_memory__handler_8hpp_1ada4037a5d571a8f3f17908dedd6790f5">construye_matriz_de_variables</link> (aT **matd)</para>
+            <listitem><para>template&lt;typename aT , template&lt; uchint &gt; class T, usint num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</para><para>aT ** <link linkend="_memory__handler_8hpp_1ada4037a5d571a8f3f17908dedd6790f5">construye_matriz_de_variables</link> (aT **matd)</para>
 </listitem>
-            <listitem><para>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </para><para>void <link linkend="_memory__handler_8hpp_1a29e9bdcfaf16780d350b4464cf30cc24">destruye_matriz_de_variables</link> (aT **matd)</para>
+            <listitem><para>template&lt;typename aT , template&lt; uchint &gt; class T&gt; </para><para>void <link linkend="_memory__handler_8hpp_1a29e9bdcfaf16780d350b4464cf30cc24">destruye_matriz_de_variables</link> (aT **matd)</para>
 </listitem>
-            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</para><para><link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** <link linkend="_memory__handler_8hpp_1a952cf7c95f5c9fab6ea099cded5ae4ba">construye_matriz_de_variables&lt; INT, INT &gt;</link> (<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> **matd)</para>
+            <listitem><para>template&lt;usint num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</para><para><link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** <link linkend="_memory__handler_8hpp_1a952cf7c95f5c9fab6ea099cded5ae4ba">construye_matriz_de_variables&lt; INT, INT &gt;</link> (<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> **matd)</para>
 </listitem>
             <listitem><para>template&lt;&gt; </para><para>void <link linkend="_memory__handler_8hpp_1af03d0a0860e5096631c1d2be6e19cf7c">destruye_matriz_de_variables&lt; INT, INT &gt;</link> (<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> **matd)</para>
 </listitem>
-            <listitem><para>template&lt;<link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt; </para><para><link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** <link linkend="_memory__handler_8hpp_1a7931ed644b370bf8e42d89b309607701">construye_matriz_de_variables&lt; UINT, UINT &gt;</link> (<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> **matd)</para>
+            <listitem><para>template&lt;usint num_vars&gt; </para><para><link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** <link linkend="_memory__handler_8hpp_1a7931ed644b370bf8e42d89b309607701">construye_matriz_de_variables&lt; UINT, UINT &gt;</link> (<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> **matd)</para>
 </listitem>
             <listitem><para>template&lt;&gt; </para><para>void <link linkend="_memory__handler_8hpp_1aeb588c3bd5963828223875c70f6278e0">destruye_matriz_de_variables&lt; UINT, UINT &gt;</link> (<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> **matd)</para>
 </listitem>
@@ -83,27 +83,37 @@
     <title>func_refdig_prim_t</title>
 <indexterm><primary>func_refdig_prim_t</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>func_refdig_prim_t</secondary></indexterm>
-<para><computeroutput>using <link linkend="_memory__handler_8hpp_1acc7a50b42df1b5ee77b8c2b16b90eab7">func_refdig_prim_t</link> =  std::map&lt; std::string , <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> &gt;</computeroutput></para></section>
+<para><computeroutput>using <link linkend="_memory__handler_8hpp_1acc7a50b42df1b5ee77b8c2b16b90eab7">func_refdig_prim_t</link> =  std::map&lt; std::string , <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> &gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00010">10</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1a7c4df9f931f63c4c5264a6997df9f98d"/><section>
     <title>func_refn2digs_prim_t</title>
 <indexterm><primary>func_refn2digs_prim_t</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>func_refn2digs_prim_t</secondary></indexterm>
-<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a7c4df9f931f63c4c5264a6997df9f98d">func_refn2digs_prim_t</link> =  std::map&lt; std::string , <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> &gt;</computeroutput></para></section>
+<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a7c4df9f931f63c4c5264a6997df9f98d">func_refn2digs_prim_t</link> =  std::map&lt; std::string , <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> &gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00009">9</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf"/><section>
     <title>INT</title>
 <indexterm><primary>INT</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>INT</secondary></indexterm>
-<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> =  long long int</computeroutput></para></section>
+<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> =  long long int</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00147">147</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a"/><section>
     <title>par_dir_t</title>
 <indexterm><primary>par_dir_t</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>par_dir_t</secondary></indexterm>
-<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> =  std::pair&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> , <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt;</computeroutput></para></section>
+<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a60c1e28a922223c20df67006f36b968a">par_dir_t</link> =  std::pair&lt; uchint , uchint &gt;</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00008">8</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd"/><section>
     <title>UINT</title>
 <indexterm><primary>UINT</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>UINT</secondary></indexterm>
-<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> =  unsigned long long int</computeroutput></para></section>
+<para><computeroutput>using <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> =  unsigned long long int</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00165">165</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 </section>
 <section>
 <title>Documentación de las funciones</title>
@@ -111,56 +121,43 @@
     <title>construye_matriz_de_variables()</title>
 <indexterm><primary>construye_matriz_de_variables</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>construye_matriz_de_variables</secondary></indexterm>
-<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T, <link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</computeroutput><para><computeroutput>aT ** construye_matriz_de_variables (aT ** matd)</computeroutput></para><programlisting linenumbering="unnumbered">00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structdetails_1_1cp__new">details::cp_new&lt;aT,T,num_vars,std::numeric_limits&lt;uchint&gt;::max</link>()&gt;(matd);
-00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;matd;
-00139 }
-</programlisting></section>
+<computeroutput>template&lt;typename aT , template&lt; uchint &gt; class T, usint num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</computeroutput><para><computeroutput>aT ** construye_matriz_de_variables (aT ** matd)</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00137">137</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1a952cf7c95f5c9fab6ea099cded5ae4ba"/><section>
     <title>construye_matriz_de_variables&lt; INT, INT &gt;()</title>
 <indexterm><primary>construye_matriz_de_variables&lt; INT, INT &gt;</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>construye_matriz_de_variables&lt; INT, INT &gt;</secondary></indexterm>
-<computeroutput>template&lt;<link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</computeroutput><para><computeroutput><link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** <link linkend="_memory__handler_8hpp_1ada4037a5d571a8f3f17908dedd6790f5">construye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link>, <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> &gt; (<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** matd)</computeroutput></para><programlisting linenumbering="unnumbered">00151 {
-00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matd&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;(<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link>*);
-00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*matd&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link>[num_vars];
-00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;matd;
-00155 }
-</programlisting></section>
+<computeroutput>template&lt;usint num_vars&gt; <?linebreak?>requires (num_vars&gt;0)</computeroutput><para><computeroutput><link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** <link linkend="_memory__handler_8hpp_1ada4037a5d571a8f3f17908dedd6790f5">construye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link>, <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> &gt; (<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** matd)</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00151">151</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1a7931ed644b370bf8e42d89b309607701"/><section>
     <title>construye_matriz_de_variables&lt; UINT, UINT &gt;()</title>
 <indexterm><primary>construye_matriz_de_variables&lt; UINT, UINT &gt;</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>construye_matriz_de_variables&lt; UINT, UINT &gt;</secondary></indexterm>
-<computeroutput>template&lt;<link linkend="_basic__types_8hpp_1aea9446a386112c2a90c00874130877df">usint</link> num_vars&gt; </computeroutput><para><computeroutput><link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** <link linkend="_memory__handler_8hpp_1ada4037a5d571a8f3f17908dedd6790f5">construye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link>, <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> &gt; (<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** matd)</computeroutput></para><programlisting linenumbering="unnumbered">00168 {
-00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matd&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;(<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link>*);
-00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*matd&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link>[num_vars];
-00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;matd;
-00172 }
-</programlisting></section>
+<computeroutput>template&lt;usint num_vars&gt; </computeroutput><para><computeroutput><link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** <link linkend="_memory__handler_8hpp_1ada4037a5d571a8f3f17908dedd6790f5">construye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link>, <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> &gt; (<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** matd)</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00168">168</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1a29e9bdcfaf16780d350b4464cf30cc24"/><section>
     <title>destruye_matriz_de_variables()</title>
 <indexterm><primary>destruye_matriz_de_variables</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>destruye_matriz_de_variables</secondary></indexterm>
-<computeroutput>template&lt;typename aT , template&lt; <link linkend="_basic__types_8hpp_1a5cf78cc304f4de6824a26eb05aa832f2">uchint</link> &gt; class T&gt; </computeroutput><para><computeroutput>void destruye_matriz_de_variables (aT ** matd)</computeroutput></para><programlisting linenumbering="unnumbered">00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structdetails_1_1cp__delete">details::cp_delete&lt;aT,T,std::numeric_limits&lt;uchint&gt;::max</link>()&gt;(matd);
-00144 }
-</programlisting></section>
+<computeroutput>template&lt;typename aT , template&lt; uchint &gt; class T&gt; </computeroutput><para><computeroutput>void destruye_matriz_de_variables (aT ** matd)</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00143">143</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1af03d0a0860e5096631c1d2be6e19cf7c"/><section>
     <title>destruye_matriz_de_variables&lt; INT, INT &gt;()</title>
 <indexterm><primary>destruye_matriz_de_variables&lt; INT, INT &gt;</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>destruye_matriz_de_variables&lt; INT, INT &gt;</secondary></indexterm>
-<computeroutput>template&lt;&gt; </computeroutput><para><computeroutput>void <link linkend="_memory__handler_8hpp_1a29e9bdcfaf16780d350b4464cf30cc24">destruye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link>, <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> &gt; (<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** matd)</computeroutput></para><programlisting linenumbering="unnumbered">00159 {
-00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;*matd;
-00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;[]&#32;matd;
-00162 }
-</programlisting></section>
+<computeroutput>template&lt;&gt; </computeroutput><para><computeroutput>void <link linkend="_memory__handler_8hpp_1a29e9bdcfaf16780d350b4464cf30cc24">destruye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link>, <link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> &gt; (<link linkend="_memory__handler_8hpp_1a4feec61b8694ce601ac1fa077ad6ecdf">INT</link> ** matd)</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00159">159</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 <anchor xml:id="_memory__handler_8hpp_1aeb588c3bd5963828223875c70f6278e0"/><section>
     <title>destruye_matriz_de_variables&lt; UINT, UINT &gt;()</title>
 <indexterm><primary>destruye_matriz_de_variables&lt; UINT, UINT &gt;</primary><secondary>memory_handler.hpp</secondary></indexterm>
 <indexterm><primary>memory_handler.hpp</primary><secondary>destruye_matriz_de_variables&lt; UINT, UINT &gt;</secondary></indexterm>
-<computeroutput>template&lt;&gt; </computeroutput><para><computeroutput>void <link linkend="_memory__handler_8hpp_1a29e9bdcfaf16780d350b4464cf30cc24">destruye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link>, <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> &gt; (<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** matd)</computeroutput></para><programlisting linenumbering="unnumbered">00175 {
-00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;*matd;
-00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;[]&#32;matd;
-00178 }
-</programlisting></section>
+<computeroutput>template&lt;&gt; </computeroutput><para><computeroutput>void <link linkend="_memory__handler_8hpp_1a29e9bdcfaf16780d350b4464cf30cc24">destruye_matriz_de_variables</link>&lt; <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link>, <link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> &gt; (<link linkend="_memory__handler_8hpp_1a2d51603be6f983fbbf8f23be7087badd">UINT</link> ** matd)</computeroutput></para><para>
+Definición en la línea <link linkend="_memory__handler_8hpp_source_1l00175">175</link> del archivo <link linkend="_memory__handler_8hpp_source">memory_handler.hpp</link>.</para>
+</section>
 </section>
 </section>

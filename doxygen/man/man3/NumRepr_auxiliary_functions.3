@@ -1,4 +1,4 @@
-.TH "NumRepr::auxiliary_functions" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "NumRepr::auxiliary_functions" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,35 +21,11 @@ NumRepr::auxiliary_functions
 .SS "constexpr bool NumRepr::auxiliary_functions::is_power_of_2 (\fBuint128_t\fP num)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-116         {
-117                 if((num % 2) != 0)
-118                         return false;
-119                 else
-120                         return is_power_of_2(num / 2);
-121         }
-.fi
-.PP
-Hace referencia a \fBis_power_of_2()\fP\&.
-.PP
-Referenciado por \fBis_power_of_2()\fP\&.
+Definición en la línea \fB115\fP del archivo \fBauxiliary_functions\&.hpp\fP\&.
 .SS "constexpr bool NumRepr::auxiliary_functions::is_prime (\fBsize_t\fP n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-106         {
-107                 if (n < 2)
-108                         return false;
-109                 else if ((n==2)||(n==3))
-110                         return true;
-111                 else
-112                         return (!detail::find_factor(n, 1, (detail::ceilsqrt(n) + 1) / 2));
-113         }
-.fi
-.PP
-Hace referencia a \fBNumRepr::detail::ceilsqrt()\fP y \fBNumRepr::detail::find_factor()\fP\&.
-.PP
-Referenciado por \fBNumRepr::dig_t< UINT_T, B >::is_prime()\fP\&.
+Definición en la línea \fB105\fP del archivo \fBauxiliary_functions\&.hpp\fP\&.
 .SH "Autor"
 .PP 
 Generado automáticamente por Doxygen para NumericRepresentations del código fuente\&.

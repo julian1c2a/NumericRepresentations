@@ -1,8 +1,9 @@
-.TH "NumRepr::reg_digs_t< UINT_T, B, L >" 3 "Lunes, 28 de Noviembre de 2022" "NumericRepresentations" \" -*- nroff -*-
+.TH "NumRepr::reg_digs_t< UINT_T, B, L >" 3 "Lunes, 2 de Enero de 2023" "NumericRepresentations" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-NumRepr::reg_digs_t< UINT_T, B, L >
+NumRepr::reg_digs_t< UINT_T, B, L > \- DEFINCION DE template<uint128_t Radix> register_of_digits_t{};\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -10,6 +11,8 @@ NumRepr::reg_digs_t< UINT_T, B, L >
 \fC#include <reg_digs_t\&.hpp>\fP
 .PP
 Herencias std::array< dig_t< UINT_T, B >, L >\&.
+.PP
+Heredado por \fBNumRepr::nat_reg_digs_t< UINT_T, B, L >\fP\&.
 .SS "Tipos públicos"
 
 .in +1c
@@ -23,25 +26,67 @@ Herencias std::array< dig_t< UINT_T, B >, L >\&.
 .RI "using \fBbase_t\fP = \fBbase_N_t\fP< L >"
 .br
 .ti -1c
-.RI "using \fBSIG_UINT_T\fP = sig_UInt_for_UInt_t< UINT_T >"
+.RI "template<\fBsize_t\fP N> using \fBreg_N_digs_t\fP = \fBreg_digs_t\fP< UINT_T, B, N >"
 .br
 .ti -1c
-.RI "using \fBSIG_SINT_T\fP = sig_SInt_for_UInt_t< UINT_T >"
+.RI "using \fBSIG_UINT_T\fP = typename \fBtype_traits::sig_UInt_for_UInt_t\fP< UINT_T >"
 .br
 .ti -1c
-.RI "template<\fBbinop_e\fP op, \fBsize_t\fP N> using \fBres_base_N_op_t\fP = result_operation_t< \fBbase_N_t\fP< N >, op, N >"
+.RI "using \fBSIG_SINT_T\fP = typename \fBtype_traits::sig_SInt_for_UInt_t\fP< UINT_T >"
 .br
 .ti -1c
-.RI "template<\fBbinop_e\fP op> using \fBres_base_op_t\fP = result_operation_t< \fBbase_t\fP, op, L >"
+.RI "template<\fBbinop_e\fP op, \fBsize_t\fP N> using \fBres_base_N_op_t\fP = typename \fBauxiliary_types::result_operation_t\fP< \fBbase_N_t\fP< N >, op, N >"
+.br
+.ti -1c
+.RI "template<\fBbinop_e\fP op> using \fBres_base_op_t\fP = typename \fBauxiliary_types::result_operation_t\fP< \fBbase_t\fP, op, L >"
 .br
 .in -1c
 .SS "Métodos públicos"
 
 .in +1c
 .ti -1c
+.RI "const \fBbase_t\fP *const \fBconst_base_this\fP () const noexcept"
+.br
+.RI "devolucion de punteros a la clase base "
+.ti -1c
+.RI "\fBbase_t\fP * \fBbase_this\fP () noexcept"
+.br
+.ti -1c
+.RI "\fBbase_t\fP & \fBr_base_cthis\fP () noexcept"
+.br
+.RI "devolucion de referencias a la clase base "
+.ti -1c
+.RI "const \fBbase_t\fP & \fBcr_base_cthis\fP () const noexcept"
+.br
+.RI "devolucion de copia de la clase base "
+.ti -1c
+.RI "\fBbase_t\fP \fBcp_base_cthis\fP () const noexcept"
+.br
+.ti -1c
+.RI "\fBreg_digs_t\fP & \fBr_cthis\fP () noexcept"
+.br
+.RI "devolucion de referencias de la clase actual "
+.ti -1c
+.RI "const \fBreg_digs_t\fP & \fBcr_cthis\fP () const noexcept"
+.br
+.ti -1c
+.RI "\fBreg_digs_t\fP \fBcp_cthis\fP () const noexcept"
+.br
+.RI "devolucion de copia de la clase actual "
+.ti -1c
+.RI "\fBdig_t\fP \fBcp_cthis_at\fP (\fBsize_t\fP k) const noexcept"
+.br
+.RI "devoluciones por referencias y por copia de los elementos "
+.ti -1c
+.RI "\fBdig_t\fP & \fBr_cthis_at\fP (\fBsize_t\fP k) noexcept"
+.br
+.ti -1c
+.RI "const \fBdig_t\fP & \fBcr_cthis_at\fP (\fBsize_t\fP k) const noexcept"
+.br
+.ti -1c
 .RI "constexpr decltype(auto) \fBbegin\fP () noexcept"
 .br
-.RI "En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array  "
+.RI "En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array Nota: lo anterior se escribio cuando no era clase derivada sino un wrapper\&. "
 .ti -1c
 .RI "constexpr decltype(auto) \fBcbegin\fP () const noexcept"
 .br
@@ -64,10 +109,10 @@ Herencias std::array< dig_t< UINT_T, B >, L >\&.
 .RI "constexpr decltype(auto) \fBcrend\fP () const noexcept"
 .br
 .ti -1c
-.RI "constexpr size_type \fBsize\fP () const noexcept"
+.RI "constexpr \fBsize_t\fP \fBsize\fP () const noexcept"
 .br
 .ti -1c
-.RI "constexpr size_type \fBmax_size\fP () const noexcept"
+.RI "constexpr \fBsize_t\fP \fBmax_size\fP () const noexcept"
 .br
 .ti -1c
 .RI "constexpr bool \fBempty\fP () const noexcept"
@@ -91,18 +136,22 @@ Herencias std::array< dig_t< UINT_T, B >, L >\&.
 .RI "constexpr void \fBswap\fP (\fBbase_t\fP &\fBother\fP) noexcept"
 .br
 .ti -1c
+.RI "constexpr void \fBreverse\fP () noexcept"
+.br
+.ti -1c
 .RI "consteval \fBreg_digs_t\fP () noexcept"
 .br
+.RI "Constructores de \fBreg_digs_t\fP\&. "
 .ti -1c
 .RI "constexpr \fBreg_digs_t\fP (const std::initializer_list< \fBdig_t\fP > &arg) noexcept"
 .br
-.RI "Constructor por lista de digitos utilizando la función make_base_t  "
+.RI "Constructor por lista de digitos utilizando la función make_base_t\&. "
 .ti -1c
 .RI "template<typename \&.\&.\&. Ts> 
 .br
 requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBreg_digs_t\fP (const Ts &\&.\&.\&. args) noexcept"
 .br
-.RI "Constructor por argumentos tipo \fBdig_t\fP: deduce el tipo  "
+.RI "Constructor por argumentos tipo \fBdig_t\fP: deduce el tipo\&. "
 .ti -1c
 .RI "constexpr \fBreg_digs_t\fP (const \fBbase_t\fP &rarg) noexcept"
 .br
@@ -114,28 +163,237 @@ requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBreg_digs_t\fP (
 .ti -1c
 .RI "template<\fBsize_t\fP N> constexpr \fBreg_digs_t\fP (const \fBbase_N_t\fP< N > &arg) noexcept"
 .br
-.RI "Constructor copia desde un array cualquiera de dígitos \fBdig_t\fP (usando copy_arg_N<N>)  "
+.RI "Constructor copia desde un array cualquiera de dígitos \fBdig_t\fP (usando copy_arg_N<N>) "
 .ti -1c
 .RI "template<\fBsize_t\fP N> constexpr \fBreg_digs_t\fP (const \fBbase_N_t\fP< N > &&arg) noexcept"
 .br
-.RI "Constructor por movimiento desde un array cualquiera de dígitos \fBdig_t\fP (usando move_arg_N<N>)  "
+.RI "Constructor por movimiento desde un array cualquiera de dígitos \fBdig_t\fP (usando move_arg_N<N>) "
 .ti -1c
-.RI "template<type_traits::integral_c \&.\&.\&. Ints_type> constexpr \fBbase_t\fP (Ints_type \&.\&.\&. dig_pow_i) noexcept"
+.RI "template<type_traits::integral_c \&.\&.\&. Ints_type> 
+.br
+requires ((sizeof\&.\&.\&.(Ints_type))==L)constexpr \fBreg_digs_t\fP (Ints_type \&.\&.\&. dig_pow_i) noexcept"
 .br
 .ti -1c
-.RI "template<\fBsize_t\fP N> constexpr const \fBreg_digs_t\fP & \fBoperator=\fP (const reg_N_digs_t< N > &arg) noexcept"
+.RI "template<\fBsize_t\fP N> constexpr const \fBreg_digs_t\fP & \fBoperator=\fP (const \fBreg_N_digs_t\fP< N > &arg) noexcept"
 .br
-.RI "Sobrecarga del operador copia  "
+.RI "Sobrecarga del operador copia\&. "
 .ti -1c
-.RI "template<\fBsize_t\fP N> constexpr reg_dgis_t & \fBoperator=\fP (reg_N_digs_t< N > &arg) noexcept"
+.RI "template<\fBsize_t\fP N> constexpr \fBreg_digs_t\fP & \fBoperator=\fP (\fBreg_N_digs_t\fP< N > &arg) noexcept"
 .br
 .ti -1c
-.RI "template<\fBsize_t\fP N> constexpr const \fBbase_t\fP & \fBoperator=\fP (reg_N_digs_t< N > &&arg) noexcept"
+.RI "template<\fBsize_t\fP N> constexpr const \fBbase_t\fP & \fBoperator=\fP (\fBreg_N_digs_t\fP< N > &&arg) noexcept"
 .br
 .ti -1c
 .RI "constexpr \fBreg_digs_t\fP & \fBoperator=\fP (const \fBdig_t\fP &arg) noexcept"
 .br
 .RI "OPERACION COPIA DESDE UN DIGITO (CONVERSION) "
+.ti -1c
+.RI "template<type_traits::integral_c Int_Type> constexpr const \fBreg_digs_t\fP & \fBoperator=\fP (Int_Type arg) noexcept"
+.br
+.ti -1c
+.RI "template<type_traits::integral_c Int_Type> constexpr \fBoperator Int_Type\fP () const noexcept"
+.br
+.RI "SE PODRÍA HACER PARA UINT128_T\&. "
+.ti -1c
+.RI "constexpr const \fBdig_t\fP *const \fBdata\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr decltype(auto) \fBcpy_data\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBdig_t\fP & \fBoperator[]\fP (\fBsize_t\fP ix) const noexcept"
+.br
+.RI "<summary='Sobrecarga del const dig_t & operator[](size_t) const'> "
+.ti -1c
+.RI "constexpr \fBdig_t\fP & \fBoperator[]\fP (\fBsize_t\fP ix) noexcept"
+.br
+.RI "<summary='Sobrecarga del dig_t & operator[](size_t)'> "
+.ti -1c
+.RI "constexpr void \fBset_0\fP () noexcept"
+.br
+.RI "Funciones que ponen a constantes (constexpr) los objetos base_t\&. "
+.ti -1c
+.RI "constexpr void \fBset_1\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr void \fBset_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr void \fBset_dig\fP (\fBdig_t\fP d) noexcept"
+.br
+.ti -1c
+.RI "constexpr void \fBset_fill_dig\fP (\fBdig_t\fP d) noexcept"
+.br
+.ti -1c
+.RI "constexpr void \fBset_fill_1\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr void \fBset_fill_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N_i, \fBsize_t\fP N_pf> 
+.br
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void \fBset_interval_0\fP () noexcept"
+.br
+.RI "'Funciones que ponen a constantes(constexpr) los objetos un subintervalo
+o subrango de base_t cualquiera' "
+.ti -1c
+.RI "template<\fBsize_t\fP N, \fBsize_t\fP N_i, \fBsize_t\fP N_pf> 
+.br
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void \fBset_interval_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N_i, \fBsize_t\fP N_pf> 
+.br
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void \fBset_interval_dig\fP (\fBdig_t\fP dig) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_0\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_Bm1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_B\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_Bp1\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP n> 
+.br
+requires (n<L)constexpr bool \fBis_B_pow_m1\fP () const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP n> 
+.br
+requires (n<L\-1)constexpr bool \fBis_B_pow\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_any_B_pow\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_filled_of_1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_filled_of_Bm1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBis_filled_of\fP (\fBdig_t\fP d) const"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP ibegin, \fBsize_t\fP iend> 
+.br
+requires ((iend <= L)&&(ibegin < L)&&(ibegin != iend))constexpr \fBreg_N_digs_t\fP<(ibegin< iend)?(iend\-ibegin):(ibegin\-iend)> \fBsubregister\fP () const noexcept"
+.br
+.RI "TAKE A SUBREGISTER OF A REGISTER OF DIGITS\&. "
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBmC_Bm1\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBmC_B\fP () noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBC_Bm1\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBC_B\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBoperator!\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBoperator\-\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBoperator<<\fP (\fBsize_t\fP n) const noexcept"
+.br
+.RI "OPERATORS >> >>= << <<= REM_B^n M_REM_B^n MER_B_N M_MER_B_N\&. "
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBoperator<<=\fP (\fBsize_t\fP n) noexcept"
+.br
+.RI "TODO TO DO VOY POR AQUI CON EL TEMA DE LOS CTHIS\&. "
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBoperator>>=\fP (\fBsize_t\fP n) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBoperator>>\fP (\fBsize_t\fP n) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBrem_B\fP (\fBsize_t\fP n) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBm_rem_B\fP (\fBsize_t\fP n) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBmer_B\fP (\fBsize_t\fP n) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBm_mer_B\fP (\fBsize_t\fP n) noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBoperator|=\fP (const \fBbase_t\fP &rarg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBoperator|\fP (const \fBreg_digs_t\fP &rarg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr const \fBreg_digs_t\fP & \fBoperator&=\fP (const \fBreg_digs_t\fP &rarg) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBreg_digs_t\fP \fBoperator&\fP (const \fBreg_digs_t\fP &rarg) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBint64_t\fP \fBindex_of_MSDig\fP () const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator==\fP (const \fBdig_t\fP &rarg) const noexcept"
+.br
+.RI "COMPARACIONES ENTRE BASE_T Y DIG_T EN FORMA BASE_T @ DIG_T\&. "
+.ti -1c
+.RI "constexpr bool \fBoperator!=\fP (const \fBdig_t\fP &rarg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator>\fP (const \fBdig_t\fP &rarg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator<\fP (const \fBdig_t\fP &rarg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator>=\fP (const \fBdig_t\fP &rarg) const noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator<=\fP (const \fBdig_t\fP &rarg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP M> constexpr bool \fBoperator==\fP (const \fBreg_N_digs_t\fP< M > &rarg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP M> constexpr bool \fBoperator!=\fP (const \fBreg_N_digs_t\fP< M > &rarg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP M> constexpr bool \fBoperator>\fP (const \fBreg_N_digs_t\fP< M > &rarg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP M> constexpr bool \fBoperator<\fP (const \fBreg_N_digs_t\fP< M > &rarg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP M> constexpr bool \fBoperator>=\fP (const \fBreg_N_digs_t\fP< M > &rarg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP M> constexpr bool \fBoperator<=\fP (const \fBreg_N_digs_t\fP< M > &rarg) const noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP M> constexpr std::strong_ordering \fBoperator<=>\fP (const \fBreg_N_digs_t\fP< M > &arg) const noexcept"
+.br
+.RI "OPERADOR COMPARACION SPACESHIP C++20\&. "
+.ti -1c
+.RI "constexpr std::weak_ordering \fBoperator<=>\fP (const \fBdig_t\fP &arg) const noexcept"
+.br
+.RI "OPERADOR COMPARACION SPACESHIP C++20\&. "
 .in -1c
 .SS "Métodos públicos estáticos"
 
@@ -150,13 +408,7 @@ requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBreg_digs_t\fP (
 .RI "static consteval \fBdig_t\fP \fBdig_Bm1\fP () noexcept"
 .br
 .ti -1c
-.RI "static consteval \fBdig_t\fP \fBdig_max\fP () noexcept"
-.br
-.ti -1c
 .RI "static consteval \fBdig_t\fP \fBdig_Bm2\fP () noexcept"
-.br
-.ti -1c
-.RI "static consteval \fBdig_t\fP \fBdig_submax\fP () noexcept"
 .br
 .ti -1c
 .RI "static consteval UINT_T \fBui_0\fP () noexcept"
@@ -169,12 +421,6 @@ requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBreg_digs_t\fP (
 .br
 .ti -1c
 .RI "static consteval UINT_T \fBui_B\fP () noexcept"
-.br
-.ti -1c
-.RI "static consteval UINT_T \fBui_submax\fP () noexcept"
-.br
-.ti -1c
-.RI "static consteval UINT_T \fBui_max\fP () noexcept"
 .br
 .ti -1c
 .RI "static consteval \fBSIG_UINT_T\fP \fBsui_0\fP () noexcept"
@@ -209,7 +455,7 @@ requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBreg_digs_t\fP (
 .ti -1c
 .RI "template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBregd_base_N_0\fP () noexcept"
 .br
-.RI "PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  "
+.RI "PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL\&. "
 .ti -1c
 .RI "template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBregd_base_N_1\fP () noexcept"
 .br
@@ -232,7 +478,7 @@ requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBregd_base_N_po
 .ti -1c
 .RI "static consteval \fBbase_t\fP \fBregd_base_0\fP () noexcept"
 .br
-.RI "IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L> DONDE BASE_T == BASE_N_T<L> TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  "
+.RI "IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L> DONDE BASE_T == BASE_N_T<L> TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL\&. "
 .ti -1c
 .RI "static consteval \fBbase_t\fP \fBregd_base_1\fP () noexcept"
 .br
@@ -251,7 +497,7 @@ requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBregd_base_N_po
 .ti -1c
 .RI "static consteval \fBreg_digs_t\fP \fBregd_0\fP () noexcept"
 .br
-.RI "IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  "
+.RI "IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL\&. "
 .ti -1c
 .RI "static consteval \fBreg_digs_t\fP \fBregd_1\fP () noexcept"
 .br
@@ -268,238 +514,478 @@ requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBregd_base_N_po
 .RI "static consteval \fBreg_digs_t\fP \fBregd_pow_n_B_m1\fP () noexcept"
 .br
 .ti -1c
-.RI "static constexpr \fBbase_t\fP \fBmake_base_t\fP (const std::initializer_list< \fBdig_t\fP > &larg)"
+.RI "template<typename \&.\&.\&. Ints_type> 
 .br
-.RI "Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list<dig_t>  "
+requires ((sizeof\&.\&.\&.(Ints_type)) == L)static constexpr \fBbase_t\fP \fBnormalize\fP (Ints_type \&.\&.\&. digits_pow_i) noexcept"
+.br
 .ti -1c
-.RI "template<type_traits::integral_c \&.\&.\&. Ints_type, \fBsize_t\fP N> 
+.RI "static constexpr \fBreg_digs_t\fP \fBcat\fP (const \fBreg_digs_t\fP &arg) noexcept"
 .br
-requires (((sizeof\&.\&.\&.(Ints_type)) <= L)&&(N>0))static constexpr \fBbase_N_t\fP< N > \fBnormalize\fP (Ints_type \&.\&.\&. digits_pow_i) noexcept"
+.RI "STATIC REG_DIGS_T CAT(REG_DIGS_T) "
+.ti -1c
+.RI "template<\fBsize_t\fP M> static constexpr \fBreg_N_digs_t\fP< L+M > \fBcat\fP (const \fBreg_digs_t\fP &larg, const \fBreg_N_digs_t\fP< M > &rarg) noexcept"
+.br
+.RI "STATIC <M> REG_N_DIGS_T<L+M> CAT(REG_DIGS_T,REG_N_DIGS_T<M>) "
+.ti -1c
+.RI "static constexpr \fBreg_N_digs_t\fP< L+1 > \fBcat\fP (const \fBreg_digs_t\fP &larg, \fBdig_t\fP rarg) noexcept"
+.br
+.RI "STATIC REG_DIGS_T<L+1> CAT(REG_DIGS_T,DIG_T) "
+.ti -1c
+.RI "static constexpr \fBreg_N_digs_t\fP< 1+L > \fBcat\fP (\fBdig_t\fP larg, const \fBreg_digs_t\fP &rarg) noexcept"
+.br
+.RI "REG_N_DIGS_T<1+L> CAT(DIG_T,REG_DIGS_T) "
+.ti -1c
+.RI "static constexpr \fBreg_N_digs_t\fP< 1 > \fBcat\fP (\fBdig_t\fP larg) noexcept"
+.br
+.RI "STATIC REG_N_DIGS_T<1> CAT(DIG_T) "
+.ti -1c
+.RI "static constexpr \fBreg_N_digs_t\fP< 2 > \fBcat\fP (\fBdig_t\fP larg, \fBdig_t\fP rarg) noexcept"
+.br
+.RI "STATIC REG_N_DIGS_T<1+1> CAT(DIG_T,DIG_T) "
+.ti -1c
+.RI "template<typename T0 , typename \&.\&.\&. Ts> 
+.br
+requires ( ((std::is_same_v<Ts,\fBdig_t\fP>)&&\&.\&.\&.)&& (std::is_same_v<T0,\fBdig_t\fP>) )static constexpr \fBreg_N_digs_t\fP< 1+(sizeof \&.\&.\&.(Ts))> \fBcat\fP (T0 dig0, Ts \&.\&.\&. dig_pack) noexcept"
+.br
+.ti -1c
+.RI "template<typename T , typename \&.\&.\&. Ts> 
+.br
+requires ( ((std::is_same_v<Ts,\fBdig_t\fP>)&&\&.\&.\&.) && (std::is_same_v<T,\fBdig_t\fP>) )static constexpr \fBreg_N_digs_t\fP< L+1+(sizeof \&.\&.\&.(Ts))> \fBcat\fP (\fBreg_digs_t\fP larg, T dig, Ts \&.\&.\&. dig_pack) noexcept"
+.br
+.ti -1c
+.RI "template<typename T , typename \&.\&.\&. Ts> 
+.br
+requires ( ((std::is_same_v<Ts,\fBdig_t\fP>)&&\&.\&.\&.) && (std::is_same_v<T,\fBdig_t\fP>) )static constexpr \fBreg_N_digs_t\fP< L+1+(sizeof \&.\&.\&.(Ts))> \fBcat\fP (T dig, Ts \&.\&.\&. dig_pack, \fBreg_digs_t\fP rarg) noexcept"
+.br
+.ti -1c
+.RI "template<\fBsize_t\fP N, \fBsize_t\fP \&.\&.\&. N_pack> 
+.br
+requires ((N>0)&&((N_pack>0)&&\&.\&.\&.))static constexpr \fBreg_N_digs_t\fP< N+(\&.\&.\&.+(N_pack))> \fBcat\fP (\fBreg_N_digs_t\fP< N > larg, \fBreg_N_digs_t\fP< N_pack > \&.\&.\&. rarg_pack) noexcept"
+.br
+.ti -1c
+.RI "static bool \fBis_type_template_string_id\fP (std::string in) noexcept"
+.br
+.RI "el parser/lexer del \fBreg_digs_t\fP "
+.ti -1c
+.RI "static std::string \fBto_type_template_string_id\fP () noexcept"
+.br
+.ti -1c
+.RI "static \fBsize_t\fP \fBsize_of_type_template_string_id\fP () noexcept"
+.br
+.ti -1c
+.RI "static bool \fBget_type_template_string_id_token\fP (std::istream &is)"
 .br
 .in -1c
-.SS "Atributos protegidos"
+.SS "Métodos privados"
 
 .in +1c
 .ti -1c
-.RI "\fBbase_t\fP \fBm_dc\fP"
+.RI "template<\fBsize_t\fP N> constexpr void \fBcopy_arg_N\fP (const \fBbase_N_t\fP< N > &arg) noexcept"
 .br
+.RI "Constructor por Copia/Movimiento desde una sucesión variadica de dígitos \fBdig_t\fP\&. "
+.ti -1c
+.RI "template<\fBsize_t\fP N> constexpr void \fBmove_arg_N\fP (\fBbase_N_t\fP< N > &&arg) noexcept"
+.br
+.RI "Función miembro (delegada) para mover un objeto tipo base_t desde una referencia derecha a un array cualquiera de \fBdig_t\fP\&. "
+.ti -1c
+.RI "constexpr \fBdig_t\fP * \fBdata\fP () noexcept"
+.br
+.in -1c
+.SS "Métodos privados estáticos"
+
+.in +1c
+.ti -1c
+.RI "static constexpr \fBbase_t\fP \fBmake_base_t\fP (const std::initializer_list< \fBdig_t\fP > &larg)"
+.br
+.RI "Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list<dig_t> "
 .in -1c
 .SH "Descripción detallada"
 .PP 
 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L>
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L>
 .br
 requires ((suitable_base<UINT_T,B>())&&(L > 0))
 .br
-struct NumRepr::reg_digs_t< UINT_T, B, L >"
+struct NumRepr::reg_digs_t< UINT_T, B, L >"DEFINCION DE template<uint128_t Radix> register_of_digits_t{};\&. 
+.PP
+Definición en la línea \fB15\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
 .SH "Documentación de los 'Typedef' miembros de la clase"
 .PP 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::base_N_t\fP =  std::array<\fBdig_t\fP,N>"
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::base_N_t =  std::array<\fBdig_t\fP,N>"
 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::base_t\fP =  \fBbase_N_t\fP<L>"
+.PP
+Definición en la línea \fB22\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::base_t =  \fBbase_N_t\fP<L>"
 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::dig_t\fP =  \fBdig_t\fP<UINT_T,B>"
+.PP
+Definición en la línea \fB24\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_t =  \fBdig_t\fP<UINT_T,B>"
 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBbinop_e\fP op, \fBsize_t\fP N> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::res_base_N_op_t\fP =  result_operation_t<\fBbase_N_t\fP<N>,op,N>"
+.PP
+Definición en la línea \fB18\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_N_digs_t =  \fBreg_digs_t\fP<UINT_T,B,N>"
 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBbinop_e\fP op> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::res_base_op_t\fP =  result_operation_t<\fBbase_t\fP,op,L>"
+.PP
+Definición en la línea \fB27\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBbinop_e\fP op, \fBsize_t\fP N> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::res_base_N_op_t =  typename \fBauxiliary_types::result_operation_t\fP<\fBbase_N_t\fP<N>,op,N>"
 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::SIG_SINT_T\fP =  sig_SInt_for_UInt_t<UINT_T>"
+.PP
+Definición en la línea \fB81\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBbinop_e\fP op> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::res_base_op_t =  typename \fBauxiliary_types::result_operation_t\fP<\fBbase_t\fP,op,L>"
 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::SIG_UINT_T\fP =  sig_UInt_for_UInt_t<UINT_T>"
+.PP
+Definición en la línea \fB85\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::SIG_SINT_T =  typename \fBtype_traits::sig_SInt_for_UInt_t\fP<UINT_T>"
 
+.PP
+Definición en la línea \fB78\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> using \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::SIG_UINT_T =  typename \fBtype_traits::sig_UInt_for_UInt_t\fP<UINT_T>"
+
+.PP
+Definición en la línea \fB77\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
 .SH "Documentación del constructor y destructor"
 .PP 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> consteval \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t ()\fC [inline]\fP, \fC [noexcept]\fP"
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> consteval \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
-Constructores de \fBreg_digs_t\fP
+Constructores de \fBreg_digs_t\fP\&. Constructor por defecto (rellena de \fBdig_t(0)\fP todo el array) 
 .PP
-Constructor por defecto (rellena de \fBdig_t(0)\fP todo el array)  
-.PP
-.nf
-283                  : base_t{regd_base_0()} {}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const std::initializer_list< \fBdig_t\fP > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB323\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const std::initializer_list< \fBdig_t\fP > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-Constructor por lista de digitos utilizando la función make_base_t  
+Constructor por lista de digitos utilizando la función make_base_t\&. 
 .PP
-.nf
-317                  : base_t{make_base_t(arg)} {}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<typename \&.\&.\&. Ts> 
+Definición en la línea \fB370\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<typename \&.\&.\&. Ts> 
 .br
 requires (std::is_same_v<Ts,\fBdig_t\fP>&&\&.\&.\&.)constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const Ts &\&.\&.\&. args)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-Constructor por argumentos tipo \fBdig_t\fP: deduce el tipo  
+Constructor por argumentos tipo \fBdig_t\fP: deduce el tipo\&. 
 .PP
-.nf
-326                  : base_t{(utilities::pack2array<Ts\&.\&.\&.>{})(args\&.\&.\&.)} {}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_t\fP & rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB379\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_t\fP & rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
 CONSTRUCTOR COPIA DESDE EL TIPO BASE\&. 
 .PP
-.nf
-330 : m_dc{rarg} {}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (\fBbase_t\fP && rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB384\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (\fBbase_t\fP && rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
 CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE\&. 
 .PP
-.nf
-333 : m_dc{std::move(rarg)} {}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_N_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB387\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_N_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-Constructor copia desde un array cualquiera de dígitos \fBdig_t\fP (usando copy_arg_N<N>)  
+Constructor copia desde un array cualquiera de dígitos \fBdig_t\fP (usando copy_arg_N<N>) 
 .PP
-.nf
-407                  : base_t{copy_arg_N<N>(arg)} {}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_N_t\fP< N > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB463\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (const \fBbase_N_t\fP< N > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-Constructor por movimiento desde un array cualquiera de dígitos \fBdig_t\fP (usando move_arg_N<N>)  
+Constructor por movimiento desde un array cualquiera de dígitos \fBdig_t\fP (usando move_arg_N<N>) 
 .PP
-.nf
-415                  : base_t{move_arg_N<N>(std::move(arg))} {}
-.fi
+Definición en la línea \fB472\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<type_traits::integral_c \&.\&.\&. Ints_type> 
+.br
+requires ((sizeof\&.\&.\&.(Ints_type))==L)constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reg_digs_t (Ints_type \&.\&.\&. dig_pow_i)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+<summary='Constructor copia desde una sucesión de objetos enteros variádica, normalizándolos'> 
+.PP
+Definición en la línea \fB560\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
 .SH "Documentación de las funciones miembro"
 .PP 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP const  & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::back () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP const  & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::back () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-259         { return (const_ref_data()\&.back()); }
-.fi
-.PP
-Hace referencia a \fBconst_ref_data()\fP\&.
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::back ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB297\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::back ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-257         { return (ref_data()\&.back()); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<type_traits::integral_c \&.\&.\&. Ints_type> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::base_t\fP (Ints_type \&.\&.\&. dig_pow_i)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-<summary='Constructor copia desde una sucesión\\
-de objetos enteros variádica, normalizándolos'>  
-.PP
-.nf
-494                                                                   :
-495                 base_t{normalize<Ints_type\&.\&.\&.>(dig_pow_i\&.\&.\&.)} {}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::begin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB295\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBbase_t\fP * \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::base_this ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
-En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array  
-.PP
-.nf
-229         { return base_t::begin(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cbegin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB34\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::begin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-231         { return base_t::cbegin(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+En este bloque hacemos esta clase wrapper como si fuese una clase derivada de base_t Para esto replicamos y sobrecargamos cada una de las funciones por defecto de std::array Nota: lo anterior se escribio cuando no era clase derivada sino un wrapper\&. 
+.PP
+Definición en la línea \fB267\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::C_B () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-235         { return base_t::cend(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::crbegin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1146\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::C_Bm1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-239         { return base_t::crbegin(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::crend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1142\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (const \fBreg_digs_t\fP< UINT_T, B, L > & arg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-243         { return base_t::crend(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+STATIC REG_DIGS_T CAT(REG_DIGS_T) STATIC FUNCTIONS : CONCATENATE REGISTERS AND DIGITS reg_digs_t<1> \fBcat(dig_t)\fP \fBreg_digs_t\fP<1+1> \fBcat(dig_t,dig_t)\fP \fBreg_digs_t\fP cat(reg_digs_t) <M> reg_N_digs_t<L+M> cat(reg_digs_t,reg_N_digs_t<M>) reg_N_digs_t<L+1> cat(reg_digs_t,dig_t) reg_N_digs_t<1+L> cat(dig_t,reg_digs_t) reg_N_digs_t<sizeof\&.\&.\&.(dig_pack)> cat(dig_t \&.\&.\&. dig_pack) VARIADIC PACK 
+.PP
+Definición en la línea \fB984\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> static constexpr \fBreg_N_digs_t\fP< L+M > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (const \fBreg_digs_t\fP< UINT_T, B, L > & larg, const \fBreg_N_digs_t\fP< M > & rarg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-46         {return dig_t::dig_0();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+STATIC <M> REG_N_DIGS_T<L+M> CAT(REG_DIGS_T,REG_N_DIGS_T<M>) 
+.PP
+Definición en la línea \fB991\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBreg_N_digs_t\fP< L+1 > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (const \fBreg_digs_t\fP< UINT_T, B, L > & larg, \fBdig_t\fP rarg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-48         {return dig_t::dig_1();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+STATIC REG_DIGS_T<L+1> CAT(REG_DIGS_T,DIG_T) 
+.PP
+Definición en la línea \fB1003\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBreg_N_digs_t\fP< 1 > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (\fBdig_t\fP larg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-50         {return dig_t::dig_Bm1();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_Bm2 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+STATIC REG_N_DIGS_T<1> CAT(DIG_T) 
+.PP
+Definición en la línea \fB1025\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBreg_N_digs_t\fP< 1+L > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (\fBdig_t\fP larg, const \fBreg_digs_t\fP< UINT_T, B, L > & rarg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-54         {return dig_t::dig_Bm2();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+REG_N_DIGS_T<1+L> CAT(DIG_T,REG_DIGS_T) 
+.PP
+Definición en la línea \fB1014\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBreg_N_digs_t\fP< 2 > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (\fBdig_t\fP larg, \fBdig_t\fP rarg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-52         {return dig_t::dig_max();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+STATIC REG_N_DIGS_T<1+1> CAT(DIG_T,DIG_T) 
+.PP
+Definición en la línea \fB1030\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<typename T , typename \&.\&.\&. Ts> 
+.br
+requires ( ((std::is_same_v<Ts,\fBdig_t\fP>)&&\&.\&.\&.) && (std::is_same_v<T,\fBdig_t\fP>) )static constexpr \fBreg_N_digs_t\fP< L+1+(sizeof \&.\&.\&.(Ts))> \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (\fBreg_digs_t\fP< UINT_T, B, L > larg, T dig, Ts \&.\&.\&. dig_pack)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+STATIC REG_N_DIGS_T<L+1+(SIZEOF\&.\&.\&.(DIG_PACK))> CAT(REG_DIGS_T,DIG_T,DIG_T \&.\&.\&. DIG_PACK) VARIADIC 
+.PP
+Definición en la línea \fB1059\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP \&.\&.\&. N_pack> 
+.br
+requires ((N>0)&&((N_pack>0)&&\&.\&.\&.))static constexpr \fBreg_N_digs_t\fP< N+(\&.\&.\&.+(N_pack))> \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (\fBreg_N_digs_t\fP< N > larg, \fBreg_N_digs_t\fP< N_pack > \&.\&.\&. rarg_pack)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+STATIC REG_N_DIGS_T<SIZE_T N,SIZE_T \&.\&.\&. N_PACK> CAT(REG_N_DIGS_T<N> LARG,
+                REG_N_DIGS_T<N_PACK> \&.\&.\&. RARG_PACK
+        ) VARIADIC PACK 
+.PP
+Definición en la línea \fB1085\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<typename T , typename \&.\&.\&. Ts> 
+.br
+requires ( ((std::is_same_v<Ts,\fBdig_t\fP>)&&\&.\&.\&.) && (std::is_same_v<T,\fBdig_t\fP>) )static constexpr \fBreg_N_digs_t\fP< L+1+(sizeof \&.\&.\&.(Ts))> \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (T dig, Ts \&.\&.\&. dig_pack, \fBreg_digs_t\fP< UINT_T, B, L > rarg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+STATIC REG_N_DIGS_T<L+1+(SIZEOF\&.\&.\&.(DIG_PACK))> CAT(DIG_T,DIG_T \&.\&.\&. DIG_PACK,REG_DIGS_T) VARIADIC 
+.PP
+Definición en la línea \fB1072\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<typename T0 , typename \&.\&.\&. Ts> 
+.br
+requires ( ((std::is_same_v<Ts,\fBdig_t\fP>)&&\&.\&.\&.)&& (std::is_same_v<T0,\fBdig_t\fP>) )static constexpr \fBreg_N_digs_t\fP< 1+(sizeof \&.\&.\&.(Ts))> \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cat (T0 dig0, Ts \&.\&.\&. dig_pack)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+STATIC REG_N_DIGS_T<SIZEOF\&.\&.\&.(DIG_PACK)> CAT(DIG_T,DIG_T \&.\&.\&. DIG_PACK) VARIADIC 
+.PP
+Definición en la línea \fB1046\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cbegin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-56         {return dig_t::dig_submax();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::empty () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB269\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-250         { return const_ref_data()\&.empty(); }
-.fi
-.PP
-Hace referencia a \fBconst_ref_data()\fP\&.
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::end ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB273\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> const \fBbase_t\fP *const \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::const_base_this () const\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-233         { return base_t::end(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::fill (const \fBdig_t\fP & value)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+devolucion de punteros a la clase base 
+.PP
+Definición en la línea \fB30\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::copy_arg_N (const \fBbase_N_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [private]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-262         { ref_data()\&.fill(value); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP const  & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::front () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Constructor por Copia/Movimiento desde una sucesión variadica de dígitos \fBdig_t\fP\&. Función miembro (delegada) para copiar un objeto tipo base_t desde una referencia constante a un array cualquiera de \fBdig_t\fP
+.PP
+<function name='copy_arg_N'></function> 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIconst base_N_t<N> & arg\fP 
+.RE
+.PP
+<returns='void'>< Z < W or Z == W
+.PP
+Definición en la línea \fB406\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cp_base_cthis () const\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-255         { return (const_ref_data()\&.front()); }
-.fi
-.PP
-Hace referencia a \fBconst_ref_data()\fP\&.
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::front ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB46\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cp_cthis () const\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-253         { return (ref_data()\&.front()); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::make_base_t (const std::initializer_list< \fBdig_t\fP > & larg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP"
+devolucion de copia de la clase actual 
+.PP
+Definición en la línea \fB58\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cp_cthis_at (\fBsize_t\fP k) const\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
-Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list<dig_t>  <function name='make_base_t'></function> 
+devoluciones por referencias y por copia de los elementos 
+.PP
+Definición en la línea \fB62\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cpy_data () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB684\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> const \fBbase_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cr_base_cthis () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+devolucion de copia de la clase base 
+.PP
+Definición en la línea \fB42\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cr_cthis () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB54\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> const \fBdig_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::cr_cthis_at (\fBsize_t\fP k) const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB70\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::crbegin () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB277\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::crend () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB281\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBdig_t\fP *const \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::data () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+<summary=' sobrecarga de las funciones miembro : '> constexpr const dig_t* \fBdata() const \fPnoexcept;
+.PP
+\fBDevuelve\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definición en la línea \fB679\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP * \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::data ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [private]\fP, \fC [noexcept]\fP"
+<summary=' sobrecarga de las funciones miembro : '> constexpr dig_t* \fBdata()\fP noexcept;
+.PP
+\fBDevuelve\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definición en la línea \fB670\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB88\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB90\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB92\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::dig_Bm2 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB94\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::empty () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB288\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::end ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB271\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::fill (const \fBdig_t\fP & value)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB300\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP const  & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::front () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB293\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::front ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB291\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::get_type_template_string_id_token (std::istream & is)\fC [inline]\fP, \fC [static]\fP"
+FUNCION GENERICA QUE CONSIGUE EL TOKEN TYPE PARA LA OBTENCION DEL OBJETO CORRESPONDIENTE POR TECLADO 
+.PP
+Definición en la línea \fB1544\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBint64_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::index_of_MSDig () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+NOS DEVUELVE EL ÍNDICE DEL DÍGITO NO 0 DE POTENCIA DE B MAS GRANDE NOS DEVUELVE 0 SI ES UN DÍGITO NO 0 NOS DEVUELVE -1 SI ES EL DÍGITO 0 CUALQUIER OTRO CASO NOS DARÁ MAYOR QUE 0 
+.PP
+Definición en la línea \fB1280\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_0 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB790\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB803\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_any_B_pow () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB934\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_B () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB825\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP n> 
+.br
+requires (n<L\-1)constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_B_pow () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB890\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP n> 
+.br
+requires (n<L)constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_B_pow_m1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB860\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_Bm1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB814\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_Bp1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB842\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_filled_of (\fBdig_t\fP d) const\fC [inline]\fP, \fC [constexpr]\fP"
+
+.PP
+Definición en la línea \fB965\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_filled_of_1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB949\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_filled_of_Bm1 () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB957\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::is_type_template_string_id (std::string in)\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+el parser/lexer del \fBreg_digs_t\fP Funciones de ayuda para 
+.PP
+Definición en la línea \fB1517\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::m_mer_B (\fBsize_t\fP n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1237\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::m_rem_B (\fBsize_t\fP n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1222\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static constexpr \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::make_base_t (const std::initializer_list< \fBdig_t\fP > & larg)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [private]\fP"
+
+.PP
+Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::initializer_list<dig_t> <function name='make_base_t'></function> 
 .PP
 \fBParámetros\fP
 .RS 4
@@ -508,442 +994,492 @@ Funcion miembro para generar un objeto tipo base_t y devolverlo desde un std::in
 .PP
 <returns='rarg : base_t'>
 .PP
-.nf
-293                                                                                     {
-294                 base_t rarg;
-295                 if (larg\&.size() >= L) {
-296                         for (size_t ix{ 0 }; ix < L; ++ix) {
-297                                 rarg[ix] = larg[ix];
-298                         }
-299                 }
-300                 else {
-301                         for (size_t ix{ 0 }; ix < larg\&.size() ; ++ix) {
-302                                 rarg[ix] = larg[ix];
-303                         }
-304                         for (size_t ix{ larg\&.size() }; ix < L ; ++ix) {
-305                                 rarg[ix] = larg[ix];
-306                         }
-307                 }
-308                 return std::move(rarg);
-309         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr size_type \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::max_size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB334\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBsize_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::max_size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-248         { return const_ref_data()\&.max_size(); }
-.fi
+Definición en la línea \fB286\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::mC_B ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
 .PP
-Hace referencia a \fBconst_ref_data()\fP\&.
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<type_traits::integral_c \&.\&.\&. Ints_type, \fBsize_t\fP N> 
+Definición en la línea \fB1127\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::mC_Bm1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERADORES ARITMETICOS \fBC_B()\fP \fBC_Bm1()\fP \fBmC_B()\fP \fBmC_Bm1()\fP \fBoperator!()\fP \fBoperator-()\fP 
+.PP
+Definición en la línea \fB1119\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::mer_B (\fBsize_t\fP n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1230\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::move_arg_N (\fBbase_N_t\fP< N > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [private]\fP, \fC [noexcept]\fP"
+
+.PP
+Función miembro (delegada) para mover un objeto tipo base_t desde una referencia derecha a un array cualquiera de \fBdig_t\fP\&. <function name='copy_arg_N'></function> 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIconst base_N_t<N> & arg\fP 
+.RE
+.PP
+<returns='void'>< Z < W or Z == W
+.PP
+Definición en la línea \fB435\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<typename \&.\&.\&. Ints_type> 
 .br
-requires (((sizeof\&.\&.\&.(Ints_type)) <= L)&&(N>0))static constexpr \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::normalize (Ints_type \&.\&.\&. digits_pow_i)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
-<summary='Función de normalización a dig_t (dígitos base B) que construye un objeto de tipo '>  <summary='base_t desde una sucesión variádica de enteros cualquiera'>  <function name='normalize'></function> 
+requires ((sizeof\&.\&.\&.(Ints_type)) == L)static constexpr \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::normalize (Ints_type \&.\&.\&. digits_pow_i)\fC [inline]\fP, \fC [static]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+<summary='Funcion de normalizacion a dig_t (dígitos base B) que construye un objeto de tipo '>
+.PP
+<summary='base_t desde una sucesion variadica de enteros cualquiera'>
+.PP
+<function name='normalize'></function> 
 .PP
 \fBParámetros\fP
 .RS 4
 \fIInts_type \&.\&.\&. digits_pow_i\fP 
 .RE
 .PP
-<returns='base_t'>< CREA UN STD_ARRAY DEL TIPO INT PASADO POR ARGUMENTOS DE TAMANO EL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
+<returns='base_t'>< CREA UN STD_ARRAY DEL TIPO INT PASADO POR UN PACK DE ARGUMENTOS EL TAMANO ES EL DEL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
 .PP
 < DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR [UN TIPO ENTERO]
 .PP
-< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO <= L)
+< DEVUELVE EL TAMANO DEL ARRAY ANTERIOR (TAMAÑO == L)
 .PP
 < ELIGE ENTRE CUATRO TIPOS DE ENTEROS SEGUN TENGAN SIGNO O NO Y SU TAMANO SEA MAYOR O MENOR QUE EL PROPIO DE LA BASE UINT_T TIPO PROPIO ES : UINT_T TIPO PASADO COMO ARGUMENTO ES : UNIQUE_TYPE LOS TIPOS PASADOS EN LOS ARGUMENTOS HAN DE SER IGUALES ENTRE SI PARA EL INTERROGANTE CONDICIONAL UTILIZAMOS UNSIGNED_INTEGRAL_C PRIMERA PREGUNTA O MAS EXTERIOR IS_UNISGNED_SZ_GT_V<T,S> PREGUNTAS SEGUNDAS O MAS INTERIORES PARA ELEGIR EL TIPO APROPIADO EN CADA CASO USAMOS SIG_UINT_FOR_UINT_T<UINT_T> SIG_UINT_FOR_UINT_T<UNIQUE_TYPE> SIG_UINT_FOR_UINT_T<UINT_T> SIG_UINT_FOR_SINT_T<UNIQUE_TYPE>
 .PP
 
 .PP
-.nf
-430                  {
-433                 using pack_type         = typename utility::pack2array<Ints_type\&.\&.\&.>;
-436                 using unique_type = typename pack_type::elem_type;
-438                 consteval size_t pack_sz{pack_type::pack_size()};
-453                 using NumRepr::type_traits;
-454                 using SUInt_type =
-455                         typename std::conditional_t
-456                         <
-457                                         unsigned_integral_c<unique_type>,
-458                                         typename std::conditional_t<
-459                                                 is_unsigned_sz_gt_v<UINT_T,unique_type>,
-460                                                         sig_UInt_for_UInt_t<UINT_T>,
-461                                                         sig_UInt_for_UInt_t<unique_type>
-462                                          >,
-463                                         typename std::conditional_t<
-464                                                 is_unsigned_sz_gt_v<UINT_T,sig_UInt_for_SInt_t<unique_type>>,
-465                                                         sig_UInt_for_UInt_t<UINT_T>,
-466                                                         sig_UInt_for_SInt_t<unique_type>
-467                                         >
-468                         >;
-469                 std::array<SUInt_type,pack_sz> ret_array{digits_pow_i\&.\&.\&.};
-470                 base_N_t<pack_sz> ret;
-471                 if constexpr (N <= pack_size) {
-472                         for (size_t ix{ 0 }; ix < pack_sz; ++ix) {
-473                                 ret[ix] = dig_t(ret_array[ix]);
-474                         }
-475                 }
-476                 else {
-477                         for (size_t ix{ 0 }; ix < pack_sz; ++ix) {
-478                                 ret[ix] = dig_t(ret_array[ix]);
-479                         }
-480                         for (size_t ix{ pack_sz }; ix < L; ++ix) {
-481                                 ret[ix] = dig_t(0);
-482                         }
-483                 }
-484                 return std::move(ret);
-485         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (const \fBdig_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB487\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<type_traits::integral_c Int_Type> constexpr \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator Int_Type () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+SE PODRÍA HACER PARA UINT128_T\&. Algunas Conversiones 
+.PP
+Definición en la línea \fB649\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator! () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+A partir de aquí no he hecho las sustituciones de const \fBreg_digs_t\fP & cthis{*this}; / \fBreg_digs_t\fP & cthis{*this}; / \fBreg_digs_t\fP cthis{*this}; Por las correspondientes funciones \fBcr_cthis()\fP / \fBr_cthis()\fP / \fBcp_cthis()\fP 
+.PP
+Definición en la línea \fB1154\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator!\fP= (const \fBdig_t\fP & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1307\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator!\fP= (const \fBreg_N_digs_t\fP< M > & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1395\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator& (const \fBreg_digs_t\fP< UINT_T, B, L > & rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1269\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator&= (const \fBreg_digs_t\fP< UINT_T, B, L > & rarg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1260\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator\- () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1158\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator< (const \fBdig_t\fP & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1330\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator< (const \fBreg_N_digs_t\fP< M > & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1449\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator<< (\fBsize_t\fP n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+OPERATORS >> >>= << <<= REM_B^n M_REM_B^n MER_B_N M_MER_B_N\&. MULTIPLY BY THE BASE B (10) << <<= DIVIDE BY THE BASE B (10) >> >>= REMAINDER BY THE BASE B (10) REM_B_N M_REM_B_N MULTIPLICATIVE CARRY BY THE BASE B (10) MER_B_N M_MER_B_N 
+.PP
+Definición en la línea \fB1169\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator<<= (\fBsize_t\fP n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+TODO TO DO VOY POR AQUI CON EL TEMA DE LOS CTHIS\&. 
+.PP
+Definición en la línea \fB1182\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator<= (const \fBdig_t\fP & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1352\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator<= (const \fBreg_N_digs_t\fP< M > & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1482\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr std::weak_ordering \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator<=> (const \fBdig_t\fP & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+OPERADOR COMPARACION SPACESHIP C++20\&. 
+.PP
+Definición en la línea \fB1503\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> constexpr std::strong_ordering \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator<=> (const \fBreg_N_digs_t\fP< M > & arg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+OPERADOR COMPARACION SPACESHIP C++20\&. 
+.PP
+Definición en la línea \fB1490\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator= (const \fBdig_t\fP & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
 OPERACION COPIA DESDE UN DIGITO (CONVERSION) 
 .PP
-.nf
-537                  {
-538                 reg_digs_t & cthis{*this};
-539                 if ((&(cthis[0]))!=(&arg)) {
-540                         set_0();
-541                         cthis[0] = arg;
-542                 }
-543                 return (*this);
-544         }
-.fi
-.PP
-Hace referencia a \fBset_0()\fP\&.
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (const reg_N_digs_t< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB604\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator= (const \fBreg_N_digs_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-Sobrecarga del operador copia  OPERACION ASIGNACION POR COPIA REFERENCIA CONST \fINO\fP COPIABLE DESDE REG_N_DIGS_T EN LA IZQUIERDA 
+Sobrecarga del operador copia\&. OPERACION ASIGNACION POR COPIA REFERENCIA CONST \fINO\fP COPIABLE DESDE REG_N_DIGS_T EN LA IZQUIERDA 
 .PP
-.nf
-506         {
-507                 if (this!= &arg)
-508                         copy_arg_N<N>(arg);
-509                 return (*this);
-510         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr const \fBbase_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (reg_N_digs_t< N > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB573\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<type_traits::integral_c Int_Type> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator= (Int_Type arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION COPIA DESDE UN ENTERO (CONVERSION A LA BASE B) A UN REG_DIGS_T 
+.PP
+Definición en la línea \fB617\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr const \fBbase_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator= (\fBreg_N_digs_t\fP< N > && arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 OPERACION ASIGNACION POR MOVIMIENTO DESDE REGS_N_DIGS_T EN LA QUE NO SE PUEDE COPIAR 
 .PP
-.nf
-528         {
-529                 if (this!=(&arg))
-530                         move_arg_N<N>(std::move(arg));
-531                 return (*this);
-532         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr reg_dgis_t & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >\fB::operator\fP= (reg_N_digs_t< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB595\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> constexpr \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator= (\fBreg_N_digs_t\fP< N > & arg)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 OPERACION ASIGNACION POR COPIA REFERENCIA DESDE REG_N_DIGS_T EN LA IZQUIERDA 
 .PP
-.nf
-517         {
-518                 if (this != &arg)
-519                         copy_arg_N<N>(arg);
-520                 return (*this);
-521         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::rbegin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB584\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator== (const \fBdig_t\fP & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-237         { return base_t::rbegin(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+COMPARACIONES ENTRE BASE_T Y DIG_T EN FORMA BASE_T @ DIG_T\&. SOBRECARGA DE LOS OPERADORES DE COMPARACION Y ORDEN 
+.PP
+Definición en la línea \fB1296\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator== (const \fBreg_N_digs_t\fP< M > & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+COMPARACIONES ENTRE REG_DIGS_T Y REG_N_DIGS_T HETEROGENEOS EN GENERAL EN FORMA REG_DIGS_T @ REG_N_DIGS_T<M> 
+.PP
+Definición en la línea \fB1368\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator> (const \fBdig_t\fP & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  
-.PP
-.nf
-194                                      {
-195                 return reg_digs_t{regd_base_N_0<L>()};
-196         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1319\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator> (const \fBreg_N_digs_t\fP< M > & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-199                                           {
-200                 return reg_digs_t{regd_base_N_1<L>()};
-201         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1422\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator>= (const \fBdig_t\fP & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-209                                           {
-210                 return reg_digs_t{regd_base_N_B<L>()};
-211         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1341\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP M> constexpr bool \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator>= (const \fBreg_N_digs_t\fP< M > & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L> DONDE BASE_T == BASE_N_T<L> TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  
-.PP
-.nf
-159                                       {
-160                 return base_t{regd_base_N_0<L>()};
-161         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1476\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator>> (\fBsize_t\fP n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-164                                        {
-165                 return base_t{regd_base_N_1<L>()};
-166         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1208\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator>>= (\fBsize_t\fP n)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-174                                        {
-175                 return base_t{regd_base_N_B<L>()};
-176         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1194\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBdig_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator[] (\fBsize_t\fP ix) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-169                                          {
-170                 return base_t{regd_base_N_Bm1<L>()};
-171         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+<summary='Sobrecarga del const dig_t & operator[](size_t) const'> 
+.PP
+Definición en la línea \fB690\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBdig_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator[] (\fBsize_t\fP ix)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL  
+<summary='Sobrecarga del dig_t & operator[](size_t)'> 
 .PP
-.nf
-97                                                  {
-98                 base_N_t<N> ret;
-99                 for(dig_t& dig : ret) {
-100                         dig = dig_0();
-101                 }
-102                 return ret;
-103         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB696\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator| (const \fBreg_digs_t\fP< UINT_T, B, L > & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-107                                                  {
-108                 base_N_t<N> ret{regd_base_N_0<N>()};
-109                 ret[0] = dig_1();
-110                 return ret;
-111         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1253\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr const \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::operator|= (const \fBbase_t\fP & rarg) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-123                                                  {
-124                 base_N_t<N> ret{regd_base_N_0<N>()};
-125                 ret[1] = dig_1();
-126                 return ret;
-127         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1244\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBbase_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::r_base_cthis ()\fC [inline]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-115                                                    {
-116                 base_N_t<N> ret{regd_base_N_0<N>()};
-117                 ret[0] = dig_Bm1();
-118                 return ret;
-119         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP n> 
+devolucion de referencias a la clase base 
+.PP
+Definición en la línea \fB38\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBreg_digs_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::r_cthis ()\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+devolucion de referencias de la clase actual 
+.PP
+Definición en la línea \fB50\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBdig_t\fP & \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::r_cthis_at (\fBsize_t\fP k)\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB66\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::rbegin ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB275\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+IDEM QUE ANTES PERO CON LA CLASE DERIVADA, LA ACTUAL TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL\&. 
+.PP
+Definición en la línea \fB230\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB235\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB245\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+IDEM QUE ANTES PERO CON EL TIPO BASE_T ESPECIALIZANDO AL TIPO BASE_N_T<L> DONDE BASE_T == BASE_N_T<L> TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL\&. 
+.PP
+Definición en la línea \fB195\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB200\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB210\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB205\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL\&. 
+.PP
+Definición en la línea \fB132\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB142\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB158\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N> static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB150\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP n> 
 .br
 requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-132                                                        {
-133                 base_N_t<N> ret{regd_base_N_0<N>()};
-134                 ret[n] = dig_1();
-135                 return ret;
-136         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP n> 
+Definición en la línea \fB167\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP n> 
 .br
 requires ((n>=0)&&(n < N))static consteval \fBbase_N_t\fP< N > \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_N_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-141                                                           {
-142                 base_N_t<N> ret{};
-143                 for(size_t ix{0} ; ix < n ; ++ix) {
-144                         ret[ix] = dig_Bm1();
-145                 }
-146                 for(size_t ix{n} ; ix < N ; ++ix) {
-147                         ret[ix] = dig_0();
-148                 }
-149                 return ret;
-150         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB176\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-179                                                  {
-180                 return base_t{regd_base_N_pow_n_B<L>()};
-181         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB215\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_base_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-184                                                 {
-185                 return base_t{regd_base_N_pow_n_B_m1<L>()};
-186         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB220\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-204                                             {
-205                 return reg_digs_t{regd_base_N_Bm1<L>()};
-206         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB240\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_pow_n_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-214                                                  {
-215                 return reg_digs_t{regd_base_N_pow_n_B<L>()};
-216         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB250\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::regd_pow_n_B_m1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-219                                                         {
-220                 return reg_digs_t{regd_base_N_pow_n_B_m1<L>()};
-221         }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::rend ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB255\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBreg_digs_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::rem_B (\fBsize_t\fP n) const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-241         { return base_t::rend(); }
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr size_type \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1215\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr decltype(auto) \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::rend ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-246         { return const_ref_data()\&.size(); }
-.fi
-.PP
-Hace referencia a \fBconst_ref_data()\fP\&.
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB279\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::reverse ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-80         {return dig_t::ssi_0();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB304\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_0 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-82         {return dig_t::ssi_1();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Funciones que ponen a constantes (constexpr) los objetos base_t\&. 
+.PP
+\fBParámetros del template\fP
+.RS 4
+\fIsize_t\fP 
+.RE
+.PP
+<nontypeparam name='N'></nontypeparam> 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIthis\fP 
+.RE
+.PP
+\fBDevuelve\fP
+.RS 4
+.RE
+.PP
 
 .PP
-.nf
-86         {return dig_t::ssi_B();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB710\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-84         {return dig_t::ssi_B()-1;}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_Bp1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB714\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_Bm1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-88         {return dig_t::ssi_B()+1;}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB719\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_dig (\fBdig_t\fP d)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-70         {return dig_t::sui_0();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB724\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_fill_1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-72         {return dig_t::sui_1();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB733\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_fill_Bm1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-76         {return dig_t::sui_B();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB738\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_fill_dig (\fBdig_t\fP d)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-74         {return dig_t::sui_B()-1;}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_Bp1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB729\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N_i, \fBsize_t\fP N_pf> 
+.br
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_interval_0 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-78         {return dig_t::sui_B()+1;}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::swap (\fBbase_t\fP & other)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+'Funciones que ponen a constantes(constexpr) los objetos un subintervalo
+o subrango de base_t cualquiera' 
+.PP
+\fBParámetros del template\fP
+.RS 4
+\fIsize_t\fP 
+.RE
+.PP
+<nontypeparam name='N_i'></nontypeparam> <nontypeparam name='N_pf'></nontypeparam> 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIthis\fP 
+.RE
+.PP
+\fBDevuelve\fP
+.RS 4
+.RE
+.PP
+OPERACION DE PONER A VALOR DIG_0 DEL ARRAY DESDE [N_0 , N_1) EN BASE_N_T<N> 
+.PP
+Definición en la línea \fB758\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N, \fBsize_t\fP N_i, \fBsize_t\fP N_pf> 
+.br
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_interval_Bm1 ()\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION DE PONER A VALOR DIG_Bm1 DEL ARRAY DESDE [N_0 , N_1) EN BASE_N_T<N> 
+.PP
+Definición en la línea \fB769\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP N_i, \fBsize_t\fP N_pf> 
+.br
+requires ((N_i < N_pf)&&(N_pf <= L))constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::set_interval_dig (\fBdig_t\fP dig)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+OPERACION DE PONER A VALOR DIG DEL ARRAY DESDE [N_0 , N_1) EN BASE_T summary='Funciones comparativas con constantes tipo constexpr'> param name='this'>
+.PP
+returns='bool'>
+.PP
+Definición en la línea \fB780\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr \fBsize_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::size () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-264         { ref_data()\&.swap(*other\&.data()); }
-.fi
-.PP
-Hace referencia a \fBNumRepr::other\fP\&.
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB284\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static \fBsize_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::size_of_type_template_string_id ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-58         {return dig_t::ui_0();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB1537\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-60         {return dig_t::ui_1();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB114\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-64         {return B;}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB116\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-62         {return B-1;}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_max ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB120\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-68         {return dig_t::ui_max();}
-.fi
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_submax ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+Definición en la línea \fB118\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_SINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ssi_Bp1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
 
 .PP
-.nf
-66         {return dig_t::ui_submax();}
-.fi
-.SH "Documentación de los datos miembro"
-.PP 
-.SS "template<allowable_base_type_c UINT_T, UINT_T B, \fBsize_t\fP L> \fBbase_t\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::m_dc\fC [protected]\fP"
+Definición en la línea \fB122\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> template<\fBsize_t\fP ibegin, \fBsize_t\fP iend> 
+.br
+requires ((iend <= L)&&(ibegin < L)&&(ibegin != iend))constexpr \fBreg_N_digs_t\fP<(ibegin< iend)?(iend\-ibegin):(ibegin\-iend)> \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::subregister () const\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
 
+.PP
+TAKE A SUBREGISTER OF A REGISTER OF DIGITS\&. 
+.PP
+Definición en la línea \fB1095\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB104\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB106\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB110\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB108\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval \fBSIG_UINT_T\fP \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::sui_Bp1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB112\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> constexpr void \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::swap (\fBbase_t\fP & other)\fC [inline]\fP, \fC [constexpr]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB302\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static std::string \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::to_type_template_string_id ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB1533\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_0 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB96\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB98\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_B ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB102\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
+.SS "template<uint_type_for_radix_c UINT_T, UINT_T B, \fBsize_t\fP L> static consteval UINT_T \fBNumRepr::reg_digs_t\fP< UINT_T, B, L >::ui_Bm1 ()\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+Definición en la línea \fB100\fP del archivo \fBreg_digs_t\&.hpp\fP\&.
 
 .SH "Autor"
 .PP 
