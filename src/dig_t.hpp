@@ -1489,7 +1489,7 @@ consteval dig_t<UINT_T, B> dig_max() noexcept {
 	return dig_t<UINT_T, B>(B-1u);
 }
 
-///< DEFINCION DE template<uint128_t Radix> digito_t{};
+///< DEFINCION DE template<uint128_t Radix> digit_t{};
 template<uint128_t B>
 using digit_t = dig_t<
 		type_traits::TypeFromIntNumber_t<static_cast<uint128_t>(B)>,

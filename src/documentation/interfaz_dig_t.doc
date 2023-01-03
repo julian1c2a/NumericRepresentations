@@ -210,7 +210,7 @@ public:
 	///	TODO : CREAR UN LITERAL DESDE EL QUE CREAR UN DIGITO
 };
 
-///< DEFINCION DE template<uint128_t Radix> digito_t{};
+///< DEFINCION DE template<uint128_t Radix> digit_t{};
 template<uint128_t B>
 using digit_t =
 	dig_t<

@@ -1176,8 +1176,6 @@ public :
 		return (cp_cthis());
 	}
 
-	/// TODO TO DO VOY POR AQUI CON EL TEMA DE LOS CTHIS
-
 	constexpr inline
 	const reg_digs_t & operator <<= (size_t n) noexcept {
 		reg_digs_t & cthis{*this};
@@ -1868,72 +1866,6 @@ reg_digs_t<UINT_T,B,N> operator & (
 
 template<typename UINT_T,UINT_T B,size_t N>
 constexpr inline
-const reg_digs_t<UINT_T,B,N> &
-m_incr_by_digit(reg_digs_t<UINT_T,B,N>& larg,dig_t<UINT_T,B> dig) noexcept {
-	using dig_t			 = dig_t<UINT_T,B>;
-	/// SUMA 2 DIGITOS
-	/// CARRY C==0
-	/// L + D <  B-1 					=>  L.C_Bm1 > D											:
-	///														C:=0 S:=L+D
-	/// L == B-1	&& D == B-1	=>	L+D == 2B-2  == (B-1)-1					:
-	///														C:=1 S:=(B-1)-1
-	/// L == B-1	&& D != B-1	=>	L+D == B-1+D == B + (D-1)				:
-	///														C:=1 S:=D-1
-	/// D == B-1	&& L != B-1	=>	L+D == B-1+L == B + (L-1)				:
-	///														C:=1 S:=L-1
-	/// L + D >= B-1 					=>	(L.C_Bm1+1-D).C_B =mod_B= L+D		:
-	///														C:=1 S:=(L.C_Bm1-D).C_Bm1
-	/// CARRY C==1
-	/// L + D + 1 <  B-1 	=>  L.C_Bm1 > D	+ 1											:
-	///												C:=0 S:=L+D+1
-	/// L == B-1	&& D == B-1	=>	L+D+1 == 2B-1  == B+(B-1)				:
-	///														C:=1 S:=B-1
-	/// L == B-1	&& D != B-1	=>	L+D+1 == B-1+D+1 == B + D				:
-	///														C:=1 S:=D
-	/// D == B-1	&& L != B-1	=>	L+D+1 == B-1+L+1 == B + L				:
-	///														C:=1 S:=L
-	/// L + D + 1 >= B-1 			=>	((L.C_B-D)+1).C_B =mod_B= L+D		:
-	///														C:=1 S:=(L.C_Bm1+1-D).C_Bm1+1
-	dig_t carry{dig};
-	for(size_t i=0 ; i < N ; ++i) {
-		if (carry.is_not_0()) {
-			if (larg[i].C_Bm1() > dig) {
-				/// (r[i].C_Bm1()-d).C_B() =mod B= r[i]+d+1
-				larg[i].mC_Bm1();
-				larg[i]=larg[i]()-dig();
-				larg[i].mC_Bm1();
-				larg[i]=larg[i]()+1;
-				carry.set_1();
-			}
-			else {
-				larg[i] = larg[i]()+dig();
-				larg[i] = larg[i]()+1;
-				carry.set_0();
-				break;
-			}
-		}
-		else {
-			if (larg[i].C_Bm1() >= dig) {
-				/// (r[i].C_B()-d).C_B() =mod B= r[i]+d
-				larg[i].mC_Bm1();
-				larg[i] = larg[i]()+1;
-				larg[i] = larg[i]() - dig();
-				larg[i].mC_Bm1();
-				larg[i] = larg[i]()+1;
-				carry.set_1();
-			} else {
-				larg[i] = larg[i]()-dig();
-				carry.set_0();
-				break;
-			}
-
-		}
-	}
-	return (larg);
-}
-
-template<typename UINT_T,UINT_T B,size_t N>
-constexpr inline
 const reg_digs_t<UINT_T,B,N> & m_incr(reg_digs_t<UINT_T,B,N>& rarg) noexcept {
 	using dig_t			 = dig_t<UINT_T,B>;
 
@@ -1987,7 +1919,7 @@ const reg_digs_t<UINT_T,B,N> & m_decr(reg_digs_t<UINT_T,B,N>& rarg) noexcept {
 template<typename UINT_T,UINT_T B>
 constexpr inline
 dig_t<UINT_T,B>
-m_sum_digs_carryin1(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right) noexcept {
+m_sum_digs_carryin_1(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right) noexcept {
 	/// SUMA 2 DIGITOS
 	/// CARRY C==1
 	/// L + D + 1 <  B-1 			=>  L.C_Bm1 > D	+ 1									:
@@ -2029,6 +1961,56 @@ m_sum_digs_carryin1(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right) noexcept {
 	}
 }
 
+template<typename UINT_T,UINT_T B,size_t N>
+constexpr inline
+const reg_digs_t<UINT_T,B,N> &
+m_incr_by_digit(reg_digs_t<UINT_T,B,N>& larg,dig_t<UINT_T,B> dig) noexcept {
+	using dig_t			 = dig_t<UINT_T,B>;
+
+	dig_t carry{0};
+	for(size_t i=0 ; i < N ; ++i) {
+		if (carry.is_not_0()) {
+			carry = m_sum_digs_carryin_0(larg[i],dig);
+		}
+		else {
+			carry = m_sum_digs_carryin_1(larg[i],dig);
+		}
+	}
+	return (larg);
+}
+
+
+template<typename UINT_T,UINT_T B>
+constexpr inline
+dig_t<UINT_T,B>
+m_subtract_digs_borrowin_0(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right)
+noexcept {
+	/// RESTA 2 DIGITOS
+	/// BORROW b==0
+	/// L  > D				:
+	///		b:=0 S:=L-D
+	/// L <= D				:
+	///		b:=1 S:=L+D.C_Bm1+1
+
+	using 		dig_t				= dig_t<UINT_T,B>;
+	constexpr dig_t d_0 	= dig_t::dig_0();
+	constexpr dig_t d_1 	= dig_t::dig_1();
+
+	const dig_t right_CBm1{right.C_Bm1()};
+	/// L  > D				:
+	/// 	b:=0 S:=L-D
+	if (left >= right) {
+		left = dig_t(left()-right());
+		return d_0;
+	}
+	/// L <= D				:
+	///		b:=1 S:=L+D.C_Bm1+1
+	else {
+		left = dig_t(left()+right_CBm1()+1);
+		return d_1;
+	}
+}
+
 template<typename UINT_T,UINT_T B>
 constexpr inline
 dig_t<UINT_T,B>
@@ -2044,41 +2026,10 @@ noexcept {
 			///															b:=0 S:=L-D-1
 			/// L == D + 1 							=>  L.C_Bm1 + 1 == D.C_Bm1				:
 			///															b:=1 S:=0
-				/// L == 0								=>	D != 0 && L == 0
-					///	D != 0	:
-					///													b:=1 S:= D.C_Bm1
-					/// D == 0 	:
-					///													b:=1 S:= Bm1
-				/// L == 1
-					///	D == 0	:
-					///													b:=0 S:= 0
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
-				/// L  > 1
-					///	D == 0	:
-					///													b:=0 S:= L-1
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
 			/// L < D + 1 							=>  L-D-1 == L+D.C_Bm1		:
 			///															b:=1 S:=L+D.C_Bm1
-				/// L == 0								=>	D != 0 && L == 0
-					///	D != 0	:
-					///													b:=1 S:= D.C_Bm1
-					/// D == 0 	:
-					///													b:=1 S:= Bm1
-				/// L == 1
-					///	D == 0	:
-					///													b:=0 S:= 0
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
-				/// L  > 1
-					///	D == 0	:
-					///													b:=0 S:= L-1
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
 		/// D == B-1 :
 		///																b:=1 S:=L
-
 
 	using 		dig_t				= dig_t<UINT_T,B>;
 	constexpr dig_t d_0 	= dig_t::dig_0();
@@ -2087,131 +2038,69 @@ noexcept {
 
 	const dig_t left_CBm1{left.C_Bm1()};
 	const dig_t right_CBm1{right.C_Bm1()};
-	const bool left_is_not_Bm1{left.is_not_Bm1()};
-	const bool right_is_not_Bm1{right.is_not_Bm1()};
-	const bool left_is_0{left.is_0()};
-	const bool right_is_0{right.is_0()};
-	const bool left_is_1{left.is_1()};
-	const bool right_is_1{right.is_1()};
-	if (left != right) {
-		if(right.is_not_Bm1()) {
-			if (left() > right() + 1){
-				left = left()-right()-1;
-				return d_0;
-			}
-			else if (left() == right() + 1) {
-				left = d_0;
-				return d_1;
-			}
-			else {
-				left += right_CBm1;
-				return d_1;
-			}
-		}
-		else {
-			return d_1;
-		}
-	}
-	else {
-		left = d_Bm1;
-		return d_1;
-	}
-}
 
-/// TODO 36-00-03-01-2023
-template<typename UINT_T,UINT_T B>
-constexpr inline
-dig_t<UINT_T,B>
-m_subtract_digs_borrowin_0(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right)
-noexcept {
-	/// RESTA 2 DIGITOS
-	/// BORROW b==0
-	/// L == D									=>	L == D												:
-	///                             b:=0 S:=0
 	/// L != D
-		/// D != B-1
-			/// L >  D + 1 							=>  L.C_Bm1 + 1 <  D.C_Bm1				:
-			///															b:=0 S:=L-D-1
-			/// L == D + 1 							=>  L.C_Bm1 + 1 == D.C_Bm1				:
-			///															b:=1 S:=0
-				/// L == 0								=>	D != 0 && L == 0
-					///	D != 0	:
-					///													b:=1 S:= D.C_Bm1
-					/// D == 0 	:
-					///													b:=1 S:= Bm1
-				/// L == 1
-					///	D == 0	:
-					///													b:=0 S:= 0
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
-				/// L  > 1
-					///	D == 0	:
-					///													b:=0 S:= L-1
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
-			/// L < D + 1 							=>  L-D-1 == L+D.C_Bm1		:
-			///															b:=1 S:=L+D.C_Bm1
-				/// L == 0								=>	D != 0 && L == 0
-					///	D != 0	:
-					///													b:=1 S:= D.C_Bm1
-					/// D == 0 	:
-					///													b:=1 S:= Bm1
-				/// L == 1
-					///	D == 0	:
-					///													b:=0 S:= 0
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
-				/// L  > 1
-					///	D == 0	:
-					///													b:=0 S:= L-1
-					/// D != 0 	:
-					///													b:=1 S:= D.C_Bm1+1
-		/// D == B-1 :
-		///																b:=1 S:=L
-
-
-	using 		dig_t				= dig_t<UINT_T,B>;
-	constexpr dig_t d_0 	= dig_t::dig_0();
-	constexpr dig_t d_1 	= dig_t::dig_1();
-	constexpr dig_t d_Bm1 = dig_t::dig_Bm1();
-
-	const dig_t left_CBm1{left.C_Bm1()};
-	const dig_t right_CBm1{right.C_Bm1()};
-	const bool left_is_not_Bm1{left.is_not_Bm1()};
-	const bool right_is_not_Bm1{right.is_not_Bm1()};
-	const bool left_is_0{left.is_0()};
-	const bool right_is_0{right.is_0()};
-	const bool left_is_1{left.is_1()};
-	const bool right_is_1{right.is_1()};
 	if (left != right) {
+		/// D != B-1
 		if(right.is_not_Bm1()) {
+			/// L >  D + 1 		:
+			///		b:=0 S:=L-D-1
 			if (left() > right() + 1){
 				left = left()-right()-1;
 				return d_0;
 			}
+			/// L == D + 1 		:
+			///		b:=1 S:=0
 			else if (left() == right() + 1) {
 				left = d_0;
 				return d_1;
 			}
+			/// L < D + 1 		:
+			///		b:=1 S:=L+D.C_Bm1
 			else {
 				left += right_CBm1;
 				return d_1;
 			}
 		}
+		/// D == B-1 :
+		///		b:=1 S:=L
 		else {
 			return d_1;
 		}
 	}
+	/// L == D	:
+	/// 	b:=1 S:=B-1
 	else {
 		left = d_Bm1;
 		return d_1;
 	}
 }
 
+template<typename UINT_T, UINT_T B, size_t L>
+constexpr inline
+dig_t<UINT_T,B> m_decr_by_digit(reg_digs_t<UINT_T, B, L>& left,dig_t<UINT_T,B> dig) noexcept {
+	using dig_t = dig_t<UINT_T,B>;
+	constexpr dig_t d_0 = dig_t::dig_0();
+	constexpr dig_t d_1 = dig_t::dig_1();
+
+	dig_t borrow{d_0};
+	for (size_t ix{0} ; ix < L ; ++ix) {
+		if (borrow.is_0()) {
+			borrow = m_subtract_digs_borrowin_0(left[ix],dig);
+		}
+		else {
+			borrow = m_subtract_digs_borrowin_1(left[ix],dig);
+		}
+		if (borrow.is_0())
+			return d_0;
+	}
+	return borrow;
+}
+
 template<typename UINT_T,UINT_T B>
 constexpr inline
 dig_t<UINT_T,B>
-m_sum_digs_carryin0(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right) noexcept {
+m_sum_digs_carryin_0(dig_t<UINT_T,B>& left,dig_t<UINT_T,B> right) noexcept {
 	/// SUMA 2 DIGITOS
 	/// CARRY C==0
 	/// L + D <  B-1 					=>  L.C_Bm1 > D											:
@@ -2294,14 +2183,38 @@ template<typename UINT_T,UINT_T B,size_t N>
 	for(size_t i=0 ; i < N ; ++i) {
 		const dig_t left_CBm1{larg[i].C_Bm1()};
 		if (carry.is_0()) {
-			carry = m_sum_digs_carryin0(larg[i],rarg[i]);
+			carry = m_sum_digs_carryin_0(larg[i],rarg[i]);
 		}
 		else {
-			carry = m_sum_digs_carryin1(larg[i],rarg[i]);
+			carry = m_sum_digs_carryin_1(larg[i],rarg[i]);
 		}
 	}
 	return carry;
 }
+
+template<typename UINT_T,UINT_T B,size_t N>
+	constexpr inline
+	dig_t<UINT_T,B>
+	m_subtract(
+		reg_digs_t<UINT_T,B,N>& larg,
+		const reg_digs_t<UINT_T,B,N>& rarg
+	) noexcept
+{
+	using dig_t			 		= dig_t<UINT_T,B>;
+	constexpr dig_t d_0 = dig_t::dig_0();
+
+	dig_t borrow{d_0};
+	for(size_t i=0 ; i < N ; ++i) {
+		if (borrow.is_0()) {
+			borrow = m_subtract_digs_borrowin_0(larg[i],rarg[i]);
+		}
+		else {
+			borrow = m_subtract_digs_borrowin_1(larg[i],rarg[i]);
+		}
+	}
+	return borrow;
+}
+
 
 /// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
 /// BEGIN
