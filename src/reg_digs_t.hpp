@@ -405,24 +405,24 @@ private:
 	template<size_t N>
 	constexpr inline
 	const base_t & copy_arg_N(const base_N_t<N> & arg) noexcept {
-		base_t& cthis{*(static_cast<base_t*>(this))};
+		base_t& cthis{r_base_cthis()};
 		///< Z < W or Z == W
 		constexpr auto Z{std::min(N,L)};
 		constexpr auto W{std::max(N,L)};
 		if constexpr (Z==L) {
 			for(size_t ix{0} ; ix < Z ; ++ix)
-				cthis[ix]=arg[ix];
+				r_cthis_at(ix)=arg[ix];
 		}
 		else if constexpr (W==L) {
 			for(size_t ix{0} ; ix < Z ; ++ix)
-				cthis[ix]=arg[ix];
+				r_cthis_at(ix)=arg[ix];
 			for(size_t ix{Z} ; ix < W ; ++ix)
-				cthis[ix]=dig_0();
+				r_cthis_at(ix)=dig_0();
 		}
 		else {
-			cthis=arg;
+			r_cthis()=arg;
 		}
-		return (cthis);
+		return (cr_cthis());
 	}
 
 	/// <summary>
@@ -435,22 +435,22 @@ private:
 	template<size_t N>
 	constexpr inline
 	void move_arg_N(base_N_t<N>&& arg) noexcept {
-		base_t& cthis{static_cast<base_t*>(this)};
+		base_t& cthis{r_base_cthis()};
 		///< Z < W or Z == W
 		constexpr auto Z{std::min(N,L)};
 		constexpr auto W{std::max(N,L)};
 		if constexpr (Z==L) {
 			for(size_t ix{0} ; ix < Z ; ++ix)
-				cthis[ix]=std::move(arg[ix]);
+				r_cthis_at(ix)=std::move(arg[ix]);
 		}
 		else if constexpr (W==L) {
 			for(size_t ix{0} ; ix < Z ; ++ix)
-				cthis[ix]=std::move(arg[ix]);
+				r_cthis_at(ix)=std::move(arg[ix]);
 			for(size_t ix{Z} ; ix < W ; ++ix)
-				cthis[ix]=std::move(dig_0());
+				r_cthis_at(ix)=std::move(dig_0());
 		}
 		else {
-			cthis=std::move(arg);
+			r_cthis()=std::move(arg);
 		}
 	}
 
@@ -471,8 +471,8 @@ public:
 	/// </summary>
 	template<size_t N>
 	constexpr inline
-	reg_digs_t(const base_N_t<N> && arg)
-	noexcept : base_t{move_arg_N<N>(std::move(arg))} {}
+	reg_digs_t(base_N_t<N>&& arg)
+	noexcept : base_t{std::move(move_arg_N<N>(std::move(arg)))} {}
 
 public :
 
@@ -560,9 +560,7 @@ public:
 	template<type_traits::integral_c ... Ints_type>
 		requires ((sizeof...(Ints_type))==L)
 	constexpr inline reg_digs_t(Ints_type ... dig_pow_i) noexcept :
-		base_t(normalize<Ints_type...>((dig_t(dig_pow_i))()...)) {
-			this->reverse();
-		}
+		base_t( (normalize<Ints_type...>((dig_t(dig_pow_i))()...)).reverse() ) {}
 
 	///	<summary>
 	/// Sobrecarga del operador copia
@@ -656,16 +654,22 @@ public:
 		for(size_t k{0} ; k < L ; ++k) {
 			retInt += cthis(k)*BasePowIx;
 			BasePowIx *= B;
-			if(	(k+1 < L)
+			if(
+					(k+1 < L)
 						&&
-					(maxbase<Int_Type>() < (retInt+((cthis(k+1)*BasePowIx)))
-				))
-			{	return retInt; }
+					(
+						maxbase<Int_Type>() < (retInt+((cthis(k+1)*BasePowIx)))
+					)
+				)
+					{
+						return retInt;
+					}
 		}
 		return retInt;
 	}
 
 private :
+	/// for compatibility with std::array
 	/// <summary=" sobrecarga de las funciones miembro : ">
 	/// constexpr dig_t* data() noexcept;
 	/// </summary>
@@ -675,6 +679,7 @@ private :
 	}
 
 public :
+	/// for compatibility with std::array
 	/// <summary=" sobrecarga de las funciones miembro : ">
 	/// constexpr const dig_t* data() const noexcept;
 	/// </summary>
@@ -941,6 +946,8 @@ public :
 	inline constexpr
 	bool is_any_B_pow() const noexcept
 	{
+		/// r_ for reference (non const)
+		/// cr_ for const reference
 		const auto pred_not_0 = [](dig_t d){return (d.is_not_0());};
 		const auto it{std::find_if(cr_cthis().cbegin(),cr_cthis().cend(),pred_not_0)};
 		if (it != cr_cthis().cend()) {
@@ -1429,7 +1436,7 @@ public :
 		const reg_digs_t & cthis{*this};
 		constexpr size_t P{std::min(L,M)};
 		constexpr size_t Q{std::max(L,M)};
-		constexpr bool L_gt_M{L>M};
+		//constexpr bool L_gt_M{L>M};
 
 		if constexpr (L != M) {
 			for(size_t ix{P} ; ix < Q ; ++ix) {
@@ -2202,6 +2209,32 @@ template<typename UINT_T,UINT_T B,size_t N>
 
 template<typename UINT_T,UINT_T B,size_t N>
 	constexpr inline
+	std::tuple<reg_digs_t<UINT_T,B,N>,dig_t<UINT_T,B>>
+	sum(
+		const reg_digs_t<UINT_T,B,N>& larg,
+		const reg_digs_t<UINT_T,B,N>& rarg
+	) noexcept
+{
+	using dig_t			 		= dig_t<UINT_T,B>;
+	using reg_digs_t		= reg_digs_t<UINT_T,B,N>;
+	constexpr dig_t d_0 = dig_t::dig_0();
+
+	reg_digs_t ret{larg};
+	dig_t carry{d_0};
+	for(size_t i=0 ; i < N ; ++i) {
+		const dig_t left_CBm1{ret[i].C_Bm1()};
+		if (carry.is_0()) {
+			carry = m_sum_digs_carryin_0(ret[i],rarg[i]);
+		}
+		else {
+			carry = m_sum_digs_carryin_1(ret[i],rarg[i]);
+		}
+	}
+	return std::tuple{ret,carry};
+}
+
+template<typename UINT_T,UINT_T B,size_t N>
+	constexpr inline
 	dig_t<UINT_T,B>
 	m_subtract(
 		reg_digs_t<UINT_T,B,N>& larg,
@@ -2314,6 +2347,32 @@ dig_t<UINT_T,B> m_mult(dig_t<UINT_T,B>&left,const dig_t<UINT_T,B>&right) noexcep
 
 template<typename UINT_T,UINT_T B>
 constexpr inline
+std::tuple<dig_t<UINT_T,B>,dig_t<UINT_T,B>> mult(dig_t<UINT_T,B> left, dig_t<UINT_T,B> right) noexcept {
+	using namespace type_traits;
+	using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+	constexpr UINT_T LIMIT{sqrt_max<UINT_T>()};
+	constexpr bool BASE_IS_BOTTOM_LIMIT{B < LIMIT};
+	using ELEC_UINT_T =
+		std::conditional_t<
+			BASE_IS_BOTTOM_LIMIT, /// CONDITION
+				UINT_T,             /// IF CONDITION==TRUE THEN
+				SIG_UINT_T          /// ELSE THEN
+		>;
+	constexpr ELEC_UINT_T Base{B};
+	const ELEC_UINT_T left_opndo{left()};
+	const ELEC_UINT_T right_opndo{right()};
+	/// this narrowing of integer types is correct
+	const ELEC_UINT_T mult{left_opndo * right_opndo};
+	/// this narrowing of integer types is correct
+	const UINT_T carry{mult/Base};
+	/// this narrowing of integer types is correct
+	const UINT_T result{mult%Base};
+
+	return std::make_tuple(dig_t{result},dig_t{carry});
+}
+
+template<typename UINT_T,UINT_T B>
+constexpr inline
 dig_t<UINT_T,B> m_mult_with_carryin_dig(
 				dig_t<UINT_T,B>&left,
 	const dig_t<UINT_T,B>&right,
@@ -2344,6 +2403,38 @@ dig_t<UINT_T,B> m_mult_with_carryin_dig(
 	return carryout;
 }
 
+template<typename UINT_T,UINT_T B>
+constexpr inline
+std::tuple<dig_t<UINT_T,B>,dig_t<UINT_T,B>> mult_with_carryin_dig(
+	dig_t<UINT_T,B> left,
+	dig_t<UINT_T,B> right,
+	dig_t<UINT_T,B> carryin
+) noexcept {
+	using namespace type_traits;
+	using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+	constexpr UINT_T LIMIT{sqrt_max<UINT_T>()};
+	constexpr bool BASE_IS_BOTTOM_LIMIT{B < LIMIT};
+	using ELEC_UINT_T =
+		std::conditional_t<
+			BASE_IS_BOTTOM_LIMIT, /// CONDITION
+				UINT_T,             /// IF CONDITION==TRUE THEN
+				SIG_UINT_T          /// ELSE THEN
+		>;
+	constexpr ELEC_UINT_T Base{B};
+	const ELEC_UINT_T left_opndo{left()};
+	const ELEC_UINT_T right_opndo{right()};
+	const ELEC_UINT_T carryin_opndo{carryin()};
+	/// this narrowing of integer types is correct
+	const ELEC_UINT_T mult{static_cast<ELEC_UINT_T>(left_opndo * right_opndo)};
+	const ELEC_UINT_T mult_w_carry{static_cast<ELEC_UINT_T>(mult+carryin_opndo)};
+	/// this narrowing of integer types is correct
+	const UINT_T carryout{static_cast<UINT_T>(mult_w_carry/Base)};
+	/// this narrowing of integer types is correct
+	const UINT_T result{static_cast<UINT_T>(mult_w_carry%Base)};
+
+	return std::make_tuple(dig_t<UINT_T,B>(result),dig_t<UINT_T,B>(carryout));
+}
+
 template<typename UINT_T,UINT_T B,size_t N>
 constexpr inline
 dig_t<UINT_T,B> m_mult(reg_digs_t<UINT_T,B,N>&left,const dig_t<UINT_T,B>&right) noexcept {
@@ -2360,24 +2451,65 @@ dig_t<UINT_T,B> m_mult(reg_digs_t<UINT_T,B,N>&left,const dig_t<UINT_T,B>&right) 
 
 template<typename UINT_T,UINT_T B,size_t N>
 constexpr inline
+std::tuple<reg_digs_t<UINT_T,B,N>,dig_t<UINT_T,B>>
+mult(const reg_digs_t<UINT_T,B,N>&left,const dig_t<UINT_T,B>&right) noexcept {
+	using dig_t 			= dig_t<UINT_T,B>;
+	using reg_digs_t	= reg_digs_t<UINT_T,B,N>;
+	using namespace type_traits;
+	std::tuple<reg_digs_t,dig_t> ret{};
+
+	dig_t old_carry{0};
+	for(size_t index=0 ; index < N ; ++index) {
+		const auto carry = mult_with_carryin_dig(left[index],right,old_carry);
+		old_carry = std::get<1>(carry);
+		std::get<0>(ret)[index] = std::get<0>(carry);
+	}
+	std::get<1>(ret) = old_carry;
+	return ret;
+}
+
+template<typename UINT_T,UINT_T B,size_t N>
+constexpr inline
 reg_digs_t<UINT_T,B,N> m_mult(
 					reg_digs_t<UINT_T,B,N>&left,
 		const reg_digs_t<UINT_T,B,N>&right
 	) noexcept {
 	using reg2_digs_t 	= reg_digs_t<UINT_T,B,2*N>;
-	using       dig_t 	=      dig_t<UINT_T,B>;
+	//using       dig_t 	=      dig_t<UINT_T,B>;
 
 	reg2_digs_t right_sup{right};
 	reg2_digs_t accumulator{};
 	for(size_t index_x=0 ; index_x < N ; ++index_x) {
 		reg2_digs_t cp_right_sup{right_sup};
-		const dig_t carrydig = m_mult(cp_right_sup,left[index_x]);
-		cp_right_sup[N+index_x] = carrydig;
+		m_mult(cp_right_sup,left[index_x]);
 		m_sum(accumulator,cp_right_sup);
 		right_sup <<= 1;
 	}
 	left = accumulator.template subregister<0,N>();
 	return (accumulator.template subregister<N,2*N>());
+}
+
+template<typename UINT_T,UINT_T B,size_t N>
+constexpr inline
+std::tuple<reg_digs_t<UINT_T,B,N>,reg_digs_t<UINT_T,B,N>> mult(
+		const	reg_digs_t<UINT_T,B,N>&left,
+		const reg_digs_t<UINT_T,B,N>&right
+	) noexcept {
+	using reg2_digs_t 	= reg_digs_t<UINT_T,B,2*N>;
+	using reg_digs_t    = reg_digs_t<UINT_T,B,N>;
+	std::tuple<reg_digs_t,reg_digs_t> ret{};
+
+	reg2_digs_t right_sup{right};
+	reg2_digs_t accumulator{};
+	for(size_t index_x=0 ; index_x < N ; ++index_x) {
+		reg2_digs_t cp_right_sup{right_sup};
+		m_mult(cp_right_sup,left[index_x]);
+		m_sum(accumulator,cp_right_sup);
+		right_sup <<= 1;
+	}
+	std::get<0>(ret) = accumulator.template subregister<0,N>();
+	std::get<1>(ret) = accumulator.template subregister<N,2*N>();
+	return ret;
 }
 
 ///< FUNCION DE RECURSION PARA LA DIVISION
@@ -2400,7 +2532,7 @@ aprox_coc_rem(
 
 	const size_t dsor_msb{static_cast<size_t>(dsor.index_of_MSDig())};
 	const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-	const SIG_UINT_T dsor_uint {dsor[dsor_msb]()};
+	const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor[dsor_msb]())};
 
 	SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
 	SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
@@ -2411,7 +2543,7 @@ aprox_coc_rem(
 		//const SIG_UINT_T dsor_uint {dsor[0]()};
 		//SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
 		//SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
-		const SIG_UINT_T rem_aprox {SIG_UINT_T(dsor)*coc_calculado+rem_calculado};
+		//const SIG_UINT_T rem_aprox(SIG_UINT_T(dsor)*coc_calculado+rem_calculado);
 
 		ret[1] = rem_calculado;
 		ret[0] = coc_calculado;
@@ -2424,24 +2556,26 @@ aprox_coc_rem(
 		uint64_t ix{0};
 		for( ; ix < N ; ++ix) {
 			dsor_red = aprox_units_divB<UINT_T,B,N>(dsor_red);
-			if (dsor_red.index_of_MSDig() == 1)
+			if (dsor_red.index_of_MSDig() <= 1)
 				break;
 		}
 		reg_digs_t<UINT_T,B,N> rem_red{rem};
 
-		for(int64_t iy{ix} ; iy > -1 ; --iy) {
+		for(int64_t iy(static_cast<int64_t>(ix)) ; iy > -1 ; --iy) {
 			rem_red = aprox_units_divB<UINT_T,B,N>(rem_red);
 		}
 
 		const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
-		const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
+		//const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
 		const dig_t<UINT_T,B> coc_calculado_dig=coc_calculado;
 		const dig_t<UINT_T,B> rem_calculado_dig=rem_calculado;
-		const reg_digs_t<UINT_T,B,N> rem_aprox {
-			dsor*coc_calculado_dig+rem_calculado_dig
-		};
 
-		if ((rem_aprox <= rem)&&(rem_aprox + dsor > rem)) {
+		const auto mult_result_complex{mult(dsor,coc_calculado_dig)};
+		auto mult_result{std::get<0>(mult_result_complex)};
+		const auto mult_carry{m_incr_by_digit(mult_result,rem_calculado_dig)};
+		const reg_digs_t<UINT_T,B,N> rem_aprox{mult_result};
+
+		if ((rem_aprox <= rem)&&(std::get<0>(sum(rem_aprox,dsor)) > rem)) {
 			/// CORRECTO EN COC
 			ret[1] = rem_calculado;
 			ret[0] = coc_calculado;
@@ -2480,11 +2614,13 @@ aprox_coc_rem(
 { /// SUPONEMOS QUE REM TIENE TAMANO 1 o 2
 	/// DSOR YA REDUCIDO TIENE TAMANO 1
 	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+	using dig_t = dig_t<UINT_T,B>;
+	using reg_digs_t = reg_digs_t<UINT_T,B,N>;
 	std::array<SIG_UINT_T,2> ret;
 	const size_t dsor_msb{static_cast<size_t>(dsor.index_of_MSDig())};
 	if (dsor_msb==0) {
 		/// SIZE(DIVISOR) == 1 DIGITO !=0 !=1
-		const SIG_UINT_T rem_aprox {SIG_UINT_T(dsor)*coc_calculado+rem_calculado};
+		const SIG_UINT_T rem_aprox(SIG_UINT_T(dsor)*coc_calculado+rem_calculado);
 		const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
 		const SIG_UINT_T dsor_uint {dsor[0]()};
 		if ((rem_aprox <= rem_uint)&&(rem_aprox + dsor_uint > rem_uint)) {
@@ -2510,23 +2646,25 @@ aprox_coc_rem(
 	else {
 		/// SIZE(DIVISOR) >= 2
 		/// 2545/278 o mayores
-		reg_digs_t<UINT_T,B,N> dsor_red{dsor};
+		reg_digs_t dsor_red{dsor};
 		int32_t ix{0};
-		for( ; ix < N ; ++ix) {
+		for( ; ix < static_cast<int32_t>(N) ; ++ix) {
 			dsor_red = aprox_units_divB<UINT_T,B,N>(dsor_red);
-			if (dsor_red.template index_of_MSDig<UINT_T,B,N>() == 1)
+			if (dsor_red.index_of_MSDig() == 1)
 				break;
 		}
-		reg_digs_t<UINT_T,B,N> rem_red{rem};
+		reg_digs_t rem_red{rem};
 		for( ; ix > -1 ; --ix) {
 			rem_red = aprox_units_divB<UINT_T,B,N>(rem_red);
 		}
 
 		const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
-		const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
-		const reg_digs_t<UINT_T,B,N> rem_aprox {dsor*dig_t{coc_calculado}+dig_t{rem_calculado}};
+		//const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
+		auto mult_result(mult(dsor,dig_t(coc_calculado)));
+		m_incr_by_digit(std::get<0>(mult_result),dig_t(rem_calculado));
+		const reg_digs_t rem_aprox{std::get<0>(mult_result)};
 
-		if ((rem_aprox <= rem)&&(rem_aprox + dsor > rem)) {
+		if ((rem_aprox <= rem)&&(std::get<0>(sum(dsor,rem_aprox)) > rem)) {
 			/// CORRECTO EN COC
 			ret[1] = rem_calculado;
 			ret[0] = coc_calculado;
