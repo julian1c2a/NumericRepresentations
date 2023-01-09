@@ -31,6 +31,205 @@ conversion_to_int(NumRepr::register_of_digits_t<B,L> & arg) noexcept {
 
 using test_result_t = std::tuple<bool,std::size_t,std::size_t>;
 
+template<NumRepr::ullint_t Base,size_t Long>
+test_result_t test_comparacion_igual_que_entre_dos_objetos_tipo_reg_digs() {
+	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
+	namespace us = utilities::special;
+	namespace NR = NumRepr;
+	bool todo_correcto = true;
+
+	constexpr NR::uint128_t B2L{us::Base_pow_to_Size<Base,Long>()};
+
+	std::size_t correctos{0};
+	std::size_t errores{0};
+
+	reg_digs_t rd_x{0};
+	for(std::uint64_t ix{0} ; ix < B2L ; ++ix) {
+		reg_digs_t rd_y{0};
+		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
+			const bool comp = rd_x == rd_y;
+			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) == conversion_to_int<Base,Long>(rd_y));
+			const bool bien {comp==comp_ref};
+			if (!bien) {
+				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
+				++errores;
+			} else {
+				++correctos;
+			}
+			todo_correcto = todo_correcto && bien;
+			m_incr(rd_y);
+		}
+		m_incr(rd_x);
+	}
+	return test_result_t{todo_correcto,correctos,errores};
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
+test_result_t test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs() {
+	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
+	namespace us = utilities::special;
+	namespace NR = NumRepr;
+	bool todo_correcto = true;
+
+	constexpr NR::uint128_t B2L{us::Base_pow_to_Size<Base,Long>()};
+
+	std::size_t correctos{0};
+	std::size_t errores{0};
+
+	reg_digs_t rd_x{0};
+	for(std::uint64_t ix{0} ; ix < B2L ; ++ix) {
+		reg_digs_t rd_y{0};
+		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
+			const bool comp = rd_x != rd_y;
+			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) != conversion_to_int<Base,Long>(rd_y));
+			const bool bien {comp==comp_ref};
+			if (!bien) {
+				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
+				++errores;
+			} else {
+				++correctos;
+			}
+			todo_correcto = todo_correcto && bien;
+			m_incr(rd_y);
+		}
+		m_incr(rd_x);
+	}
+	return test_result_t{todo_correcto,correctos,errores};
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
+test_result_t test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs() {
+	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
+	namespace us = utilities::special;
+	namespace NR = NumRepr;
+	bool todo_correcto = true;
+
+	constexpr NR::uint128_t B2L{us::Base_pow_to_Size<Base,Long>()};
+
+	std::size_t correctos{0};
+	std::size_t errores{0};
+
+	reg_digs_t rd_x{0};
+	for(std::uint64_t ix{0} ; ix < B2L ; ++ix) {
+		reg_digs_t rd_y{0};
+		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
+			const bool comp = rd_x < rd_y;
+			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) < conversion_to_int<Base,Long>(rd_y));
+			const bool bien {comp==comp_ref};
+			if (!bien) {
+				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
+				++errores;
+			} else {
+				++correctos;
+			}
+			todo_correcto = todo_correcto && bien;
+			m_incr(rd_y);
+		}
+		m_incr(rd_x);
+	}
+	return test_result_t{todo_correcto,correctos,errores};
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
+test_result_t test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
+	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
+	namespace us = utilities::special;
+	namespace NR = NumRepr;
+	bool todo_correcto = true;
+
+	constexpr NR::uint128_t B2L{us::Base_pow_to_Size<Base,Long>()};
+
+	std::size_t correctos{0};
+	std::size_t errores{0};
+
+	reg_digs_t rd_x{0};
+	for(std::uint64_t ix{0} ; ix < B2L ; ++ix) {
+		reg_digs_t rd_y{0};
+		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
+			const bool comp = rd_x <= rd_y;
+			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) <= conversion_to_int<Base,Long>(rd_y));
+			const bool bien {comp==comp_ref};
+			if (!bien) {
+				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
+				++errores;
+			} else {
+				++correctos;
+			}
+			todo_correcto = todo_correcto && bien;
+			m_incr(rd_y);
+		}
+		m_incr(rd_x);
+	}
+	return test_result_t{todo_correcto,correctos,errores};
+}
+
+
+template<NumRepr::ullint_t Base,size_t Long>
+test_result_t test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs() {
+	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
+	namespace us = utilities::special;
+	namespace NR = NumRepr;
+	bool todo_correcto = true;
+
+	constexpr NR::uint128_t B2L{us::Base_pow_to_Size<Base,Long>()};
+
+	std::size_t correctos{0};
+	std::size_t errores{0};
+
+	reg_digs_t rd_x{0};
+	for(std::uint64_t ix{0} ; ix < B2L ; ++ix) {
+		reg_digs_t rd_y{0};
+		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
+			const bool comp = rd_x > rd_y;
+			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) > conversion_to_int<Base,Long>(rd_y));
+			const bool bien {comp==comp_ref};
+			if (!bien) {
+				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
+				++errores;
+			} else {
+				++correctos;
+			}
+			todo_correcto = todo_correcto && bien;
+			m_incr(rd_y);
+		}
+		m_incr(rd_x);
+	}
+	return test_result_t{todo_correcto,correctos,errores};
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
+test_result_t test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
+	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
+	namespace us = utilities::special;
+	namespace NR = NumRepr;
+	bool todo_correcto = true;
+
+	constexpr NR::uint128_t B2L{us::Base_pow_to_Size<Base,Long>()};
+
+	std::size_t correctos{0};
+	std::size_t errores{0};
+
+	reg_digs_t rd_x{0};
+	for(std::uint64_t ix{0} ; ix < B2L ; ++ix) {
+		reg_digs_t rd_y{0};
+		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
+			const bool comp = rd_x >= rd_y;
+			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) >= conversion_to_int<Base,Long>(rd_y));
+			const bool bien {comp==comp_ref};
+			if (!bien) {
+				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
+				++errores;
+			} else {
+				++correctos;
+			}
+			todo_correcto = todo_correcto && bien;
+			m_incr(rd_y);
+		}
+		m_incr(rd_x);
+	}
+	return test_result_t{todo_correcto,correctos,errores};
+}
+
 template<NumRepr::ullint_t Base>
 test_result_t test_dig_suma_dig_con_asignacion() {
 	using d_t  = NumRepr::digit_t<Base>;
@@ -562,6 +761,98 @@ void show_test_decr_with_assign()
 }
 
 template<NumRepr::ullint_t Base,size_t Long>
+void show_test_comp_equal_than_reg_reg()
+{
+	std::cout << std::boolalpha;
+	auto resultado{test_comparacion_igual_que_entre_dos_objetos_tipo_reg_digs<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la comparacion entre objetos \" == \" del tipo register_of_digits_t<"
+						<< int(Base) << "," << int(Long) << ">" << std::endl;
+	std::cout << "El vector \"correctos\" tiene " << correctos << " elementos " << std::endl;
+	std::cout << "El vector \"errores  \" tiene " << errores << " elementos " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
+void show_test_comp_notequal_than_reg_reg()
+{
+	std::cout << std::boolalpha;
+	auto resultado{test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la comparacion entre objetos \" != \" del tipo register_of_digits_t<"
+						<< int(Base) << "," << int(Long) << ">" << std::endl;
+	std::cout << "El vector \"correctos\" tiene " << correctos << " elementos " << std::endl;
+	std::cout << "El vector \"errores  \" tiene " << errores << " elementos " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+// test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs
+template<NumRepr::ullint_t Base,size_t Long>
+void show_test_comp_less_than_reg_reg()
+{
+	std::cout << std::boolalpha;
+	auto resultado{test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la comparacion entre objetos \" menor que \" del tipo register_of_digits_t<"
+						<< int(Base) << "," << int(Long) << ">" << std::endl;
+	std::cout << "El vector \"correctos\" tiene " << correctos << " elementos " << std::endl;
+	std::cout << "El vector \"errores  \" tiene " << errores << " elementos " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
+void show_test_comp_less_or_equal_than_reg_reg()
+{
+	std::cout << std::boolalpha;
+	auto resultado{test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la comparacion entre objetos \" menor o igual que \" del tipo register_of_digits_t<"
+						<< int(Base) << "," << int(Long) << ">" << std::endl;
+	std::cout << "El vector \"correctos\" tiene " << correctos << " elementos " << std::endl;
+	std::cout << "El vector \"errores  \" tiene " << errores << " elementos " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+// test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs
+template<NumRepr::ullint_t Base,size_t Long>
+void show_test_comp_greater_than_reg_reg()
+{
+	std::cout << std::boolalpha;
+	auto resultado{test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la comparacion \" mayor que \" entre objetos del tipo register_of_digits_t<"
+						<< int(Base) << "," << int(Long) << ">" << std::endl;
+	std::cout << "El vector \"correctos\" tiene " << correctos << " elementos " << std::endl;
+	std::cout << "El vector \"errores  \" tiene " << errores << " elementos " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
+void show_test_comp_greater_or_equal_than_reg_reg()
+{
+	std::cout << std::boolalpha;
+	auto resultado{test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la comparacion \" mayor o igual que \" entre objetos del tipo register_of_digits_t<"
+						<< int(Base) << "," << int(Long) << ">" << std::endl;
+	std::cout << "El vector \"correctos\" tiene " << correctos << " elementos " << std::endl;
+	std::cout << "El vector \"errores  \" tiene " << errores << " elementos " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+template<NumRepr::ullint_t Base,size_t Long>
 void show_test_sum_with_assign()
 {
 	std::cout << std::boolalpha;
@@ -705,43 +996,43 @@ int main() {
 	/// digit_t<B>
 	/// reg_digs_t<B,L>
 	using namespace NumRepr;
-	constexpr ullint_t B{10u};
+	//constexpr ullint_t B{10u};
 	//constexpr ullint_t Bm1{B-1};
-	constexpr size_t L{5};
-	using rd_t = register_of_digits_t<B,L>;
+	//constexpr size_t L{5};
+	//using rd_t = register_of_digits_t<B,L>;
 	//using d_t = digit_t<B>;
 	/// PRUEBAS SOBRE LA DIVISION
 	/// FUNCION AUXILIAR aprox_units_divB
-	rd_t opndo{1,3,5,2,6};
-	std::cout << opndo << std::endl;
-	std::cout << opndo.index_of_MSDig() << std::endl;
-	opndo >>= 1;
-	std::cout << opndo << std::endl;
-	std::cout << opndo.index_of_MSDig() << std::endl;
-	opndo >>= 1;
-	std::cout << opndo << std::endl;
-	std::cout << opndo.index_of_MSDig() << std::endl;
-	opndo >>= 1;
-	std::cout << opndo << std::endl;
-	std::cout << opndo.index_of_MSDig() << std::endl;
-	opndo >>= 1;
-	std::cout << opndo << std::endl;
-	std::cout << opndo.index_of_MSDig() << std::endl;
-	opndo >>= 1;
-	std::cout << opndo << std::endl;
-	std::cout << opndo.index_of_MSDig() << std::endl;
-	opndo = rd_t{6,6,7,9,5};
-	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
-	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
-	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
-	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
-	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
-	rd_t lopndo{9,9,8,2,5};
-	rd_t ropndo{0,0,5,8,7};
-	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,4>(lopndo) << std::endl;
-	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,3>(lopndo) << std::endl;
-	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,2>(lopndo) << std::endl;
-	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,1>(lopndo) << std::endl;
+//	rd_t opndo{1,3,5,2,6};
+//	std::cout << opndo << std::endl;
+//	std::cout << opndo.index_of_MSDig() << std::endl;
+//	opndo >>= 1;
+//	std::cout << opndo << std::endl;
+//	std::cout << opndo.index_of_MSDig() << std::endl;
+//	opndo >>= 1;
+//	std::cout << opndo << std::endl;
+//	std::cout << opndo.index_of_MSDig() << std::endl;
+//	opndo >>= 1;
+//	std::cout << opndo << std::endl;
+//	std::cout << opndo.index_of_MSDig() << std::endl;
+//	opndo >>= 1;
+//	std::cout << opndo << std::endl;
+//	std::cout << opndo.index_of_MSDig() << std::endl;
+//	opndo >>= 1;
+//	std::cout << opndo << std::endl;
+//	std::cout << opndo.index_of_MSDig() << std::endl;
+//	opndo = rd_t{6,6,7,9,5};
+//	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+//	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+//	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+//	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+//	std::cout << "aprox to units of " << opndo << " is " << (opndo=aprox_units_divB(opndo)) << std::endl;
+//	rd_t lopndo{9,9,8,2,5};
+//	rd_t ropndo{0,0,5,8,7};
+//	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,4>(lopndo) << std::endl;
+//	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,3>(lopndo) << std::endl;
+//	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,2>(lopndo) << std::endl;
+//	std::cout << " aprox of " << lopndo  <<  " is " << aprox_units_divB_n<uchint_t,10,5,1>(lopndo) << std::endl;
 
 	constexpr ullint_t B1{10u};
 	constexpr size_t L1{3};
@@ -807,13 +1098,36 @@ int main() {
 //	std::cout << rd_1_t{0,0,2} << " * " << right_1 << " = ";
 //	std::cout << carry << " : " << left_1 << std::endl;
 
-	rd_1_t left_1{0,9,9};
-	rd_1_t right_1{0,4,5};
-	auto result{aprox_coc_rem(left_1,right_1)};
-	std::cout << "El resultado de llamar a aprox_coc_rem("
-						<< int64_t(conversion_to_int<B1,L1>(left_1)) << " , "
-						<< int64_t(conversion_to_int<B1,L1>(right_1)) << ") == ( "
-						<< result[0] << " , " << result[1] << " )" << std::endl;
+	show_test_comp_notequal_than_reg_reg<B1,L1>();
+	show_test_comp_equal_than_reg_reg<B1,L1>();
+	show_test_comp_less_than_reg_reg<B1,L1>();
+	show_test_comp_less_or_equal_than_reg_reg<B1,L1>();
+	show_test_comp_greater_than_reg_reg<B1,L1>();
+	show_test_comp_greater_or_equal_than_reg_reg<B1,L1>();
+
+
+	show_test_comp_notequal_than_reg_reg<B2,L2>();
+	show_test_comp_equal_than_reg_reg<B2,L2>();
+	show_test_comp_less_than_reg_reg<B2,L2>();
+	show_test_comp_less_or_equal_than_reg_reg<B2,L2>();
+	show_test_comp_greater_than_reg_reg<B2,L2>();
+	show_test_comp_greater_or_equal_than_reg_reg<B2,L2>();
+
+
+	show_test_comp_notequal_than_reg_reg<B3,L3>();
+	show_test_comp_equal_than_reg_reg<B3,L3>();
+	show_test_comp_less_than_reg_reg<B3,L3>();
+	show_test_comp_less_or_equal_than_reg_reg<B3,L3>();
+	show_test_comp_greater_than_reg_reg<B3,L3>();
+	show_test_comp_greater_or_equal_than_reg_reg<B3,L3>();
+
+//	rd_1_t left_1{2,2,4};
+//	rd_1_t right_1{0,8,5};
+//	auto result{aprox_coc_rem(left_1,right_1)};
+//	std::cout << "El resultado de llamar a aprox_coc_rem("
+//						<< int64_t(conversion_to_int<B1,L1>(left_1)) << " , "
+//						<< int64_t(conversion_to_int<B1,L1>(right_1)) << ") == ( "
+//						<< std::get<0>(result) << " , " << std::get<1>(result) << " )" << std::endl;
 
 	return 0;
 }

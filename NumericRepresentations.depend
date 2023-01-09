@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1671095636 source:c:\users\julian\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1673268739 source:c:\users\julian\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+	"utilities.hpp"
 	"nat_reg_digs_t.hpp"
 	<typeinfo>
 
-1670611752 c:\users\julian\dropbox\github\numericrepresentations\src\dig_t.hpp
+1672759244 c:\users\julian\dropbox\github\numericrepresentations\src\dig_t.hpp
 	"auxiliary_functions.hpp"
 	"auxiliary_types.hpp"
 	"lexer_parser.hpp"
@@ -38,7 +39,7 @@
 1668675582 c:\users\julian\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1673208068 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1673298689 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"utilities.hpp"
 	"nat_reg_digs_t.hpp"
 	<typeinfo>
@@ -136,7 +137,7 @@
 	<iterator>
 	<functional>
 
-1673208699 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1673301000 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 	"lexer_parser.hpp"
@@ -149,7 +150,7 @@
 1671536116 c:\users\julia\dropbox\github\numericrepresentations\src\lexer_parser.hpp
 	"auxiliary_types.hpp"
 
-1671535901 c:\users\julian\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1673273626 c:\users\julian\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 	"lexer_parser.hpp"
@@ -157,7 +158,7 @@
 1671536116 c:\users\julian\dropbox\github\numericrepresentations\src\lexer_parser.hpp
 	"auxiliary_types.hpp"
 
-1670006791 c:\users\julian\dropbox\github\numericrepresentations\src\utilities.hpp
+1672516542 c:\users\julian\dropbox\github\numericrepresentations\src\utilities.hpp
 	<tuple>
 	<array>
 	"basic_types.hpp"
@@ -166,7 +167,7 @@
 	"reg_digs_t.hpp"
 	"utilities.hpp"
 
-1671533023 c:\users\julian\dropbox\github\numericrepresentations\src\nat_reg_digs_t.hpp
+1671538025 c:\users\julian\dropbox\github\numericrepresentations\src\nat_reg_digs_t.hpp
 	"reg_digs_t.hpp"
 	"utilities.hpp"
 

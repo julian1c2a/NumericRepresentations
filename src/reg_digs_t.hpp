@@ -27,47 +27,47 @@ public :
 	using reg_N_digs_t  = reg_digs_t<UINT_T,B,N>;
 
 	/// devolucion de punteros a la clase base
-	inline const base_t* const const_base_this() const noexcept {
+	constexpr inline const base_t* const const_base_this() const noexcept {
 		return static_cast<const base_t* const>(this);
 	}
 
-	inline base_t* base_this() noexcept {
+	constexpr inline base_t* base_this() noexcept {
 		return static_cast<base_t*>(this);
 	}
 	/// devolucion de referencias a la clase base
-	inline base_t& r_base_cthis() noexcept {
+	constexpr inline base_t& r_base_cthis() noexcept {
 		return (*base_this());
 	}
 	/// devolucion de copia de la clase base
-	inline const base_t& cr_base_cthis() const noexcept {
+	constexpr inline const base_t& cr_base_cthis() const noexcept {
 		return (static_cast<const base_t&>(*const_base_this()));
 	}
 
-	inline base_t cp_base_cthis() const noexcept {
+	constexpr inline base_t cp_base_cthis() const noexcept {
 		return std::move(base_t{*(cr_base_cthis())});
 	}
 	/// devolucion de referencias de la clase actual
-	inline reg_digs_t & r_cthis() noexcept {
+	constexpr inline reg_digs_t & r_cthis() noexcept {
 		return (*this);
 	}
 
-	inline const reg_digs_t & cr_cthis() const noexcept {
+	constexpr inline const reg_digs_t & cr_cthis() const noexcept {
 		return (*this);
 	}
 	/// devolucion de copia de la clase actual
-	inline reg_digs_t cp_cthis() const noexcept {
+	constexpr inline reg_digs_t cp_cthis() const noexcept {
 		return reg_digs_t{*this};
 	}
 	/// devoluciones por referencias y por copia de los elementos
-	inline dig_t cp_cthis_at(size_t k) const noexcept {
+	constexpr inline dig_t cp_cthis_at(size_t k) const noexcept {
 		return cp_base_cthis()[k];
 	}
 
-	inline dig_t & r_cthis_at(size_t k) noexcept {
+	constexpr inline dig_t & r_cthis_at(size_t k) noexcept {
 		return (r_base_cthis()[k]);
 	}
 
-	inline const dig_t & cr_cthis_at(size_t k) const noexcept {
+	constexpr inline const dig_t & cr_cthis_at(size_t k) const noexcept {
 		return (cr_base_cthis()[k]);
 	}
 
@@ -620,23 +620,23 @@ public:
 		constexpr bool puede_multiplicarse{
 				(maxbase<sint128_t>()/B_128t_v) > 0
 		};
-		if ((&(this->m_dc)) != (&arg)) {
-			sint128_t creg_g{static_cast<sint128_t>(arg)};
-			sint128_t BasePowIx{B_128t_v};
-			for(size_t k{1u} ; k < L ; ++k) {
-				if constexpr (puede_multiplicarse)
-					BasePowIx *= B_128t_v;
-				else
-					break;
-			}
-			while (creg_g < 0) {
-				creg_g += BasePowIx;
-			}
-			for(size_t k{0u} ; k < L ; ++k){
-				r_cthis(k) = dig_t(creg_g%B_128t_v);
-				creg_g /= B_128t_v;
-			}
+
+		sint128_t creg_g{static_cast<sint128_t>(arg)};
+		sint128_t BasePowIx{B_128t_v};
+		for(size_t k{1u} ; k < L ; ++k) {
+			if constexpr (puede_multiplicarse)
+				BasePowIx *= B_128t_v;
+			else
+				break;
 		}
+		while (creg_g < 0) {
+			creg_g += BasePowIx;
+		}
+		for(size_t k{0u} ; k < L ; ++k){
+			r_cthis_at(k) = dig_t(creg_g%B_128t_v);
+			creg_g /= B_128t_v;
+		}
+
 		return (cr_cthis());
 	}
 
@@ -1451,9 +1451,11 @@ public :
 			}
 		}
 
-		for(int32_t ix{L} ; ix > -1 ; --ix)
+		for(int32_t ix{P-1} ; ix > -1 ; --ix)
 			if (cthis[ix] > rarg[ix])
 				return true;
+			else if (cthis[ix] < rarg[ix])
+				return false;
 		return false;
 	}
 
@@ -1469,18 +1471,20 @@ public :
 			for(size_t ix{P} ; ix < Q ; ++ix) {
 				if constexpr (L_gt_M) {
 					if (cthis[ix].is_not_0())
-						return false;
+						return false; // NO ES MENOR
 				}
 				else {
 					if (rarg[ix].is_not_0())
-						return true;
+						return true; // ES MENOR
 				}
 			}
 		}
 
-		for(int32_t ix{L} ; ix > -1 ; --ix)
+		for(int32_t ix{P-1} ; ix > -1 ; --ix)
 			if (cthis[ix] < rarg[ix])
 				return true;
+			else if (cthis[ix] > rarg[ix])
+				return false;
 		return false;
 	}
 
@@ -1984,8 +1988,10 @@ m_incr_by_digit(reg_digs_t<UINT_T,B,N>& larg,const dig_t<UINT_T,B>& dig) noexcep
 
 	dig_t carry{0};
 	for(size_t i=0 ; i < N ; ++i) {
-		if (carry.is_not_0()) {
+		if (carry.is_0()) {
 			carry = m_sum_digs_carryin_0(larg[i],dig);
+			if (carry.is_0())
+				break;
 		}
 		else {
 			carry = m_sum_digs_carryin_1(larg[i],dig);
@@ -2512,7 +2518,8 @@ std::tuple<reg_digs_t<UINT_T,B,N>,reg_digs_t<UINT_T,B,N>> mult(
 	return ret;
 }
 
-///< FUNCION DE RECURSION PARA LA DIVISION
+///< FUNCION DE APROXIMACION DEL COCIENTE : 1 SOLO DIGITO
+///< PARA LA DIVISION Y DEDUCCION DEL NUEVO RESTO
 ///< APROX_COC_REM APROXIMA REMAINDER A 2 DIGITOS Y DIVISOR A 1 DIGITO
 template<typename UINT_T, UINT_T B, size_t N>
 	requires (N > 0)
@@ -2520,267 +2527,180 @@ constexpr inline
 /// std::array<SIG_UINT_T,2>{}[0] == COC
 /// std::array<SIG_UINT_T,2>{}[1] == REM
 /// PRECONDICION DSOR != 0 Y DSOR != 1
-std::array<type_traits::sig_UInt_for_UInt_t<UINT_T>,2>
+/// PRECONDICION
+/// 	EXISTE 0<=N<B
+/// 		TAL QUE
+/// 	(DSOR*N <= REM) Y (DSOR*(N+1)>REM)
+std::tuple<dig_t<UINT_T,B>,reg_digs_t<UINT_T,B,N>>
 aprox_coc_rem(
-		const reg_digs_t<UINT_T,B,N>& rem,
-		const reg_digs_t<UINT_T,B,N>& dsor
+	const reg_digs_t<UINT_T,B,N>& rem,
+	const reg_digs_t<UINT_T,B,N>& dsor
 ) noexcept {
+
 	using namespace type_traits;
 	using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
-
-	std::array<SIG_UINT_T,2> ret;
-
-	const size_t dsor_msb{static_cast<size_t>(dsor.index_of_MSDig())};
-	const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-	const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor[dsor_msb]())};
-
-	SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
-	SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
-
-	if (dsor_msb==0) {/// CASO EXACTO
-		/// SIZE(DIVISOR) == 1 DIGITO !=0 !=1
-		//const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-		//const SIG_UINT_T dsor_uint {dsor[0]()};
-		//SIG_UINT_T coc_calculado = rem_uint / dsor_uint;
-		//SIG_UINT_T rem_calculado = rem_uint % dsor_uint;
-		//const SIG_UINT_T rem_aprox(SIG_UINT_T(dsor)*coc_calculado+rem_calculado);
-
-		ret[1] = rem_calculado;
-		ret[0] = coc_calculado;
-		return ret;
-	}
-	else {
-		/// SIZE(DIVISOR) >= 2
-		/// 2545/278 o mayores
-		reg_digs_t<UINT_T,B,N> dsor_red{dsor};
-		uint64_t ix{0};
-		for( ; ix < N ; ++ix) {
-			dsor_red = aprox_units_divB<UINT_T,B,N>(dsor_red);
-			if (dsor_red.index_of_MSDig() <= 1)
-				break;
-		}
-		reg_digs_t<UINT_T,B,N> rem_red{rem};
-
-		for(int64_t iy(static_cast<int64_t>(ix)) ; iy > -1 ; --iy) {
-			rem_red = aprox_units_divB<UINT_T,B,N>(rem_red);
-		}
-
-		const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
-		//const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
-		const dig_t<UINT_T,B> coc_calculado_dig=coc_calculado;
-		const dig_t<UINT_T,B> rem_calculado_dig=rem_calculado;
-
-		const auto mult_result_complex{mult(dsor,coc_calculado_dig)};
-		auto mult_result{std::get<0>(mult_result_complex)};
-		const auto mult_carry{m_incr_by_digit(mult_result,rem_calculado_dig)};
-		const reg_digs_t<UINT_T,B,N> rem_aprox{mult_result};
-
-		if ((rem_aprox <= rem)&&(std::get<0>(sum(rem_aprox,dsor)) > rem)) {
-			/// CORRECTO EN COC
-			ret[1] = rem_calculado;
-			ret[0] = coc_calculado;
-			return ret;
-		}
-		else if (rem_aprox > rem) {
-			/// NOS HEMOS PASADO EN EL COC
-			--coc_calculado;
-			rem_calculado += dsor_uint;
-			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
-		}
-		else {
-			/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
-			++coc_calculado;
-			rem_calculado -= dsor_uint;
-			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
-		}
-	}
-}
-
-///< FUNCION DE RECURSION PARA LA DIVISION
-///< SOBRECARGA DE LA ANTERIOR PARA LA RECURSION QUE NO SEA EL PRIMER CASO
-template<typename UINT_T, UINT_T B, size_t N>
-	requires (N > 0)
-constexpr inline
-/// std::array<SIG_UINT_T,2>{}[0] == COC
-/// std::array<SIG_UINT_T,2>{}[1] == REM
-/// PRECONDICION DSOR != 0 Y DSOR != 1
-std::array<type_traits::sig_UInt_for_UInt_t<UINT_T>,2>
-aprox_coc_rem(
-		const reg_digs_t<UINT_T,B,N>& rem	  ,
-		const reg_digs_t<UINT_T,B,N>& dsor	,
-		type_traits::sig_UInt_for_UInt_t<UINT_T> coc_calculado 	,
-		type_traits::sig_UInt_for_UInt_t<UINT_T> rem_calculado
-	) noexcept
-{ /// SUPONEMOS QUE REM TIENE TAMANO 1 o 2
-	/// DSOR YA REDUCIDO TIENE TAMANO 1
-	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
 	using dig_t = dig_t<UINT_T,B>;
 	using reg_digs_t = reg_digs_t<UINT_T,B,N>;
-	std::array<SIG_UINT_T,2> ret;
-	const size_t dsor_msb{static_cast<size_t>(dsor.index_of_MSDig())};
-	if (dsor_msb==0) {
-		/// SIZE(DIVISOR) == 1 DIGITO !=0 !=1
-		const SIG_UINT_T rem_aprox(SIG_UINT_T(dsor)*coc_calculado+rem_calculado);
-		const SIG_UINT_T rem_uint {SIG_UINT_T(rem)};
-		const SIG_UINT_T dsor_uint {dsor[0]()};
-		if ((rem_aprox <= rem_uint)&&(rem_aprox + dsor_uint > rem_uint)) {
-			/// CORRECTO EN COC
-			ret[1] = rem_calculado;
-			ret[0] = coc_calculado;
-			return ret;
-		}
-		else if (rem_aprox > rem) {
-			/// NOS HEMOS PASADO EN EL COC
-			--coc_calculado;
-			rem_calculado += dsor_uint;
-			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
+
+	reg_digs_t rem_aprox{rem};
+
+	/// BEGIN : CALCULO PRIMERA APROXIMACION
+	const size_t dsor_msb{size_t(dsor.index_of_MSDig())};
+	const SIG_UINT_T rem_uint {
+		SIG_UINT_T(SIG_UINT_T(rem)/SIG_UINT_T(std::pow(size_t(B),dsor_msb)))
+	};
+	SIG_UINT_T dsor_uint {SIG_UINT_T(dsor[dsor_msb]())};
+	dig_t coc_aprox{rem_uint / dsor_uint};
+	/// END : CALCULO PRIMERA APROXIMACION
+
+	bool coc_es_correcto{false};
+	while(! coc_es_correcto) {
+		/// CALCULOS CON LA APROXIMACION ACTUAL
+		reg_digs_t dsor_x_coc{dsor};
+		m_mult(dsor_x_coc,coc_aprox);// dsor_x_coc == dsor * coc
+		if (rem_aprox >= dsor_x_coc) {
+			m_subtract(rem_aprox,dsor_x_coc);// rem_aprox == rem - dsor*coc
 		}
 		else {
-			/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
-			++coc_calculado;
-			rem_calculado -= dsor_uint;
-			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
+			--coc_aprox;// dsor_x_coc == dsor * coc
+			continue;
 		}
-		/// 24/7
-	}
-	else {
-		/// SIZE(DIVISOR) >= 2
-		/// 2545/278 o mayores
-		reg_digs_t dsor_red{dsor};
-		int32_t ix{0};
-		for( ; ix < static_cast<int32_t>(N) ; ++ix) {
-			dsor_red = aprox_units_divB<UINT_T,B,N>(dsor_red);
-			if (dsor_red.index_of_MSDig() == 1)
-				break;
-		}
-		reg_digs_t rem_red{rem};
-		for( ; ix > -1 ; --ix) {
-			rem_red = aprox_units_divB<UINT_T,B,N>(rem_red);
-		}
+		const bool rem_aprox_es_menor_que_dsor = (rem_aprox < dsor);
 
-		const SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_red)};
-		//const SIG_UINT_T rem_uint {SIG_UINT_T(rem_red)};
-		auto mult_result(mult(dsor,dig_t(coc_calculado)));
-		m_incr_by_digit(std::get<0>(mult_result),dig_t(rem_calculado));
-		const reg_digs_t rem_aprox{std::get<0>(mult_result)};
+		/// CALCULOS CON LA APROXIMACION MAYOR INMEDIATA A LA ACTUAL
+		reg_digs_t sig_dsor_x_coc = dsor;
+		m_mult(sig_dsor_x_coc,dig_t(coc_aprox + 1));// sig_dsor_x_coc == dsor * (coc + 1)
+		reg_digs_t sig_rem_aprox{rem};
+		if(rem > sig_dsor_x_coc)
+			m_subtract(sig_rem_aprox,sig_dsor_x_coc);// sig_rem_aprox == rem - dsor*coc
+		else {
 
-		if ((rem_aprox <= rem)&&(std::get<0>(sum(dsor,rem_aprox)) > rem)) {
-			/// CORRECTO EN COC
-			ret[1] = rem_calculado;
-			ret[0] = coc_calculado;
-			return ret;
+			m_subtract(sig_rem_aprox,sig_dsor_x_coc);// sig_rem_aprox == rem - dsor*coc
 		}
-		else if (rem_aprox > rem) {
-			/// NOS HEMOS PASADO EN EL COC
-			--coc_calculado;
-			rem_calculado += dsor_uint;
-			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
+		const bool sig_rem_aprox_se_pasa = (sig_rem_aprox >= dsor);
+
+		/// CALCULOS CON LA APROXIMACION MENOR INMEDIATA A LA ACTUAL
+		reg_digs_t prev_dsor_x_coc = dsor;
+		m_mult(prev_dsor_x_coc,dig_t(coc_aprox - 1));// sig_dsor_x_coc == dsor * (coc + 1)
+		reg_digs_t prev_rem_aprox{rem};
+		m_subtract(prev_rem_aprox,prev_dsor_x_coc);// sig_rem_aprox == rem - dsor*coc
+		const bool prev_rem_aprox_se_pasa = (prev_rem_aprox >= dsor);
+
+		coc_es_correcto =	rem_aprox_es_menor_que_dsor
+												&&
+											sig_rem_aprox_se_pasa
+												&&
+											!prev_rem_aprox_se_pasa;
+		if (coc_es_correcto) {
+			return std::make_tuple(dig_t(coc_aprox),rem_aprox);
+		}
+		else if (!rem_aprox_es_menor_que_dsor && !sig_rem_aprox_se_pasa) {
+			--coc_aprox;
 		}
 		else {
-			/// NOS HEMOS QUEDADO CORTOS EN EL COC rem_aprox + dsor_uint <= rem
-			++coc_calculado;
-			rem_calculado -= dsor_uint;
-			return aprox_coc_rem<UINT_T,B,N>(rem,dsor,coc_calculado,rem_calculado);
+			++coc_aprox;
 		}
 	}
+
+	/// AQUI NO DEBERIA LLEGAR NUNCA : ERROR : TODO A 0
+	return std::make_tuple(dig_t{},reg_digs_t{});
 }
-/// END
 
 /// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
-template<typename UINT_T,UINT_T B,size_t N,size_t M>
-	requires (N > 0)&&(M > 0)
-constexpr inline
-std::array<reg_digs_t<UINT_T,B,std::max(N,M)>,2>
-fediv(
-	const reg_digs_t<UINT_T,B,N> & larg,
-	const reg_digs_t<UINT_T,B,M> & rarg
-) noexcept {
-
-	constexpr size_t MaxParam = std::max(N,M);
-	using base_t = reg_digs_t<UINT_T,B,MaxParam>;
-	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
-
-	using ret_type = std::array<base_t,2>;
-
-	base_t dndo{larg};
-	base_t dsor{rarg};
-
-	const int32_t dsor_MSDig{larg.index_of_MSDig()};
-		/// MOST SIGNIFICANT DIGIT DEL DIVISOR [DEL NUMERO NO DEL TIPO]
-	const int32_t dndo_MSDig{rarg.index_of_MSDig()};
-		/// MOST SIGNIFICANT DIGIT DEL DIVIDENDO [DEL NUMERO NO DEL TIPO]
-	const size_t  dist_dndo_dsor{std::abs(dndo_MSDig-dndo_MSDig)};
-
-	base_t rem{base_t::regd_0()};
-	base_t coc{base_t::regd_0()};
-
-	if (is_0(dsor)) {
-		ret_type ret;
-		ret[0] = std::move(coc);
-		ret[1] = std::move(rem);
-		return ret;
-	}
-	else if (is_1(dsor)) {
-		ret_type ret;
-		ret[0] = dndo;
-		ret[1].set_0();
-		return ret;
-	}
-	else if (dndo < dsor) {
-		ret_type ret;
-		ret[0].set_0();
-		ret[1] = dndo;
-		return ret;
-	}
-	else if (dndo == dsor) {
-		ret_type ret;
-		ret[0].set_1();
-		ret[1].set_0();
-		return ret;
-	}
-	else {
-		int64_t pl_dndo{dndo_MSDig-dsor_MSDig+1};
-		for(int64_t ix{dsor_MSDig},iy{dndo_MSDig} ; ix>-1 ; --ix,--iy) {
-			rem[ix] = dndo[iy];
-		}
-
-		for(size_t numloops{0} ; numloops<dist_dndo_dsor ; ++numloops)
-		{
-			if (rem == dsor) {
-				coc <<= 1;
-				coc[0] = base_t::dig_1();
-				rem = base_t::regd_0();
-				--pl_dndo;
-				rem[0] = dndo[pl_dndo];
-			}
-			else if (rem < dsor) {
-				coc <<= 1;
-				coc[0] = base_t::dig_0();
-				rem <= 1;
-				--pl_dndo;
-				rem[0] = dndo[pl_dndo];
-			}
-			///	else if (rem >= dsor*dig_B()) {
-			///		este caso no se deberia de dar nunca
-			///	}
-			else {
-				auto ret{aprox_coc_rem<N>(rem,dsor)};
-				SIG_UINT_T coc_dig{ret[0]};
-				SIG_UINT_T rem_dig{ret[1]};
-
-				coc <<= 1; 	// coc = coc * B
-				coc[0] = dig_t(coc_dig); // coc = coc + D  ; B-1 >= D > 1
-				--pl_dndo;
-				rem <<= 1;
-				rem[0] = dndo[pl_dndo];
-			}
-		}
-		std::array<reg_digs_t<UINT_T,B,std::max(N,M)>,2> ret;
-		ret[0] = coc;
-		ret[1] = rem;
-		return ret;
-	}
-}
+//template<typename UINT_T,UINT_T B,size_t N,size_t M>
+//	requires (N > 0)&&(M > 0)
+//constexpr inline
+//std::array<reg_digs_t<UINT_T,B,std::max(N,M)>,2>
+//fediv(
+//	const reg_digs_t<UINT_T,B,N> & larg,
+//	const reg_digs_t<UINT_T,B,M> & rarg
+//) noexcept {
+//
+//	constexpr size_t MaxParam = std::max(N,M);
+//	using base_t = reg_digs_t<UINT_T,B,MaxParam>;
+//	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+//
+//	using ret_type = std::array<base_t,2>;
+//
+//	base_t dndo{larg};
+//	base_t dsor{rarg};
+//
+//	const int32_t dsor_MSDig{larg.index_of_MSDig()};
+//		/// MOST SIGNIFICANT DIGIT DEL DIVISOR [DEL NUMERO NO DEL TIPO]
+//	const int32_t dndo_MSDig{rarg.index_of_MSDig()};
+//		/// MOST SIGNIFICANT DIGIT DEL DIVIDENDO [DEL NUMERO NO DEL TIPO]
+//	const size_t  dist_dndo_dsor{std::abs(dndo_MSDig-dndo_MSDig)};
+//
+//	base_t rem{base_t::regd_0()};
+//	base_t coc{base_t::regd_0()};
+//
+//	if (is_0(dsor)) {
+//		ret_type ret;
+//		ret[0] = std::move(coc);
+//		ret[1] = std::move(rem);
+//		return ret;
+//	}
+//	else if (is_1(dsor)) {
+//		ret_type ret;
+//		ret[0] = dndo;
+//		ret[1].set_0();
+//		return ret;
+//	}
+//	else if (dndo < dsor) {
+//		ret_type ret;
+//		ret[0].set_0();
+//		ret[1] = dndo;
+//		return ret;
+//	}
+//	else if (dndo == dsor) {
+//		ret_type ret;
+//		ret[0].set_1();
+//		ret[1].set_0();
+//		return ret;
+//	}
+//	else {
+//		int64_t pl_dndo{dndo_MSDig-dsor_MSDig+1};
+//		for(int64_t ix{dsor_MSDig},iy{dndo_MSDig} ; ix>-1 ; --ix,--iy) {
+//			rem[ix] = dndo[iy];
+//		}
+//
+//		for(size_t numloops{0} ; numloops<dist_dndo_dsor ; ++numloops)
+//		{
+//			if (rem == dsor) {
+//				coc <<= 1;
+//				coc[0] = base_t::dig_1();
+//				rem = base_t::regd_0();
+//				--pl_dndo;
+//				rem[0] = dndo[pl_dndo];
+//			}
+//			else if (rem < dsor) {
+//				coc <<= 1;
+//				coc[0] = base_t::dig_0();
+//				rem <= 1;
+//				--pl_dndo;
+//				rem[0] = dndo[pl_dndo];
+//			}
+//			///	else if (rem >= dsor*dig_B()) {
+//			///		este caso no se deberia de dar nunca
+//			///	}
+//			else {
+//				auto ret{aprox_coc_rem<N>(rem,dsor)};
+//				SIG_UINT_T coc_dig{ret[0]};
+//				SIG_UINT_T rem_dig{ret[1]};
+//
+//				coc <<= 1; 	// coc = coc * B
+//				coc[0] = dig_t(coc_dig); // coc = coc + D  ; B-1 >= D > 1
+//				--pl_dndo;
+//				rem <<= 1;
+//				rem[0] = dndo[pl_dndo];
+//			}
+//		}
+//		std::array<reg_digs_t<UINT_T,B,std::max(N,M)>,2> ret;
+//		ret[0] = coc;
+//		ret[1] = rem;
+//		return ret;
+//	}
+//}
 
   /// FUNCION QUE CONSIGUE EL TOKEN DIGITO
   template<type_traits::unsigned_integral_c UINT_T,UINT_T B>
