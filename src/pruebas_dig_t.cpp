@@ -16,9 +16,10 @@ constexpr inline
 NumRepr::uint64_t
 convert_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
 	uint64_t cB(B);
-	uint64_t accum(0);
+	uint64_t accum(arg[L-1]());
 	for(int64_t ix=L-1 ; ix > 0 ; --ix) {
-		accum += uint64_t(arg[ix]())*cB + uint64_t(arg[ix-1]());
+		accum *= cB;
+		accum += uint64_t(arg[ix-1]());
 	}
 	return accum;
 }
@@ -149,7 +150,8 @@ test_result_t test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs
 		reg_digs_t rd_y{0};
 		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
 			const bool comp = rd_x <= rd_y;
-			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) <= conversion_to_int<Base,Long>(rd_y));
+			const bool comp_ref =
+			(conversion_to_int<Base,Long>(rd_x) <= conversion_to_int<Base,Long>(rd_y));
 			const bool bien {comp==comp_ref};
 			if (!bien) {
 				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
@@ -216,7 +218,8 @@ test_result_t test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs
 		reg_digs_t rd_y{0};
 		for(std::uint64_t iy{0} ; iy < B2L ; ++iy) {
 			const bool comp = rd_x >= rd_y;
-			const bool comp_ref = (conversion_to_int<Base,Long>(rd_x) >= conversion_to_int<Base,Long>(rd_y));
+			const bool comp_ref =
+			(conversion_to_int<Base,Long>(rd_x) >= conversion_to_int<Base,Long>(rd_y));
 			const bool bien {comp==comp_ref};
 			if (!bien) {
 				//bool mirar_la_comparacion_mal_hecha = rd_x < rd_y;
@@ -705,26 +708,31 @@ test_result_t test_resta_con_asignacion() {
 	std::size_t correctos{0};
 	std::size_t errores{0};
 
-	rd_t rd_x{};
-	rd_x.fill(d_t{Base-1});
-	rd_t rd_y{};
-	rd_y.fill(d_t{0});
+	rd_t rd_x;
+	rd_x.fill(d_t::dig_Bm1());
 	for(std::int64_t ix{B2L-1} ; ix > -1 ; --ix) {
+		rd_t rd_y;
+		rd_y.fill(d_t::dig_0());
 		for(std::int64_t iy{0} ; iy <= ix ; ++iy) {
 			rd_t rd_z{rd_x};
-			NR::m_subtract(rd_z,rd_y);
-			const std::uint64_t iz = conversion_to_int<Base,Longitud>(rd_z);
+			d_t borrow = NR::m_subtract(rd_z,rd_y);
+			const std::uint64_t iz = convert_to_int<Base,Longitud>(rd_z);
 			const std::uint64_t iw = ix-iy;
-			const bool bien {iz==iw};
+			const std::uint64_t ib = std::uint64_t(borrow());
+			const std::uint64_t ic = (ix >= iy) ? 0 : 1;
+			const bool correcto_ix = (ix == convert_to_int<Base,Longitud>(rd_x));
+			const bool correcto_iy = (iy == convert_to_int<Base,Longitud>(rd_y));
+			const bool bien {(iz==iw)&&(ib==ic)&&correcto_ix&&correcto_iy};
 			//const tribinopndo_t trio{ix,iy,iz};
 			if (!bien) {
-				//rd_t rd_w{rd_x};
-				//NR::m_subtract(rd_w,rd_y);
+				rd_t rd_w{rd_x};
+				NR::m_subtract(rd_w,rd_y);
 				++errores;
 			} else {
 				++correctos;
 			}
 			todo_correcto = todo_correcto && bien;
+
 			m_incr(rd_y);
 		}
 		m_decr(rd_x);
@@ -994,6 +1002,62 @@ void show_test_sum_n_carry_with_assign_two_digits()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
+template<size_t B,size_t L>
+void show_test_convert_to_int() {
+	using rd_t = NumRepr::register_of_digits_t<B,L>;
+	constexpr uint64_t B2L{Base_pow_to_Size<B,L>()};
+	uint64_t correctos{0};
+	uint64_t errores{0};
+	bool todo_ha_ido_bien{true};
+	rd_t operando{0};
+	for(uint64_t ix{0} ; ix < B2L ; ++ix) {
+		const uint64_t operando_uint{convert_to_int<B,L>(operando)};
+		const bool bien{ix == operando_uint};
+		if (bien)
+			++correctos;
+		else {
+			//convert_to_int<B,L>(operando);
+			++errores;
+		}
+		todo_ha_ido_bien = todo_ha_ido_bien && bien;
+		m_incr(operando);
+	}
+	std::cout << std::boolalpha;
+	std::cout << "Resultados del TEST para la funcion CONVERT_TO_INT<"
+						<< B << "," << L << ">(CONST REG_DIGS_T &)" << std::endl;
+	std::cout << "Correctos == " << correctos << std::endl;
+	std::cout << "Errores   == " << errores << std::endl;
+	std::cout << "Todo bien == " << todo_ha_ido_bien << std::endl;
+}
+
+template<size_t B,size_t L>
+void show_test_conversion_to_int() {
+	using rd_t = NumRepr::register_of_digits_t<B,L>;
+	constexpr uint64_t B2L{Base_pow_to_Size<B,L>()};
+	uint64_t correctos{0};
+	uint64_t errores{0};
+	bool todo_ha_ido_bien{true};
+	rd_t operando{0};
+	for(uint64_t ix{0} ; ix < B2L ; ++ix) {
+		const uint64_t operando_uint(conversion_to_int<B,L>(operando));
+		const bool bien{ix == operando_uint};
+		if (bien)
+			++correctos;
+		else {
+			//convert_to_int<B,L>(operando);
+			++errores;
+		}
+		todo_ha_ido_bien = todo_ha_ido_bien && bien;
+		m_incr(operando);
+	}
+	std::cout << std::boolalpha;
+	std::cout << "Resultados del TEST para la funcion CONVERSION_TO_INT<"
+						<< B << "," << L << ">(CONST REG_DIGS_T &)" << std::endl;
+	std::cout << "Correctos == " << correctos << std::endl;
+	std::cout << "Errores   == " << errores << std::endl;
+	std::cout << "Todo bien == " << todo_ha_ido_bien << std::endl;
+}
+
 int main() {
 	/// digit_t<B>
 	/// reg_digs_t<B,L>
@@ -1052,10 +1116,22 @@ int main() {
 	using rd_3_t [[maybe_unused]] = register_of_digits_t<B3,L3>;
 	using dig3_t [[maybe_unused]] = digit_t<B3>;
 
+	[[maybe_unused]] constexpr auto B2L_1{Base_pow_to_Size<B1,L1>()};
+	[[maybe_unused]] constexpr auto B2L_2{Base_pow_to_Size<B2,L2>()};
+	[[maybe_unused]] constexpr auto B2L_3{Base_pow_to_Size<B3,L3>()};
+
+//	show_test_convert_to_int<B1,L1>();
+//	show_test_convert_to_int<B2,L2>();
+//	show_test_convert_to_int<B3,L3>();
+//
+//	show_test_conversion_to_int<B1,L1>();
+//	show_test_conversion_to_int<B2,L2>();
+//	show_test_conversion_to_int<B3,L3>();
+
 //	show_test_incr_with_assign<B1,L1>();
 //	show_test_incr_with_assign<B2,L2>();
 //	show_test_incr_with_assign<B3,L3>();
-//
+
 //	show_test_sum_with_assign<B1,L1>();
 //	show_test_sum_with_assign<B2,L2>();
 //	show_test_sum_with_assign<B3,L3>();
@@ -1075,12 +1151,15 @@ int main() {
 //	show_test_subtract_with_borrow_with_assign_two_digits<B1>();
 //	show_test_subtract_with_borrow_with_assign_two_digits<B2>();
 //	show_test_subtract_with_borrow_with_assign_two_digits<B3>();
+
+//	show_test_subtract_with_assign<B1,L1>();
+//	show_test_subtract_with_assign<B2,L2>();
+//	show_test_subtract_with_assign<B3,L3>();
 //
-//
-//		show_test_decr_with_assign<B1,L1>();
-//		show_test_decr_with_assign<B2,L2>();
-//		show_test_decr_with_assign<B3,L3>();
-//
+//	show_test_decr_with_assign<B1,L1>();
+//	show_test_decr_with_assign<B2,L2>();
+//	show_test_decr_with_assign<B3,L3>();
+
 //	show_test_mult_2_digits_with_assign<B1>();
 //	show_test_mult_2_digits_with_assign<B2>();
 //	show_test_mult_2_digits_with_assign<B3>();
@@ -1093,9 +1172,9 @@ int main() {
 //	show_test_mult_reg_n_reg_with_assign<B2,L2>();
 //	show_test_mult_reg_n_reg_with_assign<B3,L3>();
 
-	//rd_1_t right_1{0,1,7};
-	//rd_1_t left_1{0,8,3};
-	//dig1_t dl_1{9};
+//	rd_1_t right_1{0,1,7};
+//	rd_1_t left_1{0,8,3};
+//	dig1_t dl_1{9};
 //	auto carry = m_mult(left_1,right_1);
 //	std::cout << rd_1_t{0,0,2} << " * " << right_1 << " = ";
 //	std::cout << carry << " : " << left_1 << std::endl;
@@ -1122,11 +1201,10 @@ int main() {
 //	show_test_comp_less_or_equal_than_reg_reg<B3,L3>();
 //	show_test_comp_greater_than_reg_reg<B3,L3>();
 //	show_test_comp_greater_or_equal_than_reg_reg<B3,L3>();
+	std::fstream test("test_aprox_coc_re.txt",test.out);
 	rd_1_t dndo{0,1,0};
-	rd_1_t dsor{0,0,2};
-	const auto agregado = aprox_coc_rem(dndo,dsor);
-	const dig1_t& cociente = std::get<0>(agregado);
-	const rd_1_t& resto = std::get<1>(agregado);
+	rd_1_t dsor{0,0,3};
+	aprox_coc_rem(dndo,dsor);
 
 	constexpr auto B2L{Base_pow_to_Size<B1,L1>()};
 	bool todo_ha_ido_bien = true;
@@ -1134,12 +1212,17 @@ int main() {
 	uint64_t errores{0};
 	dndo = rd_1_t{dig1_t(0),dig1_t(0),dig1_t(3)};
 	for(uint64_t ix=3; ix < B2L ; ++ix) {
-		rd_1_t dsor{dig1_t(0),dig1_t(0),dig1_t(2)};
-		for(uint64_t iy=2; iy < ix ; ++iy) {
-			std::cout << ix << "  " << iy << std::endl;
-			const auto agregado = aprox_coc_rem(dndo,dsor);
-			const dig1_t& cociente = std::get<0>(agregado);
-			const rd_1_t& resto = std::get<1>(agregado);
+		const uint64_t inicio_iy = std::max(uint64_t(((ix+1)/(B1-1))+1),uint64_t(2));
+		rd_1_t dsor;
+		dsor = inicio_iy;
+		// iy ha de comenzar con un numero que n tal que ix/Bm1 == iy
+		//                                         y que ix%Bm1 == Bm1-1
+		// iy == std::max(((ix+1)/Bm1)-1,2)
+		for(uint64_t iy=inicio_iy ; iy <= ix ; ++iy) {
+//			std::cout << ix << "  " << iy << std::endl;
+//			std::cout << dndo << "   " << dsor << "  ->  ";
+			const auto [cociente,resto] = aprox_coc_rem(dndo,dsor);
+//			std::cout << cociente << "   "  << resto << std::endl;
 
 			const uint64_t dndo_int{convert_to_int<B1,L1>(dndo)};
 			const uint64_t dsor_int{convert_to_int<B1,L1>(dsor)};
@@ -1156,18 +1239,24 @@ int main() {
 
 			if (bien)
 				++correctos;
-			else
+			else {
+				aprox_coc_rem(dndo,dsor);
+				test << "#bucle (ix = " << ix << " ; iy = " << iy << " )" << std::endl;
+				test << " dndo = " << dndo << " ; dsor = " << dsor
+						 << " coc = " << cociente << " ; rem = " << resto
+						 << std::endl;
 				++errores;
+			}
 			todo_ha_ido_bien = todo_ha_ido_bien && bien;
-			std::cout << std::boolalpha;
-			std::cout << "Correctos == " << correctos << std::endl;
-			std::cout << "Errores   == " << errores << std::endl;
-			std::cout << "Todo bien == " << todo_ha_ido_bien << std::endl;
 			m_incr(dsor);
 		}
 		m_incr(dndo);
 	}
-
+	test.close();
+	std::cout << std::boolalpha;
+	std::cout << "Correctos == " << correctos << std::endl;
+	std::cout << "Errores   == " << errores << std::endl;
+	std::cout << "Todo bien == " << todo_ha_ido_bien << std::endl;
 
 	return 0;
 }

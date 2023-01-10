@@ -2071,10 +2071,10 @@ noexcept {
 				return d_0;
 			}
 			/// L == D + 1 		:
-			///		b:=1 S:=0
+			///		b:=0 S:=0
 			else if (left() == right() + 1) {
 				left = d_0;
-				return d_1;
+				return d_0;
 			}
 			/// L < D + 1 		:
 			///		b:=1 S:=L+D.C_Bm1
@@ -2518,6 +2518,16 @@ std::tuple<reg_digs_t<UINT_T,B,N>,reg_digs_t<UINT_T,B,N>> mult(
 	return ret;
 }
 
+template<typename UINT_T,UINT_T B,std::size_t L>
+constexpr
+std::size_t num_right_zeros(const reg_digs_t<UINT_T,B,L>& arg) noexcept {
+	std::size_t num{0};
+	while(arg[num].is_0()) {
+		++num;
+	}
+	return num;
+}
+
 template<typename UINT_T, UINT_T B , size_t N>
 constexpr inline
 /// std::array<SIG_UINT_T,2>{}[0] == COC
@@ -2540,15 +2550,42 @@ aprox_bruta_coc_aprox(
 	using namespace type_traits;
 	using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
 	using dig_t = dig_t<UINT_T,B>;
-	//using reg_digs_t = reg_digs_t<UINT_T,B,N>;
+	using reg_digs_t = reg_digs_t<UINT_T,B,N>;
 
-	const size_t dsor_msb{size_t(dsor.index_of_MSDig())};
+	reg_digs_t rem_aprox{rem};
+	reg_digs_t dsor_aprox{dsor};
+	size_t dsor_aprox_msb = dsor_aprox.index_of_MSDig();
+	for(auto ix=0 ; ix < dsor_aprox_msb ; ++ix) {
+		const auto n_rzeros{num_right_zeros(dsor)};
+		if (n_rzeros > 0) {
+			rem_aprox >>= n_rzeros;
+			dsor_aprox >>= n_rzeros;
+		}
+		const size_t dsor_aprox_msb = dsor_aprox.index_of_MSDig();
+		if (dsor_aprox_msb == 0) {
+			break;
+		}
+		else {
+			dsor_aprox = aprox_units_divB(dsor_aprox);
+			rem_aprox = aprox_units_divB(rem_aprox);
+		}
+	}
+
+	dsor_aprox_msb = dsor_aprox.index_of_MSDig();
+
+
 	const SIG_UINT_T rem_uint {
-		SIG_UINT_T(SIG_UINT_T(rem)/SIG_UINT_T(std::pow(size_t(B),dsor_msb)))
+		SIG_UINT_T(SIG_UINT_T(rem_aprox)/SIG_UINT_T(std::pow(size_t(B),dsor_aprox_msb)))
 	};
-	SIG_UINT_T dsor_uint {SIG_UINT_T(dsor[dsor_msb]())};
+	SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_aprox[dsor_aprox_msb]())};
 
-	return dig_t{rem_uint / dsor_uint};
+	SIG_UINT_T coc = rem_uint / dsor_uint;
+
+	if (coc > B-1) {
+		 coc = B-1;
+	}
+
+	return dig_t{coc};
 }
 
 
@@ -2598,7 +2635,7 @@ aprox_coc_rem(
 		reg_digs_t dsor_x_coc{dsor};
 		m_mult(dsor_x_coc,coc_aprox);
 		//  END dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
-
+		rem_aprox = rem;
 		if (rem_aprox >= dsor_x_coc) {
 			m_subtract(rem_aprox,dsor_x_coc);
 			if (rem_aprox < dsor) {
