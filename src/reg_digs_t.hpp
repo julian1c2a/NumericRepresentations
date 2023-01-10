@@ -378,7 +378,7 @@ public:
 		requires (std::is_same_v<Ts,dig_t>&&...)
 	constexpr inline
 	reg_digs_t(const Ts &... args)
-	noexcept : base_t{(utilities::pack2array<Ts...>{})(args...)} {}
+	noexcept : base_t{(utilities::pack2array<const Ts&...>{})(args...)} {}
 
 	/// CONSTRUCTOR COPIA DESDE EL TIPO BASE
 	constexpr inline
@@ -2518,6 +2518,40 @@ std::tuple<reg_digs_t<UINT_T,B,N>,reg_digs_t<UINT_T,B,N>> mult(
 	return ret;
 }
 
+template<typename UINT_T, UINT_T B , size_t N>
+constexpr inline
+/// std::array<SIG_UINT_T,2>{}[0] == COC
+/// std::array<SIG_UINT_T,2>{}[1] == REM
+/// PRECONDICION
+///		DSOR != 0
+///			Y
+///		DSOR != 1
+/// PRECONDICION
+/// 	EXISTE 0<=N<B
+///		PROCURAR EN DIVISION QUE N NOT IN {0,1}
+/// 		TAL QUE
+/// 	(DSOR*N <= REM) Y (DSOR*(N+1)>REM)
+dig_t<UINT_T,B>
+aprox_bruta_coc_aprox(
+	const reg_digs_t<UINT_T,B,N>& rem,
+	const reg_digs_t<UINT_T,B,N>& dsor
+) noexcept {
+
+	using namespace type_traits;
+	using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+	using dig_t = dig_t<UINT_T,B>;
+	//using reg_digs_t = reg_digs_t<UINT_T,B,N>;
+
+	const size_t dsor_msb{size_t(dsor.index_of_MSDig())};
+	const SIG_UINT_T rem_uint {
+		SIG_UINT_T(SIG_UINT_T(rem)/SIG_UINT_T(std::pow(size_t(B),dsor_msb)))
+	};
+	SIG_UINT_T dsor_uint {SIG_UINT_T(dsor[dsor_msb]())};
+
+	return dig_t{rem_uint / dsor_uint};
+}
+
+
 ///< FUNCION DE APROXIMACION DEL COCIENTE : 1 SOLO DIGITO
 ///< PARA LA DIVISION Y DEDUCCION DEL NUEVO RESTO
 ///< APROX_COC_REM APROXIMA REMAINDER A 2 DIGITOS Y DIVISOR A 1 DIGITO
@@ -2526,9 +2560,13 @@ template<typename UINT_T, UINT_T B, size_t N>
 constexpr inline
 /// std::array<SIG_UINT_T,2>{}[0] == COC
 /// std::array<SIG_UINT_T,2>{}[1] == REM
-/// PRECONDICION DSOR != 0 Y DSOR != 1
+/// PRECONDICION
+///		DSOR != 0
+///			Y
+///		DSOR != 1
 /// PRECONDICION
 /// 	EXISTE 0<=N<B
+///		PROCURAR EN DIVISION QUE N NOT IN {0,1}
 /// 		TAL QUE
 /// 	(DSOR*N <= REM) Y (DSOR*(N+1)>REM)
 std::tuple<dig_t<UINT_T,B>,reg_digs_t<UINT_T,B,N>>
@@ -2538,70 +2576,44 @@ aprox_coc_rem(
 ) noexcept {
 
 	using namespace type_traits;
-	using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+	//using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
 	using dig_t = dig_t<UINT_T,B>;
 	using reg_digs_t = reg_digs_t<UINT_T,B,N>;
 
-	reg_digs_t rem_aprox{rem};
-
-	/// BEGIN : CALCULO PRIMERA APROXIMACION
-	const size_t dsor_msb{size_t(dsor.index_of_MSDig())};
-	const SIG_UINT_T rem_uint {
-		SIG_UINT_T(SIG_UINT_T(rem)/SIG_UINT_T(std::pow(size_t(B),dsor_msb)))
-	};
-	SIG_UINT_T dsor_uint {SIG_UINT_T(dsor[dsor_msb]())};
-	dig_t coc_aprox{rem_uint / dsor_uint};
-	/// END : CALCULO PRIMERA APROXIMACION
-
 	bool coc_es_correcto{false};
+
+	reg_digs_t rem_aprox{rem};
+	dig_t coc_aprox{aprox_bruta_coc_aprox(rem,dsor)};
+//	reg_digs_t dsor_x_coc{dsor};
+//	m_mult(dsor_x_coc,coc_aprox);
+//	const bool cond_1 = rem_aprox >= dsor_x_coc;
+//	m_subtract(rem_aprox,dsor_x_coc);
+//	const bool cond_2 = rem_aprox >= dsor_x_coc;
+//	const bool cond_3 = rem_aprox < dsor;
+//	if (cond_1 && cond_2 && cond_3)
+//		return std::make_tuple(coc_aprox,rem_aprox);
+
 	while(! coc_es_correcto) {
-		/// CALCULOS CON LA APROXIMACION ACTUAL
+		//BEGIN dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
 		reg_digs_t dsor_x_coc{dsor};
-		m_mult(dsor_x_coc,coc_aprox);// dsor_x_coc == dsor * coc
+		m_mult(dsor_x_coc,coc_aprox);
+		//  END dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
+
 		if (rem_aprox >= dsor_x_coc) {
-			m_subtract(rem_aprox,dsor_x_coc);// rem_aprox == rem - dsor*coc
+			m_subtract(rem_aprox,dsor_x_coc);
+			if (rem_aprox < dsor) {
+				return std::make_tuple(coc_aprox,rem_aprox);
+			}
+			else {
+				++coc_aprox;
+				continue;
+			}
 		}
 		else {
-			--coc_aprox;// dsor_x_coc == dsor * coc
+			--coc_aprox;
 			continue;
 		}
-		const bool rem_aprox_es_menor_que_dsor = (rem_aprox < dsor);
-
-		/// CALCULOS CON LA APROXIMACION MAYOR INMEDIATA A LA ACTUAL
-		reg_digs_t sig_dsor_x_coc = dsor;
-		m_mult(sig_dsor_x_coc,dig_t(coc_aprox + 1));// sig_dsor_x_coc == dsor * (coc + 1)
-		reg_digs_t sig_rem_aprox{rem};
-		if(rem > sig_dsor_x_coc)
-			m_subtract(sig_rem_aprox,sig_dsor_x_coc);// sig_rem_aprox == rem - dsor*coc
-		else {
-
-			m_subtract(sig_rem_aprox,sig_dsor_x_coc);// sig_rem_aprox == rem - dsor*coc
-		}
-		const bool sig_rem_aprox_se_pasa = (sig_rem_aprox >= dsor);
-
-		/// CALCULOS CON LA APROXIMACION MENOR INMEDIATA A LA ACTUAL
-		reg_digs_t prev_dsor_x_coc = dsor;
-		m_mult(prev_dsor_x_coc,dig_t(coc_aprox - 1));// sig_dsor_x_coc == dsor * (coc + 1)
-		reg_digs_t prev_rem_aprox{rem};
-		m_subtract(prev_rem_aprox,prev_dsor_x_coc);// sig_rem_aprox == rem - dsor*coc
-		const bool prev_rem_aprox_se_pasa = (prev_rem_aprox >= dsor);
-
-		coc_es_correcto =	rem_aprox_es_menor_que_dsor
-												&&
-											sig_rem_aprox_se_pasa
-												&&
-											!prev_rem_aprox_se_pasa;
-		if (coc_es_correcto) {
-			return std::make_tuple(dig_t(coc_aprox),rem_aprox);
-		}
-		else if (!rem_aprox_es_menor_que_dsor && !sig_rem_aprox_se_pasa) {
-			--coc_aprox;
-		}
-		else {
-			++coc_aprox;
-		}
 	}
-
 	/// AQUI NO DEBERIA LLEGAR NUNCA : ERROR : TODO A 0
 	return std::make_tuple(dig_t{},reg_digs_t{});
 }

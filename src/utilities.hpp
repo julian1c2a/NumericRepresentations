@@ -112,7 +112,7 @@ struct pack2array {
 	}
 
 	constexpr array_type operator()(Ts&& ...args) const noexcept {
-		constexpr array_type  content = array_type{std::forward(args...)};
+		constexpr array_type content{std::forward(args...)};
 		return  content;
 	}
 

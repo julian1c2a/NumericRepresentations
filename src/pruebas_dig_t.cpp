@@ -5,29 +5,31 @@
 template<size_t B,size_t L>
 constexpr inline
 NumRepr::uint128_t
-conversion_to_int(NumRepr::register_of_digits_t<B,L> & arg) noexcept {
+conversion_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
 	namespace NR = NumRepr;
 	namespace us = utilities::special;
 	return us::conversion_to_int<B,L,NR::register_of_digits_t<B,L>>(arg);
 }
 
-//using quabinopndo_t = std::tuple<std::int64_t,std::int64_t,std::int64_t,std::int64_t>;
-//using tribinopndo_t = std::tuple<std::int64_t,std::int64_t,std::int64_t>;
-//using bimonoopndo_t = std::tuple<std::int64_t,std::int64_t>;
-//
-//using result_test_binop_2_results_con_asignacion = std::vector<quabinopndo_t>;
-//using result_test_binop_con_asignacion = std::vector<tribinopndo_t>;
-//using result_test_monoop_con_asignacion = std::vector<bimonoopndo_t>;
-//
-//using retorno_de_binop_2_results_test_t = std::tuple<	bool,
-//																			result_test_binop_2_results_con_asignacion,
-//																			result_test_binop_2_results_con_asignacion>;
-//using retorno_de_binop_test_t = std::tuple<	bool,
-//																			result_test_binop_con_asignacion,
-//																			result_test_binop_con_asignacion>;
-//using retorno_de_mononop_test_t = std::tuple<	bool,
-//																			result_test_monoop_con_asignacion,
-//																			result_test_monoop_con_asignacion>;
+template<size_t B,size_t L>
+constexpr inline
+NumRepr::uint64_t
+convert_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
+	uint64_t cB(B);
+	uint64_t accum(0);
+	for(int64_t ix=L-1 ; ix > 0 ; --ix) {
+		accum += uint64_t(arg[ix]())*cB + uint64_t(arg[ix-1]());
+	}
+	return accum;
+}
+
+template<size_t B,size_t L>
+constexpr inline
+NumRepr::uint128_t
+Base_pow_to_Size() noexcept {
+	namespace us = utilities::special;
+	return us::Base_pow_to_Size<B,L>();
+}
 
 using test_result_t = std::tuple<bool,std::size_t,std::size_t>;
 
@@ -1075,9 +1077,9 @@ int main() {
 //	show_test_subtract_with_borrow_with_assign_two_digits<B3>();
 //
 //
-//	show_test_decr_with_assign<B1,L1>();
-//	show_test_decr_with_assign<B2,L2>();
-//	show_test_decr_with_assign<B3,L3>();
+//		show_test_decr_with_assign<B1,L1>();
+//		show_test_decr_with_assign<B2,L2>();
+//		show_test_decr_with_assign<B3,L3>();
 //
 //	show_test_mult_2_digits_with_assign<B1>();
 //	show_test_mult_2_digits_with_assign<B2>();
@@ -1098,36 +1100,74 @@ int main() {
 //	std::cout << rd_1_t{0,0,2} << " * " << right_1 << " = ";
 //	std::cout << carry << " : " << left_1 << std::endl;
 
-	show_test_comp_notequal_than_reg_reg<B1,L1>();
-	show_test_comp_equal_than_reg_reg<B1,L1>();
-	show_test_comp_less_than_reg_reg<B1,L1>();
-	show_test_comp_less_or_equal_than_reg_reg<B1,L1>();
-	show_test_comp_greater_than_reg_reg<B1,L1>();
-	show_test_comp_greater_or_equal_than_reg_reg<B1,L1>();
+//	show_test_comp_notequal_than_reg_reg<B1,L1>();
+//	show_test_comp_equal_than_reg_reg<B1,L1>();
+//	show_test_comp_less_than_reg_reg<B1,L1>();
+//	show_test_comp_less_or_equal_than_reg_reg<B1,L1>();
+//	show_test_comp_greater_than_reg_reg<B1,L1>();
+//	show_test_comp_greater_or_equal_than_reg_reg<B1,L1>();
+//
+//
+//	show_test_comp_notequal_than_reg_reg<B2,L2>();
+//	show_test_comp_equal_than_reg_reg<B2,L2>();
+//	show_test_comp_less_than_reg_reg<B2,L2>();
+//	show_test_comp_less_or_equal_than_reg_reg<B2,L2>();
+//	show_test_comp_greater_than_reg_reg<B2,L2>();
+//	show_test_comp_greater_or_equal_than_reg_reg<B2,L2>();
+//
+//
+//	show_test_comp_notequal_than_reg_reg<B3,L3>();
+//	show_test_comp_equal_than_reg_reg<B3,L3>();
+//	show_test_comp_less_than_reg_reg<B3,L3>();
+//	show_test_comp_less_or_equal_than_reg_reg<B3,L3>();
+//	show_test_comp_greater_than_reg_reg<B3,L3>();
+//	show_test_comp_greater_or_equal_than_reg_reg<B3,L3>();
+	rd_1_t dndo{0,1,0};
+	rd_1_t dsor{0,0,2};
+	const auto agregado = aprox_coc_rem(dndo,dsor);
+	const dig1_t& cociente = std::get<0>(agregado);
+	const rd_1_t& resto = std::get<1>(agregado);
 
+	constexpr auto B2L{Base_pow_to_Size<B1,L1>()};
+	bool todo_ha_ido_bien = true;
+	uint64_t correctos{0};
+	uint64_t errores{0};
+	dndo = rd_1_t{dig1_t(0),dig1_t(0),dig1_t(3)};
+	for(uint64_t ix=3; ix < B2L ; ++ix) {
+		rd_1_t dsor{dig1_t(0),dig1_t(0),dig1_t(2)};
+		for(uint64_t iy=2; iy < ix ; ++iy) {
+			std::cout << ix << "  " << iy << std::endl;
+			const auto agregado = aprox_coc_rem(dndo,dsor);
+			const dig1_t& cociente = std::get<0>(agregado);
+			const rd_1_t& resto = std::get<1>(agregado);
 
-	show_test_comp_notequal_than_reg_reg<B2,L2>();
-	show_test_comp_equal_than_reg_reg<B2,L2>();
-	show_test_comp_less_than_reg_reg<B2,L2>();
-	show_test_comp_less_or_equal_than_reg_reg<B2,L2>();
-	show_test_comp_greater_than_reg_reg<B2,L2>();
-	show_test_comp_greater_or_equal_than_reg_reg<B2,L2>();
+			const uint64_t dndo_int{convert_to_int<B1,L1>(dndo)};
+			const uint64_t dsor_int{convert_to_int<B1,L1>(dsor)};
+			const uint64_t cociente_int = dndo_int / dsor_int;
+			const uint64_t resto_int = dndo_int % dsor_int;
 
+			const uint64_t cociente_ret_int{uint64_t(cociente())};
+			const auto resto_ret_int{convert_to_int<B1,L1>(resto)};
 
-	show_test_comp_notequal_than_reg_reg<B3,L3>();
-	show_test_comp_equal_than_reg_reg<B3,L3>();
-	show_test_comp_less_than_reg_reg<B3,L3>();
-	show_test_comp_less_or_equal_than_reg_reg<B3,L3>();
-	show_test_comp_greater_than_reg_reg<B3,L3>();
-	show_test_comp_greater_or_equal_than_reg_reg<B3,L3>();
+			const bool coc_correcto = (cociente_ret_int == cociente_int);
+			const bool rem_correcto = (resto_ret_int == resto_int);
 
-//	rd_1_t left_1{2,2,4};
-//	rd_1_t right_1{0,8,5};
-//	auto result{aprox_coc_rem(left_1,right_1)};
-//	std::cout << "El resultado de llamar a aprox_coc_rem("
-//						<< int64_t(conversion_to_int<B1,L1>(left_1)) << " , "
-//						<< int64_t(conversion_to_int<B1,L1>(right_1)) << ") == ( "
-//						<< std::get<0>(result) << " , " << std::get<1>(result) << " )" << std::endl;
+			const bool bien = coc_correcto && rem_correcto;
+
+			if (bien)
+				++correctos;
+			else
+				++errores;
+			todo_ha_ido_bien = todo_ha_ido_bien && bien;
+			std::cout << std::boolalpha;
+			std::cout << "Correctos == " << correctos << std::endl;
+			std::cout << "Errores   == " << errores << std::endl;
+			std::cout << "Todo bien == " << todo_ha_ido_bien << std::endl;
+			m_incr(dsor);
+		}
+		m_incr(dndo);
+	}
+
 
 	return 0;
 }
