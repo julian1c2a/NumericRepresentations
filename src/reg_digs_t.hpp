@@ -2550,40 +2550,70 @@ aprox_bruta_coc_aprox(
 	using namespace type_traits;
 	using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
 	using dig_t = dig_t<UINT_T,B>;
-	using reg_digs_t = reg_digs_t<UINT_T,B,N>;
+	//using reg_digs_t = reg_digs_t<UINT_T,B,N>;
 
-	reg_digs_t rem_aprox{rem};
-	reg_digs_t dsor_aprox{dsor};
-	size_t dsor_aprox_msb = dsor_aprox.index_of_MSDig();
-	for(auto ix=0 ; ix < dsor_aprox_msb ; ++ix) {
+	/// BEGIN : CONSTANTES PARA EL CONTROL DE LA REDUCCION POR APROXIMACION
+	const size_t dsor_msb(dsor.index_of_MSDig());
+	const size_t rem_msb(rem.index_of_MSDig());
+	/// END   : CONSTANTES PARA EL CONTROL DE LA REDUCCION POR APROXIMACION
+
+	/// BEGIN : VARIABLES COPIA SOBRE LAS QUE SE HACE LA REDUCCION
+	auto rem_aprox{rem};
+	auto dsor_aprox{dsor};
+	/// END   : VARIABLES COPIA SOBRE LAS QUE SE HACE LA REDUCCION
+
+	/// BEGIN : REDUCCION POR APROXIMACION DE REM_APROX Y DSOR_APROX
+	///					CUIDADOS DE QUE LAS REDUCCIONES SE HAGAN EN AMBAS PARTES POR IGUAL
+	size_t ix=0;
+	while (ix < std::min(dsor_msb,rem_msb)) {
+		if (rem_aprox == dsor_aprox)
+			return dig_t::dig_1();
+		/// POR SI EL DIVISOR ESTA MULTIPLICADO POR UNA POTENCIA DE LA BASE
 		const auto n_rzeros{num_right_zeros(dsor)};
 		if (n_rzeros > 0) {
 			rem_aprox >>= n_rzeros;
 			dsor_aprox >>= n_rzeros;
 		}
-		const size_t dsor_aprox_msb = dsor_aprox.index_of_MSDig();
-		if (dsor_aprox_msb == 0) {
-			break;
+		if (rem_aprox == dsor_aprox)
+			return dig_t::dig_1();
+		/// PARA EL CONTROL DE QUE LAS REDUCCIONES
+		/// SE HAGAN EN AMBOS ARGUMENTOS POR IGUAL
+		const auto temp_dsor{aprox_units_divB(dsor_aprox)};
+		const auto temp_rem{aprox_units_divB(rem_aprox)};
+		const auto dsor_aprox_msb{temp_dsor.index_of_MSDig()};
+		const auto rem_aprox_msb{temp_rem.index_of_MSDig()};
+		const auto dif_dsor_msb = dsor_msb-dsor_aprox_msb;
+		const auto dif_rem_msb = rem_msb-rem_aprox_msb;
+		if ((dif_dsor_msb==dif_rem_msb)&&(dif_dsor_msb > 0)) {
+			/// REDUCCION DE LOS ARGUMENTOS POR APROXIMACION
+			rem_aprox = temp_rem;
+			dsor_aprox = temp_dsor;
+			if (dsor_aprox_msb == 0)
+				break;
 		}
 		else {
-			dsor_aprox = aprox_units_divB(dsor_aprox);
-			rem_aprox = aprox_units_divB(rem_aprox);
+			/// FIN TEMPRANO
+			break;
 		}
+
+		++ix;
 	}
+	/// END   : REDUCCION POR APROXIMACION DE REM_APROX Y DSOR_APROX
 
-	dsor_aprox_msb = dsor_aprox.index_of_MSDig();
-
-
+	/// BEGIN : CALCULO DE COCIENTE APROXIMADO
+	const size_t dsor_aprox_msb = dsor_aprox.index_of_MSDig();
 	const SIG_UINT_T rem_uint {
 		SIG_UINT_T(SIG_UINT_T(rem_aprox)/SIG_UINT_T(std::pow(size_t(B),dsor_aprox_msb)))
 	};
 	SIG_UINT_T dsor_uint {SIG_UINT_T(dsor_aprox[dsor_aprox_msb]())};
-
 	SIG_UINT_T coc = rem_uint / dsor_uint;
+	/// END   : CALCULO DE COCIENTE APROXIMADO
 
+	/// BEGIN : POR SI OCURRE ESTA DESGRACIA
 	if (coc > B-1) {
 		 coc = B-1;
 	}
+	/// END   : POR SI OCURRE ESTA DESGRACIA
 
 	return dig_t{coc};
 }
@@ -2621,22 +2651,14 @@ aprox_coc_rem(
 
 	reg_digs_t rem_aprox{rem};
 	dig_t coc_aprox{aprox_bruta_coc_aprox(rem,dsor)};
-//	reg_digs_t dsor_x_coc{dsor};
-//	m_mult(dsor_x_coc,coc_aprox);
-//	const bool cond_1 = rem_aprox >= dsor_x_coc;
-//	m_subtract(rem_aprox,dsor_x_coc);
-//	const bool cond_2 = rem_aprox >= dsor_x_coc;
-//	const bool cond_3 = rem_aprox < dsor;
-//	if (cond_1 && cond_2 && cond_3)
-//		return std::make_tuple(coc_aprox,rem_aprox);
 
 	while(! coc_es_correcto) {
-		//BEGIN dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
+		///  BEGIN dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
 		reg_digs_t dsor_x_coc{dsor};
-		m_mult(dsor_x_coc,coc_aprox);
-		//  END dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
+		auto dsor_x_coc_high = m_mult(dsor_x_coc,coc_aprox);
+		///  END dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
 		rem_aprox = rem;
-		if (rem_aprox >= dsor_x_coc) {
+		if ((rem_aprox >= dsor_x_coc)&&(dsor_x_coc_high.is_0())) {
 			m_subtract(rem_aprox,dsor_x_coc);
 			if (rem_aprox < dsor) {
 				return std::make_tuple(coc_aprox,rem_aprox);

@@ -740,6 +740,58 @@ test_result_t test_resta_con_asignacion() {
 	return test_result_t{todo_correcto,correctos,errores};
 }
 
+template<size_t B, size_t L>
+test_result_t test_aprox_coc_rem()	{
+	namespace NR = NumRepr;
+	using d_t = NR::digit_t<B>;
+	using rd_t = NR::register_of_digits_t<B,L>;
+
+	rd_t dndo{};
+	rd_t dsor{};
+
+	constexpr auto B2L{Base_pow_to_Size<B,L>()};
+	bool todo_ha_ido_bien = true;
+	uint64_t correctos{0};
+	uint64_t errores{0};
+	dndo = rd_t{d_t(0),d_t(0),d_t(3)};
+	for(uint64_t ix=3; ix < B2L ; ++ix) {
+		const uint64_t inicio_iy = std::max(uint64_t(((ix+1)/(B-1))+1),uint64_t(2));
+		rd_t dsor;
+		dsor = inicio_iy;
+		// iy ha de comenzar con un numero que n tal que ix/Bm1 == iy
+		//                                         y que ix%Bm1 == Bm1-1
+		// iy == std::max(((ix+1)/Bm1)-1,2)
+		for(uint64_t iy=inicio_iy ; iy <= ix ; ++iy) {
+			const auto [cociente,resto] = aprox_coc_rem(dndo,dsor);
+
+			const uint64_t dndo_int{convert_to_int<B,L>(dndo)};
+			const uint64_t dsor_int{convert_to_int<B,L>(dsor)};
+			const uint64_t cociente_int = dndo_int / dsor_int;
+			const uint64_t resto_int = dndo_int % dsor_int;
+
+			const uint64_t cociente_ret_int{uint64_t(cociente())};
+			const auto resto_ret_int{convert_to_int<B,L>(resto)};
+
+			const bool coc_correcto = (cociente_ret_int == cociente_int);
+			const bool rem_correcto = (resto_ret_int == resto_int);
+
+			const bool bien = coc_correcto && rem_correcto;
+
+			if (bien){
+				++correctos;
+			}
+			else {
+				++errores;
+			}
+			todo_ha_ido_bien = todo_ha_ido_bien && bien;
+			m_incr(dsor);
+		}
+		m_incr(dndo);
+	}
+	test_result_t ret{todo_ha_ido_bien,correctos,errores};
+	return ret;
+}
+
 template<NumRepr::ullint_t Base,size_t Long>
 void show_test_incr_with_assign()
 {
@@ -937,6 +989,28 @@ void show_test_mult_reg_n_dig_with_assign()
 						<< int(Base) << ">" << std::endl;
 	std::cout << "El vector \"correctos\" tiene " << correctos << " elementos " << std::endl;
 	std::cout << "El vector \"errores  \" tiene " << errores << " elementos " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+// test_aprox_coc_rem
+template<NumRepr::ullint_t Base,std::size_t Long>
+void show_test_aprox_coc_rem_for_fediv()
+{
+	std::cout << std::boolalpha;
+	test_result_t resultado{test_aprox_coc_rem<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la aproximacion del cociente por digito para la "
+						<< "implementacion de  la division euclidea "
+						<< "entre objetos de tipo reg_dig_t<"
+						<< int(Base) << " , " << int(Long)
+						<< "> y objeto derecho tipo dig_t<"
+						<< int(Base) << ">" << std::endl;
+	std::cout << "El vector \"correctos\" tiene " << correctos
+						<< " elementos " << std::endl;
+	std::cout << "El vector \"errores  \" tiene "
+						<< errores << " elementos " << std::endl;
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
@@ -1201,62 +1275,10 @@ int main() {
 //	show_test_comp_less_or_equal_than_reg_reg<B3,L3>();
 //	show_test_comp_greater_than_reg_reg<B3,L3>();
 //	show_test_comp_greater_or_equal_than_reg_reg<B3,L3>();
-	std::fstream test("test_aprox_coc_re.txt",test.out);
-	rd_1_t dndo{0,1,0};
-	rd_1_t dsor{0,0,3};
-	aprox_coc_rem(dndo,dsor);
 
-	constexpr auto B2L{Base_pow_to_Size<B1,L1>()};
-	bool todo_ha_ido_bien = true;
-	uint64_t correctos{0};
-	uint64_t errores{0};
-	dndo = rd_1_t{dig1_t(0),dig1_t(0),dig1_t(3)};
-	for(uint64_t ix=3; ix < B2L ; ++ix) {
-		const uint64_t inicio_iy = std::max(uint64_t(((ix+1)/(B1-1))+1),uint64_t(2));
-		rd_1_t dsor;
-		dsor = inicio_iy;
-		// iy ha de comenzar con un numero que n tal que ix/Bm1 == iy
-		//                                         y que ix%Bm1 == Bm1-1
-		// iy == std::max(((ix+1)/Bm1)-1,2)
-		for(uint64_t iy=inicio_iy ; iy <= ix ; ++iy) {
-//			std::cout << ix << "  " << iy << std::endl;
-//			std::cout << dndo << "   " << dsor << "  ->  ";
-			const auto [cociente,resto] = aprox_coc_rem(dndo,dsor);
-//			std::cout << cociente << "   "  << resto << std::endl;
-
-			const uint64_t dndo_int{convert_to_int<B1,L1>(dndo)};
-			const uint64_t dsor_int{convert_to_int<B1,L1>(dsor)};
-			const uint64_t cociente_int = dndo_int / dsor_int;
-			const uint64_t resto_int = dndo_int % dsor_int;
-
-			const uint64_t cociente_ret_int{uint64_t(cociente())};
-			const auto resto_ret_int{convert_to_int<B1,L1>(resto)};
-
-			const bool coc_correcto = (cociente_ret_int == cociente_int);
-			const bool rem_correcto = (resto_ret_int == resto_int);
-
-			const bool bien = coc_correcto && rem_correcto;
-
-			if (bien)
-				++correctos;
-			else {
-				aprox_coc_rem(dndo,dsor);
-				test << "#bucle (ix = " << ix << " ; iy = " << iy << " )" << std::endl;
-				test << " dndo = " << dndo << " ; dsor = " << dsor
-						 << " coc = " << cociente << " ; rem = " << resto
-						 << std::endl;
-				++errores;
-			}
-			todo_ha_ido_bien = todo_ha_ido_bien && bien;
-			m_incr(dsor);
-		}
-		m_incr(dndo);
-	}
-	test.close();
-	std::cout << std::boolalpha;
-	std::cout << "Correctos == " << correctos << std::endl;
-	std::cout << "Errores   == " << errores << std::endl;
-	std::cout << "Todo bien == " << todo_ha_ido_bien << std::endl;
+		show_test_aprox_coc_rem_for_fediv<B1,L1>();
+		show_test_aprox_coc_rem_for_fediv<B2,L2>();
+		show_test_aprox_coc_rem_for_fediv<B3,L3>();
 
 	return 0;
 }
