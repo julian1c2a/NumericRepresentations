@@ -189,7 +189,8 @@ unsigned long long atoull(char* text) noexcept {
 
 	/// METAOPERADOR QUE NOS DA SI UN TIPO INTEGRAL ES SIGNED
 	template<typename SINT_T> // concept on SINT_T
-	constexpr bool is_signed_type_v = std::is_signed_v<SINT_T>;
+	constexpr bool is_signed_type_v =
+				std::is_signed_v<SINT_T> || std::is_same_v<SINT_T,sint128_t>;
 		/// CONCEPT FOR SIGNED INTEGRAL TYPES
 	template<typename SINT_T>
 	concept signed_integral_c = is_signed_type_v<SINT_T>;

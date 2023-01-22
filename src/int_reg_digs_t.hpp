@@ -23,11 +23,11 @@ struct int_reg_digs_t : protected nat_reg_digs_t<UINT_T,B,L> {
 	using dig_t 				= dig_t<UINT_T,B>;
 	template<std::size_t N>
 		requires (N>0)
-	using base_2_N_t      = std::array<dig_t,N>;
-	using base_2_t				= base_2_N_t<L>;
+	using base_2_N_t    = std::array<dig_t,N>;
+	using base_2_t		= base_2_N_t<L>;
 	template<std::size_t N>
 		requires (N>0)
-	using base_N_t			= nat_reg_digs_t<UINT_T,B,N>;
+	using base_N_t		= nat_reg_digs_t<UINT_T,B,N>;
 	using base_t      	= base_N_t<L>;
 	template<std::size_t N>
 		requires (N>0)
@@ -35,16 +35,16 @@ struct int_reg_digs_t : protected nat_reg_digs_t<UINT_T,B,L> {
 
 	template<std::size_t N>
 		requires (N>0)
-	using reg_N_ints_t		      = typename std::array<UINT_T,N>;
+	using reg_N_ints_t		    = typename std::array<UINT_T,N>;
 	template<std::size_t N>
 		requires (N>0)
 	using reg_N_ints_t_suints_t	= typename std::array<SIG_UINT_T,N>;
 	template<std::size_t N>
 		requires (N>0)
-	using reg_N_ssints_t				= typename std::array<SIG_SINT_T,N>;
+	using reg_N_ssints_t		= typename std::array<SIG_SINT_T,N>;
 
-	constexpr auto minus           = sign_e::vminus;
-	constexpr auto plus              = sign_e::vplus;
+	constexpr auto minus        = sign_e::vminus;
+	constexpr auto plus         = sign_e::vplus;
 
 private:
 	sign_e signo{};

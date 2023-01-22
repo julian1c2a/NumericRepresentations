@@ -51,8 +51,6 @@
 		<Unit filename="src/base_num_t.hpp" />
 		<Unit filename="src/basic_types.hpp" />
 		<Unit filename="src/dig_t.hpp" />
-		<Unit filename="src/documentation/documentacion.doc" />
-		<Unit filename="src/documentation/interfaz_dig_t.doc" />
 		<Unit filename="src/int_num_t.hpp" />
 		<Unit filename="src/int_reg_digs_t.hpp" />
 		<Unit filename="src/lexer_parser.hpp" />

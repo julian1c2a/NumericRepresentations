@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1673352766 source:c:\users\julian\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1673524153 source:c:\users\julian\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"utilities.hpp"
 	"nat_reg_digs_t.hpp"
 	<typeinfo>
@@ -39,7 +39,7 @@
 1668675582 c:\users\julian\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1673472708 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
+1674421530 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"utilities.hpp"
 	"nat_reg_digs_t.hpp"
 	<typeinfo>
@@ -85,7 +85,7 @@
 1670420372 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
 	"basic_types.hpp"
 
-1671024746 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
+1673515392 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
 	"istream"
 	<cinttypes>
 	<type_traits>
@@ -114,7 +114,7 @@
 1669382496 c:\users\julian\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
 	"basic_types.hpp"
 
-1671024746 c:\users\julian\dropbox\github\numericrepresentations\src\basic_types.hpp
+1673515392 c:\users\julian\dropbox\github\numericrepresentations\src\basic_types.hpp
 	"istream"
 	<cinttypes>
 	<type_traits>
@@ -137,7 +137,7 @@
 	<iterator>
 	<functional>
 
-1673473669 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1674422007 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 	"lexer_parser.hpp"
@@ -150,7 +150,7 @@
 1671536116 c:\users\julia\dropbox\github\numericrepresentations\src\lexer_parser.hpp
 	"auxiliary_types.hpp"
 
-1673353197 c:\users\julian\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1673523778 c:\users\julian\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 	"lexer_parser.hpp"
@@ -163,7 +163,7 @@
 	<array>
 	"basic_types.hpp"
 
-1671538025 c:\users\julia\dropbox\github\numericrepresentations\src\nat_reg_digs_t.hpp
+1674398199 c:\users\julia\dropbox\github\numericrepresentations\src\nat_reg_digs_t.hpp
 	"reg_digs_t.hpp"
 	"utilities.hpp"
 

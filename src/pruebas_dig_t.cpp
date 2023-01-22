@@ -15,8 +15,8 @@ template<size_t B,size_t L>
 constexpr inline
 NumRepr::uint64_t
 convert_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
-	uint64_t cB(B);
-	uint64_t accum(arg[L-1]());
+	uint64_t cB = B;
+	uint64_t accum = arg[L-1]();
 	for(int64_t ix=L-1 ; ix > 0 ; --ix) {
 		accum *= cB;
 		accum += uint64_t(arg[ix-1]());
@@ -741,9 +741,9 @@ test_result_t test_resta_con_asignacion() {
 }
 
 template<size_t B, size_t L>
-test_result_t test_aprox_coc_rem()	{
+test_result_t test_calc_coc_dig_rem_div_dsor()	{
 	namespace NR = NumRepr;
-	using d_t = NR::digit_t<B>;
+	//using d_t = NR::digit_t<B>;
 	using rd_t = NR::register_of_digits_t<B,L>;
 
 	rd_t dndo{};
@@ -753,16 +753,15 @@ test_result_t test_aprox_coc_rem()	{
 	bool todo_ha_ido_bien = true;
 	uint64_t correctos{0};
 	uint64_t errores{0};
-	dndo = rd_t{d_t(0),d_t(0),d_t(3)};
+	dndo = 3;
 	for(uint64_t ix=3; ix < B2L ; ++ix) {
-		const uint64_t inicio_iy = std::max(uint64_t(((ix+1)/(B-1))+1),uint64_t(2));
-		rd_t dsor;
+		const uint64_t inicio_iy = std::max(uint64_t(((ix-1)/(B-1))+1),uint64_t(2));
 		dsor = inicio_iy;
 		// iy ha de comenzar con un numero que n tal que ix/Bm1 == iy
 		//                                         y que ix%Bm1 == Bm1-1
 		// iy == std::max(((ix+1)/Bm1)-1,2)
 		for(uint64_t iy=inicio_iy ; iy <= ix ; ++iy) {
-			const auto [cociente,resto] = aprox_coc_rem(dndo,dsor);
+			const auto [cociente,resto] = calc_coc_dig_rem_div_dsor(dndo,dsor);
 
 			const uint64_t dndo_int{convert_to_int<B,L>(dndo)};
 			const uint64_t dsor_int{convert_to_int<B,L>(dsor)};
@@ -992,12 +991,12 @@ void show_test_mult_reg_n_dig_with_assign()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-// test_aprox_coc_rem
+// test_calc_coc_dig_rem_div_dsor
 template<NumRepr::ullint_t Base,std::size_t Long>
-void show_test_aprox_coc_rem_for_fediv()
+void show_test_calc_coc_dig_rem_div_dsor_for_fediv()
 {
 	std::cout << std::boolalpha;
-	test_result_t resultado{test_aprox_coc_rem<Base,Long>()};
+	test_result_t resultado{test_calc_coc_dig_rem_div_dsor<Base,Long>()};
 	auto todo_correcto{std::get<0>(resultado)};
 	auto correctos{std::get<1>(resultado)};
 	auto errores{std::get<2>(resultado)};
@@ -1276,9 +1275,99 @@ int main() {
 //	show_test_comp_greater_than_reg_reg<B3,L3>();
 //	show_test_comp_greater_or_equal_than_reg_reg<B3,L3>();
 
-		show_test_aprox_coc_rem_for_fediv<B1,L1>();
-		show_test_aprox_coc_rem_for_fediv<B2,L2>();
-		show_test_aprox_coc_rem_for_fediv<B3,L3>();
+//	show_test_calc_coc_dig_rem_div_dsor_for_fediv<B1,L1>();
+//	show_test_calc_coc_dig_rem_div_dsor_for_fediv<B2,L2>();
+//	show_test_calc_coc_dig_rem_div_dsor_for_fediv<B3,L3>();
+
+	namespace us = utilities::special;
+	size_t correctos = 0;
+	size_t errores = 0;
+	bool first_bad_result = true;
+	bool todo_ha_ido_bien = true;
+	rd_1_t dndo{};
+	dndo = 100;
+	rd_1_t dsor{};
+	dsor = 3;
+	fediv(dndo,dsor);
+
+	dndo = 0;
+	for(size_t dndo_idx{0} ; dndo_idx < us::Pow_B2L_v<B1,L1> ; ++dndo_idx) {
+		dsor = 1;
+		for(size_t dsor_idx{1} ; dsor_idx < us::Pow_B2L_v<B1,L1> ; ++dsor_idx) {
+			const auto dndo_int{convert_to_int<B1,L1>(dndo)};
+			const auto dsor_int{convert_to_int<B1,L1>(dsor)};
+
+			const auto result{fediv(dndo,dsor)};
+			const auto cociente = std::get<0>(result);
+			const auto resto = std::get<1>(result);
+
+			const auto cociente_calc = dndo_int / dsor_int;
+			const auto resto_calc = dndo_int % dsor_int;
+
+			const auto cociente_sync = dndo_idx / dsor_idx;
+			const auto resto_sync = dndo_idx % dsor_idx;
+
+			const auto cociente_int{convert_to_int<B1,L1>(cociente)};
+			const auto resto_int{convert_to_int<B1,L1>(resto)};
+
+			const bool cociente_bien_1 = (cociente_int == cociente_sync);
+			const bool cociente_bien_2 = (cociente_int == cociente_calc);
+			const bool resto_bien_1 = (resto_int == resto_sync);
+			const bool resto_bien_2 = (resto_int == resto_calc);
+			const bool bien =
+						cociente_bien_1 &&
+						cociente_bien_2 &&
+						resto_bien_1 		&&
+						resto_bien_2			;
+
+			if (bien) {
+				++correctos;
+//				std::cout << "VERY WELL\t:\t\t"
+//									<< dndo_idx
+//									<< "\t;\t"
+//									<< dsor_idx
+//									<< "\t\t #correctos :\t"
+//									<< correctos
+//									<< std::endl;
+			}
+			else {
+				++errores;
+				if (first_bad_result) {
+					first_bad_result = false;
+					fediv(dndo,dsor);
+					std::cout << "VERY FIRST CASE\t:\t\t"
+										<< "VERY BAD\t:\t\t"
+										<< dndo_idx
+										<< "\t;\t"
+										<< dsor_idx
+										<< "\t\t #errores :\t"
+										<< errores
+										<< std::endl;
+				}
+//				else {
+//					std::cout << "\t\t\t\tVERY BAD\t:\t\t"
+//										<< dndo_idx
+//										<< "\t;\t"
+//										<< dsor_idx
+//										<< "\t\t #errores :\t"
+//										<< errores
+//										<< std::endl;
+//				}
+
+			}
+
+
+			todo_ha_ido_bien = todo_ha_ido_bien && bien;
+			m_incr(dsor);
+		}
+
+		m_incr(dndo);
+	}
+
+	std::cout << std::boolalpha;
+	std::cout << "correctos : " << correctos 	<< "  "
+						<< "errores   : " << errores 		<< "  "
+						<< "todo bien : " << todo_ha_ido_bien << std::endl;
 
 	return 0;
 }
