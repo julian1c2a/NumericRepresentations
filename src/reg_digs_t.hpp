@@ -2652,30 +2652,36 @@ calc_coc_dig_rem_div_dsor(
 	using dig_t = dig_t<UINT_T,B>;
 	using reg_digs_t = reg_digs_t<UINT_T,B,N>;
 
-	bool coc_es_correcto{false};
-
 	reg_digs_t rem_aprox{rem};
-	dig_t coc_aprox{aprox_coc_dig_rem_div_dsor(rem,dsor)};
-
-	while(! coc_es_correcto) {
-		///  BEGIN dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
-		reg_digs_t dsor_x_coc{dsor};
-		auto dsor_x_coc_high = m_mult(dsor_x_coc,coc_aprox);
-		///  END dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
-		rem_aprox = rem;
-		if ((rem_aprox >= dsor_x_coc)&&(dsor_x_coc_high.is_0())) {
-			m_subtract(rem_aprox,dsor_x_coc);
-			if (rem_aprox < dsor) {
-				return std::make_tuple(coc_aprox,rem_aprox);
+	if (rem < dsor) {
+		return std::make_tuple(dig_t::dig_0(),rem_aprox);
+	}
+	else if (rem == dsor) {
+		return std::make_tuple(dig_t::dig_1(),reg_digs_t{});
+	}
+	else {
+		dig_t coc_aprox{aprox_coc_dig_rem_div_dsor(rem,dsor)};
+		bool coc_es_correcto{false};
+		while(! coc_es_correcto) {
+			///  BEGIN dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
+			reg_digs_t dsor_x_coc{dsor};
+			auto dsor_x_coc_high = m_mult(dsor_x_coc,coc_aprox);
+			///  END dsor_x_coc *= coc_aprox ; inicialmente dsor_x_coc == dsor
+			rem_aprox = rem;
+			if ((rem_aprox >= dsor_x_coc)&&(dsor_x_coc_high.is_0())) {
+				m_subtract(rem_aprox,dsor_x_coc);
+				if (rem_aprox < dsor) {
+					return std::make_tuple(coc_aprox,rem_aprox);
+				}
+				else {
+					++coc_aprox;
+					continue;
+				}
 			}
 			else {
-				++coc_aprox;
+				--coc_aprox;
 				continue;
 			}
-		}
-		else {
-			--coc_aprox;
-			continue;
 		}
 	}
 	/// AQUI NO DEBERIA LLEGAR NUNCA : ERROR : TODO A 0
@@ -2694,6 +2700,7 @@ fediv(
 ) noexcept {
 
 	constexpr size_t MaxParam = std::max(N,M);
+	using dig_t = dig_t<UINT_T,B>;
 	using base_t = reg_digs_t<UINT_T,B,MaxParam>;
 	using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
 
@@ -2703,14 +2710,14 @@ fediv(
 	base_t dsor{rarg};
 
 		/// MOST SIGNIFICANT DIGIT DEL DIVISOR [DEL NUMERO NO DEL TIPO]
-	const uint64_t dndo_MSDig{static_cast<std::uint64_t>(dndo.index_of_MSDig())};
+	const int64_t dndo_MSDig{static_cast<std::int64_t>(dndo.index_of_MSDig())};
 		/// MOST SIGNIFICANT DIGIT DEL DIVIDENDO [DEL NUMERO NO DEL TIPO]
-	const uint64_t dsor_MSDig{static_cast<std::uint64_t>(dsor.index_of_MSDig())};
+	const int64_t dsor_MSDig{static_cast<std::int64_t>(dsor.index_of_MSDig())};
 
-	const uint64_t dist_dndo_dsor{
-		(dndo_MSDig >= dsor_MSDig)					?
-			uint64_t(dndo_MSDig-dsor_MSDig)		:
-			uint64_t(dsor_MSDig-dndo_MSDig)
+	const int64_t dist_dndo_dsor{
+		(dndo_MSDig >= dsor_MSDig)	?
+			dndo_MSDig-dsor_MSDig			:
+			dsor_MSDig-dndo_MSDig
 	};
 
 	if (dsor.is_0()) {
@@ -2748,14 +2755,15 @@ fediv(
 				static_cast<SIG_UINT_T>(
 					(static_cast<SIG_UINT_T>(dndo[1]()) * static_cast<SIG_UINT_T>(B))
 					+
-					static_cast<SIG_UINT_T>(dndo[0]()))
+					 static_cast<SIG_UINT_T>(dndo[0]()))
 			};
 			/// dsor_uint = dsor[0]()
 			const SIG_UINT_T dsor_uint{
 				static_cast<SIG_UINT_T>(
 					(static_cast<SIG_UINT_T>(dsor[1]()) * static_cast<SIG_UINT_T>(B))
 					+
-					static_cast<SIG_UINT_T>(dsor[0]()))
+					 static_cast<SIG_UINT_T>(dsor[0]())
+				)
 			};
 			/// rem_uint = dndo_uint % dsor_uint
 			const SIG_UINT_T rem_uint =
@@ -2769,51 +2777,54 @@ fediv(
 			ret[0] = coc_uint;
 			return ret;
 		}
+		else if (dist_dndo_dsor < 1) {
+			base_t rem{};
+			base_t coc{};
+			for(int64_t ix{0} ; ix < dndo_MSDig+1 ; ++ix) {
+				rem[ix] = dndo[ix];
+			}
+			auto result{calc_coc_dig_rem_div_dsor(rem,dsor)};
+			const dig_t coc_dig{std::move(std::get<0>(result))};
+									/// ASIGNACION BIEN HECHA CUANDO REMAINDER != 0
+									rem   = std::move(std::get<1>(result));
+			coc[0] = coc_dig;
+			ret_type ret;
+			ret[0] = std::move(coc);
+			ret[1] = std::move(rem);
+			return ret;
+		}
 		else {
 
 			base_t rem{};
 			base_t coc{};
 
-			int64_t pl_dndo{static_cast<int64_t>(dist_dndo_dsor)};
-			for(int64_t offset{0} ; pl_dndo < int64_t(dndo_MSDig+1) ; ++pl_dndo,++offset) {
+			int64_t pl_dndo{dist_dndo_dsor};
+			for(int64_t offset{0} ; pl_dndo < dndo_MSDig+1 ; ++pl_dndo,++offset) {
 				rem[offset] = dndo[pl_dndo];
 			}
 			pl_dndo = dist_dndo_dsor-1;
 
-			for(int64_t numloops{0} ; numloops<=int64_t(dist_dndo_dsor) ; ++numloops)
+			do
 			{
-				if (rem == dsor) {
-					coc <<= 1;
-					coc[0] = base_t::dig_1();
-					rem = base_t::regd_0();
-					--pl_dndo;
-					rem[0] = dndo[pl_dndo];
-				}
-				else if (rem < dsor) {
-					coc <<= 1;
-					coc[0] = base_t::dig_0();
+				/// CÁLCULO DEL REM Y EL DÍGITO DE COCIENTE
+				/// CON LOS ACTUALES RESTO (REM) Y EL DIVISOR (DSOR)
+				auto result{calc_coc_dig_rem_div_dsor(rem,dsor)};
+				const dig_t coc_dig{std::move(std::get<0>(result))};
+										/// ASIGNACION BIEN HECHA CUANDO REMAINDER != 0
+										rem   = std::move(std::get<1>(result));
+
+				/// ACTUALIZACIÓN DEL COCIENTE CON EL DIGITO ENCONTRADO
+				coc <<= 1; 				// coc = coc * B
+				coc[0] = coc_dig; // coc = coc + q  ; B-1 >= q > 0
+				/// ACTUALIZACIÓN DEL RESTO CON EL NUEVO DÍGITO DEL DIVIDENDO
+				if (pl_dndo >= 0) {
 					rem <<= 1;
-					--pl_dndo;
 					rem[0] = dndo[pl_dndo];
 				}
-				///	else if (rem >= dsor*dig_B()) {
-				///		este caso no se deberia de dar nunca
-				///	}
-				else {
+				/// BAJAMOS EL ÍNDICE DEL DIVIDENDO
+				--pl_dndo;
+			} while (pl_dndo > -2);
 
-					const auto result{calc_coc_dig_rem_div_dsor(rem,dsor)};
-					rem = std::get<1>(result);
-					const dig_t coc_dig{std::get<0>(result)};
-
-					coc <<= 1; 	// coc = coc * B
-					coc[0] = coc_dig; // coc = coc + D  ; B-1 >= D > 1
-					if (pl_dndo != 0) {
-						--pl_dndo;
-						rem <<= 1;
-						rem[0] = dndo[pl_dndo];
-					}
-				}
-			}
 			ret_type ret;
 			ret[0] = std::move(coc);
 			ret[1] = std::move(rem);
@@ -2902,7 +2913,7 @@ fediv(
 
   template<type_traits::unsigned_integral_c T,T B,size_t L>
   bool get_digit_loop_token (
-		std::istream& is,reg_digs_t<T,B,L>& value
+		std::istream& is, reg_digs_t<T,B,L>& value
 	) noexcept {
 		size_t idx{0};
 		while(true) {

@@ -2,7 +2,7 @@
 #include "nat_reg_digs_t.hpp"
 #include <typeinfo>
 
-template<size_t B,size_t L>
+template<std::size_t B,std::size_t L>
 constexpr inline
 NumRepr::uint128_t
 conversion_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
@@ -11,7 +11,7 @@ conversion_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
 	return us::conversion_to_int<B,L,NR::register_of_digits_t<B,L>>(arg);
 }
 
-template<size_t B,size_t L>
+template<std::size_t B,std::size_t L>
 constexpr inline
 NumRepr::uint64_t
 convert_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
@@ -24,7 +24,7 @@ convert_to_int(const NumRepr::register_of_digits_t<B,L> & arg) noexcept {
 	return accum;
 }
 
-template<size_t B,size_t L>
+template<std::size_t B,std::size_t L>
 constexpr inline
 NumRepr::uint128_t
 Base_pow_to_Size() noexcept {
@@ -32,9 +32,75 @@ Base_pow_to_Size() noexcept {
 	return us::Base_pow_to_Size<B,L>();
 }
 
+///                              todo, num_prueb , num_prueb
+///                              bien, #correctos, #errores
 using test_result_t = std::tuple<bool,std::size_t,std::size_t>;
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
+test_result_t test_div_fediv_entre_dos_objetos_tipo_reg_digs() {
+	namespace us = utilities::special;
+	namespace NR = NumRepr;
+	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
+
+	size_t correctos = 0;
+	size_t errores = 0;
+
+	bool first_bad_result = true;
+	bool todo_ha_ido_bien = true;
+
+	reg_digs_t dndo{};
+	reg_digs_t dsor{};
+	dndo = 0;
+	for(size_t dndo_idx{0} ; dndo_idx < us::Pow_B2L_v<Base,Long> ; ++dndo_idx) {
+		dsor = 1;
+		for(size_t dsor_idx{1} ; dsor_idx < us::Pow_B2L_v<Base,Long> ; ++dsor_idx) {
+			const auto dndo_int{convert_to_int<Base,Long>(dndo)};
+			const auto dsor_int{convert_to_int<Base,Long>(dsor)};
+
+			const auto result{fediv(dndo,dsor)};
+			const auto cociente = std::get<0>(result);
+			const auto resto 		= std::get<1>(result);
+
+			const auto cociente_calc = dndo_int / dsor_int;
+			const auto resto_calc 	 = dndo_int % dsor_int;
+
+			const auto cociente_sync = dndo_idx / dsor_idx;
+			const auto resto_sync 	 = dndo_idx % dsor_idx;
+
+			const auto cociente_int{convert_to_int<Base,Long>(cociente)};
+			const auto resto_int{convert_to_int<Base,Long>(resto)};
+
+			const bool cociente_bien_1 = (cociente_int == cociente_sync);
+			const bool cociente_bien_2 = (cociente_int == cociente_calc);
+			const bool resto_bien_1 = (resto_int == resto_sync);
+			const bool resto_bien_2 = (resto_int == resto_calc);
+			const bool bien =
+						cociente_bien_1 &&
+						cociente_bien_2 &&
+						resto_bien_1 		&&
+						resto_bien_2			;
+
+			if (bien) {
+				++correctos;
+			}
+			else {
+				++errores;
+				if (first_bad_result) {
+					first_bad_result = false;
+				}
+
+			}
+
+			todo_ha_ido_bien = todo_ha_ido_bien && bien;
+			m_incr(dsor);
+		}
+
+		m_incr(dndo);
+	}
+	return test_result_t{todo_ha_ido_bien,correctos,errores};
+}
+
+template<NumRepr::ullint_t Base,std::size_t Long>
 test_result_t test_comparacion_igual_que_entre_dos_objetos_tipo_reg_digs() {
 	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
 	namespace us = utilities::special;
@@ -67,7 +133,7 @@ test_result_t test_comparacion_igual_que_entre_dos_objetos_tipo_reg_digs() {
 	return test_result_t{todo_correcto,correctos,errores};
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 test_result_t test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs() {
 	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
 	namespace us = utilities::special;
@@ -100,7 +166,7 @@ test_result_t test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs() {
 	return test_result_t{todo_correcto,correctos,errores};
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 test_result_t test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs() {
 	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
 	namespace us = utilities::special;
@@ -133,7 +199,7 @@ test_result_t test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs() {
 	return test_result_t{todo_correcto,correctos,errores};
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 test_result_t test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
 	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
 	namespace us = utilities::special;
@@ -168,7 +234,7 @@ test_result_t test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs
 }
 
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 test_result_t test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs() {
 	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
 	namespace us = utilities::special;
@@ -201,7 +267,7 @@ test_result_t test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs() {
 	return test_result_t{todo_correcto,correctos,errores};
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 test_result_t test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
 	using reg_digs_t  = NumRepr::register_of_digits_t<Base,Long>;
 	namespace us = utilities::special;
@@ -740,7 +806,7 @@ test_result_t test_resta_con_asignacion() {
 	return test_result_t{todo_correcto,correctos,errores};
 }
 
-template<size_t B, size_t L>
+template<std::size_t B, std::size_t L>
 test_result_t test_calc_coc_dig_rem_div_dsor()	{
 	namespace NR = NumRepr;
 	//using d_t = NR::digit_t<B>;
@@ -791,7 +857,7 @@ test_result_t test_calc_coc_dig_rem_div_dsor()	{
 	return ret;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_incr_with_assign()
 {
 	std::cout << std::boolalpha;
@@ -806,7 +872,7 @@ void show_test_incr_with_assign()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_decr_with_assign()
 {
 	std::cout << std::boolalpha;
@@ -821,7 +887,7 @@ void show_test_decr_with_assign()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_comp_equal_than_reg_reg()
 {
 	std::cout << std::boolalpha;
@@ -836,7 +902,7 @@ void show_test_comp_equal_than_reg_reg()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_comp_notequal_than_reg_reg()
 {
 	std::cout << std::boolalpha;
@@ -852,7 +918,7 @@ void show_test_comp_notequal_than_reg_reg()
 }
 
 // test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_comp_less_than_reg_reg()
 {
 	std::cout << std::boolalpha;
@@ -867,7 +933,7 @@ void show_test_comp_less_than_reg_reg()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_comp_less_or_equal_than_reg_reg()
 {
 	std::cout << std::boolalpha;
@@ -883,7 +949,7 @@ void show_test_comp_less_or_equal_than_reg_reg()
 }
 
 // test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_comp_greater_than_reg_reg()
 {
 	std::cout << std::boolalpha;
@@ -898,7 +964,7 @@ void show_test_comp_greater_than_reg_reg()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_comp_greater_or_equal_than_reg_reg()
 {
 	std::cout << std::boolalpha;
@@ -913,7 +979,7 @@ void show_test_comp_greater_or_equal_than_reg_reg()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_sum_with_assign()
 {
 	std::cout << std::boolalpha;
@@ -944,7 +1010,7 @@ void show_test_mult_2_digits_with_assign()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<NumRepr::ullint_t Base,size_t Long>
+template<NumRepr::ullint_t Base,std::size_t Long>
 void show_test_subtract_with_assign()
 {
 	std::cout << std::boolalpha;
@@ -1075,7 +1141,23 @@ void show_test_sum_n_carry_with_assign_two_digits()
 	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
 }
 
-template<size_t B,size_t L>
+/// test_result_t test_div_fediv_entre_dos_objetos_tipo_reg_digs()
+template<NumRepr::ullint_t Base,std::size_t Long>
+void show_test_div_fediv_two_reg_digs()
+{
+	std::cout << std::boolalpha;
+	auto resultado{test_div_fediv_entre_dos_objetos_tipo_reg_digs<Base,Long>()};
+	auto todo_correcto{std::get<0>(resultado)};
+	auto correctos{std::get<1>(resultado)};
+	auto errores{std::get<2>(resultado)};
+	std::cout << "TEST para la division (con resto) sobre 2 objetos tipo reg_digs_t<"
+						<< int(Base) << "," << int(Long) << ">" << std::endl;
+	std::cout << "El numero de pruebas \"correctas\" son " << correctos << " pruebas exitosas " << std::endl;
+	std::cout << "El numero de pruebas \"erroneas\"  son " << errores   << " pruebas fallidas " << std::endl;
+	std::cout << "Todo ha ido bien : " << todo_correcto << std::endl;
+}
+
+template<std::size_t B,std::size_t L>
 void show_test_convert_to_int() {
 	using rd_t = NumRepr::register_of_digits_t<B,L>;
 	constexpr uint64_t B2L{Base_pow_to_Size<B,L>()};
@@ -1103,7 +1185,7 @@ void show_test_convert_to_int() {
 	std::cout << "Todo bien == " << todo_ha_ido_bien << std::endl;
 }
 
-template<size_t B,size_t L>
+template<std::size_t B,std::size_t L>
 void show_test_conversion_to_int() {
 	using rd_t = NumRepr::register_of_digits_t<B,L>;
 	constexpr uint64_t B2L{Base_pow_to_Size<B,L>()};
@@ -1279,95 +1361,9 @@ int main() {
 //	show_test_calc_coc_dig_rem_div_dsor_for_fediv<B2,L2>();
 //	show_test_calc_coc_dig_rem_div_dsor_for_fediv<B3,L3>();
 
-	namespace us = utilities::special;
-	size_t correctos = 0;
-	size_t errores = 0;
-	bool first_bad_result = true;
-	bool todo_ha_ido_bien = true;
-	rd_1_t dndo{};
-	dndo = 100;
-	rd_1_t dsor{};
-	dsor = 3;
-	fediv(dndo,dsor);
-
-	dndo = 0;
-	for(size_t dndo_idx{0} ; dndo_idx < us::Pow_B2L_v<B1,L1> ; ++dndo_idx) {
-		dsor = 1;
-		for(size_t dsor_idx{1} ; dsor_idx < us::Pow_B2L_v<B1,L1> ; ++dsor_idx) {
-			const auto dndo_int{convert_to_int<B1,L1>(dndo)};
-			const auto dsor_int{convert_to_int<B1,L1>(dsor)};
-
-			const auto result{fediv(dndo,dsor)};
-			const auto cociente = std::get<0>(result);
-			const auto resto = std::get<1>(result);
-
-			const auto cociente_calc = dndo_int / dsor_int;
-			const auto resto_calc = dndo_int % dsor_int;
-
-			const auto cociente_sync = dndo_idx / dsor_idx;
-			const auto resto_sync = dndo_idx % dsor_idx;
-
-			const auto cociente_int{convert_to_int<B1,L1>(cociente)};
-			const auto resto_int{convert_to_int<B1,L1>(resto)};
-
-			const bool cociente_bien_1 = (cociente_int == cociente_sync);
-			const bool cociente_bien_2 = (cociente_int == cociente_calc);
-			const bool resto_bien_1 = (resto_int == resto_sync);
-			const bool resto_bien_2 = (resto_int == resto_calc);
-			const bool bien =
-						cociente_bien_1 &&
-						cociente_bien_2 &&
-						resto_bien_1 		&&
-						resto_bien_2			;
-
-			if (bien) {
-				++correctos;
-//				std::cout << "VERY WELL\t:\t\t"
-//									<< dndo_idx
-//									<< "\t;\t"
-//									<< dsor_idx
-//									<< "\t\t #correctos :\t"
-//									<< correctos
-//									<< std::endl;
-			}
-			else {
-				++errores;
-				if (first_bad_result) {
-					first_bad_result = false;
-					fediv(dndo,dsor);
-					std::cout << "VERY FIRST CASE\t:\t\t"
-										<< "VERY BAD\t:\t\t"
-										<< dndo_idx
-										<< "\t;\t"
-										<< dsor_idx
-										<< "\t\t #errores :\t"
-										<< errores
-										<< std::endl;
-				}
-//				else {
-//					std::cout << "\t\t\t\tVERY BAD\t:\t\t"
-//										<< dndo_idx
-//										<< "\t;\t"
-//										<< dsor_idx
-//										<< "\t\t #errores :\t"
-//										<< errores
-//										<< std::endl;
-//				}
-
-			}
-
-
-			todo_ha_ido_bien = todo_ha_ido_bien && bien;
-			m_incr(dsor);
-		}
-
-		m_incr(dndo);
-	}
-
-	std::cout << std::boolalpha;
-	std::cout << "correctos : " << correctos 	<< "  "
-						<< "errores   : " << errores 		<< "  "
-						<< "todo bien : " << todo_ha_ido_bien << std::endl;
+		show_test_div_fediv_two_reg_digs<B1,L1>();
+		show_test_div_fediv_two_reg_digs<B2,L2>();
+		show_test_div_fediv_two_reg_digs<B3,L3>();
 
 	return 0;
 }
