@@ -29,12 +29,15 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-flto" />
+					<Add option="-O3" />
+					<Add option="-fPIC" />
 					<Add option="-m64" />
 					<Add option="-std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000" />
 				</Compiler>
 				<Linker>
-					<Add option="-O2" />
+					<Add option="-flto" />
 					<Add option="-s" />
 					<Add option="-static-libstdc++" />
 					<Add option="-static-libgcc" />
@@ -63,9 +66,10 @@
 		<Unit filename="src/rat_fixed_reg_t.hpp" />
 		<Unit filename="src/rat_num_t.hpp" />
 		<Unit filename="src/reg_digs_t.hpp" />
-		<Unit filename="src/test_dig_t.hpp" />
+		<Unit filename="src/testunit.hpp" />
 		<Unit filename="src/utilities.hpp" />
 		<Extensions>
+			<editor_config active="1" use_tabs="1" tab_indents="0" tab_width="4" indent="4" eol_mode="0" />
 			<lib_finder disable_auto="1" />
 			<wxsmith version="1">
 				<gui name="wxWidgets" src="" main="" init_handlers="necessary" language="CPP" />

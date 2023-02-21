@@ -1497,11 +1497,11 @@ using digit_t = dig_t<
 	>;
 ///< SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o ...
 
-			/************************************/
-			/*                              		*/
-			/* 	   ISTREAM Y OSTREAM    				*/
-			/*                              		*/
-			/************************************/
+        /************************************/
+        /*                                  */
+        /*         ISTREAM Y OSTREAM        */
+        /*                                  */
+        /************************************/
 
 template<type_traits::uint_type_for_radix_c UINT_T,UINT_T Base>
 	requires (type_traits::suitable_base<UINT_T,Base>())

@@ -16,12 +16,12 @@ struct nat_reg_digs_t : public reg_digs_t<UINT_T,B,L> {
 	using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
 	using SIG_SINT_T = typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
 
-	using dig_t 		= dig_t<UINT_T,B>;
+	using dig_t 	 = dig_t<UINT_T,B>;
 
 	template<size_t N>
 		requires ( N > 0 )
-	using base_N_t      	= reg_digs_t<UINT_T,B,N>;
-	using base_t					= base_N_t<L>;
+	using base_N_t   = reg_digs_t<UINT_T,B,N>;
+	using base_t	 = base_N_t<L>;
 
 	template<binop_e op,size_t N>
 	using res_base_N_op_t	=

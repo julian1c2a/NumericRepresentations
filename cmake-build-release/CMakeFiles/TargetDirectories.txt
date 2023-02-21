@@ -1,0 +1,3 @@
+C:/Users/julia/Dropbox/GitHub/NumericRepresentations/cmake-build-release/CMakeFiles/NumericRepresentations.dir
+C:/Users/julia/Dropbox/GitHub/NumericRepresentations/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Users/julia/Dropbox/GitHub/NumericRepresentations/cmake-build-release/CMakeFiles/rebuild_cache.dir

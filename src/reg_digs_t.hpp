@@ -3,7 +3,7 @@
 
 #include "dig_t.hpp"
 #include "utilities.hpp"
-#include "lexer_parser.hpp"
+//#include "lexer_parser.hpp"
 
 namespace NumRepr {
 
@@ -27,13 +27,17 @@ public :
 	using reg_N_digs_t  = reg_digs_t<UINT_T,B,N>;
 
 	/// devolución de punteros a la clase base
+	/// CAST to CONST BASE_T*
 	constexpr inline const base_t* const const_base_this() const noexcept {
 		return static_cast<const base_t* const>(this);
 	}
 
+    /// devolución de punteros a la clase base
+    /// CAST to BASE_T*
 	constexpr inline base_t* base_this() noexcept {
 		return static_cast<base_t*>(this);
 	}
+
 	/// devolución de referencias a la clase base
 	constexpr inline base_t& r_base_cthis() noexcept {
 		return (*base_this());
@@ -2310,7 +2314,7 @@ reg_digs_t<UINT_T,B,N> aprox_units_divB(const reg_digs_t<UINT_T,B,N>& arg) noexc
 		}
 	}
 } ///< POSTCONDICION RET[N-1] == (DIG_1() | DIG_0())
-	///< POSTCONDICION RET[N-1] == DIG_1() => RET[N-2,0] == REGD_N_0()
+  ///< POSTCONDICION RET[N-1] == DIG_1() => RET[N-2,0] == REGD_N_0()
 
 ///< HAY QUE VER SI ES POTENCIA DE B : is_any_B_pow
 template<typename UINT_T, UINT_T B, size_t N, size_t n>
@@ -2340,8 +2344,8 @@ dig_t<UINT_T,B> m_mult(dig_t<UINT_T,B>&left,const dig_t<UINT_T,B>&right) noexcep
 	using ELEC_UINT_T =
 		std::conditional_t<
 			BASE_IS_BOTTOM_LIMIT, /// CONDITION
-				UINT_T,             /// IF CONDITION==TRUE THEN
-				SIG_UINT_T          /// ELSE THEN
+				UINT_T,           /// IF CONDITION==TRUE THEN
+				SIG_UINT_T        /// ELSE THEN
 		>;
 	constexpr ELEC_UINT_T Base{B};
 	const ELEC_UINT_T left_opndo{left()};
@@ -2366,8 +2370,8 @@ std::tuple<dig_t<UINT_T,B>,dig_t<UINT_T,B>> mult(dig_t<UINT_T,B> left, dig_t<UIN
 	using ELEC_UINT_T =
 		std::conditional_t<
 			BASE_IS_BOTTOM_LIMIT, /// CONDITION
-				UINT_T,             /// IF CONDITION==TRUE THEN
-				SIG_UINT_T          /// ELSE THEN
+				UINT_T,           /// IF CONDITION==TRUE THEN
+				SIG_UINT_T        /// ELSE THEN
 		>;
 	constexpr ELEC_UINT_T Base{B};
 	const ELEC_UINT_T left_opndo{left()};
@@ -2385,7 +2389,7 @@ std::tuple<dig_t<UINT_T,B>,dig_t<UINT_T,B>> mult(dig_t<UINT_T,B> left, dig_t<UIN
 template<typename UINT_T,UINT_T B>
 constexpr inline
 dig_t<UINT_T,B> m_mult_with_carryin_dig(
-				dig_t<UINT_T,B>&left,
+          dig_t<UINT_T,B>&left,
 	const dig_t<UINT_T,B>&right,
 	const dig_t<UINT_T,B>&carryin
 ) noexcept {
@@ -2396,8 +2400,8 @@ dig_t<UINT_T,B> m_mult_with_carryin_dig(
 	using ELEC_UINT_T =
 		std::conditional_t<
 			BASE_IS_BOTTOM_LIMIT, /// CONDITION
-				UINT_T,             /// IF CONDITION==TRUE THEN
-				SIG_UINT_T          /// ELSE THEN
+				UINT_T,           /// IF CONDITION==TRUE THEN
+				SIG_UINT_T        /// ELSE THEN
 		>;
 	constexpr ELEC_UINT_T Base{B};
 	const ELEC_UINT_T left_opndo{left()};
@@ -2428,8 +2432,8 @@ std::tuple<dig_t<UINT_T,B>,dig_t<UINT_T,B>> mult_with_carryin_dig(
 	using ELEC_UINT_T =
 		std::conditional_t<
 			BASE_IS_BOTTOM_LIMIT, /// CONDITION
-				UINT_T,             /// IF CONDITION==TRUE THEN
-				SIG_UINT_T          /// ELSE THEN
+				UINT_T,           /// IF CONDITION==TRUE THEN
+				SIG_UINT_T        /// ELSE THEN
 		>;
 	constexpr ELEC_UINT_T Base{B};
 	const ELEC_UINT_T left_opndo{left()};
@@ -2464,7 +2468,7 @@ template<typename UINT_T,UINT_T B,size_t N>
 constexpr inline
 std::tuple<reg_digs_t<UINT_T,B,N>,dig_t<UINT_T,B>>
 mult(const reg_digs_t<UINT_T,B,N>&left,const dig_t<UINT_T,B>&right) noexcept {
-	using dig_t 			= dig_t<UINT_T,B>;
+	using dig_t 		= dig_t<UINT_T,B>;
 	using reg_digs_t	= reg_digs_t<UINT_T,B,N>;
 	using namespace type_traits;
 	std::tuple<reg_digs_t,dig_t> ret{};
@@ -2833,423 +2837,293 @@ fediv(
 	}
 }
 
-  /// FUNCION QUE CONSIGUE EL TOKEN DIGITO
-  template<type_traits::unsigned_integral_c UINT_T,UINT_T B>
-  bool get_digit_token(std::istream& is,dig_t<UINT_T,B>& dig_value)
-  {
-    std::string old_input_string{""};
-    std::string new_input_string{""};
-    size_t index{0};
-    char input_char = type_traits::nullchar<char>;
-    UINT_T uint_value = 0;
-    dig_value = dig_t<UINT_T,B>::dig_0();
-    while(true) {
-      is >> input_char;
-      if ((index==0)&&(lex::is_separator(input_char))) {
-        new_input_string += input_char;
-        old_input_string = new_input_string;
-        ++index;
-      }
-      else if ((index == 0)&&(! lex::is_separator(input_char))) {
-        std::cerr << "Has cometido un error, tenias que "
-        << " escribir \" " << '#' << " \"  y has escrito "
-        << new_input_string << std::endl;
-        std::cerr << "Considera que has escrito "
-        << old_input_string
-        << " y continua escribiendo a partir de ahi";
-        new_input_string = old_input_string;
-      }
-      else if((index>=1) && lex::is_digit(input_char)) {
-        if (lex::digit_value(input_char) < B) {
-          new_input_string += input_char;
-          uint_value *= B;
-          uint_value += lex::digit_value(input_char);
-          if (uint_value < B) {
-            old_input_string = new_input_string;
-            dig_value = dig_t<UINT_T,B>(uint_value);
-            ++index;
-          }
-          else {
-            old_input_string = "#";
-            std::cerr << "Has cometido un error, tenias que "
-            << "poner un valor menor que la base y has "
-            << "puesto \" " << uint_value << " \" escrito como \" "
-            << new_input_string << " \" " << std::endl;
-            uint_value = 0;
-            return false;
-          }
-        }
-        else if((index>=1) &&
-								! lex::is_digit(input_char) &&
-								(input_char != '_')
-					) {
-          std::cerr << "El caracter "
-										<< input_char
-										<< " no es valido aqui "
-										<< std::endl;
-          uint_value = 0;
-          return false;
-        }
-      }
-      else if((index>1)&&(input_char == '_')) {
-        return true;
-      }
-      else{
-        std::cerr << "Has cometido un error, tenias que escribir "
-        << " \" " << "#digdigdig..._"
-        << " \"  y has escrito "
-        << new_input_string << std::endl;
-        uint_value = 0;
-        return false;
-      }
-    }
-  }
-
-  /// FUNCION QUE CONSIGUE EL TOKEN BASE
-  template<type_traits::unsigned_integral_c T,T B>
-  bool get_radix_token(std::istream& is) {
-    return dig_t<T,B>::get_radix_token(is);
-  }
-
-  template<type_traits::unsigned_integral_c T,T B,size_t L>
-  bool get_digit_loop_token (
-		std::istream& is, reg_digs_t<T,B,L>& value
-	) noexcept {
-		size_t idx{0};
-		while(true) {
-			if(idx < L) {
-				if (get_digit_token(is,value[idx])) {
-					++idx;
-				}
-				else {
-					for(;idx < L;++idx) {
-						value[idx] = 0;
-					}
-					std::cerr << " error consiguiendo el digito " << idx
-										<< std::endl;
-					std::cerr << " digitos a 0 a partir del indice = " << idx
-										<< std::endl;
-					return false;
-				}
-			}
-			if (idx >= L)
-				return true;
-		}
-	}
-
-	template<type_traits::unsigned_integral_c T,T B,size_t L>
-	bool read (std::istream& is,reg_digs_t<T,B,L>& value)
-	noexcept {
-		//std::cerr
-		reg_digs_t<T,B,L> default_value{};
-		bool type_token = reg_digs_t<T,B,L>::get_type_template_string_id_token(is);
-		if (type_token) {
-			if (get_digit_loop_token(is,value)) {
-				if (dig_t<T,B>::get_radix_token(is)) {
-					return true;
-				}
-				else {
-					value = default_value;
-					return false;
-				}
-			}
-			else {
-				value = default_value;
-				return false;
-			}
-		} else {
-			value = default_value;
-			return false;
-		}
-	}
-
-	/// SOBRECARGA DE ISTREAM Y OSTREAM CON LOS OPERADORES DE DESPLAZAMEINTO
-	template<typename Int_Type,Int_Type Base,size_t Length>
-		requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))
-	std::istream &
-	operator >> (std::istream & is,reg_digs_t<Int_Type,Base,Length> & arg) {
-		enum estado_e {
-			e0ini	, e1r		, e1e		, e1g			, e1sep		,
-			e1d		, e1i		, e2g		, e2start	, e2dig		,
-			e2dp	, e2end	, e2B		, e3dig		, e0fin
-		};
-		/// STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
-		constexpr size_t longitud_cadena
-			{
-				(
-					(Length+1)*
-					static_cast<size_t>(
-						std::ceil(
-							(
-								std::log2(static_cast<long double>(Base)) + 1
-							)
+/// SOBRECARGA DE ISTREAM Y OSTREAM CON LOS OPERADORES DE DESPLAZAMEINTO
+template<typename Int_Type,Int_Type Base,size_t Length>
+	requires (type_traits::suitable_base<Int_Type,Base>()&&(Length > 0))
+std::istream &
+operator >> (std::istream & is,reg_digs_t<Int_Type,Base,Length> & arg) {
+	enum estado_e {
+		e0ini	, e1r		, e1e		, e1g			, e1sep		,
+		e1d		, e1i		, e2g		, e2start	, e2dig		,
+		e2dp	, e2end	, e2B		, e3dig		, e0fin
+	};
+	/// STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
+	constexpr size_t longitud_cadena
+		{
+			(
+				(Length+1)*
+				static_cast<size_t>(
+					std::ceil(
+						(
+							std::log2(static_cast<long double>(Base)) + 1
 						)
 					)
-				)	+16
-			};
-		std::string sds{};
-		sds.resize(longitud_cadena);
-		sds.assign(longitud_cadena,'\0');
-		/// TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS
-		using inttype 		= typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
-		using dig_t 			= dig_t<Int_Type,Base>;
-		using reg_digs_t 	= reg_digs_t<Int_Type,Base,Length>;
-		/// INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
-		size_t	indice{0};
-		/// VARIABLES PARA ACCIONES EN LOS ESTADOS
-		Int_Type digito{0};
-		size_t longitud{0};
-		inttype numero_base_recogido{0};
-		/// VARIABLE DE RETORNO (BINDED TO THE ARG BY REFERENCE)
-		reg_digs_t& numero_ret{arg};
-		/// ESTADO ACTUAL
-		estado_e est_act = e0ini;
-		/// CARACTER QUE GUARDARA EL INDICADO POR EL INDICE DEL STRING RECOGIDO DESDE CIN
-		char c = type_traits::nullchar<char>;
-		/// RECOGEMOS DESDE LA ENTRADA EL STRING CON LA INFORMACION CODIFICADA
-		is >> sds;
-		/// MAQUINA DE ESTADOS FINITOS QUE HACE EL PARSE() DE LA ENTRADA
-		do {
-		c = sds[indice];
-			switch(est_act) {
-				case e0ini :
+				)
+			)	+16
+		};
+	std::string sds{};
+	sds.resize(longitud_cadena);
+	sds.assign(longitud_cadena,'\0');
+	/// TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS
+	using inttype 		= typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
+	using dig_t 			= dig_t<Int_Type,Base>;
+	using reg_digs_t 	= reg_digs_t<Int_Type,Base,Length>;
+	/// INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
+	size_t	indice{0};
+	/// VARIABLES PARA ACCIONES EN LOS ESTADOS
+	Int_Type digito{0};
+	size_t longitud{0};
+	inttype numero_base_recogido{0};
+	/// VARIABLE DE RETORNO (BINDED TO THE ARG BY REFERENCE)
+	reg_digs_t& numero_ret{arg};
+	/// ESTADO ACTUAL
+	estado_e est_act = e0ini;
+	/// CARACTER QUE GUARDARA EL INDICADO POR EL INDICE DEL STRING RECOGIDO DESDE CIN
+	char c = type_traits::nullchar<char>;
+	/// RECOGEMOS DESDE LA ENTRADA EL STRING CON LA INFORMACION CODIFICADA
+	is >> sds;
+	/// MAQUINA DE ESTADOS FINITOS QUE HACE EL PARSE() DE LA ENTRADA
+	do {
+	c = sds[indice];
+		switch(est_act) {
+			case e0ini :
+				{
+					if (c=='r') {
+						est_act = e1r;
+					} else {
+						est_act = e0ini;
+					}
+				}
+				break;
+			case e1r :
+				{
 					{
-						if (c=='r') {
-							est_act = e1r;
-						} else {
+						if (c=='e') {
+							est_act = e1e;
+						}
+						else {
 							est_act = e0ini;
 						}
 					}
-					break;
-				case e1r :
-					{
-						{
-							if (c=='e') {
-								est_act = e1e;
-							}
-							else {
-								est_act = e0ini;
-							}
-						}
+				}
+				break;
+			case e1e :
+				{
+					if (c=='g') {
+						est_act = e1g;
 					}
-					break;
-				case e1e :
-					{
-						if (c=='g') {
-							est_act = e1g;
-						}
-						else  {
-							est_act = e0ini;
-						}
+					else  {
+						est_act = e0ini;
 					}
-					break;
-				case e1g :
-					{
-						if (c=='_') {
-							est_act = e1sep;
-						}
-						else  {
-							est_act = e0ini;
-						}
+				}
+				break;
+			case e1g :
+				{
+					if (c=='_') {
+						est_act = e1sep;
 					}
-					break;
-				case e1sep :
-					{
-						if (c=='d') {
-							est_act = e1d;
-						}
-						else  {
-							est_act = e0ini;
-						}
+					else  {
+						est_act = e0ini;
 					}
-					break;
-				case e1d :
-					{
-						if (c=='i') {
-							est_act = e1i;
-						}
-						else  {
-							est_act = e0ini;
-						}
+				}
+				break;
+			case e1sep :
+				{
+					if (c=='d') {
+						est_act = e1d;
 					}
-					break;
-				case e1i :
-					{
-						if (c=='g') {
-							est_act = e2g;
-						}
-						else  {
-							est_act = e0ini;
-						}
+					else  {
+						est_act = e0ini;
 					}
-					break;
-				case e2g :
-					{
-						if (c=='#') {
-							est_act = e2start;
-						}
-						else  {
-							est_act = e0ini;
-						}
+				}
+				break;
+			case e1d :
+				{
+					if (c=='i') {
+						est_act = e1i;
 					}
-					break;
-				case e2start :
-					{
-						if (((c>='0')&&(c<='9'))&&(std::abs(c-'0')<Base)) {
-							est_act = e2dig;
-							digito = (c-'0');
-							longitud = 0;
+					else  {
+						est_act = e0ini;
+					}
+				}
+				break;
+			case e1i :
+				{
+					if (c=='g') {
+						est_act = e2g;
+					}
+					else  {
+						est_act = e0ini;
+					}
+				}
+				break;
+			case e2g :
+				{
+					if (c=='#') {
+						est_act = e2start;
+					}
+					else  {
+						est_act = e0ini;
+					}
+				}
+				break;
+			case e2start :
+				{
+					if (((c>='0')&&(c<='9'))&&(std::abs(c-'0')<Base)) {
+						est_act = e2dig;
+						digito = (c-'0');
+						longitud = 0;
+						numero_base_recogido = 0;
+						numero_ret = reg_digs_t::regd_0();
+					}
+					else  {
+						est_act = e0ini;
+						digito = 0;
+						longitud = 0;
+						numero_base_recogido = 0;
+						numero_ret = reg_digs_t::regd_0();
+					}
+				}
+				break;
+			case e2dig :
+				{
+					const bool dig_c {(c >= '0') && (c <= '9')};
+					const bool dig_lt_Base{digito<Base};
+					const bool c_es_dig_B {dig_c && dig_lt_Base};
+					const bool dig_B_cdl {c_es_dig_B && (longitud <= Length-1)};
+					const bool tt_dig_B_cdl {(c==':')&&dig_lt_Base&&(longitud <= Length-1)};
+					const bool tf_dig_B_cdl {(c=='#')&&dig_lt_Base&&(longitud == Length-1)};
+					if (dig_B_cdl) {
+						digito *= 10;
+						digito += (c-'0');
+						est_act = e2dig;
+					}
+					else if (tt_dig_B_cdl) {
+						est_act = e2dp;
+					}
+					else if (tf_dig_B_cdl) {
+						est_act = e2end;
+					}
+					else  {
+						est_act = e0ini;
+						digito = 0;
+						longitud = 0;
+						numero_base_recogido = 0;
+						numero_ret = reg_digs_t::regd_0();
+					}
+				}
+				break;
+			case e2dp :
+				{
+					const bool dig_c {(c >= '0') && (c <= '9')};
+					const bool c_es_dig_B {(std::abs(c-'0')<Base) && (digito<Base)};
+					const bool dig_B_cdl {dig_c && c_es_dig_B && (longitud < Length-1)};
+					const bool rdig_B_cdl {dig_c && c_es_dig_B && dig_B_cdl};
+					if (rdig_B_cdl) {
+						est_act = e2dig;
+						numero_ret[Length-1-longitud] = dig_t(digito);
+						++longitud;
+						digito = c-'0';
+					}
+					else  {
+						est_act = e0ini;
+						digito = 0;
+						longitud = 0;
+						numero_base_recogido = 0;
+						indice = 0;
+						numero_ret = reg_digs_t::regd_0();
+					}
+				}
+				break;
+			case e2end :
+				{
+					const bool c_es_sepfin {c == 'B'};
+					const bool d_es_digB {digito < Base};
+					const bool l_coincide {longitud == Length-1};// llega al cero ?
+					const bool rdigB_cdl {c_es_sepfin && d_es_digB && l_coincide};
+					if (rdigB_cdl) {
+						est_act = e2B;
+						numero_ret[Length-1-longitud] = dig_t(digito);
+						digito = 0;
+						longitud = 0;
+					}
+					else  {
+						est_act = e0ini;
+						indice = 0;
+						digito = 0;
+						longitud = 0;
+						numero_ret = reg_digs_t::regd_0();
+					}
+				}
+				break;
+			case e2B :
+				{
+					if ((c >= '0')&&(c <= '9')) {
+						est_act = e3dig;
+						numero_base_recogido = c-'0';
+						digito = 0;
+					}
+					else  {
+						est_act = e0ini;
+						digito = 0;
+						longitud = 0;
+						numero_base_recogido = 0;
+						numero_ret = reg_digs_t::regd_0();
+					}
+				}
+				break;
+			case e3dig :
+				{
+					const bool espacio_c {c < 16};
+					const bool digito_c {(c>='0') && (c<='9')};
+					const bool num_base_lt_Base {numero_base_recogido < Base};
+					const bool num_base_eq_Base {numero_base_recogido == Base};
+					if (digito_c && num_base_lt_Base) {
+						est_act = e3dig;
+						numero_base_recogido *= 10;
+						numero_base_recogido += (c-'0');
+					}
+					else if (espacio_c && num_base_eq_Base) {
+						numero_base_recogido *= 10;
+						numero_base_recogido += (c-'0');
+							est_act = e0fin;
 							numero_base_recogido = 0;
-							numero_ret = reg_digs_t::regd_0();
-						}
-						else  {
-							est_act = e0ini;
-							digito = 0;
-							longitud = 0;
-							numero_base_recogido = 0;
-							numero_ret = reg_digs_t::regd_0();
-						}
 					}
-					break;
-				case e2dig :
-					{
-						const bool dig_c {(c >= '0') && (c <= '9')};
-						const bool dig_lt_Base{digito<Base};
-						const bool c_es_dig_B {dig_c && dig_lt_Base};
-						const bool dig_B_cdl {c_es_dig_B && (longitud <= Length-1)};
-						const bool tt_dig_B_cdl {(c==':')&&dig_lt_Base&&(longitud <= Length-1)};
-						const bool tf_dig_B_cdl {(c=='#')&&dig_lt_Base&&(longitud == Length-1)};
-						if (dig_B_cdl) {
-							digito *= 10;
-							digito += (c-'0');
-							est_act = e2dig;
-						}
-						else if (tt_dig_B_cdl) {
-							est_act = e2dp;
-						}
-						else if (tf_dig_B_cdl) {
-							est_act = e2end;
-						}
-						else  {
-							est_act = e0ini;
-							digito = 0;
-							longitud = 0;
-							numero_base_recogido = 0;
-							numero_ret = reg_digs_t::regd_0();
-						}
+					else  {
+						est_act = e0ini;
+						numero_base_recogido = 0;
 					}
-					break;
-				case e2dp :
-					{
-						const bool dig_c {(c >= '0') && (c <= '9')};
-						const bool c_es_dig_B {(std::abs(c-'0')<Base) && (digito<Base)};
-						const bool dig_B_cdl {dig_c && c_es_dig_B && (longitud < Length-1)};
-						const bool rdig_B_cdl {dig_c && c_es_dig_B && dig_B_cdl};
-						if (rdig_B_cdl) {
-							est_act = e2dig;
-							numero_ret[Length-1-longitud] = dig_t(digito);
-							++longitud;
-							digito = c-'0';
-						}
-						else  {
-							est_act = e0ini;
-							digito = 0;
-							longitud = 0;
-							numero_base_recogido = 0;
-							indice = 0;
-							numero_ret = reg_digs_t::regd_0();
-						}
-					}
-					break;
-				case e2end :
-					{
-						const bool c_es_sepfin {c == 'B'};
-						const bool d_es_digB {digito < Base};
-						const bool l_coincide {longitud == Length-1};// llega al cero ?
-						const bool rdigB_cdl {c_es_sepfin && d_es_digB && l_coincide};
-						if (rdigB_cdl) {
-							est_act = e2B;
-							numero_ret[Length-1-longitud] = dig_t(digito);
-							digito = 0;
-							longitud = 0;
-						}
-						else  {
-							est_act = e0ini;
-							indice = 0;
-							digito = 0;
-							longitud = 0;
-							numero_ret = reg_digs_t::regd_0();
-						}
-					}
-					break;
-				case e2B :
-					{
-						if ((c >= '0')&&(c <= '9')) {
-							est_act = e3dig;
-							numero_base_recogido = c-'0';
-							digito = 0;
-						}
-						else  {
-							est_act = e0ini;
-							digito = 0;
-							longitud = 0;
-							numero_base_recogido = 0;
-							numero_ret = reg_digs_t::regd_0();
-						}
-					}
-					break;
-				case e3dig :
-					{
-						const bool espacio_c {c < 16};
-						const bool digito_c {(c>='0') && (c<='9')};
-						const bool num_base_lt_Base {numero_base_recogido < Base};
-						const bool num_base_eq_Base {numero_base_recogido == Base};
-						if (digito_c && num_base_lt_Base) {
-							est_act = e3dig;
-							numero_base_recogido *= 10;
-							numero_base_recogido += (c-'0');
-						}
-						else if (espacio_c && num_base_eq_Base) {
-							numero_base_recogido *= 10;
-							numero_base_recogido += (c-'0');
-								est_act = e0fin;
-								numero_base_recogido = 0;
-						}
-						else  {
-							est_act = e0ini;
-							numero_base_recogido = 0;
-						}
-					}
-					break;
-				case e0fin :
-					{
-						est_act = e0fin;
-					}
-			}
-			++indice;
-		} while (est_act!=e0fin);
-
-		return (is);
-	}
-
-	template<typename Int_Type,Int_Type Base,size_t Long>
-		requires (type_traits::suitable_base<Int_Type,Base>())
-	std::ostream &
-	operator << (
-			std::ostream & os,
-			const reg_digs_t<Int_Type,Base,Long> & arg)
-	{
-		using inttype = ullint_t;
-		os << "reg_dig#";
-		for(int32_t ix{Long-1} ; ix > 0 ; --ix) {
-				os << static_cast<inttype>(arg[ix]());
-				os << ':';
+				}
+				break;
+			case e0fin :
+				{
+					est_act = e0fin;
+				}
 		}
-		os << static_cast<inttype>(arg[0]());
-		os << "#B";
-		os << static_cast<inttype>(Base);
-		return (os);
+		++indice;
+	} while (est_act!=e0fin);
+
+	return (is);
+}
+
+template<typename Int_Type,Int_Type Base,size_t Long>
+	requires (type_traits::suitable_base<Int_Type,Base>())
+std::ostream &
+operator << (
+		std::ostream & os,
+		const reg_digs_t<Int_Type,Base,Long> & arg)
+{
+	using inttype = ullint_t;
+	os << "reg_dig#";
+	for(int32_t ix{Long-1} ; ix > 0 ; --ix) {
+			os << static_cast<inttype>(arg[ix]());
+			os << ':';
 	}
+	os << static_cast<inttype>(arg[0]());
+	os << "#B";
+	os << static_cast<inttype>(Base);
+	return (os);
+}
 
 } // CLOSE NAMESPACE NUMREPR
 

@@ -1,0 +1,4 @@
+C:\msys64\mingw64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=C:/msys64/mingw64/bin/ninja.exe -DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/g++.exe -G Ninja -S C:\Users\julia\Dropbox\GitHub\NumericRepresentations -B C:\Users\julia\Dropbox\GitHub\NumericRepresentations\cmake-build-release
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/julia/Dropbox/GitHub/NumericRepresentations/cmake-build-release
