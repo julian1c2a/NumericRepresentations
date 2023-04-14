@@ -6,3 +6,4 @@ reset	C:\Users\julia\AppData\Roaming\codelite\tmp\codelite_templates.hpp	/^    v
 reset	C:\Users\julia\AppData\Roaming\codelite\tmp\codelite_templates.hpp	/^    void reset( Y* ptr, Deleter d, Alloc alloc );$/;"	prototype	line:5	class:std::shared_ptr	access:private	signature:( Y* ptr, Deleter d, Alloc alloc )	returns:void 
 get	C:\Users\julia\AppData\Roaming\codelite\tmp\codelite_templates.hpp	/^    _T* get() const;$/;"	prototype	line:6	class:std::shared_ptr	access:private	signature:() const	returns:_T 
 
+

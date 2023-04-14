@@ -22,42 +22,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1d8f2a3-86ea-4f43-becc-78eb5a4a7720" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/246ef986-9fd2-47d8-b657-3efd48d844bb.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/399b5d4b-88c9-4cce-a08c-d363ce81c217.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/65d44066-839e-4178-97da-1c1a9201b386.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/6ce7aa91-9ba6-4bd8-9105-cbaf4938f8fe.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/d48cacb3-5166-4e29-911e-11eba6159b10.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/eea6b051-3095-4337-bd64-dadf391ed8b1.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/fd415a0d-3058-45b4-8f40-3508d3deee9d.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/read.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/.wsuo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/Browse.VC.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/Browse.VC.db-shm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/Browse.VC.db-wal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagramaLexerRegDigsT.dia" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagramaLexerRegDigsT.svg" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test_driver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.codelite/NumericRepresentations-julia.tags" beforeDir="false" afterPath="$PROJECT_DIR$/.codelite/NumericRepresentations-julia.tags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.codelite/NumericRepresentations.session" beforeDir="false" afterPath="$PROJECT_DIR$/.codelite/NumericRepresentations.session" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.codelite/NumericRepresentations.workspace.julia" beforeDir="false" afterPath="$PROJECT_DIR$/.codelite/NumericRepresentations.workspace.julia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.codelite/ctags" beforeDir="false" afterPath="$PROJECT_DIR$/.codelite/ctags" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/246ef986-9fd2-47d8-b657-3efd48d844bb.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/399b5d4b-88c9-4cce-a08c-d363ce81c217.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/65d44066-839e-4178-97da-1c1a9201b386.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/6ce7aa91-9ba6-4bd8-9105-cbaf4938f8fe.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/d48cacb3-5166-4e29-911e-11eba6159b10.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/eea6b051-3095-4337-bd64-dadf391ed8b1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/FileContentIndex/fd415a0d-3058-45b4-8f40-3508d3deee9d.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/.wsuo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/.wsuo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/Browse.VC.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/NumericRepresentations/v17/Browse.VC.db-wal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NumericRepresentations.bmarks" beforeDir="false" afterPath="$PROJECT_DIR$/NumericRepresentations.bmarks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NumericRepresentations.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/NumericRepresentations.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NumericRepresentations.depend" beforeDir="false" afterPath="$PROJECT_DIR$/NumericRepresentations.depend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NumericRepresentations.layout" beforeDir="false" afterPath="$PROJECT_DIR$/NumericRepresentations.layout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NumericRepresentations.project" beforeDir="false" afterPath="$PROJECT_DIR$/NumericRepresentations.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NumericRepresentations.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/NumericRepresentations.workspace" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NumericRepresentations_build_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/NumericRepresentations_build_log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.cproject" beforeDir="false" afterPath="$PROJECT_DIR$/src/.cproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.project" beforeDir="false" afterPath="$PROJECT_DIR$/src/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.settings/language.settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.settings/language.settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/interfaz_dig_t.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auxiliary_functions.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/auxiliary_functions.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auxiliary_types.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/auxiliary_types.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base_num_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_num_t.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basic_types.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/basic_types.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dig_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dig_t.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/int_num_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/int_num_t.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/int_reg_digs_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/int_reg_digs_t.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexer_parser.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory_handler.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory_handler.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nat_num_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/nat_num_t.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nat_reg_digs_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/nat_reg_digs_t.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pruebas_dig_t.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/pruebas_dig_t.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pruebas_dig_t.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rat_fixed_reg_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rat_fixed_reg_t.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reg_digs_t.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/reg_digs_t.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testunit.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/testunit.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,11 +176,6 @@
       </texify-makeindex>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -186,6 +191,7 @@
       <workItem from="1676470891245" duration="1248000" />
       <workItem from="1676551310879" duration="282000" />
       <workItem from="1676551608099" duration="99000" />
+      <workItem from="1677704839908" duration="720000" />
     </task>
     <servers />
   </component>
