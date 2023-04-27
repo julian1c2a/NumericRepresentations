@@ -36,7 +36,7 @@ using uintspairtbl = typename std::array<uintspairlist<UINT_T, B>, B>;
 /// };
 /// type_i es un PACK
 /// tipo std::tupla<class ... Ts>;
-namespace ugly_pack_detailsk_2_tuple_details {
+namespace ugly_pack2tuple_details { // OPEN NAMESPACE UGLY_PACK2TUPLE_DETAILS
 template <typename... Ts> struct pack2tuple {
   using tuple_type = std::tuple<Ts...>;
   static constexpr unsigned pack_size() noexcept { return (sizeof...(Ts)); }
@@ -55,7 +55,7 @@ template <typename... Ts> struct pack2tuple {
     return ret;
   }
 };
-}
+} // CLOSE NAMESPACE UGLY_PACK2TUPLE_DETAILS
 
 /// EXAMPLE
 /// pack2tuple<int,std::string,double>; // tipo
@@ -71,7 +71,7 @@ template <typename... Ts> struct pack2tuple {
 /// head of tuple_obj is {2}
 /// tail of tuple_obj is {"xyz",3.14159}
 
-namespace ugly_details {
+namespace ugly_details {// OPEN NAMESPACE UGLY_DETAILS
 /// BEGIN: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES
 struct local_void_t {};
 
@@ -87,7 +87,7 @@ template <class Head_t, class... Tail_t> struct for_each_same_type {
 template <class Head_t> struct for_each_same_type<Head_t> {
   constexpr static bool are_same_type_v = true;
 };
-}
+} // CLOSE NAMESPACE UGLY_DETAILS
 
 /// CONCEPT QUE ASEGURA QUE TODOS LOS TIPOS PASADOS POR PACK SON EL MISMO
 template <typename... Ts>
@@ -103,9 +103,13 @@ namespace ugly_pack_details {
 template <typename... Ts>
   requires(all_are_the_same_type_c<Ts...> && there_is_one_or_more_c<Ts...>)
 struct pack2array {
-  using array_type =
-      std::array<typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>, (sizeof...(Ts))>;
-  static constexpr std::size_t pack_size() noexcept { return (sizeof...(Ts)); }
+
+  static consteval std::size_t pack_size() noexcept { return (sizeof...(Ts)); }
+
+  inline static constexpr std::size_t size = pack_size();
+  using inner_type =
+  	typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>;
+  using array_type = typename std::array< inner_type , size>;
 
   constexpr array_type operator()(Ts &&...args) const noexcept {
     constexpr array_type content{std::forward(args...)};
@@ -160,52 +164,52 @@ namespace special {
 
 /// FORMA SENCILLA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME
 template <NumRepr::usint_t B, NumRepr::usint_t L>
-consteval inline NumRepr::uint128_t Base_pow_to_Size() noexcept {
-  constexpr NumRepr::uint128_t Bc{B};
+consteval inline NumRepr::uint64_t Base_pow_to_Size() noexcept {
+  constexpr NumRepr::uint64_t Bc{B};
   if constexpr (L == 0)
-    return static_cast<NumRepr::uint128_t>(1);
+    return static_cast<NumRepr::uint64_t>(1);
   else if constexpr (L == 1)
-    return static_cast<NumRepr::uint128_t>(Bc);
+    return static_cast<NumRepr::uint64_t>(Bc);
   else if constexpr (L == 2)
-    return static_cast<NumRepr::uint128_t>(Bc * Bc);
+    return static_cast<NumRepr::uint64_t>(Bc * Bc);
   else
-    return static_cast<NumRepr::uint128_t>(Bc * Base_pow_to_Size<B, L - 1>());
+    return static_cast<NumRepr::uint64_t>(Bc * Base_pow_to_Size<B, L - 1>());
 }
 
 /// FORMA ANTIGUA PERO SEGURA DE CONSEGUIR POTENCIAS DE UNA BASE EN COMPILE TIME
 template <NumRepr::usint_t Base, NumRepr::usint_t Exp> struct pow_B_to_E_t {
-  static constexpr NumRepr::uint128_t base =
-      static_cast<NumRepr::uint128_t>(Base);
-  static constexpr NumRepr::uint128_t exponent =
-      static_cast<NumRepr::uint128_t>(Exp);
-  static constexpr NumRepr::uint128_t value =
+  static constexpr NumRepr::uint64_t base =
+      static_cast<NumRepr::uint64_t>(Base);
+  static constexpr NumRepr::uint64_t exponent =
+      static_cast<NumRepr::uint64_t>(Exp);
+  static constexpr NumRepr::uint64_t value =
       base * (pow_B_to_E_t<base, exponent - 1>::value);
 };
 template <NumRepr::usint_t Base> struct pow_B_to_E_t<Base, 2> {
-  static constexpr NumRepr::uint128_t base =
-      static_cast<NumRepr::uint128_t>(Base);
-  static constexpr NumRepr::uint128_t exponent =
-      static_cast<NumRepr::uint128_t>(2);
-  static constexpr NumRepr::uint128_t value = base * base;
+  static constexpr NumRepr::uint64_t base =
+      static_cast<NumRepr::uint64_t>(Base);
+  static constexpr NumRepr::uint64_t exponent =
+      static_cast<NumRepr::uint64_t>(2);
+  static constexpr NumRepr::uint64_t value = base * base;
 };
 template <NumRepr::usint_t Base> struct pow_B_to_E_t<Base, 1> {
-  static constexpr NumRepr::uint128_t base =
-      static_cast<NumRepr::uint128_t>(Base);
-  static constexpr NumRepr::uint128_t exponent =
-      static_cast<NumRepr::uint128_t>(1);
-  static constexpr NumRepr::uint128_t value = base;
+  static constexpr NumRepr::uint64_t base =
+      static_cast<NumRepr::uint64_t>(Base);
+  static constexpr NumRepr::uint64_t exponent =
+      static_cast<NumRepr::uint64_t>(1);
+  static constexpr NumRepr::uint64_t value = base;
 };
 template <NumRepr::usint_t Base> struct pow_B_to_E_t<Base, 0> {
-  static constexpr NumRepr::uint128_t base =
-      static_cast<NumRepr::uint128_t>(Base);
-  static constexpr NumRepr::uint128_t exponent =
-      static_cast<NumRepr::uint128_t>(0);
-  static constexpr NumRepr::uint128_t value =
-      static_cast<NumRepr::uint128_t>(1);
+  static constexpr NumRepr::uint64_t base =
+      static_cast<NumRepr::uint64_t>(Base);
+  static constexpr NumRepr::uint64_t exponent =
+      static_cast<NumRepr::uint64_t>(0);
+  static constexpr NumRepr::uint64_t value =
+      static_cast<NumRepr::uint64_t>(1);
 };
 
 template <NumRepr::usint_t Base, NumRepr::usint_t Exp>
-constexpr NumRepr::uint128_t Pow_B2L_v = pow_B_to_E_t<Base, Exp>::value;
+constexpr NumRepr::uint64_t Pow_B2L_v = pow_B_to_E_t<Base, Exp>::value;
 
 /// OBTENER UNA TUPLA EN TIEMPO DE COMPILACION DONDE CADA POSICION ESTA
 /// INICIALIZADA PERO CON UNA LLAMADA DISTINTA A FUNCION POR CADA INDICE
@@ -310,14 +314,14 @@ constexpr void ct_for(std::tuple<Ts...> const &t) noexcept {
 
 /// CONVERSION DE REGISTRO DE DIGITOS A ENTERO EN TIEMPO DE COMPILACION
 template <auto B, auto L, typename A>
-constexpr inline NumRepr::uint128_t conversion_to_int(const A &arg) noexcept {
-  using NumRepr::sint128_t;
-  using NumRepr::uint128_t;
-  constexpr uint128_t base{static_cast<uint128_t>(B)};
-  uint128_t acc{arg[L - 1]()};
-  for (sint128_t ix{L - 2}; ix > -1; --ix) {
+constexpr inline NumRepr::uint64_t conversion_to_int(const A &arg) noexcept {
+  using NumRepr::sint64_t;
+  using NumRepr::uint64_t;
+  constexpr uint64_t base{static_cast<uint64_t>(B)};
+  uint64_t acc{arg[L - 1]()};
+  for (sint64_t ix{L - 2}; ix > -1; --ix) {
     acc *= base;
-    acc += static_cast<uint128_t>(arg[ix]());
+    acc += static_cast<uint64_t>(arg[ix]());
   };
   return acc;
 }

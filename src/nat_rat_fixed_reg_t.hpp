@@ -1145,11 +1145,10 @@ public:
 
 
 /// VERSION CON TRATAMIENTO DE ERRORES EN RUNTIME
-template <type_traits::uint_type_for_radix_c Int_Type, Int_Type Base,
-          std::size_t Length>
-  requires(type_traits::suitable_base<Int_Type, Base>() && (Length > 0))
+template <std::uint64_t Base,std::size_t Length>
+  requires((Base > 1) && (Length > 0))
 std::istream& operator>>(std::istream& is,
-                         nat_reg_digs_t<Int_Type, Base, Length>& arg) {
+                         nat_reg_digs_t<Base, Length>& arg) {
   enum estado_e {
     e0ini,
     e1r,

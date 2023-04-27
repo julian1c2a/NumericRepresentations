@@ -3,8 +3,6 @@
 
 #include "int_reg_digs_t.hpp"
 #include "utilities.hpp"
-#include <chrono>
-#include <typeinfo>
 
 namespace NumRepr { /// BEGIN OF NAMESPACE NUMREPR
 namespace testing { /// BEGIN OF NAMESPACE TESTING
@@ -13,15 +11,14 @@ void show_test_convert_to_int_driver();
 
 template <std::size_t B, std::size_t L>
 constexpr inline uint64_t
-conversion_to_int(const register_of_digits_t<B, L> &arg) noexcept {
-
+conversion_to_int(const reg_digs_t<B, L> &arg) noexcept {
   namespace us = utilities::special;
-  return us::conversion_to_int<B, L, register_of_digits_t<B, L>>(arg);
+  return us::conversion_to_int<B, L, reg_digs_t<B, L>>(arg);
 }
 
 template <std::size_t B, std::size_t L>
 constexpr inline std::uint64_t
-convert_to_int(const register_of_digits_t<B, L> &arg) noexcept {
+convert_to_int(const reg_digs_t<B, L> &arg) noexcept {
   std::uint64_t cB = B;
   std::uint64_t accum{arg[L - 1]()};
   for (std::int64_t ix = L - 1; ix > 0; --ix) {
@@ -51,7 +48,7 @@ namespace reg_digs { /// BEGIN OF NAMESPACE REG_DIGS
 template <std::uint64_t Base, std::size_t Long>
 test_result_t test_div_fediv_entre_dos_objetos_tipo_reg_digs() {
   namespace us = utilities::special;
-  using reg_digs_t = register_of_digits_t<Base, Long>;
+  using reg_digs_t = reg_digs_t<Base, Long>;
 
   size_t correctos = 0;
   size_t errores = 0;
@@ -108,7 +105,7 @@ test_result_t test_div_fediv_entre_dos_objetos_tipo_reg_digs() {
 
 template <std::uint64_t Base, std::size_t Long>
 test_result_t test_comparacion_igual_que_entre_dos_objetos_tipo_reg_digs() {
-  using reg_digs_t = register_of_digits_t<Base, Long>;
+  using reg_digs_t = reg_digs_t<Base, Long>;
   namespace us = utilities::special;
   bool todo_correcto = true;
 
@@ -140,7 +137,7 @@ test_result_t test_comparacion_igual_que_entre_dos_objetos_tipo_reg_digs() {
 
 template <std::uint64_t Base, std::size_t Long>
 test_result_t test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs() {
-  using reg_digs_t = register_of_digits_t<Base, Long>;
+  using reg_digs_t = reg_digs_t<Base, Long>;
   namespace us = utilities::special;
   bool todo_correcto = true;
 
@@ -172,7 +169,7 @@ test_result_t test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs() {
 
 template <std::uint64_t Base, std::size_t Long>
 test_result_t test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs() {
-  using reg_digs_t = register_of_digits_t<Base, Long>;
+  using reg_digs_t = reg_digs_t<Base, Long>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -206,7 +203,7 @@ test_result_t test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs() {
 template <std::uint64_t Base, std::size_t Long>
 test_result_t
 test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
-  using reg_digs_t = register_of_digits_t<Base, Long>;
+  using reg_digs_t = reg_digs_t<Base, Long>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -239,7 +236,7 @@ test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
 
 template <std::uint64_t Base, std::size_t Long>
 test_result_t test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs() {
-  using reg_digs_t = register_of_digits_t<Base, Long>;
+  using reg_digs_t = reg_digs_t<Base, Long>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -273,7 +270,7 @@ test_result_t test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs() {
 template <std::uint64_t Base, std::size_t Long>
 test_result_t
 test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
-  using reg_digs_t = register_of_digits_t<Base, Long>;
+  using reg_digs_t = reg_digs_t<Base, Long>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -305,7 +302,7 @@ test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
 }
 
 template <std::uint64_t Base> test_result_t test_dig_suma_dig_con_asignacion() {
-  using d_t = digit_t<Base>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -338,7 +335,7 @@ template <std::uint64_t Base> test_result_t test_dig_suma_dig_con_asignacion() {
 }
 
 template <std::uint64_t Base> test_result_t test_dig_mult_dig_con_asignacion() {
-  using d_t = digit_t<Base>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -374,8 +371,8 @@ template <std::uint64_t Base> test_result_t test_dig_mult_dig_con_asignacion() {
 
 template <std::uint64_t Base, std::size_t Long>
 std::tuple<bool, uint32_t, uint32_t> test_dig_mult_reg_n_dig_con_asignacion() {
-  using rd_t = register_of_digits_t<Base, Long>;
-  using d_t = digit_t<Base>;
+  using rd_t = reg_digs_t<Base, Long>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
@@ -409,7 +406,7 @@ std::tuple<bool, uint32_t, uint32_t> test_dig_mult_reg_n_dig_con_asignacion() {
 
 template <std::uint64_t Base, std::size_t Long>
 test_result_t test_reg_mult_reg_con_asignacion() {
-  using rd_t = register_of_digits_t<Base, Long>;
+  using rd_t = reg_digs_t<Base, Long>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -453,7 +450,7 @@ test_result_t test_reg_mult_reg_con_asignacion() {
 
 template <std::uint64_t Base>
 test_result_t test_dig_resta_dig_con_asignacion() {
-  using d_t = digit_t<Base>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -489,7 +486,7 @@ test_result_t test_dig_resta_dig_con_asignacion() {
 template <std::uint64_t Base>
 std::tuple<bool, std::size_t, std::size_t>
 test_dig_resta_con_borrow_dig_con_asignacion() {
-  using d_t = digit_t<Base>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -523,7 +520,7 @@ test_dig_resta_con_borrow_dig_con_asignacion() {
 }
 
 template <std::uint64_t Base> void lista_dig_resta_dig_con_asignacion() {
-  using d_t = digit_t<Base>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   constexpr uint64_t B2L{us::Base_pow_to_Size<Base, 1>()};
@@ -565,7 +562,7 @@ template <std::uint64_t Base> void lista_dig_resta_dig_con_asignacion() {
 
 template <std::uint64_t Base>
 test_result_t test_dig_suma_dig_con_carry_con_asignacion() {
-  using d_t = digit_t<Base>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -600,8 +597,8 @@ test_result_t test_dig_suma_dig_con_carry_con_asignacion() {
 
 template <std::uint64_t Base, std::uint64_t Longitud>
 test_result_t test_incremento_con_asignacion() {
-  using rd_t = register_of_digits_t<Base, Longitud>;
-  using d_t = digit_t<Base>;
+  using rd_t = reg_digs_t<Base, Longitud>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -635,8 +632,8 @@ template <std::uint64_t Base, std::uint64_t Longitud>
 test_result_t test_decremento_con_asignacion() {
   namespace us = utilities::special;
 
-  using rd_t = register_of_digits_t<Base, Longitud>;
-  using d_t = digit_t<Base>;
+  using rd_t = reg_digs_t<Base, Longitud>;
+  using d_t = dig_t<Base>;
 
   bool todo_correcto = true;
 
@@ -666,8 +663,8 @@ test_result_t test_decremento_con_asignacion() {
 
 template <std::uint64_t Base, std::uint64_t Longitud>
 test_result_t test_suma_con_asignacion() {
-  using rd_t = register_of_digits_t<Base, Longitud>;
-  using d_t = digit_t<Base>;
+  using rd_t = reg_digs_t<Base, Longitud>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -704,8 +701,8 @@ test_result_t test_suma_con_asignacion() {
 
 template <std::uint64_t Base, std::uint64_t Longitud>
 test_result_t test_resta_con_asignacion() {
-  using rd_t = register_of_digits_t<Base, Longitud>;
-  using d_t = digit_t<Base>;
+  using rd_t = reg_digs_t<Base, Longitud>;
+  using d_t = dig_t<Base>;
   namespace us = utilities::special;
 
   bool todo_correcto = true;
@@ -747,7 +744,7 @@ test_result_t test_resta_con_asignacion() {
 template <std::size_t B, std::size_t L>
 test_result_t test_calc_coc_dig_rem_div_dsor() {
 
-  using rd_t = register_of_digits_t<B, L>;
+  using rd_t = reg_digs_t<B, L>;
 
   rd_t dndo{};
   rd_t dsor{};
@@ -803,7 +800,7 @@ void show_test_incr_with_assign() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para el incremento y asignación sobre el tipo "
-               "register_of_digits_t<"
+               "reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -820,7 +817,7 @@ void show_test_decr_with_assign() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para el decremento y asignación sobre el tipo "
-               "register_of_digits_t<"
+               "reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -838,7 +835,7 @@ void show_test_comp_equal_than_reg_reg() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la comparación entre objetos \" == \" del tipo "
-               "register_of_digits_t<"
+               "reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -851,13 +848,13 @@ template <std::uint64_t Base, std::size_t Long>
 void show_test_comp_notequal_than_reg_reg() {
   std::cout << std::boolalpha;
   auto resultado{
-      test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs<Base,
-                                                                    Long>()};
+    test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs<Base,Long>()
+  };
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la comparación entre objetos \" != \" del tipo "
-               "register_of_digits_t<"
+               "reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -875,7 +872,7 @@ void show_test_comp_less_than_reg_reg() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la comparación entre objetos \" menor que \" del "
-               "tipo register_of_digits_t<"
+               "tipo reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -888,13 +885,16 @@ template <std::uint64_t Base, std::size_t Long>
 void show_test_comp_less_or_equal_than_reg_reg() {
   std::cout << std::boolalpha;
   auto resultado{
-      test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs<
-          Base, Long>()};
+    test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs
+    <
+    	Base,Long
+	>()
+  };
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la comparación entre objetos \" menor o igual que \" "
-               "del tipo register_of_digits_t<"
+               "del tipo reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -907,12 +907,13 @@ template <std::uint64_t Base, std::size_t Long>
 void show_test_comp_greater_than_reg_reg() {
   std::cout << std::boolalpha;
   auto resultado{
-      test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs<Base, Long>()};
+      test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs<Base, Long>()
+  };
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la comparación \" mayor que \" entre objetos del "
-               "tipo register_of_digits_t<"
+               "tipo reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -925,13 +926,16 @@ template <std::uint64_t Base, std::size_t Long>
 void show_test_comp_greater_or_equal_than_reg_reg() {
   std::cout << std::boolalpha;
   auto resultado{
-      test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs<
-          Base, Long>()};
+	test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs
+	<
+          Base, Long
+  	>()
+  };
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la comparación \" mayor o igual que \" entre objetos "
-               "del tipo register_of_digits_t<"
+               "del tipo reg_digs_t<"
             << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -948,7 +952,7 @@ void show_test_sum_with_assign() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout
-      << "TEST para la suma y asignación sobre el tipo register_of_digits_t<"
+      << "TEST para la suma y asignación sobre el tipo reg_digs_t<"
       << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -964,7 +968,7 @@ template <std::uint64_t Base> void show_test_mult_2_digits_with_assign() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la multiplicacion y asignación sobre 2 objetos tipo "
-               "digit_t<"
+               "dig_t<"
             << int(Base) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -981,7 +985,7 @@ void show_test_subtract_with_assign() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout
-      << "TEST para la resta y asignación sobre el tipo register_of_digits_t<"
+      << "TEST para la resta y asignación sobre el tipo reg_digs_t<"
       << int(Base) << "," << int(Long) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -996,7 +1000,7 @@ template <std::uint64_t Base> void show_test_sum_with_assign_two_digits() {
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
-  std::cout << "TEST para la suma y asignación sobre 2 objetos tipo digit_t<"
+  std::cout << "TEST para la suma y asignación sobre 2 objetos tipo dig_t<"
             << int(Base) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -1066,7 +1070,7 @@ template <std::uint64_t Base> void show_test_subtract_with_assign_two_digits() {
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
-  std::cout << "TEST para la resta y asignación sobre 2 objetos tipo digit_t<"
+  std::cout << "TEST para la resta y asignación sobre 2 objetos tipo dig_t<"
             << int(Base) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -1083,7 +1087,7 @@ void show_test_subtract_with_borrow_with_assign_two_digits() {
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la resta con borrow y asignación sobre 2 objetos "
-               "tipo digit_t<"
+               "tipo dig_t<"
             << int(Base) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -1095,18 +1099,18 @@ void show_test_subtract_with_borrow_with_assign_two_digits() {
 template <std::uint64_t Base>
 void show_test_sum_n_carry_with_assign_two_digits() {
   std::cout << std::boolalpha;
-  auto t_start = std::chrono::high_resolution_clock::now();
+//  auto t_start = std::chrono::high_resolution_clock::now();
   auto resultado{test_dig_suma_dig_con_carry_con_asignacion<Base>()};
-  auto t_end = std::chrono::high_resolution_clock::now();
-  std::cout
-      << "Tiempo transcurrido: "
-      << std::chrono::duration<double, std::milli>(t_end - t_start).count()
-      << " ms\n";
+//  auto t_end = std::chrono::high_resolution_clock::now();
+//  std::cout
+//      << "Tiempo transcurrido: "
+//      << std::chrono::duration<double, std::milli>(t_end - t_start).count()
+//      << " ms\n";
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
   auto errores{std::get<2>(resultado)};
   std::cout << "TEST para la suma con carry y asignación sobre 2 objetos tipo "
-               "digit_t<"
+               "dig_t<"
             << int(Base) << ">" << std::endl;
   std::cout << "El vector \"correctos\" tiene " << correctos << " elementos "
             << std::endl;
@@ -1118,9 +1122,9 @@ void show_test_sum_n_carry_with_assign_two_digits() {
 template <std::uint64_t Base, std::size_t Long>
 void show_test_div_fediv_two_reg_digs() {
   std::cout << std::boolalpha;
-  auto t_start = std::chrono::high_resolution_clock::now();
+//  auto t_start = std::chrono::high_resolution_clock::now();
   auto resultado{test_div_fediv_entre_dos_objetos_tipo_reg_digs<Base, Long>()};
-  auto t_end = std::chrono::high_resolution_clock::now();
+//  auto t_end = std::chrono::high_resolution_clock::now();
 
   auto todo_correcto{std::get<0>(resultado)};
   auto correctos{std::get<1>(resultado)};
@@ -1128,10 +1132,10 @@ void show_test_div_fediv_two_reg_digs() {
   std::cout
       << "TEST para la division (con resto) sobre 2 objetos tipo reg_digs_t<"
       << int(Base) << "," << int(Long) << ">" << std::endl;
-  std::cout
-      << "Tiempo transcurrido: "
-      << std::chrono::duration<double, std::milli>(t_end - t_start).count()
-      << " ms\n";
+//  std::cout
+//      << "Tiempo transcurrido: "
+//      << std::chrono::duration<double, std::milli>(t_end - t_start).count()
+//      << " ms\n";
   std::cout << "El numero de pruebas \"correctas\" son " << correctos
             << " pruebas exitosas " << std::endl;
   std::cout << "El numero de pruebas \"erroneas\"  son " << errores
@@ -1140,7 +1144,7 @@ void show_test_div_fediv_two_reg_digs() {
 }
 
 template <std::size_t B, std::size_t L> void show_test_convert_to_int() {
-  using rd_t = register_of_digits_t<B, L>;
+  using rd_t = reg_digs_t<B, L>;
   constexpr uint64_t B2L{Base_pow_to_Size<B, L>()};
   uint64_t correctos{0};
   uint64_t errores{0};
@@ -1166,7 +1170,7 @@ template <std::size_t B, std::size_t L> void show_test_convert_to_int() {
 }
 
 template <std::size_t B, std::size_t L> void show_test_conversion_to_int() {
-  using rd_t = register_of_digits_t<B, L>;
+  using rd_t = reg_digs_t<B, L>;
   constexpr uint64_t B2L{Base_pow_to_Size<B, L>()};
   uint64_t correctos{0};
   uint64_t errores{0};
@@ -1194,7 +1198,7 @@ template <std::size_t B, std::size_t L> void show_test_conversion_to_int() {
 
 namespace dig { /// BEGIN OF NAMESPACE DIG
 template <std::uint64_t B> void display_constr_UINT_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
 
   std::uint64_t k{0};
   for (std::uint64_t i{0}; i < 1030; ++i) {
@@ -1210,7 +1214,7 @@ template <std::uint64_t B> void display_constr_UINT_dig_t() {
 }
 
 template <std::uint64_t B> void display_constr_SINT_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
 
   std::int64_t k{-1000};
   std::int64_t kold{0};
@@ -1232,7 +1236,7 @@ template <std::uint64_t B> void display_constr_SINT_dig_t() {
 }
 
 template <std::uint64_t B> void display_constr_defecto_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   base_B_dig_t unidades_parentesis = base_B_dig_t();
   std::cout << "unidades llamadas con parentesis vacios : "
             << unidades_parentesis << std::endl;
@@ -1245,7 +1249,7 @@ template <std::uint64_t B> void display_constr_defecto_dig_t() {
 }
 
 template <std::uint64_t B> void display_constr_copia_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   {
     base_B_dig_t unidades(static_cast<ullint_t>((B / 2) + 1));
     base_B_dig_t unidades_copiadas(unidades);
@@ -1264,7 +1268,7 @@ template <std::uint64_t B> void display_constr_copia_dig_t() {
 }
 
 template <std::uint64_t B> void display_constr_movimiento_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   {
     base_B_dig_t A((B / 2) + 1);
     std::cout << A << std::endl;
@@ -1288,7 +1292,7 @@ template <std::uint64_t B> void display_constr_movimiento_dig_t() {
 }
 
 template <std::uint64_t B> void display_operator_assign_UINT_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   std::uint64_t k{0};
   std::uint64_t kold{0};
   for (std::uint64_t i{0}; i < 1024 + 6; ++i) {
@@ -1310,7 +1314,7 @@ template <std::uint64_t B> void display_operator_assign_UINT_dig_t() {
 }
 
 template <std::uint64_t B> void display_operator_assign_SINT_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
 
   std::int64_t k{0};
   for (std::int64_t i{-1000}; i < 1001; ++i) {
@@ -1326,8 +1330,9 @@ template <std::uint64_t B> void display_operator_assign_SINT_dig_t() {
   std::cout << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_assign_copia_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_assign_copia_dig_t() {
+  using base_B_dig_t = dig_t<B>;
   std::int64_t k{0};
   for (std::int64_t i{-1000}; i < 1001; ++i) {
     base_B_dig_t A{i};
@@ -1348,8 +1353,9 @@ template <std::uint64_t B> void display_operator_assign_copia_dig_t() {
   std::cout << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_assign_movimiento_dig_t() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_assign_movimiento_dig_t() {
+  using base_B_dig_t = dig_t<B>;
   std::int64_t k{0};
 
   for (std::int64_t i{-1000}; i < 1001; ++i) {
@@ -1372,8 +1378,9 @@ template <std::uint64_t B> void display_operator_assign_movimiento_dig_t() {
   std::cout << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_preincrement() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_preincrement() {
+  using base_B_dig_t = dig_t<B>;
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
   std::int64_t md{};
@@ -1398,8 +1405,9 @@ template <std::uint64_t B> void display_operator_preincrement() {
   std::cout << "___________________________________________" << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_postincrement() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_postincrement() {
+  using base_B_dig_t = dig_t<B>;
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
   std::int64_t md{};
@@ -1424,8 +1432,9 @@ template <std::uint64_t B> void display_operator_postincrement() {
   std::cout << "___________________________________________" << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_predecrement() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_predecrement() {
+  using base_B_dig_t = dig_t<B>;
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
   std::int64_t md{2 * B + 1};
@@ -1450,8 +1459,9 @@ template <std::uint64_t B> void display_operator_predecrement() {
   std::cout << "___________________________________________" << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_postdecrement() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_postdecrement() {
+  using base_B_dig_t = dig_t<B>;
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
   std::int64_t md{2 * B + 1};
@@ -1476,8 +1486,9 @@ template <std::uint64_t B> void display_operator_postdecrement() {
   std::cout << "___________________________________________" << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_add_assign() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_add_assign() {
+  using base_B_dig_t = dig_t<B>;
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
   std::int64_t md{0};
@@ -1513,8 +1524,9 @@ template <std::uint64_t B> void display_operator_add_assign() {
   std::cout << "___________________________________________" << std::endl;
 }
 
-template <std::uint64_t B> void display_operator_add_assign_uint() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_operator_add_assign_uint() {
+  using base_B_dig_t = dig_t<B>;
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
   for (std::int64_t nd{0}; nd < 2 * B + 1; ++nd) {
@@ -1544,9 +1556,8 @@ template <std::uint64_t B> void display_operator_add_assign_uint() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_substract_assign() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -1587,9 +1598,8 @@ void display_operator_substract_assign() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_substract_assign_uint() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -1629,9 +1639,8 @@ void display_operator_substract_assign_uint() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_mult_assign() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -1672,9 +1681,8 @@ void display_operator_mult_assign() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_mult_assign_uint() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int32_t int32_B{B};
   std::uint32_t contador_buenos{};
   std::uint32_t contador_malos{};
@@ -1714,9 +1722,8 @@ void display_operator_mult_assign_uint() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_ediv_assign() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -1765,9 +1772,8 @@ void display_operator_ediv_assign() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_ediv_assign_uint() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int32_t int32_B{B};
   std::uint32_t contador_buenos{};
   std::uint32_t contador_malos{};
@@ -1821,9 +1827,8 @@ void display_operator_ediv_assign_uint() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_erem_assign() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -1873,9 +1878,8 @@ void display_operator_erem_assign() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_erem_assign_uint() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int32_t int32_B{B};
   std::uint32_t contador_buenos{};
   std::uint32_t contador_malos{};
@@ -1929,9 +1933,8 @@ void display_operator_erem_assign_uint() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_add() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -1971,9 +1974,8 @@ void display_operator_add() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_add_int() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int32_t int32_B{B};
   std::uint32_t contador_buenos{};
   std::uint32_t contador_malos{};
@@ -2012,9 +2014,8 @@ void display_operator_add_int() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_substract() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2054,9 +2055,8 @@ void display_operator_substract() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_substract_int() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int32_t int32_B{B};
   std::uint32_t contador_buenos{};
   std::uint32_t contador_malos{};
@@ -2095,9 +2095,8 @@ void display_operator_substract_int() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_multiply() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2137,9 +2136,8 @@ void display_operator_multiply() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_multiply_int() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int32_t int32_B{B};
   std::uint32_t contador_buenos{};
   std::uint32_t contador_malos{};
@@ -2178,9 +2176,8 @@ void display_operator_multiply_int() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_edivision() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2239,9 +2236,8 @@ void display_operator_edivision() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_edivision_int() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2293,9 +2289,8 @@ void display_operator_edivision_int() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_C_B() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2339,9 +2334,8 @@ void display_operator_C_B() {
 }
 
 template <std::uint64_t B>
-
 void display_operator_C_Bm1() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2385,9 +2379,8 @@ void display_operator_C_Bm1() {
 }
 
 template <std::uint64_t B>
-
 void display_prop_C_B_eq_inv_C_B() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2420,9 +2413,8 @@ void display_prop_C_B_eq_inv_C_B() {
 }
 
 template <std::uint64_t B>
-
 void display_prop_C_Bm1_eq_inv_C_Bm1() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2455,9 +2447,8 @@ void display_prop_C_Bm1_eq_inv_C_Bm1() {
 }
 
 template <std::uint64_t B>
-
 void display_prop_C_B_minus_1_eq_C_Bm1() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2491,9 +2482,8 @@ void display_prop_C_B_minus_1_eq_C_Bm1() {
 }
 
 template <std::uint64_t B>
-
 void display_unary_operator_minus() {
-  using base_B_dig_t = digit_t<B>;
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};
@@ -2536,8 +2526,9 @@ void display_unary_operator_minus() {
   std::cout << "___________________________________________" << std::endl;
 }
 
-template <std::uint64_t B> void display_unary_operator_neg() {
-  using base_B_dig_t = digit_t<B>;
+template <std::uint64_t B>
+void display_unary_operator_neg() {
+  using base_B_dig_t = dig_t<B>;
   constexpr std::int64_t int64_B{B};
   std::uint64_t contador_buenos{};
   std::uint64_t contador_malos{};

@@ -3,10 +3,12 @@
 
 #include "nat_reg_digs_t.hpp"
 
+#include <istream>
+#include <ostream>
+
 namespace NumRepr {
 
-using type_traits::allowable_base_type_c;
-using type_traits::suitable_base;
+//using type_traits::suitable_base;
 
 template <uint64_t B, size_t R>  requires((B > 1) && (R > 0))
 struct int_reg_digs_t : public nat_reg_digs_t<B, R+1> {
@@ -48,6 +50,12 @@ struct int_reg_digs_t : public nat_reg_digs_t<B, R+1> {
 
   using base_t = base_N_t<L>;
 
+  template <std::size_t N>
+    requires(N > 0)
+  using int_reg_N_digs_t = int_reg_digs_t<B, N>;
+  using base_t::regd_0;
+  using base_t::regd_1;
+  using base_t::regd_Bm1;
 private:
   /// MÉTODOS SOBRE EL SIGNO
   constexpr dig_t get_sign() const { return ((*this)[R]);}
@@ -56,7 +64,7 @@ private:
   constexpr void flip_sign() { (*this)[R] = is_plus()?dig_Bm1():dig_0();}
   constexpr void set_plus() { (*this)[R] = dig_0();}
   constexpr void set_minus() { (*this)[R] = dig_Bm1();}
-  constexpr void normalize_sign() {is_minus()?set_minus():{};}
+  constexpr void normalize_sign() {is_minus()?set_minus():dig_t{};}
   static consteval dig_t minus() {return dig_Bm1();}
   static consteval dig_t plus() {return dig_0();}
 
@@ -113,7 +121,7 @@ public:
 
   inline static consteval
   int_reg_digs_t sregd_Bm1() noexcept {
-    int_reg_digs_t ret{regd_0{}};
+    int_reg_digs_t ret{regd_0()};
     ret[0] = dig_Bm1();
     return ret;
   }
@@ -226,7 +234,7 @@ public:
     requires(std::is_same_v<Ts, dig_t> && ...)
   constexpr inline
   int_reg_digs_t(const Ts& ...args) noexcept
-    : base_t{(utility::pack2array<Ts...>{})(args...)} {normalize_sign();}
+    : base_t{(utilities::ugly_pack_details::pack2array<Ts...>{})(args...)} {normalize_sign();}
 
   /// BEGIN : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS
 
@@ -296,12 +304,11 @@ private:
     requires((sizeof...(Ints_type)) <= L)
   static constexpr inline
   base_t normalize(Ints_type... digits_pow_i) noexcept {
-    using pack_type = typename utility::pack2array<Ints_type...>;
+    using pack_type = typename utilities::ugly_pack_details::pack2array<Ints_type...>;
     using unique_type = typename pack_type::elem_type;
     constexpr std::size_t pack_sz{pack_type::pack_size()};
     if constexpr (type_traits::unsigned_integral_c<unique_type>) {
-      if constexpr (type_traits::is_unsigned_sz_gt_v<UINT_T,
-                                                     unique_type>) {
+      if constexpr (type_traits::gt_sz_v<UINT_T,unique_type>) {
         using SUInt_type = type_traits::sig_UInt_for_UInt_t<UINT_T>;
         std::array<SUInt_type, L> ret_array{digits_pow_i...};
         base_t ret{};
@@ -330,7 +337,7 @@ private:
     } else {
       using temp_SUInt_type =
           type_traits::sig_UInt_for_SInt_t<unique_type>;
-      if constexpr (type_traits::is_unsigned_sz_gt_v<UINT_T, temp_SUInt_type>) {
+      if constexpr (type_traits::gt_sz_v<UINT_T, temp_SUInt_type>) {
         using SUInt_type = type_traits::sig_UInt_for_UInt_t<UINT_T>;
         std::array<SUInt_type, L> ret_array{digits_pow_i...};
         base_t ret{};
@@ -463,6 +470,7 @@ public:
         set_minus();
         return (cthis);
       }
+    }
     else {
       Int_Type creg_g{arg};
       if ((static_cast<base_t*>(this)) != (&arg)) {
@@ -473,7 +481,7 @@ public:
       }
       set_minus();
       return (cthis);
-    }
+	}
   }
 
   /// FORMACION DE UN REG_M_DIGS_T<M> DESDE EL THIS REG_DIGS_T (L)
@@ -508,7 +516,7 @@ public:
       BasePowIx *= B;
     }
 
-    if constexpr (type_traits::signed_integral_c<Int_type>) {
+    if constexpr (type_traits::signed_integral_c<Int_Type>) {
       if (is_minus()) return (-retInt);
       else  return   retInt ;
     }
@@ -542,7 +550,7 @@ public:
   template <std::size_t N>
     requires(N > 0)
   constexpr inline
-  bool operator==(const nat_reg_N_digs_t<N>& arg) const noexcept {
+  bool operator==(const base_N_t<N>& arg) const noexcept {
     const int_reg_digs_t& cthis{*this};
     if (is_minus())
       return false;
@@ -570,7 +578,7 @@ public:
   template <std::size_t N>
     requires(N > 0)
   constexpr inline
-  bool operator!=(const nat_reg_N_digs_t<N>& arg) const noexcept {
+  bool operator!=(const base_N_t<N>& arg) const noexcept {
     const int_reg_digs_t& cthis{*this};
     if (is_minus())
       return true;
@@ -599,7 +607,7 @@ public:
   template <std::size_t N>
     requires(N > 0)
   constexpr inline
-  bool operator<=(const nat_reg_N_digs_t<N>& arg) const noexcept {
+  bool operator<=(const base_N_t<N>& arg) const noexcept {
     if (is_minus())
       return true;
     else {
@@ -627,7 +635,7 @@ public:
   template <std::size_t N>
     requires(N > 0)
   constexpr inline
-  bool operator>=(const nat_reg_N_digs_t<N>& arg) const noexcept {
+  bool operator>=(const base_N_t<N>& arg) const noexcept {
     if (is_minus())
       return false;
     else {
@@ -655,7 +663,7 @@ public:
   template <std::size_t N>
     requires(N > 0)
   constexpr inline
-  bool operator<(const nat_reg_N_digs_t<N>& arg) const noexcept {
+  bool operator<(const base_N_t<N>& arg) const noexcept {
     if (is_minus())
       return true;
     else {
@@ -683,7 +691,7 @@ public:
   template <std::size_t N>
     requires(N > 0)
   constexpr inline
-  bool operator>(const nat_reg_N_digs_t<N>& arg) const noexcept {
+  bool operator>(const base_N_t<N>& arg) const noexcept {
     if (is_minus())
       return false;
     else {
@@ -715,7 +723,7 @@ public:
   template <std::size_t N>
     requires((N > 0) && (N < L))
   constexpr inline
-  std::strong_ordering operator<=>(const nat_reg_N_digs_t<N>& arg) const
+  std::strong_ordering operator<=>(const base_N_t<N>& arg) const
   noexcept {
     const int_reg_digs_t& cr_base_cthis{*static_cast<const base_t* const>(this)};
     if (is_minus())
@@ -776,7 +784,7 @@ public:
     const base_t& cr_base_cthis{*static_cast<const base_t* const>(this)};
     return (cr_base_cthis(idx));
   }
-
+  /// std::istream& operator>>
   /******************************/
   /*							*/
   /* OPERADORES ARITMETICOS		*/
@@ -876,7 +884,7 @@ public:
   constexpr inline
   const int_reg_digs_t& mC_Bm1() noexcept {
     base_t& r_base_cthis{*static_cast<base_t*>(this)};
-    cthis.normalize_sign();
+    r_base_cthis.normalize_sign();
     return (r_base_cthis.mC_Bm1());
   }
 
@@ -1101,7 +1109,7 @@ public:
   /// USING THE OVERRIDEN OPERATOR<<=
   constexpr inline
   int_reg_digs_t operator<<(std::size_t n) const noexcept {
-    return (int_reg_dgis_t{*this} <<= n);
+    return (int_reg_digs_t{*this} <<= n);
   }
 
   /// DIVIDE BY THE BASE B(10) AND ASSIGN
@@ -1123,7 +1131,7 @@ public:
   /// USING THE OVERRIDEN OPERATOR>>=
   constexpr inline
   int_reg_digs_t operator>>(std::size_t n) const noexcept {
-    return (int_reg_dgis_t{*this} >>= n);
+    return (int_reg_digs_t{*this} >>= n);
   }
 
   ///
@@ -1140,9 +1148,9 @@ public:
     const bool is_neg{is_minus()};
     base_t* base_this{static_cast<base_t*>(this)};
 
-    if (is_neg) {mC_B()}
+    if (is_neg) {mC_B();}
     base_this->base_t::m_rem_B(n);
-    if (is_neg) {nC_B()}
+    if (is_neg) {mC_B();}
 
     return (*this);
   }
@@ -1253,9 +1261,10 @@ public:
 
   std::string to_string() const noexcept {
     std::stringstream sstr_os{};
+    auto cparg{*this};
     sstr_os << "int_reg_dig#";
-    sstr_os << (arg.is_minus()?"-":"+") << "#"
-    int_reg_digs_t cp_arg{ arg.is_minus? arg.C_B() : arg };
+    sstr_os << (is_minus()?"-":"+") << "#";
+    cparg = is_minus ? cparg.mC_B() : cparg ;
     for (std::int64_t ix{L - 1}; ix > 0; --ix) {
       sstr_os << static_cast<SIG_UINT_T>(cparg(ix)) << ':';
     }
@@ -1264,6 +1273,8 @@ public:
     sstr_os << static_cast<SIG_UINT_T>(B);
     return sstr_os.str();
   }
+  //template<uint64_t Base,size_t LongSinSigno>
+  //friend std::istream& operator>>(std::istream&,int_reg_digs_t<Base,LongSinSigno>&);
 };
 
 /****************************/
@@ -1273,12 +1284,14 @@ public:
 /****************************/
 
 /// ENTRADA DIRECTAMENTE EN COMPLEMENTO A LA BASE
-template <uint64_t Base,size_t Length>
-std::istream& operator>>(
-	std::istream& is,int_reg_digs_t<Int_Type, Base, Length>& arg
-  ) {
+template <std::uint64_t Base,std::size_t Length>
+std::istream& operator>>(std::istream& is,int_reg_digs_t<Base, Length>& arg) {
   enum estado_e {
     e0ini,
+	em3ini,
+	em2ini,
+	em1ini,
+	em0ini,
     e1r,
     e1e,
     e1g,
@@ -1530,24 +1543,12 @@ std::istream& operator>>(
   return (is);
 }
 
-template <uint64_t Base , std::size_t Long>
+template <std::uint64_t Base , std::size_t Long>
 std::ostream& operator<<(
-	std::ostream &os , const int_reg_digs_t<Int_Type, Base, Long> &arg
+	std::ostream &os , const int_reg_digs_t<Base, Long> &arg
   ) {
-  using Int_Type = dig_t<Base>::UINT_T;
-  using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
-  std::stringstream sstr_os{};
-  sstr_os << "int_reg_dig#";
-  sstr_os << (arg.is_minus()?"-":"+") << "#"
-  int_reg_digs_t cp_arg{ arg.is_minus? arg.C_B() : arg};
-  for (std::int64_t ix{Long - 1}; ix > 0; --ix) {
-    sstr_os << static_cast<inttype>(cparg(ix)) << ':';
-  }
-  sstr_os << static_cast<inttype>(cparg(0));
-  sstr_os << "#B";
-  sstr_os << static_cast<inttype>(Base);
   os << arg.to_string();
   return (os);
 }
-
+} // END OF NAMESPACE NUMREPR
 #endif

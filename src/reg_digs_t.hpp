@@ -319,7 +319,7 @@ public:
   template <typename... Ts>
     requires(std::is_same_v<Ts, dig_t>&&  ...)
   constexpr inline reg_digs_t(const Ts& ...args) noexcept
-      : base_t{(utilities::pack2array<const Ts& ...>{})(args...)} {}
+      : base_t{(utilities::ugly_pack_details::pack2array<const Ts& ...>{})(args...)} {}
 
   /// CONSTRUCTOR COPIA DESDE EL TIPO BASE
   constexpr inline reg_digs_t(const base_t& rarg) noexcept : base_t{rarg} {}
@@ -419,7 +419,7 @@ private:
   static constexpr inline base_t normalize(Ints_type... digits_pow_i) noexcept {
     ///< CREA UN STD_ARRAY DEL TIPO INT PASADO POR UN PACK DE ARGUMENTOS
     ///< EL TAMANO ES EL DEL PACK DE ARGUMENTOS PASADO (MENOR O IGUAL QUE L)
-    using pack_type = typename utilities::pack2array<Ints_type...>;
+    using pack_type = typename utilities::ugly_pack_details::pack2array<Ints_type...>;
     ///< DEVUELVE EL TIPO INTERNO DE ELEMENTO DEL ARRAY ANTERIOR
     ///< [UN TIPO ENTERO]
     using unique_type = typename pack_type::elem_type;
@@ -1364,7 +1364,7 @@ public:
     std::string reg_escrito{};
     std::stringstream os{};
     os << "reg_digs_t#";
-    for(ssize_t ix{size()-1}; ix > -1 ; --ix) {
+    for(std::int64_t ix{this->size()-1}; ix > -1 ; --ix) {
     	os << (*this)(ix);
     	if(ix != 0) os << ':';
     }
@@ -1467,8 +1467,8 @@ reg_digs_t<B, 1 + (sizeof...(Ts))> concat(T0 dig0, Ts... dig_pack) noexcept {
 ///		CONCAT(BASE_N_T<N>,DIG_T,DIG_T ... DIG_PACK)
 ///	VARIADIC PACK
 template <uint64_t B, size_t N, typename T, typename... Ts>
-  requires(((std::is_same_v<Ts, dig_t<UInt_t, B>>)&&...) &&
-           (std::is_same_v<T, dig_t<UInt_t, B>>) && (N > 0))
+  requires(((std::is_same_v<Ts, dig_t<B>>)&&...) &&
+           (std::is_same_v<T, dig_t<B>>) && (N > 0))
 constexpr inline
 reg_digs_t<B,N+1+(sizeof...(Ts))> concat(
 	reg_digs_t<B, N> larg,
@@ -1507,10 +1507,10 @@ reg_digs_t<B,N+(...+(N_pack))> concat(
 }
 
 template <uint64_t B, size_t N>
-  requires(N > 0 & B > 1)
+  requires(N > 0 && B > 1)
 constexpr inline
 reg_digs_t<B, N> operator<<(const reg_digs_t<B, N>& larg, size_t n) noexcept {
-  reg_digs_t<UINT_T, B, N> cparg{larg};
+  reg_digs_t<B, N> cparg{larg};
   for (std::int32_t ix{N - 1 - n}; ix > -1; --ix) {
     cparg[ix + n] = larg[ix];
   }
@@ -1618,7 +1618,7 @@ reg_digs_t<B, N> operator|(
 template <uint64_t B, size_t N>
   requires((B > 1) && (N > 0))
 constexpr inline
-const reg_digs_t<UINT_T, B, N>& operator&=(
+const reg_digs_t<B, N>& operator&=(
 	reg_digs_t<B, N>& larg,
 	const reg_digs_t<B, N>& rarg
   ) noexcept {
@@ -1819,7 +1819,7 @@ dig_t<B> m_sum_digs_carryin_1(dig_t<B>& left,const dig_t<B>& right) noexcept {
   ///														C:=1
   ///S:=(L.C_Bm1+1-D).C_Bm1+1
 
-  using      dig_t = dig_t<UINT_T, B>;
+  using      dig_t = dig_t<B>;
   constexpr  dig_t d_0 = dig_t::dig_0();
   constexpr  dig_t d_1 = dig_t::dig_1();
   constexpr  dig_t d_Bm1 = dig_t::dig_Bm1();
@@ -1874,7 +1874,7 @@ dig_t<B> m_subtract_digs_borrowin_0(dig_t<B>& left,dig_t<B> right) noexcept {
   /// L <= D				:
   ///		b:=1 S:=L+D.C_Bm1+1
 
-  using dig_t = dig_t<UINT_T, B>;
+  using dig_t = dig_t<B>;
   constexpr dig_t d_0 = dig_t::dig_0();
   constexpr dig_t d_1 = dig_t::dig_1();
 
@@ -2208,7 +2208,7 @@ dig_t<B> m_mult_with_carryin_dig(
   const UINT_T carryout{static_cast<UINT_T>(mult_w_carry / Base)};
   /// this narrowing of integer types is correct
   const UINT_T result{static_cast<UINT_T>(mult_w_carry % Base)};
-  left = dig_t<UINT_T, B>(result);
+  left = dig_t<B>(result);
   return carryout;
 }
 
@@ -2352,7 +2352,6 @@ aprox_coc_dig_rem_div_dsor(
 
   using namespace type_traits;
   using dig_t = dig_t<B>;
-  using UINT_T = dig_t::UINT_T;
   using SIG_UINT_T = dig_t::SIG_UINT_T;
 
   /// BEGIN : CONSTANTES PARA EL CONTROL DE LA REDUCCION POR APROXIMACION
@@ -2490,7 +2489,6 @@ std::tuple<reg_digs_t<B,std::max(N, M)>,reg_digs_t<B,std::max(N, M)>,bool>
 
   constexpr size_t MaxParam = std::max(N, M);
   using dig_t = dig_t<B>;
-  using UINT_T = dig_t::UINT_T;
   using SIG_UINT_T = dig_t::SIG_UINT_T;
   using base_t = reg_digs_t<B, MaxParam>;
   using base_t::regd_0;

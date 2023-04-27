@@ -14,7 +14,7 @@ using type_traits::uint_type_for_radix_c;
 ///< WRAPPER PARA UN TIPO UINT_T QUE UNSIGNED_INTEGRAL_T<UINT_T>
 ///< SE SOBRECARGAN LOS OPERADORES ARITMETICOS PARA ARITMETICA MODULAR
 ///< DIG_T = SUMA Y MULTIPLICACION CIRCULAR (MODULAR CON MOD B)
-template <uint64_t B>
+template <std::uint64_t B>
 requires (B > 1)
 struct dig_t {
 /// GENERACIÓN DEL TIPO QUE CONTENDRÁ EL DÍGITO CON ENTERO SIN SIGNO
@@ -1010,11 +1010,12 @@ public:
 /*                                  */
 /************************************/
 
-template <type_traits::uint_type_for_radix_c UINT_T, UINT_T Base>
-  requires(type_traits::suitable_base<UINT_T, Base>())
-std::istream &operator>>(std::istream &is, dig_t<UINT_T, Base> &arg) {
-
-  using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+template <std::uint64_t Base>
+  requires(Base > 1)
+std::istream &operator>>(std::istream &is, dig_t<Base> &arg) {
+  using dig_t = dig_t<Base>;
+  using UINT_T = dig_t::UINT_T;
+  using SIG_UINT_T = dig_t::SIG_UINT_T;
   enum estado_e { e0, e1, e2, e3, e4, e5, e6, e7, e8 };
 
   std::string sds;
@@ -1117,14 +1118,14 @@ std::istream &operator>>(std::istream &is, dig_t<UINT_T, Base> &arg) {
     numero += num_dig[k];
   }
   numero %= Base;
-  arg = dig_t<UINT_T, Base>(numero);
+  arg = dig_t(numero);
   return is;
 }
 
-template <type_traits::uint_type_for_radix_c UINT_T, UINT_T Base>
-  requires(type_traits::suitable_base<UINT_T, Base>())
-std::ostream &operator<<(std::ostream &os, dig_t<UINT_T, Base> arg) {
-  os << "d#" << static_cast<std::int64_t>(arg() % Base) << "#B"
+template <std::uint64_t Base>
+  requires(Base > 1)
+std::ostream &operator<<(std::ostream &os, dig_t<Base> arg) {
+  os << "d#" << static_cast<std::int64_t>(arg()) << "#B"
      << static_cast<std::int64_t>(Base);
   return os;
 }

@@ -5,39 +5,6 @@
 
 namespace NumRepr {
 
-constexpr inline sign_e Char2Sign(char ch) noexcept {
-  if (ch <= ',')
-    return sign_e::vplus;
-  else
-    return sign_e::vminus;
-}
-
-template <type_traits::arith_integral_c IntT>
-constexpr inline sign_e Int2Sign(IntT nu) noexcept {
-  if (nu < 0)
-    return sign_e::vminus;
-  else
-    return sign_e::vplus;
-}
-
-template <type_traits::arith_integral_c IntT>
-constexpr inline sign_funct_e Int2SignFunct(IntT nu) noexcept {
-  if (nu < 0)
-    return sign_funct_e::vminus;
-  else if (nu > 0)
-    return sign_funct_e::vplus;
-  else
-    return sign_funct_e::vzero;
-}
-
-template <type_traits::arith_natural_c NatIntT>
-constexpr inline sign_funct_e Nat2SignFunct(NatIntT nu) noexcept {
-  if (nu == 0)
-    return sign_funct_e::vzero;
-  else
-    return sign_funct_e::vplus;
-}
-
 namespace detail {
 // precondition: low*low <= n, high*high > n.
 constexpr inline size_t ceilsqrt(size_t n, size_t low, size_t high) noexcept {
@@ -73,7 +40,7 @@ constexpr inline bool is_prime(size_t n) noexcept {
   else
     return (!detail::find_factor(n, 1, (detail::ceilsqrt(n) + 1) / 2));
 }
-constexpr inline bool is_power_of_2(uint128_t num) noexcept {
+constexpr inline bool is_power_of_2(uint64_t num) noexcept {
   if ((num % 2) != 0)
     return false;
   else

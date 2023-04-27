@@ -598,8 +598,8 @@ public:
   }
 
   constexpr inline
-  const nat_reg_digs_t& operator++(int) noexcept {
-    auto cp_this{*this};
+  nat_reg_digs_t operator++(int) noexcept {
+    nat_reg_digs_t cp_this{*this};
     ++(*this);
     return cp_this;
   }
@@ -610,8 +610,8 @@ public:
   }
 
   constexpr inline
-  const nat_reg_digs_t& operator--(int) noexcept {
-    auto cp_this{*this};
+  nat_reg_digs_t operator--(int) noexcept {
+    nat_reg_digs_t cp_this{*this};
     --(*this);
     return cp_this;
   }
@@ -903,13 +903,13 @@ public:
   std::string to_string() const noexcept {
     std::stringstream strstr_os{};
     strstr_os << "reg_dig#";
-    for (int32_t ix{Long - 1}; ix > 0; --ix) {
-      strstr_os << static_cast<SIG_UINT_T>(arg(ix));
+    for (int32_t ix{L - 1}; ix > 0; --ix) {
+      strstr_os << static_cast<SIG_UINT_T>((*this)(ix));
       strstr_os << ':';
     }
-    strstr_os << static_cast<SIG_UINT_T>(arg(0));
+    strstr_os << static_cast<SIG_UINT_T>((*this)(0));
     strstr_os << "#B";
-    strstr_os << static_cast<SIG_UINT_T>(Base);
+    strstr_os << static_cast<SIG_UINT_T>(B);
     return strstr_os.str();
   }
 };

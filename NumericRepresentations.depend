@@ -41,7 +41,7 @@
 1677007473 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"testunit.hpp"
 
-1677704997 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
+1682588208 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
 	"auxiliary_functions.hpp"
 	"auxiliary_types.hpp"
 
@@ -75,14 +75,13 @@
 1668745867 c:\users\julia\dropbox\github\numericrepresentations\src\funciones_auxiliares.hpp
 	"tipos_auxiliares.hpp"
 
-1677688664 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
+1682587894 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_functions.hpp
 	"auxiliary_types.hpp"
 
-1677688664 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
+1681464992 c:\users\julia\dropbox\github\numericrepresentations\src\auxiliary_types.hpp
 	"basic_types.hpp"
 
-1677691425 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
-	"istream"
+1682594503 c:\users\julia\dropbox\github\numericrepresentations\src\basic_types.hpp
 	<cinttypes>
 	<compare>
 	<concepts>
@@ -91,6 +90,7 @@
 	<cstring>
 	<fstream>
 	<iostream>
+	<istream>
 	<sstream>
 	<string>
 	<array>
@@ -133,11 +133,11 @@
 	<functional>
 	<iterator>
 
-1678377836 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
+1682598774 c:\users\julia\dropbox\github\numericrepresentations\src\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 
-1677688664 c:\users\julia\dropbox\github\numericrepresentations\src\utilities.hpp
+1682593246 c:\users\julia\dropbox\github\numericrepresentations\src\utilities.hpp
 	"basic_types.hpp"
 	<array>
 	<tuple>
@@ -157,7 +157,7 @@
 	<array>
 	<tuple>
 
-1678377977 c:\users\julia\dropbox\github\numericrepresentations\src\nat_reg_digs_t.hpp
+1682598667 c:\users\julia\dropbox\github\numericrepresentations\src\nat_reg_digs_t.hpp
 	"reg_digs_t.hpp"
 	"utilities.hpp"
 
@@ -165,15 +165,14 @@
 	"reg_digs_t.hpp"
 	"utilities.hpp"
 
-1677688663 c:\users\julia\dropbox\github\numericrepresentations\src\testunit.hpp
-	"nat_reg_digs_t.hpp"
+1682595700 c:\users\julia\dropbox\github\numericrepresentations\src\testunit.hpp
+	"int_reg_digs_t.hpp"
 	"utilities.hpp"
-	<chrono>
-	<typeinfo>
 
-1678377910 source:c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
+1682596200 source:c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
 	"testunit.hpp"
 	<clocale>
+	<windows.h>
 
 1678377910 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
 	"testunit.hpp"
@@ -195,4 +194,9 @@
 1677750711 source:c:\users\julian\dropbox\github\numericrepresentations\src\test_driver.cpp
 	"testunit.hpp"
 	<locale>
+
+1682596270 c:\users\julia\dropbox\github\numericrepresentations\src\int_reg_digs_t.hpp
+	"nat_reg_digs_t.hpp"
+	<istream>
+	<ostream>
 
