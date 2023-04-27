@@ -1,7 +1,7 @@
 #ifndef TESTUNIT_HPP_INCLUDED
 #define TESTUNIT_HPP_INCLUDED
 
-#include "nat_reg_digs_t.hpp"
+#include "int_reg_digs_t.hpp"
 #include "utilities.hpp"
 #include <chrono>
 #include <typeinfo>
@@ -12,7 +12,7 @@ namespace testing { /// BEGIN OF NAMESPACE TESTING
 void show_test_convert_to_int_driver();
 
 template <std::size_t B, std::size_t L>
-constexpr inline uint128_t
+constexpr inline uint64_t
 conversion_to_int(const register_of_digits_t<B, L> &arg) noexcept {
 
   namespace us = utilities::special;
@@ -32,7 +32,7 @@ convert_to_int(const register_of_digits_t<B, L> &arg) noexcept {
 }
 
 template <std::size_t B, std::size_t L>
-constexpr inline uint128_t Base_pow_to_Size() noexcept {
+constexpr inline uint64_t Base_pow_to_Size() noexcept {
   namespace us = utilities::special;
   return us::Base_pow_to_Size<B, L>();
 }
@@ -112,7 +112,7 @@ test_result_t test_comparacion_igual_que_entre_dos_objetos_tipo_reg_digs() {
   namespace us = utilities::special;
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -144,7 +144,7 @@ test_result_t test_comparacion_distinto_que_entre_dos_objetos_tipo_reg_digs() {
   namespace us = utilities::special;
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -177,7 +177,7 @@ test_result_t test_comparacion_menor_que_entre_dos_objetos_tipo_reg_digs() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -211,7 +211,7 @@ test_comparacion_menor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -244,7 +244,7 @@ test_result_t test_comparacion_mayor_que_entre_dos_objetos_tipo_reg_digs() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -278,7 +278,7 @@ test_comparacion_mayor_o_igual_que_entre_dos_objetos_tipo_reg_digs() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -310,7 +310,7 @@ template <std::uint64_t Base> test_result_t test_dig_suma_dig_con_asignacion() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, 1>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, 1>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -343,7 +343,7 @@ template <std::uint64_t Base> test_result_t test_dig_mult_dig_con_asignacion() {
 
   bool todo_correcto = true;
 
-  [[maybe_unused]] constexpr uint128_t B2L{us::Base_pow_to_Size<Base, 1>()};
+  [[maybe_unused]] constexpr uint64_t B2L{us::Base_pow_to_Size<Base, 1>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -378,7 +378,7 @@ std::tuple<bool, uint32_t, uint32_t> test_dig_mult_reg_n_dig_con_asignacion() {
   using d_t = digit_t<Base>;
   namespace us = utilities::special;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
   bool todo_correcto = true;
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -414,7 +414,7 @@ test_result_t test_reg_mult_reg_con_asignacion() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Long>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Long>()};
   std::fstream fichero("test_mult_reg_reg_w_assign.txt",
                        fichero.out | fichero.app);
 
@@ -458,7 +458,7 @@ test_result_t test_dig_resta_dig_con_asignacion() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, 1>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, 1>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -494,7 +494,7 @@ test_dig_resta_con_borrow_dig_con_asignacion() {
 
   bool todo_correcto = true;
 
-  [[maybe_unused]] constexpr uint128_t B2L{us::Base_pow_to_Size<Base, 1>()};
+  [[maybe_unused]] constexpr uint64_t B2L{us::Base_pow_to_Size<Base, 1>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -526,7 +526,7 @@ template <std::uint64_t Base> void lista_dig_resta_dig_con_asignacion() {
   using d_t = digit_t<Base>;
   namespace us = utilities::special;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, 1>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, 1>()};
 
   std::string filename{"resta_de_digitos_lista.txt"};
   std::fstream fichero{filename, fichero.out | fichero.app};
@@ -570,7 +570,7 @@ test_result_t test_dig_suma_dig_con_carry_con_asignacion() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, 1>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, 1>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -606,7 +606,7 @@ test_result_t test_incremento_con_asignacion() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -640,7 +640,7 @@ test_result_t test_decremento_con_asignacion() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -672,7 +672,7 @@ test_result_t test_suma_con_asignacion() {
 
   bool todo_correcto = true;
 
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};
@@ -709,7 +709,7 @@ test_result_t test_resta_con_asignacion() {
   namespace us = utilities::special;
 
   bool todo_correcto = true;
-  constexpr uint128_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
+  constexpr uint64_t B2L{us::Base_pow_to_Size<Base, Longitud>()};
 
   std::size_t correctos{0};
   std::size_t errores{0};

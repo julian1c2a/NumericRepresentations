@@ -9,24 +9,25 @@ namespace NumRepr {
 using type_traits::suitable_base;
 using type_traits::uint_type_for_radix_c;
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t L>
-  requires(suitable_base<UINT_T, B>()&&  (L > 0))
-struct nat_reg_digs_t : public reg_digs_t<UINT_T, B, L> {
-
+template <uint64_t B, size_t L>
+  requires((B > 1) &&  (L > 0))
+struct nat_reg_digs_t : public reg_digs_t<B, L> {
+  using dig_t      = dig_t<B>;
+  using UINT_T     = typename dig_t::UINT_T;
   using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
   using SIG_SINT_T = typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
 
-  using dig_t = dig_t<UINT_T, B>;
+
 
   template <size_t N>
     requires(N > 0)
-  using base_N_t = reg_digs_t<UINT_T, B, N>;
+  using base_N_t = reg_digs_t<B, N>;
 
   using base_t = base_N_t<L>;
 
   template <size_t N>
     requires(N > 0)
-  using nat_reg_N_digs_t = nat_reg_digs_t<UINT_T, B, N>;
+  using nat_reg_N_digs_t = nat_reg_digs_t<B, N>;
 
 public:
 
@@ -62,9 +63,9 @@ public:
   }
 
   /************************************/
-  /*	    						                */
-  /*    CONSTRUIR NUMERO			        */
-  /*					    		                */
+  /*	    						  */
+  /*    CONSTRUIR NUMERO			  */
+  /*					    		  */
   /************************************/
 
 public:
@@ -74,14 +75,14 @@ public:
 
   /// CONSTRUCTOR POR LISTA DE DIGITOS
   constexpr inline nat_reg_digs_t(
-      const std::initializer_list<dig_t>& arg) noexcept
-      : base_t{arg} {}
+	const std::initializer_list<dig_t>& arg
+  ) noexcept : base_t{arg} {}
 
   /// CONSTRUCTOR POR ARGUMENTOS DIGITOS SIN LIMITE: DEDUCE EL TIPO
   template <typename... Ts>
     requires(std::is_same_v<Ts, dig_t>&&  ...)
-  constexpr inline nat_reg_digs_t(const Ts& ...args) noexcept
-      : base_t(args...) {}
+  constexpr inline nat_reg_digs_t(const Ts& ...args) noexcept : base_t(args...)
+  {}
 
 private:
 
@@ -265,23 +266,26 @@ public:
     return (*this);
   }
 
-private:
+public:
 
   template <size_t N> requires(N > 0)
-  static constexpr inline void set_0(base_N_t<N>& arg) noexcept {
+  static constexpr inline
+  void set_0(base_N_t<N>& arg) noexcept {
     for (dig_t& dig : arg)
       dig = dig_t::dig_0();
   }
 
   template <size_t N> requires(N > 0)
-  static constexpr inline void set_1(base_N_t<N>& arg) noexcept {
+  static constexpr inline
+  void set_1(base_N_t<N>& arg) noexcept {
     arg[0].set_1();
     for (size_t ix{1}; ix < N; ++ix)
       arg[ix] = dig_t::dig_0();
   }
 
   template <size_t N> requires(N > 0)
-  static constexpr inline void set_Bm1(base_N_t<N>& arg) noexcept {
+  static constexpr inline
+  void set_Bm1(base_N_t<N>& arg) noexcept {
     arg[0].set_Bm1();
     for (size_t ix{1}; ix < N; ++ix)
       arg[ix] = dig_t::dig_0();
@@ -295,20 +299,22 @@ private:
   }
 
   template <size_t N> requires(N > 0)
-  static constexpr inline void set_fill_dig(base_N_t<N>& larg,
-                                            dig_t d) noexcept {
+  static constexpr inline
+  void set_fill_dig(base_N_t<N>& larg , dig_t d) noexcept {
     for (auto& elem : larg)
       elem = d;
   }
 
   template <size_t N> requires(N > 0)
-  static constexpr inline void set_fill_1(base_N_t<N>& larg) noexcept {
+  static constexpr inline
+  void set_fill_1(base_N_t<N>& larg) noexcept {
     for (auto& elem : larg)
       elem.set_1();
   }
 
   template <size_t N> requires(N > 0)
-  static constexpr inline void set_fill_Bm1(base_N_t<N>& larg) noexcept {
+  static constexpr inline
+  void set_fill_Bm1(base_N_t<N>& larg) noexcept {
     for (auto& elem : larg)
       elem.set_Bm1();
   }
@@ -318,7 +324,8 @@ private:
   template <size_t N, size_t N_i, size_t N_pf> // i es inicio
                                                // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= N) && (N > 0))
-  static constexpr inline void set_interval_0(base_N_t<N>& larg) noexcept {
+  static constexpr inline
+  void set_interval_0(base_N_t<N>& larg) noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
       larg[ix] = dig_t::dig_0();
   }
@@ -328,7 +335,8 @@ private:
   template <size_t N, size_t N_i, size_t N_pf> // i es inicio
                                                // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= N) && (N > 0))
-  static constexpr inline void set_interval_Bm1(base_N_t<N>& larg) noexcept {
+  static constexpr inline
+  void set_interval_Bm1(base_N_t<N>& larg) noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
       larg[ix] = dig_t::dig_Bm1();
   }
@@ -338,8 +346,8 @@ private:
   template <size_t N, size_t N_i, size_t N_pf> // i es inicio
                                                // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= N) && (N > 0))
-  static constexpr inline void set_interval_dig(base_N_t<N>& larg,
-                                                dig_t dig) noexcept {
+  static constexpr inline
+  void set_interval_dig(base_N_t<N>& larg , dig_t dig) noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
       larg[ix] = dig;
   }
@@ -350,7 +358,8 @@ private:
   template <size_t N_i, size_t N_pf> // i es inicio
                                      // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= L))
-  static constexpr inline void set_interval_0(base_t& larg) noexcept {
+  static constexpr inline
+  void set_interval_0(base_t& larg) noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
       larg[ix] = dig_t::dig_0();
   }
@@ -361,7 +370,8 @@ private:
   template <size_t N_i, size_t N_pf> // i es inicio
                                      // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= L))
-  static constexpr inline void set_interval_Bm1(base_t& larg) noexcept {
+  static constexpr inline
+  void set_interval_Bm1(base_t& larg) noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
       larg[ix] = dig_t::dig_Bm1();
   }
@@ -372,9 +382,8 @@ private:
   template <size_t N_i, size_t N_pf> // i es inicio
                                      // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= L))
-  static constexpr inline void set_interval_dig(
-		base_t& larg, dig_t dig) noexcept
-  {
+  static constexpr inline
+  void set_interval_dig(base_t& larg, dig_t dig) noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
       larg[ix] = dig;
   }
@@ -395,26 +404,30 @@ public:
   template <size_t N_i, size_t N_pf> // i es inicio
                                      // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= L))
-  constexpr inline void set_interval_0() noexcept {
+  constexpr inline
+  void set_interval_0() noexcept {
     set_interval_0<N_i, N_pf>(base_ref_cthis());
   }
   /// OPERACIÓN DE PONER A VALOR DIG_Bm1 EN [N_0 , N_1) DEL NAT_REG_DIGS_T
   template <size_t N_i, size_t N_pf> // i es inicio
                                      // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= L))
-  constexpr inline void set_interval_Bm1() noexcept {
+  constexpr inline
+  void set_interval_Bm1() noexcept {
     set_interval_Bm1<N_i, N_pf>(base_ref_cthis());
   }
   /// OPERACIÓN DE PONER A VALOR DIG EN [N_0 , N_1) DEL NAT_REG_DIGS_T
   template <size_t N_i, size_t N_pf> // i es inicio
                                      // pf es pasado el final
     requires((N_i < N_pf) && (N_pf <= L))
-  constexpr inline void set_interval_dig(dig_t dig) noexcept {
+  constexpr inline
+  void set_interval_dig(dig_t dig) noexcept {
     set_interval_0<N_i, N_pf>(base_ref_cthis(), dig);
   }
 
   /// OPERACIÓN COPIA DESDE UN DIGITO (CONVERSIÓN)
-  constexpr inline nat_reg_digs_t& operator=(const dig_t& arg) noexcept {
+  constexpr inline
+  nat_reg_digs_t& operator=(const dig_t& arg) noexcept {
     if (&const_by_index(0) != &arg) {
       set_0();
       by_index(0) = arg;
@@ -426,14 +439,14 @@ private:
 
   /// OPERACIÓN COPIA DESDE UN ENTERO (CONVERSIÓN A LA BASE B) A UN BASE_T
   template <type_traits::integral_c Int_Type>
-  static constexpr inline const base_t& assign(
-		base_t& larg, Int_Type arg) noexcept {
+  static constexpr inline
+  const base_t& assign(base_t& larg, Int_Type arg) noexcept {
     using type_traits::maxbase;
-    constexpr sint128_t B_128t_v{static_cast<sint128_t>(B)};
-    constexpr bool puede_multiplicarse{(maxbase<sint128_t>() / B_128t_v) > 0};
+    constexpr sint64_t B_128t_v{static_cast<sint64_t>(B)};
+    constexpr bool puede_multiplicarse{(maxbase<sint64_t>() / B_128t_v) > 0};
     if ((&larg) != (&arg)) {
-      sint128_t creg_g{static_cast<sint128_t>(arg)};
-      sint128_t BasePowIx{B_128t_v};
+      sint64_t creg_g{static_cast<sint64_t>(arg)};
+      sint64_t BasePowIx{B_128t_v};
       for (size_t k{1u}; k < L; ++k) {
         if constexpr (puede_multiplicarse)
           BasePowIx *= B_128t_v;
@@ -461,36 +474,40 @@ public:
 
   template <size_t N>
     requires(N > 0)
-  constexpr inline nat_reg_N_digs_t<N + L> cat(
-      const nat_reg_N_digs_t<N>& arg) const noexcept {
+  constexpr inline
+  nat_reg_N_digs_t<N + L> cat(const nat_reg_N_digs_t<N>& arg) const noexcept {
     return (concat<L, N>(base_cpy_cthis(), arg));
   }
 
-  constexpr inline nat_reg_N_digs_t<L + 1> cat(dig_t arg) const noexcept {
+  constexpr inline
+  nat_reg_N_digs_t<L + 1> cat(dig_t arg) const noexcept {
     return (concat<L>(base_cpy_cthis(), arg));
   }
 
   template <size_t N>
     requires(N > 0)
-  constexpr inline nat_reg_N_digs_t<N + L> cat_inv(
-      const nat_reg_N_digs_t<N>& arg) const noexcept {
+  constexpr inline
+  nat_reg_N_digs_t<N + L> cat_inv(const nat_reg_N_digs_t<N>& arg) const noexcept
+  {
     return (concat<N, L>(arg, base_cpy_cthis()));
   }
 
-  constexpr inline nat_reg_N_digs_t<L + 1> cat_inv(dig_t arg) const noexcept {
+  constexpr inline
+  nat_reg_N_digs_t<L + 1> cat_inv(dig_t arg) const noexcept {
     return (concat<L>(arg, base_cpy_cthis()));
   }
 
   template <size_t ibegin, size_t iend>
     requires((iend <= L) && (ibegin < iend))
-  constexpr inline nat_reg_N_digs_t<iend - ibegin> subrepr() const noexcept {
+  constexpr inline
+  nat_reg_N_digs_t<iend - ibegin> subrepr() const noexcept {
     return subregister<L, ibegin, iend>(base_cpy_cthis());
   }
 
   /****************************************/
-  /*							      	                */
-  /*       Algunas Conversiones    		    */
-  /*							      	                */
+  /*							      	  */
+  /*       Algunas Conversiones    		  */
+  /*							      	  */
   /****************************************/
 
   template <type_traits::integral_c Int_Type>
@@ -502,10 +519,10 @@ public:
       retInt += const_by_index(k) * BasePowIx;
       BasePowIx *= B;
       if(
-		(k + 1 < L) &&
-		(
-		  maxbase<Int_Type>() < retInt+(const_by_index(k+1)*BasePowIx)
-		)
+		  (k + 1 < L) &&
+		  (
+		    maxbase<Int_Type>() < retInt+(const_by_index(k+1)*BasePowIx)
+		  )
 	    ) {
         return retInt;
       }
@@ -515,81 +532,85 @@ public:
 
 public:
   /****************************************************/
-  /*							    				                        */
+  /*							    				  */
   /* OPERADORES COMPARATIVOS                          */
-  /*							    				                        */
+  /*							    				  */
   /****************************************************/
 
   /// OPERADOR COMPARACIÓN SPACESHIP C++20
   template <size_t N>
     requires(N > 0)
   constexpr inline
-  std::strong_ordering
-  operator<=>(const nat_reg_N_digs_t<N>& arg) const noexcept {
+  std::strong_ordering operator<=>(const nat_reg_N_digs_t<N>& arg) const
+  noexcept {
     return (base_const_ref_cthis() <=> arg.base_const_ref_cthis());
   }
 
   /// OPERADOR COMPARACIÓN SPACESHIP C++20
   template <size_t N>
     requires(N > 0)
-  constexpr inline std::weak_ordering
-  operator<=>(const base_N_t<N>& arg) const noexcept {
+  constexpr inline
+  std::weak_ordering operator<=>(const base_N_t<N>& arg) const noexcept {
     return (base_const_ref_cthis() <=> arg);
   }
 
   /// OPERADOR COMPARACIÓN SPACESHIP C++20
-  constexpr inline std::weak_ordering
-  operator<=>(const dig_t& arg) const noexcept {
+  constexpr inline
+  std::weak_ordering operator<=>(const dig_t& arg) const noexcept {
     return (base_const_ref_cthis() <=> arg);
   }
 
   /********************************/
-  /*							                */
-  /* 		  PRIMER DIGITO	 	        */
-  /*		  SEGUNDO DIGITO	        */
-  /*							                */
+  /*							  */
+  /* 		  PRIMER DIGITO	 	  */
+  /*		  SEGUNDO DIGITO	  */
+  /*							  */
   /********************************/
 
-  inline constexpr dig_t operator[](size_t idx) const noexcept {
-    return (cpy_by_index(idx));
-  }
-
-  inline constexpr dig_t& operator[](size_t idx) noexcept {
-    return (by_index(idx));
-  }
+   ///  HEREDADO DE REG_DIGS_T (DE LA QUE DERIVA NAT_REG_DIGS_T)
+   ///  inline constexpr
+   ///  dig_t operator[](size_t idx) const noexcept;
+   ///
+   ///  inline constexpr
+   ///  dig_t& operator[](size_t idx) noexcept;
 
   template <type_traits::integral_c Int_Type = UINT_T>
-  inline constexpr Int_Type operator()(size_t idx) const noexcept {
+  inline constexpr
+  Int_Type operator()(size_t idx) const noexcept {
     return static_cast<Int_Type>(cpy_by_index(idx)());
   }
 
-  /****************************/
-  /*						              */
-  /* OPERADORES ARITMÉTICOS	  */
-  /*	POSTINCREMENTO ++(int)  */
-  /*	PREINCREMENTO ++()	    */
-  /*	POSTDECREMENTO --(int)  */
-  /*	PREDECREMENTO ++()	    */
-  /*                          */
-  /****************************/
+  /*******************************/
+  /*						     */
+  /* OPERADORES ARITMÉTICOS	     */
+  /*	POSTINCREMENTO ++(int)   */
+  /*	PREINCREMENTO ++()	     */
+  /*	POSTDECREMENTO --(int)   */
+  /*	PREDECREMENTO ++()	     */
+  /*                             */
+  /*******************************/
 
 public:
 
-  constexpr inline const nat_reg_digs_t& operator++() noexcept {
+  constexpr inline
+  const nat_reg_digs_t& operator++() noexcept {
     return (m_incr(*this));
   }
 
-  constexpr inline const nat_reg_digs_t& operator++(int) noexcept {
+  constexpr inline
+  const nat_reg_digs_t& operator++(int) noexcept {
     auto cp_this{*this};
     ++(*this);
     return cp_this;
   }
 
-  constexpr inline const nat_reg_digs_t& operator--() noexcept {
+  constexpr inline
+  const nat_reg_digs_t& operator--() noexcept {
     return (m_decr(*this));
   }
 
-  constexpr inline const nat_reg_digs_t& operator--(int) noexcept {
+  constexpr inline
+  const nat_reg_digs_t& operator--(int) noexcept {
     auto cp_this{*this};
     --(*this);
     return cp_this;
@@ -597,11 +618,11 @@ public:
 
 
   /******************************/
-  /*							              */
+  /*							*/
   /*    OPERADORES ARITMETICOS	*/
-  /*	 C_B()  C_Bm1()  		      */
-  /*	mC_B() mC_Bm1()		        */
-  /*	operator!() operator-()   */
+  /*	 C_B()  C_Bm1()  		*/
+  /*	mC_B() mC_Bm1()		    */
+  /*	operator!() operator-() */
   /*                            */
   /******************************/
 
@@ -659,17 +680,17 @@ public:
   /// END   : OPERATORS | & |= &=
 
   /*****************************************/
-  /* OPERADORES ARITMETICOS BASICOS		     */
-  /*	    nat_reg_digs_t  @  dig_t         */
+  /* OPERADORES ARITMETICOS BASICOS		   */
+  /*	    nat_reg_digs_t  @  dig_t       */
   /*      nat_reg_digs_t  @= dig_t         */
   /*      nat_reg_digs_t  @  10B^n         */
   /*      nat_reg_digs_t  @= 10B^n         */
   /*****************************************/
 
   /******************************************/
-  /*								   		                  */
-  /*  ARITMETICOS CON ASIGNACIÓN			      */
-  /*		nat_reg_digs_t @= dig_t			        */
+  /*								   		*/
+  /*  ARITMETICOS CON ASIGNACIÓN			*/
+  /*		nat_reg_digs_t @= dig_t			*/
   /*                                        */
   /******************************************/
 
@@ -775,10 +796,10 @@ public:
   /// NAT_REG_DIGS_T
 
   /****************************************/
-  /*									                    */
+  /*									  */
   /* OPERADORES ARITMETICOS               */
-  /* nat_reg_digs_t @ nat_reg_digs_t	    */
-  /*                            		      */
+  /* nat_reg_digs_t @ nat_reg_digs_t	  */
+  /*                            		  */
   /****************************************/
 
 
@@ -879,41 +900,30 @@ public:
     return fediv(*this,rarg);
   }
 
+  std::string to_string() const noexcept {
+    std::stringstream strstr_os{};
+    strstr_os << "reg_dig#";
+    for (int32_t ix{Long - 1}; ix > 0; --ix) {
+      strstr_os << static_cast<SIG_UINT_T>(arg(ix));
+      strstr_os << ':';
+    }
+    strstr_os << static_cast<SIG_UINT_T>(arg(0));
+    strstr_os << "#B";
+    strstr_os << static_cast<SIG_UINT_T>(Base);
+    return strstr_os.str();
+  }
 };
 
 /****************************/
-/*													*/
-/* 	   ISTREAM Y OSTREAM		*/
-/*													*/
+/*							*/
+/* 	   ISTREAM Y OSTREAM	*/
+/*							*/
 /****************************/
 
-/// ESPECIALIZACIONES PARA NAT_REG_DIGS
-template <typename UInt_t, UInt_t B, size_t LE>
-bool is_nat_reg_digs_type_id(std::string in) {
-  return ((in == "nat_reg_digs") || (in == "nat_reg_dig") ||
-          (in == "nat_reg_di") || (in == "nat_reg_d") || (in == "nat_reg_") ||
-          (in == "nat_reg") || (in == "nat_re") || (in == "nat_r") ||
-          (in == "nat_") || (in == "nat") || (in == "na") || (in == "n"));
-}
 
-template <typename UInt_t, UInt_t B, size_t LE>
-std::string to_nat_reg_digs_type_string() {
-  return std::string{"nat_reg_digs"};
-}
-
-template <typename UInt_t, UInt_t B, size_t LE>
-size_t size_of_nat_reg_digs_type_string_idT() {
-  return (to_nat_reg_digs_type_string<UInt_t, B, LE>()).size();
-}
-
-///	TODO
-/// ESTA VERSION +
-/// VERSION CON TRATAMIENTO DE ERRORES EN RUNTIME
-template <type_traits::uint_type_for_radix_c Int_Type, Int_Type Base,
-          size_t Length>
-  requires(type_traits::suitable_base<Int_Type, Base>() && (Length > 0))
-std::istream& operator>>(std::istream& is,
-                         nat_reg_digs_t<Int_Type, Base, Length>& arg) {
+template <uint64_t Base , size_t Length>
+std::istream&
+operator>>(std::istream& is,nat_reg_digs_t<Base, Length>& arg) {
   enum estado_e {
     e0ini,
     e1r,
@@ -934,9 +944,11 @@ std::istream& operator>>(std::istream& is,
   /// STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
   std::string sds;
   /// TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS
-  using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
-  using dig_t = dig_t<Int_Type, Base>;
-  using nat_reg_digs_t = nat_reg_digs_t<Int_Type, Base, Length>;
+  using dig_t = dig_t<Base>;
+  using nat_reg_digs_t = nat_reg_digs_t<Base, Length>;
+  using Int_Type = typename dig_t::UINT_T;
+  using inttype = typename dig_t::SIG_UINT_T;
+
   /// INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
   size_t indice{0};
   /// VARIABLES PARA ACCIONES EN LOS ESTADOS
@@ -1133,20 +1145,12 @@ std::istream& operator>>(std::istream& is,
   return (is);
 }
 
-template <type_traits::uint_type_for_radix_c Int_Type, Int_Type Base,
-          size_t Long>
-  requires(type_traits::suitable_base<Int_Type, Base>())
-std::ostream& operator<<(std::ostream& os,
-                         const nat_reg_digs_t<Int_Type, Base, Long>& arg) {
-  using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
-  os << "reg_dig#";
-  for (int32_t ix{Long - 1}; ix > 0; --ix) {
-    os << static_cast<inttype>(arg(ix));
-    os << ':';
-  }
-  os << static_cast<inttype>(arg(0));
-  os << "#B";
-  os << static_cast<inttype>(Base);
+template <uint64_t Base , size_t Long>
+std::ostream& operator<<(
+	std::ostream& os ,
+	const nat_reg_digs_t<Base, Long>& arg
+  ) {
+  os << arg.to_string();
   return (os);
 }
 

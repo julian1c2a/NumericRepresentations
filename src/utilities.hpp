@@ -2,6 +2,7 @@
 #define UTILITIES_HPP_INCLUDED
 
 #include "basic_types.hpp"
+
 #include <array>
 #include <tuple>
 
@@ -35,7 +36,7 @@ using uintspairtbl = typename std::array<uintspairlist<UINT_T, B>, B>;
 /// };
 /// type_i es un PACK
 /// tipo std::tupla<class ... Ts>;
-
+namespace ugly_pack_detailsk_2_tuple_details {
 template <typename... Ts> struct pack2tuple {
   using tuple_type = std::tuple<Ts...>;
   static constexpr unsigned pack_size() noexcept { return (sizeof...(Ts)); }
@@ -43,8 +44,10 @@ template <typename... Ts> struct pack2tuple {
     tuple_type content = std::make_tuple(std::forward(args...));
     return std::move(content);
   }
+  /// DEVUELVE EL TIPO INDICE K DE LA LISTA DE PARAMETROS TIPO EN EL TEMPLATE
   template <unsigned K>
   using elem_type = typename std::tuple_element<K, tuple_type>::type;
+  /// DEVUELVE EL OBJETO ARGUMENTO INDICE J DE LA LISTA DE ARGUMENTOS PASADOS
   template <unsigned J>
   static constexpr elem_type<J>::type get(Ts &&...args) noexcept {
     tuple_type content = std::make_tuple(std::forward(args...));
@@ -52,6 +55,8 @@ template <typename... Ts> struct pack2tuple {
     return ret;
   }
 };
+}
+
 /// EXAMPLE
 /// pack2tuple<int,std::string,double>; // tipo
 /// pack2tuple<int,std::string,double>::tuple_type ==
@@ -65,34 +70,41 @@ template <typename... Ts> struct pack2tuple {
 /// tuple_obj == mi_tupla(2,"xyz",3.14159) == {2,"xyz",3.14159}
 /// head of tuple_obj is {2}
 /// tail of tuple_obj is {"xyz",3.14159}
-/// BEGIN: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES
 
+namespace ugly_details {
+/// BEGIN: TEMPLATE GENERICO Y SUS ESPECIALIZACIONES
 struct local_void_t {};
 
+/// COMPRUEBA QUE TODOS LOS TIPOS PASADOS SON EL MISMO
+/// (PARA CONSTRUIR UN ARRAY POR EJEMPLO)
 template <class Head_t, class... Tail_t> struct for_each_same_type {
-  using second_t = std::tuple_element<0, std::tuple<Tail_t...>>::type;
-  constexpr static bool are_same_type_v = ((std::is_same_v<Head_t, second_t>)&&(
-      for_each_same_type<Tail_t...>::are_same_type_v));
+  using second_t = typename std::tuple_element<0, std::tuple<Tail_t...>>::type;
+  constexpr static bool are_same_type_v =
+  	((std::is_same_v<Head_t, second_t>)&&
+	 (for_each_same_type<Tail_t...>::are_same_type_v)
+	);
 };
-
 template <class Head_t> struct for_each_same_type<Head_t> {
   constexpr static bool are_same_type_v = true;
 };
+}
 
+/// CONCEPT QUE ASEGURA QUE TODOS LOS TIPOS PASADOS POR PACK SON EL MISMO
 template <typename... Ts>
 concept all_are_the_same_type_c =
-    requires(Ts...) { for_each_same_type<Ts...>::are_same_type_v; };
+    requires(Ts...) { ugly_details::for_each_same_type<Ts...>::are_same_type_v; };
 
+/// CONCEPT QUE ASEGURA QUE HAY 1 O MÁS PARÁMETROS
 template <typename... Ts>
 concept there_is_one_or_more_c = requires(Ts...) { ((sizeof...(Ts)) > 0); };
 
 /// END: 	TEMPLATE GENERICO Y SUS ESPECIALIZACIONES
-
+namespace ugly_pack_details {
 template <typename... Ts>
   requires(all_are_the_same_type_c<Ts...> && there_is_one_or_more_c<Ts...>)
 struct pack2array {
   using array_type =
-      std::array<typename pack2tuple<Ts...>::elem_type<0>, (sizeof...(Ts))>;
+      std::array<typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>, (sizeof...(Ts))>;
   static constexpr std::size_t pack_size() noexcept { return (sizeof...(Ts)); }
 
   constexpr array_type operator()(Ts &&...args) const noexcept {
@@ -100,7 +112,7 @@ struct pack2array {
     return content;
   }
 
-  using elem_type = typename pack2tuple<Ts...>::elem_type<0>;
+  using elem_type = typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>;
 
   template <std::size_t J>
   static constexpr elem_type get(Ts &&...args) noexcept {
@@ -127,11 +139,15 @@ struct pack2array {
     return;
   }
 };
+} /// close namespace ugly_pack_details
 
+/// FUNCIÓN QUE , DADO UN PACK DE ARGUMENTOS LOS COPIA (SI SON DEL MISMO TIPO)
+/// EN UN ARRAY CON UN ORDEN, EN TIEMPO DE COMPILACIÓN
 template <class... Ts>
   requires(all_are_the_same_type_c<Ts...> && there_is_one_or_more_c<Ts...>)
 void assign_with_order(auto &dest, const Ts &...args) noexcept {
-  pack2array<Ts...>::for_each(dest, args...);
+  using type = typename ugly_pack_details::pack2array<Ts...>;
+  type::for_each(dest, args...);
   return;
 }
 /// LA LLAMADA "REAL" ES

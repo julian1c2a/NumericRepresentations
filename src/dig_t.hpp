@@ -5,6 +5,7 @@
 #include "auxiliary_types.hpp"
 
 namespace NumRepr {
+using type_traits::sqrt_max;
 using type_traits::maxbase;
 using type_traits::sig_SInt_for_UInt_t;
 using type_traits::sig_UInt_for_UInt_t;
@@ -13,13 +14,16 @@ using type_traits::uint_type_for_radix_c;
 ///< WRAPPER PARA UN TIPO UINT_T QUE UNSIGNED_INTEGRAL_T<UINT_T>
 ///< SE SOBRECARGAN LOS OPERADORES ARITMETICOS PARA ARITMETICA MODULAR
 ///< DIG_T = SUMA Y MULTIPLICACION CIRCULAR (MODULAR CON MOD B)
-template <uint_type_for_radix_c UINT_T, UINT_T B>
-  requires(suitable_base<UINT_T, B>())
+template <uint64_t B>
+requires (B > 1)
 struct dig_t {
+/// GENERACIÓN DEL TIPO QUE CONTENDRÁ EL DÍGITO CON ENTERO SIN SIGNO
+using UINT_T = typename type_traits::TypeFromIntNumber_t<static_cast<uint64_t>(B)>;
 private:
   UINT_T m_d;
 
 public:
+
   // SIG_UINT_T(uchint) -> usint
   using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
   // SIG_SINT_T(uchint) -> ssint
@@ -30,11 +34,9 @@ public:
   using uintspairlist = std::array<uintspair, B>;
   using uintspairtbl = std::array<uintspairlist, B>;
 
-  template <binop_e op>
-  using resbinop_t = auxiliary_types::resbinop_t<dig_t, op>;
-
   ///< BEGIN : CONSTRUCCION DE LAS TABLAS DE MULTIPLICAR
   ///<         ESTATICAS PARA TODA LA CLASE
+  /// ¡¡¡¡ no usado aún !!!!
   template <UINT_T n, UINT_T m>
     requires((n < B) && (m < B))
   static consteval inline uintspair mult() noexcept {
@@ -113,7 +115,7 @@ public:
 public:
   inline constexpr explicit operator UINT_T() const noexcept { return m_d; }
 
-  inline constexpr const UINT_T &get() const noexcept { return (m_d); }
+  inline constexpr UINT_T get() const noexcept { return (m_d); }
 
   inline constexpr explicit operator SIG_UINT_T() const noexcept {
     return static_cast<SIG_UINT_T>(m_d);
@@ -122,15 +124,18 @@ public:
   inline constexpr explicit operator SIG_SINT_T() const noexcept {
     return static_cast<SIG_SINT_T>(m_d);
   }
-
+  /// dig_t<10> a{3};
+  /// a()->3 (como uint)
   inline constexpr UINT_T operator()() const noexcept { return (m_d); }
-  /// dig_t<uchint,10> digito{4};
+  /// dig_t<10> digito{4};
   /// digito() devuelve un 4 de tipo uchint
 
   constexpr void set_0() noexcept { m_d = 0; }
   constexpr void set_1() noexcept { m_d = 1; }
   constexpr void set_Bm1() noexcept { m_d = B - 1; }
   constexpr void set_Bm2() noexcept { m_d = B - 2; }
+  constexpr void set_dig(dig_t d) noexcept { m_d = d; }
+  constexpr void set_dig(UINT_T di) noexcept { m_d = di%B; }
 
 public:
   ////////////////////////////////////////////////////////////////////////////
@@ -187,15 +192,16 @@ public:
 
 public:
   /************************************/
-  /*									*/
-  /*	CONSTRUIR DIGITO				*/
-  /*									*/
+  /*								  */
+  /*	CONSTRUIR DIGITO			  */
+  /*								  */
   /************************************/
 
   ///< CONSTRUCTORES
   ///< CONSTRUCTOR POR DEFECTO
   consteval inline dig_t() noexcept : m_d(0u) {}
 
+private:
   ///< NORMALIZA ES UNA FUNCION QUE BASICAMENTE SI ENTRA 1524 DEVUELVE 1524%B
   ///< TENIENDO EN CUENTA TIPOS Y SIGNOS
   template <type_traits::integral_c Int_t>
@@ -256,6 +262,7 @@ public:
     }
   }
 
+public:
   /// CONSTRUCTOR A PARTIR DE UN ENTERO ARG
   /// ARG EQUIV ARG+Z*B DONDE Z ES UN ENTERO
   /// EN m_d SOLO QUEREMOS QUE HAYA UN NUMERO ENTRE 0 Y B-1 INCLUSIVES
@@ -275,9 +282,9 @@ public:
   /// A LA FUNCION
 
   /************************************/
-  /*									*/
-  /*	OPERADORES DE ASIGNACION		*/
-  /*									*/
+  /*								  */
+  /*	OPERADORES DE ASIGNACION	  */
+  /*								  */
   /************************************/
 
   /// SOBRECARGA DEL OPERATOR=() MEDIANTE REFERENCIA CTE DESDE UN INT_T
@@ -306,8 +313,8 @@ public:
 
   constexpr inline bool is_unit() const noexcept { // FROM FINITE RINGS
     ///******************************************///
-    ///< Es B COPRIMO con m_d ?
-    ///< >/// Es max_comun_divisor(B,m_d)==1 ? 			>///
+    ///< Es B COPRIMO con m_d ?                 >///
+    ///< Es max_comun_divisor(B,m_d)==1 ? 		>///
     ///******************************************///
     dig_t &cthis{*this};
     if constexpr (is_prime()) {
@@ -328,7 +335,7 @@ public:
 
   constexpr inline bool is_0_divisor() const noexcept { // FROM FINITE RINGS
     ///******************************************///
-    ///< Es B NO ES COPRIMO con m_d ?			      >///
+    ///< Es B NO ES COPRIMO con m_d ?			>///
     ///< Es max_comun_divisor(B,m_d)!=1 ?       >///
     ///******************************************///
     if constexpr (is_prime()) {
@@ -368,11 +375,11 @@ public:
     }
   }
 
-  /************************************/
+  /**************************************/
   /*									*/
   /*	FUNCIONES PARA CONOCER EL CARRY	*/
   /*									*/
-  /************************************/
+  /**************************************/
 
   inline constexpr static dig_t sum_carry(dig_t arg_1, dig_t arg_2) noexcept {
     if constexpr (B <= type_traits::middle_max<UINT_T>()) {
@@ -431,11 +438,12 @@ public:
       }
     }
   }
+
   /************************************/
-  /*									*/
-  /*	OPERADORES & &= | |=    		*/
-  /*  FUNCIONAN COMO MAX Y MIN		*/
-  /*									*/
+  /*								  */
+  /*	OPERADORES & &= | |=    	  */
+  /*  FUNCIONAN COMO MAX Y MIN		  */
+  /*								  */
   /************************************/
 
   /// DEVOLVER EL MENOR: ANDBITWISE
@@ -467,17 +475,15 @@ public:
   }
 
   /******************************************************/
-  /*													  */
-  /*	OPERADORES *^n *^=n
-   */
-  /*  FUNCIONAN COMO Power(*,n) y n = Power(*,n)		  */
-  /*	DONDE n ES NATURAL
-   */
-  /*													  */
+  /*													*/
+  /*	OPERADORES *^n *^=n                             */
+  /*  FUNCIONAN COMO Power(*,n) y n = Power(*,n)		*/
+  /*	DONDE n ES NATURAL                              */
+  /*													*/
   /******************************************************/
 
   template <type_traits::unsigned_integral_c UIntType>
-  constexpr inline const dig_t &operator^=(UIntType exp) noexcept {
+  constexpr inline const dig_t& operator^=(UIntType exp) noexcept {
     dig_t &cthis{*this};
     if (exp == 0) {
       cthis = dig_1();
@@ -505,35 +511,35 @@ public:
   }
 
   /****************************************/
-  /*				               			*/
-  /* OPERADORES COMPARACION				*/
-  /*				                		*/
+  /*				               		  */
+  /* OPERADORES COMPARACION				  */
+  /*				                	  */
   /****************************************/
 
   constexpr inline bool operator==(dig_t a) const noexcept {
-    return ((a() == m_d) ? true : false);
+    return ((a.m_d == m_d) ? true : false);
   }
   constexpr inline bool operator!=(dig_t a) const noexcept {
-    return ((a() != m_d) ? true : false);
+    return ((a.m_d != m_d) ? true : false);
   }
   constexpr inline bool operator>=(dig_t a) const noexcept {
-    return ((a() <= m_d) ? true : false);
+    return ((a.m_d <= m_d) ? true : false);
   }
   constexpr inline bool operator>(dig_t a) const noexcept {
-    return ((a() < m_d) ? true : false);
+    return ((a.m_d < m_d) ? true : false);
   }
   constexpr inline bool operator<=(dig_t a) const noexcept {
-    return ((a() >= m_d) ? true : false);
+    return ((a.m_d >= m_d) ? true : false);
   }
   constexpr inline bool operator<(dig_t a) const noexcept {
-    return ((a() > m_d) ? true : false);
+    return ((a.m_d > m_d) ? true : false);
   }
   /// SI COMPARAMOS O HACEMOS UNA OPERACION CON UN INT_T SIEMPRE SERA
   /// DIG_T @ INT_T -> DIG_T Y NUNCA INT_T @ DIG_T -> ANY_TYPE
   /// METODO PROPIO DE C++20
   constexpr inline std::strong_ordering operator<=>(dig_t rhs) const noexcept {
     const auto lhs_d{m_d};
-    const auto rhs_d{rhs()};
+    const auto rhs_d{rhs.m_d};
     return ((lhs_d < rhs_d) ? std::strong_ordering::less
                             : ((lhs_d > rhs_d) ? std::strong_ordering::greater
                                                : std::strong_ordering::equal));
@@ -557,12 +563,13 @@ public:
   }
 
   /********************************************/
-  /*				    						*/
-  /*   ARITMETICOS CON ASIGNACION     		*/
-  /*				    						*/
+  /*				    					  */
+  /*   ARITMETICOS CON ASIGNACION     		  */
+  /*				    					  */
   /********************************************/
 
-  constexpr inline const dig_t &operator+=(dig_t arg) noexcept {
+  constexpr inline
+  const dig_t& operator+=(dig_t arg) noexcept {
     dig_t &cthis{*this};
     if constexpr (B < type_traits::middle_max<UINT_T>()) {
       m_d += arg.m_d;
@@ -580,7 +587,8 @@ public:
   }
 
   template <type_traits::integral_c Int_t>
-  constexpr inline const dig_t &operator+=(Int_t arg) noexcept {
+  constexpr inline
+  const dig_t &operator+=(Int_t arg) noexcept {
     if constexpr (B >= type_traits::middle_max<UINT_T>()) {
       const SIG_UINT_T arg1{normaliza<Int_t>(arg)};
       SIG_UINT_T arg2{m_d};
@@ -600,7 +608,8 @@ public:
     }
   }
 
-  constexpr inline const dig_t &operator-=(dig_t arg) noexcept {
+  constexpr inline
+  const dig_t& operator-=(dig_t arg) noexcept {
     SIG_SINT_T cp_dm{m_d};
     cp_dm -= arg.m_d;
     if (cp_dm < 0)
@@ -610,7 +619,8 @@ public:
   }
 
   template <type_traits::integral_c Int_t>
-  constexpr inline const dig_t &operator-=(Int_t arg) noexcept {
+  constexpr inline
+  const dig_t &operator-=(Int_t arg) noexcept {
     SIG_SINT_T tmp{normaliza<Int_t>(arg)};
     SIG_SINT_T este{m_d};
     este -= tmp;
@@ -620,7 +630,8 @@ public:
     return (*this);
   }
 
-  constexpr inline const dig_t &operator*=(dig_t arg) noexcept {
+  constexpr inline
+  const dig_t& operator*=(dig_t arg) noexcept {
     if constexpr (B < type_traits::sqrt_max<UINT_T>()) {
       m_d *= arg.m_d;
       m_d %= B;
@@ -635,7 +646,8 @@ public:
   }
 
   template <type_traits::integral_c Int_t>
-  constexpr inline const dig_t &operator*=(Int_t arg) noexcept {
+  constexpr inline
+  const dig_t& operator*=(Int_t arg) noexcept {
     const Int_t tmp{normaliza<Int_t>(arg)};
     if constexpr (std::is_signed_v<Int_t>) {
       if constexpr (sizeof(Int_t) > sizeof(UINT_T)) {
@@ -674,14 +686,16 @@ public:
     }
   }
 
-  constexpr inline const dig_t &operator/=(dig_t arg) noexcept {
+  constexpr inline
+  const dig_t& operator/=(dig_t arg) noexcept {
     if (arg.m_d != ui_0())
       m_d /= arg.m_d;
     return (*this);
   }
 
   template <type_traits::integral_c Int_t>
-  constexpr inline const dig_t &operator/=(Int_t arg) noexcept {
+  constexpr inline
+  const dig_t& operator/=(Int_t arg) noexcept {
     UINT_T cparg{normaliza<Int_t>(arg)};
     dig_t tmp{cparg};
     if (tmp != dig_0())
@@ -689,14 +703,16 @@ public:
     return (*this);
   }
 
-  constexpr inline const dig_t &operator%=(dig_t arg) noexcept {
+  constexpr inline
+  const dig_t& operator%=(dig_t arg) noexcept {
     if (arg.m_d != ui_0())
       m_d %= arg.m_d;
     return (*this);
   }
 
   template <type_traits::integral_c Int_t>
-  constexpr inline const dig_t &operator%=(Int_t arg) noexcept {
+  constexpr inline const dig_t&
+  operator%=(Int_t arg) noexcept {
     dig_t cparg{normaliza<Int_t>(arg)};
     if (cparg != dig_0())
       (*this) %= cparg;
@@ -708,14 +724,15 @@ public:
   /// SOLO NOS SIRVE SI ESTUVIERAMOS CONSTRUYENDO NUMEROS DE UN ANILLO FINITO
 
   /********************************/
-  /*			     			 	*/
-  /* 		  PRE Y POST 		 	*/
-  /*			CIRCULARES			*/
-  /*								*/
+  /*			     			  */
+  /* 		  PRE Y POST 		  */
+  /*			CIRCULARES		  */
+  /*							  */
   /********************************/
 
-  constexpr inline const dig_t &operator++() noexcept {
-    (m_d < ui_max()) ? (m_d += ui_1()) : (m_d = ui_0());
+  constexpr inline
+  const dig_t& operator++() noexcept {
+    (m_d < ui_max()) ? (++m_d) : (m_d = ui_0());
     return (*this);
   }
 
@@ -726,7 +743,7 @@ public:
   }
 
   constexpr inline const dig_t &operator--() noexcept {
-    m_d = (m_d > ui_0()) ? (m_d - ui_1()) : (ui_max());
+    m_d = (m_d > ui_0()) ? (--m_d) : (ui_max());
     return (*this);
   }
 
@@ -737,9 +754,9 @@ public:
   }
 
   /****************************************/
-  /*										*/
-  /*    OPERADORES ARITMETICOS   			*/
-  /*										*/
+  /*									  */
+  /*    OPERADORES ARITMETICOS   		  */
+  /*									  */
   /****************************************/
 
   constexpr inline dig_t operator+(dig_t arg) const noexcept {
@@ -814,37 +831,38 @@ public:
   }
 
   /****************************************/
-  /*										*/
-  /*	     COMPLEMENTO BASE 				*/
-  /*	      Y BASE MENOS 1				*/
-  /*										*/
+  /*									  */
+  /*	     COMPLEMENTO BASE 			  */
+  /*	      Y BASE MENOS 1			  */
+  /*									  */
   /****************************************/
 
   /// EN BASE B, B-1-m_d ES EL COMPL_Bm1(m_d)
-  constexpr inline dig_t operator!() const noexcept {
+  constexpr inline
+  dig_t operator!() const noexcept {
     return dig_t(ui_max() - m_d);
   }
+
   /// EN BASE B, B-m_d ES EL COMPL_B(m_d)
-  constexpr inline dig_t operator-() const noexcept {
+  constexpr inline
+  dig_t operator-() const noexcept {
     return dig_t((m_d == 0) ? 0 : (B - m_d));
   }
 
   constexpr inline /// "C_Bm1" es identico a "operator!()"
-      dig_t
-      C_Bm1() const noexcept {
+  dig_t C_Bm1() const noexcept {
     return dig_t(ui_max() - m_d);
   }
 
   constexpr inline /// "C_B" es identico a "operator-()"
-      dig_t
-      C_B() const noexcept {
+  dig_t C_B() const noexcept {
     return dig_t((m_d == 0) ? 0 : (B - m_d));
   }
 
   /****************************************************/
-  /*				    								*/
-  /*    MODIFICADORES COMPLEMENTO	    				*/
-  /*				    								*/
+  /*				    							  */
+  /*    MODIFICADORES COMPLEMENTO	    			  */
+  /*				    							  */
   /****************************************************/
 
   constexpr inline const dig_t &mC_Bm1() noexcept {
@@ -875,54 +893,69 @@ public:
   ///  c.mC_B() 	== 0 is TRUE  c	== 0 is TRUE
 
   /**********************************/
-  /*                            	  */
+  /*                            	*/
   /*   	NULO Y MAXIMO         	  	*/
-  /*                            	  */
+  /*                            	*/
   /**********************************/
 
-  constexpr inline bool is_0() const noexcept { return (m_d == ui_0()); }
+  constexpr inline
+  bool is_0() const noexcept { return (m_d == ui_0()); }
 
-  constexpr inline bool is_1() const noexcept { return (m_d == ui_1()); }
+  constexpr inline
+  bool is_1() const noexcept { return (m_d == ui_1()); }
 
-  constexpr inline bool is_0or1() const noexcept {
+  constexpr inline
+  bool is_0or1() const noexcept {
     return ((m_d == ui_0()) || (m_d == ui_1()));
   }
 
-  constexpr inline bool is_not_1() const noexcept { return (m_d != ui_1()); }
+  constexpr inline bool
+  is_not_1() const noexcept { return (m_d != ui_1()); }
 
-  constexpr inline bool is_not_0() const noexcept { return (m_d != ui_0()); }
+  constexpr inline bool
+  is_not_0() const noexcept { return (m_d != ui_0()); }
 
-  constexpr inline bool is_not_0or1() const noexcept { return (!is_0or1()); }
+  constexpr inline
+  bool is_not_0or1() const noexcept { return (!is_0or1()); }
 
-  constexpr inline bool is_Bm1() const noexcept { return (m_d == ui_Bm1()); }
+  constexpr inline
+  bool is_Bm1() const noexcept { return (m_d == ui_Bm1()); }
 
-  constexpr inline bool is_not_Bm1() const noexcept {
+  constexpr inline
+  bool is_not_Bm1() const noexcept {
     return (m_d != ui_Bm1());
   }
 
-  constexpr inline bool is_Bm1orBm2() const noexcept {
+  constexpr inline
+  bool is_Bm1orBm2() const noexcept {
     return (is_Bm1() || is_Bm2());
   }
 
-  constexpr inline bool is_not_Bm1orBm2() const noexcept {
+  constexpr inline
+  bool is_not_Bm1orBm2() const noexcept {
     return (is_not_Bm1() && is_not_Bm2());
   }
 
-  constexpr inline bool is_Bm2() const noexcept { return (m_d == ui_Bm2()); }
+  constexpr inline
+  bool is_Bm2() const noexcept { return (m_d == ui_Bm2()); }
 
-  constexpr inline bool is_not_Bm2() const noexcept {
+  constexpr inline
+  bool is_not_Bm2() const noexcept {
     return (m_d != ui_Bm2());
   }
 
-  constexpr inline bool is_not_maxormin() const noexcept {
+  constexpr inline
+  bool is_not_maxormin() const noexcept {
     return (is_not_0() && is_not_Bm1());
   }
 
-  constexpr inline bool is_maxormin() const noexcept {
+  constexpr inline
+  bool is_maxormin() const noexcept {
     return (is_0() || is_Bm1());
   }
 
-  constexpr inline bool is_far_maxormin() const noexcept {
+  constexpr inline
+  bool is_far_maxormin() const noexcept {
     if constexpr (B == 2u) {
       return false;
     } else {
@@ -930,7 +963,8 @@ public:
     }
   }
 
-  constexpr inline bool is_near_maxormin() const noexcept {
+  constexpr inline
+  bool is_near_maxormin() const noexcept {
     if constexpr (B == 2u) {
       return true;
     } else {
@@ -939,9 +973,9 @@ public:
   }
 
   /********************************/
-  /*								*/
-  /* 	     VARIOS CASTS			*/
-  /*								*/
+  /*							  */
+  /* 	     VARIOS CASTS		  */
+  /*							  */
   /********************************/
 
   /// TIENE QUE DEVOLVER STD::STRING
@@ -968,353 +1002,7 @@ public:
     const std::string ret{"dig#" + num + "#" + radix_str()};
     return ret;
   }
-
-  /// Funciones de ayuda para
-  /// el parser/lexer del dig_t
-  /*
-    static constexpr
-    bool is_type_template_string_id(std::string in) noexcept {
-      return	(
-        (in == "dig_t")||
-                          (in == "dig_")||
-                          (in == "dig")||
-        (in == "di")||
-        (in == "d")
-      );
-    }
-  */
-  /*
-    static constexpr
-    std::string to_type_template_string_id() noexcept
-    {	return std::string{"digs_t"};	}
-  */
-  /*
-    static constexpr
-    size_t size_of_type_template_string_id() noexcept
-    {	return (to_type_template_string_id()).size();	}
-  */
-  /*
-    /// FUNCION GENERICA QUE CONSIGUE EL TOKEN TYPE PARA LA
-    /// OBTENCION DEL OBJETO CORRESPONDIENTE POR TECLADO
-    bool get_type_template_string_id_token(std::istream& is)
-    noexcept {
-          char input_char{'\0'};
-      std::string old_input_string{""};
-      std::string new_input_string{""};
-      size_t index{ 0 };
-      while(true) {
-        is >> input_char;
-        new_input_string += input_char;
-        if (is_type_template_string_id(new_input_string)) {
-          old_input_string = new_input_string;
-        }
-        else {
-          std::cerr << "Has cometido un error, tenias que escribir "
-          << "\" " << to_type_template_string_id()
-          << " \"  y has escrito "
-          << new_input_string << std::endl;
-          std::cerr << "Considera que has escrito "
-          << old_input_string
-          << " y continua escribiendo a partir de ahi";
-          new_input_string = old_input_string;
-        }
-
-        if (new_input_string==to_type_template_string_id())
-          return true;
-        else
-          return false;
-      }
-    }
-  */
-  //  /// FUNCION QUE CONSIGUE EL TOKEN PUNTO FIJO
-  //  bool get_fixed_point_token(std::istream& is,std::ostream& errs)
-  //  {
-  //    std::string old_input_string{""};
-  //    std::string new_input_string{""};
-  //    size_t index{0};
-  //    char input_char = nullchar<char>;
-  //    while(true) {
-  //      is >> input_char;
-  //      if ((index==0)&&(is_separator(input_char))) {
-  //        new_input_string += input_char;
-  //        old_input_string = new_input_string;
-  //        ++index;
-  //      }
-  //      else if ((index == 0)&&(! is_separator(input_char))) {
-  //        errs << "Has cometido un error, tenias que escribir "
-  //        << "\" " << '#'	<< " \"  y has escrito "
-  //        << new_input_string << std::endl;
-  //        errs << "Considera que has escrito "
-  //        << old_input_string
-  //        << " y continua escribiendo a partir de ahi";
-  //        new_input_string = old_input_string;
-  //      }
-  //      else if ((index == 1)&&(input_char == '.')) {
-  //        new_input_string += input_char;
-  //        old_input_string = new_input_string;
-  //      }
-  //      else{
-  //        errs << "Has cometido un error, tenias que escribir "
-  //        << " \" " << "#."
-  //        << " \"  y has escrito "
-  //        << new_input_string << std::endl;
-  //        errs << "Considera que has escrito "
-  //        << old_input_string
-  //        << " y continua escribiendo a partir de ahi";
-  //        new_input_string = old_input_string;
-  //      }
-  //
-  //      if (new_input_string=="#.")
-  //        return true;
-  //      else
-  //        return false;
-  //    }
-  //  }
-
-  //  /// FUNCION QUE CONSIGUE EL TOKEN SIGNO EXPLICITO
-  //  bool get_explicit_sign_token(
-  //		std::istream& is,std::ostream& errs,sign_e& signo
-  //	) {
-  //    std::string old_input_string{""};
-  //    std::string new_input_string{""};
-  //    size_t index{0};
-  //    char input_char = nullchar<char>;
-  //    while(true) {
-  //      is >> input_char;
-  //      if ((index==0)&&(is_separator(input_char))) {
-  //        new_input_string += input_char;
-  //        old_input_string = new_input_string;
-  //        ++index;
-  //      }
-  //      else if (
-  //        (index == 0)&&(! is_separator(input_char))
-  //      ) {
-  //        errs << "Has cometido un error, tenias que escribir "
-  //        << " \" " << '#' << " \"  y has escrito "
-  //        << new_input_string << std::endl;
-  //        errs << "Considera que has escrito "
-  //        << old_input_string
-  //        << " y continua escribiendo a partir de ahi";
-  //        new_input_string = old_input_string;
-  //      }
-  //      else if((index==1)&&((input_char == '+')||
-  //                           (input_char == '-')
-  //                          )
-  //                          )
-  //      {
-  //        new_input_string += input_char;
-  //        old_input_string = new_input_string;
-  //        signo = sign_value(input_char);
-  //        break;
-  //      }
-  //      else{
-  //        errs << "Has cometido un error, tenias que "
-  //        <<" escribir \" " << "#+ o #-" << " \"  y has escrito "
-  //        << new_input_string << std::endl;
-  //        errs << "Considera que has escrito "
-  //        << old_input_string
-  //        << " y continua escribiendo a partir de ahi";
-  //        new_input_string = old_input_string;
-  //      }
-  //
-  //      if( (new_input_string=="#+")||
-  //          (new_input_string=="#-")    )
-  //        return true;
-  //      else
-  //        return false;
-  //    }
-  //  }
-  /*
-    /// FUNCION QUE CONSIGUE EL TOKEN DIGITO
-    static constexpr
-    bool get_digit_token(std::istream& is,UINT_T& uint_value)
-    {
-      std::string old_input_string{""};
-      std::string new_input_string{""};
-      size_t index{0};
-      char input_char = type_traits::nullchar<char>;
-      uint_value = 0;
-      while(true) {
-        is >> input_char;
-        if ((index==0)&&(NumRepr::lex::is_separator(input_char))) {
-          new_input_string += input_char;
-          old_input_string = new_input_string;
-          ++index;
-        }
-        else if ((index == 0)&&(! lex::is_separator(input_char))) {
-          std::cerr << "Has cometido un error, tenias que "
-          << " escribir \" " << '#' << " \"  y has escrito "
-          << new_input_string << std::endl;
-          std::cerr << "Considera que has escrito "
-          << old_input_string
-          << " y continua escribiendo a partir de ahi";
-          new_input_string = old_input_string;
-        }
-        else if((index>=1) && lex::is_digit(input_char)) {
-          if (lex::digit_value(input_char) < B) {
-            new_input_string += input_char;
-            uint_value *= B;
-            uint_value += lex::digit_value(input_char);
-            if (uint_value < B) {
-              old_input_string = new_input_string;
-              ++index;
-            }
-            else {
-              old_input_string = "#";
-              std::cerr << "Has cometido un error, tenias que "
-              << "poner un valor menor que la base y has "
-              << "puesto \" " << uint_value << " \" escrito como \" "
-              << new_input_string << " \" " << std::endl;
-              uint_value = 0;
-              return false;
-            }
-          }
-          else if((index>=1) && ! lex::is_digit(input_char) && (input_char !=
-    '_')) { std::cerr << "El caracter " << input_char << " no es valido aqui "
-            << std::endl;
-            uint_value = 0;
-            return false;
-          }
-        }
-        else if((index>1)&&(input_char == '_')) {
-          return true;
-        }
-        else{
-          std::cerr << "Has cometido un error, tenias que escribir "
-          << " \" " << "#digdigdig..._"
-          << " \"  y has escrito "
-          << new_input_string << std::endl;
-          uint_value = 0;
-          return false;
-        }
-      }
-    }
-  */
-  /*
-    /// FUNCION QUE CONSIGUE EL TOKEN BASE
-    static
-    bool get_radix_token(std::istream& is)
-    {
-      std::string old_input_string{""};
-      std::string new_input_string{""};
-      UINT_T uint_radix;
-      size_t index{0};
-      char input_char = type_traits::nullchar<char>;
-      uint_radix = 0;
-      while(true) {
-        is >> input_char;
-        if ((index==0)&&(lex::is_separator(input_char))) {
-          new_input_string += input_char;
-          old_input_string = new_input_string;
-          ++index;
-        }
-        else if ((index == 0)&&(! lex::is_separator(input_char))) {
-          std::cerr << "Has cometido un error, tenias que "
-          << " escribir \" " << '#' << " \"  y has escrito "
-          << new_input_string << std::endl;
-          std::cerr << "Considera que has escrito "
-          << old_input_string
-          << " y continua escribiendo a partir de ahi";
-          new_input_string = old_input_string;
-        }
-        else if ((index==1)&&((input_char=='b')||(input_char=='B'))) {
-          new_input_string += input_char;
-          old_input_string = new_input_string;
-          ++index;
-        }
-        else if ((index == 1)&&((input_char!='b')&&(input_char!='B'))) {
-          std::cerr << "Has cometido un error, tenias que "
-          << " escribir \" " << '#' << " \"  y has escrito "
-          << new_input_string << std::endl;
-          std::cerr << "Considera que has escrito "
-          << old_input_string
-          << " y continua escribiendo a partir de ahi";
-          new_input_string = old_input_string;
-        }
-        else if((index>=2) && lex::is_digit(input_char)) {
-          if (lex::digit_value(input_char) <= B) {
-            new_input_string += input_char;
-            uint_radix *= B;
-            uint_radix += lex::digit_value(input_char);
-            if (uint_radix <= B) {
-              old_input_string = new_input_string;
-              ++index;
-            }
-            else {
-              old_input_string = "#";
-              std::cerr << "Has cometido un error, tenias que "
-              << "poner un valor menor que la base y has "
-              << "puesto \" " << uint_radix << " \" escrito como \" "
-              << new_input_string << " \" " << std::endl;
-              uint_radix = 0;
-              return false;
-            }
-          }
-          else if((index>=3) && ! lex::is_digit(input_char) && (input_char !=
-    '_')) { std::cerr << "El caracter " << input_char << " no es valido aqui "
-            << std::endl;
-            uint_radix = 0;
-            return false;
-          }
-        }
-        else if((index>2)&&(input_char == '_')) {
-          return true;
-        }
-        else{
-          std::cerr << "Has cometido un error, tenias que escribir "
-          << " \" " << "#Bdigdigdig..._"
-          << " \"  y has escrito "
-          << new_input_string << std::endl;
-          uint_radix = 0;
-          return false;
-        }
-      }
-    }
-  */
-  /*
-          static
-          bool read(std::istream& is,dig_t& value) noexcept {
-                  dig_t default_value{};
-                  bool type_token =
-     dig_t::get_type_template_string_id_token(is); if (type_token) { if
-     (get_digit_token(is,value)) { if (get_radix_token(is)) { return true;
-                                  }
-                                  else {
-                                          value = default_value;
-                                          return false;
-                                  }
-                          }
-                          else {
-                                  value = default_value;
-                                  return false;
-                          }
-                  } else {
-                          value = default_value;
-                          return false;
-                  }
-          }
-  */
 };
-
-template <type_traits::uint_type_for_radix_c UINT_T, UINT_T B>
-  requires(type_traits::suitable_base<UINT_T, B>())
-consteval UINT_T ui_1() noexcept {
-  return UINT_T(1u);
-}
-
-template <type_traits::uint_type_for_radix_c UINT_T, UINT_T B>
-  requires(type_traits::suitable_base<UINT_T, B>())
-consteval dig_t<UINT_T, B> dig_max() noexcept {
-  return dig_t<UINT_T, B>(B - 1u);
-}
-
-///< DEFINCION DE template<uint128_t Radix> digit_t{};
-template <uint128_t B>
-using digit_t = dig_t<
-    type_traits::TypeFromIntNumber_t<static_cast<uint128_t>(B)>,
-    static_cast<type_traits::TypeFromIntNumber_t<static_cast<uint128_t>(B)>>(
-        static_cast<uint128_t>(B))>;
-///< SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o ...
 
 /************************************/
 /*                                  */

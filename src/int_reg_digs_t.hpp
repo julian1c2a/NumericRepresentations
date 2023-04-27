@@ -8,30 +8,33 @@ namespace NumRepr {
 using type_traits::allowable_base_type_c;
 using type_traits::suitable_base;
 
-template <allowable_base_type_c UINT_T, UINT_T B, size_t R>
-  requires(type_traits::suitable_base<UINT_T, B>() && (R > 0))
-struct int_reg_digs_t : public nat_reg_digs_t<UINT_T, B, R+1> {
+template <uint64_t B, size_t R>  requires((B > 1) && (R > 0))
+struct int_reg_digs_t : public nat_reg_digs_t<B, R+1> {
 
-  /// NECESITAMOS:
-  ///			B = BASE EN LA QUE TRABAJAMOS
-  ///					=> TIPO BASE 	UINT_T
-  ///					=> TIPO 			SIG_UINT_T  ALGO MAYOR (EL DOBLE) QUE UN UINT_T
-  ///					=> TIPO				SIG_SINT_T  TIPO CON SIGNO DONDE CABE UN UINT_T
-  ///     L = LONGITUD DEL MÓDULO DEL NÚMERO EN DÍGITOS INCLUYENDO EL SIGNO
-  ///     R = LONGITUD DEL MÓDULO DEL NÚMERO EN DÍGITOS SIN CONTAR EL SIGNO
-  ///     DÍGITO EXTRA PARA EL SIGNO
-  ///     UINT_T SERÁ DEDUCIDO DEL PARÁMETRO TEMPLATE R
-  ///     EL TIPO UNSIGNEDINT SIG_UINT_T SERÁ DEDUCIDO DEL TIPO PARÁMETRO UINT_T
-  ///     EL TIPO SIGNEDINT   SIG_SINT_T SERÁ DEDUCIDO DEL TIPO PARÁMETRO UINT_T
-  ///     DIG_T ES UN ALIAS RECOMENDABLE PARA EL TIPO DÍGITO DE ESTE "CONTAINER"
-  ///     BASE_T ES UN ALIAS CONVENIENTE PARA EL TIPO DEL QUE DERIVA ESTA CLASE
-  ///     BASE_N_T ES UN ALIAS CONVENIENTE PARA LOS TIPOS BASE_T PERO DE
-  ///          LONGITUD DIFERENTE QUE L
-  ///     INT_REG_N_DIGS_T ES UN ALIAS CONVENIENTE PARA LOS TIPOS QUE INSTANCIAN
-  ///          ESTA MISMA CLASS TEMPLATE PERO CON LONGITUD DIFERENTE QUE L
-  ///     EL VALOR DE R [LONGITUD SIN EL SIGNO] HA DE SER MAYOR QUE 0
-  ///     EL VALOR DE L [LONGITUD QUE INCLUYE EL SIGNO] HA DE SER MAYOR QUE 1
-  ///     EL VALOR DE B [RADIX O BASE] ADMISIBLE ES CUALQUIERA MAYOR QUE 1
+/// NECESITAMOS:
+///	B = BASE EN LA QUE TRABAJAMOS
+///			=> TIPO BASE 	UINT_T
+///			=> TIPO 		SIG_UINT_T  ALGO MAYOR (EL DOBLE) QUE UN UINT_T
+///			=> TIPO			SIG_SINT_T  TIPO CON SIGNO DONDE CABE UN UINT_T
+/// L = LONGITUD DEL MÓDULO DEL NÚMERO EN DÍGITOS INCLUYENDO EL SIGNO
+/// R = LONGITUD DEL MÓDULO DEL NÚMERO EN DÍGITOS SIN CONTAR EL SIGNO
+/// DÍGITO EXTRA PARA EL SIGNO
+///     UINT_T SERÁ DEDUCIDO DEL PARÁMETRO TEMPLATE R
+///     EL TIPO UNSIGNEDINT SIG_UINT_T SERÁ DEDUCIDO DEL TIPO PARÁMETRO UINT_T
+///     EL TIPO SIGNEDINT   SIG_SINT_T SERÁ DEDUCIDO DEL TIPO PARÁMETRO UINT_T
+///     DIG_T ES UN ALIAS RECOMENDABLE PARA EL TIPO DÍGITO DE ESTE "CONTAINER"
+///     BASE_T ES UN ALIAS CONVENIENTE PARA EL TIPO DEL QUE DERIVA ESTA CLASE
+///     BASE_N_T ES UN ALIAS CONVENIENTE PARA LOS TIPOS BASE_T PERO DE
+///          LONGITUD DIFERENTE QUE L
+///     INT_REG_N_DIGS_T ES UN ALIAS CONVENIENTE PARA LOS TIPOS QUE INSTANCIAN
+///          ESTA MISMA CLASS TEMPLATE PERO CON LONGITUD DIFERENTE QUE L
+///     EL VALOR DE R [LONGITUD SIN EL SIGNO] HA DE SER MAYOR QUE 0
+///     EL VALOR DE L [LONGITUD QUE INCLUYE EL SIGNO] HA DE SER MAYOR QUE 1
+///     EL VALOR DE B [RADIX O BASE] ADMISIBLE ES CUALQUIERA MAYOR QUE 1
+
+  using dig_t = dig_t<B>;
+
+  using UINT_T = dig_t::UINT_T;
 
   static constexpr std::size_t L{R+1};
 
@@ -39,16 +42,14 @@ struct int_reg_digs_t : public nat_reg_digs_t<UINT_T, B, R+1> {
 
   using SIG_SINT_T = typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
 
-  using dig_t = dig_t<UINT_T, B>;
-
   template <std::size_t N>
     requires(N > 0)
-  using base_N_t = nat_reg_digs_t<UINT_T, B, N>;
+  using base_N_t = nat_reg_digs_t<B, N>;
 
   using base_t = base_N_t<L>;
 
 private:
-
+  /// MÉTODOS SOBRE EL SIGNO
   constexpr dig_t get_sign() const { return ((*this)[R]);}
   constexpr bool is_plus() const { return (((*this)[R]).is_0());}
   constexpr bool is_minus() const { return (!(((*this)[R]).is_0()));}
@@ -105,7 +106,9 @@ public:
 
   inline static consteval
   int_reg_digs_t sregd_m1() noexcept {
-    return int_reg_digs_t{regd_Bm1()};
+    int_reg_digs_t result;
+    result.fill(dig_Bm1());
+    return result;
   }
 
   inline static consteval
@@ -115,21 +118,22 @@ public:
     return ret;
   }
 
-  ///< B = 16 ; L =3 ;
-  ///< mBp1 -16+1=-15=-FF1
-  ///< TODO TODO TODO
   inline static consteval
   int_reg_digs_t sregd_mBp1() noexcept {
-    using base_Lm1_t = base_N_t<R>;
+    using base_Rm1_t = base_N_t<R-1>;
     using base_1_t   = base_N_t<1>;
-    return base_Lm1_t::regd_Bm1().cat(base_1_t::regd_1());
+    using base_R_t   = base_N_t<R>;
+    base_R_t result{base_Rm1_t::regd_0().cat(base_1_t::regd_1())};
+    return {result.cat(base_1_t::regd_1())};
   }
 
   inline static consteval
   int_reg_digs_t sregd_B() noexcept {
     using base_Lm2_t = base_N_t<R-1>;
+    using base_R_t = base_N_t<L-1>;
     using base_1_t   = base_N_t<1>;
-    return (base_Lm2_t::regd_0().cat(base_1_t::regd_1())).cat(base_1_t::regd_0());
+    base_R_t result = base_Lm2_t::regd_0().cat(base_1_t::regd_1());
+    return {result.cat(base_1_t::regd_1())};
   }
 
   ///< B = 16 ; L =3 ;
@@ -137,9 +141,10 @@ public:
 
   inline static consteval
   int_reg_digs_t sregd_mB() noexcept {
-    const auto sup {base_N_t<L-1>::regd_Bm1()};
-    const auto inf {base_N_t<1>::regd_0()};
-    return sup.cat(inf);
+    const int_reg_digs_t result{base_N_t<L>::regd_0()};
+    result[L-1] = dig_Bm1();
+    result[1] = dig_1();
+    return result;
   }
 
   template <std::size_t n>
@@ -155,9 +160,9 @@ public:
     requires((n >= 0) && (n < L-1))
   inline static consteval
   int_reg_digs_t sregd_m_pow_n_B() noexcept {
-    int_reg_digs_t ret{regd_Bm1()};
-    for (std::size_t ix{0}; ix < n; ++ix)
-      ret[ix] = dig_0();
+    int_reg_digs_t ret{regd_0()};
+    ret[n] = dig_1();
+    ret[L-1] = dig_Bm1();
     return ret;
   }
 
@@ -169,6 +174,7 @@ public:
     for (std::size_t ix{0}; ix < n; ++ix) {
       ret[ix] = dig_Bm1();
     }
+    ret[L-1]=dig_Bm1();
     return ret;
   }
 
@@ -177,41 +183,51 @@ public:
   inline static consteval
   int_reg_digs_t sregd_m_pow_n_B_p1() noexcept {
     int_reg_digs_t ret{regd_0()};
-    ret[0] = dig_1();
-    for(std::size_t ix{n} ; ix < L ; ++ix)
-        ret[ix] = dig_Bm1();
+    ret[n] = dig_1();
+    ret[L-1] = dig_Bm1();
     return ret;
   }
 
+  /// 000100000
+  /// 000099999
+  /// 999900000
+  /// 999900001
   template <std::size_t n>
-    requires((n >= 0) && (n < L-1))
+    requires((n > 0) && (n < L-1))
   inline static consteval
   int_reg_digs_t sregd_m_pow_n_B_m1() noexcept {
-    int_reg_digs_t ret{};
-    ret.fill(dig_Bm1());
-    ret[n] = dig_Bm2();
+    int_reg_digs_t ret{regd_0()};
+    ret[0] = dig_1();
+    for(int ix=n ; ix < L ; ++ix)
+    	ret[ix] = dig_Bm1();
     return ret;
   }
 
   /****************************/
-  /*						              */
-  /*    CONSTRUIR NUMERO	    */
-  /*						              */
+  /*						  */
+  /*    CONSTRUIR NUMERO	  */
+  /*						  */
   /****************************/
 
 public:
 
   /// CONSTRUCTOR POR DEFECTO
-  consteval inline int_reg_digs_t() noexcept
+  consteval inline
+  int_reg_digs_t() noexcept
     : base_t{sregd_0()} {}
+
   /// CONSTRUCTOR POR LISTA DE DIGITOS
-  constexpr inline int_reg_digs_t(const std::initializer_list<dig_t>& arg) noexcept
-    : base_t{arg} {normalize_sign();}
+  constexpr inline
+  int_reg_digs_t(const std::initializer_list<dig_t>& arg) noexcept
+    : base_t{arg} {}
+
   /// CONSTRUCTOR POR ARGUMENTOS DIGITOS SIN LIMITE: DEDUCE EL TIPO
   template <typename... Ts>
     requires(std::is_same_v<Ts, dig_t> && ...)
-  constexpr inline int_reg_digs_t(const Ts& ...args) noexcept
+  constexpr inline
+  int_reg_digs_t(const Ts& ...args) noexcept
     : base_t{(utility::pack2array<Ts...>{})(args...)} {normalize_sign();}
+
   /// BEGIN : CONSTRUCTOR COPIA/MOVIMIENTO DESDE UN ARRAY DE DIGITOS
 
 private:
@@ -278,7 +294,8 @@ private:
   /// EN UN PACK DE ENTEROS CUALQUIERA
   template <type_traits::integral_c... Ints_type>
     requires((sizeof...(Ints_type)) <= L)
-  static constexpr inline base_t normalize(Ints_type... digits_pow_i) noexcept {
+  static constexpr inline
+  base_t normalize(Ints_type... digits_pow_i) noexcept {
     using pack_type = typename utility::pack2array<Ints_type...>;
     using unique_type = typename pack_type::elem_type;
     constexpr std::size_t pack_sz{pack_type::pack_size()};
@@ -467,9 +484,9 @@ public:
   /// CAT Y CONCAT SON HEREDADAS DE LA CLASE BASE
 
   /**********************************/
-  /*							                  */
+  /*							    */
   /*       Algunas Conversiones     */
-  /*							                  */
+  /*							    */
   /**********************************/
 
   /// NO NECESARIAMENTE CABE EL ENTERO DE ESTA CLASE EN UN INT_TYPE DEL SISTEMA
@@ -493,23 +510,23 @@ public:
 
     if constexpr (type_traits::signed_integral_c<Int_type>) {
       if (is_minus()) return (-retInt);
-      else            return   retInt ;
+      else  return   retInt ;
     }
     else {
-                      return   retInt ;
+            return   retInt ;
     }
   }
 
   /********************************/
-  /*							                */
-  /* OPERADORES COMPARATIVOS	    */
-  /*							                */
+  /*							  */
+  /* OPERADORES COMPARATIVOS	  */
+  /*							  */
   /********************************/
 
 public:
 
   template <std::size_t N>
-    requires(N > 1)
+    requires(N > 0)
   constexpr inline
   bool operator==(const int_reg_N_digs_t<N>& arg) const noexcept {
     const int_reg_digs_t& cthis{*this};
@@ -537,7 +554,7 @@ public:
   }
 
   template <std::size_t N>
-    requires(N > 1)
+    requires(N > 0)
   constexpr inline
   bool operator!=(const int_reg_N_digs_t<N>& arg) const noexcept {
     const int_reg_digs_t& cthis{*this};
@@ -565,7 +582,7 @@ public:
   }
 
   template <std::size_t N>
-    requires(N > 1)
+    requires(N > 0)
   constexpr inline
   bool operator<=(const int_reg_N_digs_t<N>& arg) const noexcept {
     if (is_plus() && arg.is_minus())
@@ -593,7 +610,7 @@ public:
   }
 
   template <std::size_t N>
-    requires(N > 1)
+    requires(N > 0)
   constexpr inline
   bool operator>=(const int_reg_N_digs_t<N>& arg) const noexcept {
     if (is_plus() && arg.is_minus())
@@ -621,7 +638,7 @@ public:
   }
 
   template <std::size_t N>
-    requires(N > 1)
+    requires(N > 0)
   constexpr inline
   bool operator<(const int_reg_N_digs_t<N>& arg) const noexcept {
     if (is_minus() && arg.is_plus())
@@ -649,7 +666,7 @@ public:
   }
 
   template <std::size_t N>
-    requires(N > 1)
+    requires(N > 0)
   constexpr inline
   bool operator>(const int_reg_N_digs_t<N> &arg) const noexcept {
     if (is_plus() && arg.is_minus())
@@ -679,7 +696,7 @@ public:
   /// CONSTRUCTOR COMPARACION OPERADOR SPACESHIP C++20
 
   template <std::size_t N>
-    requires((N > 1) && (N < L))
+    requires((N > 0) && (N < L))
   constexpr inline
   std::strong_ordering operator<=>(const int_reg_N_digs_t<N> &arg) const
   noexcept {
@@ -711,10 +728,10 @@ public:
   }
 
   /********************************/
-  /*							  							*/
-  /* 		  PRIMER DIGITO	 	   			*/
-  /*		  SEGUNDO DIGITO					*/
-  /*							   							*/
+  /*							  */
+  /* 		  PRIMER DIGITO	 	  */
+  /*		  SEGUNDO DIGITO	  */
+  /*							  */
   /********************************/
 
   template <std::size_t I>
@@ -746,8 +763,6 @@ public:
     return;
   }
 
-  template <std::size_t I>
-    requires(I < L)
   inline constexpr void set(std::size_t index,dig_t arg) noexcept {
     base_t& base_cthis{static_cast<base_t>(*this)};
     if (index == L-1)
@@ -762,15 +777,15 @@ public:
     return (cr_base_cthis(idx));
   }
 
-  /****************************/
-  /*													*/
+  /******************************/
+  /*							*/
   /* OPERADORES ARITMETICOS		*/
   /*	POSTINCREMENTO ++(int)  */
-  /*	PREINCREMENTO ++()		  */
+  /*	PREINCREMENTO  ++()		*/
   /*	POSTDECREMENTO --(int)  */
-  /*	PREDECREMENTO ++()		  */
-  /*                          */
-  /****************************/
+  /*	PREDECREMENTO  --()		*/
+  /*                            */
+  /******************************/
 
   constexpr inline
   const int_reg_digs_t& operator++() noexcept {
@@ -823,14 +838,40 @@ public:
     return cp_cthis;
   }
 
-  /****************************/
-  /*													*/
+  /// CONSTEXPR DIG_T M_INCR() NOEXCEPT
+  constexpr inline dig_t m_incr() {
+  	return m_incr(*this);
+  }
+
+  /// CONSTEXPR STD::TUPLE<INT_REG_DIGS_T,DIG_T> INCR() CONST NOEXCEPT
+  constexpr inline std::tuple<int_reg_digs_t,dig_t> incr() const {
+  	int_reg_digs_t cp_this{*this};
+  	dig_t carry{m_incr(cp_this)};
+  	return std::make_tuple(cp_this,carry);
+  }
+
+  /// CONSTEXPR DIG_T DECR() NOEXCEPT
+  constexpr inline dig_t m_decr() {
+  	return m_decr(*this);
+  }
+
+  /// CONSTEXPR STD::TUPLE<INT_REG_DIGS_T,DIG_T> M_DECR() CONST NOEXCEPT
+  constexpr inline std::tuple<int_reg_digs_t,dig_t> decr() const {
+  	int_reg_digs_t cp_this{*this};
+  	dig_t borrow{m_decr(cp_this)};
+  	return std::make_tuple(cp_this,borrow);
+  }
+
+  /// EN LAS ANTERIORES EXPRESIONES DIG_T SIGNIFICA CARRY O BORROW
+
+  /******************************/
+  /*							*/
   /* OPERADORES ARITMETICOS		*/
-  /*	 C_B()  C_Bm1()  				*/
-  /*	mC_B() mC_Bm1()		      */
+  /*	 C_B()  C_Bm1()  		*/
+  /*	mC_B() mC_Bm1()		    */
   /*	operator!() operator-() */
-  /*                          */
-  /****************************/
+  /*                            */
+  /******************************/
 
   constexpr inline
   const int_reg_digs_t& mC_Bm1() noexcept {
@@ -876,22 +917,22 @@ public:
     return cp_cthis;
   }
 
-  /************************************/
-  /* OPERADORES ARITMETICOS BASICOS	 	*/
-  /*			int_reg_digs_t	@  dig_t		*/
-  /*      int_reg_digs_t	@= dig_t    */
-  /*      int_reg_digs_t  @  10B^n    */
-  /*      int_reg_digs_t  @= 10B^n    */
-  /************************************/
+  /***************************************/
+  /* OPERADORES ARITMETICOS BASICOS	 	 */
+  /*	  int_reg_digs_t  @  dig_t       */
+  /*      int_reg_digs_t  @= dig_t       */
+  /*      int_reg_digs_t  @  10B^n       */
+  /*      int_reg_digs_t  @= 10B^n       */
+  /***************************************/
 
-  /************************************/
-  /*								   								*/
-  /*  ARITMETICOS CON ASIGNACION			*/
-  /*	int_reg_digs_t @= dig_t		      */
-  /*                                  */
-  /************************************/
+  /***************************************/
+  /*								   	 */
+  /*  ARITMETICOS CON ASIGNACION		 */
+  /*	int_reg_digs_t @= dig_t		     */
+  /*                                     */
+  /***************************************/
 
-  /// TODO MIÉRCOLES 19:36 22/03/2023
+
   constexpr inline
   const int_reg_digs_t& operator+=(dig_t arg) noexcept {
     int_reg_digs_t& cthis{*this};
@@ -952,7 +993,19 @@ public:
     return (*this);
   }
 
-  /// '@' = EUCLID_DIV -> (COC,REM,DIV0)
+  /// CON DEVOLUCIÓN DE DÍGITO DE CARRY
+  constexpr inline
+  dig_t m_addition(dig_t arg) noexcept {
+  	return m_incr_by_digit(*this,arg);
+  }
+
+  /// CON DEVOLUCIÓN DE DÍGITO DE BORROW
+  constexpr inline
+  dig_t m_subtract(dig_t arg) noexcept {
+  	return m_decr_by_digit(*this,arg);
+  }
+
+  /// '@' = EUCLID_DIV -> (COC,REM,ERR_DIV_BY_0)
   constexpr inline
   std::tuple<int_reg_digs_t,int_reg_digs_t,bool>
   fediv(const int_reg_digs_t & rarg) const noexcept{
@@ -976,10 +1029,10 @@ public:
 
 
   /********************************/
-  /*							 								*/
-  /*    OPERADORES ARITMETICOS		*/
-  /*		int_reg_digs_t @ dig_t	  */
-  /* 															*/
+  /*							  */
+  /*    OPERADORES ARITMETICOS	  */
+  /*    int_reg_digs_t @ dig_t    */
+  /* 							  */
   /********************************/
 
   constexpr inline
@@ -1007,11 +1060,11 @@ public:
   /// BEGIN M_ASSITION M_SUBTRACT M_MULTIPLICATION
   /// M_FEDIV NO ES CONVENIENTE Y ES CAMBIADA POR FEDIV
 
+
   /// HEREDADAS DE NAT_REG_DIGS_T
-  /// constexpr inline
-  /// dig_t m_addition(dig_t rarg) noexcept
-  /// constexpr inline
-  /// dig_t m_subtract(dig_t rarg) noexcept
+  /// HEREDADAS TAL CUAL
+  /// dig_t m_addition(const nat_reg_digs_t& rarg) noexcept
+  /// dig_t m_subtract(const nat_reg_digs_t& rarg) noexcept
 
   constexpr inline
   dig_t m_multiplication(dig_t rarg) noexcept {
@@ -1126,85 +1179,51 @@ public:
   /**************************************/
 
   /// INHERED
-  ///template <std::size_t N>
-  ///  requires(N > 0)
-  ///constexpr inline
   ///const int_reg_digs_t& operator+=(const base_N_t<N> &arg) noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  ///   requires(N > 0)
-  /// constexpr inline
   /// const int_reg_digs_t& operator+=(const int_reg_N_digs_t<N> &arg) noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  ///   requires(N > 0)
-  /// constexpr inline
   /// const int_reg_digs_t& operator-=(const base_N_t<N> &arg) noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  ///   requires(N > 0)
-  /// constexpr inline const int_reg_digs_t &
-  /// operator-=(const int_reg_N_digs_t<N> &arg) noexcept
+  /// const int_reg_digs_t& operator-=(const int_reg_N_digs_t<N> &arg) noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  ///   requires(N > 0)
-  /// constexpr inline const
   /// int_reg_digs_t& operator*=(const base_N_t<N> &arg) noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  ///   requires(N > 0)
-  /// constexpr inline
   /// const int_reg_digs_t& operator*=(const int_reg_N_digs_t<N> &arg) noexcept
 
   /// INHERED
-  /// constexpr inline
   /// const int_reg_digs_t & operator /= (const int_reg_digs_t & arg) noexcept
 
   /// INHERED
-  /// constexpr inline
   /// const int_reg_digs_t & operator %= (const int_reg_digs_t & arg) noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  /// constexpr inline
   /// int_reg_digs_t operator+(const base_N_t<N> &arg) const noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  /// constexpr inline
   /// int_reg_digs_t operator-(const base_N_t<N> &arg) const noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  /// constexpr inline
   /// int_reg_digs_t operator*(const base_N_t<N> &arg) const noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  /// constexpr inline
   /// int_reg_digs_t operator+(const int_reg_N_digs_t<N> &arg) const noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  /// constexpr inline
   /// int_reg_digs_t operator-(const int_reg_N_digs_t<N> &arg) const noexcept
 
   /// INHERED
-  /// template <std::size_t N>
-  /// constexpr inline
   /// int_reg_digs_t operator*(const int_reg_N_digs_t<N> &arg) const noexcept
 
   /// INHERED
-  /// constexpr inline
   /// int_reg_digs_t operator/(const int_reg_digs_t &arg) const noexcept
 
   /// INHERED
-  /// constexpr inline
   /// int_reg_digs_t operator%(const int_reg_digs_t &arg) const noexcept
 
   ///  dig_t   DISTINTAS REPRESENTACIONES
@@ -1231,6 +1250,20 @@ public:
   ///                                             denominador y numerador ***
   /// EXTENSIONES P-ADICAS              ***
   /// EXTENSIONES FRACCIONES CONTINUAS  ***
+
+  std::string to_string() const noexcept {
+    std::stringstream sstr_os{};
+    sstr_os << "int_reg_dig#";
+    sstr_os << (arg.is_minus()?"-":"+") << "#"
+    int_reg_digs_t cp_arg{ arg.is_minus? arg.C_B() : arg };
+    for (std::int64_t ix{L - 1}; ix > 0; --ix) {
+      sstr_os << static_cast<SIG_UINT_T>(cparg(ix)) << ':';
+    }
+    sstr_os << static_cast<SIG_UINT_T>(cparg(0));
+    sstr_os << "#B";
+    sstr_os << static_cast<SIG_UINT_T>(B);
+    return sstr_os.str();
+  }
 };
 
 /****************************/
@@ -1239,30 +1272,11 @@ public:
 /*							*/
 /****************************/
 
-/// ESPECIALIZACIONES PARA INT_REG_DIGS_T
-template <typename UInt_t, UInt_t B, std::size_t LE>
-bool is_int_reg_digs_type_id(std::string in) {
-  return ((in == "int_reg_digs") || (in == "int_reg_dig") ||
-          (in == "int_reg_di") || (in == "int_reg_d") || (in == "int_reg_") ||
-          (in == "int_reg") || (in == "int_re") || (in == "int_r") ||
-          (in == "int_") || (in == "int") || (in == "in") || (in == "i"));
-}
-
-template <typename UInt_t, UInt_t B, std::size_t LE>
-std::string to_int_reg_digs_type_string() {
-  return std::string{"int_reg_digs"};
-}
-
-template <typename UInt_t, UInt_t B>
-size_t size_of_int_reg_digs_type_string_idT() {
-  return (to_int_reg_digs_type_string<UInt_t, B, LE>()).size();
-}
-
-template <type_traits::allowable_base_type_c Int_Type, Int_Type Base,
-          size_t Length>
-  requires(type_traits::suitable_base<Int_Type, Base>() && (Length > 0))
-std::istream &operator>>(std::istream &is,
-                         int_reg_digs_t<Int_Type, Base, Length> &arg) {
+/// ENTRADA DIRECTAMENTE EN COMPLEMENTO A LA BASE
+template <uint64_t Base,size_t Length>
+std::istream& operator>>(
+	std::istream& is,int_reg_digs_t<Int_Type, Base, Length>& arg
+  ) {
   enum estado_e {
     e0ini,
     e1r,
@@ -1283,9 +1297,10 @@ std::istream &operator>>(std::istream &is,
   /// STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
   std::string sds;
   /// TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS
+  using dig_t = dig_t<Base>;
+  using Int_Type = dig_t::UINT_T;
   using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
-  using dig_t = dig_t<Int_Type, Base>;
-  using int_reg_digs_t = int_reg_digs_t<Int_Type, Base, Length>;
+  using int_reg_digs_t = int_reg_digs_t<Base, Length>;
   /// INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
   std::size_t indice{0};
   /// VARIABLES PARA ACCIONES EN LOS ESTADOS
@@ -1298,7 +1313,7 @@ std::istream &operator>>(std::istream &is,
   estado_e est_act = e0ini;
   /// CARACTER QUE GUARDARA EL INDICADO POR EL INDICE DEL STRING RECOGIDO DESDE
   /// CIN
-  char c{'\0'};
+  char c{type_traits::nullchar<char>};
   /// RECOGEMOS DESDE LA ENTRADA EL STRING CON LA INFORMACION CODIFICADA
   is >> sds;
   /// MAQUINA DE ESTADOS FINITOS QUE HACE EL PARSE() DE LA ENTRADA
@@ -1515,21 +1530,23 @@ std::istream &operator>>(std::istream &is,
   return (is);
 }
 
-template <type_traits::allowable_base_type_c Int_Type, Int_Type Base,
-          std::size_t Long>
-  requires(type_traits::suitable_base<Int_Type, Base>())
-std::ostream &operator<<(std::ostream &os,
-                         const int_reg_digs_t<Int_Type, Base, Long> &arg) {
+template <uint64_t Base , std::size_t Long>
+std::ostream& operator<<(
+	std::ostream &os , const int_reg_digs_t<Int_Type, Base, Long> &arg
+  ) {
+  using Int_Type = dig_t<Base>::UINT_T;
   using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
-  os << "int_reg_dig#";
-  os << (arg.is_minus()?"-":"+") << "#"
+  std::stringstream sstr_os{};
+  sstr_os << "int_reg_dig#";
+  sstr_os << (arg.is_minus()?"-":"+") << "#"
   int_reg_digs_t cp_arg{ arg.is_minus? arg.C_B() : arg};
   for (std::int64_t ix{Long - 1}; ix > 0; --ix) {
-    os << static_cast<inttype>(cparg(ix)) << ':';
+    sstr_os << static_cast<inttype>(cparg(ix)) << ':';
   }
-  os << static_cast<inttype>(cparg(0));
-  os << "#B";
-  os << static_cast<inttype>(Base);
+  sstr_os << static_cast<inttype>(cparg(0));
+  sstr_os << "#B";
+  sstr_os << static_cast<inttype>(Base);
+  os << arg.to_string();
   return (os);
 }
 

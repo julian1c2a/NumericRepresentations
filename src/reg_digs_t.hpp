@@ -10,19 +10,26 @@ namespace NumRepr {  // BEGIN NAMESPACE NumRepr
 using type_traits::suitable_base;
 using type_traits::uint_type_for_radix_c;
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t L>
-  requires((suitable_base<UINT_T, B>()) && (L > 0))
-struct reg_digs_t : public std::array<dig_t<UINT_T, B>, L> {
+template <uint64_t B, size_t L>
+  requires((B > 1) && (L > 0))
+struct reg_digs_t : public std::array<dig_t<B>, L> {
 public:
-  using dig_t = dig_t<UINT_T, B>;
+  using UINT_T = typename dig_t<B>::UINT_T;
+  using dig_t = dig_t<B>;
 
+  /// ARRAY DE DÍGITOS BASE B DE LONGITUD CUALQUIERA N (!= L)
   template <size_t N>
     requires(N > 0)
   using base_N_t = std::array<dig_t, N>;
-
+  /// TIPO DEL QUE DERIVA REG_DIGS_T: ARRAY DE DÍGITOS BASE B
+  ///                                 DE LONGITUD L
   using base_t = base_N_t<L>;
 
-  template <size_t N> using reg_N_digs_t = reg_digs_t<UINT_T, B, N>;
+  /// TIPO HERMANO DEL ACTUAL PERO DE DIFERENTE LONGITUD
+  template <size_t N>
+  using reg_N_digs_t = reg_digs_t<B, N>;
+
+private:
 
   /// devolución de punteros a la clase base
   /// CAST to CONST BASE_T*
@@ -74,16 +81,9 @@ public:
   }
 
 public:
+
   using SIG_UINT_T = typename type_traits::sig_UInt_for_UInt_t<UINT_T>;
   using SIG_SINT_T = typename type_traits::sig_SInt_for_UInt_t<UINT_T>;
-
-  template <binop_e op, size_t N>
-  using res_base_N_op_t =
-      typename auxiliary_types::result_operation_t<base_N_t<N>, op, N>;
-
-  template <binop_e op>
-  using res_base_op_t =
-      typename auxiliary_types::result_operation_t<base_t, op, L>;
 
   static consteval dig_t dig_0()        noexcept { return dig_t::dig_0(); }
   static consteval dig_t dig_1()        noexcept { return dig_t::dig_1(); }
@@ -109,7 +109,8 @@ public:
   /// TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL
   /// </summary>
 
-  template <size_t N> static consteval base_N_t<N> regd_base_N_0() noexcept {
+  template <size_t N>
+  static consteval base_N_t<N> regd_base_N_0() noexcept {
     base_N_t<N> ret;
     for (dig_t& dig : ret) {
       dig = dig_0();
@@ -117,19 +118,22 @@ public:
     return ret;
   }
 
-  template <size_t N> static consteval base_N_t<N> regd_base_N_1() noexcept {
+  template <size_t N>
+  static consteval base_N_t<N> regd_base_N_1() noexcept {
     base_N_t<N> ret{regd_base_N_0<N>()};
     ret[0] = dig_1();
     return ret;
   }
 
-  template <size_t N> static consteval base_N_t<N> regd_base_N_Bm1() noexcept {
+  template <size_t N>
+  static consteval base_N_t<N> regd_base_N_Bm1() noexcept {
     base_N_t<N> ret{regd_base_N_0<N>()};
     ret[0] = dig_Bm1();
     return ret;
   }
 
-  template <size_t N> static consteval base_N_t<N> regd_base_N_B() noexcept {
+  template <size_t N>
+  static consteval base_N_t<N> regd_base_N_B() noexcept {
     base_N_t<N> ret{regd_base_N_0<N>()};
     ret[1] = dig_1();
     return ret;
@@ -218,50 +222,30 @@ public:
 
 public:
   /// <summary>
-  /// En este bloque hacemos esta clase wrapper como si fuese una clase derivada
-  /// de base_t
-  /// Para esto replicamos y sobrecargamos cada una de las funciones por defecto
-  /// de std::array
-  /// Nota: lo anterior se escribio cuando no era clase derivada sino un wrapper
+  /// En heredamos como clase derivada de base_t == std::array<B,L>
+  /// Tenemos todos los métodos de la STL
   /// </summary>
-  constexpr decltype(auto) begin()         noexcept { return base_t::begin(); }
-  constexpr decltype(auto) cbegin()  const noexcept { return base_t::cbegin(); }
-  constexpr decltype(auto) end()           noexcept { return base_t::end(); }
-  constexpr decltype(auto) cend()    const noexcept { return base_t::cend(); }
-  constexpr decltype(auto) rbegin()        noexcept { return base_t::rbegin(); }
-  constexpr decltype(auto) crbegin() const noexcept {
-    return base_t::crbegin();
-  }
-  constexpr decltype(auto) rend()          noexcept { return base_t::rend(); }
-  constexpr decltype(auto) crend()   const noexcept { return base_t::crend(); }
 
-  constexpr size_t size()            const noexcept { return base_t::size(); }
-  constexpr size_t max_size()        const noexcept {
-  	return base_t::max_size();
-  }
-  constexpr bool empty()             const noexcept { return base_t::empty(); }
+  //constexpr decltype(auto) begin()         noexcept
+  //constexpr decltype(auto) cbegin()  const noexcept
+  //constexpr decltype(auto) end()           noexcept
+  //constexpr decltype(auto) cend()    const noexcept
+  //constexpr decltype(auto) rbegin()        noexcept
+  //constexpr decltype(auto) crbegin() const noexcept
+  //constexpr decltype(auto) rend()          noexcept
+  //constexpr decltype(auto) crend()   const noexcept
 
-  constexpr dig_t front()                  noexcept {
-  	return (this->base_t::front());
-  }
-  constexpr dig_t const& front()     const noexcept {
-    return (this->base_t::front());
-  }
-  constexpr dig_t back()                   noexcept {
-  	return (this->base_t::back());
-  }
-  constexpr dig_t const& back()      const noexcept {
-    return (this->base_t::back());
-  }
-
-  constexpr void fill(const dig_t& value)  noexcept {
-    this->base_t::fill(value);
-  }
-  constexpr void swap(base_t& other)       noexcept {
-    this->base_t::swap(*other.data());
-  }
-  constexpr void reverse()                 noexcept {
-    std::reverse(this->begin(), this->end());
+  //constexpr size_t size()            const noexcept
+  //constexpr size_t max_size()        const noexcept
+  //constexpr bool empty()             const noexcept
+  //constexpr dig_t front()                  noexcept
+  //constexpr dig_t const& front()     const noexcept
+  //constexpr dig_t back()                   noexcept
+  //constexpr dig_t const& back()      const noexcept
+  //constexpr void fill(const dig_t& value)  noexcept
+  //constexpr void swap(base_t& other)       noexcept
+  constexpr void reverse() noexcept {
+  	std::reverse(this->begin(), this->end());
   }
 
   /// <summary>
@@ -421,7 +405,7 @@ public:
   constexpr inline reg_digs_t(base_N_t<N>&& arg) noexcept
       : base_t{std::move(move_arg_N<N>(std::move(arg)))} {}
 
-public:
+private:
   /// <summary="Funcion de normalizacion a dig_t (dígitos base B) que construye
   /// un objeto de tipo ">
   /// </summary>
@@ -545,8 +529,8 @@ public:
     using type_traits::maxbase;
     using max_int_t =
         std::conditional_t<type_traits::is_unsigned_type_v<Int_Type>, /// ?
-                           uint128_t,                                 /// :
-                           sint128_t>;
+                           uint64_t,                                 /// :
+                           sint64_t>;
     constexpr max_int_t B_128t_v{static_cast<max_int_t>(B)};
     constexpr bool puede_multiplicarse{(maxbase<max_int_t>() / B_128t_v) > 0};
 
@@ -573,6 +557,7 @@ public:
   ///       Algunas Conversiones
   ///
 
+  /// PUEDE SER QUE NO QUEPA EN EL TIPO ENTERO
   template <type_traits::integral_c Int_Type>
   /// SE PODRÍA HACER PARA UINT128_T
   constexpr inline explicit operator Int_Type() const noexcept {
@@ -597,17 +582,19 @@ private:
   /// constexpr dig_t* data() noexcept;
   /// </summary>
   /// <returns name="dig_t*"></returns>
-  constexpr dig_t *data() noexcept { return (this->base_t::data()); }
+  /// HEREDADO DE LA STL
+  /// constexpr dig_t* data() noexcept { return (this->base_t::data()); }
 
-public:
+private:
   /// for compatibility with std::array
   ///< summary=" sobrecarga de las funciones miembro : ">
   /// constexpr const dig_t* data() const noexcept;
   ///</summary>
   ///< returns name="const dig_t*"></returns>
-  constexpr const dig_t* const data() const noexcept {
-    return (static_cast<const dig_t *>(this->base_t::data()));
-  } // qualifiers ignored on function return type
+  /// HEREDADO DE LA STL
+  /// constexpr const dig_t* const data() const noexcept;
+
+public:
 
   inline constexpr decltype(auto) cpy_data() const noexcept {
     return (*(this->base_t::data()));
@@ -615,14 +602,12 @@ public:
 
   ///< summary="Sobrecarga del const dig_t&  operator[](size_t)
   ///< const"></summary>
-  inline constexpr const dig_t& operator[](size_t ix) const noexcept {
-    return (cr_cthis_at(ix));
-  }
+  /// HEREDADA DE LA CLASE STD::ARRAY DE LA STL
+  /// inline constexpr const dig_t& operator[](size_t ix) const noexcept;
 
   ///< summary="Sobrecarga del dig_t&  operator[](size_t)"></summary>
-  inline constexpr dig_t& operator[](size_t ix) noexcept {
-    return (r_cthis_at(ix));
-  }
+  /// HEREDADA DE LA CLASE STD::ARRAY DE LA STL
+  /// inline constexpr dig_t& operator[](size_t ix) noexcept;
 
   ///< summary="Sobrecarga del const dig_t&  operator[](size_t)
   ///< const"></summary>
@@ -639,31 +624,31 @@ public:
   ///< returns name="void"></returns>
 
   constexpr inline void set_0()               noexcept {
-  	r_cthis().fill(dig_0()); }
+  	fill(dig_0()); }
 
   constexpr inline void set_1()               noexcept {
-    r_cthis().fill(dig_0());
-    r_cthis()[0].set_1();
+    fill(dig_0());
+    (*this)[0].set_1();
   }
 
   constexpr inline void set_Bm1()             noexcept {
-    r_cthis().fill(dig_0());
-    r_cthis()[0].set_Bm1();
+    fill(dig_0());
+    (*this)[0].set_Bm1();
   }
 
   constexpr inline void set_dig(dig_t d)      noexcept {
-    r_cthis().fill(d);
-    r_cthis()[0] = d;
+    fill(d);
+    (*this)[0] = d;
   }
 
   constexpr inline void set_fill_dig(dig_t d) noexcept {
-  	r_cthis().fill(d); }
+  	fill(d); }
 
   constexpr inline void set_fill_1()          noexcept {
-  	r_cthis().fill(dig_1()); }
+  	fill(dig_1()); }
 
   constexpr inline void set_fill_Bm1()        noexcept {
-  	r_cthis().fill(dig_Bm1()); }
+  	fill(dig_Bm1()); }
 
   ///< summary>
   ///"Funciones que ponen a constantes(constexpr) los objetos un subintervalo
@@ -678,11 +663,11 @@ public:
   /// OPERACION DE PONER A VALOR DIG_0 DEL ARRAY
   /// DESDE [N_0 , N_1) EN BASE_N_T<N>
   template <size_t N_i, size_t N_pf> // i  es inicio
-                                     // pf es pasado el final
+                                     // pf es pasado el final STL
     requires((N_i < N_pf) && (N_pf <= L))
   constexpr inline void set_interval_0() noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
-      r_cthis(ix).set_0();
+      (*this)[ix].set_0();
   }
 
   /// OPERACION DE PONER A VALOR DIG_Bm1 DEL ARRAY
@@ -692,7 +677,7 @@ public:
     requires((N_i < N_pf) && (N_pf <= L))
   constexpr inline void set_interval_Bm1() noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
-      r_cthis(ix).set_Bm1();
+      (*this)[ix].set_Bm1();
   }
 
   /// OPERACION DE PONER A VALOR DIG DEL ARRAY
@@ -702,7 +687,7 @@ public:
     requires((N_i < N_pf) && (N_pf <= L))
   constexpr inline void set_interval_dig(dig_t dig) noexcept {
     for (size_t ix{N_i}; ix < N_pf; ++ix)
-      r_cthis(ix) = dig;
+      (*this)[ix] = dig;
   }
 
   ///< summary="Funciones comparativas con constantes tipo constexpr"></summary>
@@ -889,13 +874,15 @@ public:
   ///							cat(dig_t ... dig_pack) VARIADIC PACK
 
   /// STATIC REG_DIGS_T CAT(REG_DIGS_T)
-  static constexpr inline reg_digs_t cat(const reg_digs_t& arg) noexcept {
+  static constexpr inline
+  reg_digs_t cat(const reg_digs_t& arg) noexcept {
     return std::move(reg_digs_t{arg});
   }
 
   /// STATIC <M> REG_N_DIGS_T<L+M> CAT(REG_DIGS_T,REG_N_DIGS_T<M>)
   template <size_t M>
-  static constexpr inline reg_N_digs_t<L + M>
+  static constexpr inline
+  reg_N_digs_t<L + M>
   cat(const reg_digs_t& larg, const reg_N_digs_t<M>& rarg) noexcept {
     base_N_t<L + M> ret;
     for (size_t ix{0}; ix < L; ++ix)
@@ -906,8 +893,8 @@ public:
   }
 
   /// STATIC REG_DIGS_T<L+1> CAT(REG_DIGS_T,DIG_T)
-  static constexpr inline reg_N_digs_t<L + 1> cat(
-		const reg_digs_t& larg, dig_t rarg) noexcept {
+  static constexpr inline
+  reg_N_digs_t<L + 1> cat( const reg_digs_t& larg, dig_t rarg) noexcept {
     reg_N_digs_t<L + 1> ret;
     for (size_t ix{0}; ix < L; ++ix)
       ret[ix] = larg[ix];
@@ -916,8 +903,8 @@ public:
   }
 
   /// REG_N_DIGS_T<1+L> CAT(DIG_T,REG_DIGS_T)
-  static constexpr inline reg_N_digs_t<1 + L>
-  cat(dig_t larg, const reg_digs_t& rarg) noexcept {
+  static constexpr inline
+  reg_N_digs_t<1 + L> cat(dig_t larg, const reg_digs_t& rarg) noexcept {
     reg_N_digs_t<1 + L> ret;
     ret[0] = larg;
     for (size_t ix{1}; ix < L + 1; ++ix)
@@ -926,12 +913,14 @@ public:
   }
 
   /// STATIC REG_N_DIGS_T<1> CAT(DIG_T)
-  static constexpr inline reg_N_digs_t<1> cat(dig_t larg) noexcept {
+  static constexpr inline
+  reg_N_digs_t<1> cat(dig_t larg) noexcept {
     return std::move(reg_N_digs_t<1>{larg});
   }
 
   /// STATIC REG_N_DIGS_T<1+1> CAT(DIG_T,DIG_T)
-  static constexpr inline reg_N_digs_t<2> cat(dig_t larg, dig_t rarg) noexcept {
+  static constexpr inline
+  reg_N_digs_t<2> cat(dig_t larg, dig_t rarg) noexcept {
     reg_N_digs_t<2> ret;
     ret[0] = larg;
     ret[1] = rarg;
@@ -942,7 +931,8 @@ public:
   /// CAT(DIG_T,DIG_T ... DIG_PACK) VARIADIC
   template <typename T0, typename... Ts>
     requires(((std::is_same_v<Ts, dig_t>)&& ...) && (std::is_same_v<T0, dig_t>))
-  static constexpr inline reg_N_digs_t<1 + (sizeof...(Ts))> cat(
+  static constexpr inline
+  reg_N_digs_t<1 + (sizeof...(Ts))> cat(
       T0 dig0, Ts... dig_pack) noexcept {
     return cat(dig_0, dig_pack...);
   }
@@ -951,7 +941,8 @@ public:
   /// CAT(REG_DIGS_T,DIG_T,DIG_T ... DIG_PACK) VARIADIC
   template <typename T, typename... Ts>
     requires(((std::is_same_v<Ts, dig_t>)&& ...) && (std::is_same_v<T, dig_t>))
-  static constexpr inline reg_N_digs_t<L + 1 + (sizeof...(Ts))> cat(
+  static constexpr inline
+  reg_N_digs_t<L + 1 + (sizeof...(Ts))> cat(
       reg_digs_t larg, T dig, Ts... dig_pack) noexcept {
     return cat(larg, cat(dig, dig_pack...));
   }
@@ -1032,7 +1023,7 @@ public:
     return std::move(cp_cthis().mC_B());
   }
 
-  ///	A partir de aquí no he hecho las sustituciones de
+  /// A partir de aquí no he hecho las sustituciones de
   /// const reg_digs_t&  cthis{*this}; / reg_digs_t&  cthis{*this}; / reg_digs_t
   /// cthis{*this}; Por las correspondientes funciones cr_cthis() / r_cthis() /
   /// cp_cthis()
@@ -1112,6 +1103,8 @@ public:
     return (cthis);
   }
 
+  /// OPERATOR BIT A BIT BITWISE | |= & &=
+
   constexpr inline
   const reg_digs_t& operator|=(const base_t& rarg) const noexcept  {
     reg_digs_t& cthis{*this};
@@ -1142,6 +1135,7 @@ public:
     return (ret);
   }
 
+  //  PRIVATE
   /// NOS DEVUELVE EL ÍNDICE DEL DÍGITO NO 0 DE POTENCIA DE B MAS GRANDE
   /// NOS DEVUELVE 0 SI ES UN DÍGITO NO 0
   /// NOS DEVUELVE -1 SI ES EL DÍGITO 0
@@ -1366,39 +1360,21 @@ public:
       return std::weak_ordering::equivalent;
   }
 
-  /// Funciones de ayuda para
-  /// el parser/lexer del reg_digs_t
-
-  static bool is_type_template_string_id(std::string in) noexcept {
-    return ((in == "reg_digs_t") || (in == "reg_digs_") || (in == "reg_digs") ||
-            (in == "reg_dig") || (in == "reg_di") || (in == "reg_d") ||
-            (in == "reg_") || (in == "reg") || (in == "re") || (in == "r"));
-  }
-
-  static std::string to_type_template_string_id() noexcept {
-    return std::string{"reg_digs"};
-  }
-
-  static size_t size_of_type_template_string_id() noexcept {
-    return (to_type_template_string_id()).size();
+  std::string to_string() const noexcept {
+    std::string reg_escrito{};
+    std::stringstream os{};
+    os << "reg_digs_t#";
+    for(ssize_t ix{size()-1}; ix > -1 ; --ix) {
+    	os << (*this)(ix);
+    	if(ix != 0) os << ':';
+    }
+    os << "#B" << B;
+    reg_escrito = os.str();
+    return std::move(reg_escrito);
   }
 };
 
-///< SOLO HAY QUE DECLARAR digit_t<2> o digit_t<10> o ...
-///< DEFINCION DE template<uint128_t Radix> register_of_digits_t{};
 using namespace type_traits;
-template <uint128_t B>
-using digit_t =
-    dig_t<TypeFromIntNumber_t<static_cast<uint128_t>(B)>,
-          static_cast<TypeFromIntNumber_t<static_cast<uint128_t>(B)>>(
-              static_cast<uint128_t>(B))>;
-template <uint128_t B, size_t L>
-using register_of_digits_t =
-    reg_digs_t<TypeFromIntNumber_t<static_cast<uint128_t>(B)>,
-               static_cast<TypeFromIntNumber_t<static_cast<uint128_t>(B)>>(
-                   static_cast<uint128_t>(B)),
-               L>;
-
 /// STATIC BASE_N_T<N>
 /// CONCAT(BASE_N_T<N>) STATIC BASE_N_T<N+M>
 /// CONCAT(BASE_N_T<N>,BASE_N_T<M>) STATIC BASE_N_T<N+1>
@@ -1409,20 +1385,20 @@ using register_of_digits_t =
 /// CONCAT(DIG_T...DIG_PACK) VARIADIC PACK
 
 /// STATIC BASE_N_T<N> CONCAT(BASE_N_T<N>)
-template <typename UInt_t, UInt_t B, size_t N>
+template <uint64_t B, size_t N>
   requires(N > 0)
-constexpr inline reg_digs_t<UInt_t, B, N> concat(
-    const reg_digs_t<UInt_t, B, N>& larg) noexcept {
-  return reg_digs_t<UInt_t, B, N>{larg};
+constexpr inline reg_digs_t<B, N> concat(
+    const reg_digs_t<B, N>& larg) noexcept {
+  return reg_digs_t<B, N>{larg};
 }
 
 /// STATIC BASE_N_T<N+M> CONCAT(BASE_N_T<N>,BASE_N_T<M>)
-template <typename UInt_t, UInt_t B, size_t N, size_t M>
+template <uint64_t B, size_t N, size_t M>
   requires((N > 0) && (M > 0))
-constexpr inline reg_digs_t<UInt_t, B, N + M> concat(
-    const reg_digs_t<UInt_t, B, N>& larg,
-    const reg_digs_t<UInt_t, B, M>& rarg) noexcept {
-  reg_digs_t<UInt_t, B, N + M> ret;
+constexpr inline reg_digs_t<B, N + M> concat(
+    const reg_digs_t<B, N>& larg,
+    const reg_digs_t<B, M>& rarg) noexcept {
+  reg_digs_t<B, N + M> ret;
   for (size_t ix{0}; ix < N; ++ix)
     ret[ix] = larg[ix];
   for (size_t ix{N}; ix < M; ++ix)
@@ -1431,11 +1407,13 @@ constexpr inline reg_digs_t<UInt_t, B, N + M> concat(
 }
 
 /// STATIC BASE_N_T<N+1> CONCAT(BASE_N_T<N>,DIG_T)
-template <typename UInt_t, UInt_t B, size_t N>
+template <uint64_t B, size_t N>
   requires(N > 0)
-constexpr inline reg_digs_t<UInt_t, B, N + 1> concat(
-    const reg_digs_t<UInt_t, B, N>& larg, dig_t<UInt_t, B> rarg) noexcept {
-  reg_digs_t<UInt_t, B, N + 1> ret;
+constexpr inline
+reg_digs_t<B, N + 1> concat(
+	const reg_digs_t<B, N>& larg, dig_t<B> rarg
+  ) noexcept {
+  reg_digs_t<B, N + 1> ret;
   for (size_t ix{0}; ix < N; ++ix)
     ret[ix] = larg[ix];
   ret[N] = rarg;
@@ -1443,11 +1421,14 @@ constexpr inline reg_digs_t<UInt_t, B, N + 1> concat(
 }
 
 /// STATIC BASE_N_T<1+M> CONCAT(DIG_T,BASE_N_T<M>)
-template <typename UInt_t, UInt_t B, size_t M>
+template <uint64_t B, size_t M>
   requires(M > 0)
-constexpr inline reg_digs_t<UInt_t, B, 1 + M> concat(
-    dig_t<UInt_t, B> larg, const reg_digs_t<UInt_t, B, M>& rarg) noexcept {
-  reg_digs_t<UInt_t, B, 1 + M> ret;
+constexpr inline
+reg_digs_t<B , 1 + M> concat(
+	dig_t<B> larg,
+	const reg_digs_t<B, M>& rarg
+	) noexcept {
+  reg_digs_t<B, 1 + M> ret;
   ret[0] = larg;
   for (size_t ix{1}; ix < M + 1; ++ix)
     ret[ix] = rarg[ix - 1];
@@ -1455,17 +1436,17 @@ constexpr inline reg_digs_t<UInt_t, B, 1 + M> concat(
 }
 
 /// STATIC BASE_N_T<1> CONCAT(DIG_T)
-template <typename UInt_t, UInt_t B>
-constexpr inline reg_digs_t<UInt_t, B, 1>
-concat(dig_t<UInt_t, B> larg) noexcept {
-  return reg_digs_t<UInt_t, B, 1>{larg};
+template <uint64_t B>
+constexpr inline reg_digs_t<B, 1>
+concat(dig_t<B> larg) noexcept {
+  return reg_digs_t<B, 1>{larg};
 }
 
 /// STATIC BASE_N_T<1+1> CONCAT(DIG_T,DIG_T)
-template <typename UInt_t, UInt_t B>
-constexpr inline reg_digs_t<UInt_t, B, 2>
-concat(dig_t<UInt_t, B> larg, dig_t<UInt_t, B> rarg) noexcept {
-  reg_digs_t<UInt_t, B, 2> ret;
+template <uint64_t B>
+constexpr inline reg_digs_t<B, 2>
+concat(dig_t<B> larg, dig_t<B> rarg) noexcept {
+  reg_digs_t<B, 2> ret;
   ret[0] = larg;
   ret[1] = rarg;
   return ret;
@@ -1474,174 +1455,196 @@ concat(dig_t<UInt_t, B> larg, dig_t<UInt_t, B> rarg) noexcept {
 /// STATIC BASE_N_T<SIZEOF...(DIG_PACK)>
 ///		CONCAT(DIG_T,DIG_T ... DIG_PACK)
 ///	VARIADIC PACK
-template <typename UInt_t, UInt_t B, typename T0, typename... Ts>
-  requires(((std::is_same_v<Ts, dig_t<UInt_t, B>>)&&...) &&
-           (std::is_same_v<T0, dig_t<UInt_t, B>>))
-constexpr inline reg_digs_t<UInt_t, B, 1 + (sizeof...(Ts))> concat(
-    T0 dig0, Ts... dig_pack) noexcept {
-  return concat(dig0, dig_pack...);
+template <uint64_t B, typename T0, typename... Ts>
+  requires(((std::is_same_v<Ts, dig_t<B>>)&&...) &&
+           (std::is_same_v<T0, dig_t<B>>))
+constexpr inline
+reg_digs_t<B, 1 + (sizeof...(Ts))> concat(T0 dig0, Ts... dig_pack) noexcept {
+  return concat(dig0, concat(dig_pack...));
 }
 
 /// STATIC BASE_N_T<N+1+(SIZEOF...(DIG_PACK))>
 ///		CONCAT(BASE_N_T<N>,DIG_T,DIG_T ... DIG_PACK)
 ///	VARIADIC PACK
-template <typename UInt_t, UInt_t B, size_t N, typename T, typename... Ts>
+template <uint64_t B, size_t N, typename T, typename... Ts>
   requires(((std::is_same_v<Ts, dig_t<UInt_t, B>>)&&...) &&
            (std::is_same_v<T, dig_t<UInt_t, B>>) && (N > 0))
-constexpr inline reg_digs_t<UInt_t, B, N + 1 + (sizeof...(Ts))> concat(
-    reg_digs_t<UInt_t, B, N> larg, T dig, Ts... dig_pack) noexcept {
+constexpr inline
+reg_digs_t<B,N+1+(sizeof...(Ts))> concat(
+	reg_digs_t<B, N> larg,
+	T dig,
+	Ts... dig_pack
+	) noexcept {
   return concat(larg, concat(dig, dig_pack...));
 }
 
 /// STATIC BASE_N_T<M+1+(SIZEOF...(DIG_PACK))>
 ///			CONCAT(DIG_T,DIG_T ... DIG_PACK,BASE_N_T<M>)
 ///	VARIADIC PACK
-template <typename UInt_t, UInt_t B, size_t M, typename T, typename... Ts>
-  requires(((std::is_same_v<Ts, dig_t<UInt_t, B>>)&&...) &&
-           (std::is_same_v<T, dig_t<UInt_t, B>>) && (M > 0))
-constexpr inline reg_digs_t<UInt_t, B, M + 1 + (sizeof...(Ts))> concat(
-    T dig, Ts... dig_pack, reg_digs_t<UInt_t, B, M> rarg) noexcept {
+template <uint64_t B, size_t M, typename T, typename... Ts>
+  requires(((std::is_same_v<Ts, dig_t<B>>)&&...) &&
+           (std::is_same_v<T, dig_t<B>>) && (M > 0))
+constexpr inline
+reg_digs_t<B,M+1+(sizeof...(Ts))> concat(
+	T dig,
+	Ts...dig_pack,
+	reg_digs_t<B,M> rarg
+	) noexcept {
   return concat(concat(dig, dig_pack...), rarg);
 }
 
 /// STATIC BASE_N_T<SIZE_T N,SIZE_T ... N_PACK>
 ///	CONCAT(BASE_N_T<N> LARG,BASE_N_T<N_PACK> ... RARG_PACK)
 ///	VARIADIC PACK
-template <typename UInt_t, UInt_t B, size_t N, size_t... N_pack>
+template <uint64_t B, size_t N, size_t... N_pack>
   requires((N > 0) && ((N_pack > 0)&&  ...))
-constexpr inline reg_digs_t<UInt_t, B, N + (... + (N_pack))> concat(
-    reg_digs_t<UInt_t, B, N> larg,
-    reg_digs_t<UInt_t, B, N_pack>... rarg_pack) noexcept {
-  return concat(larg, rarg_pack...);
+constexpr inline
+reg_digs_t<B,N+(...+(N_pack))> concat(
+    reg_digs_t<B, N> larg,
+    reg_digs_t<B, N_pack>... rarg_pack
+	) noexcept {
+  return concat(larg,concat(rarg_pack...));
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline reg_digs_t<UINT_T, B, N>
-operator<<(const reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
+template <uint64_t B, size_t N>
+  requires(N > 0 & B > 1)
+constexpr inline
+reg_digs_t<B, N> operator<<(const reg_digs_t<B, N>& larg, size_t n) noexcept {
   reg_digs_t<UINT_T, B, N> cparg{larg};
   for (std::int32_t ix{N - 1 - n}; ix > -1; --ix) {
     cparg[ix + n] = larg[ix];
   }
   for (std::int32_t ix{0}; ix < n; ++ix) {
-    cparg[ix] = dig_t<UINT_T, B>::dig_0();
+    cparg[ix] = dig_t<B>::dig_0();
   }
   return cparg;
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline const reg_digs_t<UINT_T, B, N>&
-operator<<=(reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
+template <uint64_t B, size_t N>
+  requires(B>1 && N>0)
+constexpr inline
+const reg_digs_t<B, N>& operator<<=(reg_digs_t<B, N>& larg, size_t n) noexcept {
   for (std::int32_t ix{N - 1 - n}; ix > -1; --ix) {
     larg[ix + n] = larg[ix];
   }
   for (std::int32_t ix{0}; ix < n; ++ix) {
-    larg[ix] = dig_t<UINT_T, B>::dig_0();
+    larg[ix] = dig_t<B>::dig_0();
   }
   return (larg);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline const reg_digs_t<UINT_T, B, N>&
-operator>>=(reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
+template <uint64_t B, size_t N>
+  requires((B>1) && (N>0))
+constexpr inline
+const reg_digs_t<B, N>& operator>>=(reg_digs_t<B, N>& larg, size_t n) noexcept {
   for (std::int32_t ix{0}; ix < N - n; ++ix) {
     larg[ix] = larg[ix + n];
   }
   for (std::int32_t ix{N - n}; ix < N; ++ix) {
-    larg[ix] = dig_t<UINT_T, B>::dig_0();
+    larg[ix] = dig_t<B>::dig_0();
   }
   return (larg);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline reg_digs_t<UINT_T, B, N>
-operator>>(const reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
-  return (reg_digs_t<UINT_T, B, N>{larg}.ref_data() >>= n);
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+reg_digs_t<B, N> operator>>(const reg_digs_t<B, N>& larg, size_t n) noexcept {
+  return (reg_digs_t<B, N>{larg} >>= n);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline reg_digs_t<UINT_T, B, N> rem_B(
-    const reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
-  reg_digs_t<UINT_T, B, N> ret{larg};
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline reg_digs_t<B, N> rem_B(
+    const reg_digs_t<B, N>& larg, size_t n) noexcept {
+  reg_digs_t<B, N> ret{larg};
   ret <<= N - n;
   return ret;
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline const reg_digs_t<UINT_T, B, N>& m_rem_B(
-    reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+const reg_digs_t<B, N>& m_rem_B(
+    reg_digs_t<B, N>& larg,
+    size_t n
+    ) noexcept {
   larg <<= N - n;
   return (larg);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline reg_digs_t<UINT_T, B, N> mer_B(
-    const reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
-  reg_digs_t<UINT_T, B, N> ret{larg};
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+reg_digs_t<B, N> mer_B(const reg_digs_t<B, N>& larg, size_t n) noexcept {
+  reg_digs_t<B, N> ret{larg};
   ret >>= N - n;
   return ret;
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline const reg_digs_t<UINT_T, B, N>& m_mer_B(
-    reg_digs_t<UINT_T, B, N>& larg, size_t n) noexcept {
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+const reg_digs_t<B, N>& m_mer_B(reg_digs_t<B, N>& larg, size_t n) noexcept {
   larg >>= N - n;
   return (larg);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline const reg_digs_t<UINT_T, B, N>&
-operator|=(reg_digs_t<UINT_T, B, N>& larg,
-           const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+const reg_digs_t<B, N>& operator|=(
+	reg_digs_t<B, N>& larg,
+	const reg_digs_t<B, N>& rarg
+	) noexcept {
   for (size_t ix{0}; ix < N; ++ix) {
     larg[ix] |= rarg[ix];
   }
   return (larg);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline reg_digs_t<UINT_T, B, N>
-operator|(const reg_digs_t<UINT_T, B, N>& larg,
-          const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+reg_digs_t<B, N> operator|(
+	const reg_digs_t<B, N>& larg,
+    const reg_digs_t<B, N>& rarg
+  ) noexcept {
   reg_digs_t ret{larg};
   ret |= rarg;
   return (ret);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline const reg_digs_t<UINT_T, B, N>&
-operator&=(reg_digs_t<UINT_T, B, N>& larg,
-           const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+const reg_digs_t<UINT_T, B, N>& operator&=(
+	reg_digs_t<B, N>& larg,
+	const reg_digs_t<B, N>& rarg
+  ) noexcept {
   for (size_t ix{0}; ix < N; ++ix) {
     larg[ix] &= rarg[ix];
   }
   return (larg);
 }
 
-template <uint_type_for_radix_c UINT_T, UINT_T B, size_t N>
-  requires((suitable_base<UINT_T, B>()) && (N > 0))
-constexpr inline reg_digs_t<UINT_T, B, N>
-operator&(reg_digs_t<UINT_T, B, N>& larg,
-          const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  reg_digs_t<UINT_T, B, N> ret{larg};
+template <uint64_t B, size_t N>
+  requires((B > 1) && (N > 0))
+constexpr inline
+reg_digs_t<B, N> operator&(
+	reg_digs_t<B, N>& larg,
+    const reg_digs_t<B, N>& rarg
+  ) noexcept {
+  reg_digs_t<B, N> ret{larg};
   ret &= rarg;
   return (ret);
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
-constexpr inline reg_digs_t<UINT_T, B, N>&
-m_incr(reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
+/// COMENTAR m_incr
+template <uint64_t B, size_t N>
+constexpr inline
+reg_digs_t<B, N>& m_incr(reg_digs_t<B, N>& rarg) noexcept {
+  using dig_t = dig_t<B>;
 
   dig_t carry{dig_t::dig_1()};
   for (size_t i = 0; i < N; ++i) {
@@ -1662,22 +1665,25 @@ m_incr(reg_digs_t<UINT_T, B, N>& rarg) noexcept {
   return (rarg);
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+/// COMENTAR incr
+template <uint64_t B, size_t N>
 constexpr inline
-std::tuple<reg_digs_t<UINT_T, B, N>,dig_t<UINT_T, B>>
-incr(const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
-  using reg_digs_t = reg_digs_t<UINT_T, B, N>;
+std::tuple<reg_digs_t<B,N>,dig_t<B>> incr(
+	const reg_digs_t<B,N>& rarg
+  ) noexcept {
+  using dig_t = dig_t<B>;
+  using reg_digs_t = reg_digs_t<B, N>;
   using ret_type = std::tuple<reg_digs_t,dig_t>;
   reg_digs_t cp_rarg{rarg};
   dig_t carry{m_incr(cp_rarg)};
   return std::move(ret_type{cp_rarg,carry});
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
-constexpr inline reg_digs_t<UINT_T, B, N>&
-m_decr(reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
+/// comentar m_decr
+template <uint64_t B, size_t N>
+constexpr inline
+reg_digs_t<B, N>& m_decr(reg_digs_t<B, N>& rarg) noexcept {
+  using dig_t = dig_t<B>;
 
   dig_t borrow{dig_t::dig_1()};
   for (size_t i = 0; i < N; ++i) {
@@ -1698,22 +1704,98 @@ m_decr(reg_digs_t<UINT_T, B, N>& rarg) noexcept {
   return (rarg);
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+/// comentar decr
+template <uint64_t B, size_t N>
 constexpr inline
-std::tuple<reg_digs_t<UINT_T, B, N>,dig_t<UINT_T, B>>
-decr(const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
-  using reg_digs_t = reg_digs_t<UINT_T, B, N>;
+std::tuple<reg_digs_t<B, N>,dig_t<B>> decr(
+	const reg_digs_t<B, N>& rarg
+  ) noexcept {
+  using dig_t = dig_t<B>;
+  using reg_digs_t = reg_digs_t<B, N>;
   using ret_type = std::tuple<reg_digs_t,dig_t>;
   reg_digs_t cp_rarg{rarg};
   dig_t borrow{m_decr(cp_rarg)};
   return std::move(ret_type{cp_rarg,borrow});
 }
 
-template <typename UINT_T, UINT_T B>
-constexpr inline dig_t<UINT_T, B>
-m_sum_digs_carryin_1(
-  dig_t<UINT_T, B>& left,const dig_t<UINT_T, B>& right) noexcept {
+/// comentar m_sum_digs_carryin_0
+template <uint64_t B>
+constexpr inline
+dig_t<B> m_sum_digs_carryin_0(dig_t<B>& left,const dig_t<B>& right) noexcept {
+  /// SUMA 2 DIGITOS
+  /// CARRY C==0
+  /// L + D <  B-1 					=>  L.C_Bm1 > D
+  /// :
+  ///														C:=0
+  ///S:=L+D
+  /// L == B-1	&& D == B-1	=>	L+D == 2B-2  == (B-1)-1
+  /// :
+  ///														C:=1
+  ///S:=(B-1)-1
+  /// L == B-1	&& D != B-1	=>	L+D == B-1+D == B + (D-1)
+  /// :
+  ///														C:=1
+  ///S:=D-1
+  /// D == B-1	&& L != B-1	=>	L+D == B-1+L == B + (L-1)
+  /// :
+  ///														C:=1
+  ///S:=L-1
+  /// L + D >= B-1 					=>	(L.C_Bm1+1-D).C_B =mod_B= L+D
+  /// :
+  ///														C:=1
+  ///S:=(L.C_Bm1-D).C_Bm1
+
+  using dig_t = dig_t<B>;
+  constexpr dig_t d_0 = dig_t::dig_0();
+  constexpr dig_t d_1 = dig_t::dig_1();
+  constexpr dig_t d_Bm1 = dig_t::dig_Bm1();
+
+  const dig_t left_CBm1{left.C_Bm1()};
+  const bool left_is_Bm1{left.is_Bm1()};
+  const bool right_is_Bm1{right.is_Bm1()};
+  if (left_CBm1 >= right) {
+    left += right;
+    return d_0;
+  } else {
+    if (left_is_Bm1 || right_is_Bm1) {
+      if (left_is_Bm1 && right_is_Bm1) {
+        if constexpr (B == 2) {
+          left = d_0;
+          return d_1;
+        } else {
+          left = d_Bm1;
+          --left;
+          return d_1;
+        }
+      } else if (left_is_Bm1) {
+        if constexpr (B == 2) {
+          return d_1;
+        } else {
+          left = right;
+          --left;
+          return d_1;
+        }
+      } else {
+        if constexpr (B == 2) {
+          left = d_Bm1();
+          return d_1;
+        } else {
+          --left;
+          return d_1;
+        }
+      }
+    } else {
+      left = right - left_CBm1;
+      --left;
+      return d_1;
+    }
+  }
+}
+
+/// comentar m_sum_digs_carryin_1
+template <uint64_t B>
+constexpr inline
+dig_t<B> m_sum_digs_carryin_1(dig_t<B>& left,const dig_t<B>& right) noexcept {
   /// SUMA 2 DIGITOS
   /// CARRY C==1
   /// L + D + 1 <  B-1 			=>  L.C_Bm1 > D	+ 1
@@ -1762,12 +1844,11 @@ m_sum_digs_carryin_1(
   }
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+/// comentar m_incr_by_digit
+template <uint64_t B, size_t N>
 constexpr inline
-dig_t<UINT_T, B>
-m_incr_by_digit(reg_digs_t<UINT_T, B, N>& larg,
-                dig_t<UINT_T, B> dig) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
+dig_t<B> m_incr_by_digit(reg_digs_t<B, N>& larg, dig_t<B> dig) noexcept {
+  using dig_t = dig_t<B>;
 
   dig_t carry{0};
   for (size_t i = 0; i < N; ++i) {
@@ -1782,11 +1863,10 @@ m_incr_by_digit(reg_digs_t<UINT_T, B, N>& larg,
   return (carry);
 }
 
-template <typename UINT_T, UINT_T B>
+/// comentar m_subtract_digs_borrowin_0
+template <uint64_t B>
 constexpr inline
-dig_t<UINT_T, B>
-m_subtract_digs_borrowin_0(dig_t<UINT_T, B>& left,
-                           dig_t<UINT_T, B> right) noexcept {
+dig_t<B> m_subtract_digs_borrowin_0(dig_t<B>& left,dig_t<B> right) noexcept {
   /// RESTA 2 DIGITOS
   /// BORROW b==0
   /// L  > D				:
@@ -1813,11 +1893,10 @@ m_subtract_digs_borrowin_0(dig_t<UINT_T, B>& left,
   }
 }
 
-template <typename UINT_T, UINT_T B>
+/// comentar m_subtract_digs_borrowin_1
+template <uint64_t B>
 constexpr inline
-dig_t<UINT_T, B>
-m_subtract_digs_borrowin_1(
-	dig_t<UINT_T, B>& left,dig_t<UINT_T, B> right) noexcept {
+dig_t<B> m_subtract_digs_borrowin_1(dig_t<B>& left,dig_t<B> right) noexcept {
   /// RESTA 2 DIGITOS
   /// BORROW b==1
   /// L == D									=>	L == D
@@ -1841,7 +1920,7 @@ m_subtract_digs_borrowin_1(
   ///																b:=1
   ///S:=L
 
-  using dig_t = dig_t<UINT_T, B>;
+  using dig_t = dig_t<B>;
   constexpr dig_t d_0 = dig_t::dig_0();
   constexpr dig_t d_1 = dig_t::dig_1();
   constexpr dig_t d_Bm1 = dig_t::dig_Bm1();
@@ -1886,11 +1965,11 @@ m_subtract_digs_borrowin_1(
   }
 }
 
-template <typename UINT_T, UINT_T B, size_t L>
+/// comentar m_decr_by_digit
+template <uint64_t B, size_t L>
 constexpr inline
-dig_t<UINT_T, B>
-m_decr_by_digit(reg_digs_t<UINT_T, B, L>& left, dig_t<UINT_T, B> dig) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
+dig_t<B> m_decr_by_digit(reg_digs_t<B, L>& left, dig_t<B> dig) noexcept {
+  using dig_t = dig_t<B>;
   constexpr dig_t d_0 = dig_t::dig_0();
   constexpr dig_t d_1 = dig_t::dig_1();
 
@@ -1907,87 +1986,11 @@ m_decr_by_digit(reg_digs_t<UINT_T, B, L>& left, dig_t<UINT_T, B> dig) noexcept {
   return borrow;
 }
 
-template <typename UINT_T, UINT_T B>
+/// comentar m_sum
+template <uint64_t B, size_t N>
 constexpr inline
-dig_t<UINT_T, B>
-m_sum_digs_carryin_0(dig_t<UINT_T, B>& left,
-                     const dig_t<UINT_T, B>& right) noexcept {
-  /// SUMA 2 DIGITOS
-  /// CARRY C==0
-  /// L + D <  B-1 					=>  L.C_Bm1 > D
-  /// :
-  ///														C:=0
-  ///S:=L+D
-  /// L == B-1	&& D == B-1	=>	L+D == 2B-2  == (B-1)-1
-  /// :
-  ///														C:=1
-  ///S:=(B-1)-1
-  /// L == B-1	&& D != B-1	=>	L+D == B-1+D == B + (D-1)
-  /// :
-  ///														C:=1
-  ///S:=D-1
-  /// D == B-1	&& L != B-1	=>	L+D == B-1+L == B + (L-1)
-  /// :
-  ///														C:=1
-  ///S:=L-1
-  /// L + D >= B-1 					=>	(L.C_Bm1+1-D).C_B =mod_B= L+D
-  /// :
-  ///														C:=1
-  ///S:=(L.C_Bm1-D).C_Bm1
-
-  using dig_t = dig_t<UINT_T, B>;
-  constexpr dig_t d_0 = dig_t::dig_0();
-  constexpr dig_t d_1 = dig_t::dig_1();
-  constexpr dig_t d_Bm1 = dig_t::dig_Bm1();
-
-  const dig_t left_CBm1{left.C_Bm1()};
-  const bool left_is_Bm1{left.is_Bm1()};
-  const bool right_is_Bm1{right.is_Bm1()};
-  if (left_CBm1 >= right) {
-    left += right;
-    return d_0;
-  } else {
-    if (left_is_Bm1 || right_is_Bm1) {
-      if (left_is_Bm1 && right_is_Bm1) {
-        if constexpr (B == 2) {
-          left = d_0;
-          return d_1;
-        } else {
-          left = d_Bm1;
-          --left;
-          return d_1;
-        }
-      } else if (left_is_Bm1) {
-        if constexpr (B == 2) {
-          return d_1;
-        } else {
-          left = right;
-          --left;
-          return d_1;
-        }
-      } else {
-        if constexpr (B == 2) {
-          left = d_Bm1();
-          return d_1;
-        } else {
-          --left;
-          return d_1;
-        }
-      }
-    } else {
-      left = right - left_CBm1;
-      --left;
-      return d_1;
-    }
-  }
-}
-
-template <typename UINT_T, UINT_T B, size_t N>
-constexpr inline
-dig_t<UINT_T, B>
-m_sum(reg_digs_t<UINT_T, B, N>& larg,
-      const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
+dig_t<B> m_sum(reg_digs_t<B, N>& larg, const reg_digs_t<B, N>& rarg) noexcept {
+  using dig_t = dig_t<B>;
   constexpr dig_t d_0 = dig_t::dig_0();
 
   dig_t carry{d_0};
@@ -2002,13 +2005,12 @@ m_sum(reg_digs_t<UINT_T, B, N>& larg,
   return carry;
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+template <uint64_t B, size_t N>
 constexpr inline
-std::tuple<reg_digs_t<UINT_T, B, N>, dig_t<UINT_T, B>>
-sum(const reg_digs_t<UINT_T, B, N>& larg,
-    const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
-  using reg_digs_t = reg_digs_t<UINT_T, B, N>;
+std::tuple<reg_digs_t<B,N>,dig_t<B>>
+sum(const reg_digs_t<B,N>& larg,const reg_digs_t<B,N>& rarg) noexcept {
+  using dig_t = dig_t<B>;
+  using reg_digs_t = reg_digs_t<B, N>;
   constexpr dig_t d_0 = dig_t::dig_0();
 
   reg_digs_t ret{larg};
@@ -2024,12 +2026,14 @@ sum(const reg_digs_t<UINT_T, B, N>& larg,
   return std::tuple{ret, carry};
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+/// comentar m_subtract
+template <uint64_t B, size_t N>
 constexpr inline
-dig_t<UINT_T, B>
-m_subtract(reg_digs_t<UINT_T, B, N>& larg,
-           const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
+dig_t<B> m_subtract(
+	reg_digs_t<B,N>& larg,
+	const reg_digs_t<B,N>& rarg
+  ) noexcept {
+  using dig_t = dig_t<B>;
   constexpr dig_t d_0 = dig_t::dig_0();
 
   dig_t borrow{d_0};
@@ -2043,13 +2047,13 @@ m_subtract(reg_digs_t<UINT_T, B, N>& larg,
   return borrow;
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+/// comentar subtract
+template <uint64_t B, size_t N>
 constexpr inline
-std::tuple<reg_digs_t<UINT_T, B, N>, dig_t<UINT_T, B>>
-subtract(const reg_digs_t<UINT_T, B, N>& larg,
-         const reg_digs_t<UINT_T, B, N>& rarg) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
-  using reg_digs_t = reg_digs_t<UINT_T, B, N>;
+std::tuple<reg_digs_t<B, N>, dig_t<B>>
+subtract(const reg_digs_t<B, N>& larg, const reg_digs_t<B, N>& rarg) noexcept {
+  using dig_t = dig_t<B>;
+  using reg_digs_t = reg_digs_t<B, N>;
   constexpr dig_t d_0 = dig_t::dig_0();
 
   dig_t borrow{d_0};
@@ -2066,20 +2070,20 @@ subtract(const reg_digs_t<UINT_T, B, N>& larg,
 
 /// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
 /// BEGIN
-template <typename UINT_T, UINT_T B, size_t N>
-  requires(N > 1)
+
+// comentar aprox_units_divB
+template <uint64_t B, size_t N>
+  requires((N > 1)&&(B > 1))
 constexpr inline
-  reg_digs_t<UINT_T, B, N> aprox_units_divB(
-    const reg_digs_t<UINT_T, B, N>& arg
-  ) noexcept
+reg_digs_t<B, N> aprox_units_divB(const reg_digs_t<B, N>& arg) noexcept
 ///< PRECONDITIONS : ARG != 0 AND ARG != 1 >
 {
   /// CASO EN QUE LA LONGITUD PERMANECE
   ///  999 		; 998 	; 997 	; 996
   ///  099,9 	; 099,8 ; 099,7 ; 099,6
   ///  100		; 100		;	100		;	100
-  using dig_t = dig_t<UINT_T, B>;
-  reg_digs_t<UINT_T, B, N> cparg{arg};
+  using dig_t = dig_t<B>;
+  reg_digs_t<B, N> cparg{arg};
   if ((cparg >> 1).is_0()) {
     return cparg;
   } else if ((cparg[0] <= dig_t{B / 2}) || (cparg.is_any_B_pow())) {
@@ -2107,29 +2111,28 @@ constexpr inline
   ///< POSTCONDICION RET[N-1] == DIG_1() => RET[N-2,0] == REGD_N_0()
 
 ///< HAY QUE VER SI ES POTENCIA DE B : is_any_B_pow
-template <typename UINT_T, UINT_T B, size_t N, size_t n>
+template <uint64_t B, size_t N, size_t n>
   requires((n > 0) && (n < N) && (N > 1)) /// N == SIZE_FROM n == SIZE_TO
 constexpr inline
-  reg_digs_t<UINT_T, B, N> aprox_units_divB_n(
-    const reg_digs_t<UINT_T, B, N>& arg
-  ) noexcept {
+reg_digs_t<B, N> aprox_units_divB_n(const reg_digs_t<B, N>& arg) noexcept {
   if constexpr (n == N - 1) {
-    return aprox_units_divB<UINT_T, B, N>(arg);
+    return aprox_units_divB<B, N>(arg);
   } else {
-    reg_digs_t<UINT_T, B, N> cparg{arg}; // n = N-x => x = N-n
+    reg_digs_t<B, N> cparg{arg}; // n = N-x => x = N-n
     for (size_t ix{0}; ix < N - n; ++ix) {
-      cparg = aprox_units_divB<UINT_T, B, N>(cparg);
+      cparg = aprox_units_divB<B, N>(cparg);
     }
     return cparg;
   }
 }
 
-template <typename UINT_T, UINT_T B>
+// comentar m_mult
+template <uint64_t B>
 constexpr inline
-dig_t<UINT_T, B>
-m_mult(dig_t<UINT_T, B>& left, dig_t<UINT_T, B> right) noexcept {
+dig_t<B> m_mult(dig_t<B>& left, dig_t<B> right) noexcept {
   using namespace type_traits;
-  using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+  using UINT_T = dig_t<B>::UINT_T;
+  using SIG_UINT_T = dig_t<B>::SIG_UINT_T;
   constexpr UINT_T LIMIT{sqrt_max<UINT_T>()};
   constexpr bool BASE_IS_BOTTOM_LIMIT{B < LIMIT};
   using ELEC_UINT_T =
@@ -2147,22 +2150,24 @@ m_mult(dig_t<UINT_T, B>& left, dig_t<UINT_T, B> right) noexcept {
   const UINT_T carry{mult / Base};
   /// this narrowing of integer types is correct
   const UINT_T result{mult % Base};
-  left = dig_t<UINT_T, B>(result);
+  left = dig_t<B>(result);
   return carry;
 }
 
-template <typename UINT_T, UINT_T B>
+// comentar mult
+template <uint64_t B>
 constexpr inline
-std::tuple<dig_t<UINT_T, B>, dig_t<UINT_T, B>>
-mult(dig_t<UINT_T, B> left, dig_t<UINT_T, B> right) noexcept {
+std::tuple<dig_t<B>,dig_t<B>>
+mult(dig_t<B> left, dig_t<B> right) noexcept {
   using namespace type_traits;
-  using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+  using UINT_T = dig_t<B>::UINT_T;
+  using SIG_UINT_T = dig_t<B>::SIG_UINT_T;
   constexpr UINT_T LIMIT{sqrt_max<UINT_T>()};
   constexpr bool BASE_IS_BOTTOM_LIMIT{B < LIMIT};
-  using ELEC_UINT_T = std::conditional_t<BASE_IS_BOTTOM_LIMIT, /// CONDITION
-                                         UINT_T,    /// IF CONDITION==TRUE THEN
-                                         SIG_UINT_T /// ELSE THEN
-                                         >;
+  using ELEC_UINT_T = std::conditional_t<BASE_IS_BOTTOM_LIMIT,/// CONDITION
+                                           UINT_T,   /// IF CONDITION==TRUE THEN
+                                           SIG_UINT_T/// ELSE THEN
+                                        >;
   constexpr ELEC_UINT_T Base{B};
   const ELEC_UINT_T left_opndo{left()};
   const ELEC_UINT_T right_opndo{right()};
@@ -2176,22 +2181,21 @@ mult(dig_t<UINT_T, B> left, dig_t<UINT_T, B> right) noexcept {
   return std::make_tuple(dig_t{result}, dig_t{carry});
 }
 
-template <typename UINT_T, UINT_T B>
+// comentar m_mult_with_carryin_dig
+template <uint64_t B>
 constexpr inline
-  dig_t<UINT_T, B>
-  m_mult_with_carryin_dig(
-    dig_t<UINT_T, B>& left,
-    dig_t<UINT_T, B> right,
-    dig_t<UINT_T, B> carryin
+dig_t<B> m_mult_with_carryin_dig(
+	dig_t<B>& left,dig_t<B> right,dig_t<B> carryin
   ) noexcept {
   using namespace type_traits;
-  using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+  using UINT_T = dig_t<B>::UINT_T;
+  using SIG_UINT_T = dig_t<B>::SIG_UINT_T;
   constexpr UINT_T LIMIT{sqrt_max<UINT_T>()};
   constexpr bool BASE_IS_BOTTOM_LIMIT{B < LIMIT};
-  using ELEC_UINT_T = std::conditional_t<BASE_IS_BOTTOM_LIMIT, /// CONDITION
-                                         UINT_T,    /// IF CONDITION==TRUE THEN
-                                         SIG_UINT_T /// ELSE THEN
-                                         >;
+  using ELEC_UINT_T = std::conditional_t<BASE_IS_BOTTOM_LIMIT,/// CONDITION
+                                           UINT_T,   /// IF CONDITION==TRUE THEN
+                                           SIG_UINT_T/// ELSE THEN
+                                        >;
   constexpr ELEC_UINT_T Base{B};
   const ELEC_UINT_T left_opndo{left()};
   const ELEC_UINT_T right_opndo{right()};
@@ -2208,24 +2212,23 @@ constexpr inline
   return carryout;
 }
 
-template <typename UINT_T, UINT_T B>
+// comentar mult_with_carryin_dig
+template <uint64_t B>
 constexpr inline
-  std::tuple<dig_t<UINT_T, B>, dig_t<UINT_T, B>>
-  mult_with_carryin_dig(
-    dig_t<UINT_T, B> left,
-    dig_t<UINT_T, B> right,
-    dig_t<UINT_T, B> carryin
+std::tuple<dig_t<B>,dig_t<B>> mult_with_carryin_dig(
+    dig_t<B> left, dig_t<B> right, dig_t<B> carryin
   ) noexcept {
   using namespace type_traits;
-  using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
+  using UINT_T = dig_t<B>::UINT_T;
+  using SIG_UINT_T = dig_t<B>::SIG_UINT_T;
   constexpr UINT_T LIMIT{sqrt_max<UINT_T>()};
   constexpr bool BASE_IS_BOTTOM_LIMIT{B < LIMIT};
   using ELEC_UINT_T =
-      std::conditional_t<
-          BASE_IS_BOTTOM_LIMIT, /// CONDITION
-              UINT_T,           /// IF TRUE THEN
-              SIG_UINT_T        /// ELSE THEN
-      >;
+    std::conditional_t<
+      BASE_IS_BOTTOM_LIMIT, /// CONDITION
+        UINT_T,           /// IF TRUE THEN
+        SIG_UINT_T        /// ELSE THEN
+    >;
   constexpr ELEC_UINT_T Base{B};
   const ELEC_UINT_T left_opndo{left()};
   const ELEC_UINT_T right_opndo{right()};
@@ -2239,14 +2242,14 @@ constexpr inline
   /// this narrowing of integer types is correct
   const UINT_T result{static_cast<UINT_T>(mult_w_carry % Base)};
 
-  return std::make_tuple(dig_t<UINT_T, B>(result), dig_t<UINT_T, B>(carryout));
+  return std::make_tuple(dig_t<B>(result), dig_t<B>(carryout));
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+// comentar m_mult
+template <uint64_t B, size_t N>
 constexpr inline
-dig_t<UINT_T, B>
-m_mult(reg_digs_t<UINT_T, B, N>& left, dig_t<UINT_T, B> right) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
+dig_t<B> m_mult(reg_digs_t<B, N>& left, dig_t<B> right) noexcept {
+  using dig_t = dig_t<B>;
   using namespace type_traits;
 
   dig_t old_carry{0};
@@ -2257,13 +2260,13 @@ m_mult(reg_digs_t<UINT_T, B, N>& left, dig_t<UINT_T, B> right) noexcept {
   return old_carry;
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+// comentar mult
+template <uint64_t B, size_t N>
 constexpr inline
-  std::tuple<reg_digs_t<UINT_T, B, N>, dig_t<UINT_T, B>>
-  mult(const reg_digs_t<UINT_T, B, N>& left,
-       dig_t<UINT_T, B> right) noexcept {
-  using dig_t = dig_t<UINT_T, B>;
-  using reg_digs_t = reg_digs_t<UINT_T, B, N>;
+std::tuple<reg_digs_t<B, N>,dig_t<B>>
+mult(const reg_digs_t<B, N>& left,dig_t<B> right) noexcept {
+  using dig_t = dig_t<B>;
+  using reg_digs_t = reg_digs_t<B, N>;
   using namespace type_traits;
   std::tuple<reg_digs_t, dig_t> ret{};
 
@@ -2277,12 +2280,12 @@ constexpr inline
   return ret;
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+// comentar m_mult
+template <uint64_t B, size_t N>
 constexpr inline
-  reg_digs_t<UINT_T, B, N>
-  m_mult(reg_digs_t<UINT_T, B, N>& left,
-         const reg_digs_t<UINT_T, B, N>& right) noexcept {
-  using reg2_digs_t = reg_digs_t<UINT_T, B, 2 * N>;
+reg_digs_t<B, N>
+ m_mult(reg_digs_t<B, N>& left,const reg_digs_t<B, N>& right) noexcept {
+  using reg2_digs_t = reg_digs_t<B, 2 * N>;
 
   reg2_digs_t right_sup{right};
   reg2_digs_t accumulator{};
@@ -2296,16 +2299,13 @@ constexpr inline
   return (accumulator.template subregister<N, 2 * N>());
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+// comentar mult
+template <uint64_t B, size_t N>
 constexpr inline
-  std::tuple<
-      reg_digs_t<UINT_T, B, N>,
-      reg_digs_t<UINT_T, B, N>
-  >
-  mult(const reg_digs_t<UINT_T, B, N>& left,
-       const reg_digs_t<UINT_T, B, N>& right) noexcept {
-  using reg2_digs_t = reg_digs_t<UINT_T, B, 2 * N>;
-  using reg_digs_t = reg_digs_t<UINT_T, B, N>;
+std::tuple<reg_digs_t<B, N>,reg_digs_t<B, N>>
+mult(const reg_digs_t<B, N>& left,const reg_digs_t<B, N>& right) noexcept {
+  using reg2_digs_t = reg_digs_t<B, 2 * N>;
+  using reg_digs_t = reg_digs_t<B, N>;
   std::tuple<reg_digs_t, reg_digs_t> ret{};
 
   reg2_digs_t right_sup{right};
@@ -2321,10 +2321,10 @@ constexpr inline
   return ret;
 }
 
-template <typename UINT_T, UINT_T B, std::size_t L>
+// comentar num_right_zeros
+template <uint64_t B, std::size_t L>
 constexpr inline
-std::size_t
-num_right_zeros(const reg_digs_t<UINT_T, B, L>& arg) noexcept {
+std::size_t num_right_zeros(const reg_digs_t<B, L>& arg) noexcept {
   std::size_t num{0};
   while (arg[num].is_0()) {
     ++num;
@@ -2332,7 +2332,7 @@ num_right_zeros(const reg_digs_t<UINT_T, B, L>& arg) noexcept {
   return num;
 }
 
-template <typename UINT_T, UINT_T B, size_t N>
+template <uint64_t B, size_t N>
 constexpr inline
     /// std::array<SIG_UINT_T,2>{}[0] == COC
     /// std::array<SIG_UINT_T,2>{}[1] == REM
@@ -2345,16 +2345,15 @@ constexpr inline
     ///		PROCURAR EN DIVISION QUE N NOT IN {0,1}
     /// 		TAL QUE
     /// 	(DSOR*N <= REM) Y (DSOR*(N+1)>REM)
-    dig_t<UINT_T, B>
-    aprox_coc_dig_rem_div_dsor(
-      const reg_digs_t<UINT_T, B, N>& rem,
-      const reg_digs_t<UINT_T, B, N>& dsor
-    ) noexcept {
+dig_t<B>
+aprox_coc_dig_rem_div_dsor(
+	const reg_digs_t<B, N>& rem , const reg_digs_t<B, N>& dsor
+  ) noexcept {
 
   using namespace type_traits;
-  using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
-  using dig_t = dig_t<UINT_T, B>;
-  // using reg_digs_t = reg_digs_t<UINT_T,B,N>;
+  using dig_t = dig_t<B>;
+  using UINT_T = dig_t::UINT_T;
+  using SIG_UINT_T = dig_t::SIG_UINT_T;
 
   /// BEGIN : CONSTANTES PARA EL CONTROL DE LA REDUCCION POR APROXIMACION
   const size_t dsor_msb(dsor.index_of_MSDig());
@@ -2367,8 +2366,8 @@ constexpr inline
   /// END   : VARIABLES COPIA SOBRE LAS QUE SE HACE LA REDUCCION
 
   /// BEGIN : REDUCCION POR APROXIMACION DE REM_APROX Y DSOR_APROX
-  ///					CUIDADOS DE QUE LAS REDUCCIONES SE HAGAN EN AMBAS PARTES POR
-  ///IGUAL
+  ///		  CUIDADOS DE QUE LAS REDUCCIONES SE HAGAN EN AMBAS PARTES POR
+  ///         IGUAL
   size_t ix = 0;
   while (ix < std::min(dsor_msb, rem_msb)) {
     if (rem_aprox == dsor_aprox)
@@ -2399,7 +2398,6 @@ constexpr inline
       /// FIN TEMPRANO
       break;
     }
-
     ++ix;
   }
   /// END   : REDUCCION POR APROXIMACION DE REM_APROX Y DSOR_APROX
@@ -2425,7 +2423,7 @@ constexpr inline
 ///< PARA LA DIVISION Y DEDUCCION DEL NUEVO RESTO
 ///< CALC_COC_DIG_REM_DIV_DSOR CALCULA DIGITO COCIENTE DE
 ///< REMAINDER DIVIDIDO POR DIVISOR
-template <typename UINT_T, UINT_T B, size_t N>
+template <uint64_t B, size_t N>
   requires(N > 0)
 constexpr inline
     /// std::array<SIG_UINT_T,2>{}[0] == COC
@@ -2439,20 +2437,13 @@ constexpr inline
     ///		PROCURAR EN DIVISION QUE N NOT IN {0,1}
     /// 		TAL QUE
     /// 	(DSOR*N <= REM) Y (DSOR*(N+1)>REM)
-    std::tuple<
-        dig_t<UINT_T, B>,
-        reg_digs_t<UINT_T,
-                   B,
-                   N>
-    >
-    calc_coc_dig_rem_div_dsor(
-      const reg_digs_t<UINT_T, B, N>& rem,
-      const reg_digs_t<UINT_T, B, N>& dsor
-    ) noexcept {
+std::tuple<dig_t<B>,reg_digs_t<B,N>>
+calc_coc_dig_rem_div_dsor(
+	const reg_digs_t<B,N>& rem , const reg_digs_t<B,N>& dsor
+  ) noexcept {
 
-  using namespace type_traits;
-  using dig_t = dig_t<UINT_T, B>;
-  using reg_digs_t = reg_digs_t<UINT_T, B, N>;
+  using dig_t = dig_t<B>;
+  using reg_digs_t = reg_digs_t<B, N>;
 
   reg_digs_t rem_aprox{rem};
   if (rem < dsor) {
@@ -2487,25 +2478,24 @@ constexpr inline
 }
 
 /// FUNCIONES DE IMPLEMENTACION DE LA DIVISION ENTRE DOS REGISTROS DE DIGITOS
-template <typename UINT_T, UINT_T B, size_t N, size_t M>
+template <uint64_t B, size_t N, size_t M>
   requires(N > 0) && (M > 0)
 constexpr inline
     /// (array[0] == cociente , array[1] == resto)
-    std::tuple<
-      reg_digs_t<UINT_T,B,std::max(N, M)>,
-      reg_digs_t<UINT_T,B,std::max(N, M)>,
-      bool
-    > fediv(
-        const reg_digs_t<UINT_T, B, N>& larg, /// dndo
-        const reg_digs_t<UINT_T, B, M>& rarg  /// dsor
+std::tuple<reg_digs_t<B,std::max(N, M)>,reg_digs_t<B,std::max(N, M)>,bool>
+    fediv(
+        const reg_digs_t<B, N>& larg, /// dndo
+        const reg_digs_t<B, M>& rarg  /// dsor
     ) noexcept {
 
   constexpr size_t MaxParam = std::max(N, M);
-  using dig_t = dig_t<UINT_T, B>;
-  using base_t = reg_digs_t<UINT_T, B, MaxParam>;
+  using dig_t = dig_t<B>;
+  using UINT_T = dig_t::UINT_T;
+  using SIG_UINT_T = dig_t::SIG_UINT_T;
+  using base_t = reg_digs_t<B, MaxParam>;
   using base_t::regd_0;
   using base_t::regd_1;
-  using SIG_UINT_T = type_traits::sig_UInt_for_UInt_t<UINT_T>;
+
 
   using ret_type = std::tuple<base_t,  base_t, bool>;
   ///                         cociente resto   error div 0
@@ -2520,7 +2510,8 @@ constexpr inline
 
   const int64_t dist_dndo_dsor{(dndo_MSDig >= dsor_MSDig)
                                    ? dndo_MSDig - dsor_MSDig
-                                   : dsor_MSDig - dndo_MSDig};
+                                   : dsor_MSDig - dndo_MSDig
+							  };
 
   if (dsor.is_0()) {
     return ret_type{base_t{},base_t{},true};
@@ -2603,10 +2594,9 @@ constexpr inline
 }
 
 /// SOBRECARGA DE ISTREAM Y OSTREAM CON LOS OPERADORES DE DESPLAZAMEINTO
-template <typename Int_Type, Int_Type Base, size_t Length>
-  requires(type_traits::suitable_base<Int_Type, Base>() && (Length > 0))
-std::istream& operator>>(std::istream& is,
-                         reg_digs_t<Int_Type, Base, Length>& arg) {
+template <uint64_t Base, size_t Length>
+  requires((Base > 1) && (Length > 0))
+std::istream& operator>>(std::istream& is , reg_digs_t<Base, Length>& arg) {
   enum estado_e {
     e0ini,
     e1r,
@@ -2626,16 +2616,21 @@ std::istream& operator>>(std::istream& is,
   };
   /// STRING RECOGIDO DESDE LA ENTRADA ESTANDAR CIN
   constexpr size_t longitud_cadena{
-      ((Length + 1) * static_cast<size_t>(std::ceil(
-                          (std::log2(static_cast<long double>(Base)) + 1)))) +
-      16};
+    (
+	  (Length + 1) *
+	  static_cast<size_t>(
+	    std::ceil((std::log2(static_cast<long double>(Base))+1))
+	  )
+	)+16
+  };
   std::string sds{};
   sds.resize(longitud_cadena);
   sds.assign(longitud_cadena, '\0');
   /// TIPOS A SER UTILIZADOS EN LA FUNCIÓN: NOMBRE DE TIPOS CORTOS
-  using inttype = typename type_traits::sig_UInt_for_UInt_t<Int_Type>;
-  using dig_t = dig_t<Int_Type, Base>;
-  using reg_digs_t = reg_digs_t<Int_Type, Base, Length>;
+  using Int_Type = typename dig_t<Base>::UINT_T;
+  using inttype = typename dig_t<Base>::SIG_UINT_T;
+  using dig_t = dig_t<Base>;
+  using reg_digs_t = reg_digs_t<Base, Length>;
   /// INDICE QUE RECORRE EL STRING RECOGIDO DE ENTRADA
   size_t indice{0};
   /// VARIABLES PARA ACCIONES EN LOS ESTADOS
@@ -2832,19 +2827,9 @@ std::istream& operator>>(std::istream& is,
   return (is);
 }
 
-template <typename Int_Type, Int_Type Base, size_t Long>
-  requires(type_traits::suitable_base<Int_Type, Base>())
-std::ostream& operator<<(std::ostream& os,
-                         const reg_digs_t<Int_Type, Base, Long>& arg) {
-  using inttype = ullint_t;
-  os << "reg_dig#";
-  for (int32_t ix{Long - 1}; ix > 0; --ix) {
-    os << static_cast<inttype>(arg[ix]());
-    os << ':';
-  }
-  os << static_cast<inttype>(arg[0]());
-  os << "#B";
-  os << static_cast<inttype>(Base);
+template <uint64_t Base, size_t Long>
+std::ostream& operator<<(std::ostream& os , const reg_digs_t<Base, Long>& arg) {
+  os << arg.to_string();
   return (os);
 }
 

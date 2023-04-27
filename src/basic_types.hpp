@@ -1,25 +1,4 @@
-// *** ADDED BY HEADER FIXUP ***
-#include "istream"
-// *** END ***
 
-/*
-  A list of valid replacements is as follows:
-
-  Use:					                    Instead of:
-  <sstream>, basic_stringbuf	   	        <strstream>, strstreambuf
-  <sstream>, basic_istringstream	        <strstream>, istrstream
-  <sstream>, basic_ostringstream	        <strstream>, ostrstream
-  <sstream>, basic_stringstream		        <strstream>, strstream
-  <unordered_set>, unordered_set     	    <ext/hash_set>, hash_set
-  <unordered_set>, unordered_multiset	    <ext/hash_set>, hash_multiset
-  <unordered_map>, unordered_map	        <ext/hash_map>, hash_map
-  <unordered_map>, unordered_multimap	    <ext/hash_map>, hash_multimap
-  <functional>, bind			            <functional>, binder1st
-  <functional>, bind			            <functional>, binder2nd
-  <functional>, bind			            <functional>, bind1st
-  <functional>, bind			            <functional>, bind2nd
-  <memory>, unique_ptr       		        <memory>, auto_ptr
-*/
 
 #ifndef BASIC_TYPES_HPP_INDLUDED
 #define BASIC_TYPES_HPP_INDLUDED
@@ -34,9 +13,9 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
+#include <istream>
 #include <sstream>
 #include <string>
-// #include <fmt/format.h>
 
 #include <array>
 #include <list>
@@ -53,78 +32,83 @@
 
 namespace NumRepr {
 /// NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS
-using chint_t = char;
-using schint_t = signed char;
-using ssint_t = signed short int;
-using sint_t = signed int;
-using slint_t = signed long int;
-using sllint_t = signed long long int;
-using uchint_t = unsigned char;
-using usint_t = unsigned short int;
-using uint_t = unsigned int;
-using ulint_t = unsigned long int;
-using ullint_t = unsigned long long int;
-using uint128_t = __uint128_t;
-using sint128_t = __int128_t;
-using size_t = std::size_t;
-using sint8_t = std::int8_t;
-using sint16_t = std::int16_t;
-using sint32_t = std::int32_t;
-using sint64_t = std::int64_t;
-using int8_t = std::int8_t;
-using int16_t = std::int16_t;
-using int32_t = std::int32_t;
-using int64_t = std::int64_t;
-using fast8_t = std::int_fast8_t;
-using fast16_t = std::int_fast16_t;
-using fast32_t = std::int_fast32_t;
-using fast64_t = std::int_fast64_t;
-using least8_t = std::int_least8_t;
-using least16_t = std::int_least16_t;
-using least32_t = std::int_least32_t;
-using least64_t = std::int_least64_t;
-// using		ssize_t 	= std::ssize_t;
-using uint8_t = std::uint8_t;
-using uint16_t = std::uint16_t;
-using uint32_t = std::uint32_t;
-using uint64_t = std::uint64_t;
-using ufast8_t = std::uint_fast8_t;
-using ufast16_t = std::uint_fast16_t;
-using ufast32_t = std::uint_fast32_t;
-using ufast64_t = std::uint_fast64_t;
-using uleast8_t = std::uint_least8_t;
-using uleast16_t = std::uint_least16_t;
-using uleast32_t = std::uint_least32_t;
-using uleast64_t = std::uint_least64_t;
-// using		uchint8		= std::char8_t;
-// using		uchint16	= std::char16_t;
-// using		uchint32	= std::char32_t;
-using intmax_t = std::intmax_t;
-using uintmax_t = std::uintmax_t;
+using chint_t 		= char;
+using schint_t 		= signed char;
+using ssint_t 		= signed short int;
+using sint_t 		= signed int;
+using slint_t 		= signed long int;
+using sllint_t 		= signed long long int;
+using uchint_t 		= unsigned char;
+using usint_t 		= unsigned short int;
+using uint_t 		= unsigned int;
+using ulint_t 		= unsigned long int;
+using ullint_t 		= unsigned long long int;
+using uint128_t 	= __uint128_t; /// ROMPE LA PORTABILIDAD
+using sint128_t 	= __int128_t;  /// ROMPE LA PORTABILIDAD
+using size_t 		= std::size_t;
+using sint8_t 		= std::int8_t;
+using sint16_t 		= std::int16_t;
+using sint32_t 		= std::int32_t;
+using sint64_t 		= std::int64_t;
+using int8_t 		= std::int8_t;
+using int16_t 		= std::int16_t;
+using int32_t 		= std::int32_t;
+using int64_t 		= std::int64_t;
+using fast8_t 		= std::int_fast8_t;
+using fast16_t 		= std::int_fast16_t;
+using fast32_t 		= std::int_fast32_t;
+using fast64_t 		= std::int_fast64_t;
+using least8_t 		= std::int_least8_t;
+using least16_t 	= std::int_least16_t;
+using least32_t 	= std::int_least32_t;
+using least64_t 	= std::int_least64_t;
+using ssize_t 		= std::ssize_t;
+using uint8_t 		= std::uint8_t;
+using uint16_t 		= std::uint16_t;
+using uint32_t 		= std::uint32_t;
+using uint64_t 		= std::uint64_t;
+using ufast8_t 		= std::uint_fast8_t;
+using ufast16_t 	= std::uint_fast16_t;
+using ufast32_t 	= std::uint_fast32_t;
+using ufast64_t 	= std::uint_fast64_t;
+using uleast8_t 	= std::uint_least8_t;
+using uleast16_t 	= std::uint_least16_t;
+using uleast32_t 	= std::uint_least32_t;
+using uleast64_t 	= std::uint_least64_t;
+using intmax_t 		= std::intmax_t;
+using uintmax_t 	= std::uintmax_t;
 
 namespace type_traits {
+
 /// TYPE_TRAITS AND CONCEPTS
+
+/// CONCEPT
 template <typename IntT>
 concept arith_integral_c =
     std::is_arithmetic_v<IntT> && std::is_integral_v<IntT>;
 
+/// CONCEPT
 template <typename NatIntT>
 concept arith_natural_c =
     std::is_arithmetic_v<NatIntT> && std::is_unsigned_v<NatIntT> &&
     std::is_integral_v<NatIntT>;
 
+/// CONCEPT
 template <typename CharT>
 concept char_type_c =
     std::is_same_v<CharT, char> || std::is_same_v<CharT, signed char> ||
     std::is_same_v<CharT, unsigned char> || std::is_same_v<CharT, wchar_t>;
 
+/// CONSTANT
 template <char_type_c CharT> constexpr inline CharT nullchar{CharT('\0')};
 
+/// BORRAR C_STR
 char *clear_ccad(char *, usint_t);
 
 template <template <uchint_t B> class T, uchint_t B>
-inline constexpr const char *devCadenaC(T<B> arg,
-                                        std::size_t long_ccad = 64) noexcept {
+inline constexpr const char *devCadenaC(
+	T<B> arg,
+    size_t long_ccad = 64) noexcept {
   char *c_cad = new char[long_ccad];
   c_cad = clear_ccad(c_cad, long_ccad);
   std::stringstream pre_cad;
@@ -140,14 +124,16 @@ inline constexpr const char *devCadenaC(T<B> arg,
   return c_cad;
 }
 
-inline constexpr char *clear_ccad(char *cad_c,
-                                  std::size_t long_de_cad_c) noexcept {
+inline constexpr char *clear_ccad(
+	char *cad_c,
+    size_t long_de_cad_c) noexcept {
   for (size_t I = 0; I < long_de_cad_c; ++I)
     cad_c[I] = nullchar<char>;
   return cad_c;
 }
 
-inline constexpr unsigned long long atoull(char *text) noexcept {
+inline constexpr
+ullint atoull(char *text) noexcept {
   int i = 0;
   while (*text) {
     i = (i << 3) + (i << 1) + (*text - '0');
@@ -156,21 +142,14 @@ inline constexpr unsigned long long atoull(char *text) noexcept {
   return (i);
 }
 
-///            "CLASS"              TYPE                   TYPE DEFINITION
-/// template<typename              int_type,int_type base> class
-/// digito<int_type,base> {};
-///            CONCEPT              TYPE                   TYPE DEFINITION
-/// template<allowable_base_type_c int_type,int_type base> class
-/// digito<int_type,base> {};
-
 /// METAOPERADOR QUE NOS DA LA ADECUACION DE UN TIPO PARA SER BASE DE UN SISTEMA
-/// DE NUMERACION VALE CUALQUIER TIPO UNSIGNED INTEGRAL QUE NO SEA EL MAYOR
-/// CONSIDERADO AQUI EL MAYOR CONSIDERADO ES UINT128_T
-template <typename UINT_T> // variable on compile time for concept on UINT_T for
-                           // BASE
-                           constexpr bool is_uint_type_for_radix_v =
-                               std::is_unsigned_v<UINT_T> &&
-                               (!std::is_same_v<UINT_T, uint128_t>);
+/// DE NUMERACION. VALE CUALQUIER TIPO UNSIGNED INTEGRAL QUE NO SEA EL MAYOR
+/// CONSIDERADO AQUI. EL MAYOR CONSIDERADO ES UINT128_T
+
+/// CONSTANT BOOL TEMPLATE
+template <typename UINT_T> constexpr bool is_uint_type_for_radix_v =
+    std::is_unsigned_v<UINT_T> && (!std::is_same_v<UINT_T, uint128_t>);
+
 /// CONCEPT FOR UNSIGNED INTEGRAL TYPES VALID FOR THE RADIX
 template <typename UINT_T>
 concept uint_type_for_radix_c = is_uint_type_for_radix_v<UINT_T>;
@@ -178,29 +157,54 @@ concept uint_type_for_radix_c = is_uint_type_for_radix_v<UINT_T>;
 /// METAOPERADOR QUE NOS DA SI UN TIPO INTEGRAL ES UNSIGNED
 /// VALEN LOS QUE VALEN PARA RADIX MAS LOS TIPO MAS GRANDES
 /// POR LO TANTO UINT128_T SE CONSIDERA UN UNSIGNED INTEGRAL TYPE
-template <typename UINT_T> // variable on compile time for concept on UINT_T
+
+/// CONSTANT BOOL VARIABLE ON COMPILE TIME FOR CONCEPT ON UINT_T
+template <typename UINT_T>
 constexpr bool is_unsigned_type_v =
     is_uint_type_for_radix_v<UINT_T> || std::is_same_v<UINT_T, uint128_t>;
+
 /// CONCEPT FOR UNSIGNED INTEGRAL TYPES
 template <typename UINT_T>
 concept unsigned_integral_c = is_unsigned_type_v<UINT_T>;
 
 /// METAOPERADOR QUE NOS DA SI UN TIPO INTEGRAL ES SIGNED
-template <typename SINT_T> // concept on SINT_T
+
+/// CONSTANT BOOL FOR CONCEPT ON SINT_T
+template <typename SINT_T>
 constexpr bool is_signed_type_v =
     std::is_signed_v<SINT_T> || std::is_same_v<SINT_T, sint128_t>;
+
 /// CONCEPT FOR SIGNED INTEGRAL TYPES
 template <typename SINT_T>
 concept signed_integral_c = is_signed_type_v<SINT_T>;
 
+/// KEYWORD TYPENAME
+/// TEMPLATE<TYPENAME T> CLASS NOMBRE_T; /// CLASS : NOMBRE_T<STRING>
+/// Si T es un tipo, entonces se puede sustituir en la plantilla de clase
+/// ------------------------------------------------------------------------------------
+/// CONCEPT STD::UNSIGNED_INTEGRAL
+/// TEMPLATE<STD::UNSIGNED_INTEGRAL T> CLASS NOMBRE_T; /// CLASS : NOMBRE_T<UNSINGED INT>
+/// Si T es un tipo que cumple los requerrimientos de UNSIGNED_INTEGRAL_T, esto es,
+/// T es un tipo integer y unsigned entonces se puede admitir para la plantilla de
+/// clases
+/// -------------------------------------------------------------------------------------
+///       TEMPLATE CLASS           TYPE     NON-TYPE       TRUE CLASS > TYPE DEFINITION
+/// template<typename              int_type,int_type base> class digito<int_type,base>;
+/// TEMPLATE CLASS CONCEPT         TYPE     NON-TYPE       TYPE DEFINITION
+/// template<allowable_base_type_c int_type,int_type base> class digito<int_type,base>;
+
+
 /// METAOPERADOR QUE NOS DA SI UN TIPO ES INTEGRAL
+/// TEMPLATE CONSTANT BOOL (FUNCIÓN QUE ENTRA UN TIPO Y DEVUELVE TRUE/FALSE)
 template <typename INT_TYPE>
 inline constexpr bool is_integral_type_v = std::is_integral_v<INT_TYPE>;
-
+/// CONCEPT DEFINCITION
 template <typename INT_T>
 concept integral_c = is_integral_type_v<INT_T>;
 
 /// METAOPERADORES DE COMPARACION DE CAPACIDAD DE INTEGERS
+/// DADOS DOS TIPOS ME DEVULVE UN TRUE/FALSE
+/// COMO OPERADORES < <= == != >= > PARA TIPOS
 template <typename T, typename S>
 constexpr bool eq_sz_v = (sizeof(T) == sizeof(S));
 template <typename T, typename S>
@@ -226,11 +230,11 @@ template <> struct __sig_UInt_for_UInt_t<ullint_t> {
 template <> struct __sig_UInt_for_UInt_t<ulint_t> {
   template <unsigned_integral_c uint_type>
   static inline constexpr bool uint_type_gt_this_type_v =
-      gt_sz_v<uint_type, ulint_t>;
+    gt_sz_v<uint_type, ulint_t>;
 
   using type = typename std::conditional_t<
-      uint_type_gt_this_type_v<ullint_t>, ullint_t,
-      typename __sig_UInt_for_UInt_t<ullint_t>::type>;
+    uint_type_gt_this_type_v<ullint_t>, ullint_t,
+    typename __sig_UInt_for_UInt_t<ullint_t>::type>;
 };
 
 template <> struct __sig_UInt_for_UInt_t<uint_t> {
@@ -264,6 +268,13 @@ template <> struct __sig_UInt_for_UInt_t<uchint_t> {
 
 } // namespace ugly_details_UInt_for_UInt
 
+/// FUNCIÓN DE DADO UN TIPO ENTERO SIN SIGNO ME DA OTRO TIPO ENTERO SIN SIGNO
+///      DADO      -> DEVUELVE
+///      UINT8_T   -> UNIT16_T
+///      UINT16_T  -> UNIT32_T
+///      UINT32_T  -> UNIT64_T
+///      UINT64_T  -> UNIT128_T
+///      UINT128_T -> VOID
 template <typename UInt_t>
 using sig_UInt_for_UInt_t =
     typename ugly_details_UInt_for_UInt::__sig_UInt_for_UInt_t<UInt_t>::type;
@@ -320,10 +331,16 @@ template <> struct __sig_SInt_for_UInt_t<uchint_t> {
 
 } // namespace ugly_details_sig_SInt_for_UInt
 
+/// FUNCIÓN DE DADO UN TIPO ENTERO SIN SIGNO ME DA OTRO TIPO ENTERO CON SIGNO
+///      DADO      -> DEVUELVE
+///      UINT8_T   -> SNIT16_T
+///      UINT16_T  -> SNIT32_T
+///      UINT32_T  -> SNIT64_T
+///      UINT64_T  -> SNIT128_T
+///      UINT128_T -> VOID
 template <typename UInt_t>
 using sig_SInt_for_UInt_t =
-    typename ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t<
-        UInt_t>::type;
+    typename ugly_details_sig_SInt_for_UInt::__sig_SInt_for_UInt_t<UInt_t>::type;
 
 ///<  METAFUNCION : DA EL SIGUIENTE TIPO NATURAL PARA EL ACTUAL TIPO ENTERO
 ///<  POR ESPECIALIZACION EXPLICITA
@@ -358,6 +375,13 @@ template <> struct __sig_UInt_for_SInt_t<sllint_t> {
 
 } // namespace ugly_details_UInt_for_SInt
 
+/// FUNCIÓN DE DADO UN TIPO ENTERO CON SIGNO ME DA OTRO TIPO ENTERO SIN SIGNO
+///      DADO      -> DEVUELVE
+///      SINT8_T   -> UINT8_T
+///      SINT16_T  -> UINT16_T
+///      SINT32_T  -> UINT32_T
+///      SINT64_T  -> UINT64_T
+///      SINT128_T -> UINT128_T
 template <typename Int_t>
 using sig_UInt_for_SInt_t =
     typename ugly_details_UInt_for_SInt::__sig_UInt_for_SInt_t<Int_t>::type;
@@ -411,13 +435,22 @@ template <> struct __sig_SInt_for_SInt_t<schint_t> {
 
 } // namespace ugly_details_SInt_for_SInt
 
+
+/// FUNCIÓN DE DADO UN TIPO ENTERO CON SIGNO ME DA OTRO TIPO ENTERO CON SIGNO
+///      DADO      -> DEVUELVE
+///      SINT8_T   -> SINT16_T
+///      SINT16_T  -> SINT32_T
+///      SINT32_T  -> SINT64_T
+///      SINT64_T  -> SINT128_T
+///      SINT128_T -> VOID
 template <typename SInt_t>
 using sig_SInt_for_SInt_t =
     typename ugly_details_SInt_for_SInt::__sig_SInt_for_SInt_t<SInt_t>::type;
 
 ///< METAFUNCIONES PARA DAR CON LOS MAXIMOS NUMEROS QUE CABEN EN UN TIPO
 ///< Y SIMILARES
-template <typename UINT_T> consteval UINT_T maxbase() {
+template <typename UINT_T>
+consteval UINT_T maxbase() {
   return (static_cast<UINT_T>(std::numeric_limits<UINT_T>::max()));
 }
 
@@ -469,11 +502,16 @@ template <typename UINT_T, UINT_T B> consteval bool base_leqt_max() {
   return (B <= maxbase<UINT_T>());
 }
 
+/// FUNCIÓN QUE DADO UN TIPO USIGNED INTEGRAL Y UN ENTERO DE ESE TIPO
+/// ES UNA BASE APROPIADA
 template <typename UINT_T, UINT_T B>
 consteval bool suitable_base() { // requires on B
   return (base_geqt_2<UINT_T, B>() && base_leqt_max<UINT_T, B>());
 }
 
+/// FUNCIÓN QUE DADO UN TIPO ENTERO SIN SIGNO ME DA EL ENTERO MEDIO
+/// UINT_A > MIDDLE_MAX => 2*UINT_A NO CABE EN UINT_T
+/// UINT_A < MIDDLE_MAX => 2*UINT_A SI CABE EN UINT_T
 template <typename UINT_T> consteval UINT_T middle_max() {
   using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
   constexpr SIG_UINT_T maximo = maxbase<UINT_T>();
@@ -482,6 +520,9 @@ template <typename UINT_T> consteval UINT_T middle_max() {
   return static_cast<UINT_T>((maximo + uno) / dos);
 }
 
+/// FUNCIÓN QUE DADO UN TIPO ENTERO SIN SIGNO ME DA EL ENTERO MEDIO
+/// UINT_A > SQRT_MAX => UINT_A^2 NO CABE EN UINT_T
+/// UINT_A < SQRT_MAX => UINT_A^2 SI CABE EN UINT_T
 template <typename UINT_T> consteval UINT_T sqrt_max() {
   using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
   constexpr SIG_UINT_T maximo{maxbase<UINT_T>()};
@@ -502,35 +543,25 @@ template <typename T, T Radix> struct UIntTypeForRadix;
 template <integral_c T, T Radix>
   requires(Radix > 1)
 struct UIntTypeForRadix<T, Radix> {
-  static constexpr ullint_t uint_value_0_max =
-      static_cast<ullint_t>(maxbase<uchint_t>());
-  static constexpr ullint_t uint_value_1_max =
-      static_cast<ullint_t>(maxbase<usint_t>());
-  static constexpr ullint_t uint_value_2_max =
-      static_cast<ullint_t>(maxbase<uint_t>());
-  static constexpr ullint_t uint_value_3_max =
-      static_cast<ullint_t>(maxbase<ulint_t>());
-  static constexpr ullint_t uint_value_4_max =
-      static_cast<ullint_t>(maxbase<ullint_t>());
-  static constexpr ullint_t uint_value = static_cast<ullint_t>(Radix);
   using UIntType = std::conditional_t<
-      uint_value <= uint_value_0_max, uchint_t,
-      std::conditional_t<
-          uint_value <= uint_value_1_max, usint_t,
-          std::conditional_t<
-              uint_value <= uint_value_2_max, uint_t,
-              std::conditional_t<
-                  uint_value <= uint_value_3_max, ulint_t,
-                  std::conditional_t<uint_value <= uint_value_4_max, ullint_t,
-                                     uint128_t>>>>>;
+    static_cast<uint64_t>(Radix) <= maxbase<uint8_t>(),
+      uint8_t , std::conditional_t<
+        static_cast<uint64_t>(Radix) <= maxbase<uint16_t>(),
+          uint16_t , std::conditional_t<
+            static_cast<uint64_t>(Radix) <= maxbase<uint32_t>(),
+              uint32_t,
+              uint64_t
+	      >
+	  >
+  >;
 };
 } // namespace ugly_details_for_suitable_type_deduction
+using namespace ugly_details_for_suitable_type_deduction;
 
 ///< DEFINICION PARA LLAMAR A TYPE_TRAITS::UINT_TYPE_FOR_RADIX
 ///< CON SOLO RADIX
 ///< DEVUELVE EL TIPO MAS PEQUENO PARA EL NUMERO SIN SIGNO ENTERO QUE LE
-///< PASAMOS EN TIEMPO DE COMPILACION
-using namespace ugly_details_for_suitable_type_deduction;
+///< PASAMOS EN TIEMPO DE COMPILACION SUME BIEN
 template <ullint_t Radix>
 using TypeFromIntNumber_t =
     typename UIntTypeForRadix<decltype(Radix), Radix>::UIntType;
@@ -568,15 +599,17 @@ struct UIntTypeForRadixContainsMultResult<T, Radix> {
                                      uint128_t>>>>>;
 };
 } // namespace ugly_details_for_greater_suitable_type_deduction
+using namespace ugly_details_for_greater_suitable_type_deduction;
+
 ///< DEFINICION PARA LLAMAR A TYPE_TRAITS::UINT_TYPE_FOR_RADIX_WITH_HOLD_OPS_t
 ///< CON SOLO RADIX
 ///< DEVUELVE EL TIPO MAS PEQUENO PARA EL NUMERO SIN SIGNO ENTERO QUE LE
 ///< PASAMOS EN TIEMPO DE COMPILACION
-using namespace ugly_details_for_greater_suitable_type_deduction;
 template <integral_c IntType, IntType Radix>
 using GreaterTypeFromIntNumber_t =
     typename UIntTypeForRadixContainsMultResult<decltype(Radix),
                                                 Radix>::UIntType;
+
 } // namespace type_traits
 } // namespace NumRepr
 
