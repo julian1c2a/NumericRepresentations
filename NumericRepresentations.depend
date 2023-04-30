@@ -41,7 +41,7 @@
 1677007473 source:c:\users\julia\dropbox\github\numericrepresentations\src\pruebas_dig_t.cpp
 	"testunit.hpp"
 
-1682588208 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
+1682684248 c:\users\julia\dropbox\github\numericrepresentations\src\dig_t.hpp
 	"auxiliary_functions.hpp"
 	"auxiliary_types.hpp"
 
@@ -174,9 +174,12 @@
 	<clocale>
 	<windows.h>
 
-1678377910 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
-	"testunit.hpp"
+1682687925 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
 	<clocale>
+	<windows.h>
+	<fstream>
+	"testunit.hpp"
+	"memory_handler.hpp"
 
 1677070428 c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
 	"testunit.hpp"
@@ -199,4 +202,11 @@
 	"nat_reg_digs_t.hpp"
 	<istream>
 	<ostream>
+
+1682686396 c:\users\julia\dropbox\github\numericrepresentations\src\memory_handler.hpp
+	"nat_reg_digs_t.hpp"
+	<variant>
+	<string>
+	<map>
+	<set>
 

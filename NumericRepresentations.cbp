@@ -30,7 +30,7 @@
 					<Add option="-Wall" />
 					<Add option="-m64" />
 					<Add option="-g" />
-					<Add option="-std=gnu++23 -fconcepts-diagnostics-depth=1024 -fconstexpr-loop-limit=100000000" />
+					<Add option="-std=gnu++23 -fconcepts-diagnostics-depth=1024 -fconstexpr-loop-limit=100000000 --param ggc-min-expand=0 --param ggc-min-heapsize=4096" />
 				</Compiler>
 				<Linker>
 					<Add option="-static-libstdc++" />
@@ -71,6 +71,8 @@
 		<Unit filename="src/base_num_t.hpp" />
 		<Unit filename="src/basic_types.hpp" />
 		<Unit filename="src/dig_t.hpp" />
+		<Unit filename="src/get.cpp" />
+		<Unit filename="src/get.hpp" />
 		<Unit filename="src/int_num_t.hpp" />
 		<Unit filename="src/int_reg_digs_t.hpp" />
 		<Unit filename="src/main.cpp" />

@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>27-04-2023 at 15:00.48</u><br />
-Build ended on: <u>27-04-2023 at 15:00.51</u><p />
+Build started on: <u>28-04-2023 at 15:24.23</u><br />
+Build ended on: <u>28-04-2023 at 18:30.32</u><p />
 <b>-------------- Build: Debug in NumericRepresentations (compiler: GNU GCC Compiler MSYS64/MINGW64 12.2)---------------</b><br />
-g++.exe -Wall -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=1024 -fconstexpr-loop-limit=100000000 -m64 -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -IC:\msys64\mingw64\include\c++ -c C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\main.cpp -o obj\Debug\src\main.o<br />
+g++.exe -Wall -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -m64 -g -std=gnu++23 -fconcepts-diagnostics-depth=1024 -fconstexpr-loop-limit=100000000 --param ggc-min-expand=0 --param ggc-min-heapsize=4096 -m64 -std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000 -IC:\msys64\mingw64\include\c++ -c C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\get.cpp -o obj\Debug\src\get.o<br />
 In file included from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:4,<br />
-                 from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\int_reg_digs_t.hpp:4,<br />
-                 from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\testunit.hpp:4,<br />
-                 from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\main.cpp:3:<br />
+                 from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\memory_handler.hpp:4,<br />
+                 from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\get.hpp:4,<br />
+                 from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\get.cpp:1:<br />
 <font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\reg_digs_t.hpp:36:20: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]</font><br />
    36 |   constexpr inline const base_t* const const_base_this() const noexcept {<br />
       |                    ^~~~~<br />
@@ -21,24 +21,8 @@ In file included from C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\n
 <font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\nat_reg_digs_t.hpp:111:20: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]</font><br />
   111 |   inline constexpr base_t* const base_this() noexcept {<br />
       |                    ^~~~~~<br />
-C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\int_reg_digs_t.hpp: In member function 'constexpr std::strong_ordering NumRepr::int_reg_digs_t&lt;B, R&gt;::operator&lt;=&gt;(int_reg_N_digs_t&lt;N&gt;&amp;) const':<br />
-<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\int_reg_digs_t.hpp:717:21: warning: declaration of 'cr_base_cthis' shadows a previous local [-Wshadow]</font><br />
-  717 |       const base_t&amp; cr_base_cthis{*static_cast&lt;const base_t* const&gt;(this)};<br />
-      |                     ^~~~~~~~~~~~~<br />
-C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\int_reg_digs_t.hpp:711:27: note: shadowed declaration is here<br />
-  711 |     const int_reg_digs_t&amp; cr_base_cthis{*static_cast&lt;const base_t* const&gt;(this)};<br />
-      |                           ^~~~~~~~~~~~~<br />
-C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\int_reg_digs_t.hpp: In member function 'constexpr std::strong_ordering NumRepr::int_reg_digs_t&lt;B, R&gt;::operator&lt;=&gt;(base_N_t&lt;N&gt;&amp;) const':<br />
-<font color="#0000ff">C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\int_reg_digs_t.hpp:732:21: warning: declaration of 'cr_base_cthis' shadows a previous local [-Wshadow]</font><br />
-  732 |       const base_t&amp; cr_base_cthis{*static_cast&lt;const base_t* const&gt;(this)};<br />
-      |                     ^~~~~~~~~~~~~<br />
-C:\Users\julia\Dropbox\GitHub\NumericRepresentations\src\int_reg_digs_t.hpp:728:27: note: shadowed declaration is here<br />
-  728 |     const int_reg_digs_t&amp; cr_base_cthis{*static_cast&lt;const base_t* const&gt;(this)};<br />
-      |                           ^~~~~~~~~~~~~<br />
-g++.exe  -o bin\Debug\NumericRepresentations.exe obj\Debug\src\main.o obj\Debug\src\test_driver.o  -static-libstdc++ -static-libgcc -static -m64 -static-libstdc++ -static-libgcc -static -m64 -fopenmp<br />
-Output file is bin\Debug\NumericRepresentations.exe with size 3,17 MB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minute(s), 2 second(s))</font><br />
-<font color="#0000ff">0 error(s), 5 warning(s) (0 minute(s), 2 second(s))</font><br />
+<font color="#a00000">Process terminated with status -1 (186 minute(s), 9 second(s))</font><br />
+<font color="#a00000">0 error(s), 3 warning(s) (186 minute(s), 9 second(s))</font><br />
 </tt>
 </body>
 </html>

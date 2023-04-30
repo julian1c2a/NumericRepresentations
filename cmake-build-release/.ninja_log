@@ -1,6 +1,0 @@
-# ninja log v5
-3756	3905	6981783476902904	NumericRepresentations.exe	8ca4425c3f8530ef
-12	3756	6981783475444574	CMakeFiles/NumericRepresentations.dir/main.cpp.obj	8385b76b3973026c
-17	4237	6982546310111318	CMakeFiles/NumericRepresentations.dir/src/pruebas_dig_t.cpp.obj	19dc53003aba69da
-9	4246	6982546310201351	CMakeFiles/NumericRepresentations.dir/main.cpp.obj	8385b76b3973026c
-14	4913	6982547714793129	CMakeFiles/NumericRepresentations.dir/src/pruebas_dig_t.cpp.obj	19dc53003aba69da

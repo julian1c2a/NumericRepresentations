@@ -1,80 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src\test_driver.cpp" open="1" top="0" tabpos="13">
-		<Cursor position="2184" topLine="50" />
-		<BrowseMarks positions="" />
-	</File>
-	<File name="src\main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="904" topLine="7" />
-		<BrowseMarks positions="" />
-	</File>
-	<File name="src\memory_handler.hpp" open="1" top="1" tabpos="19">
-		<Cursor position="1195" topLine="51" />
-		<BrowseMarks positions="1534" />
-	</File>
-	<File name="src\base_num_t.hpp" open="1" top="0" tabpos="4">
-		<Cursor position="5685" topLine="0" />
-		<BrowseMarks positions="1590" />
+	<File name="src\rat_fixed_reg_t.hpp" open="1" top="0" tabpos="16">
+		<Cursor position="118" topLine="0" />
 	</File>
 	<File name="src\basic_types.hpp" open="1" top="0" tabpos="15">
-		<Cursor position="8286" topLine="349" />
-		<BrowseMarks positions="" />
+		<Cursor position="8286" topLine="0" />
 	</File>
-	<File name="src\auxiliary_functions.hpp" open="1" top="0" tabpos="9">
-		<Cursor position="1470" topLine="32" />
-		<BrowseMarks positions="" />
+	<File name="src\nat_rat_fixed_reg_t.hpp" open="1" top="0" tabpos="18">
+		<Cursor position="36729" topLine="0" />
+		<BrowseMarks positions="6851" />
 	</File>
 	<File name="src\reg_digs_t.hpp" open="1" top="0" tabpos="12">
-		<Cursor position="966" topLine="25" />
+		<Cursor position="79166" topLine="1406" />
 		<BrowseMarks positions="28842" />
 	</File>
-	<File name="src\nat_reg_digs_t.hpp" open="1" top="0" tabpos="8">
-		<Cursor position="19003" topLine="393" />
+	<File name="src\int_reg_digs_t.hpp" open="1" top="0" tabpos="3">
+		<Cursor position="15663" topLine="286" />
+	</File>
+	<File name="src\get.cpp" open="1" top="0" tabpos="21">
+		<Cursor position="193" topLine="0" />
 		<BrowseMarks positions="" />
 	</File>
-	<File name="src\utilities.hpp" open="1" top="0" tabpos="17">
-		<Cursor position="12867" topLine="313" />
-		<BrowseMarks positions="1976,2200,8929,9834" />
+	<File name="src\memory_handler.hpp" open="1" top="0" tabpos="19">
+		<Cursor position="3473" topLine="57" />
+		<BrowseMarks positions="4441" />
 	</File>
 	<File name="src\int_num_t.hpp" open="1" top="0" tabpos="14">
 		<Cursor position="74309" topLine="0" />
-		<BrowseMarks positions="" />
 	</File>
-	<File name="src\rat_fixed_reg_t.hpp" open="1" top="0" tabpos="16">
-		<Cursor position="118" topLine="0" />
-		<BrowseMarks positions="" />
+	<File name="src\testunit.hpp" open="1" top="0" tabpos="11">
+		<Cursor position="41045" topLine="1190" />
+	</File>
+	<File name="src\rat_num_t.hpp" open="1" top="0" tabpos="10">
+		<Cursor position="104" topLine="0" />
+	</File>
+	<File name="src\test_driver.cpp" open="1" top="0" tabpos="13">
+		<Cursor position="2184" topLine="0" />
 	</File>
 	<File name="src\dig_t.hpp" open="1" top="0" tabpos="7">
-		<Cursor position="35048" topLine="129" />
+		<Cursor position="32191" topLine="988" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="src\get.hpp" open="1" top="1" tabpos="22">
+		<Cursor position="2675" topLine="72" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="src\nat_rat_num_t.hpp" open="1" top="0" tabpos="6">
+		<Cursor position="116" topLine="0" />
+	</File>
+	<File name="src\auxiliary_functions.hpp" open="1" top="0" tabpos="9">
+		<Cursor position="1470" topLine="0" />
+	</File>
+	<File name="src\nat_reg_digs_t.hpp" open="1" top="0" tabpos="8">
+		<Cursor position="28400" topLine="639" />
+	</File>
+	<File name="src\main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="224" topLine="0" />
 		<BrowseMarks positions="" />
 	</File>
 	<File name="src\auxiliary_types.hpp" open="1" top="0" tabpos="5">
 		<Cursor position="1085" topLine="0" />
 		<BrowseMarks positions="1019" />
 	</File>
-	<File name="src\rat_num_t.hpp" open="1" top="0" tabpos="10">
-		<Cursor position="104" topLine="0" />
-		<BrowseMarks positions="" />
+	<File name="src\utilities.hpp" open="1" top="0" tabpos="17">
+		<Cursor position="12867" topLine="0" />
+		<BrowseMarks positions="1976,2200,8929,9834" />
 	</File>
-	<File name="src\int_reg_digs_t.hpp" open="1" top="0" tabpos="3">
-		<Cursor position="23655" topLine="715" />
-		<BrowseMarks positions="" />
-	</File>
-	<File name="src\testunit.hpp" open="1" top="0" tabpos="11">
-		<Cursor position="87550" topLine="2147" />
-		<BrowseMarks positions="" />
-	</File>
-	<File name="src\nat_rat_num_t.hpp" open="1" top="0" tabpos="6">
-		<Cursor position="116" topLine="0" />
-		<BrowseMarks positions="" />
+	<File name="src\base_num_t.hpp" open="1" top="0" tabpos="4">
+		<Cursor position="5685" topLine="0" />
+		<BrowseMarks positions="1590" />
 	</File>
 	<File name="src\nat_num_t.hpp" open="1" top="0" tabpos="2">
 		<Cursor position="57406" topLine="0" />
-		<BrowseMarks positions="" />
-	</File>
-	<File name="src\nat_rat_fixed_reg_t.hpp" open="1" top="0" tabpos="18">
-		<Cursor position="36729" topLine="1134" />
-		<BrowseMarks positions="6851" />
 	</File>
 </BrowseTracker_layout_file>
