@@ -3,63 +3,6 @@
 
 #include "memory_handler.hpp"
 
-
-/// BEGIN ADECUACIÓN DEL MAKE_INTEGER_SEQUECE<N> PARA EL CASO ACTUAL
-// using aliases for cleaner syntax
-template<class T>
-using Invoke = typename T::type;
-
-template<std::uint64_t ... >
-struct seq{
-	using type = seq;
-};
-
-template<class S1, class S2>
-struct concat;
-
-template<std::uint64_t... I1, std::uint64_t... I2>
-struct concat<seq<I1...>, seq<I2...>>
-  : seq<I1..., ((sizeof...(I1))+I2)...>{};
-
-template<class S1, class S2>
-using Concat = Invoke<concat<S1, S2>>;
-
-/// Concat<S1,S2> == typename concat<S1,S2>::type;
-
-template<std::uint64_t N>
-	requires(N<253)
-struct gen_seq;
-
-template<std::uint64_t N>
-	requires(N<254)
-using GenSeq = Invoke<gen_seq<N>>;
-
-/// GenSeq<N> = gen_seq<N>::type;
-/// N/3 , N%3 in {0,1,2}
-/// N/3,N/3-( (N%3==2) ? 1 : 0 ),(N/3)-( (N%3!=0) ? 1 : 0 )
-
-template<std::uint64_t N>
-struct gen_seq : Concat<GenSeq<N/2>, GenSeq<N - N/2>>
-{};
-
-/// gen_seq<N> == concat<gen_seq<N/2>::type,gen_seq<N - N/2>::type>::type
-///            == concat<Concat<GenSeq<(N/2)/2      >,GenSeq<(N/2)-(N/2)/2          >>,
-///                      Concat<GenSeq<((N-(N/2))/2)>,GenSeq<(N-(N/2))-((N-(N/2))/2)>>>
-///            == concat<Concat<GenSeq<2>,GenSeq<3>>,
-///                      Concat<GenSeq<3>,GenSeq<3>>>
-///            == concat<Concat<gen_seq<2>::type,gen_seq<3>::type>,
-///                      Concat<gen_seq<3>::type,gen_seq<3>::type>>
-///            == concat<concat<gen_seq<2>::type,gen_seq<3>::type>::type,
-///                      concat<gen_seq<3>::type,gen_seq<3>::type>::type>
-///            == concat<seq<2,3,4,5,6>,seq<2,3,4,5,6,7>>
-///            == seq<2,3,4,5,6,7,8,9,10,11,12>
-
-template<> struct gen_seq<0> : seq<>{};
-template<> struct gen_seq<1> : seq<2>{};
-template<> struct gen_seq<2> : seq<2,3>{};
-template<> struct gen_seq<3> : seq<2,3,4>{};
-/// END ADECUACIÓN DEL MAKE_INTEGER_SEQUECE<N> PARA EL CASO ACTUAL
-
 using genRadixDig_t = typename NumRepr::memory_handler::genRadixDig_t;
 
 template<std::uint64_t R>
@@ -71,27 +14,41 @@ std::uint64_t hold_radixtype(genRadixDig_t arg) {
 		return 0ULL;
 }
 
-template<std::uint64_t ... Rs>
+template<std::uint64_t ...Rs>
 constexpr inline
-std::uint64_t get_radix_of_actual_type_helper(genRadixDig_t arg) {
+std::uint64_t get_radix_of_type_helper(	genRadixDig_t arg ) {
 	return (hold_radixtype<Rs>(arg)+...);
 }
 
 constexpr inline
-std::uint64_t get_actual_radix(genRadixDig_t arg) {
-	return get_radix_of_actual_type_helper<GenSeq<253>>(genRadixDig_t arg);
-}
-
-struct content {
-	static constexpr
-	std::uint64_t operator()(genRadixDig_t arg) {
-		return get_actual_radix(arg);
-	}
-	using type = NumRepr::dig_t<content::operator(arg)>;
-};
-
-auto get_content(genRadixDig_t arg) -> decltype(auto) {
-	return std::get<get_actual_radix(arg)>(arg);
+std::uint64_t get_radix_of_type( genRadixDig_t arg ) {
+	return (get_radix_of_type_helper<
+	                  2ULL,    3ULL,    4ULL,    5ULL,    6ULL,    7ULL,    8ULL,    9ULL,
+   10ULL,   11ULL,   12ULL,   13ULL,   14ULL,   15ULL,   16ULL,   17ULL,   18ULL,   19ULL,
+   20ULL,   21ULL,   22ULL,   23ULL,   24ULL,   25ULL,   26ULL,   27ULL,   28ULL,   29ULL,
+   30ULL,   31ULL,   32ULL,   33ULL,   34ULL,   35ULL,   36ULL,   37ULL,   38ULL,   39ULL,
+   40ULL,   41ULL,   42ULL,   43ULL,   44ULL,   45ULL,   46ULL,   47ULL,   48ULL,   49ULL,
+   50ULL,   51ULL,   52ULL,   53ULL,   54ULL,   55ULL,   56ULL,   57ULL,   58ULL,   59ULL,
+   60ULL,   61ULL,   62ULL,   63ULL,   64ULL,   65ULL,   66ULL,   67ULL,   68ULL,   69ULL,
+   70ULL,   71ULL,   72ULL,   73ULL,   74ULL,   75ULL,   76ULL,   77ULL,   78ULL,   79ULL,
+   80ULL,   81ULL,   82ULL,   83ULL,   84ULL,   85ULL,   86ULL,   87ULL,   88ULL,   89ULL,
+   90ULL,   91ULL,   92ULL,   93ULL,   94ULL,   95ULL,   96ULL,   97ULL,   98ULL,   99ULL,
+  100ULL,  101ULL,  102ULL,  103ULL,  104ULL,  105ULL,  106ULL,  107ULL,  108ULL,  109ULL,
+  110ULL,  111ULL,  112ULL,  113ULL,  114ULL,  115ULL,  116ULL,  117ULL,  118ULL,  119ULL,
+  120ULL,  121ULL,  122ULL,  123ULL,  124ULL,  125ULL,  126ULL,  127ULL,  128ULL,  129ULL,
+  130ULL,  131ULL,  132ULL,  133ULL,  134ULL,  135ULL,  136ULL,  137ULL,  138ULL,  139ULL,
+  140ULL,  141ULL,  142ULL,  143ULL,  144ULL,  145ULL,  146ULL,  147ULL,  148ULL,  149ULL,
+  150ULL,  151ULL,  152ULL,  153ULL,  154ULL,  155ULL,  156ULL,  157ULL,  158ULL,  159ULL,
+  160ULL,  161ULL,  162ULL,  163ULL,  164ULL,  165ULL,  166ULL,  167ULL,  168ULL,  169ULL,
+  170ULL,  171ULL,  172ULL,  173ULL,  174ULL,  175ULL,  176ULL,  177ULL,  178ULL,  179ULL,
+  180ULL,  181ULL,  182ULL,  183ULL,  184ULL,  185ULL,  186ULL,  187ULL,  188ULL,  189ULL,
+  190ULL,  191ULL,  192ULL,  193ULL,  194ULL,  195ULL,  196ULL,  197ULL,  198ULL,  199ULL,
+  200ULL,  201ULL,  202ULL,  203ULL,  204ULL,  205ULL,  206ULL,  207ULL,  208ULL,  209ULL,
+  210ULL,  211ULL,  212ULL,  213ULL,  214ULL,  215ULL,  216ULL,  217ULL,  218ULL,  219ULL,
+  220ULL,  221ULL,  222ULL,  223ULL,  224ULL,  225ULL,  226ULL,  227ULL,  228ULL,  229ULL,
+  230ULL,  231ULL,  232ULL,  233ULL,  234ULL,  235ULL,  236ULL,  237ULL,  238ULL,  239ULL,
+  240ULL,  241ULL,  242ULL,  243ULL,  244ULL,  245ULL,  246ULL,  247ULL,  248ULL,  249ULL,
+  250ULL,  251ULL,  252ULL,  253ULL,  254ULL,  255ULL >(arg));
 }
 
 #endif // GET_HPP_INCLUDED
