@@ -9,8 +9,8 @@ using namespace std;
 
 enum forma_t { noraw, raw };
 
-template <type_traits::unsigned_integral_c UINT_T, UINT_T B>
-struct int_num_t : protected base_num_t<UINT_T, B> {
+template <std::uint64_t B>
+struct int_num_t : protected base_num_t<B> {
 private:
   typedef dig_t<B> dig;
   typedef num_basic_t<B> num_basic;
@@ -36,10 +36,11 @@ private:
   spardigs aux;
 
   /*********************************/
-  /*							                    */
-  /*       CONSTRUCTORES		*/
-  /*							                    */
+  /*							   */
+  /*       CONSTRUCTORES		   */
+  /*							   */
   /*********************************/
+
 public:
   inline size_t size() const {
     const num_basic &cthis = (*this);

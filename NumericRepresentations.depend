@@ -174,12 +174,13 @@
 	<clocale>
 	<windows.h>
 
-1682857700 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
+1682940289 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
 	<clocale>
 	<windows.h>
 	<fstream>
 	"../include/testunit.hpp"
 	"../include/memory_handler.hpp"
+	"../include/get.hpp"
 
 1677070428 c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
 	"testunit.hpp"
@@ -214,12 +215,12 @@
 	"int_reg_digs_t.hpp"
 	"utilities.hpp"
 
-1682596270 c:\users\julia\dropbox\github\numericrepresentations\include\int_reg_digs_t.hpp
+1682940544 c:\users\julia\dropbox\github\numericrepresentations\include\int_reg_digs_t.hpp
 	"nat_reg_digs_t.hpp"
 	<istream>
 	<ostream>
 
-1682598667 c:\users\julia\dropbox\github\numericrepresentations\include\nat_reg_digs_t.hpp
+1682940680 c:\users\julia\dropbox\github\numericrepresentations\include\nat_reg_digs_t.hpp
 	"reg_digs_t.hpp"
 	"utilities.hpp"
 
@@ -265,16 +266,20 @@
 	<array>
 	<tuple>
 
-1682881924 c:\users\julia\dropbox\github\numericrepresentations\include\memory_handler.hpp
-	"nat_reg_digs_t.hpp"
+1682940314 c:\users\julia\dropbox\github\numericrepresentations\include\memory_handler.hpp
+	"../include/int_reg_digs_t.hpp"
+	"../include/variant_types.hpp"
 	<variant>
 	<string>
 	<map>
 	<set>
 
-1682858101 source:c:\users\julia\dropbox\github\numericrepresentations\src\get.cpp
+1682938090 source:c:\users\julia\dropbox\github\numericrepresentations\src\get.cpp
 	"../include/get.hpp"
 
-1682885215 c:\users\julia\dropbox\github\numericrepresentations\include\get.hpp
+1682938118 c:\users\julia\dropbox\github\numericrepresentations\include\get.hpp
 	"memory_handler.hpp"
+
+1682940099 c:\users\julia\dropbox\github\numericrepresentations\include\variant_types.hpp
+	<variant>
 

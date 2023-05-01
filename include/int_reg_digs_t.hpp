@@ -714,9 +714,7 @@ public:
     else if (is_minus() && arg.is_plus())
       return std::strong_ordering::less;
     else {
-      const base_t& cr_base_cthis{*static_cast<const base_t* const>(this)};
-      const base_t& cr_base_arg{*static_cast<const base_t* const>(&arg)};
-      return (cr_base_cthis <=> cr_base_arg);
+      return (cr_base_cthis() <=> arg.cr_base_cthis());
     }
   }
 
@@ -729,9 +727,7 @@ public:
     if (is_minus())
       return std::strong_ordering::less;
     else {
-      const base_t& cr_base_cthis{*static_cast<const base_t* const>(this)};
-      const base_t& cr_base_arg{*static_cast<const base_t* const>(&arg)};
-      return (cr_base_cthis <=> cr_base_arg);
+      return (cr_base_cthis() <=> arg);
     }
   }
 

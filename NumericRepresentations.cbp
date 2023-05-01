@@ -86,6 +86,7 @@
 		<Unit filename="include/reg_digs_t.hpp" />
 		<Unit filename="include/testunit.hpp" />
 		<Unit filename="include/utilities.hpp" />
+		<Unit filename="include/variant_types.hpp" />
 		<Unit filename="src/get.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/test_driver.cpp" />

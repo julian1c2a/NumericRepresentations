@@ -112,7 +112,7 @@ private:
     return static_cast<base_t *const>(this);
   } // warning : qualifiers ignored on function return type
 
-  inline constexpr base_t& base_ref_cthis() noexcept { return (*base_this); }
+  inline constexpr base_t& base_ref_cthis() noexcept { return (*base_this()); }
 
   inline constexpr const dig_t& by_index(size_t ix) noexcept {
     return (base_ref_cthis()[ix]);

@@ -6,6 +6,7 @@
 namespace NumRepr {
 
 namespace detail {
+
 // precondition: low*low <= n, high*high > n.
 constexpr inline size_t ceilsqrt(size_t n, size_t low, size_t high) noexcept {
   const auto mid{std::midpoint(low, high)};
@@ -30,8 +31,11 @@ constexpr inline bool find_factor(size_t n, size_t low, size_t high) noexcept {
               ? (n % (2 * low + 1)) == 0
               : (find_factor(n, low, mid) || find_factor(n, mid, high)));
 }
+
 } // namespace detail
+
 namespace auxiliary_functions {
+
 constexpr inline bool is_prime(size_t n) noexcept {
   if (n < 2)
     return false;
@@ -46,6 +50,8 @@ constexpr inline bool is_power_of_2(uint64_t num) noexcept {
   else
     return is_power_of_2(num / 2);
 }
+
 } // namespace auxiliary_functions
 } // namespace NumRepr
+
 #endif // AUXILIARY_FUNCTIONS_HPP_INCLUDED

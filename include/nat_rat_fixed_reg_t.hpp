@@ -28,7 +28,7 @@ struct nat_rat_fixed_reg_t : public nat_reg_digs_t<B, LE+LF> {
 
   template <std::size_t N>
     requires(N > 0)
-  using base_N_t 		= nat_reg_digs_t<UINT_T, B, N>;
+  using base_N_t 		= nat_reg_digs_t<B, N>;
   using base_ent_t 	    = base_N_t<LE>;
   using base_fra_t 	    = base_N_t<LF>;
   using base_t 			= base_N_t<L>;

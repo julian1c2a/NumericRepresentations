@@ -5,11 +5,13 @@
 
 namespace NumRepr {
 
-template <type_traits::uint_type_for_radix_c UINT_T, UINT_T B>
-  requires(type_traits::suitable_base<UINT_T, B>())
-struct base_num_t : public basic_string<dig_t<UINT_T, B>> {
+template <std::uint64_t B>
+  requires(B > 1)
+struct base_num_t : public basic_string<dig_t<B>> {
 public:
-  using dig_t = dig_t<UINT_T, B>;
+
+  using dig_t = dig_t<B>;
+  using UINT_T = typename dig_t::UINT_T;
   using base_t = basic_string<dig_t>;
   using str_iterator = typename base_t::iterator;
   using c_str_iterator = typename base_t::const_iterator;
@@ -82,8 +84,9 @@ public:
   }
 };
 
-template <typename Int_T, usint B>
+template <std::uint64_t B>
 inline constexpr ullint pot_max_base_B_en_Int_T() noexcept {
+  using Int_T = typename dig_t<B>::UINT_T;
   constexpr long double max =
       static_cast<long double>(type_traits::maxbase<Int_T>());
   constexpr long double max_unit =
@@ -100,8 +103,9 @@ inline constexpr ullint pot_max_base_B_en_Int_T() noexcept {
   return ret;
 }
 
-template <typename Int_T, ullint B>
+template <std::uint64_t B>
 inline constexpr ullint num_digs_max_base_B_en_Int_T() noexcept {
+  using Int_T = typename dig_t<B>::UINT_T;
   constexpr long double max =
       static_cast<long double>(numeric_limits<Int_T>::max() + 1);
   constexpr long double max_unit =
@@ -141,8 +145,9 @@ inline constexpr ullint num_digs_max_base_B_en_Int_T() noexcept {
   return ret;
 }
 
-template <typename Int_T, ullint B>
+template <std::uint64_t B>
 inline constexpr ullint max_base_B_en_Int_T() noexcept {
+  using Int_T = typename dig_t<B>::UINT_T;
   constexpr long double max =
       static_cast<long double>(numeric_limits<Int_T>::max());
   constexpr long double n_digs_base_B =

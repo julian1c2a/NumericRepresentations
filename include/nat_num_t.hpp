@@ -5,44 +5,45 @@
 
 using namespace std;
 
-template <type_traits::unsigned_integral_c UINT_T, UINT_T B>
-class nat_num_t : public base_num_t<UINT_T, B> {
+template <std::uint64_t B>
+class nat_num_t : public base_num_t<B> {
 private:
-  using dig_t = dig_t<UINT_T, B>;
-  using base_num_t = base_num_t<UINT_T, B>;
+  using dig_t = dig_t<B>;
+  using UINT_T = typename dig_t::UINT_T;
+  using base_num_t = base_num_t<B>;
   using nbstr = basic_string<dig>;
   using striterator = typename nbstr::iterator;
   using rstriterator = typename nbstr::reverse_iterator;
   using cstriterator = typename nbstr::const_iterator;
   using crstriterator = typename nbstr::const_reverse_iterator;
-  using b_iterator = typename base_num_t<UINT_T, B>::iterator;
-  using b_riterator = typename base_num_t<UINT_T, B>::reverse_iterator;
-  using b_citerator = typename base_num_t<UINT_T, B>::const_iterator;
-  using b_criterator = typename base_num_t<UINT_T, B>::const_reverse_iterator;
-  using iterator = typename nat_num_t<UINT_T, B>::iterator;
-  using riterator = typename nat_num_t<UINT_T, B>::reverse_iterator;
-  using citerator = typename nat_num_t<UINT_T, B>::const_iterator;
-  using criterator = typename nat_num_t<UINT_T, B>::const_reverse_iterator;
-  template <type_traits::unsigned_integral_c UINT_T, UINT_T B, size_t N>
-  using base_N_t = std::array<dig_t<UINT_T, B>, N>;
-  template <type_traits::unsigned_integral_c UINT_T, UINT_T B>
-  using base_t = nat_reg_N_digs_t<UINT_T, B, 2>;
-  template <type_traits::unsigned_integral_c UINT_T, UINT_T B, size_t N>
-  using nat_reg_N_digs_t = nat_reg_N_digs_t<UINT_T, B, N>;
-  template <type_traits::unsigned_integral_c UINT_T, UINT_T B>
-  using nat_reg_digs_t = nat_reg_N_digs_t<UINT_T, B, 2>;
-  template <type_traits::unsigned_integral_c UINT_T, UINT_T B, size_t N>
-  using int_reg_N_digs_t = int_reg_N_digs_t<UINT_T, B, N>;
-  template <type_traits::unsigned_integral_c UINT_T, UINT_T B>
-  using int_reg_digs_t = int_reg_N_digs_t<UINT_T, B, 2>;
+  using b_iterator = typename base_num_t<B>::iterator;
+  using b_riterator = typename base_num_t<B>::reverse_iterator;
+  using b_citerator = typename base_num_t<B>::const_iterator;
+  using b_criterator = typename base_num_t<B>::const_reverse_iterator;
+  using iterator = typename nat_num_t<B>::iterator;
+  using riterator = typename nat_num_t<B>::reverse_iterator;
+  using citerator = typename nat_num_t<B>::const_iterator;
+  using criterator = typename nat_num_t<B>::const_reverse_iterator;
+  template <uint64_t B, size_t N>
+  using base_N_t = std::array<dig_t<B>, N>;
+  template <uint64_t B>
+  using base_t = nat_reg_N_digs_t<B, 2>;
+  template <uint64_t B, size_t N>
+  using nat_reg_N_digs_t = nat_reg_N_digs_t<B, N>;
+  template <uint64_t B>
+  using nat_reg_digs_t = nat_reg_N_digs_t<B, 2>;
+  template <uint64_t B, size_t N>
+  using int_reg_N_digs_t = int_reg_N_digs_t<B, N>;
+  template <uint64_t B>
+  using int_reg_digs_t = int_reg_N_digs_t<B, 2>;
 
 private:
   pardigs aux;
 
   /****************************/
-  /*													*/
-  /*		CONSTRUCTORES					*/
-  /*													*/
+  /*						  */
+  /*		CONSTRUCTORES	  */
+  /*						  */
   /****************************/
 public:
   inline size_t size() const {
@@ -137,6 +138,7 @@ public:
   }
 
 public:
+
   nat_num_t() {
     nat_num_t &cthis = (*this);
     aux = pardigs();
@@ -561,9 +563,9 @@ public:
   }
 
   /*********************************/
-  /*								 */
-  /*  DIGITOS NO SIGNIFICATIVOS	 */
-  /*								 */
+  /*							   */
+  /*  DIGITOS NO SIGNIFICATIVOS	   */
+  /*							   */
   /*********************************/
 
   usint ceros_a_la_izqda() const {
@@ -610,9 +612,9 @@ public:
   }
 
   /************************************/
-  /*									*/
-  /*   OPERACIONES COMPARATIVAS  		*/
-  /*									*/
+  /*								  */
+  /*   OPERACIONES COMPARATIVAS  	  */
+  /*								  */
   /************************************/
 
   bool operator==(const nat_num_t &arg) const {
@@ -728,9 +730,9 @@ public:
   }
 
   /************************************/
-  /*									*/
-  /*     OPERACIONES ARITMETICAS 		*/
-  /* 									*/
+  /*								  */
+  /*     OPERACIONES ARITMETICAS 	  */
+  /* 								  */
   /************************************/
 
   nat_num_t operator+(const nat_num_t &arg) const {
