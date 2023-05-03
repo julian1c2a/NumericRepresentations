@@ -1,6 +1,0 @@
-<map id="NumRepr::reg_digs_t::set_0" name="NumRepr::reg_digs_t::set_0">
-<area shape="rect" id="node1" title="Funciones que ponen a constantes (constexpr) los objetos base_t." alt="" coords="435,51,581,91"/>
-<area shape="rect" id="node2" href="$namespace_num_repr.html#a47075bda02da4f0bcb6a4d3fd0f5b254" title="TODO 31/12/2022." alt="" coords="251,29,376,55"/>
-<area shape="rect" id="node4" href="$struct_num_repr_1_1reg__digs__t.html#aa424868f7b7f2da2b989b2eb96ed1ed1" title="OPERACION COPIA DESDE UN DIGITO (CONVERSION)" alt="" coords="240,79,387,119"/>
-<area shape="rect" id="node3" href="$namespace_num_repr.html#a59c4987f35abcca7f49e248841dbdda7" title="&lt; PRECONDITIONS : ARG != 0 AND ARG != 1 &gt;" alt="" coords="5,29,192,55"/>
-</map>

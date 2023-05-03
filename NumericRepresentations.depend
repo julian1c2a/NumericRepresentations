@@ -169,18 +169,16 @@
 	"int_reg_digs_t.hpp"
 	"utilities.hpp"
 
-1682857084 source:c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
+1683133416 source:c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
 	"../include/testunit.hpp"
 	<clocale>
 	<windows.h>
 
-1682940289 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
+1683134388 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
 	<clocale>
 	<windows.h>
 	<fstream>
 	"../include/testunit.hpp"
-	"../include/memory_handler.hpp"
-	"../include/get.hpp"
 
 1677070428 c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
 	"testunit.hpp"
@@ -220,11 +218,11 @@
 	<istream>
 	<ostream>
 
-1682940680 c:\users\julia\dropbox\github\numericrepresentations\include\nat_reg_digs_t.hpp
+1683132914 c:\users\julia\dropbox\github\numericrepresentations\include\nat_reg_digs_t.hpp
 	"reg_digs_t.hpp"
 	"utilities.hpp"
 
-1682598774 c:\users\julia\dropbox\github\numericrepresentations\include\reg_digs_t.hpp
+1683130631 c:\users\julia\dropbox\github\numericrepresentations\include\reg_digs_t.hpp
 	"dig_t.hpp"
 	"utilities.hpp"
 
@@ -232,7 +230,7 @@
 	"auxiliary_functions.hpp"
 	"auxiliary_types.hpp"
 
-1682587894 c:\users\julia\dropbox\github\numericrepresentations\include\auxiliary_functions.hpp
+1682941389 c:\users\julia\dropbox\github\numericrepresentations\include\auxiliary_functions.hpp
 	"auxiliary_types.hpp"
 
 1681464992 c:\users\julia\dropbox\github\numericrepresentations\include\auxiliary_types.hpp
@@ -266,9 +264,8 @@
 	<array>
 	<tuple>
 
-1682940314 c:\users\julia\dropbox\github\numericrepresentations\include\memory_handler.hpp
+1683129988 c:\users\julia\dropbox\github\numericrepresentations\include\memory_handler.hpp
 	"../include/int_reg_digs_t.hpp"
-	"../include/variant_types.hpp"
 	<variant>
 	<string>
 	<map>
@@ -277,9 +274,12 @@
 1682938090 source:c:\users\julia\dropbox\github\numericrepresentations\src\get.cpp
 	"../include/get.hpp"
 
-1682938118 c:\users\julia\dropbox\github\numericrepresentations\include\get.hpp
+1683105743 c:\users\julia\dropbox\github\numericrepresentations\include\get.hpp
 	"memory_handler.hpp"
 
 1682940099 c:\users\julia\dropbox\github\numericrepresentations\include\variant_types.hpp
 	<variant>
+
+1683057829 source:c:\users\julia\dropbox\github\numericrepresentations\src\memory_handler.cpp
+	"../include/memory_handler.hpp"
 

@@ -33,9 +33,9 @@ private:
 
   /// devolución de punteros a la clase base
   /// CAST to CONST BASE_T*
-  constexpr inline const base_t* const const_base_this() const noexcept {
-    return static_cast<const base_t* const>(this);
-  } // warning : qualifiers ignored on function return type
+  //constexpr inline const base_t* const const_base_this() const noexcept {
+  //  return static_cast<const base_t* const>(this);
+  //} // warning : qualifiers ignored on function return type
 
   /// devolución de punteros a la clase base
   /// CAST to BASE_T*
@@ -47,12 +47,13 @@ private:
   constexpr inline base_t& r_base_cthis() noexcept { return (*base_this()); }
 
   /// devolución de copia de la clase base
-  constexpr inline const base_t& cr_base_cthis() const noexcept {
-    return (static_cast<const base_t& >(*const_base_this()));
-  }
+  //constexpr inline const base_t& cr_base_cthis() const noexcept {
+  //  return (static_cast<const base_t& >(*const_base_this()));
+  //}
 
   constexpr inline base_t cp_base_cthis() const noexcept {
-    return std::move(base_t{*(cr_base_cthis())});
+  	const base_t& base_cthis{static_cast<const base_t&>(*this)};
+    return std::move(base_t{base_cthis});
   }
 
   /// devolución de referencias de la clase actual
@@ -77,7 +78,8 @@ private:
   }
 
   constexpr inline const dig_t& cr_cthis_at(size_t k) const noexcept {
-    return (cr_base_cthis()[k]);
+  	const base_t& base_cthis{static_cast<const base_t&>(*this)};
+    return (base_cthis[k]);
   }
 
 public:

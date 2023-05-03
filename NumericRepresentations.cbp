@@ -30,12 +30,12 @@
 					<Add option="-Wall" />
 					<Add option="-m64" />
 					<Add option="-g" />
-					<Add option="-std=gnu++23 -fconcepts-diagnostics-depth=1024 -fconstexpr-loop-limit=100000000" />
+					<Add option="-std=gnu++23 -fconcepts-diagnostics-depth=1024 -fconstexpr-loop-limit=1000000" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="include" />
+				</ResourceCompiler>
 				<Linker>
-					<Add option="-static-libstdc++" />
-					<Add option="-static-libgcc" />
-					<Add option="-static" />
 					<Add option="-m64" />
 				</Linker>
 			</Target>
@@ -50,15 +50,14 @@
 					<Add option="-Weffc++" />
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
-					<Add option="-fPIC" />
 					<Add option="-m64" />
-					<Add option="-std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=100000000" />
+					<Add option="-std=gnu++23 -fconcepts-diagnostics-depth=512 -fconstexpr-loop-limit=1000000" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="include" />
+				</ResourceCompiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-static-libstdc++" />
-					<Add option="-static-libgcc" />
-					<Add option="-static" />
 					<Add option="-m64" />
 				</Linker>
 			</Target>
@@ -66,14 +65,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="include/TplMp_typelist_t.hxx" />
 		<Unit filename="include/auxiliary_functions.hpp" />
 		<Unit filename="include/auxiliary_types.hpp" />
 		<Unit filename="include/base_num_t.hpp" />
 		<Unit filename="include/basic_types.hpp" />
 		<Unit filename="include/dig_t.hpp" />
-		<Unit filename="include/get.hpp" />
-		<Unit filename="include/helper_functions_on_variant.hpp" />
 		<Unit filename="include/int_num_t.hpp" />
 		<Unit filename="include/int_reg_digs_t.hpp" />
 		<Unit filename="include/memory_handler.hpp" />
@@ -86,9 +82,8 @@
 		<Unit filename="include/reg_digs_t.hpp" />
 		<Unit filename="include/testunit.hpp" />
 		<Unit filename="include/utilities.hpp" />
-		<Unit filename="include/variant_types.hpp" />
-		<Unit filename="src/get.cpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/memory_handler.cpp" />
 		<Unit filename="src/test_driver.cpp" />
 		<Extensions>
 			<code_completion>

@@ -86,36 +86,43 @@ public:
 
 private:
 
-  inline constexpr const base_t* const const_base_this() const noexcept {
-    return static_cast<const base_t* const>(this);
-  } // warning : qualifiers ignored on function return type
+  //inline constexpr const base_t* const const_base_this() const noexcept {
+  //  return static_cast<const base_t* const>(this);
+  //} // warning : qualifiers ignored on function return type
 
   inline constexpr base_t base_cpy_cthis() const noexcept {
-    return base_t(*const_base_this());
+  	const base_t& cr_base_this{static_cast<const base_t&>(*this)};
+    return cr_base_this;
   }
 
-  inline constexpr const base_t& base_const_ref_cthis() const noexcept {
-    return (*const_base_this());
-  }
+  //inline constexpr const base_t& base_const_ref_cthis() const noexcept {
+  //  return (*const_base_this());
+  //}
 
   inline constexpr const dig_t& const_by_index(size_t ix) const noexcept {
-    return (base_const_ref_cthis()[ix]);
+  	const base_t& cr_base_this{static_cast<const base_t&>(*this)};
+    return (cr_base_this[ix]);
   }
 
   inline constexpr dig_t cpy_by_index(size_t ix) const noexcept {
-    return dig_t(base_const_ref_cthis()[ix]);
+  	const base_t& cr_base_this{static_cast<const base_t&>(*this)};
+    return dig_t{cr_base_this[ix]};
   }
 
 private:
 
-  inline constexpr base_t* const base_this() noexcept {
-    return static_cast<base_t *const>(this);
-  } // warning : qualifiers ignored on function return type
+//  inline constexpr base_t* const base_this() noexcept {
+//    return static_cast<base_t *const>(this);
+//  } // warning : qualifiers ignored on function return type
 
-  inline constexpr base_t& base_ref_cthis() noexcept { return (*base_this()); }
+  inline constexpr base_t& base_ref_cthis() noexcept {
+  	const base_t& r_base_cthis{static_cast<const base_t&>(*this)};
+  	return (r_base_cthis);
+  }
 
   inline constexpr const dig_t& by_index(size_t ix) noexcept {
-    return (base_ref_cthis()[ix]);
+  	const base_t& r_base_cthis{static_cast<const base_t&>(*this)};
+    return (r_base_cthis[ix]);
   }
 
 private:
@@ -218,7 +225,8 @@ public:
   template <size_t N> requires(N > 0)
   constexpr inline const nat_reg_digs_t&
   operator=(const base_N_t<N>& arg) noexcept {
-    if (base_this() != &arg)
+  	const base_t* const ptr_base_this{static_cast<const base_t* const>(this)};
+    if (ptr_base_this != &arg)
       copy_arg_N<N>(arg);
     return (*this);
   }
@@ -226,7 +234,8 @@ public:
   /// OPERACIÓN ASIGNACIÓN POR COPIA REFERENCIA DESDE BASE_N_T
   template <size_t N> requires(N > 0)
   constexpr inline nat_reg_digs_t& operator=(base_N_t<N>& arg) noexcept {
-    if (const_base_this() != &arg)
+  	const base_t* const ptr_base_this{static_cast<const base_t* const>(this)};
+    if (ptr_base_this != &arg)
       copy_arg_N<N>(arg);
     return (*this);
   }
@@ -234,7 +243,8 @@ public:
   /// OPERACIÓN ASIGNACIÓN POR COPIA MOVIMIENTO DESDE BASE_N_T
   template <size_t N> requires(N > 0)
   constexpr inline const nat_reg_digs_t& operator=(base_N_t<N>&& arg) noexcept {
-    if (const_base_this() != &arg)
+  	const base_t* const ptr_base_this{static_cast<const base_t* const>(this)};
+    if (ptr_base_this != &arg)
       move_arg_N<N>(std::move(arg));
     return (*this);
   }
@@ -243,8 +253,9 @@ public:
   template <size_t N> requires(N > 0)
   constexpr inline nat_reg_digs_t&
   operator=(const nat_reg_N_digs_t<N>& arg) noexcept {
+  	base_t* const ptr_base_this{static_cast<base_t* const>(this)};
     if (this != &arg)
-      (*base_this()) = arg.base_const_ref_cthis();
+      (*ptr_base_this) = arg.base_const_ref_cthis();
     return (*this);
   }
 
@@ -252,8 +263,9 @@ public:
   template <size_t N> requires(N > 0)
   constexpr inline nat_reg_digs_t&
   operator=(nat_reg_N_digs_t<N>&& arg) noexcept {
+  	base_t* const ptr_base_this{static_cast<base_t* const>(this)};
     if (this != &arg)
-      (*base_this()) = std::move(*(arg.base_this()));
+      (*ptr_base_this) = std::move(*(arg.base_this()));
     return (*this);
   }
 
@@ -261,8 +273,9 @@ public:
   template <size_t N> requires(N > 0)
   constexpr inline const nat_reg_digs_t&
   operator=(const nat_reg_N_digs_t<N>& arg) noexcept {
+  	base_t* const ptr_base_this{static_cast<base_t* const>(this)};
     if (this != &arg)
-      (*base_this()) = arg.base_const_ref_cthis();
+      (*ptr_base_this) = arg.base_const_ref_cthis();
     return (*this);
   }
 
@@ -543,7 +556,9 @@ public:
   constexpr inline
   std::strong_ordering operator<=>(const nat_reg_N_digs_t<N>& arg) const
   noexcept {
-    return (base_const_ref_cthis() <=> arg.base_const_ref_cthis());
+  	const base_t& cr_base_this_this{static_cast<const base_t&>(*this)};
+  	const base_t& cr_base_this_arg{static_cast<const base_t&>(arg)};
+    return (cr_base_this_this <=> cr_base_this_arg);
   }
 
   /// OPERADOR COMPARACIÓN SPACESHIP C++20
@@ -551,13 +566,15 @@ public:
     requires(N > 0)
   constexpr inline
   std::weak_ordering operator<=>(const base_N_t<N>& arg) const noexcept {
-    return (base_const_ref_cthis() <=> arg);
+  	const base_t& cr_base_this_this{static_cast<const base_t&>(*this)};
+    return (cr_base_this_this <=> arg);
   }
 
   /// OPERADOR COMPARACIÓN SPACESHIP C++20
   constexpr inline
   std::weak_ordering operator<=>(const dig_t& arg) const noexcept {
-    return (base_const_ref_cthis() <=> arg);
+  	const base_t& cr_base_this_this{static_cast<const base_t&>(*this)};
+    return (cr_base_this_this <=> arg);
   }
 
   /********************************/
