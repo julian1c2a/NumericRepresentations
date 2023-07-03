@@ -743,7 +743,11 @@ public:
   }
 
   constexpr inline const dig_t &operator--() noexcept {
-    m_d = (m_d > ui_0()) ? (--m_d) : (ui_max());
+  	if (m_d > ui_0()) {
+	  --m_d;
+  	} else {
+	  m_d = ui_max();
+  	}
     return (*this);
   }
 

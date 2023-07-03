@@ -70,6 +70,7 @@
 		<Unit filename="include/base_num_t.hpp" />
 		<Unit filename="include/basic_types.hpp" />
 		<Unit filename="include/dig_t.hpp" />
+		<Unit filename="include/digit_variant_t.hpp" />
 		<Unit filename="include/int_num_t.hpp" />
 		<Unit filename="include/int_reg_digs_t.hpp" />
 		<Unit filename="include/memory_handler.hpp" />
@@ -82,8 +83,12 @@
 		<Unit filename="include/reg_digs_t.hpp" />
 		<Unit filename="include/testunit.hpp" />
 		<Unit filename="include/utilities.hpp" />
+		<Unit filename="include/variant_types.hpp" />
+		<Unit filename="src/incrementos.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/memory_handler.cpp" />
+		<Unit filename="src/opera_y_asigna.cpp" />
+		<Unit filename="src/show_and_strings.cpp" />
 		<Unit filename="src/test_driver.cpp" />
 		<Extensions>
 			<code_completion>

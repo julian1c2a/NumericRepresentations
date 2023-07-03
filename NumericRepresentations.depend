@@ -174,11 +174,12 @@
 	<clocale>
 	<windows.h>
 
-1683134388 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
+1683752537 source:c:\users\julia\dropbox\github\numericrepresentations\src\main.cpp
 	<clocale>
 	<windows.h>
 	<fstream>
-	"../include/testunit.hpp"
+	<iostream>
+	"../include/variant_types.hpp"
 
 1677070428 c:\users\julia\dropbox\github\numericrepresentations\src\test_driver.cpp
 	"testunit.hpp"
@@ -226,7 +227,7 @@
 	"dig_t.hpp"
 	"utilities.hpp"
 
-1682684248 c:\users\julia\dropbox\github\numericrepresentations\include\dig_t.hpp
+1683753792 c:\users\julia\dropbox\github\numericrepresentations\include\dig_t.hpp
 	"auxiliary_functions.hpp"
 	"auxiliary_types.hpp"
 
@@ -264,10 +265,12 @@
 	<array>
 	<tuple>
 
-1683129988 c:\users\julia\dropbox\github\numericrepresentations\include\memory_handler.hpp
+1683744635 c:\users\julia\dropbox\github\numericrepresentations\include\memory_handler.hpp
 	"../include/int_reg_digs_t.hpp"
+	"../include/variant_types.hpp"
 	<variant>
 	<string>
+	<ostream>
 	<map>
 	<set>
 
@@ -277,9 +280,33 @@
 1683105743 c:\users\julia\dropbox\github\numericrepresentations\include\get.hpp
 	"memory_handler.hpp"
 
-1682940099 c:\users\julia\dropbox\github\numericrepresentations\include\variant_types.hpp
+1683835177 c:\users\julia\dropbox\github\numericrepresentations\include\variant_types.hpp
 	<variant>
+	<string>
+	<ostream>
+	"dig_t.hpp"
 
-1683057829 source:c:\users\julia\dropbox\github\numericrepresentations\src\memory_handler.cpp
+1683744449 source:c:\users\julia\dropbox\github\numericrepresentations\src\memory_handler.cpp
 	"../include/memory_handler.hpp"
+	<variant>
+	<utility>
+	<ostream>
+	<string>
+
+1683742068 source:c:\users\julia\dropbox\github\numericrepresentations\src\opera_y_asigna.cpp
+	"../include/memory_handler.hpp"
+	<variant>
+	<utility>
+	<ostream>
+	<string>
+
+1683745095 source:c:\users\julia\dropbox\github\numericrepresentations\src\show_and_strings.cpp
+	<string>
+	<ostream>
+	"../include/variant_types.hpp"
+
+1683753413 source:c:\users\julia\dropbox\github\numericrepresentations\src\incrementos.cpp
+	<variant>
+	"../include/dig_t.hpp"
+	"../include/variant_types.hpp"
 

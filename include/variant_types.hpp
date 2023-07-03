@@ -2,150 +2,77 @@
 #define VARIANT_TYPES_HPP_INCLUDED
 
 #include <variant>
+#include <string>
+#include <ostream>
+#include "dig_t.hpp"
+
 namespace NumRepr {
-namespace memory_handler {
-//nat_reg_digs_t
-using genRadixNat32L_t =
-	std::variant<
-		false_type,true_type,nat_reg_digs_t<2,32>, nat_reg_digs_t<3,32>, nat_reg_digs_t<4,32>,
-		nat_reg_digs_t<5,32>, nat_reg_digs_t<6,32>, nat_reg_digs_t<7,32>, nat_reg_digs_t<8,32>, nat_reg_digs_t<9,32>,
-		nat_reg_digs_t<10,32>,nat_reg_digs_t<11,32>,nat_reg_digs_t<12,32>,nat_reg_digs_t<13,32>,nat_reg_digs_t<14,32>,
-		nat_reg_digs_t<15,32>,nat_reg_digs_t<16,32>,nat_reg_digs_t<17,32>,nat_reg_digs_t<18,32>,nat_reg_digs_t<19,32>,
-		nat_reg_digs_t<20,32>,nat_reg_digs_t<21,32>,nat_reg_digs_t<22,32>,nat_reg_digs_t<23,32>,nat_reg_digs_t<24,32>,
-		nat_reg_digs_t<25,32>,nat_reg_digs_t<26,32>,nat_reg_digs_t<27,32>,nat_reg_digs_t<28,32>,nat_reg_digs_t<29,32>,
-		nat_reg_digs_t<30,32>,nat_reg_digs_t<31,32>,nat_reg_digs_t<32,32>,nat_reg_digs_t<33,32>,nat_reg_digs_t<34,32>,
-		nat_reg_digs_t<35,32>,nat_reg_digs_t<36,32>,nat_reg_digs_t<37,32>,nat_reg_digs_t<38,32>,nat_reg_digs_t<39,32>,
-		nat_reg_digs_t<40,32>,nat_reg_digs_t<41,32>,nat_reg_digs_t<42,32>,nat_reg_digs_t<43,32>,nat_reg_digs_t<44,32>,
-		nat_reg_digs_t<45,32>,nat_reg_digs_t<46,32>,nat_reg_digs_t<47,32>,nat_reg_digs_t<48,32>,nat_reg_digs_t<49,32>,
-		nat_reg_digs_t<50,32>,nat_reg_digs_t<51,32>,nat_reg_digs_t<52,32>,nat_reg_digs_t<53,32>,nat_reg_digs_t<54,32>,
-		nat_reg_digs_t<55,32>,nat_reg_digs_t<56,32>,nat_reg_digs_t<57,32>,nat_reg_digs_t<58,32>,nat_reg_digs_t<59,32>,
-		nat_reg_digs_t<60,32>,nat_reg_digs_t<61,32>,nat_reg_digs_t<62,32>,nat_reg_digs_t<63,32>,nat_reg_digs_t<64,32>,
-		nat_reg_digs_t<65,32>,nat_reg_digs_t<66,32>,nat_reg_digs_t<67,32>,nat_reg_digs_t<68,32>,nat_reg_digs_t<69,32>,
-		nat_reg_digs_t<70,32>,nat_reg_digs_t<71,32>,nat_reg_digs_t<72,32>,nat_reg_digs_t<73,32>,nat_reg_digs_t<74,32>,
-		nat_reg_digs_t<75,32>,nat_reg_digs_t<76,32>,nat_reg_digs_t<77,32>,nat_reg_digs_t<78,32>,nat_reg_digs_t<79,32>,
-		nat_reg_digs_t<80,32>,nat_reg_digs_t<81,32>,nat_reg_digs_t<82,32>,nat_reg_digs_t<83,32>,nat_reg_digs_t<84,32>,
-		nat_reg_digs_t<85,32>,nat_reg_digs_t<86,32>,nat_reg_digs_t<87,32>,nat_reg_digs_t<88,32>,nat_reg_digs_t<89,32>,
-		nat_reg_digs_t<90,32>,nat_reg_digs_t<91,32>,nat_reg_digs_t<92,32>,nat_reg_digs_t<93,32>,nat_reg_digs_t<94,32>,
-		nat_reg_digs_t<95,32>,nat_reg_digs_t<96,32>,nat_reg_digs_t<97,32>,nat_reg_digs_t<98,32>,nat_reg_digs_t<99,32>,
-		nat_reg_digs_t<100,32>,nat_reg_digs_t<101,32>,nat_reg_digs_t<102,32>,nat_reg_digs_t<103,32>,
-		nat_reg_digs_t<104,32>,nat_reg_digs_t<105,32>,nat_reg_digs_t<106,32>,nat_reg_digs_t<107,32>,
-		nat_reg_digs_t<108,32>,nat_reg_digs_t<109,32>,
-		nat_reg_digs_t<110,32>,nat_reg_digs_t<111,32>,nat_reg_digs_t<112,32>,nat_reg_digs_t<113,32>,
-		nat_reg_digs_t<114,32>,nat_reg_digs_t<115,32>,nat_reg_digs_t<116,32>,nat_reg_digs_t<117,32>,
-		nat_reg_digs_t<118,32>,nat_reg_digs_t<119,32>,
-		nat_reg_digs_t<120,32>,nat_reg_digs_t<121,32>,nat_reg_digs_t<122,32>,nat_reg_digs_t<123,32>,
-		nat_reg_digs_t<124,32>,nat_reg_digs_t<125,32>,nat_reg_digs_t<126,32>,nat_reg_digs_t<127,32>,
-		nat_reg_digs_t<128,32>,nat_reg_digs_t<129,32>,
-		nat_reg_digs_t<130,32>,nat_reg_digs_t<131,32>,nat_reg_digs_t<132,32>,nat_reg_digs_t<133,32>,
-		nat_reg_digs_t<134,32>,nat_reg_digs_t<135,32>,nat_reg_digs_t<136,32>,nat_reg_digs_t<137,32>,
-		nat_reg_digs_t<138,32>,nat_reg_digs_t<139,32>,
-		nat_reg_digs_t<140,32>,nat_reg_digs_t<141,32>,nat_reg_digs_t<142,32>,nat_reg_digs_t<143,32>,
-		nat_reg_digs_t<144,32>,nat_reg_digs_t<145,32>,nat_reg_digs_t<146,32>,nat_reg_digs_t<147,32>,
-		nat_reg_digs_t<148,32>,nat_reg_digs_t<149,32>,
-		nat_reg_digs_t<150,32>,nat_reg_digs_t<151,32>,nat_reg_digs_t<152,32>,nat_reg_digs_t<153,32>,
-		nat_reg_digs_t<154,32>,nat_reg_digs_t<155,32>,nat_reg_digs_t<156,32>,nat_reg_digs_t<157,32>,
-		nat_reg_digs_t<158,32>,nat_reg_digs_t<159,32>,
-		nat_reg_digs_t<160,32>,nat_reg_digs_t<161,32>,nat_reg_digs_t<162,32>,nat_reg_digs_t<163,32>,
-		nat_reg_digs_t<164,32>,nat_reg_digs_t<165,32>,nat_reg_digs_t<166,32>,nat_reg_digs_t<167,32>,
-		nat_reg_digs_t<168,32>,nat_reg_digs_t<169,32>,
-		nat_reg_digs_t<170,32>,nat_reg_digs_t<171,32>,nat_reg_digs_t<172,32>,nat_reg_digs_t<173,32>,
-		nat_reg_digs_t<174,32>,nat_reg_digs_t<175,32>,nat_reg_digs_t<176,32>,nat_reg_digs_t<177,32>,
-		nat_reg_digs_t<178,32>,nat_reg_digs_t<179,32>,
-		nat_reg_digs_t<180,32>,nat_reg_digs_t<181,32>,nat_reg_digs_t<182,32>,nat_reg_digs_t<183,32>,
-		nat_reg_digs_t<184,32>,nat_reg_digs_t<185,32>,nat_reg_digs_t<186,32>,nat_reg_digs_t<187,32>,
-		nat_reg_digs_t<188,32>,nat_reg_digs_t<189,32>,
-		nat_reg_digs_t<190,32>,nat_reg_digs_t<191,32>,nat_reg_digs_t<192,32>,nat_reg_digs_t<193,32>,
-		nat_reg_digs_t<194,32>,nat_reg_digs_t<195,32>,nat_reg_digs_t<196,32>,nat_reg_digs_t<197,32>,
-		nat_reg_digs_t<198,32>,nat_reg_digs_t<199,32>,
-		nat_reg_digs_t<200,32>,nat_reg_digs_t<201,32>,nat_reg_digs_t<202,32>,nat_reg_digs_t<203,32>,
-		nat_reg_digs_t<204,32>,nat_reg_digs_t<205,32>,nat_reg_digs_t<206,32>,nat_reg_digs_t<207,32>,
-		nat_reg_digs_t<208,32>,nat_reg_digs_t<209,32>,
-		nat_reg_digs_t<210,32>,nat_reg_digs_t<211,32>,nat_reg_digs_t<212,32>,nat_reg_digs_t<213,32>,
-		nat_reg_digs_t<214,32>,nat_reg_digs_t<215,32>,nat_reg_digs_t<216,32>,nat_reg_digs_t<217,32>,
-		nat_reg_digs_t<218,32>,nat_reg_digs_t<219,32>,
-		nat_reg_digs_t<220,32>,nat_reg_digs_t<221,32>,nat_reg_digs_t<222,32>,nat_reg_digs_t<223,32>,
-		nat_reg_digs_t<224,32>,nat_reg_digs_t<225,32>,nat_reg_digs_t<226,32>,nat_reg_digs_t<227,32>,
-		nat_reg_digs_t<228,32>,nat_reg_digs_t<229,32>,
-		nat_reg_digs_t<230,32>,nat_reg_digs_t<231,32>,nat_reg_digs_t<232,32>,nat_reg_digs_t<233,32>,
-		nat_reg_digs_t<234,32>,nat_reg_digs_t<235,32>,nat_reg_digs_t<236,32>,nat_reg_digs_t<237,32>,
-		nat_reg_digs_t<238,32>,nat_reg_digs_t<239,32>,
-		nat_reg_digs_t<240,32>,nat_reg_digs_t<241,32>,nat_reg_digs_t<242,32>,nat_reg_digs_t<243,32>,
-		nat_reg_digs_t<244,32>,nat_reg_digs_t<245,32>,nat_reg_digs_t<246,32>,nat_reg_digs_t<247,32>,
-		nat_reg_digs_t<248,32>,nat_reg_digs_t<249,32>,
-		nat_reg_digs_t<250,32>,nat_reg_digs_t<251,32>,nat_reg_digs_t<252,32>,nat_reg_digs_t<253,32>,
-		nat_reg_digs_t<254,32>,nat_reg_digs_t<255,32>
+namespace memory_handler {// tipos variant por ahora
+// genRadixInt32L_t;
+// genRadixNat32L_t;
+// genRadixDig_t;
+//template<std::uint64_t B>
+//using nat_reg_32digs_t = nat_reg_digs_t<B,32U>;
+//
+//template<std::uint64_t B>
+//using int_reg_32digs_t = int_reg_digs_t<B,32U>;
+
+//class int_var_list;
+//
+//class nat_var_list;
+
+using false_type = typename std::false_type;
+using true_type = typename std::true_type;
+
+using genRadixDig_t =
+	typename std::variant<
+		false_type,true_type,dig_t<2>, dig_t<3>, dig_t<4>, dig_t<5>, dig_t<6>, dig_t<7>, dig_t<8>, dig_t<9>,
+		dig_t<10>,dig_t<11>,dig_t<12>,dig_t<13>,dig_t<14>,dig_t<15>,dig_t<16>,dig_t<17>,dig_t<18>,dig_t<19>,
+		dig_t<20>,dig_t<21>,dig_t<22>,dig_t<23>,dig_t<24>,dig_t<25>,dig_t<26>,dig_t<27>,dig_t<28>,dig_t<29>,
+		dig_t<30>,dig_t<31>,dig_t<32>,dig_t<33>,dig_t<34>,dig_t<35>,dig_t<36>,dig_t<37>,dig_t<38>,dig_t<39>,
+		dig_t<40>,dig_t<41>,dig_t<42>,dig_t<43>,dig_t<44>,dig_t<45>,dig_t<46>,dig_t<47>,dig_t<48>,dig_t<49>,
+		dig_t<50>,dig_t<51>,dig_t<52>,dig_t<53>,dig_t<54>,dig_t<55>,dig_t<56>,dig_t<57>,dig_t<58>,dig_t<59>,
+		dig_t<60>,dig_t<61>,dig_t<62>,dig_t<63>
 	>;
-//int_reg_digs_t
-using genRadixInt32L_t =
-	std::variant<
-		false_type,true_type,int_reg_digs_t<2,32>, int_reg_digs_t<3,32>, int_reg_digs_t<4,32>,
-		int_reg_digs_t<5,32>, int_reg_digs_t<6,32>, int_reg_digs_t<7,32>, int_reg_digs_t<8,32>, int_reg_digs_t<9,32>,
-		int_reg_digs_t<10,32>,int_reg_digs_t<11,32>,int_reg_digs_t<12,32>,int_reg_digs_t<13,32>,int_reg_digs_t<14,32>,
-		int_reg_digs_t<15,32>,int_reg_digs_t<16,32>,int_reg_digs_t<17,32>,int_reg_digs_t<18,32>,int_reg_digs_t<19,32>,
-		int_reg_digs_t<20,32>,int_reg_digs_t<21,32>,int_reg_digs_t<22,32>,int_reg_digs_t<23,32>,int_reg_digs_t<24,32>,
-		int_reg_digs_t<25,32>,int_reg_digs_t<26,32>,int_reg_digs_t<27,32>,int_reg_digs_t<28,32>,int_reg_digs_t<29,32>,
-		int_reg_digs_t<30,32>,int_reg_digs_t<31,32>,int_reg_digs_t<32,32>,int_reg_digs_t<33,32>,int_reg_digs_t<34,32>,
-		int_reg_digs_t<35,32>,int_reg_digs_t<36,32>,int_reg_digs_t<37,32>,int_reg_digs_t<38,32>,int_reg_digs_t<39,32>,
-		int_reg_digs_t<40,32>,int_reg_digs_t<41,32>,int_reg_digs_t<42,32>,int_reg_digs_t<43,32>,int_reg_digs_t<44,32>,
-		int_reg_digs_t<45,32>,int_reg_digs_t<46,32>,int_reg_digs_t<47,32>,int_reg_digs_t<48,32>,int_reg_digs_t<49,32>,
-		int_reg_digs_t<50,32>,int_reg_digs_t<51,32>,int_reg_digs_t<52,32>,int_reg_digs_t<53,32>,int_reg_digs_t<54,32>,
-		int_reg_digs_t<55,32>,int_reg_digs_t<56,32>,int_reg_digs_t<57,32>,int_reg_digs_t<58,32>,int_reg_digs_t<59,32>,
-		int_reg_digs_t<60,32>,int_reg_digs_t<61,32>,int_reg_digs_t<62,32>,int_reg_digs_t<63,32>,int_reg_digs_t<64,32>,
-		int_reg_digs_t<65,32>,int_reg_digs_t<66,32>,int_reg_digs_t<67,32>,int_reg_digs_t<68,32>,int_reg_digs_t<69,32>,
-		int_reg_digs_t<70,32>,int_reg_digs_t<71,32>,int_reg_digs_t<72,32>,int_reg_digs_t<73,32>,int_reg_digs_t<74,32>,
-		int_reg_digs_t<75,32>,int_reg_digs_t<76,32>,int_reg_digs_t<77,32>,int_reg_digs_t<78,32>,int_reg_digs_t<79,32>,
-		int_reg_digs_t<80,32>,int_reg_digs_t<81,32>,int_reg_digs_t<82,32>,int_reg_digs_t<83,32>,int_reg_digs_t<84,32>,
-		int_reg_digs_t<85,32>,int_reg_digs_t<86,32>,int_reg_digs_t<87,32>,int_reg_digs_t<88,32>,int_reg_digs_t<89,32>,
-		int_reg_digs_t<90,32>,int_reg_digs_t<91,32>,int_reg_digs_t<92,32>,int_reg_digs_t<93,32>,int_reg_digs_t<94,32>,
-		int_reg_digs_t<95,32>,int_reg_digs_t<96,32>,int_reg_digs_t<97,32>,int_reg_digs_t<98,32>,int_reg_digs_t<99,32>,
-		int_reg_digs_t<100,32>,int_reg_digs_t<101,32>,int_reg_digs_t<102,32>,int_reg_digs_t<103,32>,
-		int_reg_digs_t<104,32>,int_reg_digs_t<105,32>,int_reg_digs_t<106,32>,int_reg_digs_t<107,32>,
-		int_reg_digs_t<108,32>,int_reg_digs_t<109,32>,
-		int_reg_digs_t<110,32>,int_reg_digs_t<111,32>,int_reg_digs_t<112,32>,int_reg_digs_t<113,32>,
-		int_reg_digs_t<114,32>,int_reg_digs_t<115,32>,int_reg_digs_t<116,32>,int_reg_digs_t<117,32>,
-		int_reg_digs_t<118,32>,int_reg_digs_t<119,32>,
-		int_reg_digs_t<120,32>,int_reg_digs_t<121,32>,int_reg_digs_t<122,32>,int_reg_digs_t<123,32>,
-		int_reg_digs_t<124,32>,int_reg_digs_t<125,32>,int_reg_digs_t<126,32>,int_reg_digs_t<127,32>,
-		int_reg_digs_t<128,32>,int_reg_digs_t<129,32>,
-		int_reg_digs_t<130,32>,int_reg_digs_t<131,32>,int_reg_digs_t<132,32>,int_reg_digs_t<133,32>,
-		int_reg_digs_t<134,32>,int_reg_digs_t<135,32>,int_reg_digs_t<136,32>,int_reg_digs_t<137,32>,
-		int_reg_digs_t<138,32>,int_reg_digs_t<139,32>,
-		int_reg_digs_t<140,32>,int_reg_digs_t<141,32>,int_reg_digs_t<142,32>,int_reg_digs_t<143,32>,
-		int_reg_digs_t<144,32>,int_reg_digs_t<145,32>,int_reg_digs_t<146,32>,int_reg_digs_t<147,32>,
-		int_reg_digs_t<148,32>,int_reg_digs_t<149,32>,
-		int_reg_digs_t<150,32>,int_reg_digs_t<151,32>,int_reg_digs_t<152,32>,int_reg_digs_t<153,32>,
-		int_reg_digs_t<154,32>,int_reg_digs_t<155,32>,int_reg_digs_t<156,32>,int_reg_digs_t<157,32>,
-		int_reg_digs_t<158,32>,int_reg_digs_t<159,32>,
-		int_reg_digs_t<160,32>,int_reg_digs_t<161,32>,int_reg_digs_t<162,32>,int_reg_digs_t<163,32>,
-		int_reg_digs_t<164,32>,int_reg_digs_t<165,32>,int_reg_digs_t<166,32>,int_reg_digs_t<167,32>,
-		int_reg_digs_t<168,32>,int_reg_digs_t<169,32>,
-		int_reg_digs_t<170,32>,int_reg_digs_t<171,32>,int_reg_digs_t<172,32>,int_reg_digs_t<173,32>,
-		int_reg_digs_t<174,32>,int_reg_digs_t<175,32>,int_reg_digs_t<176,32>,int_reg_digs_t<177,32>,
-		int_reg_digs_t<178,32>,int_reg_digs_t<179,32>,
-		int_reg_digs_t<180,32>,int_reg_digs_t<181,32>,int_reg_digs_t<182,32>,int_reg_digs_t<183,32>,
-		int_reg_digs_t<184,32>,int_reg_digs_t<185,32>,int_reg_digs_t<186,32>,int_reg_digs_t<187,32>,
-		int_reg_digs_t<188,32>,int_reg_digs_t<189,32>,
-		int_reg_digs_t<190,32>,int_reg_digs_t<191,32>,int_reg_digs_t<192,32>,int_reg_digs_t<193,32>,
-		int_reg_digs_t<194,32>,int_reg_digs_t<195,32>,int_reg_digs_t<196,32>,int_reg_digs_t<197,32>,
-		int_reg_digs_t<198,32>,int_reg_digs_t<199,32>,
-		int_reg_digs_t<200,32>,int_reg_digs_t<201,32>,int_reg_digs_t<202,32>,int_reg_digs_t<203,32>,
-		int_reg_digs_t<204,32>,int_reg_digs_t<205,32>,int_reg_digs_t<206,32>,int_reg_digs_t<207,32>,
-		int_reg_digs_t<208,32>,int_reg_digs_t<209,32>,
-		int_reg_digs_t<210,32>,int_reg_digs_t<211,32>,int_reg_digs_t<212,32>,int_reg_digs_t<213,32>,
-		int_reg_digs_t<214,32>,int_reg_digs_t<215,32>,int_reg_digs_t<216,32>,int_reg_digs_t<217,32>,
-		int_reg_digs_t<218,32>,int_reg_digs_t<219,32>,
-		int_reg_digs_t<220,32>,int_reg_digs_t<221,32>,int_reg_digs_t<222,32>,int_reg_digs_t<223,32>,
-		int_reg_digs_t<224,32>,int_reg_digs_t<225,32>,int_reg_digs_t<226,32>,int_reg_digs_t<227,32>,
-		int_reg_digs_t<228,32>,int_reg_digs_t<229,32>,
-		int_reg_digs_t<230,32>,int_reg_digs_t<231,32>,int_reg_digs_t<232,32>,int_reg_digs_t<233,32>,
-		int_reg_digs_t<234,32>,int_reg_digs_t<235,32>,int_reg_digs_t<236,32>,int_reg_digs_t<237,32>,
-		int_reg_digs_t<238,32>,int_reg_digs_t<239,32>,
-		int_reg_digs_t<240,32>,int_reg_digs_t<241,32>,int_reg_digs_t<242,32>,int_reg_digs_t<243,32>,
-		int_reg_digs_t<244,32>,int_reg_digs_t<245,32>,int_reg_digs_t<246,32>,int_reg_digs_t<247,32>,
-		int_reg_digs_t<248,32>,int_reg_digs_t<249,32>,
-		int_reg_digs_t<250,32>,int_reg_digs_t<251,32>,int_reg_digs_t<252,32>,int_reg_digs_t<253,32>,
-		int_reg_digs_t<254,32>,int_reg_digs_t<255,32>
-	>;
+
+struct varRadixDig_t : public genRadixDig_t {
+private:
+	template <type_traits::integral_c Int_t>
+	constexpr static inline decltype(auto) normaliza(Int_t arg) noexcept;
+public:
+	varRadixDig_t() noexcept : genRadixDig_t(dig_t<2>(0)){}
+	varRadixDig_t(const genRadixDig_t& obj) noexcept : genRadixDig_t(obj) {}
+	varRadixDig_t(genRadixDig_t&& obj) noexcept : genRadixDig_t(std::move(obj)) {}
+	template<std::size_t k>
+	varRadixDig_t(const dig_t<k>& obj) noexcept : genRadixDig_t(obj) {}
+	template<std::size_t k>
+	varRadixDig_t(dig_t<k>&& obj) noexcept : genRadixDig_t(std::move(obj)) {}
+	template<std::size_t k>
+	varRadixDig_t& operator=(const dig_t<k>& otro) noexcept {(*this)=otro; return (*this);}
+	template<std::size_t k>
+	varRadixDig_t& operator=(dig_t<k>&& otro) noexcept {(*this)=std::move(otro); return (*this);}
+	varRadixDig_t& operator=(const genRadixDig_t& otro) noexcept {(*this)=otro; return (*this);}
+	varRadixDig_t& operator=(genRadixDig_t&& otro) noexcept {(*this)=std::move(otro); return (*this);}
+	const varRadixDig_t& operator++() noexcept;
+	const varRadixDig_t& operator--() noexcept;
+	varRadixDig_t operator++(int) noexcept;
+	varRadixDig_t operator--(int) noexcept;
+	const varRadixDig_t& operator+=(varRadixDig_t right) noexcept;
+	const varRadixDig_t& operator-=(varRadixDig_t right) noexcept;
+	const varRadixDig_t& operator*=(varRadixDig_t right) noexcept;
+	const varRadixDig_t& operator/=(varRadixDig_t right) noexcept;
+	const varRadixDig_t& operator%=(varRadixDig_t right) noexcept;
+	varRadixDig_t operator+(varRadixDig_t right) const noexcept;
+	varRadixDig_t operator-(varRadixDig_t right) const noexcept;
+	varRadixDig_t operator*(varRadixDig_t right) const noexcept;
+	varRadixDig_t operator/(varRadixDig_t right) const noexcept;
+	varRadixDig_t operator%(varRadixDig_t right) const noexcept;
+	std::string to_string() const noexcept;
+	void parse_from_string(const std::string&);
+	friend std::ostream& operator<<(std::ostream&,const varRadixDig_t&);
+	friend std::istream& operator>>(std::istream&,varRadixDig_t&);
+}; /// END OF CLASS VARIANT TYPE VARRADIXDIG_T
+
 
 } /// END OF NAMESPACE MEMORY_HANDLER
 } /// END OF NAMESPACE NUMREPR
