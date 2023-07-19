@@ -1,6 +1,0 @@
-#ifndef RAT_NUM_T_HPP_INCLUDED
-#define RAT_NUM_T_HPP_INCLUDED
-
-
-
-#endif // RAT_NUM_T_HPP_INCLUDED

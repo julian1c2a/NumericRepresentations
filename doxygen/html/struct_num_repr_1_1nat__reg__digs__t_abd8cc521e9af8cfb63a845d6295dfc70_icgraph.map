@@ -1,8 +1,0 @@
-<map id="NumRepr::nat_reg_digs_t::by_index" name="NumRepr::nat_reg_digs_t::by_index">
-<area shape="rect" id="node1" title=" " alt="" coords="421,101,581,141"/>
-<area shape="rect" id="node2" href="$struct_num_repr_1_1nat__reg__digs__t.html#a3ab8e26377b4f409fe0ec67972db7de4" title=" " alt="" coords="213,5,373,45"/>
-<area shape="rect" id="node3" href="$struct_num_repr_1_1nat__reg__digs__t.html#ae8944cfac1e1fd4c1e0a6be9bd5bc9f4" title=" " alt="" coords="213,69,373,109"/>
-<area shape="rect" id="node5" href="$struct_num_repr_1_1nat__reg__digs__t.html#a38fa3f288d43c0fa115e89bf9afd6da5" title="OPERACION COPIA DESDE UN DIGITO (CONVERSION)" alt="" coords="213,133,373,173"/>
-<area shape="rect" id="node6" href="$struct_num_repr_1_1nat__reg__digs__t.html#a953e903e06ac7220399e624582ddfe1f" title=" " alt="" coords="213,197,373,237"/>
-<area shape="rect" id="node4" href="$struct_num_repr_1_1nat__reg__digs__t.html#a9487898486f71a81f5ccc6573f8709db" title="CONSTRUCTOR POR MOVIMIENTO." alt="" coords="5,69,165,109"/>
-</map>

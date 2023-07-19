@@ -1,4 +1,0 @@
-<map id="NumRepr::concat" name="NumRepr::concat">
-<area shape="rect" id="node1" title="STATIC BASE_N_T&lt;1+1&gt; CONCAT(DIG_T,DIG_T)" alt="" coords="5,29,131,55"/>
-<area shape="rect" id="node2" href="$namespace_num_repr.html#a6f762ec285d399a1aba905239740d424" title="STATIC BASE_N_T&lt;N&gt; CONCAT(BASE_N_T&lt;N&gt;)" alt="" coords="179,29,304,55"/>
-</map>

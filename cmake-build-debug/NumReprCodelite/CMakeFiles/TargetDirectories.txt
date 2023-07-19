@@ -1,3 +1,0 @@
-C:/Users/julia/Dropbox/GitHub/NumericRepresentations/cmake-build-debug/NumReprCodelite/CMakeFiles/NumReprCodelite.dir
-C:/Users/julia/Dropbox/GitHub/NumericRepresentations/cmake-build-debug/NumReprCodelite/CMakeFiles/edit_cache.dir
-C:/Users/julia/Dropbox/GitHub/NumericRepresentations/cmake-build-debug/NumReprCodelite/CMakeFiles/rebuild_cache.dir
