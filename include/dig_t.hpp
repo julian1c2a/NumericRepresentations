@@ -2,7 +2,9 @@
 #define DIG_T_HPP_INCLUDED
 
 #include "auxiliary_functions.hpp"
-#include "auxiliary_types.hpp"
+#include "basic_types.hpp"
+#include <array>
+#include <string>
 
 namespace NumRepr {
 using type_traits::sqrt_max;
@@ -15,7 +17,7 @@ using type_traits::uint_type_for_radix_c;
 ///< SE SOBRECARGAN LOS OPERADORES ARITMETICOS PARA ARITMETICA MODULAR
 ///< DIG_T = SUMA Y MULTIPLICACION CIRCULAR (MODULAR CON MOD B)
 template <std::uint64_t B>
-requires (B > 1)
+  requires (B > 1)
 struct dig_t {
 /// GENERACIÓN DEL TIPO QUE CONTENDRÁ EL DÍGITO CON ENTERO SIN SIGNO
 using UINT_T = typename type_traits::TypeFromIntNumber_t<static_cast<uint64_t>(B)>;
@@ -39,7 +41,7 @@ public:
   /// ¡¡¡¡ no usado aún !!!!
   template <UINT_T n, UINT_T m>
     requires((n < B) && (m < B))
-  static consteval inline uintspair mult() noexcept {
+  static consteval uintspair mult() noexcept {
     if constexpr (B > type_traits::sqrt_max<UINT_T>()) {
       constexpr SIG_UINT_T sup_n{n};
       constexpr SIG_UINT_T sup_m{m};
@@ -314,7 +316,7 @@ public:
   constexpr bool is_unit() const noexcept { // FROM FINITE RINGS
     ///******************************************///
     ///< Es B COPRIMO con m_d ?                 >///
-    ///< Es max_comun_divisor(B,m_d)==1 ? 		>///
+    ///< Es max_comun_divisor(B,m_d)==1 ? 		  >///
     ///******************************************///
 
     if constexpr (is_prime()) {
@@ -845,7 +847,7 @@ public:
 
   /// EN BASE B, B-1-m_d ES EL COMPL_Bm1(m_d)
   constexpr inline
-  dig_t operator!() const noexcept {
+  dig_t operator~() const noexcept {
     return dig_t(ui_max() - m_d);
   }
 
@@ -979,9 +981,9 @@ public:
   }
 
   /********************************/
-  /*							  */
-  /* 	     VARIOS CASTS		  */
-  /*							  */
+  /*							                */
+  /* 	     VARIOS CASTS		        */
+  /*							                */
   /********************************/
 
   /// TIENE QUE DEVOLVER STD::STRING
@@ -994,21 +996,20 @@ private:
     return ret;
   }
 
-  static constexpr inline std::string radix_str() noexcept {
+  std::string radix_str() const noexcept
+  {
     constexpr std::int64_t radix = static_cast<std::int64_t>(B);
     std::ostringstream fmtr_obj;
     fmtr_obj << radix;
-    const std::string ret{"B" + fmtr_obj.str()};
+    const std::string ret{static_cast<std::string>("B") + static_cast<std::string>(fmtr_obj.str())};
     return ret;
   }
 
-public:
-  constexpr inline
-  std::uint64_t radix() const {
-  	return B;
-  }
+  public:
+  constexpr std::uint64_t radix() const { return B; }
 
-  std::string to_string() const noexcept {
+  std::string to_string() const noexcept
+  {
     const std::string num{this->num_to_string()};
     const std::string ret{"dig#" + num + "#" + radix_str()};
     return ret;
@@ -1136,8 +1137,7 @@ std::istream &operator>>(std::istream &is, dig_t<Base> &arg) {
 template <std::uint64_t Base>
   requires(Base > 1)
 std::ostream &operator<<(std::ostream &os, dig_t<Base> arg) {
-  os << "d#" << static_cast<std::int64_t>(arg()) << "#B"
-     << static_cast<std::int64_t>(Base);
+  os << "d[" << static_cast<std::int64_t>(arg()) << "]B" << static_cast<std::int64_t>(Base);
   return os;
 }
 

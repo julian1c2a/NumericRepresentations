@@ -328,10 +328,10 @@ namespace NumRepr {
   /// <summary>
   /// Constructor por defecto (rellena de digit_variant(0) todo el array)
   /// </summary>
-  template<std::size_t B,std::size_t N>
-  constexpr register_variant_t::register_variant_t() noexcept :
-  	register_variant(reg_digs_t<B,N>::regd_base_0())
-  {}
+//  template<std::size_t B,std::size_t N>
+//  constexpr register_variant_t::register_variant_t() noexcept :
+//  	register_variant(reg_digs_t<B,N>::regd_base_0())
+//  {}
 
 //  MEJOR HACERLO CON MAKE_REGISTER_VARIANT
 //  constexpr register_variant_t::register_variant_t(std::uint64_t B,std::uint64_t L) noexcept :
@@ -341,19 +341,19 @@ namespace NumRepr {
   /// <summary>
   /// Constructor por argumentos tipo dig_t: deduce el tipo
   /// </summary>
-  template <std::size_t B,typename... Ts>
-    requires(std::is_same_v<Ts, dig_t<B>> &&  ...)
-  constexpr register_variant_t(const Ts& ...args) noexcept
-      : register_variant(reg_digs_t<B,sizeof...(Ts)>::base_t{(utilities::ugly_pack_details::pack2array<const Ts& ...>{})(args...)}) {}
+//  template <std::size_t B,typename... Ts>
+//    requires(std::is_same_v<Ts, dig_t<B>> &&  ...)
+//  constexpr register_variant_t(const Ts& ...args) noexcept
+//      : register_variant(reg_digs_t<B,sizeof...(Ts)>::base_t{(utilities::ugly_pack_details::pack2array<const Ts& ...>{})(args...)}) {}
 
   /// CONSTRUCTOR COPIA DESDE EL TIPO BASE
-  template<std::size_t B,std::size_t N>
-  constexpr register_variant_t::register_variant_t(const reg_digs_t<B,N>& rarg) noexcept : register_variant{rarg} {}
+//  template<std::size_t B,std::size_t N>
+//  constexpr register_variant_t::register_variant_t(const reg_digs_t<B,N>& rarg) noexcept : register_variant{rarg} {}
 
   /// CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE
-  template<std::size_t B,std::size_t N>
-  constexpr register_variant_t::register_variant_t(reg_digs_t<B,N>&& rarg) noexcept
-      : register_variant{std::move(rarg)} {}
+//  template<std::size_t B,std::size_t N>
+//  constexpr register_variant_t::register_variant_t(reg_digs_t<B,N>&& rarg) noexcept
+//      : register_variant{std::move(rarg)} {}
 
   /// <summary>
   /// Constructor por Copia/Movimiento desde una
@@ -364,26 +364,26 @@ namespace NumRepr {
   /// Constructor copia desde un array cualquiera de dígitos dig_t
   /// (usando copy_arg_N<N>)
   /// </summary>
-  template <std::size_t B,std::size_t N>
-  constexpr register_variant_t::register_variant_t(const reg_digs_t<B,N>& arg) noexcept
-      : register_variant{copy_arg_N<B,N>(arg)} {}
+//  template <std::size_t B,std::size_t N>
+//  constexpr register_variant_t::register_variant_t(const reg_digs_t<B,N>& arg) noexcept
+//      : register_variant{copy_arg_N<B,N>(arg)} {}
 
   /// <summary>
   /// Constructor por movimiento desde un array cualquiera de dígitos dig_t
   /// (usando move_arg_N<N>)
   /// </summary>
-  template <std::size_t B,std::size_t N>
-  constexpr register_variant_t::register_variant_t(reg_digs_t<B,N>&& arg) noexcept
-      : register_variant{std::move(move_arg_N<B,N>(std::move(arg)))} {}
+//  template <std::size_t B,std::size_t N>
+//  constexpr register_variant_t::register_variant_t(reg_digs_t<B,N>&& arg) noexcept
+//      : register_variant{std::move(move_arg_N<B,N>(std::move(arg)))} {}
 
   /// <summary="Constructor copia desde una sucesión de objetos enteros
   /// variádica, normalizándolos">
   /// </summary>
 
-  template <std::size_t B,std::size_t L,type_traits::integral_c... Ints_type>
-    requires((sizeof...(Ints_type)) == L)
-  constexpr register_variant_t::register_variant_t(Ints_type... dig_pow_i) noexcept
-      : register_variant(reg_digs_t<B,L>((normalize<Ints_type...>((dig_t<B>(dig_pow_i))()...)).reverse())) {}
+//  template <std::size_t B,std::size_t L,type_traits::integral_c... Ints_type>
+//    requires((sizeof...(Ints_type)) == L)
+//  constexpr register_variant_t::register_variant_t(Ints_type... dig_pow_i) noexcept
+//      : register_variant(reg_digs_t<B,L>((normalize<Ints_type...>((dig_t<B>(dig_pow_i))()...)).reverse())) {}
 
   /// <summary>
   /// Sobrecarga del operador copia
@@ -391,30 +391,30 @@ namespace NumRepr {
 
   /// OPERACION ASIGNACION POR COPIA REFERENCIA
   /// CONST _NO_ COPIABLE DESDE REG_N_DIGS_T EN LA IZQUIERDA
-  template <std::size_t B,std::size_t N>
-  constexpr const register_variant_t&
-  register_variant_t::operator=(const reg_digs_t<B,N>& arg) noexcept {
-  	(*this) = arg;
-  	return (*this);
-  }
+//  template <std::size_t B,std::size_t N>
+//  constexpr const register_variant_t&
+//  register_variant_t::operator=(const reg_digs_t<B,N>& arg) noexcept {
+//  	(*this) = arg;
+//  	return (*this);
+//  }
 
   /// OPERACION ASIGNACION POR COPIA REFERENCIA
   /// DESDE REG_N_DIGS_T EN LA IZQUIERDA
-  template <std::size_t B,std::size_t N>
-  constexpr register_variant_t&
-  register_variant_t::operator=(reg_digs_t<B,N>& arg) noexcept {
-  	(*this) = arg;
-  	return (*this);
-  }
+//  template <std::size_t B,std::size_t N>
+//  constexpr register_variant_t&
+//  register_variant_t::operator=(reg_digs_t<B,N>& arg) noexcept {
+//  	(*this) = arg;
+//  	return (*this);
+//  }
 
   /// OPERACION ASIGNACION POR MOVIMIENTO
   /// DESDE REGS_N_DIGS_T EN LA QUE NO SE PUEDE COPIAR
-  template <std::size_t B,std::size_t N>
-  constexpr const register_variant_t&
-  register_variant_t::operator=(reg_digs_t<B,N>&& arg) noexcept {
-  	(*this) = std::move(arg);
-  	return (*this);
-  }
+//  template <std::size_t B,std::size_t N>
+//  constexpr const register_variant_t&
+//  register_variant_t::operator=(reg_digs_t<B,N>&& arg) noexcept {
+//  	(*this) = std::move(arg);
+//  	return (*this);
+//  }
 
   /// OPERACION COPIA DESDE UN DIGITO (CONVERSION)
   constexpr register_variant_t&

@@ -7,7 +7,6 @@
 
 #include <compare>
 #include <concepts>
-#include <optional>
 #include <type_traits>
 
 #include <cstring>
@@ -17,18 +16,11 @@
 #include <sstream>
 #include <string>
 
-#include <array>
-#include <list>
-#include <map>
-#include <vector>
 
 #include <climits>
 #include <cmath>
 #include <limits>
 #include <numeric>
-
-#include <functional>
-#include <iterator>
 
 namespace NumRepr {
 /// NUEVOS NOMBRES PARA LOS ENTEROS O PARECIDOS
@@ -106,7 +98,6 @@ CharT nullchar{CharT('\0')};
 char *clear_ccad(char *, usint_t);
 
 template <template <uchint_t B> class T, uchint_t B>
-inline constexpr
 const char *devCadenaC(
 	T<B> arg,
     size_t long_ccad = 64) noexcept {
@@ -523,14 +514,35 @@ template <typename UINT_T> consteval UINT_T middle_max() {
 /// FUNCIÓN QUE DADO UN TIPO ENTERO SIN SIGNO ME DA EL ENTERO MEDIO
 /// UINT_A > SQRT_MAX => UINT_A^2 NO CABE EN UINT_T
 /// UINT_A < SQRT_MAX => UINT_A^2 SI CABE EN UINT_T
+
+template<typename UINT_T>
+consteval UINT_T sqrt(UINT_T arg)
+{
+  if (arg == 0) {
+    return UINT_T(0);
+  } else if (arg < 4) {
+    return UINT_T(1);
+  } else if (arg < 9) {
+    return UINT_T(3);
+  } else if (arg < 16) {
+    return UINT_T(4);
+  } else {
+    UINT_T result{5};
+    while (result * result < arg) {
+        ++result;
+    }
+    --result;
+    return result;
+  }
+}
+
 template <typename UINT_T> consteval UINT_T sqrt_max() {
   using SIG_UINT_T = sig_UInt_for_UInt_t<UINT_T>;
   constexpr SIG_UINT_T maximo{maxbase<UINT_T>()};
   constexpr SIG_UINT_T uno{1};
   constexpr SIG_UINT_T base{maximo + uno};
-  constexpr long double raiz_real{
-      std::sqrt(static_cast<long double>(static_cast<SIG_UINT_T>(base)))};
-  return static_cast<UINT_T>(std::floor(raiz_real));
+  constexpr SIG_UINT_T raiz_real{sqrt(base)};
+  return static_cast<UINT_T>(raiz_real);
 }
 
 ///< QUEREMOS FABRICAR LA METAFUNCION TypeFromIntNumber_t<numero_sin_signo>

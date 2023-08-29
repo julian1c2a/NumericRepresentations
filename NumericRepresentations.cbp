@@ -46,27 +46,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="src/auxiliary_functions.hpp" />
-		<Unit filename="src/auxiliary_types.hpp" />
-		<Unit filename="src/base_num_t.hpp" />
-		<Unit filename="src/basic_types.hpp" />
-		<Unit filename="src/dig_t.hpp" />
-		<Unit filename="src/documentation/documentacion.doc" />
-		<Unit filename="src/documentation/interfaz_dig_t.doc" />
-		<Unit filename="src/int_num_t.hpp" />
-		<Unit filename="src/int_reg_digs_t.hpp" />
-		<Unit filename="src/lexer_parser.hpp" />
-		<Unit filename="src/memory_handler.hpp" />
-		<Unit filename="src/nat_num_t.hpp" />
-		<Unit filename="src/nat_rat_fixed_reg_t.hpp" />
-		<Unit filename="src/nat_rat_num_t.hpp" />
-		<Unit filename="src/nat_reg_digs_t.hpp" />
-		<Unit filename="src/pruebas_dig_t.cpp" />
-		<Unit filename="src/rat_fixed_reg_t.hpp" />
-		<Unit filename="src/rat_num_t.hpp" />
-		<Unit filename="src/reg_digs_t.hpp" />
-		<Unit filename="src/test_dig_t.hpp" />
-		<Unit filename="src/utilities.hpp" />
+		<Unit filename="include/auxiliary_functions.hpp" />
+		<Unit filename="include/auxiliary_types.hpp" />
+		<Unit filename="include/base_num_t.hpp" />
+		<Unit filename="include/basic_types.hpp" />
+		<Unit filename="include/dig_t.hpp" />
+		<Unit filename="include/digit_variant_t.hpp" />
+		<Unit filename="include/first_varlist_t.hpp" />
+		<Unit filename="include/memory_handler.hpp" />
+		<Unit filename="include/util_functs.hpp" />
+		<Unit filename="include/utilities.hpp" />
+		<Unit filename="src/digit_variant_t.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/memory_handler.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<wxsmith version="1">

@@ -107,8 +107,7 @@ struct pack2array {
   static consteval std::size_t pack_size() noexcept { return (sizeof...(Ts)); }
 
   inline static constexpr std::size_t size = pack_size();
-  using inner_type =
-  	typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>;
+  using inner_type = typename ugly_pack2tuple_details::pack2tuple<Ts...>::template elem_type<0>;
   using array_type = typename std::array< inner_type , size>;
 
   constexpr array_type operator()(Ts &&...args) const noexcept {
@@ -116,7 +115,7 @@ struct pack2array {
     return content;
   }
 
-  using elem_type = typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>;
+  using elem_type = typename ugly_pack2tuple_details::pack2tuple<Ts...>::template elem_type<0>;
 
   template <std::size_t J>
   static constexpr elem_type get(Ts &&...args) noexcept {

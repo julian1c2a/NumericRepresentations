@@ -2469,9 +2469,9 @@ public:
   }
 
   /*********************************/
-  /*							   */
-  /* 	   ISTREAM Y OSTREAM	   */
-  /*							   */
+  /*							                    */
+  /* 	   ISTREAM Y OSTREAM	*/
+  /*							                    */
   /*********************************/
 
   template <const uchint Base>

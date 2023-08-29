@@ -1,9 +1,9 @@
 
-#include "C:\\Users\\julia\\Dropbox\\GitHub\\NumericRepresentations\\include\\memory_handler.hpp"
-#include <variant>
-#include <utility>
+#include "../include/memory_handler.hpp"
 #include <ostream>
 #include <string>
+#include <utility>
+#include <variant>
 
 namespace NumRepr {
 namespace MemHand {

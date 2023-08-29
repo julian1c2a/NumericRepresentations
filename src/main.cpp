@@ -4,11 +4,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstdint>
-//#include "../include/dig_t.hpp"
-//#include "../include/digit_variant_t.hpp"
+#include "../include/dig_t.hpp"
+#include "../include/digit_variant_t.hpp"
 //#include "../include/testunit.hpp"
 #include "../include/first_varlist_t.hpp"
-#include "../include/register_variant_t.hpp"
+//#include "../include/register_variant_t.hpp"
 
 
 
@@ -19,7 +19,7 @@ using ullint_varlist_t = typename NumRepr::MemHand::ullint_varlist_t;
 using llint_varlist_t = typename NumRepr::MemHand::llint_varlist_t;
 using ld_varlist_t = typename NumRepr::MemHand::ld_varlist_t;
 
-using register_variant_t = typename NumRepr::register_variant_t;
+//using NumRepr::register_variant_t;
 
 /// PARA CUANDO LOS *.O SEAN DEMASIADO GRANDES:
 ///    -Wa,-??? (archivos grandes de ensamblador)
@@ -49,25 +49,25 @@ int main() {
   SetConsoleOutputCP(1252);   		// Cambiar STDOUT - Para máquinas Windows
   //
   // FINAL PARA PONER ESPAÑOL EN CONSOLA
-  register_variant_t regvariant{NumRepr::make_register_variant(10,16,237)};
+  //register_variant_t regvariant{NumRepr::make_register_variant(10,16,237)};
   //register_variant_t regvariant_2{NumRepr::getobject_register_variant(10,16,237)};
   ////////////////////////////////////////////////////////
-//  ullint_varlist_t ull_vlst;
-//  ull_vlst.create_var("A"s,13);
-//  std::cout << ull_vlst("A"s) << '\n';
-//  ////////////////////////////////////////////////////////
-//  llint_varlist_t ll_vlst;
-//  ll_vlst.create_var("B"s,-2356);
-//  std::cout << ll_vlst("B"s) << '\n';
-//  ////////////////////////////////////////////////////////
-//  ld_varlist_t ld_vlst;
-//  ld_vlst.create_var("C"s,-2356.3459890L);
-//  std::cout << ld_vlst("C"s) << '\n';
-//  ////////////////////////////////////////////////////////
-//  digit_varlist_t dig_vlst;
-//  dig_vlst.create_var("D"s,41,-34);
-//  std::cout << dig_vlst("D"s) << '\n';
-//  ////////////////////////////////////////////////////////
+  ullint_varlist_t ull_vlst;
+  ull_vlst.create_var("A"s,13);
+  std::cout << ull_vlst("A"s) << '\n';
+  ////////////////////////////////////////////////////////
+  llint_varlist_t ll_vlst;
+  ll_vlst.create_var("B"s,-2356);
+  std::cout << ll_vlst("B"s) << '\n';
+  ////////////////////////////////////////////////////////
+  ld_varlist_t ld_vlst;
+  ld_vlst.create_var("C"s,-2356.3459890L);
+  std::cout << ld_vlst("C"s) << '\n';
+  ////////////////////////////////////////////////////////
+  digit_varlist_t dig_vlst;
+  dig_vlst.create_var("D"s,41,-34);
+  std::cout << dig_vlst("D"s) << '\n';
+  ////////////////////////////////////////////////////////
 
 /*
   digit_variant A{dig_t<10>{0}};

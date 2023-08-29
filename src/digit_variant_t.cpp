@@ -1,85 +1,151 @@
-#include <iostream>
-#include <variant>
-#include <limits>
-#include <type_traits>
+#include "../include/digit_variant_t.hpp"
+#include "../include/dig_t.hpp"
 #include <concepts>
+#include <iostream>
+#include <limits>
 #include <string>
-#include "C:\\Users\\julia\\Dropbox\\GitHub\\NumericRepresentations\\include\\dig_t.hpp"
-#include "C:\\Users\\julia\\Dropbox\\GitHub\\NumericRepresentations\\include\\digit_variant_t.hpp"
+#include <type_traits>
+#include <variant>
 
 namespace NumRepr {
 
 digit_variant make_digit_variant(std::uint64_t Radix,std::int64_t value) {
-    if ((Radix > 1)&&(Radix < 65)) {
+    if ((Radix > 1)&&(Radix < 66)) {
         switch (Radix) {
-            case   2 : return digit_variant(dig_t< 2>(value));
-            case   3 : return digit_variant(dig_t< 3>(value));
-            case   4 : return digit_variant(dig_t< 4>(value));
-            case   5 : return digit_variant(dig_t< 5>(value));
-            case   6 : return digit_variant(dig_t< 6>(value));
-            case   7 : return digit_variant(dig_t< 7>(value));
-            case   8 : return digit_variant(dig_t< 8>(value));
-            case   9 : return digit_variant(dig_t< 9>(value));
-            case  10 : return digit_variant(dig_t<10>(value));
-            case  11 : return digit_variant(dig_t<11>(value));
-            case  12 : return digit_variant(dig_t<12>(value));
-            case  13 : return digit_variant(dig_t<13>(value));
-            case  14 : return digit_variant(dig_t<14>(value));
-            case  15 : return digit_variant(dig_t<15>(value));
-            case  16 : return digit_variant(dig_t<16>(value));
-            case  17 : return digit_variant(dig_t<17>(value));
-            case  18 : return digit_variant(dig_t<18>(value));
-            case  19 : return digit_variant(dig_t<19>(value));
-            case  20 : return digit_variant(dig_t<20>(value));
-            case  21 : return digit_variant(dig_t<21>(value));
-            case  22 : return digit_variant(dig_t<22>(value));
-            case  23 : return digit_variant(dig_t<23>(value));
-            case  24 : return digit_variant(dig_t<24>(value));
-            case  25 : return digit_variant(dig_t<25>(value));
-            case  26 : return digit_variant(dig_t<26>(value));
-            case  27 : return digit_variant(dig_t<27>(value));
-            case  28 : return digit_variant(dig_t<28>(value));
-            case  29 : return digit_variant(dig_t<29>(value));
-            case  30 : return digit_variant(dig_t<30>(value));
-            case  31 : return digit_variant(dig_t<31>(value));
-            case  32 : return digit_variant(dig_t<32>(value));
-            case  33 : return digit_variant(dig_t<33>(value));
-            case  34 : return digit_variant(dig_t<34>(value));
-            case  35 : return digit_variant(dig_t<35>(value));
-            case  36 : return digit_variant(dig_t<36>(value));
-            case  37 : return digit_variant(dig_t<37>(value));
-            case  38 : return digit_variant(dig_t<38>(value));
-            case  39 : return digit_variant(dig_t<39>(value));
-            case  40 : return digit_variant(dig_t<40>(value));
-            case  41 : return digit_variant(dig_t<41>(value));
-            case  42 : return digit_variant(dig_t<42>(value));
-            case  43 : return digit_variant(dig_t<43>(value));
-            case  44 : return digit_variant(dig_t<44>(value));
-            case  45 : return digit_variant(dig_t<45>(value));
-            case  46 : return digit_variant(dig_t<46>(value));
-            case  47 : return digit_variant(dig_t<47>(value));
-            case  48 : return digit_variant(dig_t<48>(value));
-            case  49 : return digit_variant(dig_t<49>(value));
-            case  50 : return digit_variant(dig_t<50>(value));
-            case  51 : return digit_variant(dig_t<51>(value));
-            case  52 : return digit_variant(dig_t<52>(value));
-            case  53 : return digit_variant(dig_t<53>(value));
-            case  54 : return digit_variant(dig_t<54>(value));
-            case  55 : return digit_variant(dig_t<55>(value));
-            case  56 : return digit_variant(dig_t<56>(value));
-            case  57 : return digit_variant(dig_t<57>(value));
-            case  58 : return digit_variant(dig_t<58>(value));
-            case  59 : return digit_variant(dig_t<59>(value));
-            case  60 : return digit_variant(dig_t<60>(value));
-            case  61 : return digit_variant(dig_t<61>(value));
-            case  62 : return digit_variant(dig_t<62>(value));
-            case  63 : return digit_variant(dig_t<63>(value));
-            case  64 : return digit_variant(dig_t<64>(value));
-            default  : return digit_variant(dig_t< 2>(value));
+        case 2:
+            return digit_variant{dig_t<2>{value}};
+        case 3:
+            return digit_variant{dig_t<3>{value}};
+        case 4:
+            return digit_variant{dig_t<4>{value}};
+        case 5:
+            return digit_variant{dig_t<5>{value}};
+        case 6:
+            return digit_variant{dig_t<6>{value}};
+        case 7:
+            return digit_variant{dig_t<7>{value}};
+        case 8:
+            return digit_variant{dig_t<8>{value}};
+        case 9:
+            return digit_variant{dig_t<9>{value}};
+        case 10:
+            return digit_variant{dig_t<10>{value}};
+        case 11:
+            return digit_variant{dig_t<11>{value}};
+        case 12:
+            return digit_variant{dig_t<12>{value}};
+        case 13:
+            return digit_variant{dig_t<13>{value}};
+        case 14:
+            return digit_variant{dig_t<14>{value}};
+        case 15:
+            return digit_variant{dig_t<15>{value}};
+        case 16:
+            return digit_variant{dig_t<16>{value}};
+        case 17:
+            return digit_variant{dig_t<17>{value}};
+        case 18:
+            return digit_variant{dig_t<18>{value}};
+        case 19:
+            return digit_variant{dig_t<19>{value}};
+        case 20:
+            return digit_variant{dig_t<20>{value}};
+        case 21:
+            return digit_variant{dig_t<21>{value}};
+        case 22:
+            return digit_variant{dig_t<22>{value}};
+        case 23:
+            return digit_variant{dig_t<23>{value}};
+        case 24:
+            return digit_variant{dig_t<24>{value}};
+        case 25:
+            return digit_variant{dig_t<25>{value}};
+        case 26:
+            return digit_variant{dig_t<26>{value}};
+        case 27:
+            return digit_variant{dig_t<27>{value}};
+        case 28:
+            return digit_variant{dig_t<28>{value}};
+        case 29:
+            return digit_variant{dig_t<29>{value}};
+        case 30:
+            return digit_variant{dig_t<30>{value}};
+        case 31:
+            return digit_variant{dig_t<31>{value}};
+        case 32:
+            return digit_variant{dig_t<32>{value}};
+        case 33:
+            return digit_variant{dig_t<33>{value}};
+        case 34:
+            return digit_variant{dig_t<34>{value}};
+        case 35:
+            return digit_variant{dig_t<35>{value}};
+        case 36:
+            return digit_variant{dig_t<36>{value}};
+        case 37:
+            return digit_variant{dig_t<37>{value}};
+        case 38:
+            return digit_variant{dig_t<38>{value}};
+        case 39:
+            return digit_variant{dig_t<39>{value}};
+        case 40:
+            return digit_variant{dig_t<40>{value}};
+        case 41:
+            return digit_variant{dig_t<41>{value}};
+        case 42:
+            return digit_variant{dig_t<42>{value}};
+        case 43:
+            return digit_variant{dig_t<43>{value}};
+        case 44:
+            return digit_variant{dig_t<44>{value}};
+        case 45:
+            return digit_variant{dig_t<45>{value}};
+        case 46:
+            return digit_variant{dig_t<46>{value}};
+        case 47:
+            return digit_variant{dig_t<47>{value}};
+        case 48:
+            return digit_variant{dig_t<48>{value}};
+        case 49:
+            return digit_variant{dig_t<49>{value}};
+        case 50:
+            return digit_variant{dig_t<50>{value}};
+        case 51:
+            return digit_variant{dig_t<51>{value}};
+        case 52:
+            return digit_variant{dig_t<52>{value}};
+        case 53:
+            return digit_variant{dig_t<53>{value}};
+        case 54:
+            return digit_variant{dig_t<54>{value}};
+        case 55:
+            return digit_variant{dig_t<55>{value}};
+        case 56:
+            return digit_variant{dig_t<56>{value}};
+        case 57:
+            return digit_variant{dig_t<57>{value}};
+        case 58:
+            return digit_variant{dig_t<58>{value}};
+        case 59:
+            return digit_variant{dig_t<59>{value}};
+        case 60:
+            return digit_variant{dig_t<60>{value}};
+        case 61:
+            return digit_variant{dig_t<61>{value}};
+        case 62:
+            return digit_variant{dig_t<62>{value}};
+        case 63:
+            return digit_variant{dig_t<63>{value}};
+        case 64:
+            return digit_variant{dig_t<64>{value}};
+        case 65:
+            return digit_variant{dig_t<65>{value}};
+        default:
+            return digit_variant{dig_t<2>{0}};
         };
     }
     else {
-        return digit_variant(dig_t<  2>(value));
+        return digit_variant{dig_t<2>{0}};
     }
 }
 

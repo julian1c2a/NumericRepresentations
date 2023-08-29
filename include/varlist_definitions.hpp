@@ -1,5 +1,5 @@
-#ifndef FIRST_VARLIST_T_HPP_INCLUDED
-#define FIRST_VARLIST_T_HPP_INCLUDED
+#ifndef SEVERAL_VARLISTS_DEFINITION_H
+#define SEVERAL_VARLISTS_DEFINITION_H
 
 #include "memory_handler.hpp"
 #include "digit_variant_t.hpp"
@@ -54,4 +54,4 @@ public:
 } // namespace memory_handler
 } // namespace NumRepr
 
-#endif // FIRST_VARLIST_T_HPP_INCLUDED
+#endif // SEVERAL_VARLISTS_DEFINITION_H

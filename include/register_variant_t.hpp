@@ -109,7 +109,7 @@ struct register_variant_t : public register_variant {
   /// Constructor por defecto (rellena de dig_t(0) todo el array)
   /// </summary>
   template<size_t B,size_t N>
-  constexpr register_variant_t() noexcept : register_variant(reg_digs_t<B,N>{regd_base_0()}) {}
+  constexpr register_variant_t() noexcept : register_variant{reg_digs_t<B,N>{regd_base_0()}} {}
 
   /// <summary>
   /// Constructor por argumentos tipo dig_t: deduce el tipo
@@ -117,16 +117,16 @@ struct register_variant_t : public register_variant {
   template <size_t B,typename... Ts>
     requires(std::is_same_v<Ts, dig_t<B>>&&  ...)
   constexpr register_variant_t(const Ts& ...args) noexcept
-      : register_variant(base_t{(utilities::ugly_pack_details::pack2array<const Ts& ...>{})(args...)}) {}
+      : register_variant{typename reg_digs_t<B,sizeof...(Ts)>::base_t{(utilities::ugly_pack_details::pack2array<const Ts& ...>{}}(args...)}) {}
 
   /// CONSTRUCTOR COPIA DESDE EL TIPO BASE
   template<size_t B,size_t N>
-  constexpr register_variant_t(const reg_digs_t<B,N>& rarg) noexcept : base_t{rarg} {}
+  constexpr register_variant_t(const reg_digs_t<B,N>& rarg) noexcept : register_variant{typename reg_digs_t<B,N>::base_t{rarg}} {}
 
   /// CONSTRUCTOR MOVIMIENTO DESDE EL TIPO BASE
   template<size_t B,size_t N>
   constexpr register_variant_t(reg_digs_t<B,N>&& rarg) noexcept
-      : register_variant(reg_digs_t<B,N>::base_t{std::move(rarg)}) {}
+      : register_variant(typename reg_digs_t<B,N>::base_t{std::move(rarg)}) {}
 
   /// <summary>
   /// Constructor por Copia/Movimiento desde una
@@ -139,7 +139,7 @@ struct register_variant_t : public register_variant {
   /// </summary>
   template <size_t B,size_t N>
   constexpr register_variant_t(const reg_digs_t<B,N>& arg) noexcept
-      : register_variant(reg_digs_t<B,N>::base_t{reg_digs_t<B,N>::copy_arg_N<B,N>(arg)}) {}
+      : register_variant{typename reg_digs_t<B,N>::base_t{reg_digs_t<B,N>::copy_arg_N<B,N>(arg)}} {}
 
   /// <summary>
   /// Constructor por movimiento desde un array cualquiera de dígitos dig_t
@@ -147,7 +147,7 @@ struct register_variant_t : public register_variant {
   /// </summary>
   template <size_t B,size_t N>
   constexpr register_variant_t(reg_digs_t<B,N>&& arg) noexcept
-      : register_variant(reg_digs_t<B,N>::base_t{std::move(reg_digs_t<B,N>::move_arg_N<B,N>(std::move(arg)))}) {}
+      : register_variant{reg_digs_t<B,N>::base_t{std::move(reg_digs_t<B,N>::move_arg_N<B,N>(std::move(arg)))}} {}
 
   /// <summary="Constructor copia desde una sucesión de objetos enteros
   /// variádica, normalizándolos">
@@ -156,7 +156,7 @@ struct register_variant_t : public register_variant {
   template <size_t B,type_traits::integral_c... Ints_type>
     requires((sizeof...(Ints_type)) == L)
   constexpr register_variant_t(Ints_type... dig_pow_i) noexcept
-      : base_t((normalize<Ints_type...>((dig_t<B>(dig_pow_i))()...)).reverse()) {}
+      : register_variant{base_t((normalize<Ints_type...>((dig_t<B>(dig_pow_i))()...)).reverse())} {}
 
   /// <summary>
   /// Sobrecarga del operador copia

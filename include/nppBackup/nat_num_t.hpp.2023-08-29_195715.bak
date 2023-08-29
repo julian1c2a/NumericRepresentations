@@ -1,25 +1,25 @@
 #ifndef NAT_NUM_T_HPP_INCLUDED
 #define NAT_NUM_T_HPP_INCLUDED
 
-#include "dig_string_t.hpp"
+#include "base_num_t.hpp"
 
 using namespace std;
 
 template <std::uint64_t B>
-class nat_num_t : public dig_string_t<B> {
+class nat_num_t : public base_num_t<B> {
 private:
   using dig_t = dig_t<B>;
   using UINT_T = typename dig_t::UINT_T;
-  using dig_string_t = dig_string_t<B>;
+  using base_num_t = base_num_t<B>;
   using nbstr = basic_string<dig>;
   using striterator = typename nbstr::iterator;
   using rstriterator = typename nbstr::reverse_iterator;
   using cstriterator = typename nbstr::const_iterator;
   using crstriterator = typename nbstr::const_reverse_iterator;
-  using b_iterator = typename dig_string_t<B>::iterator;
-  using b_riterator = typename dig_string_t<B>::reverse_iterator;
-  using b_citerator = typename dig_string_t<B>::const_iterator;
-  using b_criterator = typename dig_string_t<B>::const_reverse_iterator;
+  using b_iterator = typename base_num_t<B>::iterator;
+  using b_riterator = typename base_num_t<B>::reverse_iterator;
+  using b_citerator = typename base_num_t<B>::const_iterator;
+  using b_criterator = typename base_num_t<B>::const_reverse_iterator;
   using iterator = typename nat_num_t<B>::iterator;
   using riterator = typename nat_num_t<B>::reverse_iterator;
   using citerator = typename nat_num_t<B>::const_iterator;
@@ -47,39 +47,39 @@ private:
   /****************************/
 public:
   inline size_t size() const {
-    const dig_string_t &cthis = (*this);
-    return cthis.dig_string_t::size();
+    const base_num_t &cthis = (*this);
+    return cthis.base_num_t::size();
   }
 
 private:
   inline void resize(size_t arg) {
-    dig_string_t &cthis = (*this);
-    cthis.dig_string_t::resize(arg);
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::resize(arg);
     return;
   }
 
 public:
   inline void push_front(dig_t parg) {
-    dig_string_t &cthis = (*this);
-    cthis.dig_string_t::push_front(parg);
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::push_front(parg);
     return;
   }
 
 private:
   inline nat_num_t &insert(size_t pos1, const dig_t chardig) {
-    dig_string_t &cthis = (*this);
-    cthis.dig_string_t::insert(pos1, 1, chardig);
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::insert(pos1, 1, chardig);
     return (*this);
   }
   inline nat_num_t &insert(size_t pos1, size_t n, dig_t c) {
-    dig_string_t &cthis = (*this);
-    cthis.dig_string_t::insert(pos1, n, c);
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::insert(pos1, n, c);
     return (*this);
   }
 
   inline const nat_num_t &operator&=(const nat_num_t &arg) {
-    dig_string_t &cthis = (*this);
-    cthis.dig_string_t::operator+=(arg);
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::operator+=(arg);
     return (*this);
   }
 
@@ -93,7 +93,7 @@ private:
       npos_2--;
       operator[](sz - 1) = dig_t(0);
     }
-    cthis.dig_string_t::erase(pos, npos_2);
+    cthis.base_num_t::erase(pos, npos_2);
     return (*this);
   }
 
@@ -104,38 +104,37 @@ private:
       last--;
       operator[](sz - 1) = d_0<B>();
     }
-    return dig_string_t::erase(first, last);
+    return base_num_t::erase(first, last);
   }
 
 public:
-
   inline dig_t operator[](uint arg) const {
     const nat_num_t &cthis = (*this);
-    return cthis.dig_string_t::operator[](arg);
+    return cthis.base_num_t::operator[](arg);
   }
   inline dig_t &operator[](uint arg) {
-    dig_string_t &cthis = (*this);
-    return cthis.dig_string_t::operator[](arg);
+    base_num_t &cthis = (*this);
+    return cthis.base_num_t::operator[](arg);
   }
 
   inline void clear() {
-    dig_string_t &cthis = (*this);
-    cthis.dig_string_t::clear();
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::clear();
   }
 
   inline void push_back(dig_t arg) {
-    dig_string_t &cthis = (*this);
-    cthis.dig_string_t::push_back(arg);
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::push_back(arg);
   }
 
   inline striterator begin() {
-    dig_string_t &cthis = (*this);
-    return cthis.dig_string_t::begin();
+    base_num_t &cthis = (*this);
+    return cthis.base_num_t::begin();
   }
 
   inline cstriterator end() const {
-    const dig_string_t &cthis = (*this);
-    return cthis.dig_string_t::end();
+    const base_num_t &cthis = (*this);
+    return cthis.base_num_t::end();
   }
 
 public:
@@ -358,7 +357,7 @@ public:
 
   nat_num_t(usint a) {
     nat_num_t &cthis = (*this);
-    dig_string_t<B> temp;
+    base_num_t<B> temp;
     cthis.clear();
     // cthis.resize(pot_max_base_B_en_Int_T<usint,B>().first);
     aux = pardigs();
@@ -374,7 +373,7 @@ public:
 
   const nat_num_t &operator=(usint a) {
     nat_num_t &cthis = (*this);
-    dig_string_t<B> temp;
+    base_num_t<B> temp;
     cthis.clear();
     // cthis.resize(pot_max_base_B_en_Int_T<usint,B>());
     aux = pardigs();
@@ -1094,7 +1093,7 @@ public:
   }
 
   inline nat_num_t substr(size_t pos, size_t n) const {
-    const dig_string_t &cthis = (*this);
+    const base_num_t &cthis = (*this);
     cthis.nbstr::substr(pos, n);
     return (*this);
   }
@@ -1620,7 +1619,7 @@ private:
   //		inline void div7p_step(pair< n2digs_t , usint > & S);
 public:
   inline pardigs g_aux() const {
-    dig_string_t &cthis = (*this);
+    base_num_t &cthis = (*this);
     return cthis.aux;
   }
   inline void p_aux(pardigs arg) {

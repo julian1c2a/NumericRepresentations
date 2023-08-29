@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="NumericRepresentations" Database="" Version="10000">
-  <Project Name="NumericRepresentations" Path="NumericRepresentations.project" Active="No"/>
-  <Project Name="NumReprCodelite" Path="../NumReprCodelite/NumReprCodelite.project" Active="Yes"/>
-  <Project Name="NumReprCodelite" Path="../NumReprCodelite/NumReprCodelite/NumReprCodelite.project"/>
+  <Project Name="NumericRepresentations" Path="NumericRepresentations.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>

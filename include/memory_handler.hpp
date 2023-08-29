@@ -1,7 +1,6 @@
 #ifndef MEMORY_HANDLER_HPP_INCLUDED
 #define MEMORY_HANDLER_HPP_INCLUDED
 
-#include "digit_variant_t.hpp"
 #include <variant>
 #include <string>
 #include <ostream>

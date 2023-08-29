@@ -22,13 +22,13 @@ using std::isspace;
 using std::string;
 using std::unsigned_integral;
 
-
-enum class radixformat { bin, dec };
+//enum class radixformat { bin, dec };
 
 constexpr static std::uint64_t size_of_variant=64ull;
 
-class digit_variant;
+struct digit_variant;
 
+/// TC_variant es un variant que depende de un solo Template Class
 template <template <std::uint64_t I> class TC, class>
 struct TC_variant;
 
@@ -50,14 +50,14 @@ using digit_variant_t = TC_variant_t<dig_t , std::make_index_sequence<size_of_va
 /// NAT_VARIANT
 /// INT_VARIANT
 
-struct digi_variant;
+//struct digit_variant;
 digit_variant make_digit_variant(std::uint64_t,std::int64_t);
 
-struct digit_variant : public digit_variant_t {
-
-  using UINT_T = dig_t<255ull>::UINT_T;
-  using SIG_UINT_T = dig_t<255ull>::SIG_UINT_T;
-  using SIG_SINT_T = dig_t<255ull>::SIG_SINT_T;
+struct digit_variant : public digit_variant_t
+{
+  using UINT_T = typename dig_t<255ull>::UINT_T;
+  using SIG_UINT_T = typename dig_t<255ull>::SIG_UINT_T;
+  using SIG_SINT_T = typename dig_t<255ull>::SIG_SINT_T;
 
   static constexpr size_t digits = std::numeric_limits<std::uint64_t>::digits;
 
@@ -241,10 +241,6 @@ struct digit_variant : public digit_variant_t {
   /// DEVOLVER EL MAYOR HABIENDOLO ASIGNADO ORBITWISE AND ASSIGN
   /// NO TIENE POSIBILIDAD DE ERROR
   const digit_variant &operator|=(digit_variant) noexcept;
-
-  //const digit_variant& operator^=(digit_variant) noexcept;
-
-  //digit_variant operator^(digit_variant) const noexcept;
 
   /******************************************************/
   /*													*/
