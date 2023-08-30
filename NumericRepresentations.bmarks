@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Release" />
-	<File name="src\memory_handler.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="244" topLine="0" />
-	</File>
-	<File name="src\digit_variant_t.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="4881" topLine="93" />
-	</File>
-	<File name="src\main.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="734" topLine="6" />
-	</File>
-	<File name="include\dig_t.hpp" open="1" top="1" tabpos="4">
-		<Cursor position="31580" topLine="0" />
+	<File name="include\int_num_t.hpp" open="1" top="0" tabpos="8">
+		<Cursor position="119" topLine="0" />
 		<BrowseMarks positions="" />
 	</File>
-	<File name="include\first_varlist_t.hpp" open="0" top="0" tabpos="4">
-		<Cursor position="1365" topLine="37" />
+	<File name="src\main.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="237" topLine="15" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="src\incrementos.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="0" topLine="3" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="src\digit_variant_t.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="0" topLine="241" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="src\test_driver.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="0" topLine="94" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="include\dig_t.hpp" open="1" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="include\variant_types.hpp" open="1" top="0" tabpos="7">
+		<Cursor position="0" topLine="43" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="include\digit_variant_t.hpp" open="1" top="0" tabpos="3">
+		<Cursor position="389" topLine="10" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="include\dig_string_t.hpp" open="1" top="0" tabpos="9">
+		<Cursor position="5798" topLine="143" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="include\nat_num_t.hpp" open="1" top="1" tabpos="10">
+		<Cursor position="8684" topLine="353" />
+		<BrowseMarks positions="" />
 	</File>
 </BrowseTracker_layout_file>

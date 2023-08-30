@@ -107,7 +107,12 @@ struct pack2array {
   static consteval std::size_t pack_size() noexcept { return (sizeof...(Ts)); }
 
   inline static constexpr std::size_t size = pack_size();
+<<<<<<< HEAD
   using inner_type = typename ugly_pack2tuple_details::pack2tuple<Ts...>::template elem_type<0>;
+=======
+  using inner_type =
+  	typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   using array_type = typename std::array< inner_type , size>;
 
   constexpr array_type operator()(Ts &&...args) const noexcept {
@@ -115,7 +120,11 @@ struct pack2array {
     return content;
   }
 
+<<<<<<< HEAD
   using elem_type = typename ugly_pack2tuple_details::pack2tuple<Ts...>::template elem_type<0>;
+=======
+  using elem_type = typename ugly_pack2tuple_details::pack2tuple<Ts...>::elem_type<0>;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
   template <std::size_t J>
   static constexpr elem_type get(Ts &&...args) noexcept {
@@ -212,7 +221,10 @@ constexpr NumRepr::uint64_t Pow_B2L_v = pow_B_to_E_t<Base, Exp>::value;
 
 /// OBTENER UNA TUPLA EN TIEMPO DE COMPILACION DONDE CADA POSICION ESTA
 /// INICIALIZADA PERO CON UNA LLAMADA DISTINTA A FUNCION POR CADA INDICE
+<<<<<<< HEAD
 /// EN TIEMPO DE COMPILACION
+=======
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
 /// TEMPLATE GENERAL
 template <std::int64_t IntObj_ct, std::int64_t BeginIntObj_ct,

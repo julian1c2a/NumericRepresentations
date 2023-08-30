@@ -107,7 +107,11 @@ public:
   static consteval SIG_SINT_T ssi_Bp1() noexcept { return dig_t::ssi_B() + 1; }
 
   /// <summary>
+<<<<<<< HEAD
   /// PARA EL TIPO-PLANTILLA BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS
+=======
+  /// PARA EL TIPO-TEMPLATE BASE_N_T OBTENEMOS CONSTANTES INMEDIATAS
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   /// TENEMOS CUIDADO DE CREAR UN RVALUE TEMPORAL
   /// </summary>
 

@@ -1,4 +1,5 @@
 -IC:\Users\julia\Dropbox\GitHub\NumericRepresentations
+<<<<<<< HEAD
 -IC:\msys64\mingw64\include\c++\13.2.0
 -IC:\msys64\mingw64\include\c++\13.2.0\x86_64-w64-mingw32
 -IC:\msys64\mingw64\include\c++\13.2.0\backward
@@ -7,6 +8,15 @@
 -IC:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\13.2.0\include-fixed
 -IC:\msys64\mingw64\include\boost
 -IC:\msys64\mingw64\include\c++\13.1.0
+=======
+-IC:\msys64\mingw64\include\c++\13.1.0
+-IC:\msys64\mingw64\include\c++\13.1.0\x86_64-w64-mingw32
+-IC:\msys64\mingw64\include\c++\13.1.0\backward
+-IC:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\13.1.0\include
+-IC:\msys64\mingw64\include
+-IC:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\13.1.0\include-fixed
+-IC:\msys64\mingw64\include\boost
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 -std=gnu++23
 -target
 x86_64-w64-mingw32

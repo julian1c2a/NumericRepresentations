@@ -1,6 +1,11 @@
 #ifndef MEMORY_HANDLER_HPP_INCLUDED
 #define MEMORY_HANDLER_HPP_INCLUDED
 
+<<<<<<< HEAD
+=======
+#include "../include/int_reg_digs_t.hpp"
+#include "../include/variant_types.hpp"
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 #include <variant>
 #include <string>
 #include <ostream>
@@ -8,6 +13,7 @@
 #include <set>
 
 namespace NumRepr {
+<<<<<<< HEAD
 namespace MemHand {
 
 template<class Variant_t>
@@ -35,6 +41,28 @@ public:
 	const varlist_t& getLista() const {
 		return (lista);
 	}
+=======
+namespace memory_handler {
+
+class dig_var_list {
+
+	using key_t = typename std::string;
+	using value_t = genRadixDig_t;
+	using optvalue_t = typename std::optional<value_t>;
+	using node_t = typename std::pair<key_t,value_t>;
+	using varlist_t = typename std::map<key_t,value_t>;
+
+	const std::size_t max_size = 64;
+	varlist_t lista{};
+	inline static const value_t default_value = dig_t<2>::dig_0();
+
+public:
+	dig_var_list() = default;
+	dig_var_list(const dig_var_list &) = delete;
+	dig_var_list(dig_var_list &&) = delete;
+	dig_var_list& operator=(const dig_var_list&) = delete;
+	dig_var_list& operator=(dig_var_list&&) = delete;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
 	std::size_t size() const {
 		return lista.size();
@@ -48,6 +76,17 @@ public:
 		return (lista.size() < max_size);
 	}
 
+<<<<<<< HEAD
+=======
+	bool create_var(std::string nombre,value_t valor=default_value) {
+		if (!contains(nombre) && not_fully()) {
+			lista.insert({nombre,valor});
+			return true;
+		}
+		return false;
+	}
+
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 	bool operator()(std::string nombre,value_t valor) {
 		if (contains(nombre)) {
 			lista[nombre] = valor;
@@ -80,6 +119,43 @@ public:
 
 };
 
+<<<<<<< HEAD
+=======
+bool create_var(
+	dig_var_list& cont,std::string nombre,
+	std::uint64_t radix,std::uint64_t intvalue
+);
+
+std::string to_string(
+	const dig_var_list& cont,std::string nombre
+);
+
+//std::ostream& operator<<(
+//	std::ostream& os,const std::pair<const dig_var_list&,const std::string>& obj
+//);
+
+bool suma_y_asigna(
+	dig_var_list& cont,std::string nombre,std::string otronombre
+);
+
+template<std::uint64_t base>
+using bool_funct_dig = bool (dig_t<base>::*)();
+template<std::uint64_t base>
+using dig_funct_dig = dig_t<base> (dig_t<base>::*)();
+template<std::uint64_t base>
+using uint_funct_dig = dig_t<base>::UINT_T (dig_t<base>::*)();
+
+//decltype(auto) func_variant(bool_funct_dig<base> func , genRadixDig_t arg );
+//template<std::uint64_t base>
+//  requires ((base > 1ULL) && (base < 255ULL))
+//decltype(auto) func_variant(dig_funct_dig<base> func , genRadixDig_t arg );
+//template<std::uint64_t base>
+//  requires ((base > 1ULL) && (base < 255ULL))
+//decltype(auto) func_variant(uint_funct_dig<base> func , genRadixDig_t arg );
+
+
+
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 } // namespace memory_handler
 } // namespace NumRepr
 #endif // MEMORY_HANDLER_HPP_INCLUDED

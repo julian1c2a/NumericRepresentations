@@ -3,7 +3,10 @@
 
 #include "dig_t.hpp"
 #include "int_reg_digs_t.hpp"
+<<<<<<< HEAD
 #include "dig_string_t.hpp"
+=======
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 #include "nat_num_t.hpp"
 
 using namespace std;
@@ -11,15 +14,24 @@ using namespace std;
 enum forma_t { noraw, raw };
 
 template <std::uint64_t B>
+<<<<<<< HEAD
 struct int_num_t : protected dig_string_t<B> {
 private:
   typedef dig_t<B> dig;
   typedef dig_string_t<B> dig_string;
   typedef basic_string<dig> nbstr;
+=======
+struct int_num_t : protected base_num_t<B> {
+private:
+  typedef dig_t<B> dig;
+  typedef num_basic_t<B> num_basic;
+  typedef basic_string<dig_t<B>> nbstr;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   typedef typename nbstr::iterator striterator;
   typedef typename nbstr::reverse_iterator rstriterator;
   typedef typename nbstr::const_iterator cstriterator;
   typedef typename nbstr::const_reverse_iterator crstriterator;
+<<<<<<< HEAD
   typedef typename dig_string::iterator b_iterator;
   typedef typename dig_string::reverse_iterator b_riterator;
   typedef typename dig_string::const_iterator b_citerator;
@@ -28,13 +40,28 @@ private:
   typedef typename int_num_t::reverse_iterator riterator;
   typedef typename int_num_t::const_iterator citerator;
   typedef typename int_num_t::const_reverse_iterator criterator;
+=======
+  typedef typename num_basic::iterator b_iterator;
+  typedef typename num_basic::reverse_iterator b_riterator;
+  typedef typename num_basic::const_iterator b_citerator;
+  typedef typename num_basic::const_reverse_iterator b_criterator;
+  typedef typename num_int::iterator iterator;
+  typedef typename num_int::reverse_iterator riterator;
+  typedef typename num_int::const_iterator citerator;
+  typedef typename num_int::const_reverse_iterator criterator;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   typedef n2digs_t<B> n2digs;
   typedef pardigs_t<B> pardigs;
   typedef spardigs_t<B> spardigs;
 
 private:
+<<<<<<< HEAD
   sign_e signo;// representación del signo
   spardigs aux;// variable auxiliar para varias operaciones
+=======
+  sign_e signo;
+  spardigs aux;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
   /*********************************/
   /*							   */
@@ -44,13 +71,22 @@ private:
 
 public:
   inline size_t size() const {
+<<<<<<< HEAD
     const dig_string &cthis = (*this);
     return cthis.dig_string::size();
+=======
+    const num_basic &cthis = (*this);
+    return cthis.num_basic::size();
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   }
 
 private:
   inline void mC_B_incondicionado() {
+<<<<<<< HEAD
     int_num &cthis = *this;
+=======
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     // Complementación a la base menos 1
     // complementar a Bm1
     for (usint i = 0; i < cthis.size(); i++) {
@@ -72,6 +108,7 @@ private:
 
 public:
   inline void resize(size_t arg) {
+<<<<<<< HEAD
     dig_string &cthis = (*this);
     cthis.dig_string::resize(arg);
     return;
@@ -92,12 +129,39 @@ private:
   inline int_num &insert(size_t pos1, size_t n, dig_t<B> c) {
     dig_string &cthis = (*this);
     cthis.dig_string::insert(pos1, n, c);
+=======
+    num_basic &cthis = (*this);
+    cthis.num_basic::resize(arg);
+    return;
+  }
+  inline void push_front(dig_t<B> parg) {
+    num_basic &cthis = (*this);
+    cthis.num_basic::push_front(parg);
+    return;
+  }
+  inline void push_back(dig_t<B> arg) { this->num_basic_t<B>::push_back(arg); }
+
+private:
+  inline num_int &insert(size_t pos1, const dig_t<B> chardig) {
+    num_basic &cthis = (*this);
+    cthis.num_basic::insert(pos1, 1, chardig);
+    return (*this);
+  }
+  inline num_int &insert(size_t pos1, size_t n, dig_t<B> c) {
+    num_basic &cthis = (*this);
+    cthis.num_basic::insert(pos1, n, c);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     return (*this);
   }
 
 public:
+<<<<<<< HEAD
   inline const int_num &operator&=(const int_num &arg) {
     dig_string &cthis = (*this);
+=======
+  inline const num_int &operator&=(const num_int &arg) {
+    num_basic &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis += arg;
     return (*this);
   }
@@ -105,8 +169,13 @@ public:
 private:
   // string& erase ( size_t pos = 0, size_t n = npos );
 
+<<<<<<< HEAD
   inline int_num &erase(size_t pos, size_t npos) {
     int_num &cthis = (*this);
+=======
+  inline num_int &erase(size_t pos, size_t npos) {
+    num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     size_t npos_2 = npos;
     const size_t sz = size();
     if ((sz == npos) and (pos == 0)) {
@@ -116,18 +185,27 @@ private:
       else
         cthis[sz - 1] = dig_t<B>(B - 1);
     }
+<<<<<<< HEAD
     cthis.dig_string::erase(pos, npos_2);
+=======
+    cthis.num_basic::erase(pos, npos_2);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     return (*this);
   }
 
   inline iterator erase(iterator first, iterator last) {
+<<<<<<< HEAD
     int_num &cthis = (*this);
+=======
+    num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     size_t npos = last - first;
     const size_t sz = size();
     if (sz == npos) {
       last--;
       cthis[sz - 1] = d_0<B>();
     }
+<<<<<<< HEAD
     return dig_string::erase(first, last);
   }
 
@@ -142,6 +220,22 @@ public:
 
   int_num(const int_num &a) {
     int_num &cthis = *this;
+=======
+    return num_basic::erase(first, last);
+  }
+
+public:
+  num_int() {
+    num_int &cthis = *this;
+    signo = vplus;
+    aux = spardigs();
+    cthis.num_basic::clear();
+    cthis.num_basic::push_back(dig_t<B>(0));
+  }
+
+  num_int(const num_int &a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = a.signo;
     aux = a.aux;
     cthis.clear();
@@ -151,8 +245,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(const string &a) {
     int_num &cthis = *this;
+=======
+  num_int(const string &a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(a.size());
@@ -162,7 +261,11 @@ public:
     while ((a[k] < '0') || (a[k] > (char(B - 1) + '0')))
       ++k;
     if (k >= a.size()) {
+<<<<<<< HEAD
       int_num &cthis = *this;
+=======
+      num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       cthis.resize(0);
       Exit = true;
     }
@@ -178,16 +281,26 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(dig a0) {
     int_num &cthis = *this;
+=======
+  num_int(dig a0) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(1);
     cthis[0] = a0;
   }
 
+<<<<<<< HEAD
   int_num(dig a1, dig a0) {
     int_num &cthis = *this;
+=======
+  num_int(dig a1, dig a0) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(2);
@@ -196,8 +309,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(dig a2, dig a1, dig a0) {
     int_num &cthis = *this;
+=======
+  num_int(dig a2, dig a1, dig a0) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(3);
@@ -207,8 +325,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(const std::vector<dig> &arg) {
     int_num &cthis = *this;
+=======
+  num_int(const std::vector<dig> &arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(arg.size());
@@ -217,8 +340,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(const std::list<dig> &arg) {
     int_num &cthis = *this;
+=======
+  num_int(const std::list<dig> &arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     typename list<dig>::iterator it = arg.begin();
@@ -228,8 +356,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(sign_e s, dig a0) {
     int_num &cthis = *this;
+=======
+  num_int(sign_e s, dig a0) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = s;
     aux = spardigs(vplus, 0, a0);
     cthis.clear();
@@ -239,8 +372,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(sign_e s, dig a1, dig a0) {
     int_num &cthis = *this;
+=======
+  num_int(sign_e s, dig a1, dig a0) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = s;
     aux = spardigs(vplus, 0, 0);
     cthis.clear();
@@ -250,8 +388,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(sign_e s, dig a2, dig a1, dig a0) {
     int_num &cthis = *this;
+=======
+  num_int(sign_e s, dig a2, dig a1, dig a0) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = s;
     aux = spardigs(vplus, 0, 0);
     cthis.clear();
@@ -262,8 +405,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(sign_e s, const std::vector<dig> &arg, forma_t argforma = noraw) {
     int_num &cthis = *this;
+=======
+  num_int(sign_e s, const std::vector<dig> &arg, forma_t argforma = noraw) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = s;
     cthis.clear();
     cthis.resize(arg.size());
@@ -274,8 +422,13 @@ public:
       cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(sign_e s, const std::list<dig> &arg) {
     int_num &cthis = *this;
+=======
+  num_int(sign_e s, const std::list<dig> &arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = s;
     cthis.clear();
     cthis.resize(arg.size());
@@ -286,8 +439,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(spardigs a) {
     int_num &cthis = *this;
+=======
+  num_int(spardigs a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = a.g_sign();
     cthis.clear();
     cthis.resize(2);
@@ -296,8 +454,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(pardigs a) {
     int_num &cthis = *this;
+=======
+  num_int(pardigs a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(2);
@@ -306,8 +469,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(sign_e s, pardigs a) {
     int_num &cthis = *this;
+=======
+  num_int(sign_e s, pardigs a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.signo = s;
     cthis.clear();
     cthis.resize(2);
@@ -316,24 +484,39 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   int_num(char ch) {
     int_num &cthis = *this;
+=======
+  num_int(char ch) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.clear();
     signo = vplus;
     cthis.resize(1);
     cthis[0] = Char2Dig<B>(ch);
   }
 
+<<<<<<< HEAD
   int_num(uchint a) {
     int_num &cthis = *this;
+=======
+  num_int(uchint a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(1);
     cthis[0] = UInt2Dig<B>(a);
   }
 
+<<<<<<< HEAD
   template <typename Int_T> int_num(Int_T a) {
     int_num &cthis = *this;
+=======
+  template <typename Int_T> num_int(Int_T a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.clear();
     const ullint longitud = num_digs_max_base_B_en_Int_T<Int_T, B>();
     cthis.resize(longitud);
@@ -372,8 +555,13 @@ public:
     cthis.reduce();
   }
 
+<<<<<<< HEAD
   const int_num &operator=(const int_num &a) {
     int_num &cthis = *this;
+=======
+  const num_int &operator=(const num_int &a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = a.signo;
     aux = a.aux;
     cthis.clear();
@@ -384,8 +572,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &operator=(const num_uint<B> &a) {
     int_num &cthis = *this;
+=======
+  const num_int &operator=(const num_uint<B> &a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     aux = vplus;
     cthis.clear();
@@ -396,8 +589,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &operator=(const pardigs_t<B> &a) {
     int_num &cthis = *this;
+=======
+  const num_int &operator=(const pardigs_t<B> &a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     aux.p_sign(vplus);
     aux.p_decs(0);
@@ -410,8 +608,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &operator=(const spardigs_t<B> &a) {
     int_num &cthis = *this;
+=======
+  const num_int &operator=(const spardigs_t<B> &a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = a.signo;
     aux.p_sign(vplus);
     aux.p_decs(0);
@@ -424,8 +627,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &operator=(const dig_t<B> &a) {
     int_num &cthis = *this;
+=======
+  const num_int &operator=(const dig_t<B> &a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     aux.p_sign(vplus);
     aux.p_decs(0);
@@ -436,8 +644,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   template <typename Int_T> const int_num &operator=(Int_T a) {
     int_num &cthis = *this;
+=======
+  template <typename Int_T> const num_int &operator=(Int_T a) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.clear();
     const ullint longitud = num_digs_max_base_B_en_Int_T<Int_T, B>();
     cthis.resize(longitud);
@@ -477,8 +690,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &operator=(const std::vector<dig> &arg) {
     int_num &cthis = *this;
+=======
+  const num_int &operator=(const std::vector<dig> &arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(arg.size());
@@ -489,8 +707,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &operator=(const std::list<dig> &arg) {
     int_num &cthis = *this;
+=======
+  const num_int &operator=(const std::list<dig> &arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     signo = vplus;
     cthis.clear();
     cthis.resize(arg.size());
@@ -509,7 +732,11 @@ public:
   /***************************************/
 
   usint ceros_a_la_izqda() const {
+<<<<<<< HEAD
     const int_num &cthis = (*this);
+=======
+    const num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     // digitos no significativos para números positivos
     bool Exit = false;
     int sz = 0;
@@ -526,7 +753,11 @@ public:
   // digitos no significativos para números positivos
 
   usint unos_a_la_izqda() const {
+<<<<<<< HEAD
     const int_num &cthis = (*this);
+=======
+    const num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     // digitos no significativos para números negativos
     bool Exit = false;
     int sz = 0;
@@ -577,7 +808,11 @@ public:
   }
 
   bool filled_of_all_digits_are_Bm1() const {
+<<<<<<< HEAD
     const int_num &cthis = (*this);
+=======
+    const num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const int longitud = cthis.size();
     for (int i = 0; i < longitud; i++)
       if (cthis[i] != dig(B - 1))
@@ -586,7 +821,11 @@ public:
   }
 
   bool filled_of_all_digits_are_0() const {
+<<<<<<< HEAD
     const int_num &cthis = (*this);
+=======
+    const num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const int longitud = cthis.size();
     for (int i = 0; i < longitud; ++i)
       if (cthis[i] != dig(0))
@@ -595,7 +834,11 @@ public:
   }
 
   usint digs_no_significativos() const {
+<<<<<<< HEAD
     const int_num &cthis = (*this);
+=======
+    const num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     // digitos no significativos
     usint retorno;
     // if ((size()<1) and (signo==vminus)) return 0;
@@ -615,7 +858,11 @@ public:
   }
   // digitos no significativos para números positivos fraccionaria
   usint Bm1_a_la_izqda() const {
+<<<<<<< HEAD
     int_num &cthis = *this;
+=======
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     // digitos no significativos para números negativos
     bool Exit = false;
     usint sz = 0;
@@ -632,7 +879,11 @@ public:
   }
   // digitos no significativos para números negativo
   usint Bm1_a_la_drcha() const {
+<<<<<<< HEAD
     int_num &cthis = *this;
+=======
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     // digitos no significativos para números negativos fraccionarios
     const size_t fin = cthis.size();
     bool Exit = false;
@@ -653,8 +904,13 @@ public:
   /*									                                */
   /**********************************************/
 
+<<<<<<< HEAD
   bool operator==(const int_num &arg) const {
     const int_num &cthis = *this;
+=======
+  bool operator==(const num_int &arg) const {
+    const num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const slint thisnsz = cthis.digs_no_significativos();
     const slint thisvsz = cthis.size() - thisnsz;
     const slint argnsz = arg.digs_no_significativos();
@@ -673,8 +929,13 @@ public:
     }
   }
 
+<<<<<<< HEAD
   bool operator!=(const int_num &arg) const {
     const int_num &cthis = *this;
+=======
+  bool operator!=(const num_int &arg) const {
+    const num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const slint thisnsz = digs_no_significativos();
     const slint thisvsz = (cthis.size()) - thisnsz;
     const slint argnsz = arg.digs_no_significativos();
@@ -692,8 +953,13 @@ public:
     }
   }
 
+<<<<<<< HEAD
   bool operator>=(const int_num &arg) const {
     const int_num &cthis = *this;
+=======
+  bool operator>=(const num_int &arg) const {
+    const num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const slint thissz = cthis.size();
     const slint thisnsz =
         ((thissz == 1) ? 0 : (cthis.digs_no_significativos()));
@@ -728,8 +994,13 @@ public:
     return true;
   }
 
+<<<<<<< HEAD
   bool operator<=(const int_num &arg) const {
     const int_num &cthis = *this;
+=======
+  bool operator<=(const num_int &arg) const {
+    const num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const slint thissz = cthis.size();
     const slint thisnsz =
         ((thissz == 1) ? 0 : (cthis.digs_no_significativos()));
@@ -764,8 +1035,13 @@ public:
     return true;
   }
 
+<<<<<<< HEAD
   bool operator>(const int_num &arg) const {
     const int_num &cthis = *this;
+=======
+  bool operator>(const num_int &arg) const {
+    const num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const slint thissz = cthis.size();
     const slint thisnsz =
         ((thissz == 1) ? 0 : (cthis.digs_no_significativos()));
@@ -798,8 +1074,13 @@ public:
     return false;
   }
 
+<<<<<<< HEAD
   bool operator<(const int_num &arg) const {
     const int_num &cthis = *this;
+=======
+  bool operator<(const num_int &arg) const {
+    const num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const slint thissz = cthis.size();
     const slint thisnsz =
         ((thissz == 1) ? 0 : (cthis.digs_no_significativos()));
@@ -840,6 +1121,7 @@ public:
   /* 									                                */
   /**********************************************/
 
+<<<<<<< HEAD
   int_num operator+(const int_num &arg) const {
     const int_num &cthis = *this;
     int_num ret(cthis);
@@ -849,6 +1131,17 @@ public:
     spardigs_t<B> tempt();
     spardigs_t<B> tempa();
     const int_num *po = 0;
+=======
+  num_int operator+(const num_int &arg) const {
+    const num_int &cthis = *this;
+    num_int ret(cthis);
+    ret.reduce();
+    num_int cpy(arg);
+    cpy.reduce();
+    spardigs_t<B> tempt();
+    spardigs_t<B> tempa();
+    const num_int *po = 0;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     usint sza = arg.size();
     usint szt = ret.size();
     p_usint pszmin = 0;
@@ -865,7 +1158,11 @@ public:
 
     usint &szmin = *pszmin;
     usint &szmax = *pszmax;
+<<<<<<< HEAD
     const int_num &obj = *po;
+=======
+    const num_int &obj = *po;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     usint k = 0;
     ret.aux = spardigs();
     for (; k < szmin; ++k) {
@@ -894,15 +1191,26 @@ public:
     return ret;
   }
 
+<<<<<<< HEAD
   int_num operator-(const int_num &arg) const {
     int_num &cthis = *this;
     int_num ret;
     int_num cpy(-arg);
+=======
+  num_int operator-(const num_int &arg) const {
+    num_int &cthis = *this;
+    num_int ret;
+    num_int cpy(-arg);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     ret.reduce();
     cpy.reduce();
     spardigs tempt();
     spardigs tempa();
+<<<<<<< HEAD
     const int_num *po = 0;
+=======
+    const num_int *po = 0;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     usint sza = arg.lst_arg.size();
     usint szt = ret.lst_arg.size();
     p_usint pszmin = 0;
@@ -919,7 +1227,11 @@ public:
 
     usint &szmin = *pszmin;
     usint &szmax = *pszmax;
+<<<<<<< HEAD
     const int_num &obj = *po;
+=======
+    const num_int &obj = *po;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     usint k = 0;
     ret.aux = spardigs();
     for (; k < szmin; ++k) {
@@ -948,6 +1260,7 @@ public:
     return ret;
   }
 
+<<<<<<< HEAD
   // Utilizamos una funcion int_num * dig_t
   int_num operator*(const int_num &arg) const {
     int_num &cthis = *this;
@@ -956,11 +1269,25 @@ public:
     int_num m1(cthis.abs());
     m1.reduce();
     int_num m2(arg.abs());
+=======
+  // Utilizamos una funcion num_int * dig_t
+  num_int operator*(const num_int &arg) const {
+    num_int &cthis = *this;
+    num_int sumatemp;
+    num_int multtemp;
+    num_int m1(cthis.abs());
+    m1.reduce();
+    num_int m2(arg.abs());
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     m2.reduce();
     multtemp = cthis * m2[0];
     sumatemp = multtemp;
     for (usint j = 1; j < m2.size(); ++j) {
+<<<<<<< HEAD
       multtemp = cthis * m2[j]; // int_num * dig_t
+=======
+      multtemp = cthis * m2[j]; // num_int * dig_t
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       multtemp.insert(0, j, 0);
       sumatemp += multtemp;
     }
@@ -969,6 +1296,7 @@ public:
     return sumatemp;
   }
 
+<<<<<<< HEAD
   int_num operator/(const int_num &arg) const {
     int_num &cthis = *this;
     const sign_e sgn_ndo = signo;
@@ -978,11 +1306,26 @@ public:
     int_num rem(dvndo_int);
 
     int_num dvsor_int(arg.abs());
+=======
+  num_int operator/(const num_int &arg) const {
+    num_int &cthis = *this;
+    const sign_e sgn_ndo = signo;
+    const sign_e sgn_sor = arg.signo;
+    num_int dvndo_int(this->abs());
+    dvndo_int.reduce();
+    num_int rem(dvndo_int);
+
+    num_int dvsor_int(arg.abs());
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.reduce();
 
     const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
 
+<<<<<<< HEAD
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.lst_digs.erase(0, cssor); // division por una potencia de B
 
     dvsor_int.reduce();
@@ -1016,6 +1359,7 @@ public:
     return dvndo_int;
   }
 
+<<<<<<< HEAD
   int_num operator%(const int_num &arg) const {
     int_num &cthis = *this;
     int_num dvndo_int(this->abs());
@@ -1023,11 +1367,24 @@ public:
     int_num rem(dvndo_int);
 
     int_num dvsor_int(arg.abs());
+=======
+  num_int operator%(const num_int &arg) const {
+    num_int &cthis = *this;
+    num_int dvndo_int(this->abs());
+    dvndo_int.reduce();
+    num_int rem(dvndo_int);
+
+    num_int dvsor_int(arg.abs());
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.reduce();
 
     const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
 
+<<<<<<< HEAD
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.lst_digs.erase(0, cssor); // division por una potencia de B
 
     dvsor_int.reduce();
@@ -1058,6 +1415,7 @@ public:
     return rem;
   }
 
+<<<<<<< HEAD
   // int_num operator + (spardigs) const;
   // int_num operator - (spardigs) const;
   // int_num operator * (spardigs) const;
@@ -1076,6 +1434,26 @@ public:
     pardigs temp;
     dig carry = 0;
     int_num ret(*this);
+=======
+  // num_int operator + (spardigs) const;
+  // num_int operator - (spardigs) const;
+  // num_int operator * (spardigs) const;
+  // num_int operator / (spardigs) const;
+  // num_int operator % (spardigs) const;
+  // num_int operator + (n2digs_t) const;
+  // num_int operator - (n2digs_t) const;
+  // num_int operator * (n2digs_t) const;
+  // num_int operator / (n2digs_t) const;
+  // num_int operator % (n2digs_t) const;
+  // num_int operator + (pardigs) const;
+  // num_int operator - (pardigs) const;
+
+  num_int operator*(pardigs a) const {
+    num_int &cthis = *this;
+    pardigs temp;
+    dig carry = 0;
+    num_int ret(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     for (usint k = 0; k < (cthis.size() - 1); ++k) {
       temp = cthis[k] * (a.g_first());
       temp += carry;
@@ -1102,6 +1480,7 @@ public:
     return ret;
   }
 
+<<<<<<< HEAD
   //	int_num operator / (pardigs) const;
   //	int_num operator % (pardigs) const;
 
@@ -1112,6 +1491,18 @@ public:
     spardigs tempt();
     spardigs tempa();
     const int_num *po = 0;
+=======
+  //	num_int operator / (pardigs) const;
+  //	num_int operator % (pardigs) const;
+
+  num_int operator+(dig arg) const {
+    num_int &cthis = *this;
+    num_int ret(*this);
+    ret.reduce();
+    spardigs tempt();
+    spardigs tempa();
+    const num_int *po = 0;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const usint sza = 1;
     usint szt = ret.lst_arg.size();
     p_usint pszmin = 0;
@@ -1128,7 +1519,11 @@ public:
 
     usint &szmin = *pszmin;
     usint &szmax = *pszmax;
+<<<<<<< HEAD
     const int_num &obj = *po;
+=======
+    const num_int &obj = *po;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     usint k = 0;
     ret.aux = spardigs();
     tempt.p_first(ret[0]);
@@ -1160,9 +1555,15 @@ public:
     return ret;
   }
 
+<<<<<<< HEAD
   int_num operator-(dig arg) const {
     int_num &cthis = *this;
     int_num ret(*this);
+=======
+  num_int operator-(dig arg) const {
+    num_int &cthis = *this;
+    num_int ret(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     ret.reduce();
     spardigs cpy(-arg);
     spardigs tempt();
@@ -1195,11 +1596,19 @@ public:
     return ret;
   }
 
+<<<<<<< HEAD
   int_num operator*(dig a) const {
     int_num &cthis = *this;
     pardigs temp;
     dig carry = 0;
     int_num ret(*this);
+=======
+  num_int operator*(dig a) const {
+    num_int &cthis = *this;
+    pardigs temp;
+    dig carry = 0;
+    num_int ret(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     if (ret.signo == vminus)
       ret.mC_B();
     for (usint k = 0; k < (cthis.size()); ++k) {
@@ -1215,8 +1624,13 @@ public:
     return ret;
   }
 
+<<<<<<< HEAD
   // int_num operator / (dig) const;
   // int_num operator % (dig) const;
+=======
+  // num_int operator / (dig) const;
+  // num_int operator % (dig) const;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
   /********************************************/
   /*									                            */
@@ -1225,6 +1639,7 @@ public:
   /* 									                            */
   /********************************************/
 
+<<<<<<< HEAD
   const int_num &operator+=(const int_num &arg) {
     int_num &cthis = *this;
     this->reduce();
@@ -1232,6 +1647,15 @@ public:
     spardigs tempt;
     spardigs tempa;
     const int_num *po = 0;
+=======
+  const num_int &operator+=(const num_int &arg) {
+    num_int &cthis = *this;
+    this->reduce();
+    num_int carg(arg.reduce());
+    spardigs tempt;
+    spardigs tempa;
+    const num_int *po = 0;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     usint sza = carg.size();
     usint szt = cthis.size();
     p_usint pszmin = 0;
@@ -1245,7 +1669,11 @@ public:
       pszmax = &sza;
       po = &carg;
     }
+<<<<<<< HEAD
     const int_num &obj = (*po);
+=======
+    const num_int &obj = (*po);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     tempt.p_decs(dig_t<B>(0));
     tempa.p_decs(0);
     usint &szmin = *pszmin;
@@ -1268,6 +1696,7 @@ public:
     return (*this);
   }
 
+<<<<<<< HEAD
   const int_num &operator-=(const int_num &arg) {
     int_num &cthis = *this;
     this->reduce();
@@ -1275,6 +1704,15 @@ public:
     spardigs tempt();
     spardigs tempa();
     const int_num *po = 0;
+=======
+  const num_int &operator-=(const num_int &arg) {
+    num_int &cthis = *this;
+    this->reduce();
+    num_int carg((-arg).reduce());
+    spardigs tempt();
+    spardigs tempa();
+    const num_int *po = 0;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     usint sza = carg.size();
     usint szt = (cthis.size());
     p_usint pszmin = 0;
@@ -1288,7 +1726,11 @@ public:
       pszmax = &sza;
       po = &carg;
     }
+<<<<<<< HEAD
     const int_num &obj = (*po);
+=======
+    const num_int &obj = (*po);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     tempt.p_second(0);
     tempa.p_second(0);
     usint &szmin = *pszmin;
@@ -1311,6 +1753,7 @@ public:
     return (*this);
   }
 
+<<<<<<< HEAD
   const int_num &operator*=(const int_num &arg) {
     int_num &cthis = *this;
     int_num multtemp;
@@ -1319,6 +1762,16 @@ public:
     this->reduce();
     int_num &m1 = (*this);
     int_num m2(arg.abs());
+=======
+  const num_int &operator*=(const num_int &arg) {
+    num_int &cthis = *this;
+    num_int multtemp;
+    const sign_e sgn_ndo = signo;
+    this->absp();
+    this->reduce();
+    num_int &m1 = (*this);
+    num_int m2(arg.abs());
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     m2.reduce();
 
     cthis *= m2[0];
@@ -1332,6 +1785,7 @@ public:
     return (*this);
   }
 
+<<<<<<< HEAD
   const int_num &operator/=(const int_num &arg) {
     int_num &cthis = *this;
     const sign_e sgn_ndo = signo;
@@ -1342,11 +1796,27 @@ public:
     int_num rem(dvndo_int);
 
     int_num dvsor_int(arg.abs());
+=======
+  const num_int &operator/=(const num_int &arg) {
+    num_int &cthis = *this;
+    const sign_e sgn_ndo = signo;
+    const sign_e sgn_sor = arg.signo;
+    this->absp();
+    num_int &dvndo_int = *this;
+    dvndo_int.reduce();
+    num_int rem(dvndo_int);
+
+    num_int dvsor_int(arg.abs());
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.reduce();
 
     const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
 
+<<<<<<< HEAD
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.lst_digs.erase(0, cssor); // division por una potencia de B
 
     dvsor_int.reduce();
@@ -1380,6 +1850,7 @@ public:
     return dvndo_int;
   }
 
+<<<<<<< HEAD
   const int_num &operator%=(const int_num &arg) {
     int_num &cthis = *this;
     (*this).absp();
@@ -1388,11 +1859,25 @@ public:
     int_num dvndo_int(rem);
 
     int_num dvsor_int(arg.abs());
+=======
+  const num_int &operator%=(const num_int &arg) {
+    num_int &cthis = *this;
+    (*this).absp();
+    num_int &rem = *this;
+    rem.reduce();
+    num_int dvndo_int(rem);
+
+    num_int dvsor_int(arg.abs());
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.reduce();
 
     const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
 
+<<<<<<< HEAD
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.lst_digs.erase(0, cssor); // division por una potencia de B
 
     dvsor_int.reduce();
@@ -1422,6 +1907,7 @@ public:
     return rem;
   }
 
+<<<<<<< HEAD
   // const int_num & operator += (spardigs);
   // const int_num & operator -= (spardigs);
   // const int_num & operator *= (spardigs);
@@ -1435,6 +1921,21 @@ public:
     pardigs temp;
     dig carry = 0;
     int_num &ret = (*this);
+=======
+  // const num_int & operator += (spardigs);
+  // const num_int & operator -= (spardigs);
+  // const num_int & operator *= (spardigs);
+  // const num_int & operator /= (spardigs);
+  // const num_int & operator %= (spardigs);
+  // const num_int & operator += (pardigs);
+  // const num_int & operator -= (pardigs);
+
+  const num_int &operator*=(pardigs a) {
+    num_int &cthis = *this;
+    pardigs temp;
+    dig carry = 0;
+    num_int &ret = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     for (usint k = 0; k < cthis.size(); ++k) {
       temp = cthis[k] * (a.g_first());
       temp += carry;
@@ -1461,11 +1962,19 @@ public:
     return ret;
   }
 
+<<<<<<< HEAD
   // const int_num & operator /= (pardigs);
   // const int_num & operator %= (pardigs);
 
   const int_num &operator+=(dig arg) {
     int_num &cthis = *this;
+=======
+  // const num_int & operator /= (pardigs);
+  // const num_int & operator %= (pardigs);
+
+  const num_int &operator+=(dig arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     this->reduce();
     spardigs tempt();
 
@@ -1487,8 +1996,13 @@ public:
     return (*this);
   }
 
+<<<<<<< HEAD
   const int_num &operator-=(dig arg) {
     int_num &cthis = *this;
+=======
+  const num_int &operator-=(dig arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     this->reduce();
     dig arg_CB = (dig(B - 1) - arg) + dig(1);
     spardigs tempt();
@@ -1513,8 +2027,13 @@ public:
     return (*this);
   }
 
+<<<<<<< HEAD
   const int_num &operator*=(dig arg) {
     int_num &cthis = *this;
+=======
+  const num_int &operator*=(dig arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     pardigs temp;
     dig carry = 0;
     sign_e sgn = this->signo;
@@ -1533,8 +2052,13 @@ public:
     return (*this);
   }
 
+<<<<<<< HEAD
   //	const int_num & operator /= (dig);
   //	const int_num & operator %= (dig);
+=======
+  //	const num_int & operator /= (dig);
+  //	const num_int & operator %= (dig);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
   /***************************************/
   /*							                            */
@@ -1543,9 +2067,15 @@ public:
   /*							                            */
   /**************************************/
 
+<<<<<<< HEAD
   int_num operator-() const {
     int_num &cthis = *this;
     int_num cpy(*this);
+=======
+  num_int operator-() const {
+    num_int &cthis = *this;
+    num_int cpy(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cpy.reduce();
     const striterator fin = cpy.end();
     striterator it = cpy.begin();
@@ -1573,9 +2103,15 @@ public:
     return cpy;
   }
 
+<<<<<<< HEAD
   int_num operator!() const {
     int_num &cthis = *this;
     int_num cpy(*this);
+=======
+  num_int operator!() const {
+    num_int &cthis = *this;
+    num_int cpy(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const striterator fin = cpy.end();
     striterator it = cpy.begin();
     for (; it != fin; ++it)
@@ -1594,8 +2130,13 @@ public:
   /*							                        */
   /***********************************/
 
+<<<<<<< HEAD
   const int_num &mC_B() {
     int_num &cthis = *this;
+=======
+  const num_int &mC_B() {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.reduce();
     const striterator fin = cthis.end();
     striterator it = cthis.begin();
@@ -1622,9 +2163,15 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &mC_Bm1() {
     int_num &cthis = *this;
     int_num &cpy = (*this);
+=======
+  const num_int &mC_Bm1() {
+    num_int &cthis = *this;
+    num_int &cpy = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const striterator fin = cpy.end();
     striterator it = cpy.begin();
     for (; it != fin; ++it)
@@ -1641,8 +2188,13 @@ public:
   /*							                */
   /******************************/
 
+<<<<<<< HEAD
   int_num abs() const {
     const int_num cthis(*this);
+=======
+  num_int abs() const {
+    const num_int cthis(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.reduce();
     if (signo == vminus)
       cthis.mC_B();
@@ -1650,8 +2202,13 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num &absp() {
     int_num &cthis = (*this);
+=======
+  const num_int &absp() {
+    num_int &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.reduce();
     if (signo == vminus)
       cthis.mC_B();
@@ -1665,8 +2222,13 @@ public:
   /*							                        */
   /***********************************/
 
+<<<<<<< HEAD
   int_num divB() const {
     int_num cpy(*this);
+=======
+  num_int divB() const {
+    num_int cpy(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cpy.reduce();
     sign_e sgn = cpy.signo;
     cpy.absp();
@@ -1678,15 +2240,24 @@ public:
   }
 
   dig remB() const {
+<<<<<<< HEAD
     int_num cpy(*this);
+=======
+    num_int cpy(*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cpy.reduce();
     if (signo == vminus)
       return cpy.absp();
     return cpy.lst_digs[0];
   }
 
+<<<<<<< HEAD
   const int_num &divBp() {
     int_num &cpy = (*this);
+=======
+  const num_int &divBp() {
+    num_int &cpy = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cpy.reduce();
     sign_e sgn = cpy.signo;
     cpy.absp();
@@ -1698,13 +2269,18 @@ public:
   }
 
   dig remBp() {
+<<<<<<< HEAD
     int_num &cpy = (*this);
+=======
+    num_int &cpy = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cpy.reduce();
     if (signo == vminus)
       return cpy.absp();
     return cpy.lst_digs[0];
   }
 
+<<<<<<< HEAD
   int_num div2() const {
     int_num &cthis = *this;
     const sign_e sgn = signo;
@@ -1718,6 +2294,21 @@ public:
     const usint cssor = ((B == 2) ? (1) : (0));
 
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+  num_int div2() const {
+    num_int &cthis = *this;
+    const sign_e sgn = signo;
+    num_int dvndo_int(cthis.abs());
+    dvndo_int.reduce();
+    num_int rem(dvndo_int);
+    const dig dos = 2;
+
+    num_int dvsor_int(dos);
+
+    const usint cssor = ((B == 2) ? (1) : (0));
+
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     if (B == 2)
       dvsor_int[0] = 1; // division por una potencia de B
 
@@ -1751,9 +2342,15 @@ public:
   }
 
   dig rem2() const {
+<<<<<<< HEAD
     int_num &cthis = *this;
     sign_e sgn = signo;
     int_num cpy = cthis.reduce();
+=======
+    num_int &cthis = *this;
+    sign_e sgn = signo;
+    num_int cpy = cthis.reduce();
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cpy.absp();
     cpy.reduce();
     if (B % 2 == 1) {
@@ -1771,6 +2368,7 @@ public:
     }
   }
 
+<<<<<<< HEAD
   const int_num &div2p() {
     int_num &cthis = *this;
     sign_e sgn = signo;
@@ -1785,6 +2383,22 @@ public:
     const usint cssor = ((B == 2) ? (1) : (0));
 
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+  const num_int &div2p() {
+    num_int &cthis = *this;
+    sign_e sgn = signo;
+    cthis.absp();
+    cthis.reduce();
+    num_int &dvndo_int = (*this);
+    num_int rem(dvndo_int);
+    const dig dos = 2;
+
+    num_int dvsor_int(dos);
+
+    const usint cssor = ((B == 2) ? (1) : (0));
+
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     if (B == 2)
       dvsor_int[0] = 1; // division por una potencia de B
 
@@ -1818,11 +2432,19 @@ public:
   }
 
   dig rem2p() {
+<<<<<<< HEAD
     int_num &cthis = *this;
     sign_e sgn = signo;
     cthis.absp();
     cthis.reduce();
     int_num &cpy = (*this);
+=======
+    num_int &cthis = *this;
+    sign_e sgn = signo;
+    cthis.absp();
+    cthis.reduce();
+    num_int &cpy = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     if (B % 2 == 1) {
       if (cpy.size() == 1)
         return dig::Rem2(cpy.lst_digs[0]);
@@ -1838,6 +2460,7 @@ public:
     }
   }
 
+<<<<<<< HEAD
   /*		int_num div3() const;
                   const int_num & div3p();
                   dig rem3() const;
@@ -1848,12 +2471,28 @@ public:
                   int_num div7 () const;
                   dig rem7 () const;
                   const int_num & div7p();
+=======
+  /*		num_int div3() const;
+                  const num_int & div3p();
+                  dig rem3() const;
+                  const num_int & rem3p();
+                  const dig rem4() const;
+                  dig rem5() const;
+                  dig rem6() const;
+                  num_int div7 () const;
+                  dig rem7 () const;
+                  const num_int & div7p();
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
                   dig rem7p();
                   const dig rem8() const;
   */
 
   dig remBm1() const {
+<<<<<<< HEAD
     int_num cthis(*this), suma;
+=======
+    num_int cthis(*this), suma;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     sign_e sgn = signo;
     cthis.abs();
     cthis.reduce();
@@ -1874,8 +2513,13 @@ public:
   }
 
   // dig	 			remBm1p()		;
+<<<<<<< HEAD
   // int_num	 		divBm1() 	const;
   // const int_num	& 	divBm1p()		;
+=======
+  // num_int	 		divBm1() 	const;
+  // const num_int	& 	divBm1p()		;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 private:
   //		inline void	div3_step(pair< n2digs_t , usint > & S) const;
   //		inline void div3p_step(pair< n2digs_t , usint > & S);
@@ -1888,11 +2532,19 @@ private:
   /*							                */
   /******************************/
 
+<<<<<<< HEAD
   inline void div_gen_step(const int_num &dvsor, int_num &rem, int_num &coc,
                            usint &ndig) const {
     int_num &cthis = *this;
     const usint maxpos = (cthis.size()) - 1;
     const int_num &dvndo = (*this);
+=======
+  inline void div_gen_step(const num_int &dvsor, num_int &rem, num_int &coc,
+                           usint &ndig) const {
+    num_int &cthis = *this;
+    const usint maxpos = (cthis.size()) - 1;
+    const num_int &dvndo = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     rem.insert(0, 1, dvndo[maxpos - ndig]);
     if (rem < coc) {
       coc.insert(0, 1, 0);
@@ -1906,7 +2558,11 @@ private:
         pardigs dighsor = pardigs(0, dvsor[dvsor.size() - 1]);
         pardigs &digcocprueba = dighrem;
         digcocprueba /= dighsor;
+<<<<<<< HEAD
         int_num remprueba = dvsor * digcocprueba;
+=======
+        num_int remprueba = dvsor * digcocprueba;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
         for (dig_t<B> ix = 0; ix < pardigs(1, 0); ix += 1) {
           if (remprueba > rem) {
             --digcocprueba;
@@ -1922,7 +2578,11 @@ private:
         dig_t<B> dighsor = dvsor[dvsor.size() - 1];
         dig_t<B> &digcocprueba = dighrem;
         digcocprueba /= dighsor;
+<<<<<<< HEAD
         int_num remprueba =
+=======
+        num_int remprueba =
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
             dvsor * digcocprueba; // no está implementada esta función
         dig_t<B> ix = 0;
         for (; ix < pardigs(1, 0); ix += 1) {
@@ -1941,11 +2601,19 @@ private:
     return;
   }
 
+<<<<<<< HEAD
   inline void divp_gen_step(const int_num &dvsor, int_num &rem, int_num &coc,
                             usint &ndig) {
     int_num &cthis = *this;
     const usint maxpos = (cthis.size()) - 1;
     int_num &dvndo = (*this);
+=======
+  inline void divp_gen_step(const num_int &dvsor, num_int &rem, num_int &coc,
+                            usint &ndig) {
+    num_int &cthis = *this;
+    const usint maxpos = (cthis.size()) - 1;
+    num_int &dvndo = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     rem.insert(0, 1, dvndo[maxpos - ndig]);
     if (rem < coc) {
       coc.insert(0, 1, 0);
@@ -1959,7 +2627,11 @@ private:
         const pardigs dighsor = pardigs(0, dvsor[dvsor.size() - 1]);
         pardigs &digcocprueba = dighrem;
         digcocprueba /= dighsor;
+<<<<<<< HEAD
         int_num remprueba = dvsor * digcocprueba;
+=======
+        num_int remprueba = dvsor * digcocprueba;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
         for (dig_t<B> Id = 0; Id < pardigs(1, 0); Id += 1) {
           if (remprueba > rem) {
             --digcocprueba;
@@ -1975,7 +2647,11 @@ private:
         const dig_t<B> dighsor = dvsor[dvsor.size() - 1];
         dig_t<B> &digcocprueba = dighrem;
         digcocprueba /= dighsor;
+<<<<<<< HEAD
         int_num remprueba = dvsor * digcocprueba;
+=======
+        num_int remprueba = dvsor * digcocprueba;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
         for (dig_t<B> Id = 0; Id < pardigs(1, 0); Id += 1) {
           if (remprueba > rem) {
             --digcocprueba;
@@ -1998,9 +2674,15 @@ private:
   /*							                */
   /******************************/
 
+<<<<<<< HEAD
   inline void div_uno(int_num &rem, int_num &dvndo, int_num &dvsor,
                       const usint long_dvndo, const usint long_dvsor) const {
     int_num &cthis = *this;
+=======
+  inline void div_uno(num_int &rem, num_int &dvndo, num_int &dvsor,
+                      const usint long_dvndo, const usint long_dvsor) const {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     rem = dvndo;
     if ((long_dvsor == 0) ||
         ((long_dvsor == 1) && (dvsor[0] = 0))) { // caso de division por 0
@@ -2030,10 +2712,17 @@ private:
                 // caso de dividir por potencias de B multiplicadas por 2, 4 u 8
                         //dvndo;
                         switch(dvsor[0]) {
+<<<<<<< HEAD
                                 case 2  : rem=int_num(rem.rem2()); break;
                                 case 4  : rem=int_num(rem.rem4()); break;
                                 case 8  :
                                 default : rem=int_num(rem.rem8());
+=======
+                                case 2  : rem=num_int(rem.rem2()); break;
+                                case 4  : rem=num_int(rem.rem4()); break;
+                                case 8  :
+                                default : rem=num_int(rem.rem8());
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
                         }
                         dvndo.div2p();
                         switch(dvsor[0]) {
@@ -2046,9 +2735,15 @@ private:
                 // caso de dividir por potencias de B multiplicadas por 3 u 9
                         //dvndo;
                         switch(dvsor[0]) {
+<<<<<<< HEAD
                                 case 3  : rem=int_num(rem.rem3()); break;
                                 case B-1  :
                                 default : rem=int_num(rem.rem9()); break;
+=======
+                                case 3  : rem=num_int(rem.rem3()); break;
+                                case B-1  :
+                                default : rem=num_int(rem.rem9()); break;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
                         }
                         dvndo.div3p();
                         if(dvsor[0]==n) dvndo.div3p();
@@ -2098,9 +2793,15 @@ private:
       // devuelve (resto,cociente,i,dividendo,divisor) se puede hacer con una
       // tupla
       // dvndo;
+<<<<<<< HEAD
       int_num rem =
           (dvndo = dvndo.substr((cthis.size()) - 1 - long_dvsor, long_dvsor));
       int_num coc(0);
+=======
+      num_int rem =
+          (dvndo = dvndo.substr((cthis.size()) - 1 - long_dvsor, long_dvsor));
+      num_int coc(0);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       usint ndig = 0;
       do {
         div_gen_step(dvsor, rem, coc, ndig);
@@ -2118,6 +2819,7 @@ private:
   /****************************/
 
 public:
+<<<<<<< HEAD
   pair<int_num, int_num> EuclidDiv(const int_num &arg) const {
     int_num &cthis = *this;
     const sign_e sgn_ndo = signo;
@@ -2133,6 +2835,23 @@ public:
     const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
 
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+  pair<num_int, num_int> EuclidDiv(const num_int &arg) const {
+    num_int &cthis = *this;
+    const sign_e sgn_ndo = signo;
+    const sign_e sgn_sor = arg.signo;
+    num_int dvndo_int = cthis;
+    dvndo_int.absp();
+    dvndo_int.reduce();
+    num_int dvsor_int = arg.abs();
+    dvsor_int.reduce();
+
+    num_int rem(dvndo_int);
+
+    const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
+
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.erase(0, cssor); // division por una potencia de B
 
     dvsor_int.reduce();
@@ -2166,12 +2885,18 @@ public:
     return make_pair(rem, dvndo_int);
   }
 
+<<<<<<< HEAD
   pair<int_num, const int_num &> EuclidDivP(const int_num &arg) {
     int_num &cthis = *this;
+=======
+  pair<num_int, const num_int &> EuclidDivP(const num_int &arg) {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const sign_e sgn_ndo = signo;
     const sign_e sgn_sor = arg.signo;
     cthis.absp();
     cthis.reduce();
+<<<<<<< HEAD
     int_num &dvndo_int = cthis;
     int_num dvsor_int = arg.abs();
     dvsor_int.reduce();
@@ -2181,6 +2906,17 @@ public:
     const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
 
     int_num dvndo_fra(dvndo_int.substr(0, cssor));
+=======
+    num_int &dvndo_int = cthis;
+    num_int dvsor_int = arg.abs();
+    dvsor_int.reduce();
+
+    num_int rem(dvndo_int);
+
+    const usint cssor = dvsor_int.ceros_a_la_drcha(); // ¿?
+
+    num_int dvndo_fra(dvndo_int.substr(0, cssor));
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     dvsor_int.erase(0, cssor); // division por una potencia de B
 
     dvsor_int.reduce();
@@ -2235,13 +2971,22 @@ public:
           return temp;
   }
   */
+<<<<<<< HEAD
   const int_num &operator++() {
     int_num &cthis = *this;
+=======
+  const num_int &operator++() {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const size_t long_inic = cthis.size();
     if (long_inic > 1) {
       cthis.reduce();
     }
+<<<<<<< HEAD
     if (cthis == int_num(vminus, dig(B - 1), dig(B - 1))) {
+=======
+    if (cthis == num_int(vminus, dig(B - 1), dig(B - 1))) {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       cthis.clear();
       cthis.resize(1);
       cthis[0] = dig(0);
@@ -2276,11 +3021,19 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num operator++(int) {
     int_num cpThis(*this);
     int_num &cthis = (*this);
     const size_t long_inic = cthis.size();
     if (cthis == int_num(vminus, dig(B - 1), dig(B - 1))) {
+=======
+  const num_int operator++(int) {
+    num_int cpThis(*this);
+    num_int &cthis = (*this);
+    const size_t long_inic = cthis.size();
+    if (cthis == num_int(vminus, dig(B - 1), dig(B - 1))) {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       cthis.clear();
       cthis.resize(1);
       cthis[0] = dig(0);
@@ -2315,11 +3068,19 @@ public:
     return cpThis;
   }
 
+<<<<<<< HEAD
   const int_num &operator--() {
     int_num &cthis = *this;
     const size_t long_inic = cthis.size();
     // BEGIN TRATAMIENTO DEL 0
     if (cthis == int_num(vplus, dig(0), dig(0))) {
+=======
+  const num_int &operator--() {
+    num_int &cthis = *this;
+    const size_t long_inic = cthis.size();
+    // BEGIN TRATAMIENTO DEL 0
+    if (cthis == num_int(vplus, dig(0), dig(0))) {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       cthis.clear();
       cthis.resize(1);
       cthis[0] = dig(B - 1);
@@ -2370,12 +3131,21 @@ public:
     return cthis;
   }
 
+<<<<<<< HEAD
   const int_num operator--(int) {
     int_num &cthis = (*this);
     const int_num cpThis(*this);
     const size_t long_inic = cthis.size();
     // BEGIN TRATAMIENTO DEL 0
     if (cthis == int_num(vplus, dig(0), dig(0))) {
+=======
+  const num_int operator--(int) {
+    num_int &cthis = (*this);
+    const num_int cpThis(*this);
+    const size_t long_inic = cthis.size();
+    // BEGIN TRATAMIENTO DEL 0
+    if (cthis == num_int(vplus, dig(0), dig(0))) {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       cthis.clear();
       cthis.resize(1);
       cthis[0] = dig(B - 1);
@@ -2432,8 +3202,13 @@ public:
   /*					                        */
   /******************************/
 
+<<<<<<< HEAD
   const int_num &reduce() {
     int_num &cthis = *this;
+=======
+  const num_int &reduce() {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const usint nsz = cthis.digs_no_significativos();
     const usint longitud = cthis.size();
     if ((longitud == 1) or (longitud == 0))
@@ -2442,26 +3217,43 @@ public:
     return cthis.erase(pos_p1, nsz);
   }
 
+<<<<<<< HEAD
   int_num reduce() const {
     const int_num &cthis = *this;
     int_num cpyreducida(cthis);
+=======
+  num_int reduce() const {
+    const num_int &cthis = *this;
+    num_int cpyreducida(cthis);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const usint nsz = cpyreducida.digs_no_significativos();
     const usint longitud = cpyreducida.size();
     const usint pos = longitud - nsz;
     return cpyreducida.erase(pos, nsz);
   }
 
+<<<<<<< HEAD
   const int_num &reduce_fracc() {
     int_num &cthis = *this;
+=======
+  const num_int &reduce_fracc() {
+    num_int &cthis = *this;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const usint nsz = cthis.digs_fracc_no_significativos() - 1;
     const usint pos = 0;
     cthis.erase(pos, nsz);
     return cthis;
   }
 
+<<<<<<< HEAD
   int_num reduce_fracc() const {
     int_num &cthis = *this;
     int_num cpyreducida(cthis);
+=======
+  num_int reduce_fracc() const {
+    num_int &cthis = *this;
+    num_int cpyreducida(cthis);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const usint nsz = cpyreducida.digs_no_significativos() - 1;
     const usint pos = 0;
     cpyreducida.erase(pos, nsz);
@@ -2469,6 +3261,7 @@ public:
   }
 
   /*********************************/
+<<<<<<< HEAD
   /*							   */
   /* 	   ISTREAM Y OSTREAM	   */
   /*							   */
@@ -2476,6 +3269,15 @@ public:
 
   template <const uchint Base>
   friend istream &operator>>(istream &is, int_num<Base> &arg) {
+=======
+  /*							                    */
+  /* 	   ISTREAM Y OSTREAM	*/
+  /*							                    */
+  /*********************************/
+
+  template <const uchint Base>
+  friend istream &operator>>(istream &is, num_int<Base> &arg) {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     enum estado_e { e0, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11 };
     vector<string> num(255);
     string num_sgn;
@@ -2597,7 +3399,11 @@ public:
   }
 
   template <const uchint Base>
+<<<<<<< HEAD
   friend ostream &operator<<(ostream &os, int_num<Base> arg) {
+=======
+  friend ostream &operator<<(ostream &os, num_int<Base> arg) {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const uchint sz = arg.size();
     os << "int#" << ((arg.signo == vplus) ? ('+') : ('-'));
     for (int k = sz - 1; k > -1; --k) {

@@ -20,6 +20,13 @@ using llint_varlist_t = typename NumRepr::MemHand::llint_varlist_t;
 using ld_varlist_t = typename NumRepr::MemHand::ld_varlist_t;
 
 //using NumRepr::register_variant_t;
+//#include "../include/testunit.hpp"
+//#include "../include/memory_handler.hpp"
+#include "../include/variant_types.hpp"
+
+
+using namespace std::literals;
+//using genRadixDig_t = typename NumRepr::memory_handler::genRadixDig_t;
 
 /// PARA CUANDO LOS *.O SEAN DEMASIADO GRANDES:
 ///    -Wa,-??? (archivos grandes de ensamblador)
@@ -37,6 +44,19 @@ using ld_varlist_t = typename NumRepr::MemHand::ld_varlist_t;
 //using digFF_t = dig_t<255>;
 
 //using typename NumRepr::digit_variant;
+=======
+template<std::uint64_t IX>
+using dig_t = typename NumRepr::dig_t<IX>;
+
+using dig2_t  = dig_t<2>;
+using dig10_t = dig_t<10>;
+using digF_t  = dig_t<16>;
+using dig60_t = dig_t<60>;
+using digPI_t = dig_t<180>;
+using digFA_t = dig_t<210>;
+using digFF_t = dig_t<255>;
+
+using NumRepr::memory_handler::varRadixDig_t;
 //using dig_var_list = typename NumRepr::memory_handler::dig_var_list;
 //using int_var_list = typename NumRepr::memory_handler::int_var_list;
 //using nat_var_list = typename NumRepr::memory_handler::nat_var_list;
@@ -44,6 +64,7 @@ using ld_varlist_t = typename NumRepr::MemHand::ld_varlist_t;
 int main() {
   //  COMIENZO PARA PONER ESPAÑOL EN CONSOLA
   //
+<<<<<<< HEAD
   std::setlocale(LC_ALL,"es_ES");  	// Cambiar locale - Suficiente para máquinas Linux
   SetConsoleCP(1252);         		// Cambiar STDIN -  Para máquinas Windows
   SetConsoleOutputCP(1252);   		// Cambiar STDOUT - Para máquinas Windows
@@ -72,6 +93,16 @@ int main() {
 /*
   digit_variant A{dig_t<10>{0}};
   //std::cout << std::visit(varRadixDig_t::preincr(),A) << std::endl;
+=======
+  std::setlocale(LC_ALL,"es_ES");  // Cambiar locale - Suficiente para máquinas Linux
+  SetConsoleCP(1252);         // Cambiar STDIN -  Para máquinas Windows
+  SetConsoleOutputCP(1252);   // Cambiar STDOUT - Para máquinas Windows
+  //
+  // FINAL PARA PONER ESPAÑOL EN CONSOLA
+
+  varRadixDig_t A{dig_t<10>{0}};
+  std::cout << std::visit(varRadixDig_t::preincr(),A) << std::endl;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   std::cout <<   A << std::endl;
   std::cout << ++A << std::endl;
   std::cout << ++A << std::endl;
@@ -84,7 +115,11 @@ int main() {
   std::cout << ++A << std::endl;
   std::cout << ++A << std::endl;
   std::cout << ++A << std::endl;
+<<<<<<< HEAD
   digit_variant B{dig_t<23>{0}};
+=======
+  varRadixDig_t B{dig_t<23>{0}};
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   std::cout <<   B << std::endl;
   std::cout << ++B << std::endl;
   std::cout << ++B << std::endl;
@@ -225,7 +260,10 @@ int main() {
   std::cout << B-- << std::endl;
   std::cout << B-- << std::endl;
   std::cout << B-- << std::endl;
+<<<<<<< HEAD
 */
+
+
 //std::cout << --A << std::endl;std::cout << --A << std::endl;  dig_var_list varlist;
 //std::cout << --A << std::endl;std::cout << --A << std::endl;  std::cout << "varlist.size() == "  << varlist.size() << '\n';
 //std::cout << --A << std::endl;std::cout << --A << std::endl;  std::cout << '\n';

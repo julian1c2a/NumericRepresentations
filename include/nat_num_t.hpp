@@ -11,15 +11,13 @@ private:
   using dig_t = dig_t<B>;
   using UINT_T = typename dig_t::UINT_T;
   using dig_string_t = dig_string_t<B>;
+
   using nbstr = basic_string<dig>;
   using striterator = typename nbstr::iterator;
   using rstriterator = typename nbstr::reverse_iterator;
   using cstriterator = typename nbstr::const_iterator;
   using crstriterator = typename nbstr::const_reverse_iterator;
-  using b_iterator = typename dig_string_t<B>::iterator;
-  using b_riterator = typename dig_string_t<B>::reverse_iterator;
-  using b_citerator = typename dig_string_t<B>::const_iterator;
-  using b_criterator = typename dig_string_t<B>::const_reverse_iterator;
+
   using iterator = typename nat_num_t<B>::iterator;
   using riterator = typename nat_num_t<B>::reverse_iterator;
   using citerator = typename nat_num_t<B>::const_iterator;
@@ -136,6 +134,39 @@ public:
   inline cstriterator end() const {
     const dig_string_t &cthis = (*this);
     return cthis.dig_string_t::end();
+=======
+    return base_num_t::erase(first, last);
+  }
+
+public:
+  inline dig_t operator[](uint arg) const {
+    const nat_num_t &cthis = (*this);
+    return cthis.base_num_t::operator[](arg);
+  }
+  inline dig_t &operator[](uint arg) {
+    base_num_t &cthis = (*this);
+    return cthis.base_num_t::operator[](arg);
+  }
+
+  inline void clear() {
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::clear();
+  }
+
+  inline void push_back(dig_t arg) {
+    base_num_t &cthis = (*this);
+    cthis.base_num_t::push_back(arg);
+  }
+
+  inline striterator begin() {
+    base_num_t &cthis = (*this);
+    return cthis.base_num_t::begin();
+  }
+
+  inline cstriterator end() const {
+    const base_num_t &cthis = (*this);
+    return cthis.base_num_t::end();
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   }
 
 public:
@@ -358,7 +389,11 @@ public:
 
   nat_num_t(usint a) {
     nat_num_t &cthis = (*this);
+<<<<<<< HEAD
     dig_string_t<B> temp;
+=======
+    base_num_t<B> temp;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.clear();
     // cthis.resize(pot_max_base_B_en_Int_T<usint,B>().first);
     aux = pardigs();
@@ -374,7 +409,11 @@ public:
 
   const nat_num_t &operator=(usint a) {
     nat_num_t &cthis = (*this);
+<<<<<<< HEAD
     dig_string_t<B> temp;
+=======
+    base_num_t<B> temp;
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.clear();
     // cthis.resize(pot_max_base_B_en_Int_T<usint,B>());
     aux = pardigs();
@@ -1094,7 +1133,11 @@ public:
   }
 
   inline nat_num_t substr(size_t pos, size_t n) const {
+<<<<<<< HEAD
     const dig_string_t &cthis = (*this);
+=======
+    const base_num_t &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     cthis.nbstr::substr(pos, n);
     return (*this);
   }
@@ -1620,7 +1663,11 @@ private:
   //		inline void div7p_step(pair< n2digs_t , usint > & S);
 public:
   inline pardigs g_aux() const {
+<<<<<<< HEAD
     dig_string_t &cthis = (*this);
+=======
+    base_num_t &cthis = (*this);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     return cthis.aux;
   }
   inline void p_aux(pardigs arg) {

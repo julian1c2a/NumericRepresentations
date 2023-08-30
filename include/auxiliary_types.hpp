@@ -1,6 +1,10 @@
 #ifndef AUXILIARY_TYPES_HPP_INCLUDED
 #define AUXILIARY_TYPES_HPP_INCLUDED
 
+<<<<<<< HEAD
+=======
+#include "basic_types.hpp"
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
 namespace NumRepr {
 

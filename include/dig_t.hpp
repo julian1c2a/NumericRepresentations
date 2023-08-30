@@ -2,9 +2,13 @@
 #define DIG_T_HPP_INCLUDED
 
 #include "auxiliary_functions.hpp"
+<<<<<<< HEAD
 #include "basic_types.hpp"
 #include <array>
 #include <string>
+=======
+#include "auxiliary_types.hpp"
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 
 namespace NumRepr {
 using type_traits::sqrt_max;
@@ -17,7 +21,11 @@ using type_traits::uint_type_for_radix_c;
 ///< SE SOBRECARGAN LOS OPERADORES ARITMETICOS PARA ARITMETICA MODULAR
 ///< DIG_T = SUMA Y MULTIPLICACION CIRCULAR (MODULAR CON MOD B)
 template <std::uint64_t B>
+<<<<<<< HEAD
   requires (B > 1)
+=======
+requires (B > 1)
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
 struct dig_t {
 /// GENERACIÓN DEL TIPO QUE CONTENDRÁ EL DÍGITO CON ENTERO SIN SIGNO
 using UINT_T = typename type_traits::TypeFromIntNumber_t<static_cast<uint64_t>(B)>;
@@ -41,7 +49,11 @@ public:
   /// ¡¡¡¡ no usado aún !!!!
   template <UINT_T n, UINT_T m>
     requires((n < B) && (m < B))
+<<<<<<< HEAD
   static consteval uintspair mult() noexcept {
+=======
+  static consteval inline uintspair mult() noexcept {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     if constexpr (B > type_traits::sqrt_max<UINT_T>()) {
       constexpr SIG_UINT_T sup_n{n};
       constexpr SIG_UINT_T sup_m{m};
@@ -136,7 +148,11 @@ public:
   constexpr void set_1() noexcept { m_d = 1; }
   constexpr void set_Bm1() noexcept { m_d = B - 1; }
   constexpr void set_Bm2() noexcept { m_d = B - 2; }
+<<<<<<< HEAD
   constexpr void set_dig(dig_t d) noexcept { m_d = d(); }
+=======
+  constexpr void set_dig(dig_t d) noexcept { m_d = d; }
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   constexpr void set_dig(UINT_T di) noexcept { m_d = di%B; }
 
 public:
@@ -313,12 +329,21 @@ public:
   ///< SENTIDO DE LA DIVISION DE DIGITOS >///
   ///*************************************///
 
+<<<<<<< HEAD
   constexpr bool is_unit() const noexcept { // FROM FINITE RINGS
     ///******************************************///
     ///< Es B COPRIMO con m_d ?                 >///
     ///< Es max_comun_divisor(B,m_d)==1 ? 		  >///
     ///******************************************///
 
+=======
+  constexpr inline bool is_unit() const noexcept { // FROM FINITE RINGS
+    ///******************************************///
+    ///< Es B COPRIMO con m_d ?                 >///
+    ///< Es max_comun_divisor(B,m_d)==1 ? 		>///
+    ///******************************************///
+    dig_t &cthis{*this};
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     if constexpr (is_prime()) {
       if (!is_0()) {
         return true;
@@ -335,7 +360,11 @@ public:
     }
   }
 
+<<<<<<< HEAD
   constexpr bool is_0_divisor() const noexcept { // FROM FINITE RINGS
+=======
+  constexpr inline bool is_0_divisor() const noexcept { // FROM FINITE RINGS
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     ///******************************************///
     ///< Es B NO ES COPRIMO con m_d ?			>///
     ///< Es max_comun_divisor(B,m_d)!=1 ?       >///
@@ -356,6 +385,7 @@ public:
     }
   }
 
+<<<<<<< HEAD
   constexpr dig_t mult_inv() const noexcept { // FROM FINITE RINGS
     if (is_unit()) {
       if (is_1()) {
@@ -367,12 +397,28 @@ public:
         for (dig_t index(2); !is_Bm1(); ++index) {
           if (index.is_unit()) {
             if (((*this) * index).is_1()) {
+=======
+  constexpr inline dig_t mult_inv() const noexcept { // FROM FINITE RINGS
+    if (is_unit()) {
+      dig_t &cthis{*this};
+      if (is_1()) {
+        return dig_1();
+      } else if (is_Bm1())
+        return dig_max();
+      else {
+        for (dig_t index(2); !is_Bm1(); ++index) {
+          if (index.is_unit()) {
+            if ((cthis * index).is_1()) {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
               return index;
             }
           }
         }
+<<<<<<< HEAD
         return dig_0(); /// NUNCA DEBERIA LLEGAR AQUI
         				/// SOLO PARA EVITAR EL WARNING
+=======
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
       }
     } else {
       return dig_0();
@@ -385,7 +431,11 @@ public:
   /*									*/
   /**************************************/
 
+<<<<<<< HEAD
   constexpr static dig_t sum_carry(dig_t arg_1, dig_t arg_2) noexcept {
+=======
+  inline constexpr static dig_t sum_carry(dig_t arg_1, dig_t arg_2) noexcept {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     if constexpr (B <= type_traits::middle_max<UINT_T>()) {
       if constexpr ((B % 2) == 0) {
         constexpr UINT_T Bdiv2{B / 2};
@@ -847,7 +897,11 @@ public:
 
   /// EN BASE B, B-1-m_d ES EL COMPL_Bm1(m_d)
   constexpr inline
+<<<<<<< HEAD
   dig_t operator~() const noexcept {
+=======
+  dig_t operator!() const noexcept {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     return dig_t(ui_max() - m_d);
   }
 
@@ -981,14 +1035,24 @@ public:
   }
 
   /********************************/
+<<<<<<< HEAD
   /*							                */
   /* 	     VARIOS CASTS		        */
   /*							                */
+=======
+  /*							  */
+  /* 	     VARIOS CASTS		  */
+  /*							  */
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   /********************************/
 
   /// TIENE QUE DEVOLVER STD::STRING
 private:
+<<<<<<< HEAD
   std::string num_to_string() const noexcept {
+=======
+  constexpr inline std::string num_to_string() const noexcept {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const std::int64_t data_member = static_cast<std::int64_t>(this->m_d);
     std::ostringstream fmtr_obj;
     fmtr_obj << data_member;
@@ -996,6 +1060,7 @@ private:
     return ret;
   }
 
+<<<<<<< HEAD
   std::string radix_str() const noexcept
   {
     constexpr std::int64_t radix = static_cast<std::int64_t>(B);
@@ -1010,6 +1075,24 @@ private:
 
   std::string to_string() const noexcept
   {
+=======
+  static constexpr inline std::string radix_str() noexcept {
+    constexpr std::int64_t radix = static_cast<std::int64_t>(B);
+    std::ostringstream fmtr_obj;
+    fmtr_obj << radix;
+    const std::string ret{"B" + fmtr_obj.str()};
+    return ret;
+  }
+
+public:
+  constexpr inline
+  std::uint64_t radix() const {
+  	return B;
+  }
+
+  constexpr inline
+  std::string to_string() const noexcept {
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
     const std::string num{this->num_to_string()};
     const std::string ret{"dig#" + num + "#" + radix_str()};
     return ret;
@@ -1137,7 +1220,12 @@ std::istream &operator>>(std::istream &is, dig_t<Base> &arg) {
 template <std::uint64_t Base>
   requires(Base > 1)
 std::ostream &operator<<(std::ostream &os, dig_t<Base> arg) {
+<<<<<<< HEAD
   os << "d[" << static_cast<std::int64_t>(arg()) << "]B" << static_cast<std::int64_t>(Base);
+=======
+  os << "d#" << static_cast<std::int64_t>(arg()) << "#B"
+     << static_cast<std::int64_t>(Base);
+>>>>>>> 1e470d87efdd6e85008cd373a077b8ffc6dcf33e
   return os;
 }
 

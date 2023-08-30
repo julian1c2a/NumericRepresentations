@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="NumericRepresentations" Version="11000">
-  <VirtualDirectory Name="src">
-    <File Name="src/pruebas_dig_t.cpp"/>
-  </VirtualDirectory>
+  <VirtualDirectory Name="src"/>
   <VirtualDirectory Name="resource">
-    <File Name="src/interfaz_dig_t.pdf" ExcludeProjConfig="Debug;"/>
-    <File Name="src/interfaz_dig_t.doc" ExcludeProjConfig="Debug;"/>
-    <File Name="src/documentacion.doc" ExcludeProjConfig="Debug;"/>
+    <File Name="documentation/documentacion.docx"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
+    <File Name="src/main.cpp"/>
+    <File Name="src/testunit.hpp"/>
+    <File Name="src/test_driver.cpp"/>
     <File Name="src/rat_fixed_reg_t.hpp" ExcludeProjConfig="Debug;"/>
     <File Name="src/auxiliary_types.hpp"/>
     <File Name="src/auxiliary_functions.hpp"/>
     <File Name="src/basic_types.hpp"/>
     <File Name="src/utilities.hpp"/>
-    <File Name="src/test_dig_t.hpp" ExcludeProjConfig="Debug;"/>
     <File Name="src/reg_digs_t.hpp"/>
     <File Name="src/natrat_fixed_reg_t.hpp" ExcludeProjConfig="Debug;"/>
     <File Name="src/nat_reg_digs_t.hpp"/>
@@ -122,4 +120,6 @@
       </Completion>
     </Configuration>
   </Settings>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>
